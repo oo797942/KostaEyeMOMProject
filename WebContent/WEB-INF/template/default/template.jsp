@@ -9,10 +9,12 @@
 	type="text/css" />
 <link href="/EyeMOM/resources/css/footer.css" rel="stylesheet"
 	type="text/css" />
+<link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css">
+	<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'>
 <script type="text/javascript"
 	src="/EyeMOM/resources/js/jquery-3.1.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
 <script type="text/javascript" src="/EyeMOM/resources/js/header.js"></script>
 <style type="text/css">
 * {
