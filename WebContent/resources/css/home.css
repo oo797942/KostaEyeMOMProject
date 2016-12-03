@@ -6,7 +6,6 @@
 
 header {
 	width: 1200px;
-	height: 300px;
 	background: #456456;
 }
 
@@ -18,4 +17,23 @@ section {
 
 footer {
 	width: 1200px;
+}
+
+#mainTopTable{
+	width: 100%;
+	height: 350px;
+}
+
+#mainTopTable td{
+	text-align:center;
+	width: 33%;
+}
+
+#mainTopMenuBar{
+	height: 50px;
+	background: #ffa07a;
+}
+
+#mainTopMenuImg{
+	height: 200px;
 }
