@@ -1,0 +1,49 @@
+#footerTable {
+	background: #ffffff;
+}
+
+#footerTable td {
+	vertical-align: text-top;
+	padding: 15px;
+}
+
+.footerTitle {
+	text-align: left;
+	font-size: 13pt;
+	color: #333333;
+}
+
+.footerText {
+	text-align: left;
+	font-size: 9pt;
+	color: #333333;
+}
+
+.footerInfo {
+	text-align: left;
+	font-size: 9pt;
+	color: #333333;
+	padding: 15px;
+}
+
+.footer a:LINK {
+	font-size: 9pt;
+	text-decoration: none;
+}
+
+.footer a:VISITED {
+	color: #333333;
+	text-decoration: none;
+}
+
+.footer a:HOVER {
+	color: #ffa07a;
+}
+
+.lft {
+	float: left;
+}
+
+.rht {
+	float: right;
+}
