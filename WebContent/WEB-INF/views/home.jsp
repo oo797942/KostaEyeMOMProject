@@ -6,4 +6,3 @@
 <img src="/EyeMOM/resources/img/hasi.png" width="100%">
 
 </div>
-</div>

@@ -16,8 +16,9 @@
  
 	<p id="headerMenu">
 		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
-		<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
-			id="loginBtn" /> <img src="/EyeMOM/resources/img/sign_up.png"
+	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
+			id="loginBtn"/></a>
+			 <img src="/EyeMOM/resources/img/sign_up.png"
 			class="toplogo_btn" id="sign_upBtn" /> <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
 		<img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"
@@ -77,3 +78,49 @@
 	</ul>
 
 </div>
+
+
+
+<!-- Popup itself -->
+
+	
+<div id="test-popup" class="white-popup mfp-hide">
+	<div id="clouds">
+		<div class="cloud x1"></div>
+		<!-- Time for multiple clouds to dance around -->
+		<div class="cloud x2"></div>
+		<div class="cloud x3"></div>
+		<div class="cloud x4"></div>
+		<div class="cloud x5"></div>
+		<div class="cloud x6"></div>
+	</div>
+<div class="container">
+		<div id="login">
+			<form method="post" >
+					<p>
+						<span class="fontawesome-user"></span><input type="text"
+							value="Username" style="color: whi	te;"
+							onBlur="if(this.value == '') this.value = 'Username'"
+							onFocus="if(this.value == 'Username') this.value = ''" required>
+					</p>
+					<!-- JS because of IE support; better: placeholder="Username" -->
+					<p>
+						<span class="fontawesome-lock"></span><input type="password"
+							value="Password" style="color: white;"
+							onBlur="if(this.value == '') this.value = 'Password'"
+							onFocus="if(this.value == 'Password') this.value = ''" required>
+					</p>
+					<!-- JS because of IE support; better: placeholder="Password" -->
+					<p>
+						<input type="submit" id="loginbtn" value="로그인">
+					</p>
+			</form>
+			<p>
+				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
+					class="fontawesome-arrow-right"></span>
+			</p>
+		</div>
+		<!-- end login -->
+	</div>
+</div>
+	<!-- end popup -->
