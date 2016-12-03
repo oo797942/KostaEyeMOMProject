@@ -3,6 +3,11 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <div class="body">
-<img src="/EyeMOM/resources/img/hasi.png" width="100%">
 
+	<header>헤더헤더</header>
+	<section>섹션섹션</section>
+	<footer>
+	<jsp:include page="../template/default/footer.jsp"/>
+	</footer>
+	
 </div>

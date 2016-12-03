@@ -26,6 +26,12 @@
 	padding: 15px;
 }
 
+.footer a{
+	font-size: 9pt;
+	color: #333333;
+	text-decoration: none;
+}
+
 .footer a:LINK {
 	font-size: 9pt;
 	text-decoration: none;
