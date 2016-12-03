@@ -7,7 +7,7 @@
 	<header>
 
 		<table id="mainTopTable" cellspacing="0" border="1">
-			<tr>
+			<tr> 
 				<td rowspan="2">
 				<input type="text">
 				<img src="/EyeMOM/resources/img/scope.png" class="SearchBtn">
