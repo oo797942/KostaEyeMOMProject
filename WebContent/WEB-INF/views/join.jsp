@@ -136,7 +136,7 @@
 	else if (id.length<6 || id.length>12)
 	{
 		$("#idtext").css("color","red");
-		$("#idtext").text("아이디를 6~12자까지 입력해주세요.");
+		$("#idtext").text("아 이디를 6~12자까지 입력해주세요.");
 		collect[0] = false;
 	}else{
 		$("#idtext").css("color","green");

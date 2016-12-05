@@ -27,7 +27,7 @@
 			class="toplogo_btn" id="sign_upBtn" /> <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
 			</a>
-
+ 
 	</c:when>
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"

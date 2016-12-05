@@ -37,7 +37,7 @@ private static SqlSessionFactory sqlMapper;
 		   session.commit();
 		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
-	
+	 
 	public static int userJoin(MemberVO vo ) throws SQLException
 	   {
 			int result = 0;
