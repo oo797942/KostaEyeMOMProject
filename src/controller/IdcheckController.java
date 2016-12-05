@@ -28,6 +28,6 @@ public class IdcheckController {
 		MemberVO vo =memberJoinDao.idCheck(memberVO);
 		result = vo.getU_id();
 		System.out.println("빼에에엑"+result);
-		return result;
+		return result; 
 	}
 }
