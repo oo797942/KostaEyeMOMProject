@@ -5,11 +5,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 
 	<!--  프라퍼티 화일 연결 -->
-	<properties resource="mybatis/db.properties"/>
+	<properties resource="mybatis/mapper/db.properties"/>
 
 	<typeAliases>
-		<typeAlias type="myproj.member.dto.MemberVO" alias="memberVO" />
-		<typeAlias type="myproj.board.dto.BoardVO" alias='boardVO'/>
+		<typeAlias type="member.vo.MemberVO" alias="memberVO" />
+		
 	</typeAliases>
 		
 	<environments default="development">
@@ -23,8 +23,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			</dataSource>
 		</environment>
 	</environments>
-	<mappers> 
+	<mappers>
 		<mapper resource="mybatis/mapper/member.xml" />
+		
 	</mappers>
 	
 </configuration>

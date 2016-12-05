@@ -99,14 +99,14 @@
 			<form method="post" action='login.do'>
 					<p>
 						<span class="fontawesome-user"></span><input type="text"
-							name="id" value="Username" style="color: whi	te;"
+							name="u_id" value="Username" style="color: whi	te;"
 							onBlur="if(this.value == '') this.value = 'Username'"
 							onFocus="if(this.value == 'Username') this.value = ''" required>
 					</p>
 					<!-- JS because of IE support; better: placeholder="Username" -->
 					<p>
 						<span class="fontawesome-lock"></span><input type="password"
-							name="pass" value="Password" style="color: white;"
+							name="u_pass" value="Password" style="color: white;"
 							onBlur="if(this.value == '') this.value = 'Password'"
 							onFocus="if(this.value == 'Password') this.value = ''" required>
 					</p>

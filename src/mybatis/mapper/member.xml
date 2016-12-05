@@ -7,9 +7,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- memberVO 변수명을 SqlMapConfig.xml에서 typeAlias 에서 지정한 하였음 -->
 <select id="idCheck" parameterType="memberVO" resultType="memberVO"> 
-	select * from mom_user where u_id=#{id}
-	<if test="pass !=null">
-		AND u_pass=#{userPass}
+	select * from mom_user where u_id=#{u_id}
+	<if test="u_pass !=null">
+		AND u_pass=#{u_pass}
 	</if>	
 </select>
 

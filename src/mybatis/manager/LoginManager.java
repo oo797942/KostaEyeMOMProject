@@ -27,18 +27,13 @@ private static SqlSessionFactory sqlMapper;
 		}
 	}
 	
-	public static MemberVO idCheck_Login( MemberVO vo) throws Exception
-	  {
-		  
-		  SqlSession session = sqlMapper.openSession();
-		  MemberVO dbVo = (MemberVO) session.selectOne("user.idCheck", vo);
-		   return dbVo; 
-	  }
+	
 	
 	public static MemberVO userLogin(MemberVO vo ) throws SQLException
 	   {
 		   SqlSession session = sqlMapper.openSession();
-		   MemberVO memberVO = session.selectOne("user.userInsert", vo);
+		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
+		   System.out.println("manager : "+memberVO.getU_id());
 		   session.commit();
 		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }

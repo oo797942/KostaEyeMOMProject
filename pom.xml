@@ -152,6 +152,7 @@
     <artifactId>spring-jdbc</artifactId>
     <version>4.3.3.RELEASE</version>
 </dependency>
+ 
       
 
       <!-- JSON 방식으로 통신 ( MappingJackson2HttpMessageConverter) -->

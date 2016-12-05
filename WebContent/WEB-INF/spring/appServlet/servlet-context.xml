@@ -15,8 +15,6 @@
 	<!-- 리소스 설정 (Css, JS, jquery, images) -->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 	
-
-	
 	<!-- 뷰리졸버 설정 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -26,21 +24,21 @@
 	</bean>
 	
 		<!-- JNDI 설정 -->
-<bean id='dataSource' class="org.springframework.jndi.JndiObjectFactoryBean">
-	<property name="jndiName" value='java:comp/env/jdbc/myora'/>
-</bean>
+<!-- 	<bean id='dataSource' class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!-- 		<property name="jndiName" value='java:comp/env/jdbc/myora'/> -->
+<!-- 	</bean> -->
 	
 	<!-- Mybatis설정 -->
-<bean id='factoryBean' class="org.mybatis.spring.SqlSessionFactoryBean">
-   <property name="dataSource" ref='dataSource' />
-   <property name="configLocation" value='classpath:config/config.xml'></property>
-   <property name="mapperLocations" value='classpath*:mybatis/mapper/*.xml'></property>
-</bean>
+<!-- 	<bean id='factoryBean' class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 	   <property name="dataSource" ref='dataSource' /> -->
+<!-- 	   <property name="configLocation" value='classpath:config/config.xml'></property> -->
+<!-- 	   <property name="mapperLocations" value='classpath*:mybatis/mapper/*.xml'></property> -->
+<!-- 	</bean> -->
 
-<!-- SqlSession(연결객체) 빈 설정 -->
-<bean id='ss' class="org.mybatis.spring.SqlSessionTemplate">
-	 <constructor-arg ref="factoryBean" />
-</bean>
+	<!-- SqlSession(연결객체) 빈 설정 -->
+<!-- 	<bean id='ss' class="org.mybatis.spring.SqlSessionTemplate"> -->
+<!-- 		 <constructor-arg ref="factoryBean" /> -->
+<!-- 	</bean> -->
 
 	<!-- 타일즈 설정 -->
 	<bean id="tilesViewResolver"

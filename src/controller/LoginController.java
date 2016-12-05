@@ -21,19 +21,22 @@ public class LoginController {
 	public String login(MemberVO memberVO, Model m, HttpSession session){
 
 		System.out.println("컨트롤");
-		System.out.println(memberVO.getId());
-		System.out.println(memberVO.getPass());
+		System.out.println(memberVO.getU_id());
+		System.out.println(memberVO.getU_pass());
 		MemberVO vo=loginDao.memberLogin(memberVO);
-//		
-//		if(vo!=null){
-//			m.addAttribute("message", "로그인 성공");
-//			m.addAttribute("result",1);
-//			session.setAttribute("user", vo);
-//			
-//		}else{
-//			m.addAttribute("message", "로그인 실패");
-//			m.addAttribute("result",0);
-//		}
+		
+		if(vo!=null){
+			
+			m.addAttribute("message", "로그인 성공");
+			m.addAttribute("result",1);
+			System.out.println("logincontorller : 성공"+vo.getU_id());
+			session.setAttribute("user", vo);
+			
+		}else{
+			System.out.println("logincontorller : 실패");
+			m.addAttribute("message", "로그인 실패");
+			m.addAttribute("result",0);
+		}
 		
 		return "home";
 	}
