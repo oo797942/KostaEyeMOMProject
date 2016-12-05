@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("home.go"); %>
+<% response.sendRedirect("home.do"); %>
 
 </body>
 </html>
