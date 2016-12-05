@@ -16,7 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 회원가입 sql -->
 <insert id="userInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
-	INSERT INTO membertemp VALUES(#{userId}, #{userPass}, #{userName})
+	Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) VALUES(#{u_id}, #{u_pass}, #{u_name}, #{u_nick}, #{u_tel}, #{u_email}, #{u_addr}, SYSDATE)
 </insert>
 <!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
+
 </mapper>

@@ -37,4 +37,13 @@ private static SqlSessionFactory sqlMapper;
 		   session.commit();
 		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
+	
+	public static int userJoin(MemberVO vo ) throws SQLException
+	   {
+			int result = 0;
+		   SqlSession session = sqlMapper.openSession();
+		   result = session.insert("user.userInsert", vo);
+		   session.commit();
+		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+	   }
 }

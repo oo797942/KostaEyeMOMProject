@@ -22,9 +22,12 @@
 		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 			id="loginBtn"/></a>
+			<a href="join.go" >
 			 <img src="/EyeMOM/resources/img/sign_up.png"
 			class="toplogo_btn" id="sign_upBtn" /> <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
+			</a>
+
 	</c:when>
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"
