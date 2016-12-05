@@ -115,20 +115,25 @@
 	var id = $("#id").val();
 	var reId = null;
 	   $.ajax({
-	        url: "idcheck.do?u_id="+id,
-	        type: 'GET',
-	       	success: function(id){
-	        	   reId = id;
-	           },
-	       error:function(err){
-	    	   alert(err);
-	       }
+	        url: "idcheck.do",
+	        async: false,
+	        data : { "u_id" : $("#id").val() },
+	       	type: 'get',
+	       	success: function(result){
+	       		reId=result;
+	           }
 	           });
 	//아이디 입력여부 검사
 	if(id=="")
 	{
 		$("#idtext").css("color","red");
 		$("#idtext").text("아이디를 입력하지 않았습니다.");
+		collect[0] = false;
+	}
+	//아이디 중복체크
+	else if (id==reId) {
+		$("#idtext").css("color","red");
+		$("#idtext").text("이미 사용중인 아이디입니다.");
 		collect[0] = false;
 	}
 	//아이디에 공백 사용하지 않기
@@ -142,13 +147,6 @@
 		$("#idtext").text("아이디는 영숫자 조합만 사용할 수 있습니다.");
 		collect[0] = false;
 	}
-	//아이디 중복체크
-	else if (id==reId) {
-		$("#idtext").css("color","red");
-		$("#idtext").text("이미 사용중인 아이디입니다.");
-		collect[0] = false;
-	}
-	
 	//아이디 길이 체크 (6~12자)
 	else if (id.length<6 || id.length>12)
 	{

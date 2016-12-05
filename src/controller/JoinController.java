@@ -8,13 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import member.dao.MemberJoinDao;
+import member.dao.MemberJoinDaoImpl;
 import member.vo.MemberVO;
 
 @Controller
 public class JoinController {
 	
 	@Autowired
-	private MemberJoinDao memberJoinDao;
+	private MemberJoinDaoImpl memberJoinDao;
 	  
 	@RequestMapping("/join.do")
 	public String login(MemberVO memberVO, Model m){
