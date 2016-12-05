@@ -2,6 +2,7 @@ package mybatis.manager;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.sql.SQLException;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import member.vo.MemberVO;
 
-public class LoninManager {
+public class LoginManager {
 private static SqlSessionFactory sqlMapper;
 	
 	static{
@@ -33,4 +34,12 @@ private static SqlSessionFactory sqlMapper;
 		  MemberVO dbVo = (MemberVO) session.selectOne("user.idCheck", vo);
 		   return dbVo; 
 	  }
+	
+	public static MemberVO userLogin(MemberVO vo ) throws SQLException
+	   {
+		   SqlSession session = sqlMapper.openSession();
+		   MemberVO memberVO = session.selectOne("user.userInsert", vo);
+		   session.commit();
+		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+	   }
 }

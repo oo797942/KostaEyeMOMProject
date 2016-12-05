@@ -5,7 +5,7 @@
 <div class="body">
 
 	<header>
-
+		<jsp:include page="../template/default/header.jsp" />
 		<table id="mainTopTable" cellspacing="0" border="1">
 			<tr> 
 				<td rowspan="2">
