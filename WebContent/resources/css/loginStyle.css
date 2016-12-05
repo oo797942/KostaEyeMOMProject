@@ -59,6 +59,7 @@ input {
   content: ' ';
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
@@ -93,7 +94,7 @@ input {
   height: 50px;
 }
 
-#login form input[type="text"], input[type="password"] {
+#login form input[type="text"],p > input[type="password"]{
   background-color: #3b4148;
   border-radius: 0px 3px 3px 0px;
   color: #606468;

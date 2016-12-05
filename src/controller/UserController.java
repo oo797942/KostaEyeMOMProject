@@ -17,5 +17,9 @@ public class UserController {
 		return "home";
 	}
 	
-	
+	@RequestMapping("/join.go")
+	public String goJoin(){
+		return "join";
+	}
+	 
 }
