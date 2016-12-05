@@ -12,7 +12,7 @@ $(function() {
 			$("#searchInput").focus();
 		}
 	});
-	
+	 
 	// 메뉴버튼을 클릭했을 때
 	$("#mainTopMenuBarImg").click(function(){
 		// 메뉴가 화면에 떠있으면 메뉴를 가리고 이미지를 띄워준다
