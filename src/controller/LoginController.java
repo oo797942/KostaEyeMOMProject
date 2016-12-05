@@ -34,7 +34,7 @@ public class LoginController {
 			System.out.println("logincontorller : 실패");
 			m.addAttribute("message", "로그인 실패");
 			m.addAttribute("result",0);
-		}
+		} 
 		
 		return "home";
 	}
