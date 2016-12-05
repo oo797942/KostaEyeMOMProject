@@ -20,23 +20,21 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String login(MemberVO memberVO, Model m, HttpSession session){
 
-		System.out.println("컨트롤");
-		System.out.println(memberVO.getU_id());
-		System.out.println(memberVO.getU_pass());
+		
 		MemberVO vo=loginDao.memberLogin(memberVO);
 		
-		if(vo!=null){
+		if(vo!=null){ // id/pw 로그인 성공시
 			
 			m.addAttribute("message", "로그인 성공");
 			m.addAttribute("result",1);
-			System.out.println("logincontorller : 성공"+vo.getU_id());
+			System.out.println("logincontorller : 성공"+vo.getU_name());
 			session.setAttribute("user", vo);
 			
-		}else{
+		}else{ // 실패시  
 			System.out.println("logincontorller : 실패");
 			m.addAttribute("message", "로그인 실패");
 			m.addAttribute("result",0);
-		}
+		} 
 		
 		return "home";
 	}

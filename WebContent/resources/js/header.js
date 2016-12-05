@@ -40,4 +40,7 @@ $(function() {
 	  closeBtnInside: true
 	});
 	
+		
+
+	
 });

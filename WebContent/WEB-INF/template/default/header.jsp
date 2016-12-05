@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <div class="header">
@@ -13,18 +14,25 @@
 			</tr>
 		</table>
 	</nav>
- 
+ 	
 	<p id="headerMenu">
+<!-- 	세션 정보가 없을경우 로그인 버튼 show -->
+	<c:choose>
+    <c:when test="${empty sessionScope.user}">
 		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 			id="loginBtn"/></a>
 			 <img src="/EyeMOM/resources/img/sign_up.png"
 			class="toplogo_btn" id="sign_upBtn" /> <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
+	</c:when>
+	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"
 			id="mypageBtn" /> <img src="/EyeMOM/resources/img/logout.png"
-			class="toplogo_btn2" id="logoutBtn" /> <span class="toplogo_btn2">ㅇㅇㅇ님
+			class="toplogo_btn2" id="logoutBtn" /> <span class="toplogo_btn2">${ sessionScope.user.getU_name()}님
 			환영합니다!</span>
+	</c:otherwise>	
+	</c:choose>
 	</p>
 	<hr style="margin-bottom: 5px;" color="#ffa07a" size="3px" />
 
