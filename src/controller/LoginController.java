@@ -30,7 +30,7 @@ public class LoginController {
 			System.out.println("logincontorller : 성공"+vo.getU_name());
 			session.setAttribute("user", vo);
 			
-		}else{
+		}else{ // 실패시
 			System.out.println("logincontorller : 실패");
 			m.addAttribute("message", "로그인 실패");
 			m.addAttribute("result",0);
