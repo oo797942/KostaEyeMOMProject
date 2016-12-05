@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="user">
 
 <!-- memberVO 변수명을 SqlMapConfig.xml에서 typeAlias 에서 지정한 하였음 -->
+<!-- login 및 id check -->
 <select id="idCheck" parameterType="memberVO" resultType="memberVO"> 
 	select * from mom_user where u_id=#{u_id}
 	<if test="u_pass !=null">
