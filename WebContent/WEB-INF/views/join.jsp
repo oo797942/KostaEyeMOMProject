@@ -28,8 +28,9 @@
         </header>
       </div>
       <div class="col-md-6 right-side">
+      <form id="joinform"  action="join.do" method="post">
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="id" name="id"/>
+          <input class="input__field input__field--hoshi" type="text" id="id" name="u_id"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3"  for="id">
             <span class="input__label-content input__label-content--hoshi" id="idtext">아이디</span>
           </label>
@@ -37,7 +38,7 @@
         </span>
         <label id="idtext"></label>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="password" id="pass"  name="pass"/>
+          <input class="input__field input__field--hoshi" type="password" id="pass"  name="u_pass"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="pass">
             <span class="input__label-content input__label-content--hoshi" id="passtext">비밀번호</span>
           </label>
@@ -49,31 +50,31 @@
           </label>
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="name" name="name"/>
+          <input class="input__field input__field--hoshi" type="text" id="name" name="u_name"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">
             <span class="input__label-content input__label-content--hoshi" id="nametext">이름</span>
           </label>
         </span>
                 <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="nick"  name="nick"/>
+          <input class="input__field input__field--hoshi" type="text" id="nick"  name="u_nick"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="nick">
             <span class="input__label-content input__label-content--hoshi" id="nicktext">닉네임</span>
           </label>
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="tel" name="tel" />
+          <input class="input__field input__field--hoshi" type="text" id="tel" name="u_tel" />
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="tel">
             <span class="input__label-content input__label-content--hoshi" id="teltext">전화번호</span>
           </label> 	
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="email" name="email"/>
+          <input class="input__field input__field--hoshi" type="text" id="email" name="u_email"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
             <span class="input__label-content input__label-content--hoshi" id="emailtext">E-MAIL</span>
           </label>
                   </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="addr" name="addr"/>
+          <input class="input__field input__field--hoshi" type="text" id="addr" name="u_addr"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="addr">
             <span class="input__label-content input__label-content--hoshi" id="addrtext">주소</span>
           </label>
@@ -84,6 +85,7 @@
          <p/>   
           <span><a href="#">I am already a member</a></span>
         </div>
+        </form>
 <!--         <ul class="social list-inline"> -->
 <!--           <li><a href="#">Facebook</a></li> -->
 <!--           <li><a href="#">Twitter</a></li> -->
@@ -98,7 +100,7 @@
 
 
 <!-- Scripts -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 <script src="resources/js/scripts.js"></script>
 <script src="resources/js/classie.js"></script>
 <script>		
@@ -297,7 +299,7 @@
 				return;
 			}
 		}
-		alert("가입성공");
+		$("#joinform").submit();
 	});
 	
 	
