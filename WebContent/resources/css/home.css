@@ -19,21 +19,203 @@ footer {
 	width: 1200px;
 }
 
-#mainTopTable{
+#mainTopTable {
 	width: 100%;
-	height: 350px;
+	height: 400px;
 }
 
-#mainTopTable td{
-	text-align:center;
+#mainTopTable td {
+	text-align: center;
 	width: 33%;
 }
 
-#mainTopMenuBar{
+#mainTopMenuBar {
+	text-align: left;
 	height: 50px;
 	background: #ffa07a;
 }
 
-#mainTopMenuImg{
-	height: 200px;
+#mainTopMenuBarImg {
+	float: left;
+	margin-left: 10px;
+	margin-top: 4px;
+	width: 93px;
+	height: 29px;
+	width: 93px;
+}
+
+#searchInput {
+	border: 0px;
+	vertical-align: top;
+	margin-top: 1px;
+	height: 35px;
+	width: 250px;
+	padding-left: 3px;
+	font-size: 13pt;
+	vertical-align: top;
+	background: none;
+	margin-left: 785px;
+	display: none;
+	border-bottom: 2px solid white;
+	outline-style: none;
+	color: #ffffff;
+}
+
+#searchInput::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#searchInput::-moz-placeholder { /* Firefox 19+ */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#searchInput:-ms-input-placeholder { /* IE 10+ */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#searchInput:-moz-placeholder { /* Firefox 18- */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.SearchBtn {
+	width: 35px;
+	height: 35px;
+}
+
+#searchBtnA {
+	float: right;
+	position: relative;
+	margin-right: 5px;
+	top: 2px;
+}
+
+#searchBtnA:HOVER {
+	cursor: pointer;
+}
+
+#mainTopMenuImg {
+	height: 250px;
+}
+
+#mainMenuImg {
+	width: 100%;
+	height: 250px;
+	border: none;
+	display: block;
+	position: relative;
+	z-index: 0;
+}
+
+#mainTopLeftTd {
+	width: 50%;
+	font-size: 8pt;
+}
+
+#mainTopLeftTd p {
+	float: left;
+}
+
+#mainTopLeftTd p a {
+	color: black;
+	margin-left: 5px;
+}
+
+#mainTopLeftTd p a:LINK {
+	text-decoration: none;
+}
+
+#mainTopLeftTd p a:VISITED {
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+#mainTopLeftTd p a:HOVER {
+	transition-duration: .3s;
+	color: #ffa07a;
+}
+
+#mainTopRightTd {
+	width: 50%;
+}
+
+#findBtn {
+	margin-right: 5px;
+}
+
+#sign_upBtn {
+	margin-right: 5px;
+}
+
+.toplogo_btn {
+	float: right;
+}
+
+#mainTopUtilTr {
+	height: 25px;
+}
+
+#MainLogoTd {
+	border-top: 3px solid #ffa07a;
+	height: 80px;
+}
+
+.lileft {
+	margin-left: 150px;
+}
+
+.lifont {
+	font-size: 15pt;
+	display: inline-table;
+}
+
+.lifont li {
+	font-size: 10pt;
+}
+
+#menu, #menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#menu li {
+	text-align: left;
+	line-height: 30px;
+}
+
+#menu {
+	background: rgba(255, 255, 255, 0.5);
+	height: 250px;
+	border: none;
+	display: none;
+	position: relative;
+	z-index: 1;
+}
+
+#menu ul {
+	text-align: left;
+}
+
+.menuhr {
+	width: 100px;
+	color: #ffa07a;
+}
+
+#menu a:LINK {
+	text-decoration: none;
+}
+
+#menu a {
+	color: #1a1a1a;
+}
+
+#menu a:VISITED {
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+#menu a:HOVER {
+	transition-duration: .3s;
+	color: #ffa07a;
 }
