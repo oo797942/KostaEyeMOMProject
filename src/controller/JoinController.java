@@ -7,19 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import member.dao.LoginDaoImpl;
+import member.dao.MemberJoinDao;
 import member.vo.MemberVO;
 
 @Controller
 public class JoinController {
 	
 	@Autowired
-	private LoginDaoImpl loginDao;
+	private MemberJoinDao memberJoinDao;
 	 
 	@RequestMapping("/join.do")
 	public String login(MemberVO memberVO, Model m){
 		int result = 0;
-		result =loginDao.memberJoin(memberVO);
+		result = memberJoinDao.memberJoin(memberVO);
 		
 		if(result==1){
 			System.out.println("가입완료");

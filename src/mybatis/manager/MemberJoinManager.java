@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import member.vo.MemberVO;
 
-public class LoginManager {
+public class MemberJoinManager {
 private static SqlSessionFactory sqlMapper;
 	
 	static{
@@ -27,15 +27,12 @@ private static SqlSessionFactory sqlMapper;
 		}
 	}
 	
-	
-	
-	public static MemberVO userLogin(MemberVO vo ) throws SQLException
+	public static int userJoin(MemberVO vo ) throws SQLException
 	   {
+			int result = 0;
 		   SqlSession session = sqlMapper.openSession();
-		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
-		   System.out.println("manager : "+memberVO.getU_id());
+		   result = session.insert("user.userInsert", vo);
 		   session.commit();
-		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
-	
 }

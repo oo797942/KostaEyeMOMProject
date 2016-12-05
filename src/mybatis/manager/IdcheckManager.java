@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import member.vo.MemberVO;
 
-public class LoginManager {
+public class IdcheckManager {
 private static SqlSessionFactory sqlMapper;
 	
 	static{
@@ -29,7 +29,7 @@ private static SqlSessionFactory sqlMapper;
 	
 	
 	
-	public static MemberVO userLogin(MemberVO vo ) throws SQLException
+	public static MemberVO idCheck(MemberVO vo ) throws SQLException
 	   {
 		   SqlSession session = sqlMapper.openSession();
 		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
