@@ -11,7 +11,7 @@ public class LoginDaoImpl implements LoginDao {
 		MemberVO memberVo = null;
 		try{
 			memberVo = LoginManager.userLogin(vo);
-			System.out.println("logincontorller :"+memberVo.getU_id()); 
+			System.out.println("loginDaoImpl 성공 :"+memberVo.getU_id()); 
 		}catch( Exception ex )
 		{
 			System.out.println("loginDAOImpl / idCheck 실패 : " + ex.getMessage());
