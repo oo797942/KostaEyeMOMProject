@@ -5,3 +5,4 @@ import member.vo.MemberVO;
 public interface LoginDao {
 	MemberVO  memberLogin( MemberVO vo );
 }
+ 

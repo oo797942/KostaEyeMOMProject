@@ -15,7 +15,7 @@ public class JoinController {
 	
 	@Autowired
 	private MemberJoinDao memberJoinDao;
-	 
+	  
 	@RequestMapping("/join.do")
 	public String login(MemberVO memberVO, Model m){
 		int result = 0;

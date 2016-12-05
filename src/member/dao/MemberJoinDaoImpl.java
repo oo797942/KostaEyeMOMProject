@@ -6,7 +6,7 @@ import mybatis.manager.MemberJoinManager;
 
 
 public class MemberJoinDaoImpl implements MemberJoinDao {
-	
+	 
 	@Override
 	public int memberJoin(MemberVO vo) {
 		int result = 0; 

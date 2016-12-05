@@ -10,7 +10,7 @@ public class LoginDaoImpl implements LoginDao {
 	public MemberVO memberLogin(MemberVO vo) {
 		MemberVO memberVo = null;
 		try{
-			 
+			  
 			
 			memberVo = LoginManager.userLogin(vo);
 			System.out.println("loginDaoImpl 성공 :"+memberVo.getU_id()); 

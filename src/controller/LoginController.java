@@ -20,7 +20,7 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String login(MemberVO memberVO, Model m, HttpSession session){
 
-		
+		 
 		MemberVO vo=loginDao.memberLogin(memberVO);
 		
 		if(vo!=null){ // id/pw 로그인 성공시

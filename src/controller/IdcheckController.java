@@ -17,7 +17,7 @@ public class IdcheckController {
 	@Autowired
 	private LoginDaoImpl loginDao;
 	
-	
+	 
 	@RequestMapping("/idcheck.do")
 	public String idcheck(MemberVO memberVO, Model m, HttpSession session){
 System.out.println("컨트롤탓다아아앙"+memberVO.getU_id());
