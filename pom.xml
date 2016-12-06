@@ -12,9 +12,9 @@
       <org.aspectj-version>1.7.4</org.aspectj-version>
       <org.slf4j-version>1.7.5</org.slf4j-version>
    </properties>
-   <build>
+   <build> 
       <sourceDirectory>src</sourceDirectory>
-      <plugins> 
+      <plugins>  
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.5.1</version>
