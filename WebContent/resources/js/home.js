@@ -45,7 +45,7 @@ $(function() {
 	$("#menu").mouseout(function() {
 		$("#menu").hide();
 		$("#mainMenuImg").show();
-	});
+	}); 
 	
 	// bxSlider
 	var mySlider = $('#slide_banner').bxSlider({
