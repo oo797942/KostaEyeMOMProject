@@ -76,10 +76,57 @@
 
 	</header>
 	<section>
-			<div id="quickmenu1" class="quickmenu">1</div>
-			<div id="quickmenu2" class="quickmenu">2</div>
-			<div id="quickmenu3" class="quickmenu">3</div>
-			<div id="quickmenu4" class="quickmenu">4</div>
+		<div id="slide_div">
+			<div id="banner_wrap">
+				<ul id="slide_banner">
+					<li><img class="slide" src="/EyeMOM/resources/img/hasi.png"
+						alt="사진1" /></li>
+					<li><img class="slide"
+						src="/EyeMOM/resources/img/asdasdasd.png" alt="사진2" /></li>
+					<li><img class="slide" src="/EyeMOM/resources/img/find.png"
+						alt="사진3" /></li>
+					<li><img class="slide" src="/EyeMOM/resources/img/go_top.png"
+						alt="사진4" /></li>
+					<li><img class="slide"
+						src="/EyeMOM/resources/img/go_bottom.png" alt="사진5" /></li>
+				</ul>
+			</div>
+			<table border="1" cellspacing="0" id="slideMenu">
+				<tr>
+					<td>게임</td>
+				</tr>
+				<tr>
+					<td>댄스</td>
+				</tr>
+				<tr>
+					<td>겅부</td>
+				</tr>
+			</table>
+		</div>
+		<div id="mainMiddle">
+			<div id="middlesick">
+				<p>자주 검색하는 질병</p>
+				<ol>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+				</ol>
+			</div>
+			<table id="groupBuyTable" cellspacing="0">
+			<caption>공동구매 최신 글</caption>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+			</table>
+		</div>
+
 	</section>
 	<footer>
 		<jsp:include page="../template/default/footer.jsp" />
