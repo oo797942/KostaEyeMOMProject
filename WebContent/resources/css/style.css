@@ -1,11 +1,16 @@
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  font-family: arial;
+/* * { */
+/*   box-sizing: border-box; */
+/*   -moz-box-sizing: border-box; */
+/*   -webkit-box-sizing: border-box; */
+/*   font-family: arial; */
+/* } */
+
+#pageDiv{
+	width:100%;
+	text-align: center;
 }
 
-.pagination {	
+.pagination {
   list-style: none;
   display: inline-block;
   padding: 0;

@@ -6,13 +6,11 @@
 
 header {
 	width: 1200px;
-	background: #456456;
 }
 
 section {
 	width: 1200px;
-	height: 300px;
-	background: #aaaaaa;
+	height: 500px;
 }
 
 footer {
@@ -20,6 +18,7 @@ footer {
 }
 
 #mainTopTable {
+	border:none;
 	width: 100%;
 	height: 400px;
 }
@@ -42,6 +41,10 @@ footer {
 	width: 93px;
 	height: 29px;
 	width: 93px;
+}
+
+#mainTopMenuBarImg:HOVER {
+	cursor: pointer;
 }
 
 #searchInput {
@@ -94,12 +97,12 @@ footer {
 }
 
 #mainTopMenuImg {
-	height: 250px;
+	height: 300px;
 }
 
 #mainMenuImg {
 	width: 100%;
-	height: 250px;
+	height: 300px;
 	border: none;
 	display: block;
 	position: relative;
@@ -181,12 +184,12 @@ footer {
 
 #menu li {
 	text-align: left;
-	line-height: 30px;
+	line-height: 40px;
 }
 
 #menu {
 	background: rgba(255, 255, 255, 0.5);
-	height: 250px;
+	height: 300px;
 	border: none;
 	display: none;
 	position: relative;
@@ -218,4 +221,18 @@ footer {
 #menu a:HOVER {
 	transition-duration: .3s;
 	color: #ffa07a;
+}
+
+.quickmenu {
+	width: 230px;
+	height: 400px;
+	background: black;
+	margin: 50px 34px 0 34px;
+	border: 1px solid black;
+	float: left;
+}
+
+.quickmenu:HOVER {
+	transition: 0.3s;
+	filter: opacity(70%);
 }
