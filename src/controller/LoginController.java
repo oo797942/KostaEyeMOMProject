@@ -27,17 +27,10 @@ public class LoginController {
 		String result= "1";
 		if(vo!=null){ // id/pw 로그인 성공시
 			result="0";
-			m.addAttribute("message", "로그인 성공");
-			m.addAttribute("result",1);
 			System.out.println("logincontorller : 성공"+vo.getU_name());
 			session.setAttribute("user", vo);
 			
-		}else{ // 실패시
-			
-			System.out.println("logincontorller : 실패");
-			m.addAttribute("message", "로그인 실패");
-			m.addAttribute("result",0);
-		} 
+		}
 		
 		return result;
 	}

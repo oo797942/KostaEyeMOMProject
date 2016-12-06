@@ -21,5 +21,10 @@ public class UserController {
 	public String goJoin(){
 		return "join";
 	}
+	
+	@RequestMapping("/board.do")
+	public String callBorad(){
+		return "boardView";
+	}
 	 
 }
