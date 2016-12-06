@@ -5,12 +5,7 @@
 /*   font-family: arial; */
 /* } */
 
-#pageDiv{
-	width:100%;
-	text-align: center;
-}
-
-.pagination {
+.pagination {	
   list-style: none;
   display: inline-block;
   padding: 0;
@@ -50,15 +45,15 @@
 }
 .modal-1 a {
   border-color: #ddd;
-  color: #4285F4;
+  color: #ffa07a;
   background: #fff;
 }
 .modal-1 a:hover {
   background: #eee;
 }
 .modal-1 a.active, .modal-1 a:active {
-  border-color: #4285F4;
-  background: #4285F4;
+  border-color: #ffa07a;
+  background: #ffa07a;
   color: #fff;
 }
 
