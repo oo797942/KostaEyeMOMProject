@@ -1,0 +1,66 @@
+
+#board3{
+	display: inline-block;
+	display: inline-block;
+	margin-top: 90px;
+	margin-bottom: 90px;
+}
+#cate3{
+	width:50%;
+	margin-left: 20px;
+}
+#title3{
+	width:50%;
+	margin-left: 46px;
+	
+}
+tr label{
+  padding: .5em .75em;
+  color: #000000;
+  font-size: 10pt;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: .25em;
+}
+
+tr input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.space3 {
+    width: 25px;
+    margin: 0;
+    font-size: 0;
+}
+.texta3{
+	clear: both;
+    padding: 10px;
+    border-width: 0px;
+    border-style: solid;
+}
+.textaa3{
+    margin: 10;
+    padding: 1px 0;
+    overflow: auto;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    resize: none;
+    width: 58%; 
+    height:300px; 
+    overflow: hidden; 
+    line-height: 1; 
+    font-size: 13pt
+}
+
+.labelinline3{
+	display:inline;
+}

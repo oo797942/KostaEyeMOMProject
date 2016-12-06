@@ -1,0 +1,96 @@
+ul{	
+	list-style: none; 			/* li태그 불릿 삭제*/
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#tableall2 {
+    padding: 35px 40px;
+    color: #555;
+    width: 75%;
+    border: 1px solid #c0c0c0;
+}
+.content2{
+    padding:30px 0 60px;
+    position: relative;
+}
+.space2 {
+    clear: both;
+    height: 35px;
+    margin: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+#trcolor2{
+	background-color: white;
+}
+div #inline2{
+	display: inline-block;
+}
+#comment2{
+	background-color: #f6f6ed;		/* 댓글창 배경색*/
+	height: auto;
+}
+
+#tablewidth2{
+	width: 800px;					/* 댓글창 가로 크기*/
+}
+
+.inputco2{							/* 댓글입력창 크기*/
+	margin: 14px 0 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.texta2{
+	clear: both;
+    padding: 10px;
+    border-width: 0px;
+    border-style: solid;
+}
+.textaa2{
+	width: 100%;
+    margin: 10;
+    padding: 1px 0;
+    overflow: auto;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    resize: none;
+}
+
+.i2{
+	position: relative;
+    width: 89px;
+    text-align: right;
+    vertical-align: bottom;
+        line-height: 14px;
+    
+}
+
+.submitbtn2{
+	display: inline-block;
+    position: absolute;
+    top : 9px;
+    right: 0;
+    z-index: 3;
+    width: 84px;
+    height: 61px;
+    border: 1px solid #ccc;
+    background: #fff !important;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 61px;
+    text-align: center;
+}
+.submitbtn2 a{
+	display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #666;
+}
