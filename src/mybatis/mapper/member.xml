@@ -14,6 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</if>	
 </select>
 
+
+
 <!-- 회원가입 sql -->
 <insert id="userInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
 	Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) VALUES(#{u_id}, #{u_pass}, #{u_name}, #{u_nick}, #{u_tel}, #{u_email}, #{u_addr}, SYSDATE)

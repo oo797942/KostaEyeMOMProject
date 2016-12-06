@@ -2,6 +2,29 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script type="text/javascript">
+	function login(){
+		
+		$.ajax({
+	        url: "login.do",
+	        type: 'GET',
+	        data : { "u_id" : $("#u_id").val(),
+	        	"u_pass" : $("#u_pass").val()	},
+	       	success: function(result){
+	       	  
+	       		if(result=="0"){
+	       			location.href="index.jsp";
+	       			
+	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
+	        		
+	           },
+	       error:function(err){
+	    	   alert(err);
+	       }
+	           });
+	}
+	
+</script>
 
 <div class="header">
 	<nav>
@@ -22,12 +45,9 @@
 		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 			id="loginBtn"/></a>
-			<a href="join.go" >
 			 <img src="/EyeMOM/resources/img/sign_up.png"
 			class="toplogo_btn" id="sign_upBtn" /> <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
-			</a>
- 
 	</c:when>
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"
@@ -107,25 +127,26 @@
 	</div>
 <div class="container">
 		<div id="login">
-			<form method="post" action='login.do'>
+			<form method="post"  onclick='return false'>
 					<p>
 						<span class="fontawesome-user"></span><input type="text"
-							name="u_id" value="Username" style="color: whi	te;"
+							id="u_id"  name="u_id" value="Username" style="color: white;"
 							onBlur="if(this.value == '') this.value = 'Username'"
 							onFocus="if(this.value == 'Username') this.value = ''" required>
 					</p>
 					<!-- JS because of IE support; better: placeholder="Username" -->
 					<p>
 						<span class="fontawesome-lock"></span><input type="password"
-							name="u_pass" value="Password" style="color: white;"
+							id="u_pass" name="u_pass" value="Password" style="color: white;"
 							onBlur="if(this.value == '') this.value = 'Password'"
 							onFocus="if(this.value == 'Password') this.value = ''" required>
 					</p>
 					<!-- JS because of IE support; better: placeholder="Password" -->
 					<p>
-						<input type="submit" id="loginbtn" value="로그인">
+						<input type="submit" onclick="login()" id="loginbtn" value="로그인">
 					</p>
 			</form>
+			<label id="info"></label>
 			<p>
 				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
 					class="fontawesome-arrow-right"></span>
