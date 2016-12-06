@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="resources/css/style.css">
 
 </head>
-<body class='boardbody'>
+<body>
+<div style="text-align: center;">
 	<div class='bottom1'>
 	<div style="width: 65%" id="board1">
 		<div class='form-inline'>
@@ -132,5 +133,6 @@
 	</div>
 	<script
 		src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
+		</div>
 </body>
 </html>

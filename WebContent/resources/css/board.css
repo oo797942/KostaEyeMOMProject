@@ -1,8 +1,8 @@
-.boardbody {
-  background-color: #ffffff;  /* 페이지 배경화면*/
-  text-align: center;
-  font-family: arial;
-}
+/* .boardbody { */
+/*   background-color: #ffffff;  페이지 배경화면 */
+/*   text-align: center; */
+/*   font-family: arial; */
+/* } */
 #board1{
 	display: inline-block;
 	margin-top: 50px;
