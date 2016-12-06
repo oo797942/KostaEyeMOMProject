@@ -16,14 +16,15 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	      <link rel="stylesheet" href="css/board.css">
-	      <link rel="stylesheet" href="css/style.css">
+	      <link rel="stylesheet" href="resources/css/board.css">
+	      <link rel="stylesheet" href="resources/css/style.css">
 	
 </head>
-<body>
+<body id="bod">
 <div style="width: 65%" id="board1">
 <div class='form-inline' >	
 	<div style="display: inline;">
+<h1>${title} </h1>
 		<label>게시판종류 </label>
 			<select id='select1' class="form-control">
 				<option>게시판종류</option>
@@ -159,6 +160,6 @@
 </div>
   <script src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
 
-    <script src="js/index.js"></script>
+<!--     <script src="js/index.js"></script> -->
 </body>
 </html>

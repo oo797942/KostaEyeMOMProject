@@ -1,4 +1,4 @@
-body {
+#bod {
   background-color: #ffffff;  /* 페이지 배경화면*/
   text-align: center;
   font-family: arial;
@@ -6,7 +6,7 @@ body {
 #board1{
 	display: inline-block;
 	display: inline-block;
-	margin-top: 150px;
+	margin-top: 50px;
 }
 
 #title1{			/*게시판 테이블 상단바 */
