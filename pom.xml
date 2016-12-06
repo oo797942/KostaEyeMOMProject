@@ -14,7 +14,7 @@
    </properties>
    <build>
       <sourceDirectory>src</sourceDirectory>
-      <plugins>
+      <plugins> 
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.5.1</version>
