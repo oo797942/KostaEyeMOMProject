@@ -13,7 +13,7 @@
 	       	success: function(result){
 	       	  
 	       		if(result=="0"){
-	       			location.href="index.jsp";
+	       			location.reload();
 	       			
 	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
 	        		

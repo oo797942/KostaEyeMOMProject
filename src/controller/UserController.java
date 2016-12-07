@@ -39,5 +39,9 @@ public class UserController {
 		return "map.go";
 	}
 	
-	 
+	@RequestMapping("/boardInsert.do")
+	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
+		m.addAttribute("keyword", keyword );
+		return "board/boardInsert";
+	} 
 }

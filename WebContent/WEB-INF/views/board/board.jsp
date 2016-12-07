@@ -9,7 +9,17 @@
 <link rel="stylesheet" href="resources/css/board.css">
 <link rel="stylesheet" href="resources/css/style.css">
 
-
+<script type="text/javascript">
+	
+	function writeBoard(){
+// 		var num = $('#num').text();	
+// 		alert(num);
+		var lb = $("#lb").text();
+		alert(lb);
+		location.href = "boardInsert.do?keyword=${title}";
+			
+	}
+</script>
 
 </head>
 <body>
@@ -17,15 +27,26 @@
 	<div style="text-align: center;">
 		<div class='bottom1'>
 			<div id="board1" style="width: 74%">
-			<label class='boardlabel titlelabel'>${title} </label> 
+			<c:if test="${title=='tip'}">
+				<label class='boardlabel titlelabel' id="lb">육아꿀팁</label> 
+			</c:if>
+			<c:if test="${title=='qna_board'}">
+				<label class='boardlabel titlelabel' id="lb">묻고 말하기</label> 
+			</c:if>
+			<c:if test="${title=='kid_sick'}">
+				<label class='boardlabel titlelabel' id="lb">아이가 아파요</label> 
+			</c:if>
+			<c:if test="${title=='rice'}">
+				<label class='boardlabel titlelabel' id="lb">아이의 식단</label> 
+			</c:if>
+			<c:if test="${title=='baby'}">
+				<label class='boardlabel titlelabel' id="lb">아이자랑</label> 
+			</c:if>
 				<div class='form-inline selectlabel'>
 							<select id='select1'
 								class="form-control">
-								<option>게시판종류</option>
-								<option>게시판종류</option>
-								<option>게시판종류</option>
-								<option>게시판종류</option>
-								<option>게시판종류</option>
+								<option>제목</option>
+								<option>작성자</option>
 							</select>
 							<input type="text" name='search1' id='search1'
 								class='form-control'> <input type="button"
@@ -44,8 +65,8 @@
 					</tr>
 			<c:forEach var='vo' items='${list}'>
 					<tr>
-						<td class='boardtd'>${vo.b_no }</td>
-						<td class='boardtd'>${vo.b_title }</td>
+						<td class='boardtd' id='num' >${vo.b_no }</td>
+						<td class='boardtd'><a href="#">${vo.b_title }</a></td>
 						<td class='boardtd'>${vo.b_nick }</td>
 						<td class='boardtd'>${vo.b_date }</td>
 						<td class='boardtd'>${vo.b_count }</td>
@@ -69,7 +90,7 @@
 						<li><a href="#">9</a></li>
 						<li><a href="#" class="next">&raquo;</a></li>
 					</ul>
-					<input type="button" value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>
+					<input type="button"  onclick='writeBoard()' value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>
 			</div>
 			<script
 				src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>

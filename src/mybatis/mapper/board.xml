@@ -10,7 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from normal_board where b_cate=#{title}
 </select>
 
+<select id="allSick" parameterType="string" resultType="boardVO"> 
+	select * from kid_sick
+</select>
 
+<select id="allQna" parameterType="string" resultType="boardVO"> 
+	select * from qna_board
+</select>
 
 <!-- 회원가입 sql -->
 <insert id="boardInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
