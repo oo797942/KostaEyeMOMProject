@@ -7,9 +7,9 @@
 	<definition name="noTemplate" template="/WEB-INF/template/default/noTemplate.jsp">
 		<put-attribute name="noTemplate" value="" />
 	</definition>
-	<definition name="*/*.go" extends="noTemplate">
+	<definition name="*.go" extends="noTemplate">
 		<put-attribute name="title" value=":: 아이맘 :: 부모님과 아이들의 소통공간" />
-		<put-attribute name="noTemplate" value="/WEB-INF/views/{1}/{2}.jsp" />
+		<put-attribute name="noTemplate" value="/WEB-INF/views/{1}.jsp" />
 	</definition>
 
 	<definition name="defaultTemplate" template="/WEB-INF/template/default/template.jsp">

@@ -13,7 +13,7 @@ public class UserController {
 	@RequestMapping("/home.go")
 	public String goMain(){
 		System.out.println("home.go로 간당");
-		return "home/home.go";
+		return "home.go";
 	} 
 	 
 	@RequestMapping("/home.do")
