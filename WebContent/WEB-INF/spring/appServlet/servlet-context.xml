@@ -10,6 +10,7 @@
 	<bean class="member.dao.LoginDaoImpl"/>
 	<bean class="member.dao.MemberJoinDaoImpl"/>
 	<bean class="member.dao.AdminGameDaoImpl"/>	
+	<bean class='member.dao.BoardDaoImpl'/>
 	
 	<!-- 빈 스캔 설정 -->
 	<context:component-scan base-package="controller" />

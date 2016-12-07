@@ -16,7 +16,7 @@ public class BoardVO {
 	private String b_addr;
 	private String b_report;
 	private String b_nick;
-	private String b_id;
+	private String u_id;
 	public int getB_no() {
 		return b_no;
 	}
@@ -107,11 +107,11 @@ public class BoardVO {
 	public void setB_nick(String b_nick) {
 		this.b_nick = b_nick;
 	}
-	public String getB_id() {
-		return b_id;
+	public String getu_id() {
+		return u_id;
 	}
-	public void setB_id(String b_id) {
-		this.b_id = b_id;
+	public void setu_id(String u_id) {
+		this.u_id = u_id;
 	}
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,14 +41,23 @@
 						<td class='boardtd'>작성일</td>
 						<td class='boardtd'>조회수</td>
 					</tr>
-
-					<tr style="font-size: 9pt">
-						<td class='boardtd'><a href="#">제희 힘내라</a></td>
-						<!-- 게시판내용 -->
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>9999</td>
+			<c:forEach var='vo' items='${list}'>
+<%-- 				<c:if test="${vo.b_title }"> --%>
+					<tr>
+						<td>${vo.b_title }</td>
+						<td>aaa</td>
+						<td>${vo.b_date }</td>
+						<td>${vo.b_count }</td>
 					</tr>
+<%-- 				</c:if> --%>
+			</c:forEach>
+<!-- 					<tr style="font-size: 9pt"> -->
+<!-- 						<td class='boardtd'><a href="#">제희 힘내라</a></td> -->
+<!-- 						게시판내용 -->
+<!-- 						<td class='boardtd'>임경민</td> -->
+<!-- 						<td class='boardtd'>2016.12.01</td> -->
+<!-- 						<td class='boardtd'>9999</td> -->
+<!-- 					</tr> -->
 
 				</table>
 			</div>

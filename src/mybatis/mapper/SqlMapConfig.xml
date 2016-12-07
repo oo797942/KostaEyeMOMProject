@@ -10,7 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 <!-- 	새로 vo를 만들었을경우 설정 -->
 		<typeAlias type="member.vo.MemberVO" alias="memberVO" />
-				<typeAlias type="member.vo.GameVO" alias="gameVO" />
+		<typeAlias type="member.vo.GameVO" alias="gameVO" />
+		<typeAlias type="member.vo.BoardVO" alias="boardVO" />
 	</typeAliases>
 		 
 	<environments default="development">
@@ -28,6 +29,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- 	새로 맵퍼를 만들었을경우 추가 -->
 		<mapper resource="mybatis/mapper/member.xml" />
 		<mapper resource="mybatis/mapper/admin.xml" />
+		<mapper resource="mybatis/mapper/board.xml" />
 	</mappers>
 	
 </configuration>
