@@ -20,10 +20,12 @@ public class UserController {
 		return "home";
 	}
 	
-	@RequestMapping("/join.go")
+	@RequestMapping("/gojoin.do")
 	public String goJoin(){
 		return "join";
 	}
+	
+	
 	
 	@RequestMapping(value = "{title}", method = RequestMethod.GET)
 	public String callBorad(Model m,@PathVariable("title") String title){
