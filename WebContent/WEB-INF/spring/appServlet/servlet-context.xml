@@ -5,8 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+<!-- 	Dao 빈 생성 -->
 	<bean class="member.dao.LoginDaoImpl"/>
-		<bean class="member.dao.MemberJoinDaoImpl"/>
+	<bean class="member.dao.MemberJoinDaoImpl"/>
+	<bean class="member.dao.AdminGameDaoImpl"/>	
+	
 	<!-- 빈 스캔 설정 -->
 	<context:component-scan base-package="controller" />
 
@@ -16,6 +20,9 @@
 	<!-- 리소스 설정 (Css, JS, jquery, images) -->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 	
+<!-- 	파일 업로드 설정 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+	 
 	<!-- 뷰리졸버 설정 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,6 +30,23 @@
 		<property name="suffix" value=".jsp" />
 		<property name="order" value="1" />
 	</bean>
+	
+		<!-- JNDI 설정 -->
+<!-- 	<bean id='dataSource' class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!-- 		<property name="jndiName" value='java:comp/env/jdbc/myora'/> -->
+<!-- 	</bean> -->
+	
+	<!-- Mybatis설정 -->
+<!-- 	<bean id='factoryBean' class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 	   <property name="dataSource" ref='dataSource' /> -->
+<!-- 	   <property name="configLocation" value='classpath:config/config.xml'></property> -->
+<!-- 	   <property name="mapperLocations" value='classpath*:mybatis/mapper/*.xml'></property> -->
+<!-- 	</bean> -->
+
+	<!-- SqlSession(연결객체) 빈 설정 -->
+<!-- 	<bean id='ss' class="org.mybatis.spring.SqlSessionTemplate"> -->
+<!-- 		 <constructor-arg ref="factoryBean" /> -->
+<!-- 	</bean> -->
 
 	<!-- 타일즈 설정 -->
 	<bean id="tilesViewResolver"
