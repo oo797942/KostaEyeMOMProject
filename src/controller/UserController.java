@@ -27,13 +27,6 @@ public class UserController {
 	}
 	
 	
-	
-	@RequestMapping(value = "{title}", method = RequestMethod.GET)
-	public String callBorad(Model m,@PathVariable("title") String title){
-		m.addAttribute("title", title );
-		return "board/board";
-	}
-	
 	@RequestMapping("/place.do")
 	public String callPlace(Model m,@RequestParam("keyword") String keyword){
 		m.addAttribute("keyword", keyword );
