@@ -18,12 +18,12 @@ public class UserController {
 	 
 	@RequestMapping("/home.do")
 	public String goMain2(){
-		return "home";
+		return "home/home";
 	}
 	
 	@RequestMapping("/gojoin.do")
 	public String goJoin(){
-		return "join";
+		return "joinview/join";
 	}
 	
 	
@@ -37,7 +37,7 @@ public class UserController {
 	@RequestMapping("/place.do")
 	public String callPlace(Model m,@RequestParam("keyword") String keyword){
 		m.addAttribute("keyword", keyword );
-		return "place";
+		return "map/place";
 	}
 	
 	@RequestMapping("/map.go")
