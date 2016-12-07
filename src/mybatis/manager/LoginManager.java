@@ -12,26 +12,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import member.vo.MemberVO;
 
 public class LoginManager {
-private static SqlSessionFactory sqlMapper;
-	
-	static{
-		String resource = "mybatis/mapper/SqlMapConfig.xml";
-		try{
-		
-			Reader reader = Resources.getResourceAsReader(resource);
-			sqlMapper = new SqlSessionFactoryBuilder().build(reader);
-			reader.close();
-		}catch( IOException ex)
-		{
-			System.out.println("MemberManager fail : " + ex.getMessage());
-		}
-	}
+
 	
 	
 	
 	public static MemberVO userLogin(MemberVO vo ) throws SQLException
 	   {
-		   SqlSession session = sqlMapper.openSession();
+		   SqlSession session = CommonManager.db().openSession();
 		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
 		   System.out.println("manager : "+memberVO.getU_id());
 		   session.commit();

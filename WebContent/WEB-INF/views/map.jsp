@@ -61,14 +61,16 @@ function dongName(latitude, longitude){
            success: function(myJSONResult){
 
         	  // 구글맵에서 현재 위치의 지역 구 가져 와서 tag에 저장하기
-              tag =myJSONResult.results[3].address_components[1].long_name;
-               
+              var tag = myJSONResult.results[3].address_components[1].long_name;
+        	  
                //alert(tag);
-              if( '<%= keyword%>' == ''  ) { 
+<%--               if( <%= keyword%> == ''  ) {  --%>
+              if( <%= keyword%> != ''  ) { 
                  
-                 $("#keyword").attr("value",tag+"<%=place%>");
+                 $("#keyword").attr("value",tag+<%=keyword%>);
+              }else{
+               $("#keyword").attr("value", <%=keyword %> );
               }
-//                $("#keyword").attr("value",tag+" 키즈카페");
               // 마커를 담을 배열입니다
               var markers = [];
 
