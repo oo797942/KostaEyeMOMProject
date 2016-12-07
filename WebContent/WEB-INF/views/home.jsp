@@ -114,15 +114,56 @@
 					<li>자주 검색한 질병</li>
 					<li>자주 검색한 질병</li>
 					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
 				</ol>
 			</div>
 			<table id="groupBuyTable" cellspacing="0">
-			<caption>공동구매 최신 글</caption>
+				<caption>
+					<label>공동구매 최신 글</label>
+				</caption>
 				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg1" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						인원: 6명<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg2" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						마감<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg3" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						마감<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg4" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						인원: 6명<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
 				</tr>
 			</table>
 		</div>
