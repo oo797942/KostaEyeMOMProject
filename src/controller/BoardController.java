@@ -15,6 +15,6 @@ public class BoardController {
 		m.addAttribute("title", title );
 		return "board/board";
 	}
-	
+	  
 }
  
