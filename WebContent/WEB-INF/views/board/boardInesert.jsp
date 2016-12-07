@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/boardInsert.css">
+<link rel="stylesheet" href="resources/css/boardInsert.css">
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -47,14 +47,8 @@ function fileInfo(f){
                <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
                   <div>
-                     <label id='boardlabel2'>카테고리 &nbsp; </label> <select id='cate3'
-                        class="form-control">
-                        <option>카테고리</option>
-                        <option>카테고리</option>
-                        <option>카테고리</option>
-                        <option>카테고리</option>
-                        <option>카테고리</option>
-                     </select>
+                     <label id='boardlabel2'>카테고리 &nbsp; </label> <input type="text"
+                        class='form-control inputcate' id='title3' readonly="readonly"/>
                   </div>
                </div>
                <div class='form-inline'>
