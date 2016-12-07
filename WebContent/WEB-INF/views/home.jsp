@@ -125,48 +125,58 @@
 				</caption>
 				<tr>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg1" />
-						<b>[상품이름]</b><br/>
-						123,456원<br/>
-						<hr color="#808080" />
-						인원: 6명<br/>
-						<b>구매기간</b><br/>
-						2016년 12월 7일 ~<br/>
-						2016년 12월 9일
-						</td>
+						id="groupImg1" /> <b>[상품이름]</b><br /> 123,456원<br />
+						<hr color="#808080" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
+						7일 ~<br /> 2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg2" />
-						<b>[상품이름]</b><br/>
-						123,456원<br/>
-						<hr color="#808080" />
-						마감<br/>
-						<b>구매기간</b><br/>
-						2016년 12월 7일 ~<br/>
-						2016년 12월 9일
-						</td>
+						id="groupImg2" /> <b>[상품이름]</b><br /> 123,456원<br />
+						<hr color="#808080" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일 ~<br />
+						2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg3" />
-						<b>[상품이름]</b><br/>
-						123,456원<br/>
-						<hr color="#808080" />
-						마감<br/>
-						<b>구매기간</b><br/>
-						2016년 12월 7일 ~<br/>
-						2016년 12월 9일
-						</td>
+						id="groupImg3" /> <b>[상품이름]</b><br /> 123,456원<br />
+						<hr color="#808080" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일 ~<br />
+						2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg4" />
-						<b>[상품이름]</b><br/>
-						123,456원<br/>
-						<hr color="#808080" />
-						인원: 6명<br/>
-						<b>구매기간</b><br/>
-						2016년 12월 7일 ~<br/>
-						2016년 12월 9일
-						</td>
+						id="groupImg4" /> <b>[상품이름]</b><br /> 123,456원<br />
+						<hr color="#808080" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
+						7일 ~<br /> 2016년 12월 9일</td>
 				</tr>
 			</table>
 		</div>
+
+		<div id="mainbottom">
+			<div id="container">
+				<ul class="tabs">
+					<li class="active" rel="tab1">공지사항</li>
+					<li rel="tab2">구매랭킹</li>
+					<li rel="tab3">공지사항</li>
+				</ul>
+				<div class="tab_container">
+					<div id="tab1" class="tab_content">
+						<ul>
+							<li><a href="#">이것은 두 번째 탭의</a></li>
+							<li><a href="#">이것은 두 번째 탭의</a></li>
+							<li><a href="#">이것은 두 번째 탭의</a></li>
+							<li><a href="#">이것은 두 번째 탭의</a></li>
+							<li><a href="#">이것은 두 번째 탭의</a></li>
+						</ul>
+					</div>
+					<!-- #tab1 -->
+					<div id="tab2" class="tab_content">2222Mortal Kombat returns
+						after a lengthy hiatus and puts players back into the Tournament
+						for 2D fighting with gruesome combat.</div>
+					<!-- #tab2 -->
+					<div id="tab3" class="tab_content">3333Halo: Reach is the
+						culmination of the superlative combat, sensational multiplayer,
+						and seamless online integration that are the hallmarks of this
+						superb series.</div>
+					<!-- #tab3 -->
+				</div>
+				<!-- .tab_container -->
+			</div>
+			<!-- #container -->
+		</div>
+
 
 	</section>
 	<footer>

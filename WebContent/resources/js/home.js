@@ -12,15 +12,15 @@ $(function() {
 			$("#searchInput").focus();
 		}
 	});
-	 
+
 	// 메뉴버튼을 클릭했을 때
-	$("#mainTopMenuBarImg").click(function(){
+	$("#mainTopMenuBarImg").click(function() {
 		// 메뉴가 화면에 떠있으면 메뉴를 가리고 이미지를 띄워준다
 		if ($("#menu").attr("style") == "display: block;") {
 			$("#menu").hide();
 			$("#mainMenuImg").show();
-		// 아니면 이미지를 가리고 메뉴를 띄워준다
-		}else{
+			// 아니면 이미지를 가리고 메뉴를 띄워준다
+		} else {
 			$("#mainMenuImg").hide();
 			$("#menu").show();
 		}
@@ -45,8 +45,8 @@ $(function() {
 	$("#menu").mouseout(function() {
 		$("#menu").hide();
 		$("#mainMenuImg").show();
-	}); 
-	
+	});
+
 	// bxSlider
 	var mySlider = $('#slide_banner').bxSlider({
 		mode : 'horizontal',// 가로 방향 수평 슬라이드
@@ -60,5 +60,18 @@ $(function() {
 		autoHover : false, // 마우스 호버시 정지 여부
 		controls : false
 	});
-	
+
+	$(".tab_content").hide();
+	$(".tab_content:first").show();
+
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active").css("color", "#333");
+		// $(this).addClass("active").css({"color": "darkred","font-weight":
+		// "bolder"});
+		$(this).addClass("active").css("color", "darkred");
+		$(".tab_content").hide()
+		var activeTab = $(this).attr("rel");
+		$("#" + activeTab).fadeIn()
+	});
+
 });
