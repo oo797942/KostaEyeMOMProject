@@ -125,13 +125,45 @@
 				</caption>
 				<tr>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg1" /></td>
+						id="groupImg1" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						인원: 6명<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg2" /></td>
+						id="groupImg2" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						마감<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg3" /></td>
+						id="groupImg3" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						마감<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg4" /></td>
+						id="groupImg4" />
+						<b>[상품이름]</b><br/>
+						123,456원<br/>
+						<hr color="#808080" />
+						인원: 6명<br/>
+						<b>구매기간</b><br/>
+						2016년 12월 7일 ~<br/>
+						2016년 12월 9일
+						</td>
 				</tr>
 			</table>
 		</div>
