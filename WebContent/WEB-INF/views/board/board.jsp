@@ -17,8 +17,8 @@
 	<div style="text-align: center;">
 		<div class='bottom1'>
 			<div id="board1" style="width: 74%">
-				<div class='form-inline' style="width:700px; position: relative; left:253px; margin-bottom:30px;">
-							<select id='select1'
+				<div class='form-inline' style="width:700px; position: relative; left:195px; margin-bottom:30px;">
+							<label class='boardlabel' style="position: relative; right: 55%">게시판종류</label> <select id='select1'
 								class="form-control">
 								<option>게시판종류</option>
 								<option>게시판종류</option>

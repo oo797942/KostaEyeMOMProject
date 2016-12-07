@@ -31,7 +31,7 @@ public class UserController {
 	@RequestMapping(value = "{title}", method = RequestMethod.GET)
 	public String callBorad(Model m,@PathVariable("title") String title){
 		m.addAttribute("title", title );
-		return "board";
+		return "board/board";
 	}
 	
 	@RequestMapping("/place.do")

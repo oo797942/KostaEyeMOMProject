@@ -38,6 +38,7 @@
     border-collapse: collapse;
   }
 .boardlabel{
+	font-size : 17pt;
 	font-weight: bolder;
 }  
 .boardinline{
