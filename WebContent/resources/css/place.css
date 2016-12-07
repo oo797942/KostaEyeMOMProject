@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+#menuTd{
+	float:right;
+	vertical-align:top;
+	width:150px; 
+	padding-top: 20px;
+}
+
+#menuTd2{
+	width:85%;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+
+#menuDiv{
+	width:150px; 
+	float: right; 
+	position: relative; 
+	margin-right: 5px;"	
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+iframe{
+	padding-top: 20px;
+	padding-left: 10px;
+	width:980px; 
+	height: 520px; 
+	border: none;
+	
+}
+
+.list-group-item{
+	
+	list-style:none;
+	color: #241;
+}
+
+#mapHr{
+	size:10px; 
+	color:black; 
+	width:100px; 
+	padding:0px; 
+	margin:0px;
+	align:center; 
+}
+
+#menuTable{
+	width: 1200px; 
+	text-align:center;
+}
+
+#iFrameDiv{
+	width:950px; 
+	float: left;
+}
+
