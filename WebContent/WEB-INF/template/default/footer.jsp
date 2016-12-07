@@ -24,11 +24,13 @@
 				</p>
 			</td>
 			<td width="25%">
-				<p class="footerTitle">FAQ</p>
+				<p class="footerTitle">Customer Service</p>
 				<br />
 				<p class="footerText">
-					<a href="#">질문1</a> <br /> <a href="#">질문2</a> <br /> <a href="#">질문3</a>
-					<br /> <a href="#">질문4</a> <br />
+					<a href="#">공지사항</a><br />
+					<a href="#">FAQ</a><br />
+					<a href="#">문의하기</a><br />
+					<a href="#">신고하기</a><br />
 				</p>
 			</td>
 			<td width="25%">

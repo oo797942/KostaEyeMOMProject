@@ -37,11 +37,11 @@
 						<li class="lifont">엄빠네
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-								<li><a href="gojoin.do">· 육아꿀팁</a></li>
-								<li><a href="#">· 묻고 말하기</a></li>
-								<li><a href="#">· 아이가 아파요</a></li>
-								<li><a href="#">· 아이의 식단</a></li>
-								<li><a href="#">· 아이자랑</a></li>
+								<li><a href="yuka">· 육아꿀팁</a></li>
+								<li><a href="qna_board">· 묻고 말하기</a></li>
+								<li><a href="kid_sick">· 아이가 아파요</a></li>
+								<li><a href="rice">· 아이의 식단</a></li>
+								<li><a href="baby">· 아이자랑</a></li>
 							</ul>
 						</li>
 						<li class="lifont lileft">아이네
@@ -104,78 +104,62 @@
 			</table>
 		</div>
 		<div id="mainMiddle">
-			<div id="middlesick">
-				<p>자주 검색하는 질병</p>
-				<ol>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-					<li>자주 검색한 질병</li>
-				</ol>
-			</div>
+			<table id="tabmenutable" cellspacing="0">
+				<tr id="tabmenuTr">
+					<td class="selectnow menubtn" rel="menu1">공지사항</td>
+					<td class="noselect menubtn" rel="menu2">모모모모</td>
+				</tr>
+				<tr id="tabcontenttr">
+					<td colspan="2">
+
+						<ul id="menu1" class="menucontent">
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+						</ul>
+
+						<ul id="menu2" class="menucontent">
+							<li><a>ddd2</a></li>
+							<li><a>ddd3</a></li>
+							<li><a>ddd4</a></li>
+							<li><a>ddd5</a></li>
+						</ul>
+
+					</td>
+				</tr>
+			</table>
 			<table id="groupBuyTable" cellspacing="0">
 				<caption>
 					<label>공동구매 최신 글</label>
 				</caption>
 				<tr>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg1" /> <b>[상품이름]</b><br /> 123,456원<br />
-						<hr color="#808080" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
+						id="groupImg1" /> <a class="goGroupBuy"><b>[상품이름]</b></a> <br />
+						123,456원<br />
+						<hr color="#ffa07a" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
 						7일 ~<br /> 2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg2" /> <b>[상품이름]</b><br /> 123,456원<br />
-						<hr color="#808080" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일 ~<br />
-						2016년 12월 9일</td>
+						id="groupImg2" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
+						123,456원<br />
+						<hr color="#ffa07a" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일
+						~<br /> 2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg3" /> <b>[상품이름]</b><br /> 123,456원<br />
-						<hr color="#808080" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일 ~<br />
-						2016년 12월 9일</td>
+						id="groupImg3" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
+						123,456원<br />
+						<hr color="#ffa07a" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일
+						~<br /> 2016년 12월 9일</td>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg4" /> <b>[상품이름]</b><br /> 123,456원<br />
-						<hr color="#808080" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
+						id="groupImg4" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
+						123,456원<br />
+						<hr color="#ffa07a" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
 						7일 ~<br /> 2016년 12월 9일</td>
 				</tr>
 			</table>
+
 		</div>
 
-		<div id="mainbottom">
-			<div id="container">
-				<ul class="tabs">
-					<li class="active" rel="tab1">공지사항</li>
-					<li rel="tab2">구매랭킹</li>
-					<li rel="tab3">공지사항</li>
-				</ul>
-				<div class="tab_container">
-					<div id="tab1" class="tab_content">
-						<ul>
-							<li><a href="#">이것은 두 번째 탭의</a></li>
-							<li><a href="#">이것은 두 번째 탭의</a></li>
-							<li><a href="#">이것은 두 번째 탭의</a></li>
-							<li><a href="#">이것은 두 번째 탭의</a></li>
-							<li><a href="#">이것은 두 번째 탭의</a></li>
-						</ul>
-					</div>
-					<!-- #tab1 -->
-					<div id="tab2" class="tab_content">2222Mortal Kombat returns
-						after a lengthy hiatus and puts players back into the Tournament
-						for 2D fighting with gruesome combat.</div>
-					<!-- #tab2 -->
-					<div id="tab3" class="tab_content">3333Halo: Reach is the
-						culmination of the superlative combat, sensational multiplayer,
-						and seamless online integration that are the hallmarks of this
-						superb series.</div>
-					<!-- #tab3 -->
-				</div>
-				<!-- .tab_container -->
-			</div>
-			<!-- #container -->
-		</div>
+		<div id="mainbottom"></div>
 
 
 	</section>
@@ -184,3 +168,21 @@
 	</footer>
 
 </div>
+
+
+
+<!-- 			<div id="middlesick"> -->
+<!-- 				<p>자주 검색하는 질병</p> -->
+<!-- 				<ol> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 					<li>자주 검색한 질병</li> -->
+<!-- 				</ol> -->
+<!-- 			</div> -->

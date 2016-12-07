@@ -227,15 +227,15 @@ footer {
 	width: 1200px;
 	padding-top: 40px;
 	height: 300px;
-	background: blue;
 }
 
 #banner_wrap {
 	border-top: 1px solid black;
 	width: 1000px;
+	height: 300px;
 	padding: 0px;
 	float: left;
-	width: 1000px;
+	padding: 0px;
 }
 
 .slide {
@@ -254,8 +254,6 @@ footer {
 #mainMiddle {
 	width: 1200px;
 	height: 450px;
-	margin-top: 20px;
-	margin-top: 20px;
 	text-align: left;
 }
 
@@ -270,12 +268,8 @@ footer {
 	font-size: 10pt;
 }
 
-#mainMiddle table, #mainMiddle tr, #mainMiddle td {
-	border: 1px solid #808080;
-}
-
 #middlesick {
-	border: 2px solid #808080;
+	border: 2px solid #ffa07a;
 	float: left;
 	width: 200px;
 	height: 300px;
@@ -287,13 +281,13 @@ footer {
 }
 
 #groupBuyTable {
-	float: left;
+	margin-top: 10px;
+	vertical-align: top;
 	border: none;
 	width: 977px;
-	height: 383.4px;
-	margin-left: 20px;
+	height: 380px;
 	text-align: center;
-	float: left;
+	background: rgba(0, 0, 0, 0.05);
 }
 
 #groupBuyTable caption {
@@ -314,72 +308,62 @@ footer {
 	height: 200px;
 }
 
-#mainbottom {
-	width: 1200px;
-	height: 300px;
+.groupImg:HOVER {
+	cursor: pointer;
+	transition-duration: .3s;
+	opacity: 0.7;
 }
 
-ul.tabs {
-	margin: 0;
-	padding: 0;
-	float: left;
-	list-style: none;
-	height: 32px;
-	border-bottom: 1px solid #eee;
-	border-left: 1px solid #eee;
-	width: 100%;
-	font-family: "dotum";
-	font-size: 12px;
+.goGroupBuy {
+	cursor: pointer;
 }
 
-ul.tabs li {
+.goGroupBuy:HOVER {
+	color: #a8060b;
+}
+
+/* ---------------- */
+#tabmenutable {
+	width: 200px;
+	height: 340px;
+	margin-top: 40px;
+	margin-right: 15px;
 	float: left;
 	text-align: center;
-	cursor: pointer;
-	width: 82px;
-	height: 31px;
-	line-height: 31px;
-	border: 1px solid #eee;
-	border-left: none;
-	font-weight: bold;
-	background: #fafafa;
-	overflow: hidden;
-	position: relative;
-}
-
-ul.tabs li.active {
-	background: #FFFFFF;
-	border-bottom: 1px solid #FFFFFF;
-}
-
-.tab_container {
-	border: 1px solid #eee;
-	border-top: none;
-	clear: both;
 	float: left;
-	width: 1200px;
-	background: #FFFFFF;
 }
 
-.tab_content {
-	padding: 5px;
-	font-size: 12px;
-	display: none;
-	height: 300px;
+#tabmenuTr td {
+	cursor: pointer;
+	height: 40px;
 }
 
-.tab_container .tab_content ul {
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
+#tabmenuTr td:HOVER {
+	transition-duration: .3s;
+	opacity: 0.7;
 }
 
-.tab_container .tab_content ul li {
-	padding: 5px;
+.noselect {
+	border:2px solid #ffa07a;
+	background: #f6f6f6;
+	color: #333333;
+}
+
+.selectnow {
+	color: #9f0000;
+	border:2px solid #ffa07a;
+	border-bottom: none;
+}
+
+#tabcontenttr td {
+	text-align: left;
+	vertical-align: top;
+	border:2px solid #ffa07a;
+	border-top:none;
+}
+
+.menucontent {
+	margin: 0;
+	padding: 0;
 	list-style: none;
-}
-
-#container {
-	width: 1200px;
-	
 }

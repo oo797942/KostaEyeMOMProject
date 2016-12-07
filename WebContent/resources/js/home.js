@@ -51,7 +51,7 @@ $(function() {
 	var mySlider = $('#slide_banner').bxSlider({
 		mode : 'horizontal',// 가로 방향 수평 슬라이드
 		speed : 400, // 이동 속도를 설정
-		pager : false, // 현재 위치 페이징 표시 여부 설정
+		pager : true, // 현재 위치 페이징 표시 여부 설정
 		moveSlides : 1, // 슬라이드 이동시 개수
 		slideWidth : 1000, // 슬라이드 너비
 		minSlides : 1, // 최소 노출 개수
@@ -61,17 +61,17 @@ $(function() {
 		controls : false
 	});
 
-	$(".tab_content").hide();
-	$(".tab_content:first").show();
+	// 모두 숨겨놓은 뒤 첫 번쨰 화면만 보여준다.
+	$(".menucontent").hide();
+	$("#menu1").show();
 
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active").css("color", "#333");
-		// $(this).addClass("active").css({"color": "darkred","font-weight":
-		// "bolder"});
-		$(this).addClass("active").css("color", "darkred");
-		$(".tab_content").hide()
-		var activeTab = $(this).attr("rel");
-		$("#" + activeTab).fadeIn()
+	// 탭을 클릭하면 메뉴를 보여줌
+	$(".menubtn").click(function() {
+		var clicked = $(this).attr('rel');
+		$(this).removeClass("noselect");
+		$(this).addClass("selectnow");
+		$(".menucontent").hide();
+		$("#" + clicked).show();
 	});
 
 });
