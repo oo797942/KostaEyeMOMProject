@@ -23,14 +23,9 @@ public class BoardController {
 	@RequestMapping(value = "{title}", method = RequestMethod.GET)
 	public String callBoard(Model m,@PathVariable("title") String title){
 		List<BoardVO> list=null;
-		if(title.equals("tip")||title.equals("rice")||title.equals("baby")){
-			
+		
+			 
 			list =boardDao.allBoard(title);
-		}else if(title.equals("qna_board")){
-			
-		}else if(title.equals("kid_sick")){
-			
-		}
 		
 		
 		System.out.println(list);
