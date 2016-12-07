@@ -8,10 +8,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<properties resource="mybatis/mapper/db.properties"/>
 
 	<typeAliases>
+<!-- 	새로 vo를 만들었을경우 설정 -->
 		<typeAlias type="member.vo.MemberVO" alias="memberVO" />
-		
+				<typeAlias type="member.vo.GameVO" alias="gameVO" />
 	</typeAliases>
-		
+		 
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -24,8 +25,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
+<!-- 	새로 맵퍼를 만들었을경우 추가 -->
 		<mapper resource="mybatis/mapper/member.xml" />
-		
+		<mapper resource="mybatis/mapper/admin.xml" />
 	</mappers>
 	
 </configuration>
