@@ -170,7 +170,7 @@
 
 	</section>
 	<footer>
-		<jsp:include page="../template/default/footer.jsp" />
+		
 	</footer>
 
 </div>

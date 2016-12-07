@@ -19,9 +19,9 @@
 			value="/WEB-INF/template/default/footer.jsp" />
 	</definition>
 
-	<definition name="*" extends="defaultTemplate">
+	<definition name="*/*" extends="defaultTemplate">
 		<put-attribute name="title" value=":: 아이맘 :: 부모님과 아이들의 소통공간" />
-		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
 
 
