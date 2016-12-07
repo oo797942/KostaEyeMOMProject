@@ -21,38 +21,38 @@ public class AdminController {
 
 	@RequestMapping("/adminBoard.go")
 	public String adminBoard(HttpSession session){
-		return "admin/adminBoard";
+		return "adminBoard";
 	}
 	
 	@RequestMapping("/adminMember.go")
 	public String admonMember(HttpSession session){
-		return "admin/adminMember";
+		return "adminMember";
 	}
 	@RequestMapping("/adminReport.go")
 	public String adminReport(HttpSession session){
-		return "admin/adminReport";
+		return "adminReport";
 	}
 	
 	@RequestMapping("/adminQna.go")
 	public String admonQna(HttpSession session){
-		return "admin/adminQna";
+		return "adminQna";
 	}
 	@RequestMapping("/adminGallery.go")
 	public String adminGallery(HttpSession session){
-		return "admin/adminGallery";
+		return "adminGallery";
 	}
 	
 	@RequestMapping("/adminVideo.go")
 	public String admonVideo(HttpSession session){
-		return "admin/adminVideo";
+		return "adminVideo";
 	}
 	
 	@RequestMapping("/adminGame.go")
 	public String admonGame(HttpSession session){
-		return "admin/adminGame";
+		return "adminGame";
 	}
 	@RequestMapping("/adminGameInsert.go")
 	public String admonGameInsert(HttpSession session){
-		return "admin/adminGameInsert";
+		return "adminGameInsert";
 	}
 }
