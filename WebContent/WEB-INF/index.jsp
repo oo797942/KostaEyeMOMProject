@@ -8,7 +8,5 @@
 </head> 
 <body>
 <% response.sendRedirect("home.go"); %>
-
- 
 </body>
 </html>

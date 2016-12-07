@@ -114,15 +114,24 @@
 					<li>자주 검색한 질병</li>
 					<li>자주 검색한 질병</li>
 					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
+					<li>자주 검색한 질병</li>
 				</ol>
 			</div>
 			<table id="groupBuyTable" cellspacing="0">
-			<caption>공동구매 최신 글</caption>
+				<caption>
+					<label>공동구매 최신 글</label>
+				</caption>
 				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg1" /></td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg2" /></td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg3" /></td>
+					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
+						id="groupImg4" /></td>
 				</tr>
 			</table>
 		</div>
