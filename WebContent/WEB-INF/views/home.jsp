@@ -37,7 +37,7 @@
 						<li class="lifont">엄빠네
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-								<li><a href="yuka">· 육아꿀팁</a></li>
+								<li><a href="tip">· 육아꿀팁</a></li>
 								<li><a href="qna_board">· 묻고 말하기</a></li>
 								<li><a href="kid_sick">· 아이가 아파요</a></li>
 								<li><a href="rice">· 아이의 식단</a></li>
