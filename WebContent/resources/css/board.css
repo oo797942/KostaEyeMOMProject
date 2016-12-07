@@ -17,18 +17,13 @@
 	margin-left: 20px;
 }
 
-#kind1{
-	margin-left:110px;
-	text-align:left;
-	line-height: 85px;
-}
 
 #search1{
-	width:30%;
+	width:20%;
 	margin-left: 20px;
 	
 }
-#kind1 #searchbtn1{
+#searchbtn1{
 	color: white;
 	background: #ffa07a;
 }
@@ -48,8 +43,11 @@
 .boardinline{
 	display: inline;
 }
+.space1{
+	height: 13px;
+}
+
 .writebtn{
-	margin-left: 58%;
 	background-color: #ffa07a;
 	color: white;
 } 

@@ -13,53 +13,48 @@
 
 </head>
 <body>
+  <div class="body">
 	<div style="text-align: center;">
 		<div class='bottom1'>
-			<div style="width: 65%" id="board1">
-				<div class='form-inline'>
-					<div class='boardinline'>
-						<label class='boardlabel'>게시판종류 </label> 
-						<select id='select1' class="form-control">
-							<option>게시판종류</option>
-							<option>게시판종류</option>
-							<option>게시판종류</option>
-							<option>게시판종류</option>
-							<option>게시판종류</option>
-						</select>
-					</div>
-					<div id='kind1' class='boardinline'>
-						<label class='boardlabel'>검색</label> <input type="text"
-							name='search' id='search1' class='form-control'> <input
-							type="button" name='searchbtn' id='searchbtn1' class='btn'
-							value='검색'>
-					</div>
+			<div id="board1" style="width: 74%">
+				<div class='form-inline' style="width:700px; position: relative; left:253px; margin-bottom:30px;">
+							<select id='select1'
+								class="form-control">
+								<option>게시판종류</option>
+								<option>게시판종류</option>
+								<option>게시판종류</option>
+								<option>게시판종류</option>
+								<option>게시판종류</option>
+							</select>
+							<input type="text" name='search1' id='search1'
+								class='form-control'> <input type="button"
+								name='searchbtn' id='searchbtn1' class='btn' value='검색'>
+							<!-- 검색버튼 -->
 				</div>
 				<table class='boardtable'>
 					<tr id="title1">
 						<!-- for문 입장 -->
-						<td class='boardtd' id='boardtdtitle'>제목</td>	<!-- 게시판  -->
+						<td class='boardtd' id='boardtdtitle'>제목</td>
+						<!-- 게시판  -->
 						<td class='boardtd'>작성자</td>
-						<td class='boardtd'>조회수</td>
 						<td class='boardtd'>작성일</td>
+						<td class='boardtd'>조회수</td>
 					</tr>
 
 					<tr style="font-size: 9pt">
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td><!-- 게시판내용 -->
+						<td class='boardtd'><a href="#">제희 힘내라</a></td>
+						<!-- 게시판내용 -->
 						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
 						<td class='boardtd'>2016.12.01</td>
+						<td class='boardtd'>9999</td>
 					</tr>
-					
+
 				</table>
 			</div>
-			<div style="height: 25px"></div>
+			<div class='space1'></div>
 			<div class='form-inline'>
-				<div>
-					<input type="button" value='글쓰기' class='btn writebtn' />
-				</div>
-				<div style="display: inline-block;">
-					<ul class="pagination modal-1 boardinline">
-						<li><a href="#" class="prev">&laquo</a></li>
+					<ul class="pagination modal-1">
+						<li><a href="#" class="prev">&laquo;</a></li>
 						<li><a href="#" class="active">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
@@ -72,11 +67,12 @@
 						<li><a href="#">9</a></li>
 						<li><a href="#" class="next">&raquo;</a></li>
 					</ul>
-				</div>
+					<input type="button" value='글쓰기' class='btn writebtn' style="margin-bottom: 25px;position: relative;left: 215px"/>
 			</div>
 			<script
 				src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
 		</div>
-		</div>
+	</div>
+	</div>
 </body>
 </html>
