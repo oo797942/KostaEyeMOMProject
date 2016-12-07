@@ -68,6 +68,9 @@ $(function() {
 	// 탭을 클릭하면 메뉴를 보여줌
 	$(".menubtn").click(function() {
 		var clicked = $(this).attr('rel');
+		$(".menubtn").removeClass("selectnow");
+		$(".menubtn").removeClass("noselect");
+		$(".menubtn").addClass("noselect");
 		$(this).removeClass("noselect");
 		$(this).addClass("selectnow");
 		$(".menucontent").hide();
