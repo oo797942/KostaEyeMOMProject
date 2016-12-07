@@ -12,8 +12,8 @@ public class UserController {
 
 	@RequestMapping("/home.go")
 	public String goMain(){
-		System.out.println("home.go �슂泥�");
-		return "home.go";
+		System.out.println("home.go로 간당");
+		return "home/home.go";
 	} 
 	 
 	@RequestMapping("/home.do")
