@@ -18,8 +18,8 @@
 			<div style="width: 65%" id="board1">
 				<div class='form-inline'>
 					<div class='boardinline'>
-						<label class='boardlabel'>게시판종류 </label> <select id='select1'
-							class="form-control">
+						<label class='boardlabel'>게시판종류 </label> 
+						<select id='select1' class="form-control">
 							<option>게시판종류</option>
 							<option>게시판종류</option>
 							<option>게시판종류</option>
@@ -37,78 +37,19 @@
 				<table class='boardtable'>
 					<tr id="title1">
 						<!-- for문 입장 -->
-						<td class='boardtd'>제목</td>
+						<td class='boardtd' id='boardtdtitle'>제목</td>	<!-- 게시판  -->
 						<td class='boardtd'>작성자</td>
-						<td class='boardtd'>추천수</td>
 						<td class='boardtd'>조회수</td>
-						<td class='boardtd'>신고수</td>
 						<td class='boardtd'>작성일</td>
-						<td class='boardtd'>게시판 분류</td>
 					</tr>
 
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
+					<tr style="font-size: 9pt">
+						<td class='boardtd'><a href="#">제희 리폿좀</a></td><!-- 게시판내용 -->
 						<td class='boardtd'>임경민</td>
 						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
 						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
 					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
-					<tr>
-						<td class='boardtd'><a href="#">제희 리폿좀</a></td>
-						<td class='boardtd'>임경민</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>9999</td>
-						<td class='boardtd'>0</td>
-						<td class='boardtd'>2016.12.01</td>
-						<td class='boardtd'>신고게시판</td>
-					</tr>
+					
 				</table>
 			</div>
 			<div style="height: 25px"></div>

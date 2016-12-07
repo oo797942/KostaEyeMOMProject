@@ -56,6 +56,9 @@
 .bottom1{
 	margin-bottom: 50px;
 }
+#boardtdtitle{
+	width: 65%;
+}
   /*부트스트랩 카피*/
 .btn {
   display: inline-block;
