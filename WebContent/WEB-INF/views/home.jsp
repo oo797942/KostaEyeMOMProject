@@ -55,10 +55,10 @@
 						<li class="lifont lileft">우리동네
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-								<li><a href="#">· 키즈카페</a></li>
-								<li><a href="#">· 문화센터</a></li>
-								<li><a href="#">· 놀이터</a></li>
-								<li><a href="#">· 병원</a></li>
+								<li><a href="place.do?keyword=키즈카페">· 키즈카페</a></li>
+								<li><a href="place.do?keyword=문화센터">· 문화센터</a></li>
+								<li><a href="place.do?keyword=놀이터">· 놀이터</a></li>
+								<li><a href="place.do?keyword=병원">· 병원</a></li>
 							</ul>
 						</li>
 						<li class="lifont lileft">엄빠시장
