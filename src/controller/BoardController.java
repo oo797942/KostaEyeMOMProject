@@ -38,7 +38,7 @@ public class BoardController {
 	@RequestMapping("/boardInsert.do")
 	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
 		m.addAttribute("title", keyword ); // 게시판 종류 모델에 저장
-		System.out.println("게시팔" :keyword);
+		System.out.println("게시팔:" +keyword);
 		return "board/boardInesert";
 	} 
 	  

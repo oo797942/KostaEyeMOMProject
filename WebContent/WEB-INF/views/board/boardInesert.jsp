@@ -48,7 +48,6 @@ function fileInfo(f){
                <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
                   <div>
-<<<<<<< HEAD
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
                     <c:if test="${title=='tip'}">
 						<input type="text" 
@@ -71,11 +70,6 @@ function fileInfo(f){
                        value='' class='form-control inputcate' id='title3' readonly="readonly"/>
 					</c:if>
                   </div>
-=======
-                     <label id='boardlabel2'>카테고리 &nbsp; </label> <input type="text"
-                        class='form-control inputcate' id='title3' readonly="readonly"/>
-                  </div> 
->>>>>>> branch 'master' of https://github.com/oo797942/KostaEyeMOMProject.git
                </div>
                <div class='form-inline'>
                   <!-- 제목 입력칸 -->
