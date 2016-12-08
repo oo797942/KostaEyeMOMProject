@@ -41,6 +41,6 @@ public class BoardController {
 		System.out.println("게시팔:" +keyword);
 		return "board/boardInesert";
 	} 
-	  
+	
 }
  

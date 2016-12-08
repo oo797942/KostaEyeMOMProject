@@ -17,7 +17,6 @@
 		var lb = $("#lb").text();
 		alert(lb);
 		location.href = "boardInsert.do?keyword=${title}";
-			
 	}
 </script>
 
@@ -90,7 +89,16 @@
 						<li><a href="#">9</a></li>
 						<li><a href="#" class="next">&raquo;</a></li>
 					</ul>
-					<input type="button"  onclick='writeBoard()' value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>
+					<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+					<a href="#test-popup" class="open-popup-link">
+					<input type="button" value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>
+					</a>
+					</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+					<input type="button"  onclick='writeBoard()' value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>	
+					</c:otherwise>	
+					</c:choose>
 			</div>
 			<script
 				src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
