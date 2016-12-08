@@ -40,9 +40,9 @@ function fileInfo(f){
 </script>
 <div class='body'>
    <section class="page_head">
-      <div align="center" class='divheight'>
-         <h2>게시판 등록</h2>
-         <form action="#">
+      <div align="center">
+         <h2 style="margin-top: 40px">게시판 등록</h2>
+         <form action="#" style="margin-top:-60px">
             <div style="width: 100%" id="board3">
                <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
