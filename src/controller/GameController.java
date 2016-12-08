@@ -16,6 +16,15 @@ public class GameController {
 	@Autowired
 	private AdminGameDaoImpl adminGameDao;
 	   
+	
+	
+	@RequestMapping("/flashBoard.do")
+	public String flashBoard(){
+		return "game/flashBoard";
+	}
+	
+	
+	
 	@RequestMapping("/adminGameInsert.do")
 	public String GameInput(GameVO gameVO, Model m){
 		int result = 0;

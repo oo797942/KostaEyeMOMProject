@@ -26,21 +26,19 @@ public class BoardController {
 	public String callBoard(Model m,@PathVariable("title") String title){
 		List<BoardVO> list=null;
 		
-			 
-			list =boardDao.allBoard(title);
-		
+		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
 		
 		System.out.println(list);
-		m.addAttribute("list", list);
-		m.addAttribute("title", title );
+		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+		m.addAttribute("title", title ); // 게시판 종류 모델에 저장
 		return "board/board";
 	}
 	
 	//글쓰기 이동
 	@RequestMapping("/boardInsert.do")
 	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
-		m.addAttribute("keyword", keyword );
-		System.out.println(keyword);
+		m.addAttribute("title", keyword ); // 게시판 종류 모델에 저장
+		System.out.println("게시팔" :keyword);
 		return "board/boardInesert";
 	} 
 	  

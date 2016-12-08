@@ -308,13 +308,20 @@
 	});
 	
 	$("#join").click(function(){
+		
+	var email = $("#email").val();
 		for(var i = 0; i<8; i++){
 			if(collect[i]==false){
 				alert("양식을 다시 확인해주세요.");
 				return;
 			}
 		}
-		$("#joinform").submit();
+		   var popUrl = "emailCheck.go?email="+email;	//팝업창에 출력될 페이지 URL
+			var popOption = "width=400, height=300, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+			window.open(popUrl,"",popOption);
+		
+// 		$("#joinform").submit();
 	});
 	
 	
@@ -350,6 +357,10 @@
       }
     }
   });
+  
+  function emailComplate(){
+		$("#joinform").submit();
+  }
 </script>
 
 </body>

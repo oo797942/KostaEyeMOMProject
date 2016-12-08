@@ -39,5 +39,13 @@ public class UserController {
 		return "map.go";
 	}
 	
+<<<<<<< HEAD
+=======
+	@RequestMapping("/boardInsert.do")
+	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
+		m.addAttribute("keyword", keyword );
+		return "board/boardInesert";
+	} 
+>>>>>>> branch 'master' of https://github.com/oo797942/KostaEyeMOMProject.git
 	
 }

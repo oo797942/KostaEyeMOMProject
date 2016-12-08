@@ -15,12 +15,14 @@ public class BoardManager {
 			SqlSession session = CommonManager.db().openSession();
 			System.out.println("manager : title : "+title);
 			List<BoardVO> list=null;
+			// 육아꿀팁, 식단, 자랑
 			if(title.equals("tip")||title.equals("rice")||title.equals("baby")){
 			
 				list = session.selectList("board.allBoard", title); 
-			
+			//q&a 게시판
 			}else if(title.equals("qna_board")){
 				list =	session.selectList("board.allQna", title);
+			//질병
 			}else if(title.equals("kid_sick")){
 				list = session.selectList("board.allSick", title);
 			}
