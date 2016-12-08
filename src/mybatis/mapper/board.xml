@@ -5,20 +5,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="board">
 
-
+<!-- 육아꿀팁, 식단, 자랑 -->
 <select id="allBoard" parameterType="string" resultType="boardVO"> 
 	select * from normal_board where b_cate=#{title}
 </select>
-
+<!-- 질병 -->
 <select id="allSick" parameterType="string" resultType="boardVO"> 
 	select * from kid_sick
 </select>
-
+<!-- q&a -->
 <select id="allQna" parameterType="string" resultType="boardVO"> 
 	select * from qna_board
 </select>
 
-<!-- 회원가입 sql -->
+<!-- 게시판 등록 -->
 <insert id="boardInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
 	Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) VALUES(#{u_id}, #{u_pass}, #{u_name}, #{u_nick}, #{u_tel}, #{u_email}, #{u_addr}, SYSDATE)
 </insert>

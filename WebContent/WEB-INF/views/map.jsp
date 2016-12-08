@@ -65,11 +65,14 @@ function dongName(latitude, longitude){
         	  
                //alert(tag);
 <%--               if( <%= keyword%> == ''  ) {  --%>
-              if( <%= keyword%> != ''  ) { 
+              if( '<%= keyword%>' != ''  ) { 
                  
-                 $("#keyword").attr("value",tag+<%=keyword%>);
+                 $("#keyword").attr("value",tag+'<%=keyword%>');
+              
               }else{
-               $("#keyword").attr("value", <%=keyword %> );
+              
+            	  $("#keyword").attr("value", tag+ ${keyword});
+              
               }
               // 마커를 담을 배열입니다
               var markers = [];
@@ -94,13 +97,12 @@ function dongName(latitude, longitude){
 
               // 키워드 검색을 요청하는 함수입니다
               function searchPlaces() {
-                 if( '<%= keyword%>' == ''  ) { 
+
                     
+
+
                     var keyword = $('#keyword').val();
-                 }else{
-//                     var keyword = tag+$('#keyword').val();
-                    var keyword = tag+$('#keyword').val();
-                 }
+                 
                  
 //                   var keyword = $('#keyword').val();
 
@@ -294,8 +296,8 @@ function dongName(latitude, longitude){
                       el.removeChild (el.lastChild);
                   }
               }
-           }
-    });
+		}
+     });
  
 };
  

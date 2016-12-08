@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +13,10 @@
    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-   <script type="text/javascript"
-      src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-   <script type="text/javascript">
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
 $(function(){
-   
+   	alert(${title});
     $("#photo").on('change', function(){
        fileInfo(this);
     });
@@ -47,8 +48,27 @@ function fileInfo(f){
                <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
                   <div>
-                     <label id='boardlabel2'>카테고리 &nbsp; </label> <input type="text"
-                        class='form-control inputcate' id='title3' readonly="readonly"/>
+                     <label id='boardlabel2'>카테고리 &nbsp; </label>
+                    <c:if test="${title=='tip'}">
+						<input type="text" 
+                       value='육아꿀팁' class='form-control inputcate' id='title3' readonly="readonly"/>
+					</c:if>
+					<c:if test="${title=='qna_board'}">
+						<input type="text" 
+                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+					</c:if>
+					<c:if test="${title=='kid_sick'}">
+						<input type="text" 
+                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+					</c:if>
+					<c:if test="${title=='rice'}">
+						<input type="text" 
+                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+					</c:if>
+					<c:if test="${title=='baby'}">
+						<input type="text" 
+                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+					</c:if>
                   </div>
                </div>
                <div class='form-inline'>
