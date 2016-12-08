@@ -20,7 +20,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 게시판 등록 -->
 <insert id="boardInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
-	Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) VALUES(#{u_id}, #{u_pass}, #{u_name}, #{u_nick}, #{u_tel}, #{u_email}, #{u_addr}, SYSDATE)
+	Insert into normal_board 
+	(b_no, b_cate, b_title, b_content, b_date, b_ip, b_nick, u_id
+	<if test="b_photo1name !=null">
+		, b_photo1name
+	</if>
+	<if test="b_photo2name !=null">
+		, b_photo2name
+	</if>
+	<if test="b_photo3name !=null">
+		, b_photo3name
+	</if>
+	)
+	VALUES(mom_board_no.nextval, #{b_cate}, #{b_title}, #{b_content}, sysdate, #{b_ip}, #{b_nick}, #{u_id}
+	<if test="b_photo1name !=null">
+		, #{b_photo1name}
+	</if>
+	<if test="b_photo2name !=null">
+		, #{b_photo2name}
+	</if>
+	<if test="b_photo3name !=null">
+		, #{b_photo3name}
+	</if>
+	)
 </insert>
 <!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
  

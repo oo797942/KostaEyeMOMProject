@@ -1,7 +1,6 @@
 package mybatis.manager;
 
 import java.sql.SQLException;
-
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +9,10 @@ import member.vo.BoardVO;
 
 
 public class BoardManager {
+	
+	
+	
+	
 	public static List<BoardVO> allBoard(String title ) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
@@ -31,4 +34,23 @@ public class BoardManager {
 		   session.commit();
 		   	return list;	
 	   }
+	
+	public static int wirteBoard(BoardVO boardVO){
+		int result=0;  // 결과값 확인용
+		
+		SqlSession session = CommonManager.db().openSession();
+		  
+		
+		
+		String cate = boardVO.getB_cate();
+		if(cate.equals("tip")||cate.equals("rice")||cate.equals("baby")){
+			result=session.insert("board.boardInsert", boardVO);
+		}else if(cate.equals("qna_board")){
+			
+		}else if(cate.equals("kid_sick")){
+			
+		}
+		session.commit();
+		return result;
+	}
 }

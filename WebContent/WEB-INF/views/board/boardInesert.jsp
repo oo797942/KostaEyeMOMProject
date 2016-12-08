@@ -16,10 +16,14 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+//    	$("#b_photo2").hide();
+//    	$("#b_photo3").hide();
    	
-    $("#photo").on('change', function(){
-       fileInfo(this);
-    });
+//     $(".photo").on('change', function(){
+//     	$(this).hide();
+//     	$(this).next().show();
+//        fileInfo(this);
+//     });
 });
 
 function fileInfo(f){
@@ -43,7 +47,7 @@ function fileInfo(f){
    <section class="page_head">
       <div align="center">
          <h2 style="margin-top: 40px">게시판 등록</h2>
-         <form action="#" style="margin-top:-60px">
+         <form action="insert.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
             <div style="width: 100%" id="board3">
                <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
@@ -51,30 +55,30 @@ function fileInfo(f){
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
                     <c:if test="${title=='tip'}">
 						<input type="text" 
-                       value='육아꿀팁' class='form-control inputcate' id='title3' readonly="readonly"/>
+                       value='육아꿀팁' class='form-control inputcate' id='title3' name='b_cate'readonly="readonly"/>
 					</c:if>
 					<c:if test="${title=='qna_board'}">
 						<input type="text" 
-                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+                       value='묻고 말하기' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
 					<c:if test="${title=='kid_sick'}">
 						<input type="text" 
-                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+                       value='아이가 아파요' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
 					<c:if test="${title=='rice'}">
 						<input type="text" 
-                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+                       value='아이의 식단' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
 					<c:if test="${title=='baby'}">
 						<input type="text" 
-                       value='' class='form-control inputcate' id='title3' readonly="readonly"/>
+                       value='아이 자랑' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
                   </div>
                </div>
                <div class='form-inline'>
                   <!-- 제목 입력칸 -->
                   <div>
-                     <label id='boardlabel2'>제목 &nbsp; </label> <input type="text"
+                     <label id='boardlabel2'>제목 &nbsp; </label> <input type="text" name='b_title'
                         class='form-control' id='title3'>
                   </div>
                </div>
@@ -90,8 +94,11 @@ function fileInfo(f){
                         <table
                            style="margin-bottom: -20px; margin-left: 45px; display: inline-block;">
                            <tr style="padding-left: 100px">
-                              <td><input type='file' id='photo' name='photo'
-                                 accept=" image/*" multiple="multiple" /></td>
+                              <td>
+                              	<input type='file' accept=" image/*" class='photo' id='b_photo1' name='b_photo1'/>
+                              	<input type='file' accept=" image/*" class='photo' id='b_photo2' name='b_photo2'/>
+                              	<input type='file' accept=" image/*" class='photo' id='b_photo3' name='b_photo3'/>
+                              </td>
                            </tr>
                         </table>
                      </div>
@@ -100,7 +107,7 @@ function fileInfo(f){
                </div>
                <div class='texta3'>
                   <!-- 내용입력칸 -->
-                  <textarea class='textaa3' id='content'></textarea>
+                  <textarea class='textaa3' id='content'  name='b_content'></textarea>
                   <img alt="" src="">
                </div>
                <div style='margin-left: 570px'>

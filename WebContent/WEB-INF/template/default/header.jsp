@@ -133,14 +133,14 @@
 			<form method="post"  onclick='return false'>
 					<p>
 						<span class="fontawesome-user"></span><input type="text"
-							id="u_id"  name="u_id" value="Username" style="color: white;"
+							id="u_id"  name="u_id" value="aaa" style="color: white;"
 							onBlur="if(this.value == '') this.value = 'Username'"
 							onFocus="if(this.value == 'Username') this.value = ''" required>
 					</p>
 					<!-- JS because of IE support; better: placeholder="Username" -->
 					<p>
 						<span class="fontawesome-lock"></span><input type="password"
-							id="u_pass" name="u_pass" value="Password" style="color: white;"
+							id="u_pass" name="u_pass" value="aaa" style="color: white;"
 							onBlur="if(this.value == '') this.value = 'Password'"
 							onFocus="if(this.value == 'Password') this.value = ''" required>
 					</p>
