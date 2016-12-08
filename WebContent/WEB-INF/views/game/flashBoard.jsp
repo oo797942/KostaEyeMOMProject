@@ -1,8 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.List"%>
-
-
-
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/styleFlash.css" media="screen" data-name="skins">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-a:link {
+a:link {	
 	color: black;
 	text-decoration: none;
 }
@@ -36,7 +34,6 @@ a:hover {
 <script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
 	$(function() {
-
 	});
 </script>
 </head>
@@ -49,18 +46,19 @@ a:hover {
 						<ul id="list">
 						
 						
-						
+									<c:forEach var='vo' items="${list}">
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
 								onclick="window.open('./FlashBoardView.jsp', 'book',
                    				 'width=1050,height=650');return false;">
 									<div class="recent-item box">
 										<figure class="touching ">
-											<img src="./file/textimg.jpg" alt=test1 height="150" />
+											<img src="/EyeMOM/resources/img/${vo.g_photo}" alt="img" height="150" />
 										</figure>
-										<div id="itemName" class="item" align="center">테스테스트</div>
+										<div id="itemName" class="item" align="center">${vo.g_title}</div>
 									</div>
 							</a></li>
+								</c:forEach>
 
 
 

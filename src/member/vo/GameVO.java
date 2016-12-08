@@ -13,12 +13,14 @@ public class GameVO {
 	int g_no;
 	String g_title;
 	String g_content;
-	MultipartFile g_photo;
-	String g_photoName;
-	MultipartFile g_flash;
-	String g_flashName;
+	MultipartFile g_photoName;
+	String g_photo;
+	MultipartFile g_flashName;
+	String g_flash;
 	int g_count;
 	int g_good;
+
+	
 	
 	public int getG_no() {
 		return g_no;
@@ -38,71 +40,92 @@ public class GameVO {
 	public void setG_content(String g_content) {
 		this.g_content = g_content;
 	}
-	public MultipartFile getG_photo() {
+	public MultipartFile getG_photoName() {
+		return g_photoName;
+	}
+	public void setG_photoName(MultipartFile g_photoName) {
+		this.g_photoName = g_photoName;
+	
+	
+
+//		파일이름 중복 방지를 위해 현재시간을 구하여 저장
+	SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMMddHHmmss", Locale.KOREA );
+	Date currentTime = new Date ( );
+	String dTime = formatter.format ( currentTime );
+	
+	
+	
+	if(! g_photoName.isEmpty()){
+		this.g_photo = dTime+g_photoName.getOriginalFilename();
+//		this.b_fsize = g_photo.getSize();
+
+		
+		
+		//업로드된 파일이 저장될 경로
+		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\"+g_photo);
+		
+		try {
+			g_photoName.transferTo(f);
+			
+		} catch (IllegalStateException e) {				
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
+
+
+	
+	}
+	public String getG_photo() {
 		return g_photo;
 	}
-	public void setG_photo(MultipartFile g_photo) {
+	public void setG_photo(String g_photo) {
 		this.g_photo = g_photo;
+	}
+	public MultipartFile getG_flashName() {
+		return g_flashName;
+	}
+	public void setG_flashName(MultipartFile g_flashName) {
+		this.g_flashName = g_flashName;
 	
-//			파일이름 중복 방지를 위해 현재시간을 구하여 저장
-		SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMMddHHmmss", Locale.KOREA );
-		Date currentTime = new Date ( );
-		String dTime = formatter.format ( currentTime );
-		
-		if(! g_photo.isEmpty()){
-			this.g_photoName = dTime+g_photo.getOriginalFilename();
-//			this.b_fsize = g_photo.getSize();
+	
 
+//		파일이름 중복 방지를 위해 현재시간을 구하여 저장
+	SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMMddHHmmss", Locale.KOREA );
+	Date currentTime = new Date ( );
+	String dTime = formatter.format ( currentTime );
+	
+	if(! g_flashName.isEmpty()){
+		this.g_flash = dTime+g_flashName.getOriginalFilename();
+//		this.b_fsize = g_photo.getSize();
+
+		
+		
+		//업로드된 파일이 저장될 경로
+		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\"+g_flash);
+		
+		try {
+			g_flashName.transferTo(f);
 			
+		} catch (IllegalStateException e) {				
+			e.printStackTrace();
+		} catch (IOException e) {
 			
-			//업로드된 파일이 저장될 경로
-			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\"+g_photoName);
-			
-			try {
-				g_photo.transferTo(f);
-				
-			} catch (IllegalStateException e) {				
-				e.printStackTrace();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
+			e.printStackTrace();
 		}
+	}
+
+	
 	
 	
 	}
-	public MultipartFile getG_flash() {
+	public String getG_flash() {
 		return g_flash;
-	} 
-	public void setG_flash(MultipartFile g_flash) {
+	}
+	public void setG_flash(String g_flash) {
 		this.g_flash = g_flash;
-	
-		
-//			파일이름 중복 방지를 위해 현재시간을 구하여 저장
-		SimpleDateFormat formatter = new SimpleDateFormat ( "yyyyMMddHHmmss", Locale.KOREA );
-		Date currentTime = new Date ( );
-		String dTime = formatter.format ( currentTime );
-		
-		if(! g_flash.isEmpty()){
-			this.g_flashName = dTime+g_flash.getOriginalFilename();
-//			this.b_fsize = g_photo.getSize();
-			
-			
-			
-			//업로드된 파일이 저장될 경로
-			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\flash\\"+g_flashName);
-			
-			try {
-				g_flash.transferTo(f);
-				
-			} catch (IllegalStateException e) {				
-				e.printStackTrace();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-		}
-	
 	}
 	public int getG_count() {
 		return g_count;
@@ -116,19 +139,6 @@ public class GameVO {
 	public void setG_good(int g_good) {
 		this.g_good = g_good;
 	}
-	public String getG_photoName() {
-		return g_photoName;
-	}
-	public void setG_photoName(String g_photoName) {
-		this.g_photoName = g_photoName;
-	}
-	public String getG_flashName() {
-		return g_flashName;
-	}
-	public void setG_flashName(String g_flashName) {
-		this.g_flashName = g_flashName;
-	}
-	
 	
 	
 }

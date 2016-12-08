@@ -18,9 +18,9 @@
 
 </head>
 <body>
-  <div class="container-fluid" >
+<div class="body">
+<!--   <div class="container-fluid" > -->
     <div class="row">
-
       <div class="col-md-6 left-side">
         <header>
           <span>join us</span>
@@ -85,19 +85,20 @@
          <p/>   
           <span><a href="#">I am already a member</a></span>
         </div>
+        	<p>&nbsp;</p>
+		<p>&nbsp;</p>
+			<p>&nbsp;</p>
         </form>
 <!--         <ul class="social list-inline"> -->
 <!--           <li><a href="#">Facebook</a></li> -->
 <!--           <li><a href="#">Twitter</a></li> -->
 <!--           <li><a href="#">Linkedin</a></li> -->
 <!--         </ul> -->
-	<p>&nbsp;</p>
-		<p>&nbsp;</p>
-			<p>&nbsp;</p>
+
       </div>
     </div>
   </div>
-
+</div>
 
 <!-- Scripts -->
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->

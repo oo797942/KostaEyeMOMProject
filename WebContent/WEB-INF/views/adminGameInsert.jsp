@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	$(function(){
 		
-        $("#g_photo").on('change', function(){
+        $("#g_photoName").on('change', function(){
         	readURL(this);
         });
 		
@@ -91,7 +91,7 @@ function readURL(input) {
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">게임 등록</h1>
-          <form action="adminGameInsert.do"  method="post" enctype="multipart/form-data">
+          <form action="adminGameInsertDoing.go"  method="post" enctype="multipart/form-data">
     <table style="width:100%; height:800" >
   <tbody>
     <tr height="50">
@@ -102,12 +102,12 @@ function readURL(input) {
     <tr height="50">
       <th width="10%"> 이미지</th>
 		<td width="30%">
-        <input type='file' id="g_photo"  accept=" image/*" name="g_photo"/>
+        <input type='file' id="g_photoName"  accept=" image/*" name="g_photoName"/>
 		</td>
       <td width="5%">&nbsp;</td>
       <th width="10%">게임</th>
       <td width="30%">
-        <input type='file' id="g_flash" accept=".swf" name="g_flash" />
+        <input type='file' id="g_flashName" accept=".swf" name="g_flashName" />
       </td>
     </tr>
     <tr height="50">
