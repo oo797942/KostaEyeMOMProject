@@ -10,9 +10,9 @@ header {
 
 section {
 	width: 1200px;
-	height: 1200px;
+	height: 1220px;
 }
- 
+
 footer {
 	width: 1200px;
 }
@@ -137,6 +137,21 @@ footer {
 	color: #ffa07a;
 }
 
+.alink:LINK {
+	text-decoration: none;
+}
+
+.alink:VISITED {
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+.alink:HOVER {
+	transition-duration: .3s;
+	cursor: pointer;
+	color: #ffa07a;
+}
+
 #mainTopRightTd {
 	width: 50%;
 }
@@ -225,12 +240,10 @@ footer {
 
 #slide_div {
 	width: 1200px;
-	padding-top: 40px;
 	height: 300px;
 }
 
 #banner_wrap {
-	border-top: 1px solid black;
 	width: 1000px;
 	height: 300px;
 	padding: 0px;
@@ -281,7 +294,7 @@ footer {
 }
 
 #groupBuyTable {
-	margin-top: 10px;
+	margin-top: 40px;
 	vertical-align: top;
 	border: none;
 	width: 977px;
@@ -325,7 +338,7 @@ footer {
 /* ---------------- */
 #tabmenutable {
 	width: 200px;
-	height: 340px;
+	height: 380px;
 	margin-top: 40px;
 	margin-right: 15px;
 	float: left;
@@ -344,26 +357,195 @@ footer {
 }
 
 .noselect {
-	border:2px solid #ffa07a;
+	border: 2px solid #ffa07a;
 	background: #f6f6f6;
 	color: #333333;
 }
 
 .selectnow {
 	color: #9f0000;
-	border:2px solid #ffa07a;
+	border: 2px solid #ffa07a;
 	border-bottom: none;
 }
 
 #tabcontenttr td {
 	text-align: left;
+	padding-top: 10px;
 	vertical-align: top;
-	border:2px solid #ffa07a;
-	border-top:none;
+	border: 2px solid #ffa07a;
+	border-top: none;
+	vertical-align: top;
 }
 
 .menucontent {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	width: 180px;
+}
+
+.menucontent a:LINK {
+	text-decoration: none;
+}
+
+.menucontent a:VISITED {
+	color: #1a1a1a;
+	text-decoration: none;
+}
+
+.menucontent a:HOVER {
+	transition-duration: .1s;
+	color: #ffa07a;
+}
+
+.menucontent li {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#tablink td {
+	margin: 0px;
+	padding: 0px;
+	height: 90px;
+	vertical-align: bottom;
+	height: 90px;
+}
+
+.tablinks:HOVER {
+	cursor: pointer;
+	transition-duration: .1s;
+	color: #ffa07a;
+}
+
+#tablink div {
+	width: 196px;
+	height: 70px;
+	border: 2px solid #ffa07a;
+}
+
+#qnacookdiv {
+	width: 1200px;
+	height: 340px;
+	margin-top: 20px;
+}
+
+#qnacooktable {
+	width: 1200px;
+	height: 340px;
+	/* 	border:none; */
+}
+
+.qnatd {
+	width: 350px;
+}
+
+#qnadiv {
+	float: left;
+	width: 300px;
+	height: 296px;
+	width: 296px;
+	border: 2px solid #d1d1d1;
+}
+
+#cookhover {
+	height: 75px;
+	text-align: right;
+}
+
+.cookimg {
+	width: 55px;
+	height: 55px;
+}
+
+#cookimg2 {
+	margin-left: 80px;
+}
+
+#cookimg3 {
+	margin-left: 80px;
+}
+
+#cookimg4 {
+	margin-left: 80px;
+	margin-right: 40px;
+}
+
+#cookcontent {
+	padding: 11px;
+	vertical-align: top;
+	text-align: left;
+	vertical-align: top;
+	border-top: 2px solid #d1d1d1;
+	border-bottom: 2px solid #d1d1d1;
+}
+
+#cookcontentimg {
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-right: 40px;
+}
+
+.cookul {
+	list-style: none;
+	width: 750px;
+}
+
+.cookul li {
+	line-height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#qnaimg {
+	margin-top: 10px;
+	width: 200px;
+	height: 200px;
+	margin-left: 50px;
+	width: 200px;
+}
+
+.qnap {
+	width: 200px;
+	line-height: 27px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#qnacooktableheader {
+	height: 40px;
+}
+
+#headercook {
+	padding-left: 10px;
+}
+
+#qnacooktableheader b {
+	font-size: 15pt;
+}
+
+
+#headerqna span {
+	margin-top: 12px;
+	font-size: 8pt;
+	float: right;
+	margin-right: 50px;
+}
+
+#headercook span {
+	margin-top: 12px;
+	font-size: 8pt;
+	float: right;
+	margin-right: 30px;
+}
+
+#groupBuyTable span {
+	margin-top: 12px;
+	font-size: 8pt;
+	float: right;
+	margin-right: 10px;
 }

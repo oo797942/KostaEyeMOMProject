@@ -13,9 +13,9 @@
 							href="javascript:addFavorite('아이맘','http://localhost:8080/EyeMOM/home.go');">북마크</a>
 					</p>
 				</td>
-				<td id="mainTopRightTd"><img
-					src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
-					id="sign_upBtn" /> <img src="/EyeMOM/resources/img/find.png"
+				<td id="mainTopRightTd"><a href="gojoin.do"><img
+						src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
+						id="sign_upBtn" /></a> <img src="/EyeMOM/resources/img/find.png"
 					class="toplogo_btn" id="findBtn" /> <img
 					src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 					id="loginBtn" /></td>
@@ -49,7 +49,7 @@
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
 								<li><a href="#">· 놀아봐요</a></li>
 								<li><a href="#">· 공부해요</a></li>
-								<li><a href="#">· 춤을 춰요</a></li>
+								<li><a href="#">· 춤을춰요</a></li>
 							</ul>
 						</li>
 						<li class="lifont lileft">우리동네
@@ -76,6 +76,8 @@
 
 	</header>
 	<section>
+		<div style="background: #ffa07a; width: 100%; height: 30px;"></div>
+
 		<div id="slide_div">
 			<div id="banner_wrap">
 				<ul id="slide_banner">
@@ -103,35 +105,120 @@
 				</tr>
 			</table>
 		</div>
-		<div id="mainMiddle">
-			<table id="tabmenutable" cellspacing="0">
-				<tr id="tabmenuTr">
-					<td class="selectnow menubtn" rel="menu1">공지사항</td>
-					<td class="noselect menubtn" rel="menu2">모모모모</td>
+
+		<div id="qnacookdiv">
+
+			<table id="qnacooktable" cellspacing="0">
+				<tr id="qnacooktableheader">
+					<td id="headerqna">
+						<b>묻고 답하기</b>
+						<span><a href="qna_board" class="alink">더보기</a></span>
+					</td>
+					<td id="headercook">
+						<span><a class="alink">더보기</a></span>
+					</td>
 				</tr>
-				<tr id="tabcontenttr">
-					<td colspan="2">
-
-						<ul id="menu1" class="menucontent">
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
+				<tr>
+					<td class="qnatd" rowspan="2">
+						<div id="qnadiv">
+						<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
+						<p class="qnap">[100] <a class="alink">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</a></p>
+						<p class="qnap">[100] <a class="alink">ㅇㅇㅇ</a></p>
+						<p class="qnap">[80] <a class="alink">ㅇㅇㅇ</a></p>
+						</div>
+					</td>
+					<td class="cooktd" id="cookhover">
+						<img src="/EyeMOM/resources/img/cook_1.png" class="cookimg" id="cookimg1" rel="cookul1">
+						<img src="/EyeMOM/resources/img/cook_2.png" class="cookimg" id="cookimg2" rel="cookul2">
+						<img src="/EyeMOM/resources/img/cook_3.png" class="cookimg" id="cookimg3" rel="cookul3">
+						<img src="/EyeMOM/resources/img/cook_4.png" class="cookimg" id="cookimg4" rel="cookul4">		
+					</td>
+				</tr>
+				<tr>
+					<td class="cooktd" id="cookcontent">
+						<img src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
+						<ul class="cookul" id="cookul1">
+							<li>[2016-12-08] <a class="alink">1초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
 						</ul>
-
-						<ul id="menu2" class="menucontent">
-							<li><a>ddd2</a></li>
-							<li><a>ddd3</a></li>
-							<li><a>ddd4</a></li>
-							<li><a>ddd5</a></li>
+						<ul class="cookul" id="cookul2">
+							<li>[2016-12-08] <a class="alink">2초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
 						</ul>
-
+						<ul class="cookul" id="cookul3">
+							<li>[2016-12-08] <a class="alink">3초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
+						<ul class="cookul" id="cookul4">
+							<li>[2016-12-08] <a class="alink">4초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
 					</td>
 				</tr>
 			</table>
+
+		</div>
+
+		<div id="mainMiddle">
+			<table id="tabmenutable" cellspacing="0">
+				<tr id="tabmenuTr">
+					<td class="selectnow menubtn" rel="menu1" lin="link1">공지사항</td>
+					<td class="noselect menubtn" rel="menu2" lin="link2">으앙아팡</td>
+				</tr>
+				<tr id="tabcontenttr">
+					<td colspan="2">
+						<ul id="menu1" class="menucontent">
+							<li>[12-08] <a href="#">제목이몇글자까지되는거야</a></li>
+							<li>[12-07] <a href="#">title title title title title</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+							<li>[12-07] <a href="#">ddd</a></li>
+						</ul>
+
+						<ul id="menu2" class="menucontent">
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr id="tablink">
+					<td colspan="2">
+						<div class="tablinks" id="link1">
+							<br />공지사항 바로가기
+						</div>
+						<div class="tablinks" id="link2">
+							<br />으앙아팡 바로가기
+						</div>
+					</td>
+				</tr>
+			</table>
+
 			<table id="groupBuyTable" cellspacing="0">
 				<caption>
-					<label>공동구매 최신 글</label>
+					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
 				</caption>
 				<tr>
 					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
