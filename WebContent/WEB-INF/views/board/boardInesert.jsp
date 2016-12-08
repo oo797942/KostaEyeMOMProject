@@ -49,7 +49,7 @@ function fileInfo(f){
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label> <input type="text"
                         class='form-control inputcate' id='title3' readonly="readonly"/>
-                  </div>
+                  </div> 
                </div>
                <div class='form-inline'>
                   <!-- 제목 입력칸 -->
