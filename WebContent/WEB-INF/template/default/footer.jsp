@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link href="/EyeMOM/resources/css/footer.css" rel="stylesheet"	type="text/css" />
 <div class="footer">
-
 	<hr color="#ffa07a" size="3px" />
 	<table border="0" cellspacing="0" width="100%" id="footerTable">
 		<tr>

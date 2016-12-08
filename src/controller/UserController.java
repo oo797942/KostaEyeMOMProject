@@ -44,4 +44,5 @@ public class UserController {
 		m.addAttribute("keyword", keyword );
 		return "board/boardInesert";
 	} 
+	
 }

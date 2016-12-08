@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<link href="/EyeMOM/resources/css/header.css" rel="stylesheet"	type="text/css" />
+<link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css">
+	<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'>
 <script type="text/javascript">
 	function login(){
 		
@@ -13,7 +15,7 @@
 	       	success: function(result){
 	       	  
 	       		if(result=="0"){
-	       			location.reload();
+	       			location.href="index.jsp";
 	       			
 	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
 	        		
@@ -45,8 +47,9 @@
 		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 			id="loginBtn"/></a>
-			 <img src="/EyeMOM/resources/img/sign_up.png"
-			class="toplogo_btn" id="sign_upBtn" /> <img
+			<a href="gojoin.do"><img src="/EyeMOM/resources/img/sign_up.png"
+			class="toplogo_btn" id="sign_upBtn" /></a>
+			 <img
 			src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
 	</c:when>
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
@@ -125,7 +128,7 @@
 		<div class="cloud x5"></div>
 		<div class="cloud x6"></div>
 	</div>
-<div class="container">
+<div class="container00">
 		<div id="login">
 			<form method="post"  onclick='return false'>
 					<p>

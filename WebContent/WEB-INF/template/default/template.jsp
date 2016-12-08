@@ -5,12 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title" /></title>
-<link href="/EyeMOM/resources/css/header.css" rel="stylesheet"
-	type="text/css" />
-<link href="/EyeMOM/resources/css/footer.css" rel="stylesheet"
-	type="text/css" />
-<link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css">
-	<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'>
+<!-- <link href="/EyeMOM/resources/css/header.css" rel="stylesheet"	type="text/css" /> -->
+<!-- <link href="/EyeMOM/resources/css/footer.css" rel="stylesheet"	type="text/css" /> -->
+<!-- <link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css"> -->
+<!-- 	<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'> -->
 <script type="text/javascript"
 	src="/EyeMOM/resources/js/jquery-3.1.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>

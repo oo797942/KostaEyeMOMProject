@@ -29,6 +29,16 @@ public class JoinController {
 		System.out.println("씰패");
 		}
 		
-		return "home";
+		return "redirect:home.go";
 	}
+	
+	
+	@RequestMapping("/emailCheck.go")
+	public String emailCheck(String email){
+		//여기까진됨
+		System.out.println("Email =============" + email);
+		return "joinEmailCheck";
+	}
+	
+	
 }
