@@ -18,7 +18,7 @@ public class AdminController {
 	@Autowired
 	private LoginDaoImpl loginDao;
 	 
-
+ 
 	@RequestMapping("/adminBoard.go")
 	public String adminBoard(HttpSession session){
 		return "adminBoard";
