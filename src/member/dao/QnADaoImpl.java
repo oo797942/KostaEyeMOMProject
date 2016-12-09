@@ -1,20 +1,18 @@
 package member.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
-import member.vo.MemberVO;
 import member.vo.QnAVO;
-import mybatis.manager.IdcheckManager;
-import mybatis.manager.LoginManager;
-import mybatis.manager.MemberJoinManager;
 import mybatis.manager.QnAManager;
 
 
 public class QnADaoImpl implements QnADao {
 	
+	
+	// main QnA 리스트 출력
 	@Override
-	public ArrayList<QnAVO> newQna() {
-		ArrayList<QnAVO> list=null; 
+	public List<QnAVO> newQna() {
+		List<QnAVO> list=null; 
 		try{ 
 			list = QnAManager.mainQnaList();
 		}catch( Exception ex )

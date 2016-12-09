@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="body">
 
@@ -122,9 +123,9 @@
 					<td class="qnatd" rowspan="2">
 						<div id="qnadiv">
 						<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
-						<p class="qnap">[100] <a class="alink">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</a></p>
-						<p class="qnap">[100] <a class="alink">ㅇㅇㅇ</a></p>
-						<p class="qnap">[80] <a class="alink">ㅇㅇㅇ</a></p>
+						<c:forEach var='qnaVO' items='${qnaList}'>
+						<p class="qnap">[${qnaVO.in_point }] <a class="alink">${qnaVO.in_title }</a></p>
+						</c:forEach>
 						</div>
 					</td>
 					<td class="cooktd" id="cookhover">
