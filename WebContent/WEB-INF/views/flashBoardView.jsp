@@ -9,7 +9,7 @@
 </head>
 <body bgcolor="gray">
 	<table width="1000" border="0">
-	  <tbody>
+	  <tbody> 
 	    <tr>
 	      <td>
 	    <iframe src="/EyeMOM/resources/img/${vlist.g_flash}" width="800" height="600px" border="1"></iframe>  	
