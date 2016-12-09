@@ -39,12 +39,12 @@
 			</tr>
 		</table>
 	</nav>
- 	
+ 	 
 	<p id="headerMenu">
 <!-- 	세션 정보가 없을경우 로그인 버튼 show -->
+<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	<c:choose>
     <c:when test="${empty sessionScope.user}">
-		<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
 			id="loginBtn"/></a>
 			<a href="gojoin.do"><img src="/EyeMOM/resources/img/sign_up.png"
