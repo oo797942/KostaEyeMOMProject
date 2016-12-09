@@ -39,7 +39,7 @@
 			</tr>
 		</table>
 	</nav>
- 	
+ 	 
 	<p id="headerMenu">
 <!-- 	세션 정보가 없을경우 로그인 버튼 show -->
 <img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
