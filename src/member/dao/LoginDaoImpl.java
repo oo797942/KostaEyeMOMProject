@@ -5,13 +5,10 @@ import mybatis.manager.LoginManager;
 
 
 public class LoginDaoImpl implements LoginDao {
-
 	@Override
 	public MemberVO memberLogin(MemberVO vo) {
 		MemberVO memberVo = null;
 		try{
-			  
-			
 			memberVo = LoginManager.userLogin(vo);
 			System.out.println("loginDaoImpl 성공 :"+memberVo.getU_id()); 
 		}catch( Exception ex )
@@ -21,8 +18,4 @@ public class LoginDaoImpl implements LoginDao {
 		return memberVo;
 	
 	}
-
-	
-
-	
 }

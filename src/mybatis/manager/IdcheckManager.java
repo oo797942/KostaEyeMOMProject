@@ -21,7 +21,7 @@ public class IdcheckManager {
 		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
 		   System.out.println("manager : "+memberVO.getU_id());
 		   session.commit();
-		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+		   	return memberVO;
 	   }
 	
 }

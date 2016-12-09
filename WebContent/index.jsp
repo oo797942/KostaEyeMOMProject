@@ -8,7 +8,10 @@
 </head> 
 
 <body> 
-<% response.sendRedirect("home.go"); %>
+
+<a href="test.go">으아앙 테스트할래</a>
+
+
 </body>
 </html> 
  

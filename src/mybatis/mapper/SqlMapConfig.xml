@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.vo.MemberVO" alias="memberVO" />
 		<typeAlias type="member.vo.GameVO" alias="gameVO" />
 		<typeAlias type="member.vo.BoardVO" alias="boardVO" />
+		<typeAlias type="member.vo.QnAVO" alias="qnaVO" />
 	</typeAliases>
 		 
 	<environments default="development">
@@ -30,6 +31,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/mapper/member.xml" />
 		<mapper resource="mybatis/mapper/admin.xml" />
 		<mapper resource="mybatis/mapper/board.xml" />
+		<mapper resource="mybatis/mapper/qna.xml" />
 	</mappers>
 	
 </configuration>

@@ -94,8 +94,8 @@ $(function() {
 				$("#cookimg"+i).css("height","55px");
 			}
 			$(this).attr("src", $(this).attr("src").replace("cook_","cookon_"));
-			$(this).css("height","61px");
 			$(".cookul").hide();
+			$(this).css("height","60px");
 			$("#"+cookon).show();
 	});
 

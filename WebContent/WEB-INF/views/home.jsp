@@ -128,10 +128,11 @@
 						</div>
 					</td>
 					<td class="cooktd" id="cookhover">
-						<img src="/EyeMOM/resources/img/cook_1.png" class="cookimg" id="cookimg1" rel="cookul1">
-						<img src="/EyeMOM/resources/img/cook_2.png" class="cookimg" id="cookimg2" rel="cookul2">
-						<img src="/EyeMOM/resources/img/cook_3.png" class="cookimg" id="cookimg3" rel="cookul3">
+					<b>베스트 레시피</b>
 						<img src="/EyeMOM/resources/img/cook_4.png" class="cookimg" id="cookimg4" rel="cookul4">		
+						<img src="/EyeMOM/resources/img/cook_3.png" class="cookimg" id="cookimg3" rel="cookul3">
+						<img src="/EyeMOM/resources/img/cook_2.png" class="cookimg" id="cookimg2" rel="cookul2">
+						<img src="/EyeMOM/resources/img/cookon_1.png" class="cookimg" id="cookimg1" rel="cookul1">
 					</td>
 				</tr>
 				<tr>
