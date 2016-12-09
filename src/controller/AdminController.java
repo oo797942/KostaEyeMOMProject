@@ -55,4 +55,15 @@ public class AdminController {
 	public String admonGameInsert(HttpSession session){
 		return "adminGameInsert";
 	}
+	
+	@RequestMapping("/adminVideoInsert.go")
+	public String adminVideoInsert(HttpSession session){
+		return "adminVideoInsert";
+	}
+
+	@RequestMapping("/adminStudyInsert.go")
+	public String adminStudyInsert(HttpSession session){
+		return "adminStudyInsert";
+	}
+	
 }

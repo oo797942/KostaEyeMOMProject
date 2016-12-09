@@ -9,6 +9,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id="gameInput" parameterType="gameVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
 INSERT INTO kid_game(g_no, g_title, g_content, g_photo, g_flash) VALUES (MOM_GAME_NO.nextval, #{g_title}, #{g_content}, #{g_photo}, #{g_flash})
 </insert>
+<!-- 춤을 춰요 영상등록 sql -->
+<insert id="videoInput" parameterType="videoVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
+INSERT INTO kid_video(d_no, d_title, d_content, d_photo, d_video) VALUES (MOM_VIDEO_NO.nextval, #{d_title}, #{d_content}, #{d_photo}, #{d_video})
+</insert>
+
+<!-- 공부 해요 영상등록 sql -->
+<insert id="studyInput" parameterType="studyVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
+INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VIDEO_NO.nextval, #{v_title}, #{v_content}, #{v_photo}, #{v_video})
+</insert>
 <!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
  
  <select id="gameAll" resultType="gameVO"  parameterType="gameVO" > 

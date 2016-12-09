@@ -61,11 +61,11 @@
           <ul class="nav nav-sidebar">
           <!--class="active" active 클래스가 붙으면 효과를 적용한다. -->
             <li><a href="adminMember.go" >회원 관리</a></li>
-            <li ><a href="adminBoard.go">게시판 관리</a></li>
+            <li><a href="adminBoard.go">게시판 관리</a></li>
              <li><a href="adminReport.go">신고 관리</a></li>
             <li><a href="adminQna.go">Q&A</a></li>
             <li><a href="adminGallery.go">사진 관리</a></li>            
-            <li class="active"><a href="adminVideo.go">동영상 관리</a></li>
+            <li  class="active"><a href="adminVideo.go">동영상 관리</a></li>
             <li><a href="adminGame.go">게임 관리</a></li>
           </ul>
         </div>
@@ -94,7 +94,8 @@
               <tbody>
               </tbody>
             </table>
-          </div>	
+          </div>
+                    <a href="adminVideoInsert.go">새 게임 등록</a>	
         </div>
       
 </body>

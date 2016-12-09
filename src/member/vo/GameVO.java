@@ -104,7 +104,7 @@ public class GameVO {
 		
 		
 		//업로드된 파일이 저장될 경로
-		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\"+g_flash);
+		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\flash\\"+g_flash);
 		
 		try {
 			g_flashName.transferTo(f);
