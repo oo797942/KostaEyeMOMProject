@@ -37,4 +37,20 @@ public class GameManager {
 		   session.commit();
 		   	return list;	
 	   }
+	
+
+	
+	public static GameVO gameView(GameVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			GameVO vlist=null;
+			
+				vlist = session.selectOne("admin.gameAll", vo);
+				System.out.println(vlist);
+		   
+		   session.commit();
+		   	return vlist;	
+	   }
+
+
 }

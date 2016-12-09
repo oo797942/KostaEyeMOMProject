@@ -11,7 +11,12 @@ INSERT INTO kid_game(g_no, g_title, g_content, g_photo, g_flash) VALUES (MOM_GAM
 </insert>
 <!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
  
- <select id="gameAll" resultType="gameVO"> 
+ <select id="gameAll" resultType="gameVO"  parameterType="gameVO" > 
 	select * from kid_game
+	<where>
+		<if test="g_no != null">
+		g_no=#{g_no}
+	</if>	
+	</where>
 </select>
 </mapper> 

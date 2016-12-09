@@ -35,4 +35,17 @@ public class AdminGameDaoImpl implements AdminGameDao {
 			}
 	}
 	
+	@Override
+	public GameVO GameView(GameVO vo) {
+			GameVO vlist=null;
+			try{
+				vlist = GameManager.gameView(vo);
+			}catch( Exception ex )
+			{
+				System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
+			}finally{
+				return vlist;
+			}
+	}
+	
 }

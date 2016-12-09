@@ -43,4 +43,25 @@ public class GameController {
 		
 		return "adminGame.go";
 	}
+	
+	
+	
+	
+	
+	@RequestMapping("/flashBoardView.go")
+	public String GameView(GameVO vo, Model m){
+		GameVO gVO = null;
+		gVO = gameDao.GameView(vo);
+		
+		if(gVO!=null){
+			System.out.println("가져오기완료");
+			
+		}else{
+		System.out.println("가져오기실패");
+		}
+		m.addAttribute("vlist", gVO); //가져온 DB를 모델에 저장
+		
+		return "flashBoardView";
+	}
+	
 }

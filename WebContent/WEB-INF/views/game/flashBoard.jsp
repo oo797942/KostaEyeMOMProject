@@ -30,6 +30,10 @@ a:hover {
 #itemName {
 	background-color: white;
 }
+.title{
+    font-size: 17pt;
+    font-weight: bolder;
+}
 </style>
 <script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
@@ -39,6 +43,7 @@ a:hover {
 </head>
 <body>
 	<div class="body">
+	<h3 class="title">놀아봐요</h3>
 		<section class="content portfolio small-images">
 			<div class="container">
 				<div class="row">
@@ -49,7 +54,7 @@ a:hover {
 									<c:forEach var='vo' items="${list}">
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
-								onclick="window.open('./FlashBoardView.jsp', 'book',
+								onclick="window.open('flashBoardView.go?g_no=${vo.g_no}', '${vo.g_title}',
                    				 'width=1050,height=650');return false;">
 									<div class="recent-item box">
 										<figure class="touching ">

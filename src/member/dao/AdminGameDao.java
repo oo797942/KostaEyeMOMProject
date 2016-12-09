@@ -7,5 +7,5 @@ import member.vo.GameVO;
 public interface AdminGameDao {
 	List<GameVO> GameBoard();
 	int adminGameInput(GameVO vo);
-
+	GameVO GameView(GameVO vo);
 }
