@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!--  프라퍼티 화일 연결 -->
 	<properties resource="mybatis/mapper/db.properties"/>
 
-	<typeAliases>
+	<typeAliases> 
 <!-- 	새로 vo를 만들었을경우 설정 -->
 		<typeAlias type="member.vo.MemberVO" alias="memberVO" />
 		<typeAlias type="member.vo.GameVO" alias="gameVO" />
