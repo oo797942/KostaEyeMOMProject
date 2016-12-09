@@ -16,15 +16,21 @@ public class BoardDaoImpl implements BoardDao {
 		}catch( Exception ex )
 		{
 			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
-		}finally{
-			return list;
 		}
+			return list;
+		
 		
 	}
 
 	@Override
 	public int writeBoard(BoardVO vo) {
 		int result=0;
+		try{
+			result = BoardManager.wirteBoard(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
 		return result;
 	}
 

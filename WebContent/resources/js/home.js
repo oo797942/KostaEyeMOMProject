@@ -61,20 +61,42 @@ $(function() {
 		controls : false
 	});
 
-	// 모두 숨겨놓은 뒤 첫 번쨰 화면만 보여준다.
+	// 공지사항 탭메뉴를 모두 숨겨놓은 뒤 첫 번쨰 화면만 보여준다.
 	$(".menucontent").hide();
+	$(".tablinks").hide();
 	$("#menu1").show();
+	$("#link1").show();
 
 	// 탭을 클릭하면 메뉴를 보여줌
 	$(".menubtn").click(function() {
 		var clicked = $(this).attr('rel');
+		var clickedbtn = $(this).attr('lin');
 		$(".menubtn").removeClass("selectnow");
 		$(".menubtn").removeClass("noselect");
 		$(".menubtn").addClass("noselect");
 		$(this).removeClass("noselect");
 		$(this).addClass("selectnow");
 		$(".menucontent").hide();
+		$(".tablinks").hide();
 		$("#" + clicked).show();
+		$("#" + clickedbtn).show();
+	});
+
+	$(".cookul").hide();
+	$("#cookul1").show();
+	
+	// 베스트 레시피의 사진에 마우스를 올렸을 때
+	$(".cookimg").mouseover(function() {
+		var cookon = $(this).attr("rel");
+		// 이미지 변경
+			for(var i=1; i<5; i++){
+				$("#cookimg"+i).attr("src",$("#cookimg"+i).attr("src").replace("cookon_","cook_"));
+				$("#cookimg"+i).css("height","55px");
+			}
+			$(this).attr("src", $(this).attr("src").replace("cook_","cookon_"));
+			$(this).css("height","61px");
+			$(".cookul").hide();
+			$("#"+cookon).show();
 	});
 
 });
