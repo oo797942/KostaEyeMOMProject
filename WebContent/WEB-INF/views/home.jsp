@@ -2,7 +2,58 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<link href="/EyeMOM/resources/css/header.css" rel="stylesheet"	type="text/css" />
+<link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css">
+<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'>
+<link href="/EyeMOM/resources/css/jquery.bxslider.css" rel="stylesheet" type="text/css"/>
+<link href="/EyeMOM/resources/css/home.css" rel="stylesheet" type="text/css" />
+<link href="/EyeMOM/resources/css/footer.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/EyeMOM/resources/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/EyeMOM/resources/js/jquery.bxslider.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
+<script type="text/javascript" src="/EyeMOM/resources/js/home.js"></script>
+<script type="text/javascript">
+	function login(){
+		
+		$.ajax({
+	        url: "login.do",
+	        type: 'GET',
+	        data : { "u_id" : $("#u_id").val(),
+	        	"u_pass" : $("#u_pass").val()	},
+	       	success: function(result){
+	       	  
+	       		if(result=="0"){
+	       			location.reload();
+	       			
+	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
+	        		
+	           },
+	       error:function(err){
+	    	   alert(err);
+	       }
+	           });
+	}
+	$(function(){
+		
+	// Example 1: From an element in DOM
+	$('.open-popup-link').magnificPopup({
+	  type:'inline',
+	  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+	});
+
+	// Example: 2 Dynamically created
+	$('button').magnificPopup({
+	  items: {
+	      src: '<div class="white-popup">Dynamically created popup</div>',
+	      type: 'inline'
+	  },
+	  closeBtnInside: true
+	});
+	})
+</script>
 <div class="body">
 
 	<header>
@@ -17,9 +68,10 @@
 				<td id="mainTopRightTd"><a href="gojoin.do"><img
 						src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
 						id="sign_upBtn" /></a> <img src="/EyeMOM/resources/img/find.png"
-					class="toplogo_btn" id="findBtn" /> <img
+					class="toplogo_btn" id="findBtn" /> 
+					  <a href="#test-popup" class="open-popup-link"><img
 					src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
-					id="loginBtn" /></td>
+					id="loginBtn" /></a></td>
 			</tr>
 			<tr>
 				<td colspan="2" id="MainLogoTd">로고</td>
@@ -223,26 +275,27 @@
 					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
 				</caption>
 				<tr>
-					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg1" /> <a class="goGroupBuy"><b>[상품이름]</b></a> <br />
-						123,456원<br />
-						<hr color="#ffa07a" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
-						7일 ~<br /> 2016년 12월 9일</td>
-					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg2" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
-						123,456원<br />
-						<hr color="#ffa07a" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일
-						~<br /> 2016년 12월 9일</td>
-					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg3" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
-						123,456원<br />
-						<hr color="#ffa07a" /> 마감<br /> <b>구매기간</b><br /> 2016년 12월 7일
-						~<br /> 2016년 12월 9일</td>
-					<td><img src="/EyeMOM/resources/img/hasi.png" class="groupImg"
-						id="groupImg4" /> <a class="goGroupBuy"><b>[상품이름]</b></a><br />
-						123,456원<br />
-						<hr color="#ffa07a" /> 인원: 6명<br /> <b>구매기간</b><br /> 2016년 12월
-						7일 ~<br /> 2016년 12월 9일</td>
+					<c:forEach var='purchaseVO' items='${purchaseList}'>
+					<td>
+					<img src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }" class="groupImg" id="groupImg1" />
+					<a class="goGroupBuy"><b>[${purchaseVO.we_title }]</b></a>
+					<br />
+					<fmt:formatNumber value="${purchaseVO.we_price}" pattern="#,###.##"/>원
+					<br />
+					<hr color="#ffa07a" />
+					<c:set var="human" value="${purchaseVO.we_maxsold - purchaseVO.we_sold }" />
+					<c:choose>
+					<c:when test="${human gt 0}">
+					인원: ${human }명<br />
+					</c:when>
+					<c:otherwise>
+					<b style="color: red;">마감</b><br/>
+					</c:otherwise>
+					</c:choose>
+					<b>구매기간</b><br />
+					${purchaseVO.we_start } ~<br /> ${purchaseVO.we_end }
+					</td>
+					</c:forEach>
 				</tr>
 			</table>
 
@@ -260,18 +313,47 @@
 
 
 
-<!-- 			<div id="middlesick"> -->
-<!-- 				<p>자주 검색하는 질병</p> -->
-<!-- 				<ol> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 					<li>자주 검색한 질병</li> -->
-<!-- 				</ol> -->
-<!-- 			</div> -->
+<!-- Popup itself -->
+
+	
+<div id="test-popup" class="white-popup mfp-hide">
+	<div id="clouds">
+		<div class="cloud x1"></div>
+		<!-- Time for multiple clouds to dance around -->
+		<div class="cloud x2"></div>
+		<div class="cloud x3"></div>
+		<div class="cloud x4"></div>
+		<div class="cloud x5"></div>
+		<div class="cloud x6"></div>
+	</div>
+<div class="container00">
+		<div id="login">
+			<form method="post"  onclick='return false'>
+					<p>
+						<span class="fontawesome-user"></span><input type="text"
+							id="u_id"  name="u_id" value="aaa" style="color: white;"
+							onBlur="if(this.value == '') this.value = 'Username'"
+							onFocus="if(this.value == 'Username') this.value = ''" required>
+					</p>
+					<!-- JS because of IE support; better: placeholder="Username" -->
+					<p>
+						<span class="fontawesome-lock"></span><input type="password"
+							id="u_pass" name="u_pass" value="aaa" style="color: white;"
+							onBlur="if(this.value == '') this.value = 'Password'"
+							onFocus="if(this.value == 'Password') this.value = ''" required>
+					</p>
+					<!-- JS because of IE support; better: placeholder="Password" -->
+					<p>
+						<input type="submit" onclick="login()" id="loginbtn" value="로그인">
+					</p>
+			</form>
+			<label id="info"></label>
+			<p>
+				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
+					class="fontawesome-arrow-right"></span>
+			</p>
+		</div>
+		<!-- end login -->
+	</div>
+</div>
+	<!-- end popup -->

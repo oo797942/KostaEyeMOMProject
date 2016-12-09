@@ -5,13 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="purchase">
 
-<!-- 메인에 띄워줄 QnA 리스트 -->
-<select id="mainQna" parameterType="qnaVO" resultType="qnaVO"> 
+<!-- 메인에 띄워줄 공동구매 리스트 -->
+<select id="mainpurchase" parameterType="purchaseVO" resultType="purchaseVO"> 
 <![CDATA[
-select rownum rs, b_no, in_title, in_point
-from(
-select * from qna_board order by b_no desc)
-where rownum<4
+select rownum rs, b_no, we_title, we_photo1name, we_price, we_sold, we_maxsold, we_start, we_end from(
+select b_no, we_title, we_photo1name, we_price, we_sold, we_maxsold, 
+TO_CHAR(we_start, 'YYYY"년" MM"월" DD"일"') we_start, TO_CHAR(we_end, 'YYYY"년" MM"월" DD"일"') we_end from group_purchase order by b_no desc)
+where rownum <5
 ]]>
 </select>
 
