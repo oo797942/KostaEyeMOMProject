@@ -1,96 +1,518 @@
-ul{	
-	list-style: none; 			/* li태그 불릿 삭제*/
+#viewul {
+	list-style: none; /* li태그 불릿 삭제*/
+	padding-left: 0px;
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+#viewtbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
 }
 
-#tableall2 {
-    padding: 35px 40px;
-    color: #555;
-    width: 75%;
-    border: 1px solid #c0c0c0;
+.boardtable { /* 테이블 css*/
+	text-align: center;
+	width: 100%; /* 테이블 width*/
+	border-collapse: collapse;
 }
-.content2{
-    padding:30px 0 60px;
-    position: relative;
+
+.boardtd1 {
+	width: 75%;
+	border-top: 1px solid #bcbcbc;
+	border-bottom: 1px solid #bcbcbc;
+	padding: 5px 10px;
 }
+
+.boardtd2 {
+	border-top: 1px solid #bcbcbc;
+	border-bottom: 1px solid #bcbcbc;
+	padding: 5px 10px;
+}
+
+.boardip {
+	color: gray;
+	font-size: 9pt;
+}
+
+#tableall2 { /* 테이블 전체 div */
+	padding: 35px 40px;
+	color: #555;
+	width: 80%; /* 게시판 전체 width */
+	border: 1px solid #c0c0c0;
+}
+
+.content2 {
+	padding: 30px 0 60px;
+	position: relative;
+}
+
 .space2 {
-    clear: both;
-    height: 35px;
-    margin: 0;
-    font-size: 0;
-    overflow: hidden;
+	clear: both;
+	height: 10px;
+	margin: 0;
+	font-size: 0;
+	overflow: hidden;
 }
 
-#trcolor2{
+#trcolor2 {
 	background-color: white;
 }
-div #inline2{
+
+.count {
+	font-size: 9pt;
+	padding-right: 450px;
+}
+
+.countfont {
+	font-size: 9pt;
+}
+
+div #inline2 {
 	display: inline-block;
 }
-#comment2{
-	background-color: #f6f6ed;		/* 댓글창 배경색*/
+
+#comment2 {
+	background-color: #fff1ec; /* 댓글창 배경색*/
 	height: auto;
 }
 
-#tablewidth2{
-	width: 800px;					/* 댓글창 가로 크기*/
+#tablewidth2 {
+	border-bottom: 1px solid #bcbcbc;
+	width: 90%;
 }
 
-.inputco2{							/* 댓글입력창 크기*/
+.inputco2 { /* 댓글입력창 크기*/
 	margin: 14px 0 0;
-    padding: 0;
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-.texta2{
-	clear: both;
-    padding: 10px;
-    border-width: 0px;
-    border-style: solid;
-}
-.textaa2{
+	padding: 0;
 	width: 100%;
-    margin: 10;
-    padding: 1px 0;
-    overflow: auto;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
-    resize: none;
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
-.i2{
+.texta2 {
+	clear: both;
+	padding: 10px;
+	border-width: 0px;
+	border-style: solid;
+}
+
+.textaa2 {
+	width: 100%;
+	margin: 10;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.i2 {
 	position: relative;
-    width: 89px;
-    text-align: right;
-    vertical-align: bottom;
-        line-height: 14px;
-    
+	width: 89px;
+	text-align: right;
+	vertical-align: bottom;
+	line-height: 14px;
 }
 
-.submitbtn2{
+.submitbtn2 { /* 등록버튼 div css*/
 	display: inline-block;
-    position: absolute;
-    top : 9px;
-    right: 0;
-    z-index: 3;
-    width: 84px;
-    height: 61px;
-    border: 1px solid #ccc;
-    background: #fff !important;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 61px;
-    text-align: center;
+	position: relative;
+	bottom: 15px;
+	right: 0;
+	z-index: 3;
+	width: 84px;
+	height: 61px;
+	border: 1px solid #ccc;
+	background: #fff !important;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 61px;
+	text-align: center;
 }
-.submitbtn2 a{
+
+.submitbtn2
+ 
+.submita { /* 등록버튼 css*/
 	display: inline-block;
-    width: 100%;
-    height: 100%;
-    color: #666;
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	background-color: #ffa07a;
+	text-decoration: none;
+}
+.gooddiv {					/* 추천 버튼 div css*/
+	background-color : #ffa07a;
+	padding: 3px 8px;
+	width: 65px;
+	border-radius: 4px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+.goodbtn {					/* 추천 버튼 css */
+	border: 0px solid transparent;
+	border-radius: 4px;
+	padding: 6px 12px;
+	font-weight: bolder;
+	cursor: pointer;
+	background-color : #ffa07a;
+	    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+	
+}
+.reportdiv {					/* 신고 버튼 div css*/
+	background-color : #ffffff;
+	padding: 5px 5px;
+	cursor: pointer;
+	width: 45px;
+	border-radius: 4px;
+	height: 25px;
+	border: 1px solid #000;
+	float: right;
+
+}
+.reportbtn {					/* 신고 버튼 css */
+	border: 0px solid transparent;
+	border-radius: 4px;
+	padding: 4px ;
+	font-size : 7pt;
+	font-weight: normal;
+	vertical-align: middle;
+	background-color : #ffffff;
+}
+
+.alignleft{
+	text-align: left;
+}
+
+/* 부트스트랩 적용 */
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control
+:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+}
+
+.form-control
+:
+:-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+.form-control
+:-ms-input-placeholder {
+	color: #999;
+}
+
+.form-control
+:
+:-webkit-input-placeholder {
+	color: #999;
+}
+
+.form-control
+[disabled], .form-control
+[readonly], fieldset
+[disabled]
+ 
+.form-control {
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1;
+}
+
+@media ( min-width : 768px) {
+	.form-inline .form-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+	.form-inline .form-control-static {
+		display: inline-block;
+	}
+	.form-inline .input-group {
+		display: inline-table;
+		vertical-align: middle;
+	}
+	.form-inline .input-group .input-group-addon, .form-inline .input-group .input-group-btn,
+		.form-inline .input-group .form-control {
+		width: auto;
+	}
+	.form-inline .input-group>.form-control {
+		width: 100%;
+	}
+	.form-inline .control-label {
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .radio, .form-inline .checkbox {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .radio, .form-inline .checkbox {
+		padding-left: 0;
+	}
+	.form-inline .radio input[type="radio"], .form-inline .checkbox input[type="checkbox"]
+		{
+		position: relative;
+		margin-left: 0;
+	}
+	.form-inline .has-feedback .form-control-feedback {
+		top: 0;
+	}
+}
+
+.inputco2 { /* 댓글입력창 크기*/
+	margin: 14px 0 0;
+	padding: 0;
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.texta2 {
+	clear: both;
+	padding: 10px;
+	border-width: 0px;
+	border-style: solid;
+}
+
+.textaa2 {
+	width: 100%;
+	margin: 10;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.i2 {
+	position: relative;
+	width: 89px;
+	text-align: right;
+	vertical-align: bottom;
+	line-height: 14px;
+}
+
+.submitbtn2 { /* 등록버튼 div css*/
+	display: inline-block;
+	position: relative;
+	bottom: 15px;
+	right: 0;
+	z-index: 3;
+	width: 84px;
+	height: 61px;
+	border: 1px solid #ccc;
+	background: #fff !important;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 61px;
+	text-align: center;
+}
+
+.submitbtn2 .submita { /* 등록버튼 css*/
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #ffffff;
+	background-color: #ffa07a;
+	text-decoration: none;
+}
+
+/* 부트스트랩 적용 */
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+}
+
+.form-control::-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #999;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #999;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control
+	{
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1;
+}
+
+@media ( min-width : 768px) {
+	.form-inline
+ 
+.form-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline
+ 
+.form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+	.form-inline
+ 
+.form-control-static {
+		display: inline-block;
+	}
+	.form-inline
+ 
+.input-group {
+		display: inline-table;
+		vertical-align: middle;
+	}
+	.form-inline
+ 
+.input-group
+ 
+.input-group-addon, .form-inline
+ 
+.input-group
+ 
+.input-group-btn, .form-inline
+ 
+.input-group
+ 
+.form-control {
+		width: auto;
+	}
+	.form-inline
+ 
+.input-group>.form-control {
+		width: 100%;
+	}
+	.form-inline
+ 
+.control-label {
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline
+ 
+.radio, .form-inline
+ 
+.checkbox {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline
+ 
+.radio, .form-inline
+ 
+.checkbox {
+		padding-left: 0;
+	}
+	.form-inline
+ 
+.radio
+ 
+input
+[type="radio"], .form-inline
+ 
+.checkbox
+ 
+input
+[type="checkbox"] {
+		position: relative;
+		margin-left: 0;
+	}
+	.form-inline
+ 
+.has-feedback
+ 
+.form-control-feedback {
+		top: 0;
+	}
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }

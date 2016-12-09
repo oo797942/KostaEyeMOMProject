@@ -18,6 +18,10 @@
 		alert(lb);
 		location.href = "boardInsert.do?keyword=${title}";
 	}
+	
+	
+	
+	
 </script>
 
 </head> 
@@ -65,7 +69,7 @@
 			<c:forEach var='vo' items='${list}'>
 					<tr>
 						<td class='boardtd' id='num' >${vo.b_no }</td>
-						<td class='boardtd'><a href="#">${vo.b_title }</a></td>
+						<td class='boardtd'><a href="boardview.do?b_no=${vo.b_no }">${vo.b_title }</a></td>
 						<td class='boardtd'>${vo.b_nick }</td>
 						<td class='boardtd'>${vo.b_date }</td>
 						<td class='boardtd'>${vo.b_count }</td>

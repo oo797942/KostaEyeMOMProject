@@ -19,6 +19,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from qna_board
 </select>
 
+<!-- 조회수 카운트 -->
+<update id="boardCount" parameterType="memberVO">
+	UPDATE  normal_board SET b_count=NVL(b_count,0)+ 1 WHERE b_no =#{b_no}
+</update>
+
+<!-- 게시판 내용 -->
+<select id="boardView" parameterType="boardVO" resultType="boardVO"> 
+	select b_no, b_title, b_content, b_ip, b_good, b_count, b_nick, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH:mm:ss') as b_date
+	from normal_board 
+	where b_no=#{b_no}
+</select>
+
+<!-- 리플내용 -->
+<select id="callreply" parameterType="boardVO" resultType="replyVO"> 
+	select re_no, re_content, re_id, re_ip, re_nick, b_no , TO_CHAR(SYSDATE, 'YYYY.MM.DD') as re_date
+		from reply where b_no=#{b_no}
+</select>
+
 <!-- 게시판 등록 -->
 <insert id="boardInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
 	Insert into normal_board 

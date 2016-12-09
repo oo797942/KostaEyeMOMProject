@@ -1,9 +1,9 @@
 package member.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import member.vo.BoardVO;
+import member.vo.ReplyVO;
 import mybatis.manager.BoardManager;
 
 public class BoardDaoImpl implements BoardDao {
@@ -37,7 +37,18 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public BoardVO viewBoard(BoardVO vo) {
 		BoardVO bvo=null;
+		try{
+			bvo = BoardManager.viewBoard(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / vo가져오기 실패 : " + ex.getMessage());
+		}
 		return bvo;
 	}
-
+	
+	@Override
+	public ReplyVO callReply(BoardVO vo){
+		ReplyVO re=null;
+		return re;
+	}
 }

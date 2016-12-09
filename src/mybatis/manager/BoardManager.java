@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import member.vo.BoardVO;
+import member.vo.ReplyVO;
 
 
 public class BoardManager {
@@ -52,5 +53,20 @@ public class BoardManager {
 		}
 		session.commit();
 		return result;
+	}
+	
+	public static BoardVO viewBoard(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		session.update("board.boardCount", boardVO);
+		BoardVO vo= session.selectOne("board.boardView", boardVO);
+		session.commit();
+		return vo;
+	}
+	
+	public static ReplyVO callReply(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		ReplyVO re=session.selectOne("board.", boardVO);
+		session.commit();
+		return re;
 	}
 }

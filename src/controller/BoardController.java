@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import member.dao.BoardDaoImpl;
 import member.vo.BoardVO;
 import member.vo.MemberVO;
+import member.vo.ReplyVO;
 
 
 @Controller
@@ -44,6 +45,19 @@ public class BoardController {
 		System.out.println("게시팔:" +keyword);
 		return "board/boardInesert";
 	}  
+	//글보기
+	@RequestMapping("/boardview.do")
+	public String viewBoard(BoardVO boardVO, Model m){
+		
+		System.out.println(boardVO.getB_no());
+		
+		BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
+		//ReplyVO rvo = boardDao.callReply(boardVO); // 관련 리플 호출
+		System.out.println("db리턴 : "+vo.getB_no());
+		m.addAttribute("bvo", vo);
+		//m.addAttribute("rvo", rvo);
+		return "board/boardView";
+	}
 	
 	@RequestMapping("/insert.do")
 	public String writeBoard(BoardVO boardVO, Model m, HttpSession session,HttpServletRequest request){
