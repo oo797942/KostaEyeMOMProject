@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	$(function(){
 		
-        $("#g_photoName").on('change', function(){
+        $("#v_photoName").on('change', function(){
         	readURL(this);
         });
 		

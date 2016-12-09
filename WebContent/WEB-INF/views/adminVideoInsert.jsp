@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	$(function(){
 		
-        $("#g_photoName").on('change', function(){
+        $("#d_photoName").on('change', function(){
         	readURL(this);
         });
 		
@@ -97,7 +97,7 @@ function readURL(input) {
     <tr height="50">
       <th width="10%" style="text-align:center">제목 </th>
       <td colspan="2" width="50%">
-      <input type="text" class="form-control" name="g_title" placeholder="제목을 입력하세요">
+      <input type="text" class="form-control" name="d_title" placeholder="제목을 입력하세요">
       </td>
 		<th width="10%" style="text-align:center">분류</th>
 		<td width="30%">
@@ -115,7 +115,7 @@ function readURL(input) {
       <td width="5%">&nbsp;</td>
       <th width="10%" style="text-align:center">영상</th>
       <td width="30%">
-        <input type='file' id="d_flashName" accept="video/*" name="d_flashName" />
+        <input type='file' id="d_flashName" accept="video/*" name="d_videoName" />
       </td>
     </tr>
     <tr height="50">

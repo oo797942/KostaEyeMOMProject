@@ -30,7 +30,6 @@ public class VideoController {
 //	}
 	
 	
-	
 	@RequestMapping("/adminVideoInsertDoing.go")
 	public String VideoInput(VideoVO videoVO, Model m){
 		int result = 0;

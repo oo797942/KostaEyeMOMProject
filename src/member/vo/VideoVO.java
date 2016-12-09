@@ -102,7 +102,7 @@ public class VideoVO {
 		
 		
 		//업로드된 파일이 저장될 경로
-		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\"+d_video);
+		File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\video\\"+d_video);
 		
 		try {
 			d_videoName.transferTo(f);
