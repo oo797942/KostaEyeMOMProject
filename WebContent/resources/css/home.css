@@ -136,7 +136,9 @@ footer {
 	transition-duration: .3s;
 	color: #ffa07a;
 }
-
+.alink{
+	color: #1a1a1a;
+}
 .alink:LINK {
 	text-decoration: none;
 }
