@@ -21,7 +21,7 @@ public class BoardVO {
 	private String b_photo3name;
 	private String b_good;
 	private int b_count;
-	private Date b_date;
+	private String b_date;
 	private String b_ip;
 	private String b_addr;
 	private String b_report;
@@ -156,10 +156,10 @@ public class BoardVO {
 	public void setB_count(int b_count) {
 		this.b_count = b_count;
 	}
-	public Date getB_date() {
+	public String getB_date() {
 		return b_date;
 	}
-	public void setB_date(Date b_date) {
+	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
 	public String getB_ip() {

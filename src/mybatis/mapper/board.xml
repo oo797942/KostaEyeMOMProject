@@ -7,7 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 육아꿀팁, 식단, 자랑 -->
 <select id="allBoard" parameterType="string" resultType="boardVO"> 
-	select * from normal_board where b_cate=#{title}
+	SELECT b_no, b_title, b_nick, b_count, TO_CHAR(SYSDATE, 'YYYY.MM.DD') as b_date 
+	FROM normal_board where b_cate=#{title}
 </select>
 <!-- 질병 -->
 <select id="allSick" parameterType="string" resultType="boardVO"> 
