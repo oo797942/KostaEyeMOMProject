@@ -13,9 +13,9 @@ public class QnAManager {
 	public static ArrayList<QnAVO> mainQnaList() throws SQLException
 	   {
 		   SqlSession session = CommonManager.db().openSession();
-		   ArrayList<QnAVO> list = (ArrayList) session.selectList("user.idCheck");
-		  // System.out.println("manager : "+memberVO.getU_id());
-		   	return list;
+		   ArrayList<QnAVO> list = (ArrayList) session.selectList("qna.mainQna");
+		   System.out.println("qnaList 몇 개? : "+ list.size());
+		   return list;
 	   }
 	
 	

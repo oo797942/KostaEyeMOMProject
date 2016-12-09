@@ -19,7 +19,7 @@ public class QnADaoImpl implements QnADao {
 			list = QnAManager.mainQnaList();
 		}catch( Exception ex )
 		{
-			System.out.println("loginDAOImpl / idCheck 실패 : " + ex.getMessage());
+			System.out.println("QnADaoImpl / mainQnaList 실패 : " + ex.getMessage());
 		}
 		return list;
 	}
