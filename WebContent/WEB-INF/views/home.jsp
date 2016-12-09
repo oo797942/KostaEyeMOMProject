@@ -61,7 +61,7 @@
 			<tr id="mainTopUtilTr">
 				<td id="mainTopLeftTd">
 					<p>
-						<a href="">시작 페이지로</a> <a
+						<a href="" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/EyeMOM/index.jsp');">시작 페이지로</a> <a
 							href="javascript:addFavorite('아이맘','http://localhost:8080/EyeMOM/home.go');">북마크</a>
 					</p>
 				</td>
