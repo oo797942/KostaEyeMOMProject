@@ -1,7 +1,11 @@
 package member.dao;
 
+import java.util.List;
+
+import member.vo.GameVO;
 import member.vo.StudyVO;
 import member.vo.VideoVO;
+import mybatis.manager.GameManager;
 import mybatis.manager.VideoManager;
 
 public class VideoDaoImpl implements VideoDao {
@@ -30,6 +34,58 @@ public class VideoDaoImpl implements VideoDao {
 			System.out.println("게임 등록 실패 : " + ex.getMessage());
 		}
 		return result;	
+	}
+
+	@Override
+	public List<VideoVO> videoBoard() {
+		List<VideoVO> list=null;
+		try{
+			list = VideoManager.videoBoard();
+		}catch( Exception ex )
+		{
+			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
+		}finally{
+			return list;
+		}
+	}
+
+	@Override
+	public VideoVO videoBoardView(VideoVO vo) {
+		VideoVO vlist=null;
+		try{
+			vlist = VideoManager.videoView(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("게임목록들고오기 실패 : " + ex.getMessage() + ">");
+		}finally{
+			return vlist;
+		}
+	}
+
+	@Override
+	public List<StudyVO> studyBoard() {
+		List<StudyVO> list=null;
+		try{
+			list = VideoManager.studyBoard();
+		}catch( Exception ex )
+		{
+			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
+		}finally{
+			return list;
+		}
+	}
+
+	@Override
+	public StudyVO studyBoardView(StudyVO vo) {
+		StudyVO vlist=null;
+		try{
+			vlist = VideoManager.studyView(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("게임목록들고오기 실패 : " + ex.getMessage() + ">");
+		}finally{
+			return vlist;
+		}
 	}
 
 }

@@ -28,4 +28,24 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</if>	
 	</where>
 </select>
+
+
+ <select id="videoAll" resultType="videoVO"  parameterType="videoVO" > 
+	select * from kid_video
+	<where>
+		<if test="d_no != null">
+		d_no=#{d_no}
+	</if>	
+	</where>
+</select>
+
+ <select id="studyAll" resultType="studyVO"  parameterType="studyVO" > 
+	select * from kid_study
+	<where>
+		<if test="v_no != null">
+		v_no=#{v_no}
+	</if>	
+	</where>
+</select>
+
 </mapper> 
