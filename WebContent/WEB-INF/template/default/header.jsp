@@ -43,7 +43,7 @@
  	 
 	<p id="headerMenu">
 <!-- 	세션 정보가 없을경우 로그인 버튼 show -->
-<img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu">
+<a href="home.go"><img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu"></a>
 	<c:choose>
     <c:when test="${empty sessionScope.user}">
 	  <a href="#test-popup" class="open-popup-link">	<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
