@@ -129,7 +129,7 @@
 											</tr>
 											<tr>
 											</tr>
-										</table>
+										</table>  
 										<p class='boardp'>${vo.re_content }</p><br/><hr width="86%"/>	<!-- 내용 -->
 									</div>
 									</c:forEach>
