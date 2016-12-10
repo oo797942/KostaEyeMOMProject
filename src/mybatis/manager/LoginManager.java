@@ -18,11 +18,11 @@ public class LoginManager {
 	
 	public static MemberVO userLogin(MemberVO vo ) throws SQLException
 	   {
-		   SqlSession session = CommonManager.db().openSession();
+		   SqlSession session = CommonManager.db().openSession(); //sqlmapper
 		   MemberVO memberVO = session.selectOne("user.idCheck", vo);
 		   System.out.println("manager : "+memberVO.getU_id());
 		   session.commit();
-		   	return memberVO;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+		   	return memberVO;	
 	   }
 	
 }
