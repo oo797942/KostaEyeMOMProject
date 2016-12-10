@@ -20,7 +20,7 @@
 	}
 </script>
 
-</head> 
+</head>    
 <body>
   <div class="body">
 	<div style="text-align: center;">

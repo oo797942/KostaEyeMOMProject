@@ -113,7 +113,7 @@ function fileInfo(f){
                </div>
                <div style='margin-left: 570px'>
                   <table>
-                     <tr>
+                     <tr>  
                         <td>
 					<!-- 등록하기 버튼 -->
                            <div>
