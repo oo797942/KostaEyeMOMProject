@@ -14,7 +14,11 @@
 	width: 100%; /* 테이블 width*/
 	border-collapse: collapse;
 }
-
+.boardtd0{
+	width: 10%;
+	border-top: 1px solid #bcbcbc;
+	border-bottom: 1px solid #bcbcbc;
+}
 .boardtd1 {
 	width: 75%;
 	border-top: 1px solid #bcbcbc;

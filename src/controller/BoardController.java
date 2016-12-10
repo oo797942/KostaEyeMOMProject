@@ -1,6 +1,8 @@
 package controller;
  
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.BoardDaoImpl;
 import member.vo.BoardVO;
@@ -49,13 +52,28 @@ public class BoardController {
 	@RequestMapping("/boardview.do")
 	public String viewBoard(BoardVO boardVO, Model m){
 		
-		System.out.println(boardVO.getB_no());
+		
 		
 		BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
-		//ReplyVO rvo = boardDao.callReply(boardVO); // 관련 리플 호출
-		System.out.println("db리턴 : "+vo.getB_no());
+		List <ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
+		
+		
+		//ip보안을 위해 * 처리
+		String ip= vo.getB_ip();
+		StringTokenizer st= new StringTokenizer(ip, ".");
+		String[] list = new String[4]; 
+		String rip;
+		for(int i=0; st.hasMoreTokens();i++){
+			
+			list[i]=(String) st.nextToken();
+			
+		}
+		rip=list[0]+"."+list[1]+".*.*";
+		System.out.println(rip);
+		vo.setB_ip(rip); // 보안ip 적용
+		
 		m.addAttribute("bvo", vo);
-		//m.addAttribute("rvo", rvo);
+		m.addAttribute("list", listVO);
 		return "board/boardView";
 	}
 	
@@ -91,6 +109,25 @@ public class BoardController {
 		}
 			return pass;
 		
-	} 
+	}
+	
+	@RequestMapping("replinsert.do")
+	@ResponseBody
+	public int replInsert(ReplyVO replyVO, HttpSession session,HttpServletRequest request){
+		
+		System.out.println("리리 게시판 번호"+replyVO.getB_no()+"  리리 내용 : "+ replyVO.getRe_content());
+		MemberVO memberVO= (MemberVO) session.getAttribute("user"); //세션값 얻어오기
+		String ip = request.getRemoteAddr(); //ip값 얻어오기
+		replyVO.setRe_ip(ip);
+		System.out.println("세션값 : "+memberVO.getU_id());
+		replyVO.setRe_id(memberVO.getU_id());
+		replyVO.setRe_nick(memberVO.getU_nick());
+		System.out.println("객체값 : "+replyVO.getRe_id());
+		System.out.println("객체값 : "+replyVO.getRe_nick());
+		int result=boardDao.writeReply(replyVO);
+		
+		return result;
+		
+	}
 }
  

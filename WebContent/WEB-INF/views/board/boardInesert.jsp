@@ -16,14 +16,14 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
-//    	$("#b_photo2").hide();
-//    	$("#b_photo3").hide();
+   	$("#b_photo2").hide();
+   	$("#b_photo3").hide();
    	
-//     $(".photo").on('change', function(){
-//     	$(this).hide();
-//     	$(this).next().show();
-//        fileInfo(this);
-//     });
+    $(".photo").on('change', function(){
+    	$(this).hide();
+    	$(this).next().show();
+       fileInfo(this);
+    });
 });
 
 function fileInfo(f){
@@ -121,7 +121,7 @@ function fileInfo(f){
                         </td>
                         <td><div class='space3'></div></td>
                         <!-- 버튼사이 공간 css -->
-
+ 
                         <td>
                            <div>
                               <i class='fa fa-trash'><span><input type='button'
