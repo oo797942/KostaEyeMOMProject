@@ -110,7 +110,7 @@
 							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button'  value='신고' class='reportbtn'/></span></i>				
 						</div>
 					</div>
-					
+					    
 					<!-- 테이블과 테이블 사이 간격  -->
 					<div class='space2'></div>
 				
