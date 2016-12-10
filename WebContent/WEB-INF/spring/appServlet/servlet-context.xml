@@ -14,6 +14,7 @@
 	<bean class='member.dao.QnADaoImpl'/>
 	<bean class='member.dao.GroupPurchaseDaoImpl'/>
 	<bean class="member.dao.VideoDaoImpl"/>
+	<bean class="member.dao.CountDaoImpl"/>
 	
 	<!-- 빈 스캔 설정 -->
 	<context:component-scan base-package="controller" />
