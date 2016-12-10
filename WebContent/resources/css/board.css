@@ -61,7 +61,7 @@
 	height: 13px;
 }
 
-.writebtn{
+.writebtn{  
 	background-color: #ffa07a;
 	color: white;
 } 
@@ -69,7 +69,7 @@
 	margin-bottom: 50px;
 }
 #boardtdtitle{
-	width: 65%;
+	width:55%;
 }
   /*부트스트랩 카피*/
 .btn {
