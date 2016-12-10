@@ -12,4 +12,5 @@ public interface BoardDao {
 	List<ReplyVO> callReply(BoardVO vo);
 	int writeReply(ReplyVO vo);
 	int replDelte(ReplyVO vo);
+	int deleteBoard(BoardVO vo);
 }

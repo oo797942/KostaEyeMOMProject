@@ -30,6 +30,7 @@
 	
 	$(function(){
 		
+		//리플삭제
 		$('.boarddelete').click(function(){
 			
 			$.ajax({
@@ -41,7 +42,7 @@
 		       		if(result=="1"){
 		       			location.reload();
 		       			
-		        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
+		        	 }else{ alert("본인이 작성한 댓글이 아닙니다");} 
 		           },
 			       error:function(err){
 			    	   alert(err);
@@ -50,7 +51,38 @@
 			
 			
 		})
+		//목록으로 돌아가기
+		$('#golist').click(function(){
+			
+			var pass= "";
+			pass=$("#cate").val()
+			alert(pass);
+			location.href=pass;
+		});
 		
+		//삭제
+		$('#godelete').click(function(){
+			q = confirm("정말 게시물을 삭제하시겠습니까?");
+			if (q == true)
+			{	
+				var num = $('#b_no').val();
+				var cate = $("#cate").val();
+// 				var pass= "deleteBoard.do?b_no"+num+"$b_cate="+cate;
+// 				alert(pass);
+				location.href="deleteBoard.do?b_no="+num+"&b_cate="+cate;
+			}
+			else
+			{
+				
+			}
+		});
+		
+		//수정하기
+		$('#goupdate').click(function(){
+			var num = $('#b_no').val();
+			
+			location.href="updateBoard.do?b_no="+num;
+		});
 		
 	});
 </script>
@@ -73,6 +105,7 @@
 							<th colspan="9" class='boardtd1'><label id='title'>${bvo.b_title}</label></th>
 							<!-- 게시판 카테고리 -->
 							<th class='boardtd2'>
+							<input type="hidden" id="cate" name="cate" value= "${bvo.b_cate}">
 							<c:if test="${bvo.b_cate=='tip'}">
 								<label id='cate'>육아꿀팁</label> 
 							</c:if>
@@ -184,9 +217,11 @@
 						</div>
 						<!-- 수정/삭제/목록보기 버튼 --> 
 						<div style="float: right;">
-							<input type='button' value='수정하기' class='optionbtn'/>					
-							<input type='button' value='삭제하기' class='optionbtn'/>					
-							<input type='button' value='목록보기' class='optionbtn'/>					
+							<c:if test="${bvo.u_id==sessionScope.user.getU_id()}" >
+							<input type='button' value='수정하기' id="goupdate" class='optionbtn'/>				
+							<input type='button' value='삭제하기' id="godelete" class='optionbtn'/>					
+							</c:if>
+							<input type='button' value='목록보기' id="golist" class='optionbtn'/>					
 						</div>
 						<div class='space2'></div>
 					</div><!-- class='comment2 끝' -->
