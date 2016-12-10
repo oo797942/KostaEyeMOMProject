@@ -7,18 +7,26 @@
 	width: 750px;
 	height: auto;
 	text-align: left;
-} 
-                    
+}
+
 .boardip {
 	color: gray;
 	font-size: small;
 }
 
-.boarddate{
-	padding-left: 440px; 
+.boarddelete {
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 5px;
+	width: 25;
+	height: 25;
+}
+
+.boarddate {
+	padding-left: 440px;
 	font-size: small;
-/* 	position : relative; */
-/* 	left : 38%; */
+	/* 	position : relative; */
+	/* 	left : 38%; */
 }
 
 #viewtbody {
@@ -145,13 +153,13 @@ div #inline2 {
 	line-height: 14px;
 }
 
-.optionbtn{
-	width: 80px; 
-	height: 35px; 
-	background-color: #ffffff; 
+.optionbtn {
+	width: 80px;
+	height: 35px;
+	background-color: #ffffff;
 	border-radius: 6px;
 }
- 
+
 .submita { /* 등록버튼 css*/
 	position: relative;
 	bottom: 21px;

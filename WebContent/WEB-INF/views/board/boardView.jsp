@@ -126,9 +126,7 @@
 												<th width="70px">${vo.re_nick}</th>		<!-- 닉네임 -->
 												<td class='boardip'>${vo.re_ip 	}</td>								<!-- 아이피 -->
 												<td class='boarddate'>${vo.re_date }</td>					<!-- 등록일 -->
-												<td><input type="button" value='x' style="	border : 1px solid black; background-color: white;border-radius : 5px;	
-	width: 25; 
-	height: 25; "/></td>
+												<td><input type="button" value='x' class='boarddelete'/></td>
 											</tr>
 											<tr>
 											</tr>

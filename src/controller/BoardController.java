@@ -35,7 +35,6 @@ public class BoardController {
 		
 		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
 		
-		System.out.println(list);
 		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		m.addAttribute("title", title ); // 게시판 종류 모델에 저장
 		return "board/board";
@@ -45,7 +44,6 @@ public class BoardController {
 	@RequestMapping("/boardInsert.do")
 	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
 		m.addAttribute("title", keyword ); // 게시판 종류 모델에 저장
-		System.out.println("게시팔:" +keyword);
 		return "board/boardInesert";
 	}  
 	//글보기
@@ -59,32 +57,31 @@ public class BoardController {
 		
 		
 		//ip보안을 위해 * 처리
-		String ip= vo.getB_ip();
+		String ip= vo.getB_ip(); //작성자 ip가져오기
 		StringTokenizer st= new StringTokenizer(ip, ".");
-		String[] list = new String[4]; 
-		String rip;
+		String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
+		String rip;	// 보안처리된  ip 담을 문자열
 		for(int i=0; st.hasMoreTokens();i++){
 			
-			list[i]=(String) st.nextToken();
+			list[i]=(String) st.nextToken();  // " . "을 제거한 ip를 list에 담는다
 			
 		}
-		rip=list[0]+"."+list[1]+".*.*";
-		System.out.println(rip);
-		vo.setB_ip(rip); // 보안ip 적용
+		rip=list[0]+"."+list[1]+".*.*"; // 뒤에 두자리 보안처리
+		vo.setB_ip(rip); // 보안ip 다시 담기
 		
-		m.addAttribute("bvo", vo);
-		m.addAttribute("list", listVO);
-		return "board/boardView";
+		m.addAttribute("bvo", vo); // 게시물 정보 모델에 담기
+		m.addAttribute("list", listVO); //리플 정보 모델에 담기
+		return "board/boardView"; 
 	}
-	 
+	
+	//게시판 작성
 	@RequestMapping("/insert.do")
 	public String writeBoard(BoardVO boardVO, Model m, HttpSession session,HttpServletRequest request){
-		String pass="";
-		String ip = request.getRemoteAddr();
-		String cate = boardVO.getB_cate();
-		System.out.println(ip);
+		String pass="";	//페이지 리턴할 문자열
+		String ip = request.getRemoteAddr(); //작성자 ip
+		String cate = boardVO.getB_cate(); //게시판 종류 가져오기
 		MemberVO memberVO= (MemberVO) session.getAttribute("user"); //세션값 얻어오기
-		System.out.println("nkick----- : "+memberVO.getU_nick());
+		
 		
 		// 가져온 cate값 DB형식에 맞게 변경
 				if(cate.equals("육아꿀팁")){
@@ -99,32 +96,30 @@ public class BoardController {
 					boardVO.setB_cate("baby");
 				}
 		
-		boardVO.setU_id(memberVO.getU_id()); // 아이디값 보드vo에 넣어주기
-		boardVO.setB_ip(ip);
-		boardVO.setB_nick(memberVO.getU_nick());
+		boardVO.setU_id(memberVO.getU_id());		// 아이디값 보드vo에 넣어주기
+		boardVO.setB_ip(ip); 						//ip
+		boardVO.setB_nick(memberVO.getU_nick());	//nickname
 		
-		int result=boardDao.writeBoard(boardVO);
+		int result=boardDao.writeBoard(boardVO);	//작성 데이터 db로
 		if(result!=0){
-			pass="redirect:"+boardVO.getB_cate();
+			pass="redirect:"+boardVO.getB_cate();	//DB에 들어갔다면 페이지 이동
 		}
 			return pass;
 		
 	}
 	
+	//리플입력
 	@RequestMapping("replinsert.do")
 	@ResponseBody
 	public int replInsert(ReplyVO replyVO, HttpSession session,HttpServletRequest request){
 		
 		System.out.println("리리 게시판 번호"+replyVO.getB_no()+"  리리 내용 : "+ replyVO.getRe_content());
 		MemberVO memberVO= (MemberVO) session.getAttribute("user"); //세션값 얻어오기
-		String ip = request.getRemoteAddr(); //ip값 얻어오기
-		replyVO.setRe_ip(ip);
-		System.out.println("세션값 : "+memberVO.getU_id());
+		String ip = request.getRemoteAddr(); // 사용자 ip값 얻어오기
+		replyVO.setRe_ip(ip); //ip값 저장
 		replyVO.setRe_id(memberVO.getU_id());
 		replyVO.setRe_nick(memberVO.getU_nick());
-		System.out.println("객체값 : "+replyVO.getRe_id());
-		System.out.println("객체값 : "+replyVO.getRe_nick());
-		int result=boardDao.writeReply(replyVO);
+		int result=boardDao.writeReply(replyVO);	//DB넘김 
 		
 		return result;
 		
