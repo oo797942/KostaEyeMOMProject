@@ -76,7 +76,7 @@ public class BoardController {
 		m.addAttribute("list", listVO);
 		return "board/boardView";
 	}
-	
+	 
 	@RequestMapping("/insert.do")
 	public String writeBoard(BoardVO boardVO, Model m, HttpSession session,HttpServletRequest request){
 		String pass="";
