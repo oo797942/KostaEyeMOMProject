@@ -15,7 +15,10 @@
 }
 
 .boarddate{
-	padding-left: 470px; font-size: small;
+	padding-left: 440px; 
+	font-size: small;
+/* 	position : relative; */
+/* 	left : 38%; */
 }
 
 #viewtbody {
@@ -142,28 +145,20 @@ div #inline2 {
 	line-height: 14px;
 }
 
-.submitbtn2 { /* 등록버튼 div css*/
-	display: inline-block;
-	position: relative;
-	bottom: 15px;
-	right: 0;
-	z-index: 3;
-	width: 84px;
-	height: 61px;
-	border: 1px solid #ccc;
-	background: #fff !important;
-	font-size: 13px;
-	font-weight: bold;
-	line-height: 61px;
-	text-align: center;
+.optionbtn{
+	width: 80px; 
+	height: 35px; 
+	background-color: #ffffff; 
+	border-radius: 6px;
 }
-    
-.submitbtn2
  
 .submita { /* 등록버튼 css*/
+	position: relative;
+	bottom: 21px;
+	right: 0;
 	display: inline-block;
 	width: 100%;
-	height: 100%;
+	height: 59px;
 	color: #ffffff;
 	background-color: #ffa07a;
 	text-decoration: none;

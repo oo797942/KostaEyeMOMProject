@@ -126,6 +126,9 @@
 												<th width="70px">${vo.re_nick}</th>		<!-- 닉네임 -->
 												<td class='boardip'>${vo.re_ip 	}</td>								<!-- 아이피 -->
 												<td class='boarddate'>${vo.re_date }</td>					<!-- 등록일 -->
+												<td><input type="button" value='x' style="	border : 1px solid black; background-color: white;border-radius : 5px;	
+	width: 25; 
+	height: 25; "/></td>
 											</tr>
 											<tr>
 											</tr>
@@ -147,15 +150,22 @@
 										</td>
 										<td class='i2'>
 											<!-- 댓글등록버튼 -->
-											<div class='submitbtn2'>
+											<div>
 												<input type="submit" onclick="replyInsert()" value="등록" class='submita'>
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-						</div> 
-					</div>
+						</div>
+						<!-- 수정/삭제/목록보기 버튼 --> 
+						<div style="float: right;">
+							<input type='button' value='수정하기' class='optionbtn'/>					
+							<input type='button' value='삭제하기' class='optionbtn'/>					
+							<input type='button' value='목록보기' class='optionbtn'/>					
+						</div>
+						<div class='space2'></div>
+					</div><!-- class='comment2 끝' -->
 				</form>
 				</div>	
 			</div>
