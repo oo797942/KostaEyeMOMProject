@@ -149,6 +149,7 @@ footer {
 }
 
 .alink:HOVER {
+	text-decoration: none;
 	transition-duration: .3s;
 	cursor: pointer;
 	color: #ffa07a;
@@ -335,6 +336,7 @@ footer {
 
 .goGroupBuy:HOVER {
 	color: #a8060b;
+	text-decoration: none;
 }
 
 /* ---------------- */
