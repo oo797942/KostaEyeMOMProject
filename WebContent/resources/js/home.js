@@ -91,11 +91,9 @@ $(function() {
 		// 이미지 변경
 			for(var i=1; i<5; i++){
 				$("#cookimg"+i).attr("src",$("#cookimg"+i).attr("src").replace("cookon_","cook_"));
-				$("#cookimg"+i).css("height","55px");
 			}
 			$(this).attr("src", $(this).attr("src").replace("cook_","cookon_"));
 			$(".cookul").hide();
-			$(this).css("height","60px");
 			$("#"+cookon).show();
 	});
 

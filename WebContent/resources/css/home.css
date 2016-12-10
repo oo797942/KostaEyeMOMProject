@@ -136,9 +136,11 @@ footer {
 	transition-duration: .3s;
 	color: #ffa07a;
 }
-.alink{
+
+.alink {
 	color: #1a1a1a;
 }
+
 .alink:LINK {
 	text-decoration: none;
 }
@@ -322,6 +324,7 @@ footer {
 .groupImg {
 	width: 200px;
 	height: 200px;
+	border-radius: 35px;
 }
 
 .groupImg:HOVER {
@@ -388,7 +391,7 @@ footer {
 	width: 180px;
 }
 
-.menucontent a{
+.menucontent a {
 	color: #1a1a1a;
 }
 
@@ -454,29 +457,27 @@ footer {
 	height: 296px;
 	width: 296px;
 	border: 2px solid #d1d1d1;
+	border-radius: 35px;
 }
 
 #cookhover {
 	height: 75px;
-	background: #fff0ea;
+	border-top:2px solid #d1d1d1;
 }
 
-#cookhover b{
-	font-size:15pt;
-	margin-left:10px;
-	margin-top:2px;
+#cookhover b {
+	font-size: 15pt;
+	margin-left: 10px;
+	margin-top: 2px;
 	float: left;
 }
 
 .cookimg {
-	width: 55px;
-	height: 55px;
+	width: 58px;
+	height: 58px;
 	cursor: pointer;
+	margin-top:4px;
 	float: right;
-}
-
-#cookimg1{
-	height: 61px;
 }
 
 #cookimg2 {
@@ -489,7 +490,7 @@ footer {
 
 #cookimg4 {
 	margin-left: 80px;
-	margin-right: 40px;
+	margin-right: 60px;
 }
 
 #cookcontent {
@@ -506,6 +507,7 @@ footer {
 	height: 200px;
 	float: left;
 	margin-right: 40px;
+	border-radius: 15px;
 }
 
 .cookul {
@@ -526,6 +528,7 @@ footer {
 	height: 200px;
 	margin-left: 50px;
 	width: 200px;
+	border-radius: 15px;
 }
 
 .qnap {
@@ -542,13 +545,12 @@ footer {
 }
 
 #headercook {
-	padding-left: 10px;
 }
 
 #qnacooktableheader b {
 	font-size: 15pt;
+	margin-left: 35px;
 }
-
 
 #headerqna span {
 	margin-top: 12px;
@@ -569,4 +571,10 @@ footer {
 	font-size: 8pt;
 	float: right;
 	margin-right: 10px;
+}
+
+#cookmore {
+	font-size: 8pt;
+	float: right;
+margin-top: 50px;
 }
