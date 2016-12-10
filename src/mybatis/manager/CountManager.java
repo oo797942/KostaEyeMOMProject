@@ -1,16 +1,35 @@
 package mybatis.manager;
 
+import java.sql.SQLException;
+
+import org.apache.ibatis.session.SqlSession;
+
+import member.vo.CountVO;
+
 public class CountManager {
 
+	public static void countUpdate() throws SQLException{
+		  SqlSession session = CommonManager.db().openSession();
+		  int result = session.update("count.countupdate");
+		  session.commit();
+		  System.out.println(result + "개 수정됨");
+	}
 	
-//	// main QnA 리스트 출력
-//	public static List<QnAVO> mainQnaList() throws SQLException
-//	   {
-//		   SqlSession session = CommonManager.db().openSession();
-//		   List<QnAVO> list = session.selectList("qna.mainQna");
-//		   System.out.println("qnaList 몇 개? : "+ list.size());
-//		   return list;
-//	   }
-//	
+	public static CountVO todaycount() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		CountVO vo = session.selectOne("count.todaycount");
+		return vo;
+	}
 	
+	public static CountVO maxcount() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		CountVO vo = session.selectOne("count.maxcount");
+		return vo;
+	}
+	
+	public static CountVO allcount() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		CountVO vo = session.selectOne("count.allcount");
+		return vo;
+	}
 }

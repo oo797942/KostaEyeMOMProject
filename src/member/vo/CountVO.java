@@ -2,22 +2,19 @@ package member.vo;
 
 public class CountVO {
 	private String today;
-	private int count;
-
+	private int counts;
 	public String getToday() {
 		return today;
 	}
-
 	public void setToday(String today) {
 		this.today = today;
 	}
-
-	public int getCount() {
-		return count;
+	public int getCounts() {
+		return counts;
+	}
+	public void setCounts(int counts) {
+		this.counts = counts;
 	}
 
-	public void setCount(int count) {
-		this.count = count;
-	}
 
 }

@@ -4,5 +4,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="count">
- 
+<update id="countupdate" parameterType="countVO">
+
+MERGE INTO momeye_count
+  USING DUAL ON (today = to_char(sysdate, 'YYYY-MM-DD'))
+WHEN MATCHED THEN
+  UPDATE SET counts = counts + 1
+WHEN NOT MATCHED THEN
+  INSERT (counts, today) VALUES (1, to_char(sysdate, 'YYYY-MM-DD'))
+
+</update>
+
+<select id="todaycount" parameterType="countVO" resultType="countVO">
+select counts from momeye_count where today IN(to_char(sysdate, 'YYYY-MM-DD'))
+</select>
+
+<select id="maxcount" parameterType="countVO" resultType="countVO">
+select max(counts) counts from momeye_count
+</select>
+
+<select id="allcount" parameterType="countVO" resultType="countVO">
+select sum(counts) counts from momeye_count
+</select>
+
 </mapper>

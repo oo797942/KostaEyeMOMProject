@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link href="/EyeMOM/resources/css/footer.css" rel="stylesheet"	type="text/css" />
 <div class="footer">
 	<hr color="#ffa07a" size="3px" />
@@ -37,9 +39,15 @@
 				<p class="footerTitle">Statistics</p>
 				<br />
 				<p class="footerText">
-					<span class="lft">오늘 방문자</span> <span class="rht">333,333</span><br />
-					<span class="lft">최대 방문자</span> <span class="rht">622,123</span><br />
-					<span class="lft">전체 방문자</span> <span class="rht">4,822</span><br />
+					<span class="lft">오늘 방문수</span> <span class="rht">
+					<fmt:formatNumber value="${sessionScope.todayCount }" pattern="#,###.##"/>
+					</span><br />
+					<span class="lft">최대 방문수</span> <span class="rht">
+					<fmt:formatNumber value="${sessionScope.maxCount }" pattern="#,###.##"/>
+					</span><br />
+					<span class="lft">전체 방문수</span> <span class="rht">
+					<fmt:formatNumber value="${sessionScope.allCount }" pattern="#,###.##"/>
+					</span><br />
 					<span class="lft">전체 회원수</span> <span class="rht">999,859</span><br />
 					<span class="lft">전체 게시물</span> <span class="rht">2,821,923,592</span>
 				</p>
