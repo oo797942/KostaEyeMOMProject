@@ -60,10 +60,6 @@
 		<table id="mainTopTable" cellspacing="0">
 			<tr id="mainTopUtilTr">
 				<td id="mainTopLeftTd">
-					<p>
-						<a href="" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost:8080/EyeMOM/index.jsp');">시작 페이지로</a> <a
-							href="javascript:addFavorite('아이맘','http://localhost:8080/EyeMOM/home.go');">북마크</a>
-					</p>
 				</td>
 				<td id="mainTopRightTd"><a href="gojoin.do"><img
 						src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
@@ -159,71 +155,7 @@
 			</table>
 		</div>
 
-		<div id="qnacookdiv">
-
-			<table id="qnacooktable" cellspacing="0">
-				<tr id="qnacooktableheader">
-					<td id="headerqna">
-						<b>묻고 답하기</b>
-						<span><a href="qna_board" class="alink">더보기</a></span>
-					</td>
-					<td id="headercook">
-						<span><a class="alink">더보기</a></span>
-					</td>
-				</tr>
-				<tr>
-					<td class="qnatd" rowspan="2">
-						<div id="qnadiv">
-						<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
-						<c:forEach var='qnaVO' items='${qnaList}'>
-						<p class="qnap">[${qnaVO.in_point }] <a class="alink">${qnaVO.in_title }</a></p>
-						</c:forEach>
-						</div>
-					</td>
-					<td class="cooktd" id="cookhover">
-					<b>베스트 레시피</b>
-						<img src="/EyeMOM/resources/img/cook_4.png" class="cookimg" id="cookimg4" rel="cookul4">		
-						<img src="/EyeMOM/resources/img/cook_3.png" class="cookimg" id="cookimg3" rel="cookul3">
-						<img src="/EyeMOM/resources/img/cook_2.png" class="cookimg" id="cookimg2" rel="cookul2">
-						<img src="/EyeMOM/resources/img/cookon_1.png" class="cookimg" id="cookimg1" rel="cookul1">
-					</td>
-				</tr>
-				<tr>
-					<td class="cooktd" id="cookcontent">
-						<img src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
-						<ul class="cookul" id="cookul1">
-							<li>[2016-12-08] <a class="alink">1초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-						</ul>
-						<ul class="cookul" id="cookul2">
-							<li>[2016-12-08] <a class="alink">2초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-						</ul>
-						<ul class="cookul" id="cookul3">
-							<li>[2016-12-08] <a class="alink">3초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-						</ul>
-						<ul class="cookul" id="cookul4">
-							<li>[2016-12-08] <a class="alink">4초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-						</ul>
-					</td>
-				</tr>
-			</table>
-
-		</div>
+		
 
 		<div id="mainMiddle">
 			<table id="tabmenutable" cellspacing="0">
@@ -277,7 +209,7 @@
 				<tr>
 					<c:forEach var='purchaseVO' items='${purchaseList}'>
 					<td>
-					<img src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }" class="groupImg" id="groupImg1" />
+					<img src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }" class="groupImg" />
 					<a class="goGroupBuy"><b>[${purchaseVO.we_title }]</b></a>
 					<br />
 					<fmt:formatNumber value="${purchaseVO.we_price}" pattern="#,###.##"/>원
@@ -301,8 +233,71 @@
 
 		</div>
 
-		<div id="mainbottom"></div>
+<div id="qnacookdiv">
 
+			<table id="qnacooktable" cellspacing="0">
+				<tr id="qnacooktableheader">
+					<td id="headerqna">
+						<b>묻고 답하기</b>
+						<span><a href="qna_board" class="alink">더보기</a></span>
+					</td>
+					<td id="headercook">
+					</td>
+				</tr>
+				<tr>
+					<td class="qnatd" rowspan="2">
+						<div id="qnadiv">
+						<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
+						<c:forEach var='qnaVO' items='${qnaList}'>
+						<p class="qnap">[${qnaVO.in_point }] <a class="alink">${qnaVO.in_title }</a></p>
+						</c:forEach>
+						</div>
+					</td>
+					<td class="cooktd" id="cookhover">
+					<b>베스트 레시피</b>
+						<span><a class="alink" id="cookmore">더보기</a></span>
+						<img src="/EyeMOM/resources/img/cook_4.png" class="cookimg" id="cookimg4" rel="cookul4">		
+						<img src="/EyeMOM/resources/img/cook_3.png" class="cookimg" id="cookimg3" rel="cookul3">
+						<img src="/EyeMOM/resources/img/cook_2.png" class="cookimg" id="cookimg2" rel="cookul2">
+						<img src="/EyeMOM/resources/img/cookon_1.png" class="cookimg" id="cookimg1" rel="cookul1">
+					</td>
+				</tr>
+				<tr>
+					<td class="cooktd" id="cookcontent">
+						<img src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
+						<ul class="cookul" id="cookul1">
+							<li>[2016-12-08] <a class="alink">1초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
+						<ul class="cookul" id="cookul2">
+							<li>[2016-12-08] <a class="alink">2초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
+						<ul class="cookul" id="cookul3">
+							<li>[2016-12-08] <a class="alink">3초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
+						<ul class="cookul" id="cookul4">
+							<li>[2016-12-08] <a class="alink">4초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+							<li>[2016-12-08] <a class="alink">1</a></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+		</div>
 
 	</section>
 	<footer>
