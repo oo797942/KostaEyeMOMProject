@@ -81,4 +81,18 @@ public class BoardManager {
 		session.commit();
 		return result;
 	}
+	
+	public static int replDelte(ReplyVO replyVO){
+		SqlSession session = CommonManager.db().openSession();
+		int result=0;
+		ReplyVO checkVO = session.selectOne("board.checkReply",replyVO);
+		if(checkVO.getRe_id().equals(replyVO.getRe_id())){
+			System.out.println("본인!");
+			result= session.delete("board.deleteReply",replyVO);	
+		}else{
+			System.out.println("본인아님");
+		}
+		session.commit();
+		return result;
+	}
 }

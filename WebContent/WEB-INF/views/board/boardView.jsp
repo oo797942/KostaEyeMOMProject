@@ -27,6 +27,32 @@
 		       }
 	     });
 	}
+	
+	$(function(){
+		
+		$('.boarddelete').click(function(){
+			
+			$.ajax({
+		        url: "reDelete.do",
+		        type: 'post',
+		        data : { "re_no" : $(this).next().val()	},
+		       	success: function(result){
+		       	  
+		       		if(result=="1"){
+		       			location.reload();
+		       			
+		        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
+		           },
+			       error:function(err){
+			    	   alert(err);
+			       }
+		     });
+			
+			
+		})
+		
+		
+	});
 </script>
 </head>
 <body>
@@ -126,7 +152,7 @@
 												<th width="70px">${vo.re_nick}</th>		<!-- 닉네임 -->
 												<td class='boardip'>${vo.re_ip 	}</td>								<!-- 아이피 -->
 												<td class='boarddate'>${vo.re_date }</td>					<!-- 등록일 -->
-												<td><input type="button" value='x' class='boarddelete'/></td>
+												<td><input type="button" value='x' id="redelete" class='boarddelete'/><input type="hidden" id="re_no" name="re_no" value= "${vo.re_no}"/></td>
 											</tr>
 											<tr>
 											</tr>
