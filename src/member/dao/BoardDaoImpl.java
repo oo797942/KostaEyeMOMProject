@@ -47,8 +47,26 @@ public class BoardDaoImpl implements BoardDao {
 	}
 	
 	@Override
-	public ReplyVO callReply(BoardVO vo){
-		ReplyVO re=null;
-		return re;
+	public List<ReplyVO> callReply(BoardVO vo){
+		List<ReplyVO> list=null;
+		try{
+			list = BoardManager.callReply(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / vo가져오기 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+	
+	@Override
+	public int writeReply(ReplyVO vo){
+		int  result = 0;
+		try{
+			result = BoardManager.writeReply(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / vo가져오기 실패 : " + ex.getMessage());
+		}
+		return result;
 	}
 }

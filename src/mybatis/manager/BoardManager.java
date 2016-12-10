@@ -13,7 +13,7 @@ public class BoardManager {
 	
 	
 	
-	
+	// 해당 게시판 게시물들 가져오기
 	public static List<BoardVO> allBoard(String title ) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
@@ -36,6 +36,7 @@ public class BoardManager {
 		   	return list;	
 	   }
 	
+	//게시물 등록
 	public static int wirteBoard(BoardVO boardVO){
 		int result=0;  // 결과값 확인용
 		
@@ -55,6 +56,7 @@ public class BoardManager {
 		return result;
 	}
 	
+	//게시판 객체 얻어오기
 	public static BoardVO viewBoard(BoardVO boardVO){
 		SqlSession session = CommonManager.db().openSession();
 		session.update("board.boardCount", boardVO);
@@ -63,10 +65,20 @@ public class BoardManager {
 		return vo;
 	}
 	
-	public static ReplyVO callReply(BoardVO boardVO){
+	//리플 가져오기
+	public static List<ReplyVO> callReply(BoardVO boardVO){
 		SqlSession session = CommonManager.db().openSession();
-		ReplyVO re=session.selectOne("board.", boardVO);
+		List <ReplyVO> list=session.selectList("board.callreply", boardVO);
 		session.commit();
-		return re;
+		return list;
+	}
+	
+	//리플 등록
+	public static int writeReply(ReplyVO replyVO){
+		SqlSession session = CommonManager.db().openSession();
+		
+		int result = session.insert("board.replInsert",replyVO);
+		session.commit();
+		return result;
 	}
 }
