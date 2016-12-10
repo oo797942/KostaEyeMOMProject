@@ -45,7 +45,7 @@ public class AdminController {
 	@RequestMapping("/adminVideo.go")
 	public String admonVideo(HttpSession session){
 		return "adminVideo";
-	}
+	} 
 	
 //	@RequestMapping("/adminGame.go")
 //	public String admonGame(HttpSession session){
