@@ -27,6 +27,32 @@
 		       }
 	     });
 	}
+	
+	$(function(){
+		
+		$('.boarddelete').click(function(){
+			
+			$.ajax({
+		        url: "reDelete.do",
+		        type: 'post',
+		        data : { "re_no" : $(this).next().val()	},
+		       	success: function(result){
+		       	  
+		       		if(result=="1"){
+		       			location.reload();
+		       			
+		        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
+		           },
+			       error:function(err){
+			    	   alert(err);
+			       }
+		     });
+			
+			
+		})
+		
+		
+	});
 </script>
 </head>
 <body>
@@ -105,12 +131,12 @@
 					<div class='space2'></div>
 						
 					<!-- 신고버튼 -->	
-					<div>
+					<div>   
 						<div class='reportdiv'>	
 							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button'  value='신고' class='reportbtn'/></span></i>				
 						</div>
 					</div>
-					
+					    
 					<!-- 테이블과 테이블 사이 간격  -->
 					<div class='space2'></div>
 				
@@ -126,6 +152,7 @@
 												<th width="70px">${vo.re_nick}</th>		<!-- 닉네임 -->
 												<td class='boardip'>${vo.re_ip 	}</td>								<!-- 아이피 -->
 												<td class='boarddate'>${vo.re_date }</td>					<!-- 등록일 -->
+												<td><input type="button" value='x' id="redelete" class='boarddelete'/><input type="hidden" id="re_no" name="re_no" value= "${vo.re_no}"/></td>
 											</tr>
 											<tr>
 											</tr>
@@ -147,15 +174,22 @@
 										</td>
 										<td class='i2'>
 											<!-- 댓글등록버튼 -->
-											<div class='submitbtn2'>
+											<div>
 												<input type="submit" onclick="replyInsert()" value="등록" class='submita'>
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-						</div> 
-					</div>
+						</div>
+						<!-- 수정/삭제/목록보기 버튼 --> 
+						<div style="float: right;">
+							<input type='button' value='수정하기' class='optionbtn'/>					
+							<input type='button' value='삭제하기' class='optionbtn'/>					
+							<input type='button' value='목록보기' class='optionbtn'/>					
+						</div>
+						<div class='space2'></div>
+					</div><!-- class='comment2 끝' -->
 				</form>
 				</div>	
 			</div>

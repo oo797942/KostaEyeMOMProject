@@ -69,4 +69,16 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
+
+	@Override
+	public int replDelte(ReplyVO vo) {
+		int  result = 0;
+		try{
+			result = BoardManager.replDelte(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / 리플 지우기 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 }

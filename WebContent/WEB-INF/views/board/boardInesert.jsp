@@ -25,7 +25,6 @@ $(function(){
        fileInfo(this);
     });
 });
-
 function fileInfo(f){
    var file = f.files; // files 를 사용하면 파일의 정보를 알 수 있음
 
@@ -49,8 +48,8 @@ function fileInfo(f){
          <h2 style="margin-top: 40px">게시판 등록</h2>
          <form action="insert.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
             <div style="width: 100%" id="board3">
-               <!-- 카테고리 선택칸 -->
                <div class='form-inline'>
+               <!-- 카테고리 선택칸 -->
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
                     <c:if test="${title=='tip'}">
@@ -94,6 +93,7 @@ function fileInfo(f){
                         <table
                            style="margin-bottom: -20px; margin-left: 45px; display: inline-block;">
                            <tr style="padding-left: 100px">
+                 		<!-- 사진은 최대 3장까지 가능 -->
                               <td>
                               	<input type='file' accept=" image/*" class='photo' id='b_photo1' name='b_photo1'/>
                               	<input type='file' accept=" image/*" class='photo' id='b_photo2' name='b_photo2'/>
@@ -102,27 +102,29 @@ function fileInfo(f){
                            </tr>
                         </table>
                      </div>
+                     <!-- 사진이 보여질 공간 -->
                      <div id='imgs'></div>
                   </div>
                </div>
-               <div class='texta3'>
                   <!-- 내용입력칸 -->
+               <div class='texta3'>
                   <textarea class='textaa3' id='content'  name='b_content'></textarea>
                   <img alt="" src="">
                </div>
                <div style='margin-left: 570px'>
                   <table>
-                     <tr>
+                     <tr>  
                         <td>
+					<!-- 등록하기 버튼 -->
                            <div>
                               <i class='fa fa-check-circle'><span><input
                                     type='submit' value='등록하기' class='btn btn-link' id='btn'></input></span></i>
                            </div>
                         </td>
-                        <td><div class='space3'></div></td>
                         <!-- 버튼사이 공간 css -->
- 
+                        <td><div class='space3'></div></td>
                         <td>
+                        <!-- 취소하기 버튼 -->
                            <div>
                               <i class='fa fa-trash'><span><input type='button'
                                     value='취소하기' class='btn btn-link' id='cancel' /></span></i>

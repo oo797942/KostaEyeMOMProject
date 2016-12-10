@@ -124,5 +124,18 @@ public class BoardController {
 		return result;
 		
 	}
+	
+	
+	//리플삭제
+	@RequestMapping("reDelete.do")
+	@ResponseBody
+	public int reDelete(ReplyVO replyVO, HttpSession session){
+		MemberVO vo = (MemberVO)session.getAttribute("user");
+		String id = vo.getU_id();
+		System.out.println(id);
+		replyVO.setRe_id(id);
+		int result = boardDao.replDelte(replyVO);
+		return result;
+	}
 }
  

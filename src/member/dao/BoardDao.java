@@ -11,4 +11,5 @@ public interface BoardDao {
 	BoardVO viewBoard(BoardVO vo);
 	List<ReplyVO> callReply(BoardVO vo);
 	int writeReply(ReplyVO vo);
+	int replDelte(ReplyVO vo);
 }

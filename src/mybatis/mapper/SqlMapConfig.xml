@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.vo.GroupPurchaseVO" alias="purchaseVO" />
 		<typeAlias type="member.vo.StudyVO" alias="studyVO" />
 		<typeAlias type="member.vo.VideoVO" alias="videoVO" />
+		<typeAlias type="member.vo.CountVO" alias="countVO" />
 	</typeAliases>
 		 
 	<environments default="development">
@@ -37,6 +38,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/mapper/board.xml" />
 		<mapper resource="mybatis/mapper/qna.xml" />
 		<mapper resource="mybatis/mapper/purchase.xml" />
+		<mapper resource="mybatis/mapper/count.xml" />
 	</mappers>
 	
 </configuration>
