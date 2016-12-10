@@ -3,6 +3,21 @@
 	padding-left: 0px;
 }
 
+.boardp {
+	width: 750px;
+	height: auto;
+	text-align: left;
+}
+
+.boardip {
+	color: gray;
+	font-size: small;
+}
+
+.boarddate{
+	padding-left: 470px; font-size: small;
+}
+
 #viewtbody {
 	display: table-row-group;
 	vertical-align: middle;
@@ -14,13 +29,15 @@
 	width: 100%; /* 테이블 width*/
 	border-collapse: collapse;
 }
-.boardtd0{
+
+.boardtd0 {
 	width: 10%;
 	border-top: 1px solid #bcbcbc;
 	border-bottom: 1px solid #bcbcbc;
 }
+
 .boardtd1 {
-	width: 75%;
+	width: 65%;
 	border-top: 1px solid #bcbcbc;
 	border-bottom: 1px solid #bcbcbc;
 	padding: 5px 10px;
@@ -57,6 +74,14 @@
 	overflow: hidden;
 }
 
+.space2a {
+	clear: both;
+	height: 50px;
+	margin: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+
 #trcolor2 {
 	background-color: white;
 }
@@ -79,8 +104,8 @@ div #inline2 {
 	height: auto;
 }
 
-#tablewidth2 {
-	border-bottom: 1px solid #bcbcbc;
+.tablewidth2 {
+	/* 	border-bottom: 1px solid #bcbcbc; */
 	width: 90%;
 }
 
@@ -143,49 +168,51 @@ div #inline2 {
 	background-color: #ffa07a;
 	text-decoration: none;
 }
-.gooddiv {					/* 추천 버튼 div css*/
-	background-color : #ffa07a;
+
+.gooddiv { /* 추천 버튼 div css*/
+	background-color: #ffa07a;
 	padding: 3px 8px;
-	width: 65px;
+	width: 80px;
 	border-radius: 4px;
-	height: 30px;
+	height: 37px;
 	border: 1px solid #000;
 	cursor: pointer;
 }
-.goodbtn {					/* 추천 버튼 css */
+
+.goodbtn { /* 추천 버튼 css */
 	border: 0px solid transparent;
 	border-radius: 4px;
 	padding: 6px 12px;
 	font-weight: bolder;
 	cursor: pointer;
-	background-color : #ffa07a;
-	    -webkit-appearance: push-button;
-    user-select: none;
-    white-space: pre;
-	
+	background-color: #ffa07a;
+	-webkit-appearance: push-button;
+	user-select: none;
+	white-space: pre;
 }
-.reportdiv {					/* 신고 버튼 div css*/
-	background-color : #ffffff;
+
+.reportdiv { /* 신고 버튼 div css*/
+	background-color: #ffffff;
 	padding: 5px 5px;
 	cursor: pointer;
-	width: 45px;
+	width: 47px;
 	border-radius: 4px;
-	height: 25px;
+	height: 30px;
 	border: 1px solid #000;
 	float: right;
-
 }
-.reportbtn {					/* 신고 버튼 css */
+
+.reportbtn { /* 신고 버튼 css */
 	border: 0px solid transparent;
 	border-radius: 4px;
-	padding: 4px ;
-	font-size : 7pt;
+	padding: 4px;
+	font-size: 7pt;
 	font-weight: normal;
 	vertical-align: middle;
-	background-color : #ffffff;
+	background-color: #ffffff;
 }
 
-.alignleft{
+.alignleft {
 	text-align: left;
 }
 

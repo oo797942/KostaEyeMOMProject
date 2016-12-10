@@ -21,7 +21,6 @@
 	       			location.reload();
 	       			
 	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
-	        		
 	           },
 		       error:function(err){
 		    	   alert(err);
@@ -42,8 +41,11 @@
 					<form method='post' onclick='return false'>
 					<table class='boardtable'>   <!-- 테이블 전체 div -->
 						<tr id='trcolor2'>
-							<th colspan="1" class='boardtd0' ><label>${bvo.b_no}</label><input type="hidden" id="b_no" name="b_no" value= "${bvo.b_no}"></th>
+							<!-- 글번호 -->
+							<td colspan="1" class='boardtd0' ><label>${bvo.b_no}</label><input type="hidden" id="b_no" name="b_no" value= "${bvo.b_no}"></td>
+							<!-- 게시글 제목 -->
 							<th colspan="9" class='boardtd1'><label id='title'>${bvo.b_title}</label></th>
+							<!-- 게시판 카테고리 -->
 							<th class='boardtd2'>
 							<c:if test="${bvo.b_cate=='tip'}">
 								<label id='cate'>육아꿀팁</label> 
@@ -63,21 +65,28 @@
 							</th>
 						</tr>
 						<tr id='trcolor2'>
-							<th colspan="10"	 class='boardtd1'><label id='id'>${bvo.b_nick}</label></th>
-							<th class='boardtd2'><label id='date'>${bvo.b_date}</label></th>
+							<td colspan="1" class='boardtd0' ></td>
+							<!-- 게시자 -->
+							<th colspan="9" class='boardtd1'><label id='id'>${bvo.b_nick}</label></th>
+							<!-- 게시일, 시간 -->
+							<td class='boardtd2'><label id='date'>${bvo.b_date}</label></td>
 						</tr>
-						<!-- 조회수, 추천수, 신고수 -->	
+						<!-- 조회수, 추천수, ip -->	
 						<tr id='trcolor2'>
-							<th colspan="4"></th>
 								<th class='countfont' width="20px">조회수&nbsp;&nbsp;:</th>
+								<!-- 조회수 -->
 								<th  class='countfont alignleft'id='count'>${bvo.b_count}</th>
-								<th width="20px"></th>
-								<th width="20px"></th>
 								<th class='countfont'width="20px">추천수&nbsp;&nbsp;:</th>
+								<!-- 추천수 -->
 								<th class='countfont alignleft' id='good'>${bvo.b_good}</th>
-							<td><p class='boardip' id='ip'>${bvo.b_ip}</p></td>
+								<th width="40px"></th>
+								<th width="40px"></th>
+								<th colspan="4"></th>
+								<!-- 게시자 ip -->
+								<td><p class='boardip' id='ip'>${bvo.b_ip}</p></td>
 						</tr>
 						<tr id='trcolor2'>
+							<!-- 내용뷰 -->
 							<td colspan="11" height="500px" valign="top"id='content2'>
 							<p style="margin-top: 15px">
 <!-- 							<img alt="이미지가 올라갈 영역임" src="#" border="2"> -->
@@ -104,27 +113,26 @@
 					
 					<!-- 테이블과 테이블 사이 간격  -->
 					<div class='space2'></div>
-					
-					<div id='comment2'>				<!-- 댓글전체창 -->	
+				
+					<!-- 댓글화면 -->
+					<div id='comment2'>				
 						<div>
 							<ul id='viewul'>
 								<li>		<!-- for문을 돌려야할듯 -->
-									<div>
-										<table id='tablewidth2'>
 									<c:forEach var='vo' items='${list}'>
+									<div>
+										<table class='tablewidth2'>
 											<tr style="height: 70px;">
-												<th width="70px">${vo.re_nick}</th>
-												<td>${vo.re_date }</td>
+												<th width="70px">${vo.re_nick}</th>		<!-- 닉네임 -->
+												<td class='boardip'>${vo.re_ip 	}</td>								<!-- 아이피 -->
+												<td class='boarddate'>${vo.re_date }</td>					<!-- 등록일 -->
 											</tr>
 											<tr>
-												<td >${vo.re_content }</td>
-												<td>${vo.re_ip }</td>	
 											</tr>
-									</c:forEach>
 										</table>
-											
-										
+										<p class='boardp'>${vo.re_content }</p><br/><hr width="86%"/>	<!-- 내용 -->
 									</div>
+									</c:forEach>
 								</li>			
 							</ul>
 						</div>
@@ -138,9 +146,9 @@
 											</div>
 										</td>
 										<td class='i2'>
+											<!-- 댓글등록버튼 -->
 											<div class='submitbtn2'>
-												<input type="submit" onclick="replyInsert()" value="등록" class='submita' style="">
-<%-- 												<a href='replinsert.do?b_no=${bvo.b_no}' class='submita' style="" >등록</a> --%>
+												<input type="submit" onclick="replyInsert()" value="등록" class='submita'>
 											</div>
 										</td>
 									</tr>
