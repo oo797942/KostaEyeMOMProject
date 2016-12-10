@@ -16,5 +16,5 @@ public class CountVO {
 		this.counts = counts;
 	}
 
-
+ 
 }
