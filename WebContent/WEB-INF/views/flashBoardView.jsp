@@ -18,12 +18,12 @@
 	      <table width="200" border="0" height="600px">
 	  <tbody>
 	  	    <tr>
-	      <td height="5%"  style="vertical-align:top; text-align:center">
+	      <td height="5%"  style="vertical-align:top; text-align:center;">
 		<h3>게임 설명</h3>
 		</td>
         </tr>
 	    <tr>
-	      <td height="85%"  style="vertical-align:top">
+	      <td height="85%"  style="vertical-align:top; background-color:#FFFFFF; padding:10px; border:1px solid #ACB4F2	;">
 		${vlist.g_content}
 		</td>
         </tr>

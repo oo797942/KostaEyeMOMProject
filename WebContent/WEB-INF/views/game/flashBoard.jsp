@@ -65,7 +65,7 @@ a:hover {
 							</a></li>
 								</c:forEach>
 
-
+ 
 
 						</ul>
 						<!--end portfolio_list -->
