@@ -82,6 +82,7 @@ public class BoardManager {
 		return result;
 	}
 	
+	//리플 삭제
 	public static int replDelte(ReplyVO replyVO){
 		SqlSession session = CommonManager.db().openSession();
 		int result=0;
@@ -92,6 +93,15 @@ public class BoardManager {
 		}else{
 			System.out.println("본인아님");
 		}
+		session.commit();
+		return result;
+	}
+	
+	//게시물 삭제
+	public static int deleteBoard(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		int result=0;
+		result= session.delete("board.deleteBoard",boardVO);
 		session.commit();
 		return result;
 	}

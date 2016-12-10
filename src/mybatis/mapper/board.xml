@@ -26,10 +26,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 게시판 내용 -->
 <select id="boardView" parameterType="boardVO" resultType="boardVO"> 
-	select b_no, b_cate, b_title, b_content, b_ip, NVL(b_good,0) as b_good, b_count, b_nick, TO_CHAR(b_date, 'YYYY.MM.DD HH24:MI:SS') as b_date, b_photo1name, b_photo2name, b_photo3name
+	select u_id, b_no, b_cate, b_title, b_content, b_ip, NVL(b_good,0) as b_good, b_count, b_nick, TO_CHAR(b_date, 'YYYY.MM.DD HH24:MI:SS') as b_date, b_photo1name, b_photo2name, b_photo3name
 	from normal_board 
 	where b_no=#{b_no}
 </select>
+
+<!-- 게시판 삭제 -->
+<delete id="deleteBoard" parameterType="boardVO">
+DELETE FROM normal_board where b_no=#{b_no}
+</delete>
 
 <!-- 리플내용 -->
 <select id="callreply" parameterType="boardVO" resultType="replyVO"> 

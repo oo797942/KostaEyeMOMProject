@@ -107,6 +107,22 @@ public class BoardController {
 			return pass;
 		
 	}
+	//수정페이지 이동
+	@RequestMapping("updateBoard.do")
+	public String updateBoard(BoardVO boardVO){
+		System.out.println(boardVO.getB_no());
+		
+		return "boardUpdate";
+	}
+	
+	//게시물 삭제
+	@RequestMapping("deleteBoard.do")
+	public String deleteBoard(BoardVO boardVO ){
+		System.out.println("삭제 : "+ boardVO.getB_no()+"//"+boardVO.getB_cate());
+		int result= boardDao.deleteBoard(boardVO);
+		
+		return "redirect:"+boardVO.getB_cate();
+	}
 	
 	//리플입력
 	@RequestMapping("replinsert.do")
