@@ -33,8 +33,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 리플내용 -->
 <select id="callreply" parameterType="boardVO" resultType="replyVO"> 
-	select re_no, re_content, re_id, re_ip, re_nick, b_no , TO_CHAR(re_date, 'YYYY.MM.DD HH24:MI:SS') as re_date
-		from reply where b_no=#{b_no} order by re_date asc
+	
+	
+	select ip_1||'.'||ip_2||'.*.*' re_ip, re_content, TO_CHAR(re_date, 'YYYY.MM.DD HH24:MI:SS') as RE_DATE, RE_ID, RE_NICK, re_no
+from      
+(SELECT SUBSTR (IP, 1, INSTR (IP, '.', 1, 1) - 1) IP_1,
+       SUBSTR (IP,
+               INSTR (IP, '.', 1, 1) + 1,
+               INSTR (IP, '.', 1, 2) - INSTR (IP, '.', 1, 1) - 1
+              ) IP_2,
+       SUBSTR (IP,
+               INSTR (IP, '.', 1, 2) + 1,
+               INSTR (IP, '.', 1, 3) - INSTR (IP, '.', 1, 2) - 1
+              ) IP_3,
+       SUBSTR (IP, INSTR (IP, '.', 1, 3) + 1) IP_4, RE_CONTENT, RE_DATE, RE_ID, RE_NICK, re_no
+  FROM (SELECT re_ip IP, RE_CONTENT, RE_DATE, RE_ID, RE_NICK, re_no
+          FROM reply where b_no=#{b_no}))
 </select>
 
 <!-- 리플 등록 -->
