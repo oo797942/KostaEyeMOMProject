@@ -29,7 +29,7 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
-
+<!-- 춤을 춰요 디비값 가져오기 -->
  <select id="videoAll" resultType="videoVO"  parameterType="videoVO" > 
 	select * from kid_video
 	<where>
@@ -39,6 +39,8 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
+
+<!-- 공부 해요 디비값 가져오기 -->
  <select id="studyAll" resultType="studyVO"  parameterType="studyVO" > 
 	select * from kid_study
 	<where>
@@ -47,5 +49,17 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</if>	
 	</where>
 </select>
+
+<update id="gameUpdate" parameterType="gameVO">
+UPDATE kid_game SET g_count = g_count+1 WHERE g_no = #{g_no}
+</update>
+
+<update id="studyUpdate" parameterType="studyVO">
+UPDATE kid_study SET v_count = v_count+1 WHERE v_no = #{v_no}
+</update>
+
+<update id="videoUpdate" parameterType="videoVO">
+UPDATE kid_video SET d_count = d_count+1 WHERE d_no = #{d_no}
+</update>
 
 </mapper> 

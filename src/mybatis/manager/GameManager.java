@@ -45,6 +45,7 @@ public class GameManager {
 			SqlSession session = CommonManager.db().openSession();
 			GameVO vlist=null;
 			
+			session.update("admin.gameUpdate", vo);
 				vlist = session.selectOne("admin.gameAll", vo);
 				System.out.println(vlist);
 		   

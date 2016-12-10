@@ -53,9 +53,11 @@ public class VideoManager {
 	
 	public static VideoVO videoView(VideoVO vo) throws SQLException
 	   {
-		   System.out.println("VideoManager . viewView :" + vo.getD_no());
+		
 			SqlSession session = CommonManager.db().openSession();
+			session.update("admin.videoUpdate",vo);
 			VideoVO vlist= session.selectOne("admin.videoAll", vo);
+			session.commit();
 			System.out.println(">"+vlist.getD_no());
 
 		   	return vlist;	
@@ -77,7 +79,9 @@ public class VideoManager {
 	public static StudyVO studyView(StudyVO vo) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
+			session.update("admin.studyUpdate",vo);
 			StudyVO vlist= session.selectOne("admin.studyAll", vo);
+			session.commit();
 
 		   	return vlist;	
 	   }

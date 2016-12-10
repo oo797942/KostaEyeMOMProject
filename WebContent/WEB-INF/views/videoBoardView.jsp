@@ -23,7 +23,7 @@
 		</td>
         </tr>
 	    <tr>
-	      <td height="85%"  style="vertical-align:top">
+	      <td height="85%"   style="vertical-align:top; background-color:#FFFFFF; padding:10px; border:1px solid #ACB4F2	;">
 		${vlist.d_content}
 		</td>
         </tr>
