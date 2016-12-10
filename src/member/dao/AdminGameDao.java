@@ -8,4 +8,6 @@ public interface AdminGameDao {
 	List<GameVO> GameBoard();
 	int adminGameInput(GameVO vo);
 	GameVO GameView(GameVO vo);
+	int adminGameDelete(GameVO vo);
+	int adminGameUpdate(GameVO vo);
 }

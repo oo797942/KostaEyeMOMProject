@@ -12,7 +12,7 @@
 	  <tbody> 
 	    <tr>
 	      <td>
-	    <iframe src="/EyeMOM/resources/img/${vlist.g_flash}" width="800" height="600px" border="1"></iframe>  	
+	    <iframe src="/EyeMOM/resources/flash/${vlist.g_flash}" width="800" height="600px" border="1"></iframe>  	
 	      </td>
 	      <td>
 	      <table width="200" border="0" height="600px">

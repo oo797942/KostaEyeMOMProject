@@ -50,9 +50,23 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
-<update id="gameUpdate" parameterType="gameVO">
+<update id="gameCount" parameterType="gameVO">
 UPDATE kid_game SET g_count = g_count+1 WHERE g_no = #{g_no}
 </update>
+
+<update id="gameUpdate" parameterType="gameVO">
+UPDATE kid_game SET 
+g_title = #{g_title}, 
+g_content = #{g_content}
+<if test="g_photo neq null">
+, g_photo = #{g_photo}
+</if>
+<if test="g_flash neq null">
+, g_flash = #{g_flash}
+</if>
+WHERE g_no = #{g_no}
+</update>
+
 
 <update id="studyUpdate" parameterType="studyVO">
 UPDATE kid_study SET v_count = v_count+1 WHERE v_no = #{v_no}
@@ -61,5 +75,10 @@ UPDATE kid_study SET v_count = v_count+1 WHERE v_no = #{v_no}
 <update id="videoUpdate" parameterType="videoVO">
 UPDATE kid_video SET d_count = d_count+1 WHERE d_no = #{d_no}
 </update>
+
+<delete id="gameDelete" parameterType="gameVO">
+DELETE FROM kid_game WHERE g_no = #{g_no}
+</delete>
+
 
 </mapper> 

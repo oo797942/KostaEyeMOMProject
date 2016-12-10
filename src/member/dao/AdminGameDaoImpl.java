@@ -47,5 +47,34 @@ public class AdminGameDaoImpl implements AdminGameDao {
 				return vlist;
 			}
 	}
+
+
+	@Override
+	public int adminGameDelete(GameVO vo) {
+		int result = 0;
+		try{
+			result = GameManager.gameDelete(vo);
+			System.out.println("겜삭제 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 삭제 실패 : " + ex.getMessage());
+		}
+		return result;
+	
+	}
+
+
+	@Override
+	public int adminGameUpdate(GameVO vo) {
+		int result = 0;
+		try{
+			result = GameManager.gameUpdate(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 	
 }

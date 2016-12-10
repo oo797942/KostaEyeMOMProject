@@ -18,7 +18,7 @@ import member.vo.VideoVO;
 
 public class VideoManager {
 
-	 
+//	 춤을 춰요 입력
 	public static int videoInput(VideoVO vo ) throws SQLException
 	   {
 			int result = 0;
@@ -28,7 +28,7 @@ public class VideoManager {
 		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
 	
-
+//공부해요 입력
 	public static int studyInput(StudyVO vo ) throws SQLException
 	   {
 			int result = 0;
@@ -38,6 +38,7 @@ public class VideoManager {
 		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
 	
+//	춤을 춰요 보드
 	public static List<VideoVO> videoBoard() throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
@@ -50,7 +51,7 @@ public class VideoManager {
 		   	return list;	
 	   }
 	
-	
+//	춤을 춰요 뷰
 	public static VideoVO videoView(VideoVO vo) throws SQLException
 	   {
 		
@@ -63,6 +64,7 @@ public class VideoManager {
 		   	return vlist;	
 	   }
 
+//	공부해요 보드
 	public static List<StudyVO> studyBoard() throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
@@ -76,6 +78,7 @@ public class VideoManager {
 	   }
 	
 	
+//	공부해요 뷰
 	public static StudyVO studyView(StudyVO vo) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();

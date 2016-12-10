@@ -48,7 +48,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://localhost:8080/TourProject/tour.do" style="color:#fff">메인으로</a></li>
+            <li><a href="home.go" style="color:#fff">메인으로</a></li>
           </ul>
         </div>
       </div>
@@ -99,6 +99,7 @@
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
+              
                 <tr>
                   <th>글번호</th>
                   <th>제목</th>

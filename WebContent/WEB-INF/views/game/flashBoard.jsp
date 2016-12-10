@@ -50,7 +50,7 @@ a:hover {
 					<div class="isotope col-lg-12">
 						<ul id="list">
 						
-						
+<!-- 						모델 넣은 값을 가져와서 JSTL을 사용해서 돌림 -->
 									<c:forEach var='vo' items="${list}">
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
@@ -69,8 +69,12 @@ a:hover {
 
 						</ul>
 						<!--end portfolio_list -->
+					
 					</div>
 					<!--end isotope -->
+					
+					
+<!-- 					페이징번호  -->
 					<div class="col-sm-12 text-center">
 						<ul class="pagination">
 							<li><a href="#">&laquo;</a></li>

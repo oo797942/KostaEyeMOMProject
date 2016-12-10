@@ -45,7 +45,7 @@ public class GameManager {
 			SqlSession session = CommonManager.db().openSession();
 			GameVO vlist=null;
 			
-			session.update("admin.gameUpdate", vo);
+			session.update("admin.gameCount", vo);
 				vlist = session.selectOne("admin.gameAll", vo);
 				System.out.println(vlist);
 		   
@@ -53,5 +53,26 @@ public class GameManager {
 		   	return vlist;	
 	   }
 
-
+	
+	public static int gameDelete(GameVO vo ) throws SQLException
+	   {
+			int result = 0;
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.delete("admin.gameDelete", vo);
+		   session.commit();
+		   	return result;	
+		   	
+	   }
+	
+	public static int gameUpdate(GameVO vo ) throws SQLException
+	   {
+			int result = 0;
+			System.out.println(vo.getG_flash());
+			System.out.println(vo.getG_photo());			
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.gameUpdate", vo);
+		   session.commit();
+		   	return result;		   
+	   }
+	
 }
