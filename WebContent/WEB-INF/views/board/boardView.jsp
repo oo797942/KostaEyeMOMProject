@@ -105,7 +105,7 @@
 					<div class='space2'></div>
 						
 					<!-- 신고버튼 -->	
-					<div>
+					<div>   
 						<div class='reportdiv'>	
 							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button'  value='신고' class='reportbtn'/></span></i>				
 						</div>
