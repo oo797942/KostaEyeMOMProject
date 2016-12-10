@@ -109,10 +109,12 @@ public class BoardController {
 	}
 	//수정페이지 이동
 	@RequestMapping("updateBoard.do")
-	public String updateBoard(BoardVO boardVO){
+	public String updateBoard(BoardVO boardVO, Model m){
 		System.out.println(boardVO.getB_no());
-		
-		return "boardUpdate";
+		BoardVO vo = boardDao.viewBoard(boardVO);
+		m.addAttribute("vo", vo);
+		System.out.println(vo.getB_photo1name());
+		return "board/boardUpdate";
 	}
 	
 	//게시물 삭제

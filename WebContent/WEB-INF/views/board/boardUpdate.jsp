@@ -52,23 +52,23 @@ function fileInfo(f){
                <!-- 카테고리 선택칸 -->
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
-                    <c:if test="${title=='tip'}">
+                    <c:if test="${vo.b_cate=='tip'}">
 						<input type="text" 
                        value='육아꿀팁' class='form-control inputcate' id='title3' name='b_cate'readonly="readonly"/>
 					</c:if>
-					<c:if test="${title=='qna_board'}">
+					<c:if test="${vo.b_cate=='qna_board'}">
 						<input type="text" 
                        value='묻고 말하기' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
-					<c:if test="${title=='kid_sick'}">
+					<c:if test="${vo.b_cate=='kid_sick'}">
 						<input type="text" 
                        value='아이가 아파요' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
-					<c:if test="${title=='rice'}">
+					<c:if test="${vo.b_cate=='rice'}">
 						<input type="text" 
                        value='아이의 식단' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
-					<c:if test="${title=='baby'}">
+					<c:if test="${vo.b_cate=='baby'}">
 						<input type="text" 
                        value='아이 자랑' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
@@ -102,8 +102,20 @@ function fileInfo(f){
                            </tr>
                         </table>
                      </div>
-                     <!-- 사진이 보여질 공간 -->
-                     <div id='imgs'></div>
+                    
+                     <div id='imgs'>
+                     <c:if test="${not empty vo.b_photo1name }">
+                     <img src="/EyeMOM/resources/img/${vo.b_photo1name}" class="miri">
+                     </c:if>
+                     <c:if test="${not empty vo.b_photo2name }">
+                     <img src="/EyeMOM/resources/img/${vo.b_photo2name}" class="miri">
+                     </c:if>
+                     <c:if test="${not empty vo.b_photo3name }">
+                     <img src="/EyeMOM/resources/img/${vo.b_photo3name}" class="miri">
+                     </c:if>
+                      <!-- 8888888888888888888사진이 보여질 공간 -->
+                     
+                     </div>
                   </div>
                </div>
                   <!-- 내용입력칸 -->
