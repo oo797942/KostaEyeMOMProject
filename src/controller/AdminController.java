@@ -16,7 +16,7 @@ import member.vo.MemberVO;
 public class AdminController {
 	 
 	@Autowired
-	private LoginDaoImpl loginDao;
+	private LoginDaoImpl loginDao; 
 	 
  
 	@RequestMapping("/adminBoard.go")
