@@ -14,4 +14,7 @@ public interface VideoDao {
 	StudyVO studyBoardView(StudyVO vo);
 	int adminVideoDelete(VideoVO vo);
 	int adminStudyDelete(StudyVO vo);
+	int adminVideoUpdate(VideoVO vo);
+	int adminStudyUpdate(StudyVO vo);
+	
 }

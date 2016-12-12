@@ -68,11 +68,11 @@ WHERE g_no = #{g_no}
 </update>
 
 
-<update id="studyUpdate" parameterType="studyVO">
+<update id="studyCount" parameterType="studyVO">
 UPDATE kid_study SET v_count = v_count+1 WHERE v_no = #{v_no}
 </update>
 
-<update id="videoUpdate" parameterType="videoVO">
+<update id="videoCount" parameterType="videoVO">
 UPDATE kid_video SET d_count = d_count+1 WHERE d_no = #{d_no}
 </update>
 
@@ -87,5 +87,32 @@ DELETE FROM kid_video WHERE d_no = #{d_no}
 <delete id="studyDelete" parameterType="studyVO">
 DELETE FROM kid_study WHERE v_no = #{v_no}
 </delete>
+
+<update id="videoUpdate" parameterType="videoVO">
+UPDATE kid_video SET 
+d_title = #{d_title}, 
+d_content = #{d_content}
+<if test="d_photo neq null">
+, d_photo = #{d_photo}
+</if>
+<if test="d_video neq null">
+, d_video = #{d_video}
+</if>
+WHERE d_no = #{d_no}
+</update>
+
+<update id="studyUpdate" parameterType="studyVO">
+UPDATE kid_study SET 
+v_title = #{v_title}, 
+v_content = #{v_content}
+<if test="v_photo neq null">
+, v_photo = #{v_photo}
+</if>
+<if test="v_video neq null">
+, v_video = #{v_video}
+</if>
+WHERE v_no = #{v_no}
+</update>
+
 
 </mapper> 

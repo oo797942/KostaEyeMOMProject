@@ -64,6 +64,69 @@ public class VideoController {
 		}
 
 	
+	//수정하기위한 춤을춰요 뷰 가져오기
+	@RequestMapping("/adminVideoUpdate.go")
+	public String VideoUpdate(VideoVO vo, Model m){
+		VideoVO gVO = null;
+		gVO = videoDao.videoBoardView(vo);
+		
+		if(gVO!=null){
+			System.out.println("가져오기완료");
+			
+		}else{
+		System.out.println("가져오기실패");
+		}
+		m.addAttribute("vlist", gVO); //가져온 DB를 모델에 저장
+		
+		return "adminVideoUpdate";
+	}
+	
+	//수정하기위한 공부해요 뷰 가져오기
+		@RequestMapping("/adminStudyUpdate.go")
+		public String StudyUpdate(StudyVO vo, Model m){
+			StudyVO gVO = null;
+			gVO = videoDao.studyBoardView(vo);
+			
+			if(gVO!=null){
+				System.out.println("가져오기완료");
+				
+			}else{
+			System.out.println("가져오기실패");
+			}
+			m.addAttribute("slist", gVO); //가져온 DB를 모델에 저장
+			
+			return "adminStudyUpdate";
+		}
+		
+		
+//		춤을 춰요 수정
+		@RequestMapping("/adminVideoUpdateDoing.go")
+		public String adminVideoUpdateDoing(VideoVO videoVO, Model m){
+			int result = 0;
+			result = videoDao.adminVideoUpdate(videoVO);
+			
+			if(result==1){
+				System.out.println("수정완료");	
+			}else{
+			System.out.println("수정실패");
+			}
+			return "redirect:adminVideo.go";	
+			}
+		
+//		공부 해요 수정
+		@RequestMapping("/adminStudyUpdateDoing.go")
+		public String adminStudyUpdateDoing(StudyVO studyVO, Model m){
+			int result = 0;
+			result = videoDao.adminStudyUpdate(studyVO);
+			
+			if(result==1){
+				System.out.println("수정완료");	
+			}else{
+			System.out.println("수정실패");
+			}
+			return "redirect:adminVideo.go";	
+			}
+	
 	
 //	춤을 춰요 영상등록
 	@RequestMapping("/adminVideoInsertDoing.go")
@@ -78,7 +141,7 @@ public class VideoController {
 		System.out.println("등록실패");
 		}
 		
-		return "adminVideo.go";
+		return "redirect:adminVideo.go";
 	}
 	
 	
@@ -124,7 +187,7 @@ public class VideoController {
 		System.out.println("등록실패");
 		}
 		
-		return "adminVideo.go";
+		return "redirect:adminVideo.go";
 	}
 	
 	

@@ -121,8 +121,7 @@ function readURL(input) {
      </td>
       <td colspan="3" width="50%">
 	 <textarea name = "g_content" class="form-control"   placeholder="게임 설명을 입력하세요" style="width:100%; height:100%;">
-${vlist.g_content }
-	 </textarea>		
+${vlist.g_content }</textarea>		
     </td>
      </tr>
   </tbody>

@@ -66,9 +66,7 @@ public class GameManager {
 	
 	public static int gameUpdate(GameVO vo ) throws SQLException
 	   {
-			int result = 0;
-			System.out.println(vo.getG_flash());
-			System.out.println(vo.getG_photo());			
+			int result = 0;		
 		   SqlSession session = CommonManager.db().openSession();
 		   result = session.update("admin.gameUpdate", vo);
 		   session.commit();

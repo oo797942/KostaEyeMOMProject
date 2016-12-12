@@ -111,4 +111,31 @@ public class VideoDaoImpl implements VideoDao {
 		return result;
 	}
 
+	@Override
+	public int adminVideoUpdate(VideoVO vo) {
+		int result = 0;
+		try{
+			result = VideoManager.videoUpdate(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
+
+	@Override
+	public int adminStudyUpdate(StudyVO vo) {
+		int result = 0;
+		try{
+			result = VideoManager.studyUpdate(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+
 }

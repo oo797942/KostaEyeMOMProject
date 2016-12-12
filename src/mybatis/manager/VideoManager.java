@@ -56,7 +56,7 @@ public class VideoManager {
 	   {
 		
 			SqlSession session = CommonManager.db().openSession();
-			session.update("admin.videoUpdate",vo);
+			session.update("admin.videoCount",vo);
 			VideoVO vlist= session.selectOne("admin.videoAll", vo);
 			session.commit();
 			System.out.println(">"+vlist.getD_no());
@@ -82,7 +82,7 @@ public class VideoManager {
 	public static StudyVO studyView(StudyVO vo) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
-			session.update("admin.studyUpdate",vo);
+			session.update("admin.studyCount",vo);
 			StudyVO vlist= session.selectOne("admin.studyAll", vo);
 			session.commit();
 
@@ -106,5 +106,21 @@ public class VideoManager {
 
 		   	return result;	
 	   }
+	
+	public static int videoUpdate(VideoVO vo) throws SQLException{
+		int result = 0;		
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.videoUpdate", vo);
+		   session.commit();
+		   	return result;		
+	}
+	
+	public static int studyUpdate(StudyVO vo) throws SQLException{
+		int result = 0;		
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.studyUpdate", vo);
+		   session.commit();
+		   	return result;		
+	}
 	
 }

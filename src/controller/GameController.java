@@ -100,7 +100,7 @@ public class GameController {
 		System.out.println("등록실패");
 		}
 		
-		return "adminGame.go";
+		return "redirect:adminGame.go";
 	}
 	
 	
