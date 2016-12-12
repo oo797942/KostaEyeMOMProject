@@ -138,4 +138,57 @@ public class VideoDaoImpl implements VideoDao {
 		return result;
 	}
 
+	@Override
+	public List<VideoVO> VideoRecom(VideoVO vo) {
+		List<VideoVO> list=null;
+		try{
+			list = VideoManager.videoRecom(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
+		}finally{
+			return list;
+		}
+
+	}
+
+	@Override
+	public int VideoRecomDoing(VideoVO vo) {
+		int result = 0;
+		try{
+			result = VideoManager.videoRecomDoing(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+
+	@Override
+	public List<StudyVO> StudyRecom(StudyVO vo) {
+		List<StudyVO> list=null;
+		try{
+			list = VideoManager.studyRecom(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
+		}finally{
+			return list;
+		}
+	}
+
+	@Override
+	public int StudyRecomDoing(StudyVO vo) {
+		int result = 0;
+		try{
+			result = VideoManager.studyRecomDoing(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+
 }

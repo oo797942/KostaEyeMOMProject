@@ -123,4 +123,47 @@ public class VideoManager {
 		   	return result;		
 	}
 	
+	
+	public static List<VideoVO> videoRecom(VideoVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			List<VideoVO> list=null;
+			
+				list = session.selectList("admin.videoRecom", vo);
+				System.out.println(list.size());
+		   
+		   session.commit();
+		   	return list;	
+	   }
+	
+	public static int videoRecomDoing(VideoVO vo ) throws SQLException
+	   {
+			int result = 0;		
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.videoRecomDoing", vo);
+		   session.commit();
+		   	return result;		   
+	   }
+	
+	public static List<StudyVO> studyRecom(StudyVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			List<StudyVO> list=null;
+			
+				list = session.selectList("admin.studyRecom", vo);
+				System.out.println(list.size());
+		   
+		   session.commit();
+		   	return list;	
+	   }
+	
+	public static int studyRecomDoing(StudyVO vo ) throws SQLException
+	   {
+			int result = 0;		
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.studyRecomDoing", vo);
+		   session.commit();
+		   	return result;		   
+	   }
+
 }

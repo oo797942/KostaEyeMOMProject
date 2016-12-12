@@ -52,6 +52,23 @@ a:hover {
 						
 <!-- 						모델 넣은 값을 가져와서 JSTL을 사용해서 돌림 -->
 									<c:forEach var='vo' items="${list}">
+									<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+    				<!-- 글쓰기 버튼 -->
+							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
+								 href="#test-popup" class="open-popup-link"
+								>
+									<div class="recent-item box">
+										<figure class="touching ">
+											<img src="/EyeMOM/resources/img/${vo.g_photo}" alt="img" height="150" />
+										</figure>
+										<div id="itemName" class="item" align="center">${vo.g_title}</div>
+									</div>
+							</a></li>
+
+					</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
 								onclick="window.open('flashBoardView.go?g_no=${vo.g_no}', '${vo.g_title}',
@@ -63,6 +80,10 @@ a:hover {
 										<div id="itemName" class="item" align="center">${vo.g_title}</div>
 									</div>
 							</a></li>
+
+					</c:otherwise>	
+					</c:choose>
+					
 								</c:forEach>
 
  

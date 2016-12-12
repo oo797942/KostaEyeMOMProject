@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.AdminGameDaoImpl;
 import member.dao.VideoDaoImpl;
 import member.vo.GameVO;
+import member.vo.MemberVO;
 import member.vo.StudyVO;
 import member.vo.VideoVO;
 
@@ -219,6 +221,55 @@ public class VideoController {
 		m.addAttribute("vlist", gVO); //가져온 DB를 모델에 저장
 		
 		return "studyBoardView";
+	}
+	
+	
+	
+	@RequestMapping("/videoBoardRecom.go")
+	@ResponseBody
+	public int flashBoardRecom(Model m, VideoVO vo, HttpSession session){
+		int result = 0;
+		List<VideoVO> recomList = null;
+		recomList = videoDao.VideoRecom(vo);
+		MemberVO memvo = (MemberVO) session.getAttribute("user");
+		String Nid = memvo.getU_id();
+		vo.setD_recomId(Nid);
+		for(int i=0; i<recomList.size(); i++){
+			System.out.println(recomList.get(i).getD_goodog());
+			if(recomList.get(i).getD_goodog().equals(Nid)){
+				result = 1;
+				
+			}
+		}
+		if(result == 0){ 
+			videoDao.VideoRecomDoing(vo);
+		}
+		System.out.println("id:"+Nid);
+		return result;
+	}
+	
+	
+	@RequestMapping("/studyBoardRecom.go")
+	@ResponseBody
+	public int studyBoardRecom(Model m, StudyVO vo, HttpSession session){
+		int result = 0;
+		List<StudyVO> recomList = null;
+		recomList = videoDao.StudyRecom(vo);
+		MemberVO memvo = (MemberVO) session.getAttribute("user");
+		String Nid = memvo.getU_id();
+		vo.setV_recomId(Nid);
+		for(int i=0; i<recomList.size(); i++){
+			System.out.println(recomList.get(i).getV_goodog());
+			if(recomList.get(i).getV_goodog().equals(Nid)){
+				result = 1;
+				
+			}
+		}
+		if(result == 0){ 
+			videoDao.StudyRecomDoing(vo);
+		}
+		System.out.println("id:"+Nid);
+		return result;
 	}
 	
 }

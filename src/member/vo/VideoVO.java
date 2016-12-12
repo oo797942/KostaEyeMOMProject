@@ -19,7 +19,21 @@ public class VideoVO {
 	String d_video;
 	int d_count;
 	int d_good;
+	String d_goodog;
+	String d_recomId;
 	
+	public String getD_goodog() {
+		return d_goodog;
+	}
+	public void setD_goodog(String d_goodog) {
+		this.d_goodog = d_goodog;
+	}
+	public String getD_recomId() {
+		return d_recomId;
+	}
+	public void setD_recomId(String d_recomId) {
+		this.d_recomId = d_recomId;
+	}
 	public int getD_no() {
 		return d_no;
 	}

@@ -122,8 +122,33 @@ CONNECT BY LEVEL <= length(regexp_replace(b.g_goodog, '[^/]+',''))+1
 ]]>
 </select>
 
-
 <update id="gameRecomDoing" parameterType="gameVO">
 UPDATE kid_game SET g_good = (g_good+1),  g_goodog = (g_goodog||'/'||#{g_recomId})
 </update>
+
+<select id="videoRecom" parameterType="videoVO" resultType="videoVO">
+<![CDATA[
+ SELECT distinct regexp_substr(b.d_goodog, '[^/]+', 1, LEVEL) d_goodog
+   FROM (SELECT d_goodog FROM kid_video WHERE d_no = #{d_no}) b
+CONNECT BY LEVEL <= length(regexp_replace(b.d_goodog, '[^/]+',''))+1
+]]>
+</select>
+
+<update id="videoRecomDoing" parameterType="videoVO">
+UPDATE kid_video SET d_good = (d_good+1),  d_goodog = (d_goodog||'/'||#{d_recomId})
+</update>
+
+<select id="studyRecom" parameterType="studyVO" resultType="studyVO">
+<![CDATA[
+    SELECT distinct regexp_substr(b.v_goodog, '[^/]+', 1, LEVEL) v_goodog
+   FROM (SELECT v_goodog FROM kid_study WHERE v_no = #{v_no}) b
+CONNECT BY LEVEL <= length(regexp_replace(b.v_goodog, '[^/]+',''))+1
+]]>
+</select>
+
+<update id="studyRecomDoing" parameterType="studyVO">
+UPDATE kid_study SET v_good = (v_good+1),  v_goodog = (v_goodog||'/'||#{v_recomId})
+</update>
+
+
 </mapper> 

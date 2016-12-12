@@ -6,10 +6,10 @@ import member.vo.GameVO;
 
 public interface AdminGameDao {
 	List<GameVO> GameBoard();
-	List<GameVO> GameRecom(GameVO vo);
 	int adminGameInput(GameVO vo);
 	GameVO GameView(GameVO vo);
 	int adminGameDelete(GameVO vo);
 	int adminGameUpdate(GameVO vo);
+	List<GameVO> GameRecom(GameVO vo);
 	int GameRecomDoing(GameVO vo);
 }

@@ -19,7 +19,21 @@ public class StudyVO {
 	String v_video;
 	int v_count;
 	int v_good;
+	String v_goodog;
+	String v_recomId;
 
+	public String getV_goodog() {
+		return v_goodog;
+	}
+	public void setV_goodog(String v_goodog) {
+		this.v_goodog = v_goodog;
+	}
+	public String getV_recomId() {
+		return v_recomId;
+	}
+	public void setV_recomId(String v_recomId) {
+		this.v_recomId = v_recomId;
+	}
 	public int getV_no() {
 		return v_no;
 	}

@@ -6,8 +6,31 @@
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#recom").click(function(){
+		$.ajax({
+	        url: "videoBoardRecom.go",
+	        type: 'GET',
+	        data : { "d_no" : $("#d_no").val()},
+	       	success: function(result){
+	     	if(result!=0){
+	     		alert("이미 추천하신 게시글입니다");
+	     	}else if(result==0){
+     		alert("추천되었습니다.");	     	
+	     		}   
+	     	},
+		       error:function(err){
+		    	   alert(err);
+		       }
+	     });
+	});
+});
+</script>
 </head>
 <body bgcolor="gray">
+<input type="hidden" id="d_no" name = "d_no" value="${vlist.d_no}">
 	<table width="1000" border="0">
 	  <tbody> 
 	    <tr>
@@ -29,7 +52,7 @@
         </tr>
 	    <tr>
 	      <td height="10%" style="text-align:center">
-	     	<img alt="추천하기" src="/EyeMOM/resources/img/recommended.png" width="160px" height="58"/>
+	     	<img alt="추천하기" src="/EyeMOM/resources/img/recommended.png" id="recom" width="160px" height="58"/>
 	      </td>
         </tr>
       </tbody>
