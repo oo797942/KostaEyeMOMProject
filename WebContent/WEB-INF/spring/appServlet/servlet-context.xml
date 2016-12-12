@@ -7,15 +7,15 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
 <!-- 	Dao 빈 생성 -->
-	<bean class="member.dao.LoginDaoImpl"/>
+	   
 	<bean class="member.dao.MemberJoinDaoImpl"/>
 	<bean class="member.dao.AdminGameDaoImpl"/>	
 	<bean class='member.dao.BoardDaoImpl'/>
 	<bean class='member.dao.QnADaoImpl'/>
 	<bean class='member.dao.GroupPurchaseDaoImpl'/>
-	<bean class="member.dao.VideoDaoImpl"/>
+	<bean class="member.dao.VideoDaoImpl"/>    
 	<bean class="member.dao.CountDaoImpl"/>
-	 
+	<bean class="member.dao.LoginDaoImpl"/> 
 	<!-- 빈 스캔 설정 -->
 	<context:component-scan base-package="controller" />
 

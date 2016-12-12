@@ -105,4 +105,14 @@ public class BoardManager {
 		session.commit();
 		return result;
 	}
+	
+	//게시물 수정
+	public static int updateBoard(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		int result=0;
+		result= session.update("board.updateBoard",boardVO);
+		session.commit();
+		return result;
+		
+	}
 }

@@ -13,4 +13,5 @@ public interface BoardDao {
 	int writeReply(ReplyVO vo);
 	int replDelte(ReplyVO vo);
 	int deleteBoard(BoardVO vo);
+	int updateBoard(BoardVO vo);
 }

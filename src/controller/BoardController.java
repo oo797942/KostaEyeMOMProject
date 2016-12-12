@@ -157,11 +157,20 @@ public class BoardController {
 	}
 	
 	@RequestMapping("deletPic.do")
+	@ResponseBody
 	public int deletPic(BoardVO boardVO){
-		
+		int result=1;
 		System.out.println("글번호 : "+boardVO.getB_no());
 		
-		return 1;
+		return result;
+	}
+	
+	@RequestMapping("update.do")
+	public String updateBoard(BoardVO boardVO){
+		System.out.println("수정사진 : "+boardVO.getB_photo1name());
+		int result= boardDao.updateBoard(boardVO);
+//		return "redirect: boardview.do?b_no"+boardVO.getB_no();
+		return "redirect:boardview.do?b_no="+boardVO.getB_no();
 	}
 }
  

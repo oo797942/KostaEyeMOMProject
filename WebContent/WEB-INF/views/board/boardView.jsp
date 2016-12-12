@@ -149,6 +149,16 @@
 							<td colspan="11" height="500px" valign="top"id='content2'>
 							<p style="margin-top: 15px">
 <!-- 							<img alt="이미지가 올라갈 영역임" src="#" border="2"> -->
+								<c:if test="${not empty bvo.b_photo1name }">
+                    				 <img src="/EyeMOM/resources/img/${bvo.b_photo1name}" class="miri"><br/>
+			                     </c:if>
+			                     <c:if test="${not empty bvo.b_photo2name }">
+			                     	<img src="/EyeMOM/resources/img/${bvo.b_photo2name}" class="miri"><br/>
+			                     </c:if>
+			                     <c:if test="${not empty bvo.b_photo3name }">
+			                     	<img src="/EyeMOM/resources/img/${bvo.b_photo3name}" class="miri"><br/>
+			                     </c:if>
+								
 								${bvo.b_content}
 							</p></td>
 						</tr>
@@ -190,7 +200,10 @@
 											<tr>
 											</tr>
 										</table>  
-										<p class='boardp'>${vo.re_content }</p><br/><hr width="86%"/>	<!-- 내용 -->
+										<p class='boardp'>
+										
+										
+										${vo.re_content }</p><br/><hr width="86%"/>	<!-- 내용 -->
 									</div>
 									</c:forEach>
 								</li>			

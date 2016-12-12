@@ -16,6 +16,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	
 	$("#b_photo1").hide();
    	$("#b_photo2").hide();
    	$("#b_photo3").hide();
@@ -23,24 +24,20 @@ $(function(){
     $(".photo").on('change', function(){
     	$(this).hide();
     	$(this).next().show();
-		$(this).prev().remove();
-		var name= $(this).attr("name");
-		alert(name);
-		
        fileInfo(this, name);
-       $(this).remove();
+       
     });
     
     
-    $('#deletepic').click(function(){
-    	alert("a");
+    $('#delete').click(function(){
+    	alert($("#b_no").val());
     	
     	
     	
     		$.ajax({
     	        url: "deletPic.do",
     	        type: 'GET',
-    	        data : { "b_no" : $("#cate").val()},
+    	        data : { "b_no" : $("#b_no").val()},
     	       	success: function(result){
     	       		$('.miri').remove();
     	        	$("#b_photo1").show();
@@ -70,13 +67,13 @@ function fileInfo(f, name){
    <section class="page_head">
       <div align="center">
          <h2 style="margin-top: 40px">게시판 수정</h2>
-         <form action="insert.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
+         <form action="update.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
             <div style="width: 100%" id="board3">
                <div class='form-inline'>
                <!-- 카테고리 선택칸 -->
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
-                     <input id="cate" type="hidden" value="${vo.b_cate}"/>
+                     <input id="b_no" name="b_no" type="hidden" value="${vo.b_no}"/>
                     <c:if test="${vo.b_cate=='tip'}">
 						<input type="text" 
                        value='육아꿀팁' class='form-control inputcate' id='title3' name='b_cate'readonly="readonly"/>
@@ -103,7 +100,7 @@ function fileInfo(f, name){
                   <!-- 제목 입력칸 -->
                   <div>
                      <label id='boardlabel2'>제목 &nbsp; </label> <input type="text" name='b_title'
-                        class='form-control' id='title3'>
+                        class='form-control' id='title3' value="${vo.b_title}">
                   </div>
                </div>
                <div class='form-inline' style="margin-left: 100px">
@@ -138,7 +135,7 @@ function fileInfo(f, name){
                      <c:if test="${not empty vo.b_photo3name }">
                      <img src="/EyeMOM/resources/img/${vo.b_photo3name}" class="miri">
                      </c:if>
-                     <input type="button" id='deletepic' value="사진 삭제"/>
+                     <input type="button" id='delete' value="사진 삭제"/>
                       <!-- 8888888888888888888사진이 보여질 공간 -->
                      
                      </div>
@@ -146,7 +143,7 @@ function fileInfo(f, name){
                </div>
                   <!-- 내용입력칸 -->
                <div class='texta3'>
-                  <textarea class='textaa3' id='content'  name='b_content'></textarea>
+                  <textarea class='textaa3' id='content'  name='b_content' >${vo.b_content}</textarea>
                   <img alt="" src="">
                </div>
                <div style='margin-left: 570px'>
@@ -156,7 +153,7 @@ function fileInfo(f, name){
 					<!-- 등록하기 버튼 -->
                            <div>
                               <i class='fa fa-check-circle'><span><input
-                                    type='submit' value='등록하기' class='btn btn-link' id='btn'></input></span></i>
+                                    type='submit' value='수정하기' class='btn btn-link' id='btn'></input></span></i>
                            </div>
                         </td>
                         <!-- 버튼사이 공간 css -->

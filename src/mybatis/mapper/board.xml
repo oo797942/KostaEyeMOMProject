@@ -31,6 +31,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where b_no=#{b_no}
 </select>
 
+<!-- 게시판 수정 -->
+<update id="updateBoard" parameterType="boardVO">
+	UPDATE  normal_board SET
+	b_title=#{b_title}, b_content=#{b_content}
+	<if test="b_photo1name !=null">
+		, b_photo1name=#{b_photo1name}
+	</if>
+	<if test="b_photo2name !=null">
+		, b_photo2name=#{b_photo2name}
+	</if>
+	<if test="b_photo3name !=null">
+		, b_photo3name=#{b_photo3name}
+	</if>
+	
+	where b_no=#{b_no} 
+</update>
+
 <!-- 게시판 삭제 -->
 <delete id="deleteBoard" parameterType="boardVO">
 DELETE FROM normal_board where b_no=#{b_no}
@@ -97,6 +114,6 @@ DELETE FROM reply where re_no=#{re_no}
 	</if>
 	)
 </insert>
-<!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
+
  
 </mapper>
