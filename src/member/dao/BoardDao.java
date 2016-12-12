@@ -3,6 +3,7 @@ package member.dao;
 import java.util.List;
 
 import member.vo.BoardVO;
+import member.vo.MemberVO;
 import member.vo.ReplyVO;
 
 public interface BoardDao {
@@ -14,4 +15,6 @@ public interface BoardDao {
 	int replDelte(ReplyVO vo);
 	int deleteBoard(BoardVO vo);
 	int updateBoard(BoardVO vo);
+	List<BoardVO> checkGoodId(BoardVO vo);
+	int countGood(BoardVO vo);
 }

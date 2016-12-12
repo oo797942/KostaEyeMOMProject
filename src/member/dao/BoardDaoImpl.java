@@ -87,7 +87,7 @@ public class BoardDaoImpl implements BoardDao {
 		int  result = 0;
 		try{
 			result = BoardManager.deleteBoard(vo);
-		}catch( Exception ex )
+		}catch( Exception ex ) 
 		{
 			System.out.println("boardDAOImpl / 리플 지우기 실패 : " + ex.getMessage());
 		}
@@ -103,6 +103,34 @@ public class BoardDaoImpl implements BoardDao {
 		{
 			System.out.println("boardDAOImpl / 리플 지우기 실패 : " + ex.getMessage());
 		}
+		return result;
+	}
+
+	@Override
+	public List<BoardVO> checkGoodId(BoardVO vo) {
+		List<BoardVO>list=null;
+		try{
+			System.out.println("DAO 체크"+vo.getB_no());
+
+			list = BoardManager.checkGoodId(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl /추천 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	@Override
+	public int countGood(BoardVO vo) {
+		int result = 0;
+		try{
+			result = BoardManager.countGood(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / 추천 등록 실패 : " + ex.getMessage());
+			ex.printStackTrace();
+		}
+		
 		return result;
 	}
 }

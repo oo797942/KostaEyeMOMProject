@@ -27,6 +27,8 @@ public class BoardVO {
 	private String b_report;
 	private String b_nick;
 	private String u_id;
+	private int b_recount;
+	private String b_goodog;
 	
 	public int getB_no() {
 		return b_no;
@@ -210,6 +212,18 @@ public class BoardVO {
 	}
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+	public int getB_recount() {
+		return b_recount;
+	}
+	public void setB_recount(int b_recount) {
+		this.b_recount = b_recount;
+	}
+	public String getB_goodog() {
+		return b_goodog;
+	}
+	public void setB_goodog(String b_goodog) {
+		this.b_goodog = b_goodog;
 	}
 	
 	

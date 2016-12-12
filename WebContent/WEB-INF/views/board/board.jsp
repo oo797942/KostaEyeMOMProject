@@ -86,7 +86,7 @@
 						</c:otherwise>	
 						</c:choose>
 							<!-- 게시글 댓글 수  -->
-							<label>&nbsp;[]</label>	
+							<label>&nbsp;[${vo.b_recount}]</label>	
 						</td>
 						<!-- 작성자 -->
 						<td class='boardtd'>${vo.b_nick }</td>

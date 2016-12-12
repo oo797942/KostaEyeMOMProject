@@ -28,7 +28,34 @@
 	     });
 	}
 	
+	
+	
 	$(function(){
+		//추천
+		$('.goodbtn').click(function(){
+			alert($('#b_no').val())
+			$.ajax({
+		        url: "good.do",
+		        type: 'post',
+		        data : { "b_no" : $('#b_no').val()	},
+		       	success: function(result){
+		       	  
+		       		if(result=="2"){
+		       			location.reload();
+		       			
+		        	 }else if(result=="1"){
+		        		 alert("이미 추천한 게시물입니다");
+		        	 }else{
+		        		 alert("추천 실패");
+		        	 } 
+		           },
+			       error:function(err){
+			    	   alert(err);
+			       }
+		     });
+		});
+		
+		
 		
 		//리플삭제
 		$('.boarddelete').click(function(){
@@ -167,7 +194,7 @@
 					<!-- 추천버튼 -->
 					<div>
 						<div class='gooddiv'>
-							<i class='fa fa-thumbs-o-up' ><span><input type='button' value='추천' class='goodbtn'/></span></i>				
+							<i class='fa fa-thumbs-o-up' ><span><input type='button' value='추천'  class='goodbtn'/></span></i>				
 						</div>	
 					</div>
 					<!-- 테이블과 테이블 사이 간격  -->
@@ -176,7 +203,7 @@
 					<!-- 신고버튼 -->	
 					<div>   
 						<div class='reportdiv'>	
-							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button'  value='신고' class='reportbtn'/></span></i>				
+							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button' onclick="" value='신고' class='reportbtn'/></span></i>				
 						</div>
 					</div>
 					    

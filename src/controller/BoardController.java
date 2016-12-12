@@ -34,6 +34,13 @@ public class BoardController {
 		List<BoardVO> list=null;
 		
 		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
+		System.out.println(list.size());
+		for(int i=0; i<list.size();i++){
+		BoardVO boardVO=list.get(i);
+		List <ReplyVO> listVO = boardDao.callReply(boardVO);
+		
+		list.get(i).setB_recount(listVO.size());
+		}
 		
 		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		m.addAttribute("title", title ); // 게시판 종류 모델에 저장
@@ -156,6 +163,7 @@ public class BoardController {
 		return result;
 	}
 	
+	//게시글 수정시 사진 삭제
 	@RequestMapping("deletPic.do")
 	@ResponseBody
 	public int deletPic(BoardVO boardVO){
@@ -165,12 +173,44 @@ public class BoardController {
 		return result;
 	}
 	
+	//게시글 수정
 	@RequestMapping("update.do")
 	public String updateBoard(BoardVO boardVO){
 		System.out.println("수정사진 : "+boardVO.getB_photo1name());
 		int result= boardDao.updateBoard(boardVO);
-//		return "redirect: boardview.do?b_no"+boardVO.getB_no();
 		return "redirect:boardview.do?b_no="+boardVO.getB_no();
 	}
+	
+	//추천
+	@RequestMapping("good.do")
+	@ResponseBody
+	public int goodBoard(BoardVO boardVO, HttpSession session){
+		int result=0;
+		//추천인 중복확인
+		MemberVO mVO=(MemberVO)session.getAttribute("user");
+		boardVO.setU_id(mVO.getU_id());
+		List<BoardVO> list = boardDao.checkGoodId(boardVO);
+		if(list.isEmpty()){
+			
+		}else{
+			for(int i=0 ; i<list.size();i++){
+				
+				if(list.get(i).getB_goodog().equals(mVO.getU_id())){
+					result=1;
+				}
+			}
+		}
+		
+		if(result==0){
+			
+			boardVO.setU_id(mVO.getU_id());
+			boardDao.countGood(boardVO);
+			result=2;
+		}
+		
+		return result;
+	}
+	
+	
 }
  

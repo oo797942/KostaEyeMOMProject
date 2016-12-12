@@ -115,4 +115,21 @@ public class BoardManager {
 		return result;
 		
 	}
+	
+	//추천인 중복 체크
+	public static List<BoardVO> checkGoodId(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		List<BoardVO> list= session.selectList("board.goodCheck", boardVO);
+
+		session.commit();
+		return list;
+	}
+	
+	//추천 등록
+	public static int countGood(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		int result =session.update("board.countGood", boardVO);
+		session.commit();
+		return result;
+	}
 }
