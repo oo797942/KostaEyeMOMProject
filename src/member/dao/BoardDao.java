@@ -17,4 +17,5 @@ public interface BoardDao {
 	int updateBoard(BoardVO vo);
 	List<BoardVO> checkGoodId(BoardVO vo);
 	int countGood(BoardVO vo);
+	int reportBoard(BoardVO vo);
 }

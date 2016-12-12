@@ -132,4 +132,13 @@ public class BoardManager {
 		session.commit();
 		return result;
 	}
+	
+	//신고
+	public static int reportBoard(BoardVO boardVO){
+		SqlSession session = CommonManager.db().openSession();
+		int result =session.update("board.reportBoard", boardVO);
+		session.commit();
+		return result;
+		
+	}
 }

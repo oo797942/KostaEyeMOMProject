@@ -133,4 +133,18 @@ public class BoardDaoImpl implements BoardDao {
 		
 		return result;
 	}
+
+	@Override
+	public int reportBoard(BoardVO vo) {
+		int result = 0;
+		try{
+			result = BoardManager.reportBoard(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("boardDAOImpl / 추천 등록 실패 : " + ex.getMessage());
+			ex.printStackTrace();
+		}
+		
+		return result;
+	}
 }

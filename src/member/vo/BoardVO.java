@@ -24,7 +24,7 @@ public class BoardVO {
 	private String b_date;
 	private String b_ip;
 	private String b_addr;
-	private String b_report;
+	private int b_report;
 	private String b_nick;
 	private String u_id;
 	private int b_recount;
@@ -176,10 +176,10 @@ public class BoardVO {
 	public void setB_addr(String b_addr) {
 		this.b_addr = b_addr;
 	}
-	public String getB_report() {
+	public int getB_report() {
 		return b_report;
 	}
-	public void setB_report(String b_report) {
+	public void setB_report(int b_report) {
 		this.b_report = b_report;
 	}
 	public String getB_nick() {

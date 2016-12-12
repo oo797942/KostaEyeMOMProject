@@ -130,4 +130,9 @@ CONNECT BY LEVEL <= length(regexp_replace(b.b_goodog, '[^/]+',''))+1
 update normal_board SET b_goodog=(b_goodog||'/'||#{u_id}), b_good=NVL(b_good,0)+1 where b_no=#{b_no}
 </update>
 
+<!-- 신고 -->
+<update id="reportBoard" parameterType="boardVO">
+update normal_board set b_report=NVL(b_report, 0)+1 where b_no=#{b_no}
+</update>
+
 </mapper>

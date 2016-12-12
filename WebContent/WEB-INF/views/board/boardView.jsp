@@ -31,7 +31,30 @@
 	
 	
 	$(function(){
-		//추천
+		//신고하기
+		$('.reportbtn').click(function(){
+			alert($('#b_no').val()+"신고")
+			$.ajax({
+		        url: "report.do",
+		        type: 'post',
+		        data : { "b_no" : $('#b_no').val()	},
+		       	success: function(result){
+		       	  
+		       		if(result=="1"){
+		       			location.reload();
+		       		
+		        	 }else{
+		        		 alert("추천 실패");
+		        	 } 
+		           },
+			       error:function(err){
+			    	   alert(err);
+			       }
+		     });
+		});
+		
+		
+		//추천		
 		$('.goodbtn').click(function(){
 			alert($('#b_no').val())
 			$.ajax({

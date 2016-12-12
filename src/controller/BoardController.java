@@ -211,6 +211,15 @@ public class BoardController {
 		return result;
 	}
 	
+	@RequestMapping("report.do")
+	@ResponseBody
+	public int reportBoard(BoardVO boardVO, HttpSession session){
+		MemberVO mVO=(MemberVO)session.getAttribute("user");
+		int result=0;
+		result = boardDao.reportBoard(boardVO);
+		
+		return result;
+	}
 	
 }
  
