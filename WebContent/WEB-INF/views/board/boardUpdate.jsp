@@ -16,22 +16,46 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	$("#b_photo1").hide();
    	$("#b_photo2").hide();
    	$("#b_photo3").hide();
    	
     $(".photo").on('change', function(){
     	$(this).hide();
     	$(this).next().show();
-       fileInfo(this);
+		$(this).prev().remove();
+		var name= $(this).attr("name");
+		alert(name);
+		
+       fileInfo(this, name);
+       $(this).remove();
     });
+    
+    
+    $('#deletepic').click(function(){
+    	alert("a");
+    	
+    	
+    	
+    		$.ajax({
+    	        url: "deletPic.do",
+    	        type: 'GET',
+    	        data : { "b_no" : $("#cate").val()},
+    	       	success: function(result){
+    	       		$('.miri').remove();
+    	        	$("#b_photo1").show();
+    	       	}
+    	     });
+    })
 });
-function fileInfo(f){
+function fileInfo(f, name){
    var file = f.files; // files 를 사용하면 파일의 정보를 알 수 있음
 
    // 파일의 갯수만큼 반복
    for(var i=0; i<file.length; i++){
       var reader = new FileReader(); // FileReader 객체 사용
       reader.onload = function(rst){
+    	 
          $('#imgs').append('<img src="' + rst.target.result + '" class="miri ">'); // append 메소드를 사용해서 이미지 추가
          // 이미지는 base64 문자열로 추가
          // 이 방법을 응용하면 선택한 이미지를 미리보기 할 수 있음
@@ -45,13 +69,14 @@ function fileInfo(f){
 <div class='body'>
    <section class="page_head">
       <div align="center">
-         <h2 style="margin-top: 40px">게시판 등록</h2>
+         <h2 style="margin-top: 40px">게시판 수정</h2>
          <form action="insert.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
             <div style="width: 100%" id="board3">
                <div class='form-inline'>
                <!-- 카테고리 선택칸 -->
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
+                     <input id="cate" type="hidden" value="${vo.b_cate}"/>
                     <c:if test="${vo.b_cate=='tip'}">
 						<input type="text" 
                        value='육아꿀팁' class='form-control inputcate' id='title3' name='b_cate'readonly="readonly"/>
@@ -113,6 +138,7 @@ function fileInfo(f){
                      <c:if test="${not empty vo.b_photo3name }">
                      <img src="/EyeMOM/resources/img/${vo.b_photo3name}" class="miri">
                      </c:if>
+                     <input type="button" id='deletepic' value="사진 삭제"/>
                       <!-- 8888888888888888888사진이 보여질 공간 -->
                      
                      </div>

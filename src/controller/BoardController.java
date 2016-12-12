@@ -155,5 +155,13 @@ public class BoardController {
 		int result = boardDao.replDelte(replyVO);
 		return result;
 	}
+	
+	@RequestMapping("deletPic.do")
+	public int deletPic(BoardVO boardVO){
+		
+		System.out.println("글번호 : "+boardVO.getB_no());
+		
+		return 1;
+	}
 }
  
