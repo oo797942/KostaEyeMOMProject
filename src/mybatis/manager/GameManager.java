@@ -73,4 +73,26 @@ public class GameManager {
 		   	return result;		   
 	   }
 	
+	public static List<GameVO> gameRecom(GameVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			List<GameVO> list=null;
+			
+				list = session.selectList("admin.gameRecom", vo);
+				System.out.println(list.size());
+		   
+		   session.commit();
+		   	return list;	
+	   }
+	
+	public static int gameRecomDoing(GameVO vo ) throws SQLException
+	   {
+			int result = 0;		
+		   SqlSession session = CommonManager.db().openSession();
+		   result = session.update("admin.gameRecomDoing", vo);
+		   session.commit();
+		   	return result;		   
+	   }
+	
+	
 }

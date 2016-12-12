@@ -114,5 +114,16 @@ v_content = #{v_content}
 WHERE v_no = #{v_no}
 </update>
 
+<select id="gameRecom" parameterType="gameVO" resultType="gameVO">
+<![CDATA[
+    SELECT distinct regexp_substr(b.g_goodog, '[^/]+', 1, LEVEL) g_goodog
+   FROM (SELECT g_goodog FROM kid_game WHERE g_no = #{g_no}) b
+CONNECT BY LEVEL <= length(regexp_replace(b.g_goodog, '[^/]+',''))+1
+]]>
+</select>
 
+
+<update id="gameRecomDoing" parameterType="gameVO">
+UPDATE kid_game SET g_good = (g_good+1),  g_goodog = (g_goodog||'/'||#{g_recomId})
+</update>
 </mapper> 

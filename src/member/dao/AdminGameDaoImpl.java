@@ -76,5 +76,35 @@ public class AdminGameDaoImpl implements AdminGameDao {
 		}
 		return result;
 	}
+
+
+	@Override
+	public List<GameVO> GameRecom(GameVO vo) {
+		List<GameVO> list=null;
+		try{
+			list = GameManager.gameRecom(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
+		}finally{
+			return list;
+		}
+	}
+
+
+	@Override
+	public int GameRecomDoing(GameVO vo) {
+		int result = 0;
+		try{
+			result = GameManager.gameRecomDoing(vo);
+			System.out.println("겜수정 성공 :"+result); 
+		}catch( Exception ex )
+		{
+			System.out.println("게임 수정 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+
+
 	
 }

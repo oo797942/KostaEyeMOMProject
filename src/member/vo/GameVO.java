@@ -19,9 +19,21 @@ public class GameVO {
 	String g_flash;
 	int g_count;
 	int g_good;
-
+	String g_goodog;
+	String g_recomId;
 	
-	
+	public String getG_recomId() {
+		return g_recomId;
+	}
+	public void setG_recomId(String g_recomId) {
+		this.g_recomId = g_recomId;
+	}
+	public String getG_goodog() {
+		return g_goodog;
+	}
+	public void setG_goodog(String g_goodog) {
+		this.g_goodog = g_goodog;
+	}
 	public int getG_no() {
 		return g_no;
 	}
@@ -117,8 +129,6 @@ public class GameVO {
 		}
 	}
 
-	
-	
 	
 	}
 	public String getG_flash() {

@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.AdminGameDaoImpl;
 import member.vo.GameVO;
+import member.vo.MemberVO;
 
 @Controller
 public class GameController {
@@ -121,6 +123,30 @@ public class GameController {
 		m.addAttribute("vlist", gVO); //가져온 DB를 모델에 저장
 		
 		return "flashBoardView";
+	}
+	
+	
+	@RequestMapping("/flashBoardRecom.go")
+	@ResponseBody
+	public int flashBoardRecom(Model m, GameVO vo, HttpSession session){
+		int result = 0;
+		List<GameVO> recomList = null;
+		recomList = gameDao.GameRecom(vo);
+		MemberVO memvo = (MemberVO) session.getAttribute("user");
+		String Nid = memvo.getU_id();
+		vo.setG_recomId(Nid);
+		for(int i=0; i<recomList.size(); i++){
+			System.out.println(recomList.get(i).getG_goodog());
+			if(recomList.get(i).getG_goodog().equals(Nid)){
+				result = 1;
+				
+			}
+		}
+		if(result == 0){ 
+			gameDao.GameRecomDoing(vo);
+		}
+		System.out.println("id:"+Nid);
+		return result;
 	}
 	
 }
