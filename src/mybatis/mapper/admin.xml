@@ -80,5 +80,12 @@ UPDATE kid_video SET d_count = d_count+1 WHERE d_no = #{d_no}
 DELETE FROM kid_game WHERE g_no = #{g_no}
 </delete>
 
+<delete id="videoDelete" parameterType="videoVO">
+DELETE FROM kid_video WHERE d_no = #{d_no}
+</delete>
+
+<delete id="studyDelete" parameterType="studyVO">
+DELETE FROM kid_study WHERE v_no = #{v_no}
+</delete>
 
 </mapper> 

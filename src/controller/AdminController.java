@@ -42,10 +42,10 @@ public class AdminController {
 		return "adminGallery";
 	}
 	
-	@RequestMapping("/adminVideo.go")
-	public String admonVideo(HttpSession session){
-		return "adminVideo";
-	} 
+//	@RequestMapping("/adminVideo.go")
+//	public String admonVideo(HttpSession session){
+//		return "adminVideo";
+//	} 
 	
 //	@RequestMapping("/adminGame.go")
 //	public String admonGame(HttpSession session){

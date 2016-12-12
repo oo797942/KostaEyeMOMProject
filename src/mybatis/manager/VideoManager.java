@@ -89,4 +89,22 @@ public class VideoManager {
 		   	return vlist;	
 	   }
 
+	public static int videoDelete(VideoVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			int result= session.delete("admin.videoDelete", vo);
+			session.commit();
+
+		   	return result;	
+	   }
+
+	public static int studyDelete(StudyVO vo) throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			int result= session.delete("admin.studyDelete", vo);
+			session.commit();
+
+		   	return result;	
+	   }
+	
 }

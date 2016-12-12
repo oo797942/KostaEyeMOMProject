@@ -1,5 +1,6 @@
 package member.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import member.vo.GameVO;
@@ -86,6 +87,28 @@ public class VideoDaoImpl implements VideoDao {
 		}finally{
 			return vlist;
 		}
+	}
+
+	@Override
+	public int adminVideoDelete(VideoVO vo) {
+		int result = 0;
+		try {
+			result  = VideoManager.videoDelete(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public int adminStudyDelete(StudyVO vo) {
+		int result = 0;
+		try {
+			result  = VideoManager.studyDelete(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }
