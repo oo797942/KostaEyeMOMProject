@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import member.dao.MemberJoinDao;
-import member.dao.MemberJoinDaoImpl;
+import member.dao.MemberDao;
+import member.dao.MemberDaoImpl;
 import member.vo.MemberVO;
 
 @Controller
 public class JoinController {
 	
 	@Autowired
-	private MemberJoinDaoImpl memberJoinDao;
+	private MemberDaoImpl memberJoinDao;
 	  
 	@RequestMapping("/join.do")
 	public String login(MemberVO memberVO, Model m){

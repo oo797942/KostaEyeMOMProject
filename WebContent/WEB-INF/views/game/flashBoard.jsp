@@ -72,7 +72,7 @@ a:hover {
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
 								onclick="window.open('flashBoardView.go?g_no=${vo.g_no}', '${vo.g_title}',
-                   				 'width=1050,height=650');return false;">
+                   				'width=1180,height=700');return false;">
 									<div class="recent-item box">
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.g_photo}" alt="img" height="150" />

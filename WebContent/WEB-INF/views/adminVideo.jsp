@@ -103,7 +103,12 @@
 				<c:forEach var='vo' items="${vlist}">
 			<tr>
 				<td style="text-align:center">${vo.d_no}</td>
-				<td style="text-align:center">${vo.d_title}</td>
+				<td style="text-align:center">
+				<a href="/file/textimg.jpg" onclick="window.open('videoBoardView.go?d_no=${vo.d_no}', '${vo.d_title}',
+                  'width=1180,height=700'); return false;">
+				${vo.d_title}
+				</a>
+				</td>
 				<td style="text-align:center">${vo.d_good}</td>
 				<td style="text-align:center">${vo.d_count}</td>
 				<td style="text-align:center"><input type="button" value="수정" onclick="location.href='adminVideoUpdate.go?d_no=${vo.d_no}';"  class="btn btn-warning btn-sm" /></td>
@@ -137,7 +142,12 @@
 				<c:forEach var='vo' items="${slist}">
 			<tr>
 				<td style="text-align:center">${vo.v_no}</td>
-				<td style="text-align:center">${vo.v_title}</td>
+				<td style="text-align:center">
+		<a href="/file/textimg.jpg"	onclick="window.open('studyBoardView.go?v_no=${vo.v_no}', '${vo.v_title}',
+           'width=1180,height=700'); return false;">
+				${vo.v_title}
+				</a>
+				</td>
 				<td style="text-align:center">${vo.v_good}</td>
 				<td style="text-align:center">${vo.v_count}</td>
 				<td style="text-align:center"><input type="button" value="수정" onclick="location.href='adminStudyUpdate.go?v_no=${vo.v_no}';"  class="btn btn-warning btn-sm" /></td>
@@ -152,7 +162,11 @@
 
 </div>
 </div>
-                    <a href="adminVideoInsert.go">새 게임 등록</a>	
+		<div  style="text-align:right;">
+		<p>
+                    <a href="adminVideoInsert.go"><input type="button" value="새로운 영상 등록"  class="btn btn-primary btn-sm"/></a>	
+    </p>
+    </div>
         </div>
       
 </body>

@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.LoginDao;
 import member.dao.LoginDaoImpl;
-import member.dao.MemberJoinDaoImpl;
+import member.dao.MemberDaoImpl;
 import member.vo.MemberVO;
 
 @Controller
 public class IdcheckController {
 	
 	@Autowired
-	private MemberJoinDaoImpl memberJoinDao;
+	private MemberDaoImpl memberJoinDao;
 	
 	 
 	@RequestMapping("/idcheck.do")

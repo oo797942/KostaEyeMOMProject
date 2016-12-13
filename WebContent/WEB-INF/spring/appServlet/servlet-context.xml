@@ -8,7 +8,7 @@
 	
 <!-- 	Dao 빈 생성 -->
 	   
-	<bean class="member.dao.MemberJoinDaoImpl"/>
+	<bean class="member.dao.MemberDaoImpl"/>
 	<bean class="member.dao.AdminGameDaoImpl"/>	
 	<bean class='member.dao.BoardDaoImpl'/>
 	<bean class='member.dao.QnADaoImpl'/>

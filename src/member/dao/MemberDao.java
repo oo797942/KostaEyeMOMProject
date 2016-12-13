@@ -2,7 +2,7 @@ package member.dao;
 
 import member.vo.MemberVO;
 
-public interface MemberJoinDao {
+public interface MemberDao {
 	int memberJoin(MemberVO vo);
 	MemberVO idCheck(MemberVO vo); 
 }

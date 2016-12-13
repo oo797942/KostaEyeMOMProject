@@ -92,7 +92,12 @@
 				<c:forEach var='vo' items="${list}">
 			<tr>
 				<td style="text-align:center">${vo.g_no}</td>
-				<td style="text-align:center">${vo.g_title}</td>
+				<td style="text-align:center">
+				<a href="/file/textimg.jpg" onclick="window.open('flashBoardView.go?g_no=${vo.g_no}', '${vo.g_title}',
+                   'width=1180,height=700');return false;">
+				${vo.g_title}
+				</a>
+				</td>
 				<td style="text-align:center">${vo.g_good}</td>
 				<td style="text-align:center">${vo.g_count}</td>
 				<td style="text-align:center"><input type="button" value="수정" onclick="location.href='adminGameUpdate.go?g_no=${vo.g_no}';"  class="btn btn-warning btn-sm" /></td>

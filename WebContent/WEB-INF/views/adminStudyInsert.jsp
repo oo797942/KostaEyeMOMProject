@@ -133,7 +133,7 @@ function readURL(input) {
   </tbody>
 </table>
 <hr/>
-<input type="submit" value="영상등록" />
+<input type="submit" value="영상등록" class="btn btn-success btn-sm"/>
           </form>
       </div>
 
