@@ -42,4 +42,12 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
+	
+	public static List getReplyList(MemberVO memberVO) throws SQLException{
+		List list =null;
+		SqlSession session = CommonManager.db().openSession();
+		list = session.selectList("mypage.getReplyList", memberVO);
+		session.close();
+		return list;
+	}
 }

@@ -71,6 +71,10 @@
 #boardtdtitle{
 	width:55%;
 }
+
+#boardtdtitle2{
+	width:30%;
+}
   /*부트스트랩 카피*/
 .btn {
   display: inline-block;

@@ -55,5 +55,17 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
+
+	@Override
+	public List getReplyList(MemberVO vo) {
+		List list=null;
+		try {
+			list=MypageManager.getReplyList(vo);
+		} catch (SQLException e) {
+			// TODO Auto-genderated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }

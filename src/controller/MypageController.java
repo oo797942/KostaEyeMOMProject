@@ -46,7 +46,19 @@ public class MypageController {
 		
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
 		List <BoardVO> list = mypageDao.getMyBoardList(memberVO);
+		System.out.println("list : "+list.size());
 		
+		m.addAttribute("list", list);
 		return "board/myboard";
+	}
+	
+	//내가 쓴 댓글 전체보기 리스트
+	@RequestMapping("replyboard.do")
+	public String replyboard(HttpSession session, Model m){
+		MemberVO memberVO=(MemberVO)session.getAttribute("user");
+		List <BoardVO> list = mypageDao.getReplyList(memberVO);
+		System.out.println("list : "+list.size());
+		m.addAttribute("list", list);
+		return "board/replyboard";
 	}
 }

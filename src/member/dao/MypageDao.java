@@ -9,4 +9,5 @@ public interface MypageDao {
 	List getMyBoard(MemberVO vo);
 	List getMyReply(MemberVO vo);
 	List getMyBoardList(MemberVO vo);
+	List getReplyList(MemberVO vo);
 }

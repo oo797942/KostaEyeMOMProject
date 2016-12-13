@@ -36,43 +36,37 @@
 				<table class='boardtable'>
 					<tr id="title1">
 						<td class='boardtd' >글번호</td>
-						<td class='boardtd' >카테고리</td>
-						<td class='boardtd' id='boardtdtitle2'>제목</td>
+						<td class='boardtd' >댓글번호</td>
+						<td class='boardtd' id='boardtdtitle3'>내용</td>
 						<!-- 게시판  -->
 						<td class='boardtd'>작성자</td>
 						<td class='boardtd'>작성일</td>
-						<td class='boardtd'>추천수</td>
-						<td class='boardtd'>조회수</td>
 					</tr>
 			<c:forEach var='vo' items='${list}'>
 					<tr>
 						<!-- 글번호 -->
-						<td class='boardtd' id='num' >${vo.b_no }</td>
-                        <!--카테고리 -->
-                        <td class='boardtd'>${vo.b_cate}</td>
+						<td class='boardtd' id='num' >${vo.b_no}</td>
+						<!-- 댓글 번호-->
+						<td class='boardtd' id='num' >${vo.re_no}</td>
 						<!-- 제목 -->
 						<td class='boardtd'>
 						<c:choose>
 						<c:when test="${empty sessionScope.user}">
 							<a href="#test-popup" class="open-popup-link">
-								${vo.b_title }
+								${vo.re_content }
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">${vo.b_title }
+							<a href="boardview.do?b_no=${vo.b_no }">${vo.re_content }
 							</a>
 						</c:otherwise>	
 						</c:choose>
 							
 						</td>
 						<!-- 작성자 -->
-						<td class='boardtd'>${vo.b_nick }</td>
+						<td class='boardtd'>${vo.re_nick }</td>
 						<!-- 작성일 -->
-						<td class='boardtd'>${vo.b_date }</td>
-						<!-- 추천수 -->
-						<td class='boardtd'>${vo.b_good }</td>
-						<!-- 조회수 -->
-						<td class='boardtd'>${vo.b_count }</td>
+						<td class='boardtd'>${vo.re_date }</td>
 					</tr>
 			</c:forEach>
 				</table>
