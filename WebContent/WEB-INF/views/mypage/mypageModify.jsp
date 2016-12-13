@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel='stylesheet' href='css/mypageModify.css'>
+<link rel='stylesheet' href='/EyeMOM/resources/css/mypageModify.css'>
 </head>
 <body>
 
