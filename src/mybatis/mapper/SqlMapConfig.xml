@@ -39,6 +39,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/mapper/qna.xml" />
 		<mapper resource="mybatis/mapper/purchase.xml" />
 		<mapper resource="mybatis/mapper/count.xml" />
+		<mapper resource="mybatis/mapper/mypage.xml" />
 	</mappers>
 	
 </configuration>

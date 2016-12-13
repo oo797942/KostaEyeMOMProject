@@ -7,7 +7,7 @@ import member.vo.MemberVO;
 import member.vo.ReplyVO;
 
 public interface BoardDao {
-	List<BoardVO> allBoard(String title);
+	List allBoard(String title);
 	int writeBoard(BoardVO vo);
 	BoardVO viewBoard(BoardVO vo);
 	List<ReplyVO> callReply(BoardVO vo);

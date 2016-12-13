@@ -1,6 +1,6 @@
 package member.vo;
 
-import java.util.Date;
+
 
 public class MemberVO {
 	private String u_id;
@@ -14,8 +14,8 @@ public class MemberVO {
 	private int u_point;
 	private String u_lvl;
 	private String u_state;
-	private Date u_signupdate;
-	private Date u_stopdate;
+	private String u_signup_date;
+	private String u_stop_date;
 	private int u_report;
 	
 	
@@ -85,17 +85,17 @@ public class MemberVO {
 	public void setU_state(String u_state) {
 		this.u_state = u_state;
 	}
-	public Date getU_signupdate() {
-		return u_signupdate;
+	public String getU_signup_date() {
+		return u_signup_date;
 	}
-	public void setU_signupdate(Date u_signupdate) {
-		this.u_signupdate = u_signupdate;
+	public void setU_signup_date(String u_signup_date) {
+		this.u_signup_date = u_signup_date;
 	}
-	public Date getU_stopdate() {
-		return u_stopdate;
+	public String getU_stop_date() {
+		return u_stop_date;
 	}
-	public void setU_stopdate(Date u_stopdate) {
-		this.u_stopdate = u_stopdate;
+	public void setU_stopdate(String u_stop_date) {
+		this.u_stop_date = u_stop_date;
 	}
 	public int getU_report() {
 		return u_report;

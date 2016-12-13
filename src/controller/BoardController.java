@@ -36,6 +36,7 @@ public class BoardController {
 		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
 		System.out.println(list.size());
 		for(int i=0; i<list.size();i++){
+		
 		BoardVO boardVO=list.get(i);
 		List <ReplyVO> listVO = boardDao.callReply(boardVO);
 		

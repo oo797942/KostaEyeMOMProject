@@ -16,6 +16,7 @@
 	<bean class="member.dao.VideoDaoImpl"/>    
 	<bean class="member.dao.CountDaoImpl"/>
 	<bean class="member.dao.LoginDaoImpl"/> 
+	<bean class="member.dao.MypageDaoImpl"/>
 	<!-- 빈 스캔 설정 -->
 	<context:component-scan base-package="controller" />
 

@@ -18,15 +18,12 @@ public class BoardManager {
 	   {
 			SqlSession session = CommonManager.db().openSession();
 			System.out.println("manager : title : "+title);
-			List<BoardVO> list=null;
+			List list=null;
 			// 육아꿀팁, 식단, 자랑
-			if(title.equals("tip")||title.equals("rice")||title.equals("baby")){
+			if(title.equals("tip")||title.equals("rice")||title.equals("baby")||title.equals("qna_board")){
 			
 				list = session.selectList("board.allBoard", title); 
-			//q&a 게시판
-			}else if(title.equals("qna_board")){
-				list =	session.selectList("board.allQna", title);
-			//질병
+			
 			}else if(title.equals("kid_sick")){
 				list = session.selectList("board.allSick", title);
 			}
@@ -37,7 +34,7 @@ public class BoardManager {
 	   }
 	
 	//게시물 등록
-	public static int wirteBoard(BoardVO boardVO){
+	public static int wirteBoard(BoardVO boardVO)throws SQLException{
 		int result=0;  // 결과값 확인용
 		
 		SqlSession session = CommonManager.db().openSession();
@@ -57,7 +54,7 @@ public class BoardManager {
 	}
 	
 	//게시판 객체 얻어오기
-	public static BoardVO viewBoard(BoardVO boardVO){
+	public static BoardVO viewBoard(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		session.update("board.boardCount", boardVO);
 		BoardVO vo= session.selectOne("board.boardView", boardVO);
@@ -66,7 +63,7 @@ public class BoardManager {
 	}
 	
 	//리플 가져오기
-	public static List<ReplyVO> callReply(BoardVO boardVO){
+	public static List<ReplyVO> callReply(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		List <ReplyVO> list=session.selectList("board.callreply", boardVO);
 		session.commit();
@@ -74,7 +71,7 @@ public class BoardManager {
 	}
 	
 	//리플 등록
-	public static int writeReply(ReplyVO replyVO){
+	public static int writeReply(ReplyVO replyVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		
 		int result = session.insert("board.replInsert",replyVO);
@@ -83,7 +80,7 @@ public class BoardManager {
 	}
 	
 	//리플 삭제
-	public static int replDelte(ReplyVO replyVO){
+	public static int replDelte(ReplyVO replyVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		int result=0;
 		ReplyVO checkVO = session.selectOne("board.checkReply",replyVO);
@@ -98,7 +95,7 @@ public class BoardManager {
 	}
 	
 	//게시물 삭제
-	public static int deleteBoard(BoardVO boardVO){
+	public static int deleteBoard(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		int result=0;
 		result= session.delete("board.deleteBoard",boardVO);
@@ -107,7 +104,7 @@ public class BoardManager {
 	}
 	
 	//게시물 수정
-	public static int updateBoard(BoardVO boardVO){
+	public static int updateBoard(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		int result=0;
 		result= session.update("board.updateBoard",boardVO);
@@ -117,7 +114,7 @@ public class BoardManager {
 	}
 	
 	//추천인 중복 체크
-	public static List<BoardVO> checkGoodId(BoardVO boardVO){
+	public static List<BoardVO> checkGoodId(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		List<BoardVO> list= session.selectList("board.goodCheck", boardVO);
 
@@ -126,7 +123,7 @@ public class BoardManager {
 	}
 	
 	//추천 등록
-	public static int countGood(BoardVO boardVO){
+	public static int countGood(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		int result =session.update("board.countGood", boardVO);
 		session.commit();
@@ -134,7 +131,7 @@ public class BoardManager {
 	}
 	
 	//신고
-	public static int reportBoard(BoardVO boardVO){
+	public static int reportBoard(BoardVO boardVO)throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 		int result =session.update("board.reportBoard", boardVO);
 		session.commit();

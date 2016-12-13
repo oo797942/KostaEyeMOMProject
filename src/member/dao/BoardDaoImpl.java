@@ -9,7 +9,7 @@ import mybatis.manager.BoardManager;
 public class BoardDaoImpl implements BoardDao {
 
 	@Override  // 보드 리스트
-	public List<BoardVO> allBoard(String title) {
+	public List allBoard(String title) {
 		List<BoardVO> list=null;
 		try{
 			list = BoardManager.allBoard(title);

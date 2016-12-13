@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +14,13 @@
 			<!-- 마이페이지 배경화면  --><!-- margin : 0 auto는 상하를	 0으로 준뒤 좌우를 auto로 주는 것 -->
 			<div class='mypagediv'>	
 				<!-- 회원등급 텍스트 -->
-				<h3 class='gradeh3'><label>이제희</label>님의 등급은 <label>하스스톤정지</label>입니다</h3>		
+				<h3 class='gradeh3'><label>${user.u_name}</label>님의 등급은 <label>${user.u_lvl}</label>입니다</h3>		
 				<!-- 마이페이지 흰색 배경 -->
 				<div class='whitediv'>
 				<!-- 개인정보란 -->	
 				<div class='infopadding'>
 						<h3 class='infoh3'>개인정보</h3>
-						<input type="button" value="수정하기" class="modifybtn" />
+						<a href="mypageModify.do"><input type="button" value="수정하기" class="modifybtn" /></a>
 						<hr class='infohr'/>
 				</div>
 				<!-- 개인정보 테이블 -->		
@@ -27,27 +28,27 @@
 						<table class='infotable'>
 							<tr>
 								<td class='myfont'>아이디</td>
-								<td width="20%"><input type='text' readonly="readonly" class='form-control pagealign' value='wamsi98' id='id'/></td>
+								<td width="20%"><input type='text' readonly="readonly" class='form-control pagealign' value='${user.u_id}' id='id'/></td>
 								<td class='myfont'>E-MAIL</td>
-								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='wamsi98@naver.com' id='email'/></td>
+								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='${user.u_email}' id='email'/></td>
 							</tr>
 							<tr>
 								<td class='myfont'>이름</td>
-								<td><input type='text' readonly="readonly" class='form-control pagealign' value='임경민' id='name'/></td>
-								<td class='myfont'>생년월일</td>
-								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='2016-12-08' id='signup_date'/></td>
+								<td><input type='text' readonly="readonly" class='form-control pagealign' value='${user.u_name}' id='name'/></td>
+								<td class='myfont'>휴대폰번호</td>
+								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='${user.u_tel}' id='tel'/></td>
 							</tr>
 							<tr>
 								<td class='myfont'>포인트</td>
-								<td><input type='text' readonly="readonly" class='form-control pagealign' value='9999' id='point'/></td>
+								<td><input type='text' readonly="readonly" class='form-control pagealign' value='${user.u_point}' id='point'/></td>
 								<td class='myfont'>가입일</td>
-								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='2016-20-10' id='signup'/></td>
+								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='${user.u_signup_date}' id='signup'/></td>
 							</tr>
 							<tr>
-									<td class='myfont'>휴대폰번호</td>
-								<td><input type='text' readonly="readonly" class='form-control pagealign' value='010-5031-0940' id='tel'/></td>
+<!-- 								<td class='myfont'>지워!!!</TD> -->
+<!-- 								<td><INPUT TYPE='TEXT' READONLY="REadonly" class='form-control pagealign' value='010-5031-0940' id='tel'/></td> -->
 								<td class='myfont'>주소</td>
-								<td><input type='text' readonly="readonly" class='form-control1 pagealign' value='경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호 ' id='addr'/></td>
+								<td colspan="3"><input type='text' readonly="readonly" class='form-control1 pagealign' value='${user.u_addr}' id='addr'/></td>
 							</tr>
 						</table>
 					</div>
@@ -139,29 +140,16 @@
 									<th class='pagetd'>제목</th>
 									<th class='pagetd'>등록일</th>
 								</tr>
+								<c:forEach var='vo' items='${blist}'>
 								<tr>
-									<td class='pagetd pagealign'>4</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
+									<td class='pagetd pagealign'>${vo.b_no}</td>
+									<td class='pagetd pagealign'><a href="boardview.do?b_no=${vo.b_no }">${vo.b_title}</a></td>
+									<td class='pagetd pagealign'>${vo.b_date}</td>
 								</tr>
-								<tr>
-									<td class='pagetd pagealign'>3</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>2</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>1</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
+								</c:forEach>
 							</table>
 							<p class='infomorep'> 
-							<a href="#" class='infomore'>+ 전체보기</a>
+							<a href="myboard.do" class='infomore'>+ 전체보기</a>
 							</p>
 						</div>
 						
@@ -175,26 +163,13 @@
 									<th class='pagetd'>내용</th>
 									<th class='pagetd'>등록일</th>
 								</tr>
+								<c:forEach var='rvo' items='${rlist}'>
 								<tr>
-									<td class='pagetd pagealign'>4</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
+									<td class='pagetd pagealign'>${rvo.re_no}</td>
+									<td class='pagetd pagealign'><a href="boardview.do?b_no=${rvo.b_no}">${rvo.re_content}</a></td>
+									<td class='pagetd pagealign'>${rvo.re_date}</td>
 								</tr>
-								<tr>
-									<td class='pagetd pagealign'>3</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>2</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>1</td>
-									<td class='pagetd pagealign'>앙기모뤼</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-								</tr>
+								</c:forEach>
 							</table>
 							<p class='infomorep'> 
 							<a href="#" class='infomore'>+ 전체보기</a>
