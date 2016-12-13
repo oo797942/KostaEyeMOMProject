@@ -9,6 +9,7 @@
 	</head><body>&lt;<script type="text/javascript">
 	$(function(){
 		
+		
 		 
 		$("#resertype").change(function(){
 			var sel = $('#resertype').val();
