@@ -116,7 +116,7 @@ function readURL(input) {
     </tr>
         <tr height="400">
 			<td colspan="3" width="50%" border="1">
-    <img id="blah" src="#" alt="입력된 이미지가 표시됩니다." style="width:100%; height:100%;" />
+    <img id="blah" src="#" alt="입력된 이미지가 표시됩니다." style="width:400px; height:400px;" />
      </td>
       <td colspan="3" width="50%">
 	 <textarea name = "g_content" class="form-control"  placeholder="게임 설명을 입력하세요" style="width:100%; height:100%;"></textarea>		

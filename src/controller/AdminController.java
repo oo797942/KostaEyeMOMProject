@@ -24,10 +24,11 @@ public class AdminController {
 		return "adminBoard";
 	}
 	
-	@RequestMapping("/adminMember.go")
-	public String admonMember(HttpSession session){
-		return "adminMember";
-	}
+//	@RequestMapping("/adminMember.go")
+//	public String admonMember(HttpSession session){
+//		return "adminMember";
+//	}
+	
 	@RequestMapping("/adminReport.go")
 	public String adminReport(HttpSession session){
 		return "adminReport";

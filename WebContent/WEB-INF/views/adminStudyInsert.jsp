@@ -119,12 +119,12 @@ function readURL(input) {
       </td>
     </tr>
     <tr height="50">
-      <th colspan="2" width="50%" style="text-align:center">게임 이미지 </th>
-      <th colspan="3" width="50%" style="text-align:center">게임 설명 </th>
+      <th colspan="2" width="50%" style="text-align:center">영상 이미지</th>
+      <th colspan="3" width="50%" style="text-align:center">영상 설명(가사)</th>
     </tr>
         <tr height="400">
 			<td colspan="3" width="50%" border="1">
-    <img id="blah" src="#" alt="입력된 이미지가 표시됩니다." style="width:100%; height:100%;" />
+    <img id="blah" src="#" alt="입력된 이미지가 표시됩니다." style="width:500px; height:400px;" />
      </td>
       <td colspan="3" width="50%">
 	 <textarea name = "v_content" class="form-control"  placeholder="설명을 입력하세요" style="width:100%; height:100%;"></textarea>		

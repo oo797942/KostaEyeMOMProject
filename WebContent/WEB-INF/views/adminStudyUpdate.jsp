@@ -82,15 +82,15 @@ function readURL(input) {
              <li><a href="adminReport.go">신고 관리</a></li>
             <li><a href="adminQna.go">Q&A</a></li>
             <li><a href="adminGallery.go">사진 관리</a></li>            
-            <li><a href="adminVideo.go">동영상 관리</a></li>
-            <li class="active"><a href="adminGame.go">게임 관리</a></li> </ul>
+            <li class="active"><a href="adminVideo.go">동영상 관리</a></li>
+            <li ><a href="adminGame.go">게임 관리</a></li> </ul>
         </div>
         </div>
         </div>
          
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">게임 등록</h1>
+          <h1 class="page-header">공부 해요 영상수정</h1>
           <form action="adminStudyUpdateDoing.go"  method="post" enctype="multipart/form-data">
       <input type="hidden" name="v_no" value="${slist.v_no}">    
     <table style="width:100%; height:800" >
@@ -106,18 +106,18 @@ function readURL(input) {
         <input type='file' id="v_photoName"  accept=" image/*" name="v_photoName"/>
 		</td>
       <td width="5%">&nbsp;</td>
-      <th width="10%">게임</th>
+      <th width="10%">영상</th>
       <td width="30%">
-        <input type='file' id="v_flashName" accept="video/*" name="v_flashName" />
+        <input type='file' id="v_flashName" accept="video/*" name="v_studyName" />
       </td>
     </tr>
     <tr height="50">
-      <th colspan="2" width="50%" style="text-align:center">게임 이미지 </th>
-      <th colspan="3" width="50%" style="text-align:center">게임 설명 </th>
+      <th colspan="2" width="50%" style="text-align:center">영상 이미지</th>
+      <th colspan="3" width="50%" style="text-align:center">영상 설명(가사) </th>
     </tr>
         <tr height="400">
 			<td colspan="3" width="50%" border="1">
-    <img id="blah" src="/EyeMOM/resources/img/${slist.v_photo}" alt="입력된 이미지가 표시됩니다." style="width:100%; height:100%;" />
+    <img id="blah" src="/EyeMOM/resources/img/${slist.v_photo}" alt="입력된 이미지가 표시됩니다." style="width:500px; height:400px;" />
      </td>
       <td colspan="3" width="50%">
 	 <textarea name = "v_content" class="form-control"   placeholder="게임 설명을 입력하세요" style="width:100%; height:100%;">

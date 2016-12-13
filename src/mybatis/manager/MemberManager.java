@@ -3,6 +3,7 @@ package mybatis.manager;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,8 +11,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import member.vo.MemberVO;
+import member.vo.VideoVO;
 
-public class MemberJoinManager {
+public class MemberManager {
 
 	
 	public static int userJoin(MemberVO vo ) throws SQLException
@@ -21,5 +23,17 @@ public class MemberJoinManager {
 		   result = session.insert("user.userInsert", vo);
 		   session.commit();
 		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
+	   }
+	
+	public static List<MemberVO> memberList() throws SQLException
+	   {
+			SqlSession session = CommonManager.db().openSession();
+			List<MemberVO> list=null;
+			
+				list = session.selectList("admin.memberAll");
+				System.out.println(list.size());
+		   
+
+		   	return list;	
 	   }
 }

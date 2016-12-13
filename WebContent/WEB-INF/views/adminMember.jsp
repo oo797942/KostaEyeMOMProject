@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
@@ -87,7 +88,16 @@
                   <th>회원등급</th>
                   <th>회원상태</th>
                 </tr>
-
+<c:forEach var="vo" items="${list}">
+      <tr>
+                  <th>${vo.u_id}</th>
+                  <th>${vo.u_nick}</th>
+                  <th>${vo.u_name}</th>
+                  <th>${vo.u_tel}</th>
+                  <th>${vo.u_lvl}</th>
+                  <th>${vo.u_state}</th>
+                </tr>
+</c:forEach>
 
 	
               </thead>
