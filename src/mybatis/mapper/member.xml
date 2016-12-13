@@ -14,7 +14,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</if>	
 </select>
 
-
+<select id="nickCheck" parameterType="memberVO" resultType="memberVO"> 
+select u_nick from mom_user where u_nick = #{u_nick}
+</select>
 
 <!-- 회원가입 sql -->
 <insert id="userInsert" parameterType="memberVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->

@@ -132,7 +132,7 @@
 		collect[0] = false;
 	}
 	//아이디 중복체크
-	else if (id==reId) {
+	else if (reId==1) {
 		$("#idtext").css("color","red");
 		$("#idtext").text("이미 사용중인 아이디입니다.");
 		collect[0] = false;
@@ -249,17 +249,37 @@
 		
 		var nick = $("#nick").val();
 		var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+		var reNick= null;
+		
+		$.ajax({
+	        url: "nickcheck.do",
+	        async: false,
+	        data : {"u_nick" : $("#nick").val() },
+	       	type: 'get',
+	       	success: function(result){
+	       		reNick=result;
+	           }
+	           });
 		
 		if( special_pattern.test(nick)){
 			$("#nicktext").css("color","red");
 			  $("#nicktext").text('닉네임에 특수문자는 사용할 수 없습니다.');
 				collect[4] = false;
-		}else if (nick.length<2 || nick.length>8)
+		}else if (nick.indexOf(" ")>=0)
+		{
+			$("#nicktext").css("color","red");
+			$("#nicktext").text("닉네임에 공백을 사용할 수 없습니다.");
+			collect[4] = false;
+		}
+		else if (nick.length<2 || nick.length>8)
 		  {
 			$("#nicktext").css("color","red");
 		  $("#nicktext").text("닉네임을 2~8자까지 입력해주세요.");
 			collect[4] = false;
-		  }else{
+		  }else if(reNick==1){
+			  $("#nicktext").css("color","red");
+			  $("#nicktext").text("중복된 닉네임입니다.");
+		  }	else{
 			$("#nicktext").css("color","green");
 			  $("#nicktext").text("닉네임이 입력되었습니다.");
 				collect[4] = true;

@@ -11,6 +11,7 @@ $(function(){
 	$("#nickModify").click(function(){
 
 		$("#u_nick").attr("disabled", false); //해제 
+		$("#u_nick").val("");
 		$("#nickModify").hide();
 	});
 	
@@ -20,9 +21,9 @@ $(function(){
 	});
 	
 	$("#passModify").click(function(){
-		$("#u_pass").attr("disabled", false); //해제 
-		$("#u_passNew").attr("disabled", false); //해제 
 		$("#u_passChk").attr("disabled", false); //해제 
+		$("#u_pass1").attr("disabled", false);//해제 
+		$("#u_passNew").attr("disabled", false); //해제 
 		$("#passModify").hide();
 	});
 	
@@ -55,8 +56,9 @@ $(function(){
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth' width="20%">닉네임</th>
 								<th class='modifyth'><div class='form-inline' align="left">
-								<input type='text' class='form-control ' value='wamsi98' id='u_nick' disabled="disabled" />
-								<input type="button" id="nickModify" value='닉네임 변경'  class='modifybtn'  /></div></th>
+								<input type='text' class='form-control' value='wamsi98' id='u_nick' disabled="disabled" />
+								<input type="button" id="nickModify" value='닉네임 변경'  class='modifybtn'  />
+								</div></th>
 							</tr>
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth'>이름</th>
@@ -69,7 +71,8 @@ $(function(){
 								<th class='modifyfont modifyth'>E-MAIL</th>
 								<th class='modifyth'><div class='form-inline' align="left">
 								<input type='text' class='form-control ' value='wamsi98@naver.com' id='u_email' disabled="disabled" />
-								<input type="button" value='E-MAIL 변경'  class='modifybtn' id="emailModify" /></div></th>
+<!-- 								<input type="button" value='E-MAIL 변경'  class='modifybtn' id="emailModify" /> -->
+								</div></th>
 							</tr>
 											
 							<!-- 비밀번호 변경 테이블 --> <!-- th안에 테이블 또 열어줘야함 -->
@@ -82,7 +85,7 @@ $(function(){
 										</tr>
 										<tr>
 											<th class='passfont1'>현재 비밀번호</th>
-											<th><input type="password" class='form-control passinput' class='passinput' id="u_pass" disabled="disabled" /></th>
+											<th><input type="password" class='form-control passinput'  id="u_pass1" disabled="disabled" /></th>
 										</tr>	
 										<tr>
 											<th class='passfont1'>신규 비밀번호</th>
@@ -108,7 +111,10 @@ $(function(){
 							<tr class='modifytr'>	
 								<th class='modifyfont modifyth'>주소</th>
 								<th class='modifyth'>
-								<input type='text'  class='form-control1 ' value='경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호 ' id='u_addr' disabled="disabled" />
+								<textarea class='form-control1'  disabled="disabled"  id="u_addr">
+경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호
+</textarea>
+<!-- 								<input type='text'  class='form-control1 ' value='경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호 ' id='u_addr' disabled="disabled" /> -->
 								<input type="button" value='주소 변경'  class='modifybtn1'  id="addrModify"  />
 								</th>
 							</tr>
