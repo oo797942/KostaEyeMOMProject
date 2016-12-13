@@ -60,7 +60,9 @@ $(function(){
 							</tr>
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth'>이름</th>
-								<th class='modifyth'><input type='text'  class='form-control ' value='임경민' id='name' readonly="readonly"/>
+								<th class='modifyth' >
+								<span class='modifyspan'><input type='text'  class='form-control ' value='임경민' id='name'  disabled="disabled"/>
+								</span>	
 								</th>
 							</tr>
 							<tr class='modifytr'>
@@ -76,22 +78,22 @@ $(function(){
 								<td class='modifyth'>
 									<table>
 										<tr>
-											<td colspan="2" style="font-size: 11pt; font-family: Dotum; color: #777;">비밀번호는 4~12자 이내로 영문 (대문자,소문자), 숫자  2가지 조합 모두 조합하셔서 작성하시면 됩니다.</td>
+											<td colspan="2" class='passfont'>비밀번호는 4~12자 이내로 영문 (대문자,소문자), 숫자  2가지 조합 모두 조합하셔서 작성하시면 됩니다.</td>
 										</tr>
-										<tr style="">
-											<th style="font-weight: normal; text-align:left; padding: 10px 6px 10px 0; background-color: #fff; white-space: nowrap; width: 1%; font-size: 11pt; font-family: Dotum; color: #777;">현재 비밀번호</th>
-											<th><input type="password" class='form-control' style="height: 18px;margin-right:200px; line-height: 18px;" id="u_pass" disabled="disabled" /></th>
+										<tr>
+											<th class='passfont1'>현재 비밀번호</th>
+											<th><input type="password" class='form-control passinput' class='passinput' id="u_pass" disabled="disabled" /></th>
 										</tr>	
 										<tr>
-											<th style="font-weight: normal; text-align:left; padding: 10px 6px 10px 0; background-color: #fff; white-space: nowrap; width: 1%; font-size: 11pt; font-family: Dotum; color: #777;">신규 비밀번호</th>
-											<th><input type="password" class='form-control' style="height: 18px;margin-right:200px; line-height: 18px;" id="u_passNew" disabled="disabled"/></th>
+											<th class='passfont1'>신규 비밀번호</th>
+											<th><input type="password" class='form-control passinput' id="u_passNew" disabled="disabled"/></th>
 										</tr>	
 										<tr>
-											<th style="font-weight: normal; text-align:left; padding: 10px 6px 10px 0; background-color: #fff; white-space: nowrap; width: 1%; font-size: 11pt; font-family: Dotum; color: #777;">비밀번호 다시 입력</th>
-											<th><input type="password" class='form-control' style="height: 18px;margin-right:200px; line-height: 18px;" id="u_passChk"  disabled="disabled"/></th>
+											<th class='passfont1'>비밀번호 다시 입력</th>
+											<th><input type="password" class='form-control passinput' id="u_passChk"  disabled="disabled"/></th>
 										</tr>	
 										<tr>
-											<th style="font-weight: normal; text-align:left; padding: 10px 6px 10px 0; background-color: #fff; white-space: nowrap; width: 1%;"></th>
+											<th class='passfont1'></th>
 											<th><input type="button" value='비밀번호 변경'  class='modifybtn' id="passModify"/></th>
 										</tr>	
 									</table>
@@ -103,22 +105,16 @@ $(function(){
 								<input type='text'  class='form-control ' value='010-5031-0940' id='u_tel' disabled="disabled"/>
 								<input type="button" value='휴대폰번호 변경'  class='modifybtn' id="telModify" /></div></th>
 							</tr>
-<!-- 							<tr class='modifytr'>	 -->
-<!-- 								<th class='modifyfont modifyth'>생년월일</th> -->
-<!-- 								<th class='modifyth'><div class='form-inline' align="left"> -->
-<!-- 								<input type='text'  class='form-control ' value='2016-12-08' id='signup_date'/> -->
-<!-- 								<input type="button" value='생년월일 변경'  class='modifybtn'  /></div></th> -->
-<!-- 							</tr> -->
 							<tr class='modifytr'>	
 								<th class='modifyfont modifyth'>주소</th>
 								<th class='modifyth'>
 								<input type='text'  class='form-control1 ' value='경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호 ' id='u_addr' disabled="disabled" />
-								<input type="button" value='주소 변경'  class='modifybtn'  style="margin-top: 15px;" id="addrModify" />
+								<input type="button" value='주소 변경'  class='modifybtn1'  id="addrModify"  />
 								</th>
 							</tr>
-							<tr>
-							<th  class='modifyth' style="text-align:center" colspan="2">
-												<input type="button" id="Modify" value='회원정보 수정'  class='modifybtn'  style="margin-top: 15px;"/>
+							<tr> 
+							<th  class='modifyth' class='modifybtnth' colspan="2">
+							<input type="button" id="Modify" value='회원정보 수정'  class='modifybtn'  style="margin: 0 auto;"/>
 							</th>
 							</tr>
 						</table>
