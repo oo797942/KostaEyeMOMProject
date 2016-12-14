@@ -88,6 +88,9 @@ public class TestController {
 		int allmember = memberDao.allmember();
 		session.setAttribute("allmember", allmember);
 		
+		int boardcount = countDao.boardcount();
+		session.setAttribute("boardcount", boardcount);
+		
 		return "home.go";
 	}
 

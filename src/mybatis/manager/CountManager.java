@@ -32,4 +32,12 @@ public class CountManager {
 		CountVO vo = session.selectOne("count.allcount");
 		return vo;
 	}
+	
+
+	public static int boardcount() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		int result = session.selectOne("count.boardcount");
+		return result;
+	}
+	
 }

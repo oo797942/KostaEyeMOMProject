@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import member.dao.BoardDaoImpl;
 import member.dao.CountDaoImpl;
 import member.dao.GroupPurchaseDaoImpl;
+import member.dao.MemberDaoImpl;
 import member.dao.QnADaoImpl;
 import member.vo.BoardVO;
 import member.vo.CountVO;
@@ -33,9 +34,12 @@ public class UserController {
 	private CountDaoImpl countDao;
 	@Autowired
 	private BoardDaoImpl boardDao;
+	@Autowired
+	private MemberDaoImpl memberDao;
 	
 	@RequestMapping("/home.go")
 	public String goMain(Model m, HttpSession session){
+		
 		
 		// 방문자수 체크를 위한 세션 체크
 		String countcheck = (String)session.getAttribute("firstCount");
@@ -84,6 +88,12 @@ public class UserController {
 		// 베스트 레시피 완료기
 		List<BoardVO> bestRice_r4 = boardDao.bestRice_r4();
 		m.addAttribute("bestRice_r4", bestRice_r4);
+		
+		int allmember = memberDao.allmember();
+		session.setAttribute("allmember", allmember);
+		
+		int boardcount = countDao.boardcount();
+		session.setAttribute("boardcount", boardcount);
 		
 		return "home.go";
 	} 
