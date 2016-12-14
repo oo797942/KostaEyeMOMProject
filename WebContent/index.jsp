@@ -11,7 +11,7 @@
 
 <body> 
 
-<a href="test.go">으아앙 테스트할래</a>
+<a href="home.go">홈 두잉 홈 두잉</a>
 
 
 </body>
