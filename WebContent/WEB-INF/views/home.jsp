@@ -109,9 +109,9 @@
 						<li class="lifont lileft">아이네
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-								<li><a href="#">· 놀아봐요</a></li>
-								<li><a href="#">· 공부해요</a></li>
-								<li><a href="#">· 춤을춰요</a></li>
+								<li><a href="flashBoard.do">· 놀아봐요</a></li>
+								<li><a href="studyBoard.do">· 공부해요</a></li>
+								<li><a href="videoBoard.do">· 춤을춰요</a></li>
 							</ul>
 						</li>
 						<li class="lifont lileft">우리동네
