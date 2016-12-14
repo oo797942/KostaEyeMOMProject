@@ -173,6 +173,10 @@ footer {
 	float: right;
 }
 
+#logoutBtn:HOVER{
+	cursor: pointer;
+}
+
 #mainTopUtilTr {
 	height: 25px;
 }

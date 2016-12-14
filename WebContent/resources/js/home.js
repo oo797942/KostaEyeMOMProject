@@ -96,5 +96,11 @@ $(function() {
 			$(".cookul").hide();
 			$("#"+cookon).show();
 	});
+	
+	//로그아웃버튼이 눌려졌을때
+	$("#logoutBtn").click(function(){
+		alert("a");
+		location.href='logout.do';
+	});
 
 });

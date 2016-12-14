@@ -61,13 +61,26 @@
 			<tr id="mainTopUtilTr">
 				<td id="mainTopLeftTd">
 				</td>
-				<td id="mainTopRightTd"><a href="gojoin.do"><img
-						src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
-						id="sign_upBtn" /></a> <img src="/EyeMOM/resources/img/find.png"
-					class="toplogo_btn" id="findBtn" /> 
-					  <a href="#test-popup" class="open-popup-link"><img
+				<td id="mainTopRightTd">
+									<c:choose>
+    <c:when test="${empty sessionScope.user}">
+				<a href="gojoin.do">
+				<img src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
+						id="sign_upBtn" /></a>
+				<img src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" /> 
+				<a href="#test-popup" class="open-popup-link"><img
 					src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
-					id="loginBtn" /></a></td>
+					id="loginBtn" /></a>
+				</c:when>	
+					
+	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+		<a href="mypage.do" ><img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn"  id="mypageBtn" /> </a>
+		<img src="/EyeMOM/resources/img/logout.png" class="toplogo_btn"  id="logoutBtn" /> 
+		<span class="toplogo_btn">${ sessionScope.user.getU_name()}님 환영합니다!</span>
+	</c:otherwise>	
+	</c:choose>
+					
+					</td>
 			</tr>
 			<tr>
 				<td colspan="2" id="MainLogoTd">로고</td>
