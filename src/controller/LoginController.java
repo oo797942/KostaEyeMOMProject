@@ -40,7 +40,7 @@ public class LoginController {
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session){
 		session.removeAttribute("user");
-		return "home";
+		return "redirect:home.go";
 	}
 	
 	
