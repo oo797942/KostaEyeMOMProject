@@ -7,4 +7,5 @@ public interface CountDao {
 	CountVO todaycount();
 	CountVO maxcount();
 	CountVO allcount();
+	int boardcount();
 }

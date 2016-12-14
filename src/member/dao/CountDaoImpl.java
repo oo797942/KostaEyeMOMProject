@@ -52,6 +52,17 @@ public class CountDaoImpl implements CountDao {
 		return vo;
 	}
 	
+	public int boardcount(){
+		int result = 0;
+		try{
+			result = CountManager.boardcount();
+			System.out.println("boardcount 성공");
+		}catch(Exception e){
+			System.out.println("CountDaoImpl / boardcount 실패: " + e.getMessage());
+		}
+		return result;
+	}
+	
 //	// main QnA 리스트 출력
 //	@Override
 //	public List<QnAVO> newQna() {

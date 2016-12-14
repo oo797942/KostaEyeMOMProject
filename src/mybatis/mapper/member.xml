@@ -14,6 +14,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</if>	
 </select>
 
+<select id="allmember" parameterType="memberVO" resultType="int">
+select count(u_id) cnt from mom_user where u_state='활동중'
+</select>
+
 <select id="nickCheck" parameterType="memberVO" resultType="memberVO"> 
 select u_nick from mom_user where u_nick = #{u_nick}
 </select>

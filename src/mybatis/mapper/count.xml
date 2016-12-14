@@ -27,4 +27,10 @@ select max(counts) counts from momeye_count
 select sum(counts) counts from momeye_count
 </select>
 
+<select id="boardcount" parameterType="countVO" resultType="int">
+<![CDATA[
+SELECT (select count(b_no) cnt from qna_board)+(select count(b_no) cnt from normal_board)+(select count(b_no) cnt from group_purchase)+nvl((select count(b_no) cnt from flea_market),0) buru FROM dual
+]]>
+</select>
+
 </mapper>

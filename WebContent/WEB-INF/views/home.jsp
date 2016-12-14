@@ -280,22 +280,80 @@
 						<img src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
 						<ul class="cookul" id="cookul1">
 							<c:forEach var='r1' items='${bestRice_r1}'>
-								<li>[${r1.b_date }] <a class="alink bestrice" rel="${r1.b_photo1name }" href="boardview.do?b_no=${r1.b_no }">[+${r1.b_good}] ${r1.b_title }</a></li>
+								<li>
+								[${r1.b_date }] 
+									<c:choose>
+										<c:when test="${empty sessionScope.user}">
+											<a class="alink bestrice open-popup-link" rel="${r1.b_photo1name }" href="#test-popup">
+												[+${r1.b_good}] ${r1.b_title }
+											</a>
+										</c:when>	
+										<c:otherwise>
+											<a class="alink bestrice" rel="${r1.b_photo1name }" href="boardview.do?b_no=${r1.b_no }">
+												[+${r1.b_good}] ${r1.b_title }
+											</a>
+										</c:otherwise>	
+									</c:choose>
+								</li>
 							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul2">
 							<c:forEach var='r2' items='${bestRice_r2}'>
-								<li>[${r2.b_date }] <a class="alink bestrice" rel="${r2.b_photo1name }" href="boardview.do?b_no=${r2.b_no }">[+${r2.b_good}] ${r2.b_title }</a></li>
+								<li>
+								[${r2.b_date }] 
+									<c:choose>
+										<c:when test="${empty sessionScope.user}">
+											<a class="alink bestrice open-popup-link" rel="${r2.b_photo1name }" href="#test-popup">
+												[+${r2.b_good}] ${r2.b_title }
+											</a>
+										</c:when>	
+										<c:otherwise>
+											<a class="alink bestrice" rel="${r2.b_photo1name }" href="boardview.do?b_no=${r2.b_no }">
+												[+${r2.b_good}] ${r2.b_title }
+											</a>
+										</c:otherwise>	
+									</c:choose>
+								</li>
 							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul3">
 							<c:forEach var='r3' items='${bestRice_r3}'>
-								<li>[${r3.b_date }] <a class="alink bestrice" rel="${r3.b_photo1name }" href="boardview.do?b_no=${r3.b_no }">[+${r3.b_good}] ${r3.b_title }</a></li>
+								<li>
+								[${r3.b_date }] 
+									<c:choose>
+										<c:when test="${empty sessionScope.user}">
+											<a class="alink bestrice open-popup-link" rel="${r3.b_photo1name }" href="#test-popup">
+												[+${r3.b_good}] ${r3.b_title }
+											</a>
+										</c:when>	
+										<c:otherwise>
+											<a class="alink bestrice" rel="${r3.b_photo1name }" href="boardview.do?b_no=${r3.b_no }">
+												[+${r3.b_good}] ${r3.b_title }
+											</a>
+										</c:otherwise>	
+									</c:choose>
+								</li>
+							
 							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul4">
 							<c:forEach var='r4' items='${bestRice_r4}'>
-								<li>[${r4.b_date }] <a class="alink bestrice" rel="${r4.b_photo1name }" href="boardview.do?b_no=${r4.b_no }">[+${r4.b_good}] ${r4.b_title }</a></li>
+								<li>
+								[${r4.b_date }] 
+									<c:choose>
+										<c:when test="${empty sessionScope.user}">
+											<a class="alink bestrice open-popup-link" rel="${r4.b_photo1name }" href="#test-popup">
+												[+${r4.b_good}] ${r4.b_title }
+											</a>
+										</c:when>	
+										<c:otherwise>
+											<a class="alink bestrice" rel="${r4.b_photo1name }" href="boardview.do?b_no=${r4.b_no }">
+												[+${r4.b_good}] ${r4.b_title }
+											</a>
+										</c:otherwise>	
+									</c:choose>
+								</li>
+							
 							</c:forEach>
 						</ul>
 					</td>
