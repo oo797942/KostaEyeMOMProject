@@ -100,26 +100,20 @@
 									<th class='pagetd'>등록일</th>
 									<th class='pagetd'>답변 여부</th>
 								</tr>
+								<c:forEach var='vo' items='${qlist}'>
 								<tr>
-									<td class='pagetd pagealign'>집 언제가요?</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>답변 예정</td>
+									<td class='pagetd pagealign'><a href="#">${vo.in_title}</a></td>
+									<td class='pagetd pagealign'>${vo.in_date}</td>
+									<td class='pagetd pagealign'>
+									<c:if test="${vo.in_recount==0}">
+									미답변
+									</c:if>
+									<c:if test="${vo.in_recount!=0}">
+									답변완료
+									</c:if>
+									</td>
 								</tr>
-								<tr>
-									<td class='pagetd pagealign'>집 언제가요?</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>답변 예정</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>집 언제가요?</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>답변 예정</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>집 언제가요?</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>답변 예정</td>
-								</tr>
+								</c:forEach>
 							</table>
 							<p class='infomorep'> 
 							<a href="#" class='infomore'>+ 전체보기</a>

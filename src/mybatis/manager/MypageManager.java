@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 
 public class MypageManager {
 	public static MemberVO userInfo(MemberVO memberVO) throws SQLException{
@@ -47,6 +48,14 @@ public class MypageManager {
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
 		list = session.selectList("mypage.getReplyList", memberVO);
+		session.close();
+		return list;
+	}
+	
+	public static List getMyQna(MemberVO memberVO) throws SQLException{
+		List list =null;
+		SqlSession session = CommonManager.db().openSession();
+		list = session.selectList("mypage.getMyQna", memberVO);
 		session.close();
 		return list;
 	}

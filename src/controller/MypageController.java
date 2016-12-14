@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import member.dao.MypageDaoImpl;
 import member.vo.BoardVO;
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 import member.vo.ReplyVO;
 
 @Controller
@@ -37,6 +38,10 @@ public class MypageController {
 		List <ReplyVO> rlist= mypageDao.getMyReply(memberVO);
 		System.out.println("rlist : "+rlist.size());
 		m.addAttribute("rlist",rlist);
+		
+		//qna
+		List <QnAVO> qlist = mypageDao.getMyQna(memberVO);
+		m.addAttribute("qlist",qlist);
 		return "mypage/mypage";
 	}
 	

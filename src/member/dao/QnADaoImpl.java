@@ -22,4 +22,18 @@ public class QnADaoImpl implements QnADao {
 		return list;
 	}
 	
+	//리스트
+	@Override
+	public List<QnAVO> allQna() {
+		List<QnAVO> list=null;
+		try{ 
+			list = QnAManager.allQna();
+		}catch( Exception ex )
+		{
+			System.out.println("QnADaoImpl / 리스트가져오기 실패 : " + ex.getMessage());
+		}
+		
+		return list;
+	}
+	
 }

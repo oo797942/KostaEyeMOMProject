@@ -43,4 +43,21 @@ select b_no,  re_no,  DECODE(SIGN(LENGTH(re_content)-15),1,SUBSTR(re_content,1,1
 from reply where re_id=#{u_id}
 </select>
 
+<!-- 사용자 qna리스트 4개 -->
+<select id="getMyQna" parameterType="memberVO" resultType="qnaVO">
+<![CDATA[
+SELECT rownum, b_no, in_title, in_date 
+FROM 
+(SELECT n.b_no b_no, DECODE(SIGN(LENGTH(in_title)-5),1,SUBSTR(in_title,1,5)||'...',in_title)  as in_title, to_char(n.in_date,'YYYY-MM-DD') as in_date 
+		FROM qna_board n WHERE n.u_id =#{u_id} ORDER BY n.in_date DESC) 
+WHERE rownum <=4
+]]>
+</select>
+
+<!-- my qna list -->
+<select id="getMyQnaList" parameterType="memberVO" resultType="qnaVO">
+select b_no,   DECODE(SIGN(LENGTH(in_title)-6),1,SUBSTR(in_title,1,6)||'...',in_title)  as in_title, to_char(in_date,'YYYY-MM-DD') as in_date
+from qna_board where u_id=#{u_id}
+</select>
+
 </mapper>

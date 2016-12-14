@@ -18,5 +18,10 @@ public class QnAManager {
 		   return list;
 	   }
 	
-	
+	public static List<QnAVO> allQna() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		   List<QnAVO> list = session.selectList("qna.allQna");
+		   System.out.println("qnaList 몇 개? : "+ list.size());
+		   return list;
+	}
 }

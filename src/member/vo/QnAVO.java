@@ -26,6 +26,10 @@ public class QnAVO {
 	private String in_report;
 	private String in_nick;
 	private String u_id;
+	private int in_good;
+	private String b_goodog;
+	private int in_recount;
+	
 	public int getB_no() {
 		return b_no;
 	}
@@ -194,6 +198,24 @@ public class QnAVO {
 	}
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+	public int getIn_good() {
+		return in_good;
+	}
+	public void setIn_good(int in_good) {
+		this.in_good = in_good;
+	}
+	public String getB_goodog() {
+		return b_goodog;
+	}
+	public void setB_goodog(String b_goodog) {
+		this.b_goodog = b_goodog;
+	}
+	public int getIn_recount() {
+		return in_recount;
+	}
+	public void setIn_recount(int in_recount) {
+		this.in_recount = in_recount;
 	}
 	
 	

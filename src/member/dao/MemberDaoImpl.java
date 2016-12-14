@@ -3,6 +3,7 @@ package member.dao;
 import java.util.List;
 
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 import mybatis.manager.checkManager;
 import mybatis.manager.LoginManager;
 import mybatis.manager.MemberManager;
@@ -85,5 +86,7 @@ public class MemberDaoImpl implements MemberDao {
 		}
 		return 0;
 	}
+
+
 	
 }

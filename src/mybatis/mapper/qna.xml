@@ -15,4 +15,9 @@ where rownum<4
 ]]>
 </select>
 
+<!-- 리스트 -->
+<select id="allQna" resultType="qnaVO">
+SELECT b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_date ,NVL(in_good,0) in_good, in_photo1name ,in_photo2name, in_photo3name
+	FROM qna_board  order by b_no desc
+</select>
 </mapper>

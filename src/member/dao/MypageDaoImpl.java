@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 import mybatis.manager.MypageManager;
 
 public class MypageDaoImpl implements MypageDao {
@@ -61,6 +62,18 @@ public class MypageDaoImpl implements MypageDao {
 		List list=null;
 		try {
 			list=MypageManager.getReplyList(vo);
+		} catch (SQLException e) {
+			// TODO Auto-genderated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List getMyQna(MemberVO vo) {
+		List list=null;
+		try {
+			list=MypageManager.getMyQna(vo);
 		} catch (SQLException e) {
 			// TODO Auto-genderated catch block
 			e.printStackTrace();

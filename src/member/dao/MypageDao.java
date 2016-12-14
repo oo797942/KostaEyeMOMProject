@@ -3,6 +3,7 @@ package member.dao;
 import java.util.List;
 
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 
 public interface MypageDao {
 	MemberVO userInfo(MemberVO vo) ;
@@ -10,4 +11,5 @@ public interface MypageDao {
 	List getMyReply(MemberVO vo);
 	List getMyBoardList(MemberVO vo);
 	List getReplyList(MemberVO vo);
+	List getMyQna(MemberVO vo);
 }

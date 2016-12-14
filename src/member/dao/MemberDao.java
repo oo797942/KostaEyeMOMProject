@@ -3,6 +3,7 @@ package member.dao;
 import java.util.List;
 
 import member.vo.MemberVO;
+import member.vo.QnAVO;
 
 public interface MemberDao {
 	int memberJoin(MemberVO vo);
