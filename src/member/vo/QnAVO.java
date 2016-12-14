@@ -1,5 +1,11 @@
 package member.vo;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class QnAVO {
@@ -49,18 +55,85 @@ public class QnAVO {
 	}
 	public void setIn_photo1(MultipartFile in_photo1) {
 		this.in_photo1 = in_photo1;
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+		Date currentTime = new Date();
+		String dTime = formatter.format(currentTime);
+
+		if (!in_photo1.isEmpty()) {
+			this.in_photo1name = dTime + in_photo1.getOriginalFilename();
+			// this.b_fsize = g_photo.getSize();
+
+			// 업로드된 파일이 저장될 경로
+			File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + in_photo1name);
+
+			try {
+				in_photo1.transferTo(f);
+
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+		}
 	}
 	public MultipartFile getIn_photo2() {
 		return in_photo2;
 	}
 	public void setIn_photo2(MultipartFile in_photo2) {
 		this.in_photo2 = in_photo2;
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+				Date currentTime = new Date();
+				String dTime = formatter.format(currentTime);
+
+				if (!in_photo2.isEmpty()) {
+					this.in_photo2name = dTime + in_photo2.getOriginalFilename();
+					// this.b_fsize = g_photo.getSize();
+
+					// 업로드된 파일이 저장될 경로
+					File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + in_photo2name);
+
+					try {
+						in_photo2.transferTo(f);
+
+					} catch (IllegalStateException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+
+						e.printStackTrace();
+					}
+				}
+		
 	}
 	public MultipartFile getIn_photo3() {
 		return in_photo3;
 	}
 	public void setIn_photo3(MultipartFile in_photo3) {
 		this.in_photo3 = in_photo3;
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+				Date currentTime = new Date();
+				String dTime = formatter.format(currentTime);
+
+				if (!in_photo3.isEmpty()) {
+					this.in_photo3name = dTime + in_photo3.getOriginalFilename();
+					// this.b_fsize = g_photo.getSize();
+
+					// 업로드된 파일이 저장될 경로
+					File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + in_photo3name);
+
+					try {
+						in_photo3.transferTo(f);
+
+					} catch (IllegalStateException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+
+						e.printStackTrace();
+					}
+				}
 	}
 	public String getIn_photo1name() {
 		return in_photo1name;
