@@ -39,7 +39,7 @@ public class LoginController {
 	//로그아웃
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session){
-		session.invalidate();
+		session.removeAttribute("user");
 		return "home";
 	}
 	
