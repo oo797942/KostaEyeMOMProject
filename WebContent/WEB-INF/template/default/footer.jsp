@@ -39,19 +39,19 @@
 				<p class="footerTitle">Statistics</p>
 				<br />
 				<p class="footerText">
-					<span class="lft">오늘 방문수</span> <span class="rht">
+					<span>오늘 방문수</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.todayCount }" pattern="#,###.##"/>
 					</span><br />
-					<span class="lft">최대 방문수</span> <span class="rht">
+					<span>최대 방문수</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.maxCount }" pattern="#,###.##"/>
 					</span><br />
-					<span class="lft">전체 방문수</span> <span class="rht">
+					<span>전체 방문수</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.allCount }" pattern="#,###.##"/>
 					</span><br />
-					<span class="lft">전체 회원수</span> <span class="rht">
+					<span>전체 회원수</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.allmember }" pattern="#,###.##"/>
 					</span><br />
-					<span class="lft">전체 게시물</span> <span class="rht">
+					<span>전체 게시물</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.boardcount }" pattern="#,###.##"/>
 					</span>
 				</p>
