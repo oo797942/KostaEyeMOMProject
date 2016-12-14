@@ -29,8 +29,8 @@ public class BoardController {
 	private BoardDaoImpl boardDao;
 	
 	//보드리스트 이동
-	@RequestMapping(value = "{title}", method = RequestMethod.GET)
-	public String callBoard(Model m,@PathVariable("title") String title){
+	@RequestMapping("/tip.do")
+	public String callBoard(Model m,@RequestParam("title") String title){
 		List<BoardVO> list=null;
 		
 		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
@@ -46,6 +46,30 @@ public class BoardController {
 		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		m.addAttribute("title", title ); // 게시판 종류 모델에 저장
 		return "board/board";
+	}
+	
+	@RequestMapping("gal.do")
+	public String callGallery(Model m,@RequestParam("title") String title){
+		String cate=null;
+		List<BoardVO> list=null;
+		list= boardDao.allBoard(title);
+		System.out.println(list.size());
+		for(int i=0; i<list.size();i++){
+		
+		BoardVO boardVO=list.get(i);
+		List <ReplyVO> listVO = boardDao.callReply(boardVO);
+		
+		list.get(i).setB_recount(listVO.size());
+		}
+		if(title.equals("baby")){
+			cate="아이 자랑";
+		}else{
+			cate="아이의 식단";
+		}
+		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+		m.addAttribute("title", cate ); // 게시판 종류 모델에 저장
+		
+		return "board/boardgallery";
 	}
 	
 	//글쓰기 이동
@@ -191,12 +215,16 @@ public class BoardController {
 		MemberVO mVO=(MemberVO)session.getAttribute("user");
 		boardVO.setU_id(mVO.getU_id());
 		List<BoardVO> list = boardDao.checkGoodId(boardVO);
+		System.out.println("신고자리스트 : "+list.size());
 		if(list.isEmpty()){
 			
 		}else{
 			for(int i=0 ; i<list.size();i++){
-				
+					System.out.println("추천인 : "+mVO.getU_id());
+					System.out.println("이미 추천한 사람 : "+list.get(i).getB_goodog());
 				if(list.get(i).getB_goodog().equals(mVO.getU_id())){
+					
+					System.out.println("같은이름");
 					result=1;
 				}
 			}
