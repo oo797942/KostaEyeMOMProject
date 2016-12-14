@@ -63,4 +63,15 @@ public class MemberDaoImpl implements MemberDao {
 		return mem;
 	}
 	
+	public int allmember(){
+		int result=0;
+		try{ 
+			result = MemberManager.allmember();
+		}catch( Exception ex )
+		{
+			System.out.println("loginDAOImpl / 멤버 수 가져오기 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
 }

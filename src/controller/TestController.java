@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import member.dao.BoardDaoImpl;
 import member.dao.CountDaoImpl;
 import member.dao.GroupPurchaseDaoImpl;
+import member.dao.MemberDaoImpl;
 import member.dao.QnADaoImpl;
 import member.vo.BoardVO;
 import member.vo.CountVO;
@@ -29,6 +30,8 @@ public class TestController {
 	private CountDaoImpl countDao;
 	@Autowired
 	private BoardDaoImpl boardDao;
+	@Autowired
+	private MemberDaoImpl memberDao;
 
 	@RequestMapping("/test.go")
 	public String goMain(Model m, HttpSession session) {
@@ -81,6 +84,9 @@ public class TestController {
 		// 베스트 레시피 완료기
 		List<BoardVO> bestRice_r4 = boardDao.bestRice_r4();
 		m.addAttribute("bestRice_r4", bestRice_r4);
+		
+		int allmember = memberDao.allmember();
+		session.setAttribute("allmember", allmember);
 		
 		return "home.go";
 	}

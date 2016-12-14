@@ -48,7 +48,9 @@
 					<span class="lft">전체 방문수</span> <span class="rht">
 					<fmt:formatNumber value="${sessionScope.allCount }" pattern="#,###.##"/>
 					</span><br />
-					<span class="lft">전체 회원수</span> <span class="rht">999,859</span><br />
+					<span class="lft">전체 회원수</span> <span class="rht">
+					<fmt:formatNumber value="${sessionScope.allmember }" pattern="#,###.##"/>
+					</span><br />
 					<span class="lft">전체 게시물</span> <span class="rht">2,821,923,592</span>
 				</p>
 			</td>
