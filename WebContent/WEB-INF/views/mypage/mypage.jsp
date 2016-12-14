@@ -177,20 +177,15 @@
 						</div>
 					</div>
 					
-					<!-- 회원탈퇴 버튼 -->
-					<div class='pagealignr'>
-						<label style="font-size: 10pt">탈퇴를 원하시면 우측의 회원탈퇴 버튼을 눌러주세요</label>
-						<a href='#' style="margin: 0px auto;"><input type="button" value='회원탈퇴' class='leavebtn'></a>
-					</div>
-					
-					<!-- 회원탈퇴와 나가기 버튼 사이 공백 -->
+					<!-- 테이블과 버튼  사이 간격 -->
 					<div class='btnspace'></div>
 					
 					<!-- 나가기 버튼 -->
 					<div class='pagealign'>
 						<a href='#' style="margin: 0px auto;"><input type="button" value='나가기' class='exitbtn'></a>
+					<!-- 회원탈퇴 버튼 -->
+						<a href='#' style="margin: 0px auto;"><input type="button" value='회원탈퇴' class='leavebtn'></a>
 					</div>
-					
 				</div>
 			</div>
 	</div>

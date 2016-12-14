@@ -1,23 +1,22 @@
 .mypagediv {
 	width: 900px;
-	height: 1045px;
+	height: 1010px;
 	background-color: #ffc8b3;
-	margin: 100px auto;
+	margin: 60px auto;
 	border-radius: 15px;
 }
 
 .whitediv {
 	width: 865px;
-	height: 955px;
+	height: 925px;
 	background-color: #ffffff;
-	margin: 0 auto;
+	margin: 20px auto;
 	border-radius: 15px;
 }
 
 .paydiv {
 	margin-top: 75px;
 	height: 240px;
-	"
 }
 
 .writediv {
@@ -63,6 +62,7 @@
 	border-radius: 15px;
 	background-color: #ffc8b3;
 	margin-left: 50px;
+	margin-bottom: 1%;
 }
 
 .myfont {
@@ -77,6 +77,7 @@
 
 .payhr {
 	width: 94%;
+	margin-top: 2%;
 }
 
 .infopadding {
@@ -88,7 +89,7 @@
 }
 
 .pagealignr {
-	text-align: right;
+	text-align: center;
 }
 
 .payinfodiv {
@@ -112,6 +113,7 @@
 	width: 95%;
 	border-spacing: 0;
 	border-collapse: collapse;
+	margin-top: 5px;
 }
 
 .pagealign {
@@ -130,7 +132,7 @@
 .form-control {
 	display: block;
 	width: 70%;
-	height: 15px; /* 원래 34px*/
+	height: 30px; /* 원래 34px*/
 	padding: 6px 12px;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -150,8 +152,8 @@
 
 .form-control1 {
 	display: block;
-	width: 90%;
-	height: 15px; /* 원래 34px*/
+	width: 94%;
+	height: 30px; /* 원래 34px*/
 	padding: 6px 12px;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -327,14 +329,13 @@ input
 	border: 1px solid #777;
 	border-radius: 4px;
 }
-
 .leavebtn {
 	display: inline-block;
-	padding: 9px 15px;
 	color: #ffffff;
+	padding: 9px 22px;
 	margin-bottom: 0;
-	font-size: 11px;
-	font-weight: normal;
+	font-size: 14px;
+	font-weight: bolder;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -346,8 +347,29 @@ input
 	-ms-user-select: none;
 	user-select: none;
 	background-image: none;
-	background-color: #777;
-	border: 1px solid #888;
-	font-size: 11px;
-	/* 	border-radius: 4px; */
+	background-color: #ffc8b3;;
+	border-radius: 4px;
 }
+
+/* .leavebtn { */
+/* 	display: inline-block; */
+/* 	padding: 9px 15px; */
+/* 	margin-bottom: 0; */
+/* 	font-size: 11px; */
+/* 	font-weight: normal; */
+/* 	text-align: center; */
+/* 	white-space: nowrap; */
+/* 	vertical-align: middle; */
+/* 	-ms-touch-action: manipulation; */
+/* 	touch-action: manipulation; */
+/* 	cursor: pointer; */
+/* 	-webkit-user-select: none; */
+/* 	-moz-user-select: none; */
+/* 	-ms-user-select: none; */
+/* 	user-select: none; */
+/* 	background-image: none; */
+/* 	background-color: #777; */
+/* 	border: 1px solid #888; */
+/* 	font-size: 11px; */
+/* 	/* 	border-radius: 4px; */ */
+/* } */
