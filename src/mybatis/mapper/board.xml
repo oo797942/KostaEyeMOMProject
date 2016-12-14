@@ -136,4 +136,40 @@ update normal_board SET b_goodog=(b_goodog||'/'||#{u_id}), b_good=NVL(b_good,0)+
 update normal_board set b_report=NVL(b_report, 0)+1 where b_no=#{b_no}
 </update>
 
+<!-- 베스트레시피 초기 -->
+<select id="bestr1" parameterType="boardVO" resultType="boardVO">
+<![CDATA[
+select rownum rs, b_no, b_cate, b_date, b_scate, b_title, b_photo1name, b_good from(
+select b_no, b_cate, TO_CHAR(b_date, 'YYYY-MM-DD') b_date, b_scate, b_title, b_photo1name, nvl(b_good, 0) b_good from normal_board
+where b_cate = 'rice' AND b_scate = 'r_1' order by b_good desc) where rownum < 6
+]]>
+</select>
+
+<!-- 베스트레시피 중기 -->
+<select id="bestr2" parameterType="boardVO" resultType="boardVO">
+<![CDATA[
+select rownum rs, b_no, b_cate, b_date, b_scate, b_title, b_photo1name, b_good from(
+select b_no, b_cate, TO_CHAR(b_date, 'YYYY-MM-DD') b_date, b_scate, b_title, b_photo1name, nvl(b_good, 0) b_good from normal_board
+where b_cate = 'rice' AND b_scate = 'r_2' order by b_good desc) where rownum < 6
+]]>
+</select>
+
+<!-- 베스트레시피 후기 -->
+<select id="bestr3" parameterType="boardVO" resultType="boardVO">
+<![CDATA[
+select rownum rs, b_no, b_cate, b_date, b_scate, b_title, b_photo1name, b_good from(
+select b_no, b_cate, TO_CHAR(b_date, 'YYYY-MM-DD') b_date, b_scate, b_title, b_photo1name, nvl(b_good, 0) b_good from normal_board
+where b_cate = 'rice' AND b_scate = 'r_3' order by b_good desc) where rownum < 6
+]]>
+</select>
+
+<!-- 베스트레시피 완료기 -->
+<select id="bestr4" parameterType="boardVO" resultType="boardVO">
+<![CDATA[
+select rownum rs, b_no, b_cate, b_date, b_scate, b_title, b_photo1name, b_good from(
+select b_no, b_cate, TO_CHAR(b_date, 'YYYY-MM-DD') b_date, b_scate, b_title, b_photo1name, nvl(b_good, 0) b_good from normal_board
+where b_cate = 'rice' AND b_scate = 'r_4' order by b_good desc) where rownum < 6
+]]>
+</select>
+
 </mapper>

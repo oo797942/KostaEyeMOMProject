@@ -18,4 +18,8 @@ public interface BoardDao {
 	List<BoardVO> checkGoodId(BoardVO vo);
 	int countGood(BoardVO vo);
 	int reportBoard(BoardVO vo);
+	List<BoardVO> bestRice_r1();
+	List<BoardVO> bestRice_r2();
+	List<BoardVO> bestRice_r3();
+	List<BoardVO> bestRice_r4();
 }

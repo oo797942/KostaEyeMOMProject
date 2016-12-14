@@ -102,5 +102,16 @@ $(function() {
 		alert("a");
 		location.href='logout.do';
 	});
+	
+	// 베스트레시피의 제목에 마우스가 오버되었을 때
+	$(".bestrice").mouseover(function(){
+		var imgname = $(this).attr('rel');
+		$("#cookcontentimg").attr('src', '/EyeMOM/resources/img/'+imgname);
+	});
+	
+//	// 마우스가 아웃되었을 때
+//	$(".bestrice").mouseout(function(){
+//		$("#cookcontentimg").attr('src', '/EyeMOM/resources/img/hasi.png');
+//	});
 
 });

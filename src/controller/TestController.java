@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import member.dao.BoardDaoImpl;
 import member.dao.CountDaoImpl;
 import member.dao.GroupPurchaseDaoImpl;
 import member.dao.QnADaoImpl;
+import member.vo.BoardVO;
 import member.vo.CountVO;
 import member.vo.GroupPurchaseVO;
 import member.vo.QnAVO;
@@ -25,6 +27,8 @@ public class TestController {
 	private GroupPurchaseDaoImpl purchaseDao;
 	@Autowired
 	private CountDaoImpl countDao;
+	@Autowired
+	private BoardDaoImpl boardDao;
 
 	@RequestMapping("/test.go")
 	public String goMain(Model m, HttpSession session) {
@@ -61,10 +65,24 @@ public class TestController {
 		// 공동구매 최신 글 4개 뽑아오는 코드
 		List<GroupPurchaseVO> purchaseList = purchaseDao.purchaseList();
 		m.addAttribute("purchaseList", purchaseList);
+		
+		// 베스트 레시피 초기
+		List<BoardVO> bestRice_r1 = boardDao.bestRice_r1();
+		m.addAttribute("bestRice_r1", bestRice_r1);
+		
+		// 베스트 레시피 중기
+		List<BoardVO> bestRice_r2 = boardDao.bestRice_r2();
+		m.addAttribute("bestRice_r2", bestRice_r2);
+		
+		// 베스트 레시피 후기
+		List<BoardVO> bestRice_r3 = boardDao.bestRice_r3();
+		m.addAttribute("bestRice_r3", bestRice_r3);
+		
+		// 베스트 레시피 완료기
+		List<BoardVO> bestRice_r4 = boardDao.bestRice_r4();
+		m.addAttribute("bestRice_r4", bestRice_r4);
+		
 		return "home.go";
-		
-		
-		
 	}
 
 }

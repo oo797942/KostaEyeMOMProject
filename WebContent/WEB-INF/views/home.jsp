@@ -279,32 +279,24 @@
 					<td class="cooktd" id="cookcontent">
 						<img src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
 						<ul class="cookul" id="cookul1">
-							<li>[2016-12-08] <a class="alink">1초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
+							<c:forEach var='r1' items='${bestRice_r1}'>
+								<li>[${r1.b_date }] <a class="alink bestrice" rel="${r1.b_photo1name }" href="boardview.do?b_no=${r1.b_no }">[+${r1.b_good}] ${r1.b_title }</a></li>
+							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul2">
-							<li>[2016-12-08] <a class="alink">2초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
+							<c:forEach var='r2' items='${bestRice_r2}'>
+								<li>[${r2.b_date }] <a class="alink bestrice" rel="${r2.b_photo1name }" href="boardview.do?b_no=${r2.b_no }">[+${r2.b_good}] ${r2.b_title }</a></li>
+							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul3">
-							<li>[2016-12-08] <a class="alink">3초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
+							<c:forEach var='r3' items='${bestRice_r3}'>
+								<li>[${r3.b_date }] <a class="alink bestrice" rel="${r3.b_photo1name }" href="boardview.do?b_no=${r3.b_no }">[+${r3.b_good}] ${r3.b_title }</a></li>
+							</c:forEach>
 						</ul>
 						<ul class="cookul" id="cookul4">
-							<li>[2016-12-08] <a class="alink">4초라도 안보이면 2렇게 초조한데 3초는 어떻게 기다려 이야이야이야이야 4랑해 널 4랑해 5늘은 말할거야 6십억 지구에서 널만난건 7럭키야</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
-							<li>[2016-12-08] <a class="alink">1</a></li>
+							<c:forEach var='r4' items='${bestRice_r4}'>
+								<li>[${r4.b_date }] <a class="alink bestrice" rel="${r4.b_photo1name }" href="boardview.do?b_no=${r4.b_no }">[+${r4.b_good}] ${r4.b_title }</a></li>
+							</c:forEach>
 						</ul>
 					</td>
 				</tr>
