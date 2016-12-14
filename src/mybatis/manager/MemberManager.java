@@ -41,4 +41,12 @@ public class MemberManager {
 		session.commit();
 		return result;
 	}
+	
+	public static int memberUpdate(MemberVO vo) throws SQLException {
+		int result = 0;
+		SqlSession session = CommonManager.db().openSession();
+		result = session.update("user.memberUpdate", vo);
+		session.commit();
+		return result;
+	}
 }

@@ -128,6 +128,7 @@ form-control:focus {
 }
 
 .form-control1 {
+	resize:none;
 	display: block;
 	width: 100%;
 	/* 	height: 30px; 원래 34px */
@@ -242,6 +243,7 @@ form-control:focus {
 }
 
 .modifybtn1 {
+	resize:none;
 	display: inline-block;
 	padding: 10px 22px;
 	font-size: 14px;

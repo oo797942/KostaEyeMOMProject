@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.MemberDao;
 import member.vo.MemberVO;
@@ -24,6 +25,15 @@ public class MemberController {
 		return "mypage/mypageModify";
 	}
 	
+	
+	@RequestMapping("memberUpdate.do")
+	public String memberUpdate(Model m, MemberVO memVO, HttpSession session){
+		String result = "mypage/mypageModify";
+		MemberVO suser = (MemberVO)session.getAttribute("user");
+		memVO.setU_id(suser.getU_id());		
+		int re = memberDao.memberUpdate(memVO);
+		return result;
+	}
 	
 	@RequestMapping("/adminMember.go")
 	public String admonMember(HttpSession session,Model m){

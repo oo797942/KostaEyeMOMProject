@@ -73,5 +73,17 @@ public class MemberDaoImpl implements MemberDao {
 		}
 		return result;
 	}
+
+	@Override
+	public int memberUpdate(MemberVO vo) {
+		int result=0;
+		try{ 
+			result = MemberManager.memberUpdate(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("멤버 업데이트 실패 : " + ex.getMessage());
+		}
+		return 0;
+	}
 	
 }

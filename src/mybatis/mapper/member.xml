@@ -28,4 +28,21 @@ select u_nick from mom_user where u_nick = #{u_nick}
 </insert>
 <!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
  
+ <update id="memberUpdate" parameterType="memberVO">
+ UPDATE mom_user SET 
+ u_id = #{u_id}
+ 	<if test="u_nick neq null">
+	,	u_nick = #{u_nick} 
+	</if>	
+  	<if test="u_pass neq null">
+ , u_pass = #{u_pass} 
+	</if>	
+	 	<if test="u_tel neq null">
+ , u_tel = #{u_tel}
+	</if>	
+	 	<if test="u_addr neq null">
+ , u_addr = #{u_addr} 
+	</if>	
+ WHERE u_id = #{u_id}
+ </update>
 </mapper>
