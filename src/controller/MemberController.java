@@ -28,11 +28,10 @@ public class MemberController {
 	
 	@RequestMapping("memberUpdate.do")
 	public String memberUpdate(Model m, MemberVO memVO, HttpSession session){
-		String result = "mypage/mypageModify";
 		MemberVO suser = (MemberVO)session.getAttribute("user");
 		memVO.setU_id(suser.getU_id());		
 		int re = memberDao.memberUpdate(memVO);
-		return result;
+		return "redirect:mypage.do";
 	}
 	
 	@RequestMapping("/adminMember.go")

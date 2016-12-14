@@ -271,7 +271,7 @@ $("#myform").submit();
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth' width="20%">닉네임</th>
 								<th class='modifyth'><div class='form-inline' align="left">
-								<input type='text' class='form-control' value='wamsi98' id='u_nick' disabled="disabled" />
+								<input type='text' class='form-control' value='${user.u_nick }' id='u_nick' disabled="disabled" />
 								<input type="button" id="nickModify" value='닉네임 변경'  class='modifybtn'  />
 								<label for="u_nick" id="nicktext" style="font-size: 13px; font-family: 'lato', sans-serif;" ></label>
 								</div></th>
@@ -279,14 +279,14 @@ $("#myform").submit();
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth'>이름</th>
 								<th class='modifyth' >
-								<span class='modifyspan'><input type='text'  class='form-control ' value='임경민' id='name'  disabled="disabled"/>
+								<span class='modifyspan'><input type='text'  class='form-control ' value='${user.u_name}' id='name'  disabled="disabled"/>
 								</span>	
 								</th>
 							</tr>
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth'>E-MAIL</th>
 								<th class='modifyth'><div class='form-inline' align="left">
-								<input type='text' class='form-control ' value='wamsi98@naver.com' id='u_email' disabled="disabled" />
+								<input type='text' class='form-control ' value='${user.u_email}' id='u_email' disabled="disabled" />
 <!-- 								<input type="button" value='E-MAIL 변경'  class='modifybtn' id="emailModify" /> -->
 								</div></th>
 							</tr>
@@ -334,7 +334,7 @@ $("#myform").submit();
 							<tr class='modifytr'>
 								<th class='modifyfont modifyth'>휴대폰번호</th>
 								<th class='modifyth'><div class='form-inline' align="left">
-								<input type='text'  class='form-control ' value='010-5031-0940' id='u_tel' disabled="disabled"/>
+								<input type='text'  class='form-control ' value='${user.u_tel}' id='u_tel' disabled="disabled"/>
 								<input type="button" value='휴대폰번호 변경'  class='modifybtn' id="telModify" />
 								<label for="u_tel" id="teltext" style="font-size: 13px; font-family: 'lato', sans-serif;" ></label>
 								</div>
@@ -343,8 +343,7 @@ $("#myform").submit();
 							<tr class='modifytr'>	
 								<th class='modifyfont modifyth'>주소</th>
 								<th class='modifyth'>
-								<textarea class='form-control1'  disabled="disabled"  id="u_addr">
-경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호
+								<textarea class='form-control1'  disabled="disabled"  id="u_addr">${user.u_addr}
 </textarea>
 <!-- 								<input type='text'  class='form-control1 ' value='경기도 용인시 수지구 죽전동 현암로 134-1 601동 803호 ' id='u_addr' disabled="disabled" /> -->
 								<input type="button" value='주소 변경'  class='modifybtn1'  id="addrModify"  />
