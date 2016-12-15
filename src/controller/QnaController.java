@@ -24,4 +24,11 @@ public class QnaController {
 		m.addAttribute("list",list);
 		return "board/boardQna";
 	}
+	
+	@RequestMapping("faqboard.do")
+	public String faqboard(Model m){
+		
+		
+		return "faqboard/faqboard";
+	}
 }

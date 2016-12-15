@@ -32,7 +32,7 @@
 					<a href="#">공지사항</a><br />
 					<a href="#">문의하기</a><br />
 					<a href="#">신고하기</a><br />
-					<a href="#">FAQ</a><br />
+					<a href="faqboard.do">FAQ</a><br />
 				</p>
 			</td>
 			<td width="25%">
