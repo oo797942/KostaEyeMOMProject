@@ -110,6 +110,7 @@ public class TestController {
 		List<VideoVO> videoban = videoDao.videobanner();
 		m.addAttribute("videobanner", videoban);
 		
+		// 공지사항
 		List<BoardVO> notice = boardDao.noticeList();
 		m.addAttribute("notice", notice);
 
