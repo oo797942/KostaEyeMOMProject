@@ -16,7 +16,7 @@ public class BoardManager {
       System.out.println("manager : title : " + title);
       List list = null;
       // 육아꿀팁, 식단, 자랑
-      if (title.equals("tip") || title.equals("rice") || title.equals("baby")) {
+      if (title.equals("tip") || title.equals("rice") || title.equals("baby") || title.equals("notice")) {
 
          list = session.selectList("board.allBoard", title);
 

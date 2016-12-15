@@ -250,5 +250,60 @@ public class BoardController {
 		return result;
 	}
 	
+
+	// 공지사항 글 리스트
+	@RequestMapping("/notice.do")
+	public String goNotice(Model m, HttpSession session) {
+		List<BoardVO> list = null;
+		list = boardDao.allBoard("notice");
+		for (int i = 0; i < list.size(); i++) {
+
+			BoardVO boardVO = list.get(i);
+			List<ReplyVO> listVO = boardDao.callReply(boardVO);
+
+			list.get(i).setB_recount(listVO.size());
+		}
+
+		m.addAttribute("list", list);
+		return "board/boardNotice";
+	}
+	
+	//공지사항 글보기
+	@RequestMapping("/noticeview.do")
+	public String viewNotice(BoardVO boardVO, Model m){
+		
+		
+		
+		BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
+		List <ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
+		
+		
+		//ip보안을 위해 * 처리
+		String ip= vo.getB_ip(); //작성자 ip가져오기
+		StringTokenizer st= new StringTokenizer(ip, ".");
+		String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
+		String rip;	// 보안처리된  ip 담을 문자열
+		for(int i=0; st.hasMoreTokens();i++){
+			
+			list[i]=(String) st.nextToken();  // " . "을 제거한 ip를 list에 담는다
+			
+		}
+		rip=list[0]+"."+list[1]+".*.*"; // 뒤에 두자리 보안처리
+		vo.setB_ip(rip); // 보안ip 다시 담기
+		
+		m.addAttribute("bvo", vo); // 게시물 정보 모델에 담기
+		m.addAttribute("list", listVO); //리플 정보 모델에 담기
+		return "board/noticeView"; 
+	}
+	
+	//공지사항 삭제
+	@RequestMapping("deleteNotice.do")
+	public String deleteNotice(BoardVO boardVO ){
+		System.out.println("삭제 : "+ boardVO.getB_no()+"//"+boardVO.getB_cate());
+		int result= boardDao.deleteBoard(boardVO);
+		
+		return "redirect:notice.do";
+	}
+	
 }
  

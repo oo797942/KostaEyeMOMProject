@@ -236,7 +236,7 @@
 					<td colspan="2">
 						<ul id="menu1" class="menucontent">
 						<c:forEach var='notice' items='${notice}'>
-							<li>[${notice.b_date }] <a href="#">${notice.b_title }</a></li>
+							<li>[${notice.b_date }] <a href="noticeview.do?b_no=${notice.b_no}">${notice.b_title }</a></li>
 						</c:forEach>
 						</ul>
 
@@ -255,9 +255,11 @@
 				</tr>
 				<tr id="tablink">
 					<td colspan="2">
+					<a href="notice.do" class="alink">
 						<div class="tablinks" id="link1">
 							<br />공지사항 바로가기
 						</div>
+						</a>
 						<div class="tablinks" id="link2">
 							<br />으앙아팡 바로가기
 						</div>

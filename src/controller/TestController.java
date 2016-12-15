@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import member.dao.BoardDaoImpl;
 import member.dao.CountDaoImpl;
@@ -20,6 +22,7 @@ import member.vo.CountVO;
 import member.vo.GameVO;
 import member.vo.GroupPurchaseVO;
 import member.vo.QnAVO;
+import member.vo.ReplyVO;
 import member.vo.StudyVO;
 import member.vo.VideoVO;
 
@@ -101,20 +104,42 @@ public class TestController {
 		// 게임해요 배너
 		List<GameVO> gameban = videoDao.gamebanner();
 		m.addAttribute("gamebanner", gameban);
-		
+
 		// 공부해요 배너
 		List<StudyVO> studyban = videoDao.studybanner();
 		m.addAttribute("studybanner", studyban);
-		
+
 		// 춤을춰요 배너
 		List<VideoVO> videoban = videoDao.videobanner();
 		m.addAttribute("videobanner", videoban);
-		
+
 		// 공지사항
 		List<BoardVO> notice = boardDao.noticeList();
 		m.addAttribute("notice", notice);
 
 		return "home.go";
 	}
+
+	
+
+	// //보드리스트 이동
+	// @RequestMapping("/tip.do")
+	// public String callBoard(Model m,@RequestParam("title") String title){
+	// List<BoardVO> list=null;
+	//
+	// list =boardDao.allBoard(title); //게시판별 모든 리스트를 가져오기위해
+	// System.out.println(list.size());
+	// for(int i=0; i<list.size();i++){
+	//
+	// BoardVO boardVO=list.get(i);
+	// List <ReplyVO> listVO = boardDao.callReply(boardVO);
+	//
+	// list.get(i).setB_recount(listVO.size());
+	// }
+	//
+	// m.addAttribute("list", list); //가져온 DB를 모델에 저장
+	// m.addAttribute("title", title ); // 게시판 종류 모델에 저장
+	// return "board/board";
+	// }
 
 }
