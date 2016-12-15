@@ -9,7 +9,7 @@
 .wrapper {width:100%; overflow:hidden; position:relative}
 /*********************************margin 크기**********************************/
 .Tp {margin-bottom:18px}
-.p0 {margin-bottom:0px}
+.p0 {margin-bottom:0px} 
 .p1 {margin-bottom:8px}
 .p2 {margin-bottom:15px}
 .p3 {margin-bottom:30px}
