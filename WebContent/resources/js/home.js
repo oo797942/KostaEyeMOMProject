@@ -48,7 +48,33 @@ $(function() {
 	});
 
 	// bxSlider
-	var mySlider = $('#slide_banner').bxSlider({
+	var gameSlider = $('#gamebanner').bxSlider({
+		mode : 'horizontal',// 가로 방향 수평 슬라이드
+		speed : 400, // 이동 속도를 설정
+		pager : true, // 현재 위치 페이징 표시 여부 설정
+		moveSlides : 1, // 슬라이드 이동시 개수
+		slideWidth : 1000, // 슬라이드 너비
+		minSlides : 1, // 최소 노출 개수
+		maxSlides : 1, // 최대 노출 개수
+		auto : true, // 자동 실행 여부
+		autoHover : false, // 마우스 호버시 정지 여부
+		controls : false
+	});
+	
+	var videoSlider = $('#videobanner').bxSlider({
+		mode : 'horizontal',// 가로 방향 수평 슬라이드
+		speed : 400, // 이동 속도를 설정
+		pager : true, // 현재 위치 페이징 표시 여부 설정
+		moveSlides : 1, // 슬라이드 이동시 개수
+		slideWidth : 1000, // 슬라이드 너비
+		minSlides : 1, // 최소 노출 개수
+		maxSlides : 1, // 최대 노출 개수
+		auto : true, // 자동 실행 여부
+		autoHover : false, // 마우스 호버시 정지 여부
+		controls : false
+	});
+	
+	var studySlider = $('#studybanner').bxSlider({
 		mode : 'horizontal',// 가로 방향 수평 슬라이드
 		speed : 400, // 이동 속도를 설정
 		pager : true, // 현재 위치 페이징 표시 여부 설정
@@ -84,34 +110,61 @@ $(function() {
 
 	$(".cookul").hide();
 	$("#cookul1").show();
-	
+
 	// 베스트 레시피의 사진에 마우스를 올렸을 때
-	$(".cookimg").mouseover(function() {
-		var cookon = $(this).attr("rel");
-		// 이미지 변경
-			for(var i=1; i<5; i++){
-				$("#cookimg"+i).attr("src",$("#cookimg"+i).attr("src").replace("cookon_","cook_"));
-			}
-			$(this).attr("src", $(this).attr("src").replace("cook_","cookon_"));
-			$(".cookul").hide();
-			$("#"+cookon).show();
-	});
-	
-	//로그아웃버튼이 눌려졌을때
-	$("#logoutBtn").click(function(){
+	$(".cookimg").mouseover(
+			function() {
+				var cookon = $(this).attr("rel");
+				// 이미지 변경
+				for (var i = 1; i < 5; i++) {
+					$("#cookimg" + i).attr(
+							"src",
+							$("#cookimg" + i).attr("src").replace("cookon_",
+									"cook_"));
+				}
+				$(this).attr("src",
+						$(this).attr("src").replace("cook_", "cookon_"));
+				$(".cookul").hide();
+				$("#" + cookon).show();
+			});
+
+	// 로그아웃버튼이 눌려졌을때
+	$("#logoutBtn").click(function() {
 		alert("a");
-		location.href='logout.do';
+		location.href = 'logout.do';
 	});
-	
+
 	// 베스트레시피의 제목에 마우스가 오버되었을 때
-	$(".bestrice").mouseover(function(){
+	$(".bestrice").mouseover(function() {
 		var imgname = $(this).attr('rel');
-		$("#cookcontentimg").attr('src', '/EyeMOM/resources/img/'+imgname);
+		$("#cookcontentimg").attr('src', '/EyeMOM/resources/img/' + imgname);
 	});
+
+	// 첫 배너 제외 모두 숨긴다
+	$(".banner_wrap").hide();
+	$(".gamebanner").show();
+
 	
-//	// 마우스가 아웃되었을 때
-//	$(".bestrice").mouseout(function(){
-//		$("#cookcontentimg").attr('src', '/EyeMOM/resources/img/hasi.png');
-//	});
+	$("#gamebannerbtn").mouseover(function() {
+		$(".banner_wrap").hide();
+		$(".gamebanner").show();
+		gameSlider.reloadSlider();
+		studySlider.reloadSlider();
+		videoSlider.reloadSlider();
+	});
+	$("#videobannerbtn").mouseover(function() {
+		$(".banner_wrap").hide();
+		$(".videobanner").show();
+		gameSlider.reloadSlider();
+		studySlider.reloadSlider();
+		videoSlider.reloadSlider();
+	});
+	$("#studybannerbtn").mouseover(function() {
+		$(".banner_wrap").hide();
+		$(".studybanner").show();
+		gameSlider.reloadSlider();
+		studySlider.reloadSlider();
+		videoSlider.reloadSlider();
+	});
 
 });

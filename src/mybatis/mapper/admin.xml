@@ -123,7 +123,7 @@ CONNECT BY LEVEL <= length(regexp_replace(b.g_goodog, '[^/]+',''))+1
 </select>
 
 <update id="gameRecomDoing" parameterType="gameVO">
-UPDATE kid_game SET g_good = (g_good+1),  g_goodog = (g_goodog||'/'||#{g_recomId})
+UPDATE kid_game SET g_good = (g_good+1),  g_goodog = (g_goodog||'/'||#{g_recomId}) WHERE g_no = #{g_no}
 </update>
 
 <select id="videoRecom" parameterType="videoVO" resultType="videoVO">
@@ -135,7 +135,7 @@ CONNECT BY LEVEL <= length(regexp_replace(b.d_goodog, '[^/]+',''))+1
 </select>
 
 <update id="videoRecomDoing" parameterType="videoVO">
-UPDATE kid_video SET d_good = (d_good+1),  d_goodog = (d_goodog||'/'||#{d_recomId})
+UPDATE kid_video SET d_good = (d_good+1),  d_goodog = (d_goodog||'/'||#{d_recomId}) WHERE d_no = #{d_no}
 </update>
 
 <select id="studyRecom" parameterType="studyVO" resultType="studyVO">
@@ -147,11 +147,32 @@ CONNECT BY LEVEL <= length(regexp_replace(b.v_goodog, '[^/]+',''))+1
 </select>
 
 <update id="studyRecomDoing" parameterType="studyVO">
-UPDATE kid_study SET v_good = (v_good+1),  v_goodog = (v_goodog||'/'||#{v_recomId})
+UPDATE kid_study SET v_good = (v_good+1),  v_goodog = (v_goodog||'/'||#{v_recomId}) WHERE v_no = #{v_no}
 </update>
 
 <select id="memberAll" parameterType="memberVO" resultType="memberVO">
 	select * from mom_user
+</select>
+
+<select id="gamebanner" parameterType="gameVO" resultType="gameVO">
+<![CDATA[
+select rownum rs, g_no, g_photo, g_good from(
+select * from kid_game order by g_good desc) where rownum < 6
+]]>
+</select>
+
+<select id="studybanner" parameterType="studyVO" resultType="studyVO">
+<![CDATA[
+select rownum rs, v_no, v_photo, v_good from(
+select * from kid_study order by v_good desc) where rownum < 6
+]]>
+</select>
+
+<select id="videobanner" parameterType="videoVO" resultType="videoVO">
+<![CDATA[
+select rownum rs, d_no, d_photo, d_good from(
+select * from kid_video order by d_good desc) where rownum < 6
+]]>
 </select>
 
 </mapper> 

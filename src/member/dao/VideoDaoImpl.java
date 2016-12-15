@@ -14,77 +14,71 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	public int adminVideoInput(VideoVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.videoInput(vo);
-			System.out.println("겜등록 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜등록 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 등록 실패 : " + ex.getMessage());
 		}
-		return result;	
+		return result;
 	}
 
 	@Override
 	public int adminStudyInput(StudyVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.studyInput(vo);
-			System.out.println("겜등록 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜등록 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 등록 실패 : " + ex.getMessage());
 		}
-		return result;	
+		return result;
 	}
 
 	@Override
 	public List<VideoVO> videoBoard() {
-		List<VideoVO> list=null;
-		try{
+		List<VideoVO> list = null;
+		try {
 			list = VideoManager.videoBoard();
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
-		}finally{
+		} finally {
 			return list;
 		}
 	}
 
 	@Override
 	public VideoVO videoBoardView(VideoVO vo) {
-		VideoVO vlist=null;
-		try{
+		VideoVO vlist = null;
+		try {
 			vlist = VideoManager.videoView(vo);
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("게임목록들고오기 실패 : " + ex.getMessage() + ">");
-		}finally{
+		} finally {
 			return vlist;
 		}
 	}
 
 	@Override
 	public List<StudyVO> studyBoard() {
-		List<StudyVO> list=null;
-		try{
+		List<StudyVO> list = null;
+		try {
 			list = VideoManager.studyBoard();
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
-		}finally{
+		} finally {
 			return list;
 		}
 	}
 
 	@Override
 	public StudyVO studyBoardView(StudyVO vo) {
-		StudyVO vlist=null;
-		try{
+		StudyVO vlist = null;
+		try {
 			vlist = VideoManager.studyView(vo);
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("게임목록들고오기 실패 : " + ex.getMessage() + ">");
-		}finally{
+		} finally {
 			return vlist;
 		}
 	}
@@ -93,7 +87,7 @@ public class VideoDaoImpl implements VideoDao {
 	public int adminVideoDelete(VideoVO vo) {
 		int result = 0;
 		try {
-			result  = VideoManager.videoDelete(vo);
+			result = VideoManager.videoDelete(vo);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -104,7 +98,7 @@ public class VideoDaoImpl implements VideoDao {
 	public int adminStudyDelete(StudyVO vo) {
 		int result = 0;
 		try {
-			result  = VideoManager.studyDelete(vo);
+			result = VideoManager.studyDelete(vo);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -114,25 +108,22 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	public int adminVideoUpdate(VideoVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.videoUpdate(vo);
-			System.out.println("겜수정 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜수정 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 수정 실패 : " + ex.getMessage());
 		}
 		return result;
 	}
-	
 
 	@Override
 	public int adminStudyUpdate(StudyVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.studyUpdate(vo);
-			System.out.println("겜수정 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜수정 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 수정 실패 : " + ex.getMessage());
 		}
 		return result;
@@ -140,13 +131,12 @@ public class VideoDaoImpl implements VideoDao {
 
 	@Override
 	public List<VideoVO> VideoRecom(VideoVO vo) {
-		List<VideoVO> list=null;
-		try{
+		List<VideoVO> list = null;
+		try {
 			list = VideoManager.videoRecom(vo);
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
-		}finally{
+		} finally {
 			return list;
 		}
 
@@ -155,11 +145,10 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	public int VideoRecomDoing(VideoVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.videoRecomDoing(vo);
-			System.out.println("겜수정 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜수정 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 수정 실패 : " + ex.getMessage());
 		}
 		return result;
@@ -167,13 +156,12 @@ public class VideoDaoImpl implements VideoDao {
 
 	@Override
 	public List<StudyVO> StudyRecom(StudyVO vo) {
-		List<StudyVO> list=null;
-		try{
+		List<StudyVO> list = null;
+		try {
 			list = VideoManager.studyRecom(vo);
-		}catch( Exception ex )
-		{
+		} catch (Exception ex) {
 			System.out.println("게임목록들고오기 실패 : " + ex.getMessage());
-		}finally{
+		} finally {
 			return list;
 		}
 	}
@@ -181,14 +169,43 @@ public class VideoDaoImpl implements VideoDao {
 	@Override
 	public int StudyRecomDoing(StudyVO vo) {
 		int result = 0;
-		try{
+		try {
 			result = VideoManager.studyRecomDoing(vo);
-			System.out.println("겜수정 성공 :"+result); 
-		}catch( Exception ex )
-		{
+			System.out.println("겜수정 성공 :" + result);
+		} catch (Exception ex) {
 			System.out.println("게임 수정 실패 : " + ex.getMessage());
 		}
 		return result;
+	}
+
+	public List<VideoVO> videobanner() {
+		List<VideoVO> list = null;
+		try {
+			list = VideoManager.videobanner();
+		} catch (Exception ex) {
+			System.out.println("춤을춰요 배너 불러오기 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	public List<GameVO> gamebanner() {
+		List<GameVO> list = null;
+		try {
+			list = VideoManager.gamebanner();
+		} catch (Exception ex) {
+			System.out.println("놀아봐요 배너 불러오기 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	public List<StudyVO> studybanner() {
+		List<StudyVO> list = null;
+		try {
+			list = VideoManager.studybanner();
+		} catch (Exception ex) {
+			System.out.println("공부해요 배너 불러오기 실패 : " + ex.getMessage());
+		}
+		return list;
 	}
 
 }
