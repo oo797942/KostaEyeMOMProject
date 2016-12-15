@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.List"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,51 +27,87 @@
 					<div class="wrapper">
 						<div class="grid_12">
 							<div class="indent-left p2">
-								<h3 class="Th3 p0">육아 갤러리임</h3>
+								<h3 class="Th3 p0">${title}</h3>
 							</div>
 							<div class="wrapper p4">
+							<c:forEach var="i" begin="1" end="${fn:length(list)}" step="1">
+
+ 								<c:set var="vo" value = "${list[i-1]}" />
+								
+<!-- 									카테고리별 분류 -->
+								<c:if test="${vo.b_scate=='r_1'}">
+									<c:set var="cate" value = "[초기]" />
+								</c:if>
+								<c:if test="${vo.b_scate=='r_2'}">
+									<c:set var="cate" value = "[중기]" />
+								</c:if >
+								<c:if test="${vo.b_scate=='r_3'}">
+									<c:set var="cate" value = "[후기]" />
+								</c:if>
+								<c:if test="${vo.b_scate=='r_4'}">
+									<c:set var="cate" value = "[완료기]" />
+								</c:if>
+								
+								
+								<c:choose>
+								<c:when test="${ i mod 3 ==1}">
 								<article class="Tarticle grid_4 alpha">
-									<div class="indent-left">
-										<figure class="frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+								<div class="indent-left">
+								<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="" class='Timg'/>
 										</figure>
-										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
-											unde</p>
-										<p class='Tp1'>Doloremque laudantium, totam rem aperiam, eaque ipsa
-											quae ab illo inventore veritatis et quasi architecto beatae
-											vitae dicta.</p>
-										<div class="wrapper">
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4">
-									<div class="indent3">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
-										</p>
-										<p class='Tp1'>Sed quia consequuntur magni dolores eos qui</p>
-										<div class="wrapper">
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4 omega">
-									<div class="indent-right">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208185528코스타2.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
-											est,</p>
-										<p class='Tp1'><label>추천수</label> <label>15</label> &nbsp;&nbsp;&nbsp;<label>조회수</label><label>20</label>&nbsp;&nbsp;&nbsp;
-										16-12-10
+										<p class="Tp color-4 prev-indent-bot">${cate} ${vo.b_title} (${vo.b_recount})</p>
+										<p class='Tp1'>
+										<label>추천수</label> <label>${vo.b_good}</label> &nbsp;&nbsp;&nbsp;
+										<label>조회수</label><label>${vo.b_count}</label>&nbsp;&nbsp;&nbsp;
+										${vo.b_date}
 										<br/>
-										<label>wmasi98</label>
+										<label>${vo.b_nick}</label>
 										</p>
 									</div>
 								</article>
+								</c:when>
+								
+								<c:when test="${i mod 3 ==0}">
+								<article class="Tarticle grid_4 omega">
+								<div class="indent-right">
+								<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">${cate} ${vo.b_title} (${vo.b_recount})</p>
+										<p class='Tp1'>
+										<label>추천수</label> <label>${vo.b_good}</label> &nbsp;&nbsp;&nbsp;
+										<label>조회수</label><label>${vo.b_count}</label>&nbsp;&nbsp;&nbsp;
+										${vo.b_date}
+										<br/>
+										<label>${vo.b_nick}</label>
+										</p>
+									</div>
+								</article>
+								</c:when>
+								
+								<c:when test="${i mod 3 ==2}">
+								<article class="Tarticle grid_4">
+								<div class="indent3">
+								<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">${cate} ${vo.b_title} (${vo.b_recount})</p>
+										<p class='Tp1'>
+										<label>추천수</label> <label>${vo.b_good}</label> &nbsp;&nbsp;&nbsp;
+										<label>조회수</label><label>${vo.b_count}</label>&nbsp;&nbsp;&nbsp;
+										${vo.b_date}
+										<br/>
+										<label>${vo.b_nick}</label>
+										</p>
+									</div>
+								</article>
+								</c:when>
+								
+								</c:choose>
+								<c:remove var="cate"/>
+							</c:forEach>
+								
 							</div>
 						</div>
 					</div>
