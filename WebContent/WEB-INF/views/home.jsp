@@ -145,7 +145,7 @@
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
 								<li><a href="#">· 공동구매</a></li>
 								<li><a href="#">· 중고장터</a></li>
-								<li><a href="#">· 아나바다</a></li>
+								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>
 						</li>
 					</ul> <img src="/EyeMOM/resources/img/hasi.png" id="mainMenuImg">
@@ -168,7 +168,7 @@
 								<c:otherwise>
 									<a
 										onclick="window.open('flashBoardView.go?g_no=${game.g_no}', '${game.g_title}',
-                   				'width=1180,height=700');return false;">
+                   				'width=1050px,height=690');return false;">
 								</c:otherwise>
 							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${game.g_photo }" />
 							</a></li>
@@ -186,7 +186,7 @@
 								<c:otherwise>
 									<a
 										onclick="window.open('videoBoardView.go?d_no=${video.d_no}', '${video.d_title}',
-                   				'width=1180,height=700');return false;">
+                   				'width=1050,height=770');return false;">
 								</c:otherwise>
 							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${video.d_photo }" />
 							</a></li>
@@ -204,7 +204,7 @@
 								<c:otherwise>
 									<a
 										onclick="window.open('studyBoardView.go?v_no=${study.v_no}', '${study.v_title}',
-                   				'width=1180,height=700');return false;">
+                   				'width=1050,height=770');return false;">
 								</c:otherwise>
 							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${study.v_photo }" />
 							</a></li>

@@ -120,26 +120,23 @@ public class TestController {
 		return "home.go";
 	}
 
-	
+	// 보드리스트 이동
+	@RequestMapping("/donation.do")
+	public String callBoard(Model m) {
+		List<BoardVO> list = null;
 
-	// //보드리스트 이동
-	// @RequestMapping("/tip.do")
-	// public String callBoard(Model m,@RequestParam("title") String title){
-	// List<BoardVO> list=null;
-	//
-	// list =boardDao.allBoard(title); //게시판별 모든 리스트를 가져오기위해
-	// System.out.println(list.size());
-	// for(int i=0; i<list.size();i++){
-	//
-	// BoardVO boardVO=list.get(i);
-	// List <ReplyVO> listVO = boardDao.callReply(boardVO);
-	//
-	// list.get(i).setB_recount(listVO.size());
-	// }
-	//
-	// m.addAttribute("list", list); //가져온 DB를 모델에 저장
-	// m.addAttribute("title", title ); // 게시판 종류 모델에 저장
-	// return "board/board";
-	// }
+		list = boardDao.allBoard("donation");
+		System.out.println(list.size());
+		for (int i = 0; i < list.size(); i++) {
+
+			BoardVO boardVO = list.get(i);
+			List<ReplyVO> listVO = boardDao.callReply(boardVO);
+
+			list.get(i).setB_recount(listVO.size());
+		}
+
+		m.addAttribute("list", list); // 가져온 DB를 모델에 저장
+		return "board/boardDonation";
+	}
 
 }
