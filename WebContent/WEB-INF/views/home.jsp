@@ -264,7 +264,7 @@
 					</td>
 				</tr>
 			</table>
-
+ 
 			<table id="groupBuyTable" cellspacing="0">
 				<caption>
 					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
