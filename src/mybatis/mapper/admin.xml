@@ -154,4 +154,25 @@ UPDATE kid_study SET v_good = (v_good+1),  v_goodog = (v_goodog||'/'||#{v_recomI
 	select * from mom_user
 </select>
 
+<select id="gamebanner" parameterType="gameVO" resultType="gameVO">
+<![CDATA[
+select rownum rs, g_no, g_photo, g_good from(
+select * from kid_game order by g_good desc) where rownum < 6
+]]>
+</select>
+
+<select id="studybanner" parameterType="studyVO" resultType="studyVO">
+<![CDATA[
+select rownum rs, v_no, v_photo, v_good from(
+select * from kid_study order by v_good desc) where rownum < 6
+]]>
+</select>
+
+<select id="videobanner" parameterType="videoVO" resultType="videoVO">
+<![CDATA[
+select rownum rs, d_no, d_photo, d_good from(
+select * from kid_video order by d_good desc) where rownum < 6
+]]>
+</select>
+
 </mapper> 

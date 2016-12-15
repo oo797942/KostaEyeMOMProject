@@ -252,12 +252,16 @@ footer {
 	height: 300px;
 }
 
-#banner_wrap {
+.banner_wrap {
 	width: 1000px;
 	height: 300px;
 	padding: 0px;
 	float: left;
 	padding: 0px;
+}
+
+.slide_banner li:HOVER{
+	cursor: pointer;
 }
 
 .slide {
@@ -271,6 +275,10 @@ footer {
 	width: 200px;
 	height: 300px;
 	width: 200px;
+}
+
+#slideMenu td:HOVER{
+	cursor: pointer;
 }
 
 #mainMiddle {
