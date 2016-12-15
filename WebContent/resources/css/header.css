@@ -177,6 +177,7 @@
 }
 
 nav {
+	z-index : 10;
 	width: 400px;
 	position: fixed;
 	right: 159px;

@@ -34,12 +34,11 @@
 											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
 										</figure>
 										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
-											unde omnis iste natus error sit voluptatem accusantium.</p>
-										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
+											unde</p>
+										<p class='Tp1'>Doloremque laudantium, totam rem aperiam, eaque ipsa
 											quae ab illo inventore veritatis et quasi architecto beatae
 											vitae dicta.</p>
 										<div class="wrapper">
-											<span class="Tspan price fleft">$45.99</span> 
 											<a class="Ta button fright" href="#">Read More</a>
 										</div>
 									</div>
@@ -50,12 +49,9 @@
 											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
 										</figure>
 										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
-											voluptatem quia voluptas sit aspernatur aut odit.</p>
-										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
-											voluptatem sequi nesciunt eque porro quisquam est, qui
-											dolorem ipsum.</p>
+										</p>
+										<p class='Tp1'>Sed quia consequuntur magni dolores eos qui</p>
 										<div class="wrapper">
-											<span class="Tspan price fleft">$54.99</span> 
 											<a class="Ta button fright" href="#">Read More</a>
 										</div>
 									</div>
@@ -63,163 +59,15 @@
 								<article class="Tarticle grid_4 omega">
 									<div class="indent-right">
 										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+											<img src="/EyeMOM/resources/img/20161208185528코스타2.jpg" alt="" class='Timg'/>
 										</figure>
 										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
-											est, qui dolorem ipsum quia dolor sit consectetur.</p>
-										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
-											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$38.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="wrapper p4">
-								<article class="Tarticle grid_4 alpha">
-									<div class="indent-left">
-										<figure class="frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
-											unde omnis iste natus error sit voluptatem accusantium.</p>
-										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
-											quae ab illo inventore veritatis et quasi architecto beatae
-											vitae dicta.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$45.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4">
-									<div class="indent3">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
-											voluptatem quia voluptas sit aspernatur aut odit.</p>
-										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
-											voluptatem sequi nesciunt eque porro quisquam est, qui
-											dolorem ipsum.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$54.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4 omega">
-									<div class="indent-right">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
-											est, qui dolorem ipsum quia dolor sit consectetur.</p>
-										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
-											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$38.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="wrapper p4">
-								<article class="Tarticle grid_4 alpha">
-									<div class="indent-left">
-										<figure class="frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
-											unde omnis iste natus error sit voluptatem accusantium.</p>
-										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
-											quae ab illo inventore veritatis et quasi architecto beatae
-											vitae dicta.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$45.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4">
-									<div class="indent3">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
-											voluptatem quia voluptas sit aspernatur aut odit.</p>
-										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
-											voluptatem sequi nesciunt eque porro quisquam est, qui
-											dolorem ipsum.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$54.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4 omega">
-									<div class="indent-right">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
-											est, qui dolorem ipsum quia dolor sit consectetur.</p>
-										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
-											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$38.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="wrapper p4">
-								<article class="Tarticle grid_4 alpha">
-									<div class="indent-left">
-										<figure class="frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
-											unde omnis iste natus error sit voluptatem accusantium.</p>
-										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
-											quae ab illo inventore veritatis et quasi architecto beatae
-											vitae dicta.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$45.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4">
-									<div class="indent3">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
-											voluptatem quia voluptas sit aspernatur aut odit.</p>
-										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
-											voluptatem sequi nesciunt eque porro quisquam est, qui
-											dolorem ipsum.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$54.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
-									</div>
-								</article>
-								<article class="Tarticle grid_4 omega">
-									<div class="indent-right">
-										<figure class="Tfigure frame2 p2">
-											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
-										</figure>
-										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
-											est, qui dolorem ipsum quia dolor sit consectetur.</p>
-										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
-											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
-										<div class="wrapper">
-											<span class="Tspan price fleft">$38.99</span> 
-											<a class="Ta button fright" href="#">Read More</a>
-										</div>
+											est,</p>
+										<p class='Tp1'><label>추천수</label> <label>15</label> &nbsp;&nbsp;&nbsp;<label>조회수</label><label>20</label>&nbsp;&nbsp;&nbsp;
+										16-12-10
+										<br/>
+										<label>wmasi98</label>
+										</p>
 									</div>
 								</article>
 							</div>
