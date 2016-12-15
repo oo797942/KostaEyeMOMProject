@@ -174,5 +174,16 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
+	
+	public List<BoardVO> noticeList() {
+		List<BoardVO> list = null;
+		try {
+			list = BoardManager.noticeList();
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 공지사항 리스트 가져오기 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+
 
 }

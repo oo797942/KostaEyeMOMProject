@@ -172,4 +172,13 @@ where b_cate = 'rice' AND b_scate = 'r_4' order by b_good desc) where rownum < 6
 ]]>
 </select>
 
+<!-- 공지사항 리스트 -->
+<select id="notice" parameterType="boardVO" resultType="boardVO">
+<![CDATA[
+select rownum rs, b_no, b_cate, b_title, TO_CHAR(b_date, 'MM-DD') b_date from(
+select * from normal_board where b_cate = 'notice' order by b_no desc)
+where rownum < 10
+]]>
+</select>
+
 </mapper>

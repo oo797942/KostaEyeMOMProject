@@ -168,5 +168,14 @@ public class BoardManager {
       session.commit();
       return list;
    }
+   
+   // 공지사항 리스트 뽑아오기
+   public static List<BoardVO> noticeList() throws SQLException {
+      SqlSession session = CommonManager.db().openSession();
+      List<BoardVO> list = session.selectList("board.notice");
+
+      session.commit();
+      return list;
+   }
 
 }

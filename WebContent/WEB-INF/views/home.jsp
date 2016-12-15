@@ -235,15 +235,9 @@
 				<tr id="tabcontenttr">
 					<td colspan="2">
 						<ul id="menu1" class="menucontent">
-							<li>[12-08] <a href="#">제목이몇글자까지되는거야</a></li>
-							<li>[12-07] <a href="#">title title title title title</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
-							<li>[12-07] <a href="#">ddd</a></li>
+						<c:forEach var='notice' items='${notice}'>
+							<li>[${notice.b_date }] <a href="#">${notice.b_title }</a></li>
+						</c:forEach>
 						</ul>
 
 						<ul id="menu2" class="menucontent">

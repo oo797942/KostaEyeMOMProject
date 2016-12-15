@@ -109,6 +109,9 @@ public class TestController {
 		// 춤을춰요 배너
 		List<VideoVO> videoban = videoDao.videobanner();
 		m.addAttribute("videobanner", videoban);
+		
+		List<BoardVO> notice = boardDao.noticeList();
+		m.addAttribute("notice", notice);
 
 		return "home.go";
 	}
