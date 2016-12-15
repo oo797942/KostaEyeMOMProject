@@ -1,14 +1,16 @@
 /* Getting the new tags to behave */
 /* .Tarticle, .Tfigure,.Tsection {display:block} */
+/* .Tarticle {display:block} */
 /* Global properties ======================================================== */
 /* .Thtml {width:100%} */
 /* .Tbody {font-family:Arial, Helvetica, sans-serif;font-size:100%;color:#262626;min-width:980px;background:#fff} */
-.main {width:980px;padding:0;margin:0 auto;font-size:0.8125em;line-height:1.6153em}
+.main {width:1200px;padding:0;margin:0 auto;font-size:100%;line-height:1.6153em}
 .Ta {color:#ff9601; outline:none}
 .Ta:hover {text-decoration:none}
 .wrapper {width:100%; overflow:hidden; position:relative}
 /*********************************margin 크기**********************************/
 .Tp {margin-bottom:18px}
+.Tp1 {margin-bottom:18px; height: 44px;}
 .p0 {margin-bottom:0px} 
 .p1 {margin-bottom:8px}
 .p2 {margin-bottom:15px}
@@ -30,12 +32,12 @@
 .color-1 {color:#fff}
 .color-2 {color:#000}
 .color-3 {color:#262626}
-.color-4 {color:#ff9601}
+.color-4 {color:#ff9601; font-size: 140%; height: 22px;}
 
 
 /********************************* 사진 액자 css**********************************/
 .frame {padding:10px;background:#fff;box-shadow: 3px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 3px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 3px 5px 8px rgba(0,0,0,0.70)}
-.frame2 {padding:9px;background:#fff;border:1px solid #e5e5e5}
+.frame2 {padding:6px;background:#fff;border:1px solid #e5e5e5}
 
 /*********************************boxes**********************************/
 .indent-right {padding-right:30px}
@@ -54,15 +56,15 @@
 .gallery {padding:20px 0 26px 20px;background:#fff;box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 0px 5px 8px rgba(0,0,0,0.70)}
 .padding {padding:30px 0px 38px}
 /* -- gallery  begin --*/
- div.content {width: auto; height: auto;margin:  0;padding: 0px;float: left;overflow: hidden}
- div.content .Timg {position: relative;z-index: 2}
+ div.content {width: 100%; height: auto;margin:  0 auto ; margin-top : 50px; margin-bottom : 100px; padding: 0px;overflow: hidden}
+ div.content .Timg {; width : 256; height : 191;	z-index: 2}
  div.content .Ta {text-decoration: none;display:block;position:relative;cursor:pointer}
- div.content .Ta .Timg {position:relative;	z-index:1}
+ div.content .Ta .Timg {position:relative; z-index:1}
  div.content .Ta .Tspan {display:block;	width:140px;	height:121px;	background:#000;	position:absolute;	left:0;	top:0;	z-index:2}
  div.content .Ta:focus, div.content .Ta:hover, div.content .Ta:active {text-decoration: underline}
 /* -- gallery end --*/
-.Th3 {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:36px;line-height:1.2em;margin:0 0 22px 0;color:#262626;font-weight:normal;letter-spacing:-2px}
-.box {width:100%;background:#fff;box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 0px 5px 8px rgba(0,0,0,0.70)}
-.button {display:inline-block;padding:10px 20px 11px;color:#fff;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:18px;line-height:1.22em;background:url(../images/button-tail.gif) 0 0 repeat-x #000;text-transform:uppercase;letter-spacing:-1px}	
+.Th3 {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:36px;line-height:1.2em;margin:30px 0 22px 0;color:#262626;font-weight:normal;letter-spacing:-2px}
+.box {width:100%;background:#fff; border : 1px solid #000; box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 0px 5px 8px rgba(0,0,0,0.70)}
+.button {display:inline-block;padding:4px 9px 4px;color:#fff;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:18px;line-height:1.22em;background:url(../images/button-tail.gif) 0 0 repeat-x #ffa07a;text-transform:uppercase;letter-spacing:-1px}	
 .button:hover {background:#ff9601}
 .price {display:inline-block;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:35px;line-height:1.2em;letter-spacing:-2px}
