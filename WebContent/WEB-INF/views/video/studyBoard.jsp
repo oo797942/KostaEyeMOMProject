@@ -70,7 +70,7 @@ a:hover {
 							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
 								href="/file/textimg.jpg"
 								onclick="window.open('studyBoardView.go?v_no=${vo.v_no}', '${vo.v_title}',
-                   				 'width=1180,height=700'); return false;">
+                   				 'width=1050,height=770'); return false;">
 									<div class="recent-item box">
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.v_photo}" alt="img" height="150" />

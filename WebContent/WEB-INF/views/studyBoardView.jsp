@@ -7,6 +7,14 @@
 <meta charset="utf-8">
 <title>무제 문서</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+
+<!-- 부가적인 테마 -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
 <script type="text/javascript">
 $(function(){
 	$("#recom").click(function(){
@@ -28,39 +36,73 @@ $(function(){
 	});
 });
 </script>
+<style type="text/css">
+.game_play_wrap .head1 {
+    position: relative;
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 30px;
+    background: #ffa07a;
+    color: #fff;
+    vertical-align: middle;
+}
+.game_play_wrap h1 {
+    font-size: 16px;
+    font-weight: bold;
+     margin: 0;
+    padding: 0;
+}
+.game_play_wrap h1 span {
+    margin-left: 50px;
+    font-size: 12px;
+    color: #fff;
+}
+.play_mnu {
+    position: absolute;
+    top: 13px;
+    right: 25px;
+    text-indent: -9999px;
+     margin: 0;
+    padding: 0;
+}
+</style>
+
 </head>
-<body bgcolor="gray">
-	<input type="hidden" id="v_no" name = "v_no" value="${vlist.v_no}">
+<body>
+<div style="width: 1010px; margin: 10px 10px 10px 10px;">
+		<div class="game_play_wrap">
+			<div class="head1">
+				<h1>${ vlist.v_title}<span>조회수: ${vlist.v_count }</span>
+				<span id ="reccount">추천수: ${vlist.v_good }</span></h1>
+			</div>
+
+			</div>
+<input type="hidden" id="g_no" name = "v_no" value="${vlist.v_no}">
 	<table width="1000" border="0">
+<!-- 		<tr> -->
+<%-- 			<td width="639" style="text-align:center;  " >${ vlist.g_title}</td> --%>
+<%-- 			<td width="157" style="text-align:center;   ">${vlist.g_count }</td> --%>
+<%-- 			<td width="200" style="text-align:center;  ">${vlist.g_good }</td> --%>
+<!-- 		</tr> -->
+		
 	  <tbody> 
 	    <tr>
-	      <td>
-	    <iframe src="/EyeMOM/resources/video/${vlist.v_video}" width="800" height="600px" border="1"></iframe>  	
-	      </td>
-	      <td>
-	      <table width="200" border="0" height="600px">
-	  <tbody>
-	  	    <tr>
-	      <td height="5%"  style="vertical-align:top; text-align:center">
-		<h3>가사</h3>
-		</td>
+	      <td colspan="2" align="left" valign="top">
+	    <iframe src="/EyeMOM/resources/video/${vlist.v_video}" width="1000px" height="562px" border="0"></iframe>  	
+		  </td>
         </tr>
-	    <tr>
-	      <td height="85%"   style="vertical-align:top; background-color:#FFFFFF; padding:10px; border:1px solid #ACB4F2	;">
-		${vlist.v_content}
-		</td>
-        </tr>
-	    <tr>
-	      <td height="10%" style="text-align:center">
-	     	<img alt="추천하기" src="/EyeMOM/resources/img/recommended.png" id="recom" width="160px" height="58"/>
-	      </td>
-        </tr>
+        <tr>
+        <td width="849" height="100" align="left" valign="top" style="vertical-align:top; border:6px #ffa07a double; ">
+			<h4 style="margin: 0 0 0 0;">가사</h4>
+			<span style="margin-top: 3px">${vlist.v_content }</span>
+			</td>
+			<th width="147" height="100" align="center" valign="middle" style="  padding:3px; border:2px #ffa07a solid; "><img alt="추천하기" src="/EyeMOM/resources/img/recommended.png" id="recom" width="157px" height="" />
+			</th>
+			
+	    </tr>
       </tbody>
 </table>
-	      </td>
-        </tr>
-      </tbody>
-</table>
+</div>
 	
 	
 </body>
