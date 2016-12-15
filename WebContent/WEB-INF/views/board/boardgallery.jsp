@@ -47,7 +47,17 @@
 								<c:if test="${vo.b_scate=='r_4'}">
 									<c:set var="cate" value = "[완료기]" />
 								</c:if>
-								
+						<c:choose>
+						<c:when test="${empty sessionScope.user}">
+							<a href="#test-popup" class="open-popup-link">
+							
+							
+						</c:when>	
+						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+							<a href="boardview.do?b_no=${vo.b_no}">
+						
+						</c:otherwise>	
+						</c:choose>
 								
 								<c:choose>
 								<c:when test="${ i mod 3 ==1}">
@@ -70,6 +80,7 @@
 								
 								<c:when test="${i mod 3 ==0}">
 								<article class="Tarticle grid_4 omega">
+								
 								<div class="indent-right">
 								<figure class="frame2 p2">
 											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="" class='Timg'/>
@@ -83,6 +94,7 @@
 										<label>${vo.b_nick}</label>
 										</p>
 									</div>
+									
 								</article>
 								</c:when>
 								
@@ -101,10 +113,12 @@
 										<label>${vo.b_nick}</label>
 										</p>
 									</div>
+								
 								</article>
 								</c:when>
 								
 								</c:choose>
+								</a>
 								<c:remove var="cate"/>
 							</c:forEach>
 								
