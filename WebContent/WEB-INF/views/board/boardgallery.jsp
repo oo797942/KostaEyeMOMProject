@@ -4,116 +4,234 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/styleFlash.css" media="screen" data-name="skins">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-a:link {	
-	color: black;
-	text-decoration: none;
-}
+<link rel="stylesheet" href="resources/css/reset.css" >
+<link rel="stylesheet" href="resources/css/ie.css" >
+<link rel="stylesheet" href="resources/css/grid.css" >
 
-a:visited {
-	color: black;
-	text-decoration: none;
-}
 
-a:hover {
-	color: blue;
-	text-decoration: underline;
-}
+<!-- <script type="text/javascript" src="resources/js/jquery-3.1.1.js"></script> -->
+<!-- <script type="text/javascript"> -->
 
-#searchArea {
-	text-align: center;
-}
-
-#itemName {
-	background-color: white;
-}
-.title{
-    font-size: 17pt;
-    font-weight: bolder;
-}
-</style>
-<script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
-<script type="text/javascript">
-	$(function() {
-	});
-</script>
+<!-- </script> -->
 </head>
-<body>
+<body class='Tbody' id="page4">
 	<div class="body">
-	<h2 class="title">${title}</h2>
 		<section class="content portfolio small-images">
-			<div class="container">
-				<div class="row">
-					<div class="isotope col-lg-12">
-						<ul id="list">
-						
-<!-- 						모델 넣은 값을 가져와서 JSTL을 사용해서 돌림 -->
-									<c:forEach var='vo' items="${list}">
-									<c:choose>
-    				<c:when test="${empty sessionScope.user}">
-    				<!-- 글쓰기 버튼 -->
-							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding"><a
-								 href="#test-popup" class="open-popup-link"
-								>
-									<div class="recent-item box">
-										<figure class="touching ">
-											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="img" height="150" />
+			<div class="main">
+		<div class="box">
+			<div class="padding">
+				<div class="container_12">
+					<div class="wrapper">
+						<div class="grid_12">
+							<div class="indent-left p2">
+								<h3 class="Th3 p0">육아 갤러리임</h3>
+							</div>
+							<div class="wrapper p4">
+								<article class="Tarticle grid_4 alpha">
+									<div class="indent-left">
+										<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
 										</figure>
-										<br/>
-										<div id="itemName" class="item" align="center">${vo.b_title} [${vo.b_recount}]</div>
+										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
+											unde omnis iste natus error sit voluptatem accusantium.</p>
+										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
+											quae ab illo inventore veritatis et quasi architecto beatae
+											vitae dicta.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$45.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
 									</div>
-							</a></li>
-
-					</c:when>
-					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-
-							<li class="list_item col-lg-3 col-md-4 col-sm-6 branding">
-							<a	href="boardview.do?b_no=${vo.b_no}">
-									<div class="recent-item box">
-										<figure class="touching ">
-											<img src="/EyeMOM/resources/img/${vo.b_photo1name}" alt="img" height="150" />
+								</article>
+								<article class="Tarticle grid_4">
+									<div class="indent3">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
 										</figure>
-										<br/>
-										<div id="itemName" class="item" align="center">${vo.b_title} [${vo.b_recount}]</div>
+										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit.</p>
+										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt eque porro quisquam est, qui
+											dolorem ipsum.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$54.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
 									</div>
-							</a></li>
-
-					</c:otherwise>	
-					</c:choose>
-					
-								</c:forEach>
-
- 
-
-						</ul>
-						<!--end portfolio_list -->
-					
-					</div>
-					<!--end isotope -->
-					
-					
-<!-- 					페이징번호  -->
-					<div class="col-sm-12 text-center">
-						<ul class="pagination">
-							<li><a href="#">&laquo;</a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
-						</ul>
+								</article>
+								<article class="Tarticle grid_4 omega">
+									<div class="indent-right">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
+											est, qui dolorem ipsum quia dolor sit consectetur.</p>
+										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
+											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$38.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="wrapper p4">
+								<article class="Tarticle grid_4 alpha">
+									<div class="indent-left">
+										<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
+											unde omnis iste natus error sit voluptatem accusantium.</p>
+										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
+											quae ab illo inventore veritatis et quasi architecto beatae
+											vitae dicta.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$45.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4">
+									<div class="indent3">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit.</p>
+										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt eque porro quisquam est, qui
+											dolorem ipsum.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$54.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4 omega">
+									<div class="indent-right">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
+											est, qui dolorem ipsum quia dolor sit consectetur.</p>
+										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
+											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$38.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="wrapper p4">
+								<article class="Tarticle grid_4 alpha">
+									<div class="indent-left">
+										<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
+											unde omnis iste natus error sit voluptatem accusantium.</p>
+										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
+											quae ab illo inventore veritatis et quasi architecto beatae
+											vitae dicta.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$45.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4">
+									<div class="indent3">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit.</p>
+										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt eque porro quisquam est, qui
+											dolorem ipsum.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$54.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4 omega">
+									<div class="indent-right">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
+											est, qui dolorem ipsum quia dolor sit consectetur.</p>
+										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
+											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$38.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="wrapper p4">
+								<article class="Tarticle grid_4 alpha">
+									<div class="indent-left">
+										<figure class="frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Sed ut perspiciatis
+											unde omnis iste natus error sit voluptatem accusantium.</p>
+										<p class='Tp'>Doloremque laudantium, totam rem aperiam, eaque ipsa
+											quae ab illo inventore veritatis et quasi architecto beatae
+											vitae dicta.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$45.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4">
+									<div class="indent3">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit.</p>
+										<p class='Tp'>Sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt eque porro quisquam est, qui
+											dolorem ipsum.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$54.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+								<article class="Tarticle grid_4 omega">
+									<div class="indent-right">
+										<figure class="Tfigure frame2 p2">
+											<img src="/EyeMOM/resources/img/20161208172229badminton.jpg" alt="" class='Timg'/>
+										</figure>
+										<p class="Tp color-4 prev-indent-bot">Feque porro quisquam
+											est, qui dolorem ipsum quia dolor sit consectetur.</p>
+										<p class='Tp'>Adipisci velit, sed quia non numquam eius modi tempora
+											incidu labore et dolore magnam aliquam quaerat voluptatem.</p>
+										<div class="wrapper">
+											<span class="Tspan price fleft">$38.99</span> 
+											<a class="Ta button fright" href="#">Read More</a>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
 					</div>
 				</div>
-				<!--./row-->
 			</div>
-			<!--./div-->
+		</div>
+	</div>
 		</section>
 		<!--end wrapper-->
 		</div>
-		
+	
 </body>
 </html>

@@ -116,7 +116,7 @@
 								</c:forEach>
 							</table>
 							<p class='infomorep'> 
-							<a href="#" class='infomore'>+ 전체보기</a>
+							<a href="myqnalist.do" class='infomore'>+ 전체보기</a>
 							</p>
 						</div>
 					</div>

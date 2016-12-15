@@ -80,5 +80,17 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
+
+	@Override
+	public List getQnaList(MemberVO vo) {
+		List list=null;
+		try {
+			list=MypageManager.getQnaList(vo);
+		} catch (SQLException e) {
+			// TODO Auto-genderated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }
