@@ -59,4 +59,12 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
+	
+	public static List getQnaList(MemberVO memberVO) throws SQLException{
+		List list =null;
+		SqlSession session = CommonManager.db().openSession();
+		list = session.selectList("mypage.getMyQnaList", memberVO);
+		session.close();
+		return list;
+	}
 }

@@ -66,4 +66,13 @@ public class MypageController {
 		m.addAttribute("list", list);
 		return "board/replyboard";
 	}
+	
+	@RequestMapping("myqnalist.do")
+	public String qnaBoard(HttpSession session, Model m){
+		MemberVO memberVO=(MemberVO)session.getAttribute("user");
+		List <BoardVO> list = mypageDao.getQnaList(memberVO);
+		System.out.println("list : "+list.size());
+		m.addAttribute("list", list);
+		return "board/boardQna";
+	}
 }

@@ -56,8 +56,8 @@ WHERE rownum <=4
 
 <!-- my qna list -->
 <select id="getMyQnaList" parameterType="memberVO" resultType="qnaVO">
-select b_no,   DECODE(SIGN(LENGTH(in_title)-6),1,SUBSTR(in_title,1,6)||'...',in_title)  as in_title, to_char(in_date,'YYYY-MM-DD') as in_date
-from qna_board where u_id=#{u_id}
+select b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_date ,NVL(in_good,0) in_good
+from qna_board where u_id=#{u_id} ORDER BY b_no desc
 </select>
 
 </mapper>
