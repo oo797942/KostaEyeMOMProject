@@ -196,5 +196,27 @@ public class BoardDaoImpl implements BoardDao {
 		return result;
 	}
 
+	public int boardListCount(BoardVO boardVO) {
 
+		int totalCount = 0;
+		try {
+			totalCount = BoardManager.totalCount();
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+
+	@Override
+	public List<BoardVO> allPagingBoard(BoardVO vo) {
+		List<BoardVO> list = null;
+		try {
+			System.out.println("DAO 체크" + vo.getB_no());
+
+			list = BoardManager.allpagingBoard(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAO페징 : " + ex.getMessage());
+		}
+		return list;
+	}
 }

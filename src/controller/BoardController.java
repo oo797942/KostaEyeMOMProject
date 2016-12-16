@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,25 +29,7 @@ public class BoardController {
 	@Autowired
 	private BoardDaoImpl boardDao;
 	
-	//보드리스트 이동
-	@RequestMapping("/tip.do")
-	public String callBoard(Model m,@RequestParam("title") String title){
-		List<BoardVO> list=null;
-		
-		list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
-		System.out.println(list.size());
-		for(int i=0; i<list.size();i++){
-		
-		BoardVO boardVO=list.get(i);
-		List <ReplyVO> listVO = boardDao.callReply(boardVO);
-		
-		list.get(i).setB_recount(listVO.size());
-		}
-		
-		m.addAttribute("list", list); //가져온 DB를 모델에 저장
-		m.addAttribute("title", title ); // 게시판 종류 모델에 저장
-		return "board/board";
-	}
+
 	
 	@RequestMapping("gal.do")
 	public String callGallery(Model m,@RequestParam("title") String title){
@@ -399,6 +382,67 @@ public class BoardController {
 			}
 			
 			
+			@RequestMapping(value = "/tip.do", method = {RequestMethod.GET, RequestMethod.POST})
+			public String page(Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
+//			    logger.info(">>>> page home start!!");
+//			    //검색조건, 검색어
+//			    logger.info("SearchFiled : " + empVO.getSearchFiled());
+//			    logger.info("SearchValue : " + empVO.getSearchValue());
+			  
+			    //--페이징 처리
+			    int totalCount = boardDao.boardListCount(boardVO); //게시물 총갯수를 구한다
+			    boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+			    model.addAttribute("pageVO", boardVO);
+//			    logger.info("PageSize // 한 페이지에 보여줄 게시글 수 : " + empVO.getPageSize());
+//			    logger.info("PageNo // 페이지 번호 : " + empVO.getPageNo());
+//			    logger.info("StartRowNo //조회 시작 row 번호 : " + empVO.getStartRowNo());
+//			    logger.info("EndRowNo //조회 마지막 now 번호 : " + empVO.getEndRowNo());
+//			    logger.info("FirstPageNo // 첫 번째 페이지 번호 : " + empVO.getFirstPageNo());
+//			    logger.info("FinalPageNo // 마지막 페이지 번호 : " + empVO.getFinalPageNo());
+//			    logger.info("PrevPageNo // 이전 페이지 번호 : " + empVO.getPrevPageNo());
+//			    logger.info("NextPageNo // 다음 페이지 번호 : " + empVO.getNextPageNo());
+//			    logger.info("StartPageNo // 시작 페이지 (페이징 네비 기준) : " + empVO.getStartPageNo());
+//			    logger.info("EndPageNo // 끝 페이지 (페이징 네비 기준) : " + empVO.getEndPageNo());
+//			    logger.info("totalCount // 게시 글 전체 수 : " + totalCount);
+			    //--페이징 처리
+			  
+			    List<BoardVO>  boardList = boardDao.allPagingBoard(boardVO);
+
+				for(int i=0; i<boardList.size();i++){
+					
+				BoardVO boardVO1=boardList.get(i);
+				List <ReplyVO> listVO = boardDao.callReply(boardVO1);
+				
+				boardList.get(i).setB_recount(listVO.size());
+				}
+				
+				model.addAttribute("list", boardList); //가져온 DB를 모델에 저장
+				model.addAttribute("title", title ); // 게시판 종류 모델에 저장
+
+//			    model.addAttribute("resultList", boardList);
+			  
+			    return  "board/board";
+			}
+			
+//			//보드리스트 이동
+//			@RequestMapping("/tip.do")
+//			public String callBoard(Model m,@RequestParam("title") String title){
+//				List<BoardVO> list=null;
+//				
+//				list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
+//				System.out.println(list.size());
+//				for(int i=0; i<list.size();i++){
+//				
+//				BoardVO boardVO=list.get(i);
+//				List <ReplyVO> listVO = boardDao.callReply(boardVO);
+//				
+//				list.get(i).setB_recount(listVO.size());
+//				}
+//				
+//				m.addAttribute("list", list); //가져온 DB를 모델에 저장
+//				m.addAttribute("title", title ); // 게시판 종류 모델에 저장
+//				return "board/board";
+//			}
 	
 }
  

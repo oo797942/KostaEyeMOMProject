@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class BoardVO {
+public class BoardVO extends PageVO {
 	private int b_no;
 	private String b_cate;
 	private String b_title;
