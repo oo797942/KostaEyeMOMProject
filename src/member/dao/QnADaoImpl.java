@@ -2,6 +2,7 @@ package member.dao;
 
 import java.util.List;
 
+import member.vo.FaqVO;
 import member.vo.QnAVO;
 import mybatis.manager.QnAManager;
 
@@ -34,6 +35,19 @@ public class QnADaoImpl implements QnADao {
 		}
 		
 		return list;
+	}
+
+	@Override
+	public int writeFaq(FaqVO vo) {
+		int result=0;
+		try{ 
+			result = QnAManager.writeFaq(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("QnADaoImpl / 리스트가져오기 실패 : " + ex.getMessage());
+		}
+		
+		return result;
 	}
 	
 }

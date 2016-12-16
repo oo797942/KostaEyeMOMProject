@@ -132,6 +132,9 @@ public class BoardController {
 					boardVO.setB_cate("donation");
 					boardVO.setB_scate("나눔");
 				}
+				System.out.println(boardVO.getB_content());
+		boardVO.setB_content(boardVO.getB_content().replaceAll("\r\n","<br>"));
+		System.out.println("변환 : "+boardVO.getB_content());
 		boardVO.setU_id(memberVO.getU_id());		// 아이디값 보드vo에 넣어주기
 		boardVO.setB_ip(ip); 						//ip
 		boardVO.setB_nick(memberVO.getU_nick());	//nickname

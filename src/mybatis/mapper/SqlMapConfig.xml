@@ -18,6 +18,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.vo.StudyVO" alias="studyVO" />
 		<typeAlias type="member.vo.VideoVO" alias="videoVO" />
 		<typeAlias type="member.vo.CountVO" alias="countVO" />
+		<typeAlias type="member.vo.FaqVO" alias="faqVO" />
 	</typeAliases>
 		 
 	<environments default="development">

@@ -21,7 +21,37 @@
 			midClick : true
 		// allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
 		});
-
+		
+		
+		//버튼 클릭시
+		$('#btnfqa').click(function(){
+			var title=$('#q_title').val()
+			var content=$('#q_content').val()
+			if(content==null||title==null){
+				alert("제목과 내용을 입력하세요");
+			}else{
+				
+				$.ajax({
+			        url: "passfaq.do",
+			        type: 'POST',
+			        data : { "q_title" : $("#q_title").val(),
+			        	"q_content" : $("#q_content").val()	},
+			       	success: function(result){
+			       	  
+			       		if(result=="1"){
+			       			location.reload();
+			       			
+			        	 }else{ alert("1:1문의글 등록에 실패 하였습니다");} 
+			        		
+			           },
+				       error:function(err){
+				    	   alert(err);
+				       }
+			     });
+			
+			}
+			
+		});
 	})
 </script>
 <style type="text/css">
@@ -35,7 +65,7 @@
 
 
 		<!-- 팝업으로 쓰일 div -->
-		<form action="passfaq.do" method="post">
+
 			<div id="qnapopup" class="white-popup1 mfp-hide">
 				<!-- 1:1 상담문의 제목 --> 
 				<div class='answerdiv'>
@@ -46,21 +76,20 @@
 						<table class='infotable1'>
 							<tr height="70px;">
 								<td class='myfont1' class='answertr'>제목</td>
-								<td class='answertd'><input type='text' class='form-control2 pagealign1 answerinput'  value='' id='q_title' placeholder="제목"/></td>
+								<td class='answertd'><input type='text' class='form-control2 pagealign1 answerinput'  value='' name='q_title' id='q_title' placeholder="제목"/></td>
 							</tr>
 							<tr>
 								<td class='myfont1' style="width: 10%;">내용</td>
-								<td><textarea class='form-control3 answertxt' id='q_content'></textarea></td>
+								<td><textarea class='form-control3 answertxt' name='q_content' id='q_content'></textarea></td>
 							</tr>
 						</table>
 					</div>
 					<!-- 전송버튼 / 취소 버튼 -->
 					<div class="answeralign">
-						<input type="submit" value='전송하기' class='sbmbtn sbmbtn-primary'>
+						<input type="button" value='전송하기' id='btnfqa' class='sbmbtn sbmbtn-primary'>
 						<input type="button" value='다시쓰기' class='rebtn '>
 					</div>
 				</div>
 			</div>
-		</form>
 	</div>
 </html>

@@ -20,4 +20,9 @@ where rownum<4
 SELECT b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_date ,NVL(in_good,0) in_good, in_photo1name ,in_photo2name, in_photo3name
 	FROM qna_board  order by b_no desc
 </select>
+
+<!-- 1:1문의 -->
+<insert id="writeFaq" parameterType="faqVO">
+INSERT INTO faq_admin (q_no, q_date, q_title, q_content, u_id)VALUES (mom_qna_no.nextval, sysdate, #{q_title}, #{q_content}, #{u_id})
+</insert>
 </mapper>
