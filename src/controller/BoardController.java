@@ -118,14 +118,17 @@ public class BoardController {
 		// 가져온 cate값 DB형식에 맞게 변경
 				if(cate.equals("육아꿀팁")){
 					boardVO.setB_cate("tip");
+					cate="tip.do?title=tip";
 				}else if(cate.equals("묻고 말하기")){
 					boardVO.setB_cate("qna_board");
 				}else if(cate.equals("아이가 아파요")){
 					boardVO.setB_cate("kid_sick");
 				}else if(cate.equals("아이의 식단")){
 					boardVO.setB_cate("rice");
+					cate="gal.do?title=rice";
 				}else if(cate.equals("아이자랑")){
 					boardVO.setB_cate("baby");
+					cate="gal.do?title=baby";
 				}
 		
 		boardVO.setU_id(memberVO.getU_id());		// 아이디값 보드vo에 넣어주기
@@ -134,7 +137,7 @@ public class BoardController {
 		
 		int result=boardDao.writeBoard(boardVO);	//작성 데이터 db로
 		if(result!=0){
-			pass="redirect:"+boardVO.getB_cate();	//DB에 들어갔다면 페이지 이동
+			pass="redirect:"+cate;	//DB에 들어갔다면 페이지 이동
 		}
 			return pass;
 		
