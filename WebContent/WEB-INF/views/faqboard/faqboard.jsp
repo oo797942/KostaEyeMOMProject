@@ -3,118 +3,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Inline popup</title>
 <link rel="stylesheet" href="resources/css/faqboard.css">
-<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+<link rel='stylesheet prefetch'
+	href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
 <script type="text/javascript">
-	/**
-	 *  1. 첫 화면에서
-	 */
+	$(function() {
 
-	// 	$(function() {
-	// 		$('.qnadl').each(function() {
-	// 			var dl = $(this); // dl 태그 
-	// 			var allDt = dl.find('.qnadt');
-	// 			var allDd = dl.find('.qnadd');
-	// 			allDd.hide(); // dd 숨기기
-	// 			allDt.css('cursor', 'pointer'); // 마우스 클릭 포인터 생성
-	// 			allDd.first().show();
-	// 			allDt.click(function() {
-	// 				var dt = $(this);
-	// 				var dd = dt.next(); // 형제니까 next();로 찾아줌 
-	// 				dd.toggle(350); // toggle로 dd를 누르면 뜨고 다시 누르면 사라지게 해줌
-	// 			});
-	// 		});
-	// 	});
-	// $(function(){
-	// 	// 모든 패널이 펼쳐져있는 상태이기 때문에 dd의 첫번재를 제외한곳은 안보이게 설정합니다.
-	// 	$(".qnadd:not(:first)").css("display","none");
-	// 	//dl 의 dt 를 클릭했을때
-	// 	$(".qnadl .qnadt").click(function(){
-	// 		// 만약 클릭한 태그 다음에 있는 dd 태그의 속성이 none 이면
-	// 		if($("+.qnadd",this).css("display")=="none"){
-	// 			// dd 태그에 대해서 슬라이드업을 합니다. 즉 패널이 닫히는겁니다.
-	// 			$(".qnadd").slideUp("slow");
-	// 			// 이어서 이접한 dd 에 슬라이드 다운을 합니다.
-	// 			$("+.qnadd",this).slideDown("slow");
-	// 		}
-	// 	});
-	// });
+		//      팝업 띄우기 위한 쿼리
+		$('#popupLink').magnificPopup({
+			type : 'inline',
+			midClick : true
+		// allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+		});
+
+	})
 </script>
+<style type="text/css">
+</style>
 </head>
-<body>
 
+<body>
 	<div class='body'>
-		<!-- 1:1 문의하기 버튼 영역 -->
-		<!-- 		<div class='qnabtn'></div> -->
-		<!-- 자주묻는 질문 페이지 배경화면 -->
-		<div id="accordion">
-			<ul class='acoul'>
-				<li><a href="#one" class='acoa'>자주묻는 질문1</a>
-					<div id="one" class="accordion" style="margin: 20px 20px;">
-						<table>
+		<!-- 팝업으로 쓰일 div의 아이디를 링크&& 아이디 지정 -->
+		<a href="#qnapopup" id="popupLink">A링크 팝업 띄우기</a>
+
+
+		<!-- 팝업으로 쓰일 div -->
+		<form action="passfaq.do" method="post">
+			<div id="qnapopup" class="white-popup1 mfp-hide">
+				<!-- 1:1 상담문의 제목 -->
+				<div class='answerdiv'>
+					<h1 class='answerh1'>1:1 상담문의</h1>
+					<hr class='answerhr' />
+				<!-- 입력창 div -->
+					<div class='answerinputdiv'>
+						<table class='infotable1'>
+							<tr height="70px;">
+								<td class='myfont1' class='answertr'>제목</td>
+								<td class='answertd'><input type='text' class='form-control2 pagealign1 answerinput'  value='' id='q_title' placeholder="제목"/></td>
+							</tr>
 							<tr>
-								<td style="">A</td>
-								<td style="padding: 20px 20px;">교환은 배송완료 후 7일 이내 가능하며, 마이쿠팡과 고객센터를 통하여 가능하십니다. 마이쿠팡을 통해
-									교환을 신청하는 경우, 구매해주신 상품과 동일 상품에 대해서만 가능한 점 양해바랍니다. 동일상품에 대해서는
-									마이쿠팡 > 주문문록 > 교환신청을 통하여 직접 신청 가능하시며 다른 상품으로 교환이 필요한 경우 고객센터(☎
-									1577-7011) 또는 [고객센터 > 1:1 문의]로 교환 사유를 접수해 주시면 상품회수에서 교환 상품 배송까지
-									신속하게 처리하여 드립니다. ■ 교환가능 기간 ① 구매자 단순변심 : 물품 수령 후 7일 이내 ② 표시, 광고
-									상이, 물품하자(초기불량) : 물품을 수령한 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터
-									30일 이내 ※ 교환접수 시, 택배 기사에게 해당 내용이 자동 전달되어 1~2일 내 상품이 회수되며, 교환접수에서
-									교환상품의 배송까지 최대 7일이 소요됩니다. ※ 상품문제로 인한 교환이 아닌 경우 교환비용이 부과되며, 이는
-									고객님께서 부담하셔야 합니다. ※ 교환상품 포장 시, 교환사유와 교환 희망 상품(색상, 사이즈 등)을 기재한
-									메모를 함께 동봉하여 주시기 바랍니다.</td>
+								<td class='myfont1' style="width: 10%;">내용</td>
+								<td><textarea class='form-control3 answertxt' id='q_content'></textarea></td>
 							</tr>
 						</table>
-					</div></li>
-				<li><a href="#two" class='acoa'>자주묻는 질문2</a>
-					<div id="two" class="accordion">교환은 배송완료 후 7일 이내 가능하며, 마이쿠팡과
-						고객센터를 통하여 가능하십니다. 마이쿠팡을 통해 교환을 신청하는 경우, 구매해주신 상품과 동일 상품에 대해서만 가능한
-						점 양해바랍니다. 동일상품에 대해서는 마이쿠팡 > 주문문록 > 교환신청을 통하여 직접 신청 가능하시며 다른 상품으로
-						교환이 필요한 경우 고객센터(☎ 1577-7011) 또는 [고객센터 > 1:1 문의]로 교환 사유를 접수해 주시면
-						상품회수에서 교환 상품 배송까지 신속하게 처리하여 드립니다. ■ 교환가능 기간 ① 구매자 단순변심 : 물품 수령 후
-						7일 이내 ② 표시, 광고 상이, 물품하자(초기불량) : 물품을 수령한 날부터 3개월 이내, 그 사실을 안 날 또는 알
-						수 있었던 날부터 30일 이내 ※ 교환접수 시, 택배 기사에게 해당 내용이 자동 전달되어 1~2일 내 상품이 회수되며,
-						교환접수에서 교환상품의 배송까지 최대 7일이 소요됩니다. ※ 상품문제로 인한 교환이 아닌 경우 교환비용이 부과되며,
-						이는 고객님께서 부담하셔야 합니다. ※ 교환상품 포장 시, 교환사유와 교환 희망 상품(색상, 사이즈 등)을 기재한
-						메모를 함께 동봉하여 주시기 바랍니다.</div></li>
-				<li><a href="#three" class='acoa'>자주묻는 질문3</a>
-					<div id="three" class="accordion">교환은 배송완료 후 7일 이내 가능하며,
-						마이쿠팡과 고객센터를 통하여 가능하십니다. 마이쿠팡을 통해 교환을 신청하는 경우, 구매해주신 상품과 동일 상품에
-						대해서만 가능한 점 양해바랍니다. 동일상품에 대해서는 마이쿠팡 > 주문문록 > 교환신청을 통하여 직접 신청 가능하시며
-						다른 상품으로 교환이 필요한 경우 고객센터(☎ 1577-7011) 또는 [고객센터 > 1:1 문의]로 교환 사유를
-						접수해 주시면 상품회수에서 교환 상품 배송까지 신속하게 처리하여 드립니다. ■ 교환가능 기간 ① 구매자 단순변심 :
-						물품 수령 후 7일 이내 ② 표시, 광고 상이, 물품하자(초기불량) : 물품을 수령한 날부터 3개월 이내, 그 사실을
-						안 날 또는 알 수 있었던 날부터 30일 이내 ※ 교환접수 시, 택배 기사에게 해당 내용이 자동 전달되어 1~2일 내
-						상품이 회수되며, 교환접수에서 교환상품의 배송까지 최대 7일이 소요됩니다. ※ 상품문제로 인한 교환이 아닌 경우
-						교환비용이 부과되며, 이는 고객님께서 부담하셔야 합니다. ※ 교환상품 포장 시, 교환사유와 교환 희망 상품(색상,
-						사이즈 등)을 기재한 메모를 함께 동봉하여 주시기 바랍니다.</div></li>
-				<li><a href="#four" class='acoa'>자주묻는 질문3</a>
-					<div id="four" class="accordion">교환은 배송완료 후 7일 이내 가능하며, 마이쿠팡과
-						고객센터를 통하여 가능하십니다. 마이쿠팡을 통해 교환을 신청하는 경우, 구매해주신 상품과 동일 상품에 대해서만 가능한
-						점 양해바랍니다. 동일상품에 대해서는 마이쿠팡 > 주문문록 > 교환신청을 통하여 직접 신청 가능하시며 다른 상품으로
-						교환이 필요한 경우 고객센터(☎ 1577-7011) 또는 [고객센터 > 1:1 문의]로 교환 사유를 접수해 주시면
-						상품회수에서 교환 상품 배송까지 신속하게 처리하여 드립니다. ■ 교환가능 기간 ① 구매자 단순변심 : 물품 수령 후
-						7일 이내 ② 표시, 광고 상이, 물품하자(초기불량) : 물품을 수령한 날부터 3개월 이내, 그 사실을 안 날 또는 알
-						수 있었던 날부터 30일 이내 ※ 교환접수 시, 택배 기사에게 해당 내용이 자동 전달되어 1~2일 내 상품이 회수되며,
-						교환접수에서 교환상품의 배송까지 최대 7일이 소요됩니다. ※ 상품문제로 인한 교환이 아닌 경우 교환비용이 부과되며,
-						이는 고객님께서 부담하셔야 합니다. ※ 교환상품 포장 시, 교환사유와 교환 희망 상품(색상, 사이즈 등)을 기재한
-						메모를 함께 동봉하여 주시기 바랍니다.</div></li>
-				<li><a href="#five" class='acoa'>자주묻는 질문3</a>
-					<div id="five" class="accordion">교환은 배송완료 후 7일 이내 가능하며, 마이쿠팡과
-						고객센터를 통하여 가능하십니다. 마이쿠팡을 통해 교환을 신청하는 경우, 구매해주신 상품과 동일 상품에 대해서만 가능한
-						점 양해바랍니다. 동일상품에 대해서는 마이쿠팡 > 주문문록 > 교환신청을 통하여 직접 신청 가능하시며 다른 상품으로
-						교환이 필요한 경우 고객센터(☎ 1577-7011) 또는 [고객센터 > 1:1 문의]로 교환 사유를 접수해 주시면
-						상품회수에서 교환 상품 배송까지 신속하게 처리하여 드립니다. ■ 교환가능 기간 ① 구매자 단순변심 : 물품 수령 후
-						7일 이내 ② 표시, 광고 상이, 물품하자(초기불량) : 물품을 수령한 날부터 3개월 이내, 그 사실을 안 날 또는 알
-						수 있었던 날부터 30일 이내 ※ 교환접수 시, 택배 기사에게 해당 내용이 자동 전달되어 1~2일 내 상품이 회수되며,
-						교환접수에서 교환상품의 배송까지 최대 7일이 소요됩니다. ※ 상품문제로 인한 교환이 아닌 경우 교환비용이 부과되며,
-						이는 고객님께서 부담하셔야 합니다. ※ 교환상품 포장 시, 교환사유와 교환 희망 상품(색상, 사이즈 등)을 기재한
-						메모를 함께 동봉하여 주시기 바랍니다.</div></li>
-			</ul>
-		</div>
+					</div>
+					<!-- 전송버튼 / 취소 버튼 -->
+					<div class="answeralign">
+						<input type="submit" value='전송하기' class='sbmbtn sbmbtn-primary'>
+						<input type="button" value='다시쓰기' class='rebtn '>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
-</body>
 </html>
