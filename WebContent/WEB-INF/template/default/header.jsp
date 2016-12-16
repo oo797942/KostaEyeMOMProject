@@ -13,8 +13,9 @@
 	        data : { "u_id" : $("#u_id").val(),
 	        	"u_pass" : $("#u_pass").val()	},
 	       	success: function(result){
-	       	  
-	       		if(result=="0"){
+	       	 if(result=="3"){
+	       		location.href="adminMember.go";
+	       	 }else if(result=="0"){
 	       			location.reload();
 	       			
 	        	 }else{ alert("아이디와 비밀번호를 확인하세요");} 
