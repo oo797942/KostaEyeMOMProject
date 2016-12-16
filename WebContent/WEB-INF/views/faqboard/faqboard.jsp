@@ -37,7 +37,7 @@
 		<!-- 팝업으로 쓰일 div -->
 		<form action="passfaq.do" method="post">
 			<div id="qnapopup" class="white-popup1 mfp-hide">
-				<!-- 1:1 상담문의 제목 -->
+				<!-- 1:1 상담문의 제목 --> 
 				<div class='answerdiv'>
 					<h1 class='answerh1'>1:1 상담문의</h1>
 					<hr class='answerhr' />
