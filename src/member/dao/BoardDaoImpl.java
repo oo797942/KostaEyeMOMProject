@@ -184,6 +184,17 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
+	
+	@Override
+	public int donationFin(BoardVO vo) {
+		int result = 0;
+		try {
+			result = BoardManager.donationfin(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 나눔완료 변경 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 
 
 }

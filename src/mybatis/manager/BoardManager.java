@@ -33,7 +33,7 @@ public class BoardManager {
       SqlSession session = CommonManager.db().openSession();
 
       String cate = boardVO.getB_cate();
-      if (cate.equals("tip") || cate.equals("rice") || cate.equals("baby")) {
+      if (cate.equals("tip") || cate.equals("rice") || cate.equals("baby") || cate.equals("donation")) {
          result = session.insert("board.boardInsert", boardVO);
       } else if (cate.equals("qna_board")) {
 
@@ -101,7 +101,6 @@ public class BoardManager {
       result = session.update("board.updateBoard", boardVO);
       session.commit();
       return result;
-
    }
 
    // 추천인 중복 체크
@@ -176,6 +175,15 @@ public class BoardManager {
 
       session.commit();
       return list;
+   }
+   
+   // 게시물 수정
+   public static int donationfin(BoardVO boardVO) throws SQLException {
+      SqlSession session = CommonManager.db().openSession();
+      int result = 0;
+      result = session.update("board.donationfin", boardVO);
+      session.commit();
+      return result;
    }
 
 }

@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 게시판 내용 -->
 <select id="boardView" parameterType="boardVO" resultType="boardVO"> 
-	select u_id, b_no, b_cate, b_title, b_content, b_ip, NVL(b_good,0) as b_good, b_count, b_nick, TO_CHAR(b_date, 'YYYY.MM.DD HH24:MI:SS') as b_date, b_photo1name, b_photo2name, b_photo3name
+	select u_id, b_no, b_cate, b_title, b_content, b_ip, NVL(b_good,0) as b_good, b_count, b_nick, TO_CHAR(b_date, 'YYYY.MM.DD HH24:MI:SS') as b_date, b_photo1name, b_photo2name, b_photo3name, b_scate
 	from normal_board 
 	where b_no=#{b_no}
 </select>
@@ -103,6 +103,9 @@ DELETE FROM reply where re_no=#{re_no}
 	<if test="b_photo3name !=null">
 		, b_photo3name
 	</if>
+	<if test="b_scate != null">
+	, b_scate
+	</if>
 	)
 	VALUES(mom_board_no.nextval, #{b_cate}, #{b_title}, #{b_content}, sysdate, #{b_ip}, #{b_nick}, #{u_id}
 	<if test="b_photo1name !=null">
@@ -113,6 +116,9 @@ DELETE FROM reply where re_no=#{re_no}
 	</if>
 	<if test="b_photo3name !=null">
 		, #{b_photo3name}
+	</if>
+	<if test="b_scate != null">
+		, #{b_scate}
 	</if>
 	)
 </insert>
@@ -181,5 +187,11 @@ select * from normal_board where b_cate = 'notice' order by b_no desc)
 where rownum < 10
 ]]>
 </select>
+
+<!-- 나눔완료 수정 -->
+<update id="donationfin" parameterType="boardVO">
+update normal_board set b_scate = '나눔완료'
+where b_no=#{b_no} 
+</update>
 
 </mapper>

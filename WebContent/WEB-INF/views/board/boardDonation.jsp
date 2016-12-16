@@ -16,7 +16,7 @@
 // 		alert(num);
 		var lb = $("#lb").text();
 		alert(lb);
-		location.href = "boardInsert.do?keyword=${title}";
+		location.href = "boardInsert.do?keyword=donation";
 	}
 </script>
 
@@ -59,15 +59,15 @@
 						<!-- 글번호 -->
 						<td class='boardtd' id='num' >${vo.b_no }</td>
 						<!-- 제목 -->
-						<td class='boardtd'>
+						<td class='boardtd' id="titleleft">
 						<c:choose>
 						<c:when test="${empty sessionScope.user}">
 							<a href="#test-popup" class="open-popup-link">
-								${vo.b_title }
+								[${vo.b_scate }] ${vo.b_title }
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">[${vo.b_scate }] ${vo.b_title }
+							<a href="donationview.do?b_no=${vo.b_no }">[${vo.b_scate }] ${vo.b_title }
 							</a>
 						</c:otherwise>	
 						</c:choose>

@@ -23,4 +23,5 @@ public interface BoardDao {
 	List<BoardVO> bestRice_r3();
 	List<BoardVO> bestRice_r4();
 	List<BoardVO> noticeList();
+	int donationFin(BoardVO vo);
 }

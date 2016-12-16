@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import member.vo.BoardVO;
 import member.vo.CountVO;
 import member.vo.GameVO;
 import member.vo.GroupPurchaseVO;
+import member.vo.MemberVO;
 import member.vo.QnAVO;
 import member.vo.ReplyVO;
 import member.vo.StudyVO;
@@ -120,23 +122,6 @@ public class TestController {
 		return "home.go";
 	}
 
-	// 보드리스트 이동
-	@RequestMapping("/donation.do")
-	public String callBoard(Model m) {
-		List<BoardVO> list = null;
-
-		list = boardDao.allBoard("donation");
-		System.out.println(list.size());
-		for (int i = 0; i < list.size(); i++) {
-
-			BoardVO boardVO = list.get(i);
-			List<ReplyVO> listVO = boardDao.callReply(boardVO);
-
-			list.get(i).setB_recount(listVO.size());
-		}
-
-		m.addAttribute("list", list); // 가져온 DB를 모델에 저장
-		return "board/boardDonation";
-	}
+	
 
 }

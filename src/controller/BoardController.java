@@ -114,7 +114,6 @@ public class BoardController {
 		String cate = boardVO.getB_cate(); //게시판 종류 가져오기
 		MemberVO memberVO= (MemberVO) session.getAttribute("user"); //세션값 얻어오기
 		
-		
 		// 가져온 cate값 DB형식에 맞게 변경
 				if(cate.equals("육아꿀팁")){
 					boardVO.setB_cate("tip");
@@ -129,15 +128,22 @@ public class BoardController {
 				}else if(cate.equals("아이자랑")){
 					boardVO.setB_cate("baby");
 					cate="gal.do?title=baby";
+				}else if(cate.equals("아나바다")){
+					boardVO.setB_cate("donation");
+					boardVO.setB_scate("나눔");
 				}
-		
 		boardVO.setU_id(memberVO.getU_id());		// 아이디값 보드vo에 넣어주기
 		boardVO.setB_ip(ip); 						//ip
 		boardVO.setB_nick(memberVO.getU_nick());	//nickname
-		
 		int result=boardDao.writeBoard(boardVO);	//작성 데이터 db로
+		//DB에 들어갔다면 페이지 이동
 		if(result!=0){
-			pass="redirect:"+cate;	//DB에 들어갔다면 페이지 이동
+			if(boardVO.getB_cate().equals("donation")){
+				pass="redirect:donation.do";
+			}else{
+				pass="redirect:"+cate;	
+			}
+			
 		}
 			return pass;
 		
@@ -307,6 +313,89 @@ public class BoardController {
 		
 		return "redirect:notice.do";
 	}
+	
+	// 아나바다 리스트 이동
+		@RequestMapping("/donation.do")
+		public String calldonation(Model m) {
+			List<BoardVO> list = null;
+
+			list = boardDao.allBoard("donation");
+			System.out.println(list.size());
+			for (int i = 0; i < list.size(); i++) {
+
+				BoardVO boardVO = list.get(i);
+				List<ReplyVO> listVO = boardDao.callReply(boardVO);
+
+				list.get(i).setB_recount(listVO.size());
+			}
+
+			m.addAttribute("list", list); // 가져온 DB를 모델에 저장
+			return "board/boardDonation";
+		}
+		
+		// 아나바다 뷰 이동
+			@RequestMapping("/donationview.do")
+			public String viewDonation(BoardVO boardVO, Model m){
+				
+				
+				
+				BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
+				List <ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
+				
+				
+				//ip보안을 위해 * 처리
+				String ip= vo.getB_ip(); //작성자 ip가져오기
+				StringTokenizer st= new StringTokenizer(ip, ".");
+				String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
+				String rip;	// 보안처리된  ip 담을 문자열
+				for(int i=0; st.hasMoreTokens();i++){
+					
+					list[i]=(String) st.nextToken();  // " . "을 제거한 ip를 list에 담는다
+					
+				}
+				rip=list[0]+"."+list[1]+".*.*"; // 뒤에 두자리 보안처리
+				vo.setB_ip(rip); // 보안ip 다시 담기
+				
+				m.addAttribute("bvo", vo); // 게시물 정보 모델에 담기
+				m.addAttribute("list", listVO); //리플 정보 모델에 담기
+				return "board/donationView"; 
+			}
+			
+			//아나바다 삭제
+			@RequestMapping("deleteDonation.do")
+			public String deleteDonation(BoardVO boardVO ){
+				System.out.println("삭제 : "+ boardVO.getB_no()+"//"+boardVO.getB_cate());
+				int result= boardDao.deleteBoard(boardVO);
+				
+				return "redirect:donation.do";
+			}
+			
+			//아나바다 수정페이지 이동
+			@RequestMapping("updateDonation.do")
+			public String updateDonation(BoardVO boardVO, Model m){
+				System.out.println(boardVO.getB_no());
+				BoardVO vo = boardDao.viewBoard(boardVO);
+				m.addAttribute("vo", vo);
+				System.out.println(vo.getB_photo1name());
+				return "board/donationUpdate";
+			}
+			
+			//아나바다 수정 완료
+			@RequestMapping("donationupdate.do")
+			public String updateDonationFin(BoardVO boardVO){
+				System.out.println("수정사진 : "+boardVO.getB_photo1name());
+				int result= boardDao.updateBoard(boardVO);
+				return "redirect:donationview.do?b_no="+boardVO.getB_no();
+			}
+			
+			// 나눔완료
+			@RequestMapping("donationfin.do")
+			public String donationFin(BoardVO boardVO){
+				int result= boardDao.donationFin(boardVO);
+				return "redirect:donationview.do?b_no="+boardVO.getB_no();
+			}
+			
+			
 	
 }
  
