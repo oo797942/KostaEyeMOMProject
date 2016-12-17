@@ -97,14 +97,22 @@ public class BoardController {
 		String cate = boardVO.getB_cate(); //게시판 종류 가져오기
 		MemberVO memberVO= (MemberVO) session.getAttribute("user"); //세션값 얻어오기
 		
+		
 		// 가져온 cate값 DB형식에 맞게 변경
 				if(cate.equals("육아꿀팁")){
 					boardVO.setB_cate("tip");
 					cate="tip.do?title=tip";
 				}else if(cate.equals("묻고 말하기")){
 					boardVO.setB_cate("qna_board");
-				}else if(cate.equals("아이가 아파요")){
-					boardVO.setB_cate("kid_sick");
+				}else if(cate.equals("중고장터")){
+					boardVO.setB_cate("used");
+					cate="tip.do?title=used";
+					if(boardVO.getB_scate().equals("삽니다")){
+						boardVO.setB_scate("sell");
+					}else if(boardVO.getB_scate().equals("팝니다")){
+						boardVO.setB_scate("buy");
+					}
+
 				}else if(cate.equals("아이의 식단")){
 					boardVO.setB_cate("rice");
 					cate="gal.do?title=rice";
@@ -385,14 +393,14 @@ public class BoardController {
 			@RequestMapping(value = "/tip.do", method = {RequestMethod.GET, RequestMethod.POST})
 			public String page(Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
 
-			  
+				boardVO.setB_cate(title);
 			    //--페이징 처리
 			    int totalCount = boardDao.boardListCount(boardVO); //게시물 총갯수를 구한다
 			    boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
 			    model.addAttribute("pageVO", boardVO);
 
 			    //--페이징 처리
-			    boardVO.setB_cate(title);
+			    
 			    List<BoardVO>  boardList = boardDao.allPagingBoard(boardVO);
 
 				for(int i=0; i<boardList.size();i++){

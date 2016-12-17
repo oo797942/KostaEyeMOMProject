@@ -45,15 +45,10 @@ function fn_movePage(val){
 			<c:if test="${title=='qna_board'}">
 				<label class='boardlabel titlelabel' id="lb">묻고 말하기</label> 
 			</c:if>
-			<c:if test="${title=='kid_sick'}">
-				<label class='boardlabel titlelabel' id="lb">아이가 아파요</label> 
+			<c:if test="${title=='used'}">
+				<label class='boardlabel titlelabel' id="lb">중고장터</label> 
 			</c:if>
-			<c:if test="${title=='rice'}">
-				<label class='boardlabel titlelabel' id="lb">아이의 식단</label> 
-			</c:if>
-			<c:if test="${title=='baby'}">
-				<label class='boardlabel titlelabel' id="lb">아이자랑</label> 
-			</c:if>
+			
 				<!-- 검색 -->
 				<div class='form-inline selectlabel'>
 							<!-- 검색 셀렉트 박스 -->
@@ -89,11 +84,32 @@ function fn_movePage(val){
 						<c:choose>
 						<c:when test="${empty sessionScope.user}">
 							<a href="#test-popup" class="open-popup-link">
+								<c:choose>
+								<c:when test="${vo.b_scate=='buy'}">
+							  	 [삽니다]	${vo.b_title}
+							  </c:when>
+							  <c:when test="${vo.b_scate=='sell'}">
+							  	 [팝니다]	${vo.b_title}
+							  </c:when>
+							  <c:otherwise>
 								${vo.b_title }
+								</c:otherwise>
+							</c:choose>	
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">${vo.b_title }
+							<a href="boardview.do?b_no=${vo.b_no }">
+								<c:choose>
+								<c:when test="${vo.b_scate=='buy'}">
+							  	 [삽니다]	${vo.b_title}
+							  </c:when>
+							  <c:when test="${vo.b_scate=='sell'}">
+							  	 [팝니다]	${vo.b_title}
+							  </c:when>
+							  <c:otherwise>
+								${vo.b_title }
+								</c:otherwise>
+							</c:choose>	
 							</a>
 						</c:otherwise>	
 						</c:choose>

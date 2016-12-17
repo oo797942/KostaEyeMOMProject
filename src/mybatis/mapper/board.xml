@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="board">
  <select id="totalCount" parameterType="boardVO" resultType="int">
-    SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = 'tip'
+    SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = #{b_cate}
     </select>
  
 <select id="allBoardp" parameterType="boardVO" resultType="boardVO">

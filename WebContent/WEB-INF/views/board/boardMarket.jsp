@@ -81,8 +81,9 @@
 							  	 [삽니다]	${vo.b_title}
 							  </c:if>
 							  <c:if test="${vo.b_scate=='sell'}">
-							  </c:if>
 							  	 [팝니다]	${vo.b_title}
+							  </c:if>
+							  	
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->

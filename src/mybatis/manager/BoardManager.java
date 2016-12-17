@@ -33,7 +33,7 @@ public class BoardManager {
       SqlSession session = CommonManager.db().openSession();
 
       String cate = boardVO.getB_cate();
-      if (cate.equals("tip") || cate.equals("rice") || cate.equals("baby") || cate.equals("donation")) {
+      if (cate.equals("tip") || cate.equals("rice") || cate.equals("baby") || cate.equals("donation")|| cate.equals("used")) {
          result = session.insert("board.boardInsert", boardVO);
       } else if (cate.equals("qna_board")) {
 
@@ -188,9 +188,9 @@ public class BoardManager {
 
    
    // 공지사항 리스트 뽑아오기
-   public static int totalCount() throws SQLException {
+   public static int totalCount(BoardVO boardVO) throws SQLException {
       SqlSession session = CommonManager.db().openSession();
-      int totalCount = session.selectOne("board.totalCount");
+      int totalCount = session.selectOne("board.totalCount", boardVO);
 
       session.commit();
       return totalCount;
