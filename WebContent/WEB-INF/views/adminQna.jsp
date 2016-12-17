@@ -7,21 +7,7 @@
 	</head><body>&lt;<script type="text/javascript">
 	$(function(){
 		 
-		
-		$("#resertype").change(function(){
-			var sel = $('#resertype').val();
 			
-				location.href = "/TourProject/list.do?tour=admin-quest&search=all&select="+sel;
-				});
-		
-			
-
-		$("#search").keydown(function(key){
-		if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
-			location.href = "/TourProject/list.do?tour=admin-quest&select=all&search="+$("#search").val();
-		};
-	});
-		
 	});
 	function popupOpen(articleNo){
 		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
@@ -63,7 +49,7 @@
             <li><a href="adminMember.go" >회원 관리</a></li>
             <li ><a href="adminBoard.go">게시판 관리</a></li>
              <li><a href="adminReport.go">신고 관리</a></li>
-            <li class="active"><a href="adminQna.go">Q&A</a></li>
+     	     <li class="active"><a href="adminQna.go">Q&A</a></li>
             <li><a href="adminGallery.go">사진 관리</a></li>            
             <li><a href="adminVideo.go">동영상 관리</a></li>
             <li><a href="adminGame.go">게임 관리</a></li>
@@ -81,7 +67,6 @@
               <thead>
                 <tr>
                   <th>문의 번호</th>
-                  <th>카테고리</th>
                   <th>제목</th>
                   <th>작정자</th>
                   <th>작정일</th>                  

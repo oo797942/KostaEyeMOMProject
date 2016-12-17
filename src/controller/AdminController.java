@@ -40,6 +40,7 @@ public class AdminController {
 	public String admonQna(HttpSession session){
 		return "adminQna";
 	}
+	
 	@RequestMapping("/adminGallery.go")
 	public String adminGallery(HttpSession session){
 		return "adminGallery";
