@@ -129,6 +129,10 @@
 			</div>
 		</div>
 	</div>
+	
+	<div>
+		<input type="button" value='글쓰기'/>	
+	</div>
 		</section>
 		<!--end wrapper-->
 		</div>

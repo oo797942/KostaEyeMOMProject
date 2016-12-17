@@ -6,11 +6,10 @@
 	/* 	border-radius: 15px; */
 }
 
-.qnabtn {
-	width: 900px;
-	height: 200px;
-	margin: 50px auto;
-	border: 2px solid red;
+.qnah1 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
 }
 
 .white-popup1 {
@@ -60,6 +59,79 @@
 .answeralign{
 	text-align: center;
 }
+
+.faqbtn {
+	width: 1200px;
+	height: 80px;
+	margin: 30px auto 10px;
+	/* 	border: 2px solid red; */
+	border-top: 3px solid #ffa07a;
+	border-bottom: 2px solid #ffa07a;
+}
+
+.faqul {
+	border-top: 3px solid #000;
+}
+
+.faqspan {
+	position: relative;
+	top: 3px;
+	left: 10px;
+}
+
+.faqspan1 {
+	margin-left: 3%;
+}
+
+.faqtd {
+	padding: 0 0 0 20px;
+}
+
+.faqtd1 {
+	padding: 20px 20px;
+}
+
+#faqtable {
+	width: 100%;
+	font-size: 10pt;
+	font-family: Dotum;
+	text-align: center;
+	border-top: 3px solid #333;
+	border-collapse: collapse;
+	/* 	border-bottom : 1px solid #c2c2c2; */
+}
+
+.faqthead {
+	height: 50px;
+	border-bottom: 1px solid #c2c2c2;
+	background-color: #efefef;
+}
+
+.faqtr {
+	height: 50px;
+}
+
+.faqtd2 {
+	border-bottom: 1px solid #bcbcbc;
+	padding: 5px 10px;
+}
+
+.faqtablediv {
+	width: 85%;
+	margin: 50px auto 100px;
+}
+
+.faqA {
+	text-decoration: none;
+}
+
+.faqA:HOVER {
+	color: #ffa07a;
+}
+
+.faqh1{
+	margin-bottom: 20px;
+}
 /* .abc { */
 /* 	font-size: 13pt; */
 /* 	display: block; */
@@ -97,8 +169,8 @@
 /*  Basic stucture
 =====================*/
 #accordion {
-	margin: 100px auto;
-	width: 70%;
+	margin: 70px auto 100px;
+	width: 85%;
 }
 
 #accordion .acoul {
@@ -151,7 +223,8 @@
 
 .accordion:target {
 	border-top: 3px solid #ffa07a;
-}
+	border-bottom: 2px solid #ffa07a;
+} 
 
 .infotable1 {
 	width: 95%;
