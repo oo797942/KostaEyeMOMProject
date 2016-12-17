@@ -24,5 +24,13 @@ public class LoginManager {
 		session.commit();
 		return result;
 	}
-
+	
+	public static int memberLoginRecord(MemberVO vo) throws SQLException {
+		SqlSession session = CommonManager.db().openSession(); // sqlmapper
+		int result = session.update("user.loginRec", vo);
+		session.commit();
+		return result;
+	}
+	
+	
 }
