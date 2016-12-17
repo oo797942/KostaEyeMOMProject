@@ -252,7 +252,7 @@
 						<td class='faqtd2'>2016-12-16</td>
 						<td class='faqtd2'>답변예정</td>
 					</tr> 
-					<tr class='faqtr'>
+					<tr class='faqtr'> 
 						<td class='faqtd2'>4</td>
 						<td class='faqtd2'>구분</td>
 						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>

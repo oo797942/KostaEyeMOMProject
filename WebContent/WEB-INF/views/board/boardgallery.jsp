@@ -126,7 +126,7 @@
 							</div>
 						</div>
 					</div>
-
+ 
 					<!-- 페이징 -->
 					<div class='form-inline'> 
 						<ul class="pagination modal-1">
