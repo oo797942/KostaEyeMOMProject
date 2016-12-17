@@ -282,7 +282,6 @@
 			                     <c:if test="${not empty bvo.b_photo3name }">
 			                     	<img src="/EyeMOM/resources/img/${bvo.b_photo3name}" class="miri"><br/>
 			                     </c:if>
-								
 								${bvo.b_content}
 							</p></td>
 						</tr>

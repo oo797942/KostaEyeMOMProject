@@ -29,10 +29,7 @@ public class QnaController {
 		m.addAttribute("list",list);
 		return "board/boardQna";
 	}
-	
 
-	
-	
 	/////////////////////////////////FAQ
 	
 	@RequestMapping("faqboard.do")
@@ -56,5 +53,10 @@ public class QnaController {
 		String pass=null;
 		
 		return result;
+	}
+	
+	@RequestMapping("qnaview.do")
+	public String qnaview(){
+		return "qnaboard/qnaboard";
 	}
 }
