@@ -67,4 +67,18 @@ public class JoinController {
 		return result; 
 	}
 	
+	@RequestMapping("/memberStop.go")
+	public String adminStop(HttpSession session,MemberVO memberVO,Model m){
+		List<MemberVO> vo =memberJoinDao.idCheck(memberVO);
+		m.addAttribute("vlist",vo.get(0));
+		return "memberStop";
+	}
+	
+	@RequestMapping("/memberExile.go")
+	public String memberExile(HttpSession session,MemberVO memberVO,Model m){
+		int result =memberJoinDao.memberExile(memberVO);
+
+		return "popupClose";
+	}
+	
 }

@@ -12,6 +12,7 @@ public interface MemberDao {
 	List<MemberVO> memberList();
 	List<MemberVO> nickCheck(MemberVO vo);
 	int allmember();
+	int memberExile(MemberVO vo);
 	
 }
  

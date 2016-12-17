@@ -4,9 +4,14 @@
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script type="text/javascript">
-
+$(function(){
+	//      팝업 띄우기 위한 쿼리
+	
+	
+	
+});
 		function memStop(u_id){
 			alert(u_id);
 		};
@@ -70,6 +75,7 @@
                   <th>전화번호</th>
                   <th>회원등급</th>
                   <th>회원상태</th>
+                  <th>정지기간</th>
                   <th>회원정지</th>
                 </tr>
                      <tbody class="table-striped table-hover">
@@ -81,7 +87,20 @@
                   <th>${vo.u_tel}</th>
                   <th>${vo.u_lvl}</th>
                   <th>${vo.u_state}</th>
-                  <th><input type="button" value="회원정지" onclick="memStop('${vo.u_id}')"  class="btn btn-danger btn-sm" /></th>
+                  <c:if test="${vo.u_state=='활동중'}">
+                  <th>-</th>                  
+                  </c:if>
+                  <c:if test="${vo.u_state=='영구정지'}">
+                  <th>영구정지</th>                  
+                  </c:if>
+                  <c:if test="${vo.u_state=='기간정지'}">
+                  <th>${vo.u_stop_date}</th>                  
+                  </c:if>
+
+                  <th><input type="button" value="회원정지" class="btn btn-warning btn-sm"
+                  onclick="window.open('memberStop.go?u_id=${vo.u_id}', '회원 정지',
+                   				'width=450px,height=380');return false;"
+                   /></th>
                 </tr>
 </c:forEach>
 

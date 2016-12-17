@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +68,7 @@ public class AdminController {
 	public String adminStudyInsert(HttpSession session){
 		return "adminStudyInsert";
 	}
+	
+
 	
 }

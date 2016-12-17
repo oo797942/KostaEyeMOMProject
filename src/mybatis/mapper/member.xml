@@ -3,8 +3,11 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="user">
+<mapper namespace="user" >
 
+<update id="memberExile" parameterType="memberVO">
+UPDATE mom_user SET u_state = #{u_state}, u_stop_date = #{u_stop_date} WHERE u_id=#{u_id}
+</update>
 <!-- memberVO 변수명을 SqlMapConfig.xml에서 typeAlias 에서 지정한 하였음 -->
 <!-- login 및 id check -->
 <select id="idCheck" parameterType="memberVO" resultType="memberVO"> 

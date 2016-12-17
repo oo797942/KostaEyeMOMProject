@@ -49,4 +49,14 @@ public class MemberManager {
 		session.commit();
 		return result;
 	}
+	
+	
+	public static int memberExile(MemberVO vo) throws SQLException {
+		int result = 0;
+		SqlSession session = CommonManager.db().openSession();
+		result = session.update("user.memberExile", vo);
+		session.commit();
+		return result;
+	}
+	
 }
