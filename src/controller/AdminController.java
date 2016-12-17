@@ -36,10 +36,10 @@ public class AdminController {
 		return "adminReport";
 	}
 	
-	@RequestMapping("/adminQna.go")
-	public String admonQna(HttpSession session){
-		return "adminQna";
-	}
+//	@RequestMapping("/adminQna.go")
+//	public String admonQna(HttpSession session){
+//		return "adminQna";
+//	}
 	
 	@RequestMapping("/adminGallery.go")
 	public String adminGallery(HttpSession session){

@@ -59,4 +59,13 @@ public class QnaController {
 	public String qnaview(){
 		return "qnaboard/qnaboard";
 	}
+	
+	@RequestMapping("/adminQna.go")
+	public String admonFaq(HttpSession session, Model m){
+		
+		List <FaqVO> list=null;
+//		list= QnaDao.allFaq();
+		m.addAttribute("list",list);
+		return "adminQna";
+	}
 }
