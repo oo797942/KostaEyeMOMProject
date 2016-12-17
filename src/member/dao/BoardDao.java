@@ -24,4 +24,6 @@ public interface BoardDao {
 	List<BoardVO> bestRice_r4();
 	List<BoardVO> noticeList();
 	int donationFin(BoardVO vo);
+	List<BoardVO> allPagingBoard(BoardVO vo);
+	int boardListCount(BoardVO vo);
 }

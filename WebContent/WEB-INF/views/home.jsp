@@ -33,8 +33,9 @@
 				"u_pass" : $("#u_pass").val()
 			},
 			success : function(result) {
-
-				if (result == "0") {
+				if(result=="3"){
+		       		location.href="adminMember.go";
+		       	 }else if (result == "0") {
 					location.reload();
 
 				} else {
