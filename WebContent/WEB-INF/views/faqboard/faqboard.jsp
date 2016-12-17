@@ -14,7 +14,15 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
 <script type="text/javascript">
 	$(function() {
-
+		$('.faqasr').hide();
+		//답변 토글
+		
+		$('.faqtr a').click(function(){
+			$(this).parent().parent().nextUntil(".faqtr").toggle();	
+		});
+		
+		
+		
 		//      팝업 띄우기 위한 쿼리
 		$('#popupLink').magnificPopup({
 			type : 'inline',
@@ -53,6 +61,7 @@
 			
 		});
 	})
+	
 </script>
 <style type="text/css">
 </style>
@@ -223,48 +232,34 @@
 				</colgroup>
 				<thead class='faqthead'>
 					<tr class='faqtr'>
-						<td class='faqtd2'>글번호</td>
-				 		<td class='faqtd2'>구분</td>
-						<td class='faqtd2'>제목</td>
-						<td class='faqtd2'>작성일</td>
-						<td class='faqtd2'>답변상태</td>
+						<td class='faqtd2' scope="col">글번호</td>
+				 		<td class='faqtd2' scope="col">구분</td>
+						<td class='faqtd2' scope="col">제목</td>
+						<td class='faqtd2' scope="col">작성일</td>
+						<td class='faqtd2' scope="col">답변상태</td>
 					</tr>
 				</thead> 
 				<tbody> 
 					<tr class='faqtr'>
-						<td class='faqtd2'>4</td>
-						<td class='faqtd2'>구분</td>
-						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2'>2016-12-16</td>
-						<td class='faqtd2'>답변예정</td>
+						<td class='faqtd2' scope="row">4</td>
+						<td class='faqtd2' scope="row">질문</td>
+						<td class='faqtd2' scope="row"><a  class='faqA'>집 언제 갈까요?</a></td>
+						<td class='faqtd2' scope="row">2016-12-16</td>
+						<td class='faqtd2'scope="row">답변예정</td>
 					</tr>
-					<tr class='faqtr'>
-						<td class='faqtd2'>4</td>
-						<td class='faqtd2'>구분</td>
-						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2'>2016-12-16</td>
-						<td class='faqtd2'>답변예정</td>
-					</tr>
-					<tr class='faqtr'>
-						<td class='faqtd2'>4</td>
-						<td class='faqtd2'>구분</td>
-						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2'>2016-12-16</td>
-						<td class='faqtd2'>답변예정</td>
-					</tr> 
-					<tr class='faqtr'> 
-						<td class='faqtd2'>4</td>
-						<td class='faqtd2'>구분</td>
-						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2'>2016-12-16</td>
-						<td class='faqtd2'>답변예정</td>
-					</tr>
-					<tr class='faqtr'>
-						<td class='faqtd2'>4</td>
-						<td class='faqtd2'>구분</td>
-						<td class='faqtd2'><a href='#' class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2'>2016-12-16</td>
-						<td class='faqtd2'>답변예정</td>
+					<tr class='faqasr'>
+						<td  class='faqtd2' />
+						<td  class='faqtd2' >답변</td>
+						<td  class='faqtd2'>
+							<p>
+							asd<br/>
+							asd<br/>
+							asd<br/>
+							asd<br/>
+							</p>
+						</td>
+						<td  class='faqtd2' >16-12-17</td>
+						<td  class='faqtd2' >admin</td>
 					</tr>
 				</tbody>
 			</table>

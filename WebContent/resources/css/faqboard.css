@@ -110,10 +110,13 @@
 .faqtr {
 	height: 50px;
 }
-
+.faqasr{
+	height: auto;
+}
 .faqtd2 {
 	border-bottom: 1px solid #bcbcbc;
 	padding: 5px 10px;
+	text-align: left;
 }
 
 .faqtablediv {
