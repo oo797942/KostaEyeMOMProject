@@ -4,32 +4,15 @@
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
-<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
-	</head><body>&lt;<script type="text/javascript">
-	$(function(){
-		
-		 
-		$("#resertype").change(function(){
-			var sel = $('#resertype').val();
-			
-				location.href = "/TourProject/list.do?tour=admin-quest&search=all&select="+sel;
-				});
-		
-			
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
 
-		$("#search").keydown(function(key){
-		if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
-			location.href = "/TourProject/list.do?tour=admin-quest&select=all&search="+$("#search").val();
+		function memStop(u_id){
+			alert(u_id);
 		};
-	});
-		
-	});
-	function popupOpen(articleNo){
-		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
-		var popOption = "width=800, height=600, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-			window.open(popUrl,"",popOption);
-};
+
 </script>
+	</head><body>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -78,7 +61,7 @@
           <h1 class="page-header">회원 관리</h1>
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th>아이디</th>
@@ -87,7 +70,9 @@
                   <th>전화번호</th>
                   <th>회원등급</th>
                   <th>회원상태</th>
+                  <th>회원정지</th>
                 </tr>
+                     <tbody class="table-striped table-hover">
 <c:forEach var="vo" items="${list}">
       <tr>
                   <th>${vo.u_id}</th>
@@ -96,12 +81,13 @@
                   <th>${vo.u_tel}</th>
                   <th>${vo.u_lvl}</th>
                   <th>${vo.u_state}</th>
+                  <th><input type="button" value="회원정지" onclick="memStop('${vo.u_id}')"  class="btn btn-danger btn-sm" /></th>
                 </tr>
 </c:forEach>
 
 	
               </thead>
-              <tbody>
+         
               </tbody>
             </table>
           </div>	

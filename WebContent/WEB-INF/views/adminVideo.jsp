@@ -88,7 +88,7 @@
 <div class="tab-pane active" id= "tab1"><!-- nav-tab부분 링크부분과 탭내용을 보여줄 id를 맞춰줍니다-->
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th style="text-align:center">게시글 번호</th>
@@ -99,7 +99,7 @@
 					<th style="text-align:center">삭제</th>
                 </tr>
 
-
+           <tbody class="table-striped table-hover">
 				<c:forEach var='vo' items="${vlist}">
 			<tr>
 				<td style="text-align:center">${vo.d_no}</td>
@@ -117,7 +117,6 @@
 	</c:forEach>
 	
               </thead>
-              <tbody>
               </tbody>
             </table>
           </div>
@@ -127,7 +126,7 @@
 <div class="tab-pane" id="tab2">
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th style="text-align:center">게시글 번호</th>
@@ -138,7 +137,7 @@
 					<th style="text-align:center">삭제</th>
                 </tr>
 
-
+           <tbody class="table-striped table-hover">
 				<c:forEach var='vo' items="${slist}">
 			<tr>
 				<td style="text-align:center">${vo.v_no}</td>
@@ -155,7 +154,6 @@
 			</tr>
 	</c:forEach>
               </thead>
-              <tbody>
               </tbody>
             </table>
           </div>

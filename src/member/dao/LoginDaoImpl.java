@@ -28,5 +28,14 @@ public class LoginDaoImpl implements LoginDao {
 		}
 		return result;
 	}
+	public int memberLoginRecord(MemberVO vo){
+	int result=0;
+		try {
+			result = LoginManager.memberLoginRecord(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }

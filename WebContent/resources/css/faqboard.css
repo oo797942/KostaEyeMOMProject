@@ -185,11 +185,11 @@
 
 .accordion:target {
 	display: block;
-}
+} 
 
 #accordion .acoul li .acoa {
 	text-decoration: none;
-	display: block;
+	display: block; 
 	padding: 10px;
 }
 
