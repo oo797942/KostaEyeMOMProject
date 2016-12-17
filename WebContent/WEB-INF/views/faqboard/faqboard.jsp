@@ -229,7 +229,7 @@
 						<td class='faqtd2'>작성일</td>
 						<td class='faqtd2'>답변상태</td>
 					</tr>
-				</thead>
+				</thead> 
 				<tbody> 
 					<tr class='faqtr'>
 						<td class='faqtd2'>4</td>
