@@ -138,5 +138,7 @@ public class UserController {
 		m.addAttribute("keyword", keyword);
 		return "map.go";
 	}
+	
+	
 
 }
