@@ -75,7 +75,7 @@ public class MemberDaoImpl implements MemberDao {
 		return result;
 	}
 
-	@Override
+	@Override 
 	public int memberUpdate(MemberVO vo) {
 		int result=0;
 		try{ 
