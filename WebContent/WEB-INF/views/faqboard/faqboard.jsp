@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,11 @@
 			$(this).parent().parent().nextUntil(".faqtr").toggle();	
 		});
 		
-		
+		//다시쓰기
+		$('#rebtn').click(function(){
+			$('#q_title').val("");
+			$('#q_content').val("");
+		});
 		
 		//      팝업 띄우기 위한 쿼리
 		$('#popupLink').magnificPopup({
@@ -77,8 +82,22 @@
 				<tr>
 					<td style="padding: 16px 800PX 0 50PX;"><a href='#'><img
 							alt="" src="resources/img/faq/KakaoTalk_20161216_123929836.png"></a></td>
-					<td style="padding-top: 19px;"><a href='#qnapopup' id="popupLink"><img alt=""
-							src="resources/img/faq/KakaoTalk_20161216_123602637.png"></a></td>
+					<td style="padding-top: 19px;">
+						
+					<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+    				<!-- 글쓰기 버튼 -->
+					<a href="#test-popup" class="open-popup-link">
+					<img alt="" src="resources/img/faq/KakaoTalk_20161216_123602637.png">
+					</a>
+					</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+					<a href='#qnapopup' id="popupLink">
+						<img alt="" src="resources/img/faq/KakaoTalk_20161216_123602637.png">
+						</a>
+					</c:otherwise>	
+					</c:choose>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -240,27 +259,41 @@
 					</tr>
 				</thead> 
 				<tbody> 
-					<tr class='faqtr'>
-						<td class='faqtd2' scope="row">4</td>
-						<td class='faqtd2' scope="row">질문</td>
-						<td class='faqtd2' scope="row"><a  class='faqA'>집 언제 갈까요?</a></td>
-						<td class='faqtd2' scope="row">2016-12-16</td>
-						<td class='faqtd2'scope="row">답변예정</td>
-					</tr>
-					<tr class='faqasr'>
-						<td  class='faqtd2' />
-						<td  class='faqtd2' >답변</td>
-						<td  class='faqtd2'>
-							<p>
-							asd<br/>
-							asd<br/>
-							asd<br/>
-							asd<br/>
-							</p>
-						</td>
-						<td  class='faqtd2' >16-12-17</td>
-						<td  class='faqtd2' >admin</td>
-					</tr>
+					<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+    				<tr class='faqtr'>
+							<td class='faqtd2' scope="row"></td>
+							<td class='faqtd2' scope="row"></td>
+							<td class='faqtd2' scope="row"><a  href="#test-popup" class="open-popup-link">로그인 후 사용가능합니다</a></td>
+							<td class='faqtd2' scope="row"></td>
+							<td class='faqtd2'scope="row"></td>
+						</tr>
+					</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+						<tr class='faqtr'>
+							<td class='faqtd2' scope="row">4</td>
+							<td class='faqtd2' scope="row">질문</td>
+							<td class='faqtd2' scope="row"><a  class='faqA'>집 언제 갈까요?</a></td>
+							<td class='faqtd2' scope="row">2016-12-16</td>
+							<td class='faqtd2'scope="row">답변예정</td>
+						</tr>
+						<tr class='faqasr'>
+							<td  class='faqtd2' />
+							<td  class='faqtd2' >답변</td>
+							<td  class='faqtd2'>
+								<p>
+								asd<br/>
+								asd<br/>
+								asd<br/>
+								asd<br/>
+								</p>
+							</td>
+							<td  class='faqtd2' >16-12-17</td>
+							<td  class='faqtd2' >admin</td>
+						</tr>
+					</c:otherwise>	
+					</c:choose>
+					
 				</tbody>
 			</table>
 		</div>
@@ -289,7 +322,7 @@
 					<!-- 전송버튼 / 취소 버튼 -->
 					<div class="answeralign">
 						<input type="button" value='전송하기' id='btnfqa' class='sbmbtn sbmbtn-primary'>
-						<input type="button" value='다시쓰기' class='rebtn '>
+						<input type="button" value='다시쓰기' class='rebtn' id='rebtn'>
 					</div>
 				</div>
 			</div>
