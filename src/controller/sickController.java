@@ -14,7 +14,7 @@ public class sickController {
 	}
 	
 	@RequestMapping("heat.do")
-	public String sickHeat(){ 
+	public String sickHeat(){  
 		
 		return "sick/heat";
 	}
