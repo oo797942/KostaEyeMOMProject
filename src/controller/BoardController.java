@@ -384,28 +384,15 @@ public class BoardController {
 			
 			@RequestMapping(value = "/tip.do", method = {RequestMethod.GET, RequestMethod.POST})
 			public String page(Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
-//			    logger.info(">>>> page home start!!");
-//			    //검색조건, 검색어
-//			    logger.info("SearchFiled : " + empVO.getSearchFiled());
-//			    logger.info("SearchValue : " + empVO.getSearchValue());
+
 			  
 			    //--페이징 처리
 			    int totalCount = boardDao.boardListCount(boardVO); //게시물 총갯수를 구한다
 			    boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
 			    model.addAttribute("pageVO", boardVO);
-//			    logger.info("PageSize // 한 페이지에 보여줄 게시글 수 : " + empVO.getPageSize());
-//			    logger.info("PageNo // 페이지 번호 : " + empVO.getPageNo());
-//			    logger.info("StartRowNo //조회 시작 row 번호 : " + empVO.getStartRowNo());
-//			    logger.info("EndRowNo //조회 마지막 now 번호 : " + empVO.getEndRowNo());
-//			    logger.info("FirstPageNo // 첫 번째 페이지 번호 : " + empVO.getFirstPageNo());
-//			    logger.info("FinalPageNo // 마지막 페이지 번호 : " + empVO.getFinalPageNo());
-//			    logger.info("PrevPageNo // 이전 페이지 번호 : " + empVO.getPrevPageNo());
-//			    logger.info("NextPageNo // 다음 페이지 번호 : " + empVO.getNextPageNo());
-//			    logger.info("StartPageNo // 시작 페이지 (페이징 네비 기준) : " + empVO.getStartPageNo());
-//			    logger.info("EndPageNo // 끝 페이지 (페이징 네비 기준) : " + empVO.getEndPageNo());
-//			    logger.info("totalCount // 게시 글 전체 수 : " + totalCount);
+
 			    //--페이징 처리
-			  
+			    
 			    List<BoardVO>  boardList = boardDao.allPagingBoard(boardVO);
 
 				for(int i=0; i<boardList.size();i++){
