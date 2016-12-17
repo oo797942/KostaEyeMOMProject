@@ -128,7 +128,7 @@
 					</div>
 
 					<!-- 페이징 -->
-					<div class='form-inline'>
+					<div class='form-inline'> 
 						<ul class="pagination modal-1">
 
 							<c:if test="${pageVO.pageNo != 0}">
