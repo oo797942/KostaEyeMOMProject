@@ -13,7 +13,7 @@
 function fn_movePage(val){
     jQuery("input[name=pageNo]").val(val);
     jQuery("form[name=frm]").attr("method", "post");
-    jQuery("form[name=frm]").attr("action","tip.do?title=tip").submit();
+    jQuery("form[name=frm]").attr("action","tip.do?title=${title}").submit();
 }
 
 	function writeBoard(){

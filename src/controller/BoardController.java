@@ -31,29 +31,7 @@ public class BoardController {
 	
 
 	
-	@RequestMapping("gal.do")
-	public String callGallery(Model m,@RequestParam("title") String title){
-		String cate=null;
-		List<BoardVO> list=null;
-		list= boardDao.allBoard(title);
-		System.out.println(list.size());
-		for(int i=0; i<list.size();i++){
-		
-		BoardVO boardVO=list.get(i);
-		List <ReplyVO> listVO = boardDao.callReply(boardVO);
-		
-		list.get(i).setB_recount(listVO.size());
-		}
-		if(title.equals("baby")){
-			cate="아이 자랑";
-		}else{
-			cate="아이의 식단";
-		}
-		m.addAttribute("list", list); //가져온 DB를 모델에 저장
-		m.addAttribute("title", cate ); // 게시판 종류 모델에 저장
-		
-		return "board/boardgallery";
-	}
+	
 	
 	//글쓰기 이동
 	@RequestMapping("/boardInsert.do")
@@ -116,7 +94,16 @@ public class BoardController {
 				}else if(cate.equals("아이의 식단")){
 					boardVO.setB_cate("rice");
 					cate="gal.do?title=rice";
-				}else if(cate.equals("아이자랑")){
+					if(boardVO.getB_scate().equals("초기")){
+						boardVO.setB_scate("r_1");
+					}else if(boardVO.getB_scate().equals("중기")){
+						boardVO.setB_scate("r_2");
+					}else if(boardVO.getB_scate().equals("후기")){
+						boardVO.setB_scate("r_3");
+					}else if(boardVO.getB_scate().equals("완료기")){
+						boardVO.setB_scate("r_4");
+					}
+				}else if(cate.equals("아이 자랑")){
 					boardVO.setB_cate("baby");
 					cate="gal.do?title=baby";
 				}else if(cate.equals("아나바다")){
@@ -414,10 +401,58 @@ public class BoardController {
 				model.addAttribute("list", boardList); //가져온 DB를 모델에 저장
 				model.addAttribute("title", title ); // 게시판 종류 모델에 저장
 
-//			    model.addAttribute("resultList", boardList);
+
 			  
 			    return  "board/board";
 			}
+			
+			//갤러리 이동
+			@RequestMapping("gal.do")
+			public String callGallery(Model m, @ModelAttribute("BoardVO") BoardVO boardVO, @RequestParam("title") String title){
+				boardVO.setB_cate(title);
+			    //--페이징 처리
+			    int totalCount = boardDao.boardListCount(boardVO); //게시물 총갯수를 구한다
+			    boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+			    boardVO.setPageSize(12);
+			    m.addAttribute("pageVO", boardVO);
+
+			    //--페이징 처리
+			    
+			    List<BoardVO>  boardList = boardDao.allPagingBoard(boardVO);
+
+				for(int i=0; i<boardList.size();i++){
+					
+				BoardVO boardVO1=boardList.get(i);
+				List <ReplyVO> listVO = boardDao.callReply(boardVO1);
+				
+				boardList.get(i).setB_recount(listVO.size());
+				}
+				
+				m.addAttribute("list", boardList); //가져온 DB를 모델에 저장
+				m.addAttribute("title", title); // 게시판 종류 모델에 저장
+				
+				return "board/boardgallery";
+			}
+			
+//			@RequestMapping("gal.do")
+//			public String callGallery(Model m,@RequestParam("title") String title){
+//				String cate=null;
+//				List<BoardVO> list=null;
+//				list= boardDao.allBoard(title);
+//				System.out.println(list.size());
+//				for(int i=0; i<list.size();i++){
+//				
+//				BoardVO boardVO=list.get(i);
+//				List <ReplyVO> listVO = boardDao.callReply(boardVO);
+//				
+//				list.get(i).setB_recount(listVO.size());
+//				}
+//				
+//				m.addAttribute("list", list); //가져온 DB를 모델에 저장
+//				m.addAttribute("title", title); // 게시판 종류 모델에 저장
+//				
+//				return "board/boardgallery";
+//			}
 			
 //			//보드리스트 이동
 //			@RequestMapping("/tip.do")

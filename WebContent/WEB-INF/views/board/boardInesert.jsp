@@ -89,6 +89,15 @@ function fileInfo(f){
 								<option>팝니다</option>
 					</select>
 					</c:if>
+					<c:if test="${title=='rice'}">
+                     <select id='select1' name='b_scate'
+								class="form-control">
+								<option>초기</option>
+								<option>중기</option>
+								<option>후기</option>
+								<option>완료기</option>
+					</select>
+					</c:if>
                      <input type="text" name='b_title' class='form-control' id='title3'>
                   </div>
                </div>

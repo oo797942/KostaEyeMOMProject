@@ -201,7 +201,7 @@ where rownum < 10
 <!-- 나눔완료 수정 -->
 <update id="donationfin" parameterType="boardVO">
 update normal_board set b_scate = '나눔완료'
-where b_no=#{b_no} 
+where b_no=#{b_no}  
 </update>
 
 <!-- 포인트업 -->
