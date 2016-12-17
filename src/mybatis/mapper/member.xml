@@ -50,5 +50,9 @@ select u_nick from mom_user where u_nick = #{u_nick}
 <select id="androidLogin" parameterType="memberVO" resultType="memberVO"> 
 	select * from mom_user where u_id=#{u_id} AND u_pass=#{u_pass}
 </select>
- 
+
+<update id="loginRec" parameterType="memberVO">
+ UPDATE mom_user SET u_resent_date = sysdate WHERE u_id=#{u_id}
+</update>
+
 </mapper>

@@ -79,7 +79,7 @@
           <h1 class="page-header">게임 관리</h1>
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th style="text-align:center">게임 번호</th>
@@ -89,7 +89,7 @@
                   <th style="text-align:center">수정</th>
                   <th style="text-align:center">삭제</th>
                 </tr>
-			
+			           <tbody class="table-striped table-hover">
 				<c:forEach var='vo' items="${list}">
 			<tr>
 				<td style="text-align:center">${vo.g_no}</td>
@@ -106,6 +106,7 @@
 			</tr>
 	</c:forEach>
               </thead>
+              </tbody>
             </table>
             <hr style="border: solid 1px #cccccc; opacity:0.4 "/>
           </div >	
