@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <select id="allBoardp" parameterType="boardVO" resultType="boardVO">
 	SELECT b_no, b_scate, b_title, b_nick, b_count, TO_CHAR(b_date, 'YYYY.MM.DD') as b_date ,NVL(b_good,0) b_good, b_photo1name ,b_photo2name, b_photo3name
 	 FROM normal_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
-	 (SELECT b_no FROM normal_board nnb WHERE nnb.b_cate = 'tip' ORDER BY b_date DESC))
+	 (SELECT b_no FROM normal_board nnb WHERE nnb.b_cate = #{b_cate} ORDER BY b_date DESC))
 	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_date DESC
 </select>
 

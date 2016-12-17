@@ -392,7 +392,7 @@ public class BoardController {
 			    model.addAttribute("pageVO", boardVO);
 
 			    //--페이징 처리
-			    
+			    boardVO.setB_cate(title);
 			    List<BoardVO>  boardList = boardDao.allPagingBoard(boardVO);
 
 				for(int i=0; i<boardList.size();i++){
