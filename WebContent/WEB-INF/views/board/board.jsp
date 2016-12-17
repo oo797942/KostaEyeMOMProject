@@ -92,7 +92,7 @@ function fn_movePage(val){
 							  	 [팝니다]	${vo.b_title}
 							  </c:when>
 							  <c:otherwise>
-								${vo.b_title }
+								${vo.b_title } 
 								</c:otherwise>
 							</c:choose>	
 							</a>
