@@ -224,7 +224,7 @@
 .accordion:target {
 	border-top: 3px solid #ffa07a;
 	border-bottom: 2px solid #ffa07a;
-}
+} 
 
 .infotable1 {
 	width: 95%;
