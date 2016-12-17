@@ -60,9 +60,9 @@ function fileInfo(f){
 						<input type="text" 
                        value='묻고 말하기' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
-					<c:if test="${title=='kid_sick'}">
+					<c:if test="${title=='used'}">
 						<input type="text" 
-                       value='아이가 아파요' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
+                       value='중고장터' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
 					</c:if>
 					<c:if test="${title=='rice'}">
 						<input type="text" 
@@ -81,8 +81,15 @@ function fileInfo(f){
                <div class='form-inline'>
                   <!-- 제목 입력칸 -->
                   <div>
-                     <label id='boardlabel2'>제목 &nbsp; </label> <input type="text" name='b_title'
-                        class='form-control' id='title3'>
+                     <label id='boardlabel2'>제목 &nbsp; </label> 
+                     <c:if test="${title=='used'}">
+                     <select id='select1' name='b_scate'
+								class="form-control">
+								<option>삽니다</option>
+								<option>팝니다</option>
+					</select>
+					</c:if>
+                     <input type="text" name='b_title' class='form-control' id='title3'>
                   </div>
                </div>
                <div class='form-inline' style="margin-left: 100px">

@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 사용자 정보가져오기 -->
 <select id="userInfo" parameterType="memberVO" resultType="memberVO">
-	select u_id, u_name, u_email, NVL(u_point,0) u_point, TO_CHAR(u_signup_date, 'YYYY.MM.DD') as u_signup_date, u_addr, u_tel, u_lvl from mom_user where u_id=#{u_id}
+	select u_id, u_nick, u_name, u_email, NVL(u_point,0) u_point, TO_CHAR(u_signup_date, 'YYYY.MM.DD') as u_signup_date, u_addr, u_tel, u_lvl from mom_user where u_id=#{u_id}
 </select>
 
 <!-- 사용자 게시글 -->

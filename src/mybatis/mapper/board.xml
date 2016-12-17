@@ -5,13 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="board">
  <select id="totalCount" parameterType="boardVO" resultType="int">
-    SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = 'tip'
+    SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = #{b_cate}
     </select>
  
 <select id="allBoardp" parameterType="boardVO" resultType="boardVO">
 	SELECT b_no, b_scate, b_title, b_nick, b_count, TO_CHAR(b_date, 'YYYY.MM.DD') as b_date ,NVL(b_good,0) b_good, b_photo1name ,b_photo2name, b_photo3name
 	 FROM normal_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
-	 (SELECT b_no FROM normal_board nnb WHERE nnb.b_cate = 'tip' ORDER BY b_date DESC))
+	 (SELECT b_no FROM normal_board nnb WHERE nnb.b_cate = #{b_cate} ORDER BY b_date DESC))
 	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_date DESC
 </select>
 
@@ -202,6 +202,12 @@ where rownum < 10
 <update id="donationfin" parameterType="boardVO">
 update normal_board set b_scate = '나눔완료'
 where b_no=#{b_no} 
+</update>
+
+<!-- 포인트업 -->
+<update id="pointup" parameterType="boardVO">
+update mom_user set u_point = NVL(u_point,0)+1
+where u_id=#{u_id} or u_nick=#{b_nick}
 </update>
 
 </mapper>

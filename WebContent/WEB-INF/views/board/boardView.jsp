@@ -60,7 +60,7 @@
 			$.ajax({
 		        url: "good.do",
 		        type: 'post',
-		        data : { "b_no" : $('#b_no').val()	},
+		        data : { "b_no" : $('#b_no').val(),"b_nick" : $('#id').val()	},
 		       	success: function(result){
 		       	  
 		       		if(result=="2"){

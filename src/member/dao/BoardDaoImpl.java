@@ -200,7 +200,7 @@ public class BoardDaoImpl implements BoardDao {
 
 		int totalCount = 0;
 		try {
-			totalCount = BoardManager.totalCount();
+			totalCount = BoardManager.totalCount(boardVO);
 		} catch (Exception ex) {
 			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
 		}

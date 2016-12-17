@@ -119,7 +119,7 @@
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
 								<li><a href="tip.do?title=tip">· 육아꿀팁</a></li>
 								<li><a href="qnaboard.do">· 묻고 말하기</a></li>
-								<li><a href="kid_sick">· 아이가 아파요</a></li>
+								<li><a href="sick.do">· 아이가 아파요</a></li>
 								<li><a href="gal.do?title=rice">· 아이의 식단</a></li>
 								<li><a href="gal.do?title=baby">· 아이자랑</a></li>
 							</ul>
@@ -145,7 +145,7 @@
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
 								<li><a href="#">· 공동구매</a></li>
-								<li><a href="#">· 중고장터</a></li>
+								<li><a href="tip.do?title=used">· 중고장터</a></li>
 								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>
 						</li>

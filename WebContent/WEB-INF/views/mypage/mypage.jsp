@@ -14,7 +14,7 @@
 			<!-- 마이페이지 배경화면  --><!-- margin : 0 auto는 상하를	 0으로 준뒤 좌우를 auto로 주는 것 -->
 			<div class='mypagediv'>	
 				<!-- 회원등급 텍스트 -->
-				<h3 class='gradeh3'><label>${user.u_name}</label>님의 등급은 <label>${user.u_lvl}</label>입니다</h3>		
+				<h3 class='gradeh3'><label>${user.u_nick}</label>님의 등급은 <label>${user.u_lvl}</label>입니다</h3>		
 				<!-- 마이페이지 흰색 배경 -->
 				<div class='whitediv'>
 				<!-- 개인정보란 -->	
