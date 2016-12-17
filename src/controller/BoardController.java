@@ -218,7 +218,7 @@ public class BoardController {
 		MemberVO mVO=(MemberVO)session.getAttribute("user");
 		boardVO.setU_id(mVO.getU_id());
 		List<BoardVO> list = boardDao.checkGoodId(boardVO);
-		System.out.println("신고자리스트 : "+list.size());
+//		System.out.println("신고자리스트 : "+list.size());
 		if(list.isEmpty()){
 			
 		}else{

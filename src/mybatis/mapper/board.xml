@@ -204,4 +204,10 @@ update normal_board set b_scate = '나눔완료'
 where b_no=#{b_no} 
 </update>
 
+<!-- 포인트업 -->
+<update id="pointup" parameterType="boardVO">
+update mom_user set u_point = NVL(u_point,0)+1
+where u_id=#{u_id} or u_nick=#{b_nick}
+</update>
+
 </mapper>

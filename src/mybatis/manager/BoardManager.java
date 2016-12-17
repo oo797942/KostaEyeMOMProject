@@ -34,7 +34,8 @@ public class BoardManager {
 
       String cate = boardVO.getB_cate();
       if (cate.equals("tip") || cate.equals("rice") || cate.equals("baby") || cate.equals("donation")|| cate.equals("used")) {
-         result = session.insert("board.boardInsert", boardVO);
+    	  session.update("board.pointup",boardVO);
+    	  result = session.insert("board.boardInsert", boardVO);
       } else if (cate.equals("qna_board")) {
 
       } else if (cate.equals("kid_sick")) {
@@ -116,6 +117,8 @@ public class BoardManager {
    public static int countGood(BoardVO boardVO) throws SQLException {
       SqlSession session = CommonManager.db().openSession();
       int result = session.update("board.countGood", boardVO);
+      session.update("board.pointup", boardVO);// 추천인 포인트업
+      session.update("board.pointup", boardVO);
       session.commit();
       return result;
    }
