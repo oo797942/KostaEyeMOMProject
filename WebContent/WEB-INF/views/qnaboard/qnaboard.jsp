@@ -16,7 +16,7 @@
 	        data : { "b_no" : $("#b_no").val(),
 	        	"re_content" : $("#re_content").val()	},
 	       	success: function(result){
-	       	  
+	       	   
 	       		if(result=="1"){
 	       			location.reload();
 	       			
