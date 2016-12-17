@@ -185,7 +185,7 @@
 
 .accordion:target {
 	display: block;
-}
+} 
 
 #accordion .acoul li .acoa {
 	text-decoration: none;
