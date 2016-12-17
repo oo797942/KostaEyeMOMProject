@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/EyeMOM/resources/css/sick/nanumgothic.css" rel="stylesheet" type="text/css">
+<link href="/EyeMOM/resources/css/sick/c2.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 .cateTable{
 	margin:0;
@@ -14,6 +16,7 @@
 	margin-top: 20px;
 	
 }
+
 .menuTd{
 	margin:0;
 	padding:0;
@@ -29,6 +32,7 @@
 	margin:0;
 	padding:0;
 	width:800px;
+	border-left: 1px;
 }
 
 .empty{
@@ -47,10 +51,32 @@
 .sideTop{
 	border: 5px;
 }
+
+ul.d_list li {
+    font-size: 16px;
+/*     color: #e97e1d; */
+    color: #333333;
+/*     font-weight: bold; */
+/*     padding-bottom: 35px; */
+}
+
+ul.d_list li p {
+    font-weight: normal;
+    padding-top: 15px;
+}
+
+.scribeTd{
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'NanumGothic', '나눔고딕', 'Nanum Gothic','NanumGothicWeb', Dotum, sans-serif;
+    font-size: 13px;
+    line-height: 175%;
+}
+
 </style>
 </head>
 <body>
-<div class=body>
+<div class="body">
 		<table class="cateTable" border="0">
 		<tr>
 			<td class="empty"></td>
@@ -62,11 +88,11 @@
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
   					<div id="section1b" class="elements">
-   						<a class="side" href="ato.do" > － 아토피피부염</a><br/>
-   				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
-  						<a class="side" href="gunsun.do" > － 건선</a><br/>
-   						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
-  						<a class="side" href="dudru.do" > － 두드러기</a><br/>
+   						<a class="side" href="#" > － 아토피피부염</a><br/>
+   				    	<a class="side" href="#" > － 태열(소아아토피)</a><br/>
+  						<a class="side" href="#" > － 건선</a><br/>
+   						<a class="side" href="#" > － 지루성피부염</a><br/>
+  						<a class="side" href="#" > － 두드러기</a><br/>
    					</div>
   		  			</div>
  			 	<div>
@@ -76,11 +102,11 @@
   				</div>
 
   				<div class="elements">
-  					<a class="side" href="cold.do" > － 잦은 감기</a><br/>
-  					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
-  					<a class="side" href="chun.do" > － 천식</a><br/>
-  					<a class="side" href="jung.do" > － 중이염</a><br/>
-  					<a class="side" href="gu.do" > － 구취.구내염</a><br/>
+  					<a class="side" href="#" > － 잦은 감기</a><br/>
+  					<a class="side" href="#" > － 비염.축농증</a><br/>
+  					<a class="side" href="#" > － 천식</a><br/>
+  					<a class="side" href="#" > － 중이연</a><br/>
+  					<a class="side" href="#" > － 구취.구내염</a><br/>
   				</div>
   				</div>
   				<div>
@@ -128,16 +154,26 @@
 			</form>
 			</td>
 			
-			<td class="scribeTd">
-			<img src="/EyeMOM/resources/img/sick/ato_1.jpg"><br/><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_2.gif"><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_3.gif"><br/><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_4.jpg"><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_6.gif"><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_7.jpg"><br/><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_8.gif"><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_9.jpg"><br/><br/><br/>
-			<img src="/EyeMOM/resources/img/sick/ato_10.jpg"><br/><br/>
+			<td class="scribeTd" >
+				
+<div class="josuk_top">
+	<div class="pt80 pb40"><img src="/EyeMOM/resources/img/sick/josuk_top_txt01.gif"></div>
+	<div><img src="/EyeMOM/resources/img/sick/josuk_top_txt02.gif"></div>
+	<div class="pt183"><img src="/EyeMOM/resources/img/sick/josuk_check.png"></div>
+</div>
+
+<dl class="contB">
+	<dt><img src="/EyeMOM/resources/img/sick/josuk01_tit.gif"></dt><br/>
+	<dd><img src="/EyeMOM/resources/img/sick/josuk01_txt.gif"></dd>
+</dl>
+
+<dl class="contB">
+	<dt><img src="/EyeMOM/resources/img/sick/josuk02_tit.gif"></dt>
+	<dd><img src="/EyeMOM/resources/img/sick/josuk02_txt.gif"></dd>
+</dl><br/>
+
+
+			
 			</td>
 		</tr>
 		</table>

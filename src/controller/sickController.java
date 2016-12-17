@@ -14,7 +14,7 @@ public class sickController {
 	}
 	
 	@RequestMapping("heat.do")
-	public String sickHeat(){
+	public String sickHeat(){  
 		
 		return "sick/heat";
 	}
@@ -58,7 +58,41 @@ public class sickController {
 		
 		return "sick/gu";
 	}
-	
+	@RequestMapping("josuk.do")
+	public String sickJosuk(){
+		
+		return "sick/josuk";
+	}
+	@RequestMapping("biman.do")
+	public String sickBiman(){
+		
+		return "sick/biman";
+	}
+	@RequestMapping("dang.do")
+	public String sickDang(){
+		
+		return "sick/dang";
+	}
+	@RequestMapping("k1.do")
+	public String sickK1(){
+		
+		return "sick/k1";
+	}
+	@RequestMapping("k2.do")
+	public String sickK2(){
+		
+		return "sick/k2";
+	}
+	@RequestMapping("re.do")
+	public String sickRe(){
+		  
+		return "sick/re";
+	}
+	@RequestMapping("sic.do")
+	public String sickSic(){
+		
+		return "sick/sic";
+	}
 	
 	
 	

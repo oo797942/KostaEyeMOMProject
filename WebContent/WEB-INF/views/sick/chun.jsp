@@ -11,7 +11,7 @@
 .cateTable{
 	margin:0;
 	padding:0;
-	width: 1100px;
+	width: 1100px; 
 	border: 1;
 	margin-top: 20px;
 	
