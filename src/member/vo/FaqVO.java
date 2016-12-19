@@ -1,12 +1,15 @@
 package member.vo;
 
-public class FaqVO extends PageVO{
+
+public class FaqVO extends PageVO {
+
 	private int q_no;
 	private String q_date;
 	private String q_state;
 	private String q_title;
 	private String q_content;
 	private String u_id;
+	private String q_answer;
 	public int getQ_no() {
 		return q_no;
 	}
@@ -42,6 +45,12 @@ public class FaqVO extends PageVO{
 	}
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+	public String getQ_answer() {
+		return q_answer;
+	}
+	public void setQ_answer(String q_answer) {
+		this.q_answer = q_answer;
 	}
 	
 	

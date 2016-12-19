@@ -259,41 +259,47 @@
 					</tr>
 				</thead> 
 				<tbody> 
-					<c:choose>
-    				<c:when test="${empty sessionScope.user}">
-    				<tr class='faqtr'>
-							<td class='faqtd2' scope="row"></td>
-							<td class='faqtd2' scope="row"></td>
-							<td class='faqtd2' scope="row"><a  href="#test-popup" class="open-popup-link">로그인 후 사용가능합니다</a></td>
-							<td class='faqtd2' scope="row"></td>
-							<td class='faqtd2'scope="row"></td>
-						</tr>
-					</c:when>
-					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+					<c:forEach var='vo' items='${list}'>
 						<tr class='faqtr'>
-							<td class='faqtd2' scope="row">4</td>
+							<td class='faqtd2' scope="row">${vo.q_no}</td>
 							<td class='faqtd2' scope="row">질문</td>
-							<td class='faqtd2' scope="row"><a  class='faqA'>집 언제 갈까요?</a></td>
-							<td class='faqtd2' scope="row">2016-12-16</td>
-							<td class='faqtd2'scope="row">답변예정</td>
-						</tr>
+							<td class='faqtd2' scope="row"><a  class='faqA'>${vo.q_title}</a></td>
+							<td class='faqtd2' scope="row">${vo.q_date}</td>
+							<td class='faqtd2'scope="row">
+								<c:if test="${vo.q_state=='n'}">
+									답변예정
+								</c:if>
+								<c:if test="${vo.q_state=='y'}">
+									답변완료
+								</c:if>
+							</td>
+						<c:if test="${empty vo.q_answer}">
 						<tr class='faqasr'>
 							<td  class='faqtd2' />
 							<td  class='faqtd2' >답변</td>
 							<td  class='faqtd2'>
 								<p>
-								asd<br/>
-								asd<br/>
-								asd<br/>
-								asd<br/>
+								빠른 시일내에 답변해드리겠습니다
 								</p>
 							</td>
-							<td  class='faqtd2' >16-12-17</td>
+							<td  class='faqtd2' ></td>
 							<td  class='faqtd2' >admin</td>
 						</tr>
-					</c:otherwise>	
-					</c:choose>
-					
+						</c:if>
+						<c:if test="${not empty vo.q_answer}">
+						<tr class='faqasr'>
+							<td  class='faqtd2' />
+							<td  class='faqtd2' >답변</td>
+							<td  class='faqtd2'>
+								<p>
+								${vo.q_answer}
+								</p>
+							</td>
+							<td  class='faqtd2' ></td>
+							<td  class='faqtd2' >admin</td>
+						</tr>
+						</c:if>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

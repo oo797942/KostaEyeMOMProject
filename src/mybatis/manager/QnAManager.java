@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import member.vo.BoardVO;
 import member.vo.FaqVO;
 import member.vo.QnAVO;
 
@@ -53,5 +54,19 @@ public class QnAManager {
 		   session.commit();
 		   return vlist;
 	}
-	
+	   public static int totalCount(FaqVO faqVO) throws SQLException {
+		      SqlSession session = CommonManager.db().openSession();
+		      int totalCount = session.selectOne("qna.totalCount", faqVO);
+
+		      session.commit();
+		      return totalCount;
+		   }
+	   // 공지사항 리스트 뽑아오기
+	   public static List<FaqVO> allpagingFaq(FaqVO faqvo) throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      List<FaqVO> list = session.selectList("qna.allFaqp", faqvo);
+
+	      session.commit();
+	      return list;
+	   }
 }

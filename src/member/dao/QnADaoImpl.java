@@ -3,8 +3,10 @@ package member.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import member.vo.BoardVO;
 import member.vo.FaqVO;
 import member.vo.QnAVO;
+import mybatis.manager.BoardManager;
 import mybatis.manager.QnAManager;
 
 
@@ -72,4 +74,28 @@ public class QnADaoImpl implements QnADao {
 		}
 	return vlist; 
 	}
+	
+	public int faqListCount(FaqVO faqVO) {
+
+		int totalCount = 0;
+		try {
+			totalCount = QnAManager.totalCount(faqVO);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+	@Override
+	public List<FaqVO> allPagingFaq(FaqVO vo) {
+		List<FaqVO> list = null;
+		try {
+			System.out.println("DAO 체크" + vo.getQ_no());
+
+			list = QnAManager.allpagingFaq(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAO페징 : " + ex.getMessage());
+		}
+		return list;
+	}
+	
 }

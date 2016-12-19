@@ -207,6 +207,6 @@ public class BoardManager {
       session.commit();
       return list;
    }
-   
+
    
 }

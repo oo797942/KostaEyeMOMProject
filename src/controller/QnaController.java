@@ -33,9 +33,22 @@ public class QnaController {
 	/////////////////////////////////FAQ
 	
 	@RequestMapping("faqboard.do")
-	public String faqboard(Model m){
+	public String faqboard(HttpSession session, Model m, FaqVO faqVO){
 		
+		List <FaqVO> list=null;
+		MemberVO memberVO=(MemberVO)session.getAttribute("user");
+		faqVO.setU_id(memberVO.getU_id());
+		  //--페이징 처리
+	    int totalCount = QnaDao.faqListCount(faqVO); //게시물 총갯수를 구한다
+	    faqVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    faqVO.setPageSize(12);
+	    m.addAttribute("pageVO", faqVO);
+
+	    //--페이징 처리
+	    
+	    List<FaqVO>  faqList = QnaDao.allPagingFaq(faqVO);
 		
+		m.addAttribute("list", faqList); //가져온 DB를 모델에 저장
 		return "faqboard/faqboard";
 	}
 	//1:1문의
@@ -62,11 +75,23 @@ public class QnaController {
 	
 //	------Faq리스트-----
 	@RequestMapping("/adminQna.go")
-	public String admonFaq(HttpSession session, Model m){
-		
+	public String admonFaq(HttpSession session, Model m, FaqVO faqVO){
 		List <FaqVO> list=null;
-		list= QnaDao.allFaq();
-		m.addAttribute("list",list);
+		
+		  //--페이징 처리
+	    int totalCount = QnaDao.faqListCount(faqVO); //게시물 총갯수를 구한다
+	    faqVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    faqVO.setPageSize(12);
+	    m.addAttribute("pageVO", faqVO);
+
+	    //--페이징 처리
+	    
+	    List<FaqVO>  faqList = QnaDao.allPagingFaq(faqVO);
+		
+		m.addAttribute("list", faqList); //가져온 DB를 모델에 저장
+
+//		list= QnaDao.allFaq();
+//		m.addAttribute("list",list);
 		return "adminQna";
 	}
 	
@@ -78,5 +103,7 @@ public class QnaController {
 		return "faqAnswer";
 	}
 	
+	
+
 	
 }
