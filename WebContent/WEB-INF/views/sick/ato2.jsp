@@ -5,8 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="/EyeMOM/resources/css/sick/nanumgothic.css" rel="stylesheet" type="text/css">
-<link href="/EyeMOM/resources/css/sick/c2.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 .cateTable{
 	margin:0;
@@ -16,7 +14,6 @@
 	margin-top: 20px;
 	
 }
-
 .menuTd{
 	margin:0;
 	padding:0;
@@ -32,7 +29,6 @@
 	margin:0;
 	padding:0;
 	width:800px;
-	border-left: 1px;
 }
 
 .empty{
@@ -51,36 +47,15 @@
 .sideTop{
 	border: 5px;
 }
-
-ul.d_list li {
-    font-size: 16px;
-/*     color: #e97e1d; */
-    color: #333333;
-/*     font-weight: bold; */
-/*     padding-bottom: 35px; */
-}
-
-ul.d_list li p {
-    font-weight: normal;
-    padding-top: 15px;
-}
-
-.scribeTd{
-    font-size: 13px;
-    line-height: 18px;
-    font-family: 'NanumGothic', '나눔고딕', 'Nanum Gothic','NanumGothicWeb', Dotum, sans-serif;
-    font-size: 13px;
-    line-height: 175%;
-}
-
 </style>
+<script>
+$(document).ready(function(){
+    $("#div1").load("ato.do");
+});
+</script>
 </head>
 <body>
-<div class="body">
-	<table class="cateTable" border="0">
-		<tr>
-			<td class="empty"></td>
-			<td class="menuTd">
+
 			
 			<form>
  				<div class="sideMenu">
@@ -136,7 +111,6 @@ ul.d_list li p {
   				</div>
   				</div>
   				
-  				<div>
 
   				<div id="section5" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side5.gif" border="1"/>
@@ -151,41 +125,7 @@ ul.d_list li p {
  					<a class="side" href="#" > － 틱장애</a><br/> 					
  					<a class="side" href="#" > － ADHD</a><br/> 					
   				</div>
-  				</div>
 			</form>
-			</td>
-			
-			<td class="scribeTd" >
-					<div class="d_con con2">
-					<ul class="d_list2">
-						<li>건선이란?
-							<p>
-								건선은 <u>은백색 비듬같은 인설과 붉은 발진이 반복적으로 나타나는 피부질환</u>입니다. 아토피 피부염과는 달리 가려움증이 심하지는 않습니다.  <br>
-								무릎과 팔꿈치등 외부자극에 쉬운 부분에 많이 생기지만 머리나 몸통 같은 곳에서도 나타납니다.<br>
-건선은 피부가 건조해지는 
-								증상이 있으며 가을과 겨울철에 심해집니다.  <br>
-								임상적인 증상으로 진단을 내리기도 하나 조직 검사로 확진하게 됩니다.
-							</p>
-						</li>
-						<li>건선의 원인 
-							<p>건선의 원인은 현대의학에서 밝혀진 바는 없습니다. <br>
-							다만 <span class="t_col">면역세포의 활성도가 증가되어<br>
-이 물질이 피부를 자극</span>하여 생긴다고 보고 있습니다. <br>
-							<br>
-							본 한의원에서는 영유아의 건선의 경우,<br>
-대개 태열에 의해 열독이 피부에 
-							정체되어 나타나는 증상으로 보고 치료합니다.<br>
-따라서 아기들의 몸속에 있는 화기(火氣)를 
-							내려주어<br>
-스스로 피부호흡을 할 수 있는 몸상태로 되돌려줍니다.</p>
-						</li>
-					</ul>
-				</div>
-			
-			</td>
-		</tr>
-		</table>
-	</div>
 
 <script type="text/javascript">
 var elements = document.getElementsByTagName("div");

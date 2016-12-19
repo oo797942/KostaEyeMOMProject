@@ -77,7 +77,7 @@ ul.d_list li p {
 </head>
 <body>
 <div class="body">
-		<table class="cateTable" border="0">
+	<table class="cateTable" border="0">
 		<tr>
 			<td class="empty"></td>
 			<td class="menuTd">
@@ -88,11 +88,11 @@ ul.d_list li p {
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
   					<div id="section1b" class="elements">
-   						<a class="side" href="#" > － 아토피피부염</a><br/>
-   				    	<a class="side" href="#" > － 태열(소아아토피)</a><br/>
-  						<a class="side" href="#" > － 건선</a><br/>
-   						<a class="side" href="#" > － 지루성피부염</a><br/>
-  						<a class="side" href="#" > － 두드러기</a><br/>
+   						<a class="side" href="sick.do" > － 아토피피부염</a><br/>
+   				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
+  						<a class="side" href="gunsun.do" > － 건선</a><br/>
+   						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
+  						<a class="side" href="dudru.do" > － 두드러기</a><br/>
    					</div>
   		  			</div>
  			 	<div>
@@ -102,11 +102,11 @@ ul.d_list li p {
   				</div>
 
   				<div class="elements">
-  					<a class="side" href="#" > － 잦은 감기</a><br/>
-  					<a class="side" href="#" > － 비염.축농증</a><br/>
-  					<a class="side" href="#" > － 천식</a><br/>
-  					<a class="side" href="#" > － 중이연</a><br/>
-  					<a class="side" href="#" > － 구취.구내염</a><br/>
+  					<a class="side" href="cold.do" > － 잦은 감기</a><br/>
+  					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
+  					<a class="side" href="chun.do" > － 천식</a><br/>
+  					<a class="side" href="jung.do" > － 중이염</a><br/>
+  					<a class="side" href="gu.do" > － 구취.구내염</a><br/>
   				</div>
   				</div>
   				<div>
@@ -116,8 +116,9 @@ ul.d_list li p {
   				</div>
 
   				<div class="elements">
-  					<a class="side" href="#" > － 성조숙증</a><br/>
-  					<a class="side" href="#" > － 소아비만</a><br/>
+  					<a class="side" href="josuk.do" > － 성조숙증</a><br/>
+  					<a class="side" href="biman.do" > － 소아비만</a><br/>
+  					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				
   				</div>
   				</div>
@@ -129,9 +130,9 @@ ul.d_list li p {
   				</div>
 
   				<div class="elements">
-					<a class="side" href="#" > － 열성경련</a><br/>  					
-					<a class="side" href="#" > － 뇌전증(경기,간질)</a><br/>  					
-					<a class="side" href="#" > － 레녹스가스토증후군</a><br/>  					
+					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
+					<a class="side" href="k2.do" > － 뇌전증(경기,간질)</a><br/>  					
+					<a class="side" href="re.do" > － 레녹스가스토증후군</a><br/>  					
   				</div>
   				</div>
   				
@@ -142,7 +143,7 @@ ul.d_list li p {
   				</div>
 
   				<div class="elements">
- 					<a class="side" href="#" > － 식욕부진</a><br/> 					
+ 					<a class="side" href="sic.do" > － 식욕부진</a><br/> 					
  					<a class="side" href="#" > － 야뇨증</a><br/> 					
  					<a class="side" href="#" > － 야제증</a><br/> 					
  					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					

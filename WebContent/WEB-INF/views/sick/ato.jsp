@@ -50,10 +50,11 @@
 </style>
 </head>
 <body>
+
 <div class=body>
-		<table class="cateTable" border="0">
+	<table class="cateTable" border="0">
 		<tr>
-			<td class="empty"></td>
+				<td class="empty"></td>
 			<td class="menuTd">
 			
 			<form>
@@ -62,7 +63,7 @@
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
   					<div id="section1b" class="elements">
-   						<a class="side" href="ato.do" > － 아토피피부염</a><br/>
+   						<a class="side" href="sick.do" > － 아토피피부염</a><br/>
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
@@ -90,8 +91,9 @@
   				</div>
 
   				<div class="elements">
-  					<a class="side" href="#" > － 성조숙증</a><br/>
-  					<a class="side" href="#" > － 소아비만</a><br/>
+  					<a class="side" href="josuk.do" > － 성조숙증</a><br/>
+  					<a class="side" href="biman.do" > － 소아비만</a><br/>
+  					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				
   				</div>
   				</div>
@@ -103,9 +105,9 @@
   				</div>
 
   				<div class="elements">
-					<a class="side" href="#" > － 열성경련</a><br/>  					
-					<a class="side" href="#" > － 뇌전증(경기,간질)</a><br/>  					
-					<a class="side" href="#" > － 레녹스가스토증후군</a><br/>  					
+					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
+					<a class="side" href="k2.do" > － 뇌전증(경기,간질)</a><br/>  					
+					<a class="side" href="re.do" > － 레녹스가스토증후군</a><br/>  					
   				</div>
   				</div>
   				
@@ -116,7 +118,7 @@
   				</div>
 
   				<div class="elements">
- 					<a class="side" href="#" > － 식욕부진</a><br/> 					
+ 					<a class="side" href="sic.do" > － 식욕부진</a><br/> 					
  					<a class="side" href="#" > － 야뇨증</a><br/> 					
  					<a class="side" href="#" > － 야제증</a><br/> 					
  					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					
@@ -126,7 +128,6 @@
   				</div>
   				</div>
 			</form>
-			</td>
 			
 			<td class="scribeTd">
 			<img src="/EyeMOM/resources/img/sick/ato_1.jpg"><br/><br/><br/>
