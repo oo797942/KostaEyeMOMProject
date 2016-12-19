@@ -6,27 +6,22 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
 <link rel="stylesheet" href="resources/css/board.css">
 <link rel="stylesheet" href="resources/css/style.css">
-<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
-	</head><body>&lt;<script type="text/javascript">
-	$(function(){
-		 
-			
-	});
+<!-- <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script> -->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	</head>
+	<script type="text/javascript">
 	function fn_movePage(val){
 	    jQuery("input[name=pageNo]").val(val);
 	    jQuery("form[name=frm]").attr("method", "post");
 	    jQuery("form[name=frm]").attr("action","adminQna.go").submit();
 	}
-	function popupOpen(articleNo){
-		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
-		var popOption = "width=800, height=600, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-			window.open(popUrl,"",popOption);
-};
+
 </script>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="./resources/css/dashboard.css" rel="stylesheet">
+	<body>
 
 <!-- 상단바 -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -72,7 +67,7 @@
     <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
         
           <h1 class="page-header">문의 관리</h1>
-<a href="faqAnswer.do">새창고</a>
+<a href="faqAnswer.do" >새창고</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -82,6 +77,7 @@
                   <th>작정자</th>
                   <th>작정일</th>                  
                   <th>답변 상태</th>
+                  <th>답변 하기</th>
                 </tr>
 <tbody class="table-striped table-hover">
 <c:forEach var="vo" items="${list}">
@@ -90,7 +86,18 @@
                   <th>${vo.q_title}</th>
                   <th>${vo.u_id}</th>
                   <th>${vo.q_date}</th>
-                  <th>${vo.q_state}</th>
+                  <th>
+                  					<c:if test="${vo.q_state=='n'}">
+									답변예정
+								</c:if>
+								<c:if test="${vo.q_state=='y'}">
+									답변완료
+								</c:if>
+                  </th>
+                  <th><input type="button" value="답변 하기" class="btn btn-success btn-sm"
+                  onclick="window.open('faqAnswer.do?q_no=${vo.q_no}', '문의 답변',
+                   				'width=800px,height=500');return false;" />
+                   				</th>
 	</tr>
 	</c:forEach>
 	</tbody>

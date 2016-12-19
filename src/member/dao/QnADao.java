@@ -14,5 +14,6 @@ public interface QnADao {
 	FaqVO selectFaq(FaqVO vo);
 	int faqListCount(FaqVO faqVO);
 	List<FaqVO> allPagingFaq(FaqVO vo);
+	int faqAnswerDoing(FaqVO vo);
 }
  

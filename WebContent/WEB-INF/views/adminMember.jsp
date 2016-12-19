@@ -99,8 +99,7 @@ $(function(){
 
                   <th><input type="button" value="회원정지" class="btn btn-warning btn-sm"
                   onclick="window.open('memberStop.go?u_id=${vo.u_id}', '회원 정지',
-                   				'width=450px,height=380');return false;"
-                   /></th>
+                   				'width=450px,height=380');return false;" /></th>
                 </tr>
 </c:forEach>
 

@@ -50,7 +50,7 @@ public class QnAManager {
 	
 	public static FaqVO selectFaq(FaqVO vo) throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
-		   FaqVO vlist = session.selectOne("qna.selectFaq",vo);
+		   FaqVO vlist = session.selectOne("qna.allFaq",vo);
 		   session.commit();
 		   return vlist;
 	}
@@ -69,4 +69,13 @@ public class QnAManager {
 	      session.commit();
 	      return list;
 	   }
+	   
+		public static int faqAnswerDoing(FaqVO faqVO) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			   int result = session.update("qna.faqAnswer", faqVO);
+			   session.commit();
+			   return result;
+		}
+	   
 }

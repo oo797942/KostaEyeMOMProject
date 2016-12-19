@@ -1,5 +1,6 @@
 package controller;
 
+import java.rmi.server.SocketSecurityException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -101,6 +102,13 @@ public class QnaController {
 		vlist= QnaDao.selectFaq(faqVO);
 		m.addAttribute("vlist",vlist);
 		return "faqAnswer";
+	}
+	
+	@RequestMapping("faqAnswerDoing.go")
+	public String faqAnswerDoing(Model m,FaqVO faqVO){
+		faqVO.setQ_answer(faqVO.getQ_answer().replaceAll("\r\n","<br>"));
+		QnaDao.faqAnswerDoing(faqVO);
+		return "popupClose";
 	}
 	
 	

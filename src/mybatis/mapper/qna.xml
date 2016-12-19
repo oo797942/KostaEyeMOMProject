@@ -5,6 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="qna">
 
+<update id="faqAnswer" parameterType="faqVO">
+UPDATE faq_admin SET q_answer = #{q_answer}, q_state = 'y' WHERE q_no = #{q_no}
+</update>
+
  <select id="totalCount" parameterType="faqVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM faq_admin 
     <if test="u_id !=null">
@@ -15,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <select id="allFaqp" parameterType="faqVO" resultType="faqVO">
-SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id
+SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id, q_answer
 	 FROM faq_admin WHERE q_no in(SELECT q_no FROM (SELECT rownum as rnum, q_no FROM
 	 (SELECT q_no FROM faq_admin nnb 
 	 <if test="u_id !=null">
@@ -43,7 +47,7 @@ SELECT b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_d
 
 <!-- FAQ리스트 -->
 <select id="allFaq" resultType="faqVO">
-SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id  FROM faq_admin
+SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id, q_answer  FROM faq_admin
 <where>
 <if test="q_no neq null">
 q_no = #{q_no}

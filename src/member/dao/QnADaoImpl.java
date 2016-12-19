@@ -97,5 +97,18 @@ public class QnADaoImpl implements QnADao {
 		}
 		return list;
 	}
+	@Override
+	public int faqAnswerDoing(FaqVO vo) {
+		int result=0;
+		try{ 
+			result = QnAManager.faqAnswerDoing(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("QnADaoImpl / 리스트가져오기 실패 : " + ex.getMessage());
+		}
+		
+		return result;
+	}
+	
 	
 }

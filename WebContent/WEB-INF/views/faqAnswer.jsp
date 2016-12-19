@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
         	<%@ page import="java.util.*, java.text.*"  %>
-
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
  java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
  String today = formatter.format(new java.util.Date());
@@ -84,38 +84,38 @@ $(function(){
 
 				<!-- 입력창 div -->
 					<div class='answerinputdiv' height="300" >
-					<form action="memberExile.go">
-					 
+					<form action="faqAnswerDoing.go">
+					 <input type="hidden" name="q_no" value="${vlist.q_no}">
 					  <table class="table" width="100%" height="190" border="0">
 					    <tbody>
 					      <tr border="1">
 					        <th align="center" width="10%">제목</th>
 					        <td align="center" width="40%">
-							아기는 어떻게 생겨요?
+							${vlist.q_title}
 							</td>
 					        <th align="center" width="10%"> 작성자</th>
 					        <td align="center" width="15%">
-					        감자맨
+					        ${vlist.u_id}
 					        </td>
 					        <th align="center" width="10%">작성일</th>
-					        <td align="center" width="15%">2020/02/02</td>
+					        <td align="center" width="15%">${vlist.q_date}</td>
 				          </tr>
 					      <tr>
-					        <th height="70" width="10%">문의 내용</th>
+					        <th height="150" width="10%">문의 내용</th>
 					        <td colspan="5" width="15%">
-					          <textarea class='form-control' id='content'  name='b_content'></textarea>
+					          <textarea class='form-control' id='content'  name='q_content' style="width:100%; height:100%;" disabled="disabled">${vlist.q_content}</textarea>
 					        </td>
 				          </tr>
 					      <tr>
-					        <th height="79">답변</th>
+					        <th height="150">답변</th>
 					        <td colspan="5" >
-					        					          <textarea class='form-control' id='content'  name='b_content'></textarea>
+					        					          <textarea class='form-control' id='content'  name='q_answer' style="width:100%; height:100%;" >${vlist.q_answer}</textarea>
 					        </td>
 				          </tr>
 				        </tbody>
 				      </table>
 	<div style="text-align: center">
-				          						<input type="submit" value='답변하기' id='memberBenish' class="btn btn-success btn-lg">
+				          						<input type="submit" value='답변 등록' id='memberBenish' class="btn btn-success btn-lg">
 	</div>
 					</form>
 </div>
