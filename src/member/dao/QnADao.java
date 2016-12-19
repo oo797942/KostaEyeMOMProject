@@ -11,6 +11,8 @@ public interface QnADao {
 	List<QnAVO> allQna();
 	int writeFaq(FaqVO vo);
 	List<FaqVO> allFaq();
-	FaqVO selectFaq(FaqVO vo); 
+	FaqVO selectFaq(FaqVO vo);
+	int faqListCount();
+	List<FaqVO> allPagingFaq(FaqVO vo);
 }
  

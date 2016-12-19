@@ -5,6 +5,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="qna">
 
+ <select id="totalCount" resultType="int">
+    SELECT COUNT(*)  totalCount FROM faq_admin
+    </select>
+<select id="allFaqp" parameterType="faqVO" resultType="faqVO">
+SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id
+	 FROM faq_admin WHERE q_no in(SELECT q_no FROM (SELECT rownum as rnum, q_no FROM
+	 (SELECT q_no FROM faq_admin nnb ORDER BY q_date DESC))
+	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY q_date DESC
+</select>
 <!-- 메인에 띄워줄 QnA 리스트 -->
 <select id="mainQna" parameterType="qnaVO" resultType="qnaVO"> 
 <![CDATA[

@@ -4,12 +4,19 @@
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
+<link rel="stylesheet" href="resources/css/board.css">
+<link rel="stylesheet" href="resources/css/style.css">
 <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
 	</head><body>&lt;<script type="text/javascript">
 	$(function(){
 		 
 			
 	});
+	function fn_movePage(val){
+	    jQuery("input[name=pageNo]").val(val);
+	    jQuery("form[name=frm]").attr("method", "post");
+	    jQuery("form[name=frm]").attr("action","adminQna.go").submit();
+	}
 	function popupOpen(articleNo){
 		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
 		var popOption = "width=800, height=600, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
@@ -61,6 +68,9 @@
         
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
+        
           <h1 class="page-header">문의 관리</h1>
 <a href="faqAnswer.do">새창고</a>
           <div class="table-responsive">
@@ -89,6 +99,41 @@
               </tbody>
             </table>
           </div>	
+          			   	<!-- 페이징 -->
+			<div class='form-inline'>
+					<ul class="pagination modal-1">
+
+    <c:if test="${pageVO.pageNo != 0}">
+        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
+       </c:if>
+       <c:if test="${pageVO.pageNo != 1}">
+           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
+        </c:if>
+        <span>
+            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
+                <c:choose>
+                    <c:when test="${i eq pageVO.pageNo}">
+                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
+                            <font style="font-weight: bold;">${i}</font>
+                        </a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </span>
+        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
+        </c:if>
+        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
+        </c:if>
+    </c:if>
+    				</ul>
+    </div>
+</form>
         </div>
       
 </body>

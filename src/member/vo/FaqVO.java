@@ -1,6 +1,6 @@
 package member.vo;
 
-public class FaqVO {
+public class FaqVO extends PageVO {
 	private int q_no;
 	private String q_date;
 	private String q_state;
