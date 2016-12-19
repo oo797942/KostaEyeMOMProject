@@ -32,7 +32,19 @@
 					<a href="#">공지사항</a><br />
 					<a href="#">문의하기</a><br />
 					<a href="#">신고하기</a><br />
+					
+					<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+    				<!-- 글쓰기 버튼 -->
+					<a href="#test-popup" class="open-popup-link">
+					FAQ
+					</a><br />
+					</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 					<a href="faqboard.do">FAQ</a><br />
+					</c:otherwise>	
+					</c:choose>
+					
 				</p>
 			</td>
 			<td width="25%">

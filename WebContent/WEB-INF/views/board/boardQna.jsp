@@ -63,12 +63,12 @@
 						<td class='boardtd'>
 						<c:choose>
 						<c:when test="${empty sessionScope.user}">
-							<a href="#test-popup" class="open-popup-link">
+							<a href="#test-popup" class="open-popup-link" style='text-decoration: none'>
 								${vo.in_title }
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">${vo.in_title }
+							<a href="qnaview.do" style='text-decoration: none'>${vo.in_title }
 							</a>
 						</c:otherwise>	
 						</c:choose>

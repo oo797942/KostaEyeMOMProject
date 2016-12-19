@@ -30,6 +30,8 @@ public class QnaController {
 		m.addAttribute("list",list);
 		return "board/boardQna";
 	}
+	
+
 
 	/////////////////////////////////FAQ
 	

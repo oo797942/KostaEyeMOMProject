@@ -263,42 +263,49 @@
 						<tr class='faqtr'>
 							<td class='faqtd2' scope="row">${vo.q_no}</td>
 							<td class='faqtd2' scope="row">질문</td>
-							<td class='faqtd2' scope="row"><a  class='faqA'>${vo.q_title}</a></td>
+							<td class='faqtd2' scope="row"><a  class='faqA' style='text-decoration: none'>${vo.q_title}</a></td>
 							<td class='faqtd2' scope="row">${vo.q_date}</td>
+							<c:if test="${vo.q_state=='n'}">
 							<td class='faqtd2'scope="row">
-								<c:if test="${vo.q_state=='n'}">
 									답변예정
-								</c:if>
-								<c:if test="${vo.q_state=='y'}">
-									답변완료
-								</c:if>
 							</td>
-						<c:if test="${empty vo.q_answer}">
 						<tr class='faqasr'>
 							<td  class='faqtd2' />
 							<td  class='faqtd2' >답변</td>
 							<td  class='faqtd2'>
 								<p>
+								<br/>
 								빠른 시일내에 답변해드리겠습니다
+								<br/><br/>
 								</p>
 							</td>
 							<td  class='faqtd2' ></td>
 							<td  class='faqtd2' >admin</td>
 						</tr>
-						</c:if>
-						<c:if test="${not empty vo.q_answer}">
+							</c:if>
+							<c:if test="${vo.q_state=='y'}">
+							<td class='faqtd2'scope="row">
+									<br/>
+									답변완료
+									<br/><br/>
+							</td>
 						<tr class='faqasr'>
 							<td  class='faqtd2' />
 							<td  class='faqtd2' >답변</td>
 							<td  class='faqtd2'>
 								<p>
+								<br/>
 								${vo.q_answer}
+								<br/><br/>
 								</p>
 							</td>
 							<td  class='faqtd2' ></td>
 							<td  class='faqtd2' >admin</td>
 						</tr>
-						</c:if>
+							</c:if>
+							
+						
+					
 					</c:forEach>
 				</tbody>
 			</table>

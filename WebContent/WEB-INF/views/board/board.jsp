@@ -83,7 +83,7 @@ function fn_movePage(val){
 						<td class='boardtd'>
 						<c:choose>
 						<c:when test="${empty sessionScope.user}">
-							<a href="#test-popup" class="open-popup-link">
+							<a href="#test-popup" class="open-popup-link" style='text-decoration: none'>
 								<c:choose>
 								<c:when test="${vo.b_scate=='buy'}">
 							  	 [삽니다]	${vo.b_title}
@@ -98,7 +98,7 @@ function fn_movePage(val){
 							</a>
 						</c:when>	
 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">
+							<a href="boardview.do?b_no=${vo.b_no }" style='text-decoration: none'>
 								<c:choose>
 								<c:when test="${vo.b_scate=='buy'}">
 							  	 [삽니다]	${vo.b_title}
@@ -114,7 +114,7 @@ function fn_movePage(val){
 						</c:otherwise>	
 						</c:choose>
 							<!-- 게시글 댓글 수  -->
-							<label>&nbsp;[${vo.b_recount}]</label>	
+						<label>&nbsp;[${vo.b_recount}]</label>	
 						</td>
 						<!-- 작성자 -->
 						<td class='boardtd'>${vo.b_nick }</td>

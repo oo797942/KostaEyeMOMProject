@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-<link rel="stylesheet" href="css/qnaboard.css">
+<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="resources/css/qnaboard.css">
 <script type="text/javascript">
 $(function(){
 	$('.AqnaComment').hide();
