@@ -21,8 +21,21 @@ SELECT b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_d
 	FROM qna_board  order by b_no desc
 </select>
 
+
+<!-- FAQ리스트 -->
+<select id="allFaq" resultType="faqVO">
+SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id  FROM faq_admin
+<where>
+<if test="q_no neq null">
+q_no = #{q_no}
+</if>
+</where>
+
+</select>
 <!-- 1:1문의 -->
 <insert id="writeFaq" parameterType="faqVO">
 INSERT INTO faq_admin (q_no, q_date, q_title, q_content, u_id)VALUES (mom_qna_no.nextval, sysdate, #{q_title}, #{q_content}, #{u_id})
 </insert>
+
+
 </mapper>

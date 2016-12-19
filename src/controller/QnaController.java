@@ -60,12 +60,23 @@ public class QnaController {
 		return "qnaboard/qnaboard";
 	}
 	
+//	------Faq리스트-----
 	@RequestMapping("/adminQna.go")
 	public String admonFaq(HttpSession session, Model m){
 		
 		List <FaqVO> list=null;
-//		list= QnaDao.allFaq();
+		list= QnaDao.allFaq();
 		m.addAttribute("list",list);
 		return "adminQna";
 	}
+	
+	@RequestMapping("faqAnswer.do")
+	public String faqAnswer(Model m,FaqVO faqVO){
+		FaqVO vlist=null;
+		vlist= QnaDao.selectFaq(faqVO);
+		m.addAttribute("vlist",vlist);
+		return "faqAnswer";
+	}
+	
+	
 }

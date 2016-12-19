@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
@@ -61,7 +62,7 @@
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">문의 관리</h1>
-
+<a href="faqAnswer.do">새창고</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -72,7 +73,17 @@
                   <th>작정일</th>                  
                   <th>답변 상태</th>
                 </tr>
-	
+<tbody class="table-striped table-hover">
+<c:forEach var="vo" items="${list}">
+      <tr>
+                  <th>${vo.q_no}</th>
+                  <th>${vo.q_title}</th>
+                  <th>${vo.u_id}</th>
+                  <th>${vo.q_date}</th>
+                  <th>${vo.q_state}</th>
+	</tr>
+	</c:forEach>
+	</tbody>
               </thead>
               <tbody>
               </tbody>

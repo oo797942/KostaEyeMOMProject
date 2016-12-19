@@ -38,4 +38,20 @@ public class QnAManager {
 		   session.commit();
 		   return result;
 	}
+	
+	public static List<FaqVO> allFaq() throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		   List<FaqVO> list = session.selectList("qna.allFaq");
+		   session.commit();
+		   return list;
+	}
+	
+	
+	public static FaqVO selectFaq(FaqVO vo) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		   FaqVO vlist = session.selectOne("qna.selectFaq",vo);
+		   session.commit();
+		   return vlist;
+	}
+	
 }

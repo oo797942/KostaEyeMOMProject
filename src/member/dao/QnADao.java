@@ -10,5 +10,7 @@ public interface QnADao {
 	List<QnAVO> newQna(); 
 	List<QnAVO> allQna();
 	int writeFaq(FaqVO vo);
+	List<FaqVO> allFaq();
+	FaqVO selectFaq(FaqVO vo); 
 }
  

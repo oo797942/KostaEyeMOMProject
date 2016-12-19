@@ -1,5 +1,6 @@
 package member.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import member.vo.FaqVO;
@@ -49,5 +50,26 @@ public class QnADaoImpl implements QnADao {
 		
 		return result;
 	}
+	public List<FaqVO> allFaq(){
+		List<FaqVO> list = null;
+		try {
+			list = QnAManager.allFaq();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return list;
+	}
 	
+	
+	@Override
+	public FaqVO selectFaq(FaqVO vo) {
+		FaqVO vlist = null;
+		try{ 
+			vlist = QnAManager.selectFaq(vo);
+		}catch( Exception ex )
+		{
+			System.out.println("QnADaoImpl / 리스트가져오기 실패 : " + ex.getMessage());
+		}
+	return vlist; 
+	}
 }
