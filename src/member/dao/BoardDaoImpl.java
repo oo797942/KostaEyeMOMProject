@@ -219,4 +219,63 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
+	
+
+	@Override
+	public int adminBoardListCount() {
+
+		int totalCount = 0;
+		try {
+			totalCount = BoardManager.admintotalCount();
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+
+	@Override
+	public List<BoardVO> adminPagingBoard(BoardVO vo) {
+		List<BoardVO> list = null;
+		try {
+			System.out.println("DAO 체크" + vo.getB_no());
+
+			list = BoardManager.adminPagingBoard(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAO페징 : " + ex.getMessage());
+		}
+		return list;
+	}
+	
+	@Override
+	public int adminBoardInsert(BoardVO vo) {
+		int result = 0;
+		try {
+			result = BoardManager.adminBoardInsert(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
+	@Override
+	public BoardVO adminBoardUpdate(BoardVO vo) {
+		BoardVO result = null;
+		try {
+			result = BoardManager.adminBoardUpdate(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
+	@Override
+	public int adminBoardUpdateDoing(BoardVO vo) {
+		int result = 0;
+		try {
+			result = BoardManager.adminBoardUpdateDoing(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 }

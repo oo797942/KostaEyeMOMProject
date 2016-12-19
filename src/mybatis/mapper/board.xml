@@ -4,6 +4,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="board">
+
+<update id="adminBoardUpdate" parameterType="boardVO">
+	UPDATE normal_board
+	SET b_title = #{b_title}, b_content = #{b_content},b_date = sysdate 
+	WHERE b_no = #{b_no}
+</update>
+
+<!-- 게시판 등록 -->
+<insert id="adminBoardInsert" parameterType="boardVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
+	Insert into normal_board 
+	(b_no, b_cate, b_title, b_content, b_date, b_nick, u_id)
+	VALUES(mom_board_no.nextval, 'notice', #{b_title}, #{b_content}, sysdate, 'admin', 'admin')
+</insert>
+ <select id="adminTotalCount" parameterType="boardVO" resultType="int">
+    SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = 'notice'
+    </select>
+<select id="adminBoardp" parameterType="boardVO" resultType="boardVO">
+	SELECT b_no, b_scate, b_title, b_nick, b_count, TO_CHAR(b_date, 'YYYY.MM.DD') as b_date ,NVL(b_good,0) b_good, b_photo1name ,b_photo2name, b_photo3name
+	 FROM normal_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
+	 (SELECT b_no FROM normal_board nnb WHERE nnb.b_cate = 'notice' ORDER BY b_date DESC))
+	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_date DESC
+</select>
+
  <select id="totalCount" parameterType="boardVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM normal_board WHERE b_cate = #{b_cate}
     </select>

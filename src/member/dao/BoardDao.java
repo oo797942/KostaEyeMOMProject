@@ -26,4 +26,9 @@ public interface BoardDao {
 	int donationFin(BoardVO vo);
 	List<BoardVO> allPagingBoard(BoardVO vo);
 	int boardListCount(BoardVO vo);
+	int adminBoardListCount();
+	List<BoardVO> adminPagingBoard(BoardVO vo);
+	int adminBoardInsert(BoardVO vo);
+	BoardVO adminBoardUpdate(BoardVO vo);
+	int adminBoardUpdateDoing(BoardVO vo);
 }
