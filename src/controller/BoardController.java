@@ -378,7 +378,9 @@ public class BoardController {
 			
 			
 			@RequestMapping(value = "/tip.do", method = {RequestMethod.GET, RequestMethod.POST})
-			public String page(Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
+			public String page(HttpSession session,Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
+				MemberVO memvo = (MemberVO) session.getAttribute("user");
+				model.addAttribute("user",memvo);
 
 				boardVO.setB_cate(title);
 			    //--페이징 처리
