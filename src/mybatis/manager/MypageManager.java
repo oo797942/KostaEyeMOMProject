@@ -67,4 +67,6 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
+	
+	
 }
