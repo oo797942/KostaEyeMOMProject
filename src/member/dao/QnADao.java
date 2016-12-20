@@ -26,5 +26,6 @@ public interface QnADao {
 	List<AnswerVO> callAnwer(QnAVO vo);
 	int insertReply(AreplyVO vo);
 	List<AreplyVO> callReply(AnswerVO vo);
+	int deleteAnswerReply(AreplyVO vo);
 }
  

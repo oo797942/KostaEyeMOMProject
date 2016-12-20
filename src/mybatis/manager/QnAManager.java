@@ -151,4 +151,12 @@ public class QnAManager {
 			session.commit();
 			return	list;
 		}
+		
+		public static int deleteAnswerReply(AreplyVO vo) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			int result = session.delete("qna.deleteAnswerReply", vo);
+			session.commit();
+			return result;
+		}
 }
