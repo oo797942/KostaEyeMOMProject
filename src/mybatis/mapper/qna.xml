@@ -113,7 +113,7 @@ INSERT INTO faq_admin (q_no, q_date, q_title, q_content, u_id)VALUES (mom_qna_no
 <insert id="insertAnswer" parameterType="answerVO">
 INSERT INTO qna_answer (b_no, a_date, a_content, a_nick, a_no)VALUES (#{b_no}, sysdate, #{a_content}, #{a_nick}, mom_qna_no.nextval)
 </insert>
-
+ 
 <!-- qna 답변 -->
 <select id="callAnswer" parameterType="qnaVO" resultType="answerVO">
 SELECT a_no, a_nick, a_content, TO_CHAR(a_date, 'YYYY.MM.DD') as a_date, a_recount from qna_answer where b_no=#{b_no}
