@@ -4,90 +4,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/EyeMOM/resources/css/sick/nanumgothic.css" rel="stylesheet" type="text/css">
 <link href="/EyeMOM/resources/css/sick/c4.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-.cateTable{
-	margin:0;
-	padding:0;
-	width: 1100px;
-	border: 1;
-	margin-top: 20px;
-	
-}
-
-.menuTd{
-	margin:0;
-	padding:0;
-	padding-right:10px;
-	margin-left:100px;
-	width:200px;
-	vertical-align: top;
-	text-align: left;
-	border: 1;
-}
-
-.scribeTd{
-	margin:0;
-	padding:0;
-	width:800px;
-	border-left: 1px;
-}
-
-.empty{
-
-	width: 100px;
-
-}
-
 .side{
-	text-shadow: black;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
 }
-
-.sideTop{
-	border: 5px;
-}
-
-ul.d_list li {
-    font-size: 16px;
-/*     color: #e97e1d; */
-    color: #333333;
-/*     font-weight: bold; */
-/*     padding-bottom: 35px; */
-}
-
-ul.d_list li p {
-    font-weight: normal;
-    padding-top: 15px;
-}
-
-.scribeTd{
-    font-size: 13px;
-    line-height: 18px;
-    font-family: 'NanumGothic', '나눔고딕', 'Nanum Gothic','NanumGothicWeb', Dotum, sans-serif;
-    font-size: 13px;
-    line-height: 175%;
-}
-
 li{
 	list-style: none;
-
 }
+ol{
+	padding-left: 0px;
+}
+
+ul{
+	padding-left: 0px;
+}
+
 </style>
 </head>
 <body>
-<div class="body">
-		<table class="cateTable" border="0">
-		<tr>
-			<td class="empty"></td>
-			<td class="menuTd">
-			
-			<form>
- 				<div class="sideMenu">
+<div class=body><br/>
+<table class="" >
+<tr style="width:1100px; padding:0px; margin:0px;">
+<td width="200px;" valign="top">
+ 				<div>
   					<div id="section1" class="label">
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
@@ -96,43 +40,37 @@ li{
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
-  						<a class="side" href="dudru.do" > － 두드러기</a><br/>
+  						<a class="side" href="dudru.do"  > － 두드러기</a><br/>
    					</div>
   		  			</div>
  			 	<div>
-
   				<div id="section2" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side2.gif" border="1"/>
   				</div>
-
   				<div class="elements">
   					<a class="side" href="cold.do" > － 잦은 감기</a><br/>
   					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
-  					<a class="side" href="chun.do" > － 천식</a><br/>
+  					<a class="side" href="chun.do"  > － 천식</a><br/>
   					<a class="side" href="jung.do" > － 중이염</a><br/>
   					<a class="side" href="gu.do" > － 구취.구내염</a><br/>
   				</div>
   				</div>
   				<div>
-
   				<div id="section3" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side3.gif" border="1"/>
   				</div>
-
-  				<div class="elements">
+  				<div class="elements1">
   					<a class="side" href="josuk.do" > － 성조숙증</a><br/>
-  					<a class="side" href="biman.do" > － 소아비만</a><br/>
+  					<a class="side" href="biman.do" style="background-color: red; padding-right: 60px;" > － 소아비만</a><br/>
   					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				
   				</div>
   				</div>
   				
   				<div>
-
   				<div id="section4" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side4.gif" border="1"/>
   				</div>
-
   				<div class="elements">
 					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
 					<a class="side" href="k2.do" > － 뇌전증(경기,간질)</a><br/>  					
@@ -141,11 +79,9 @@ li{
   				</div>
   				
   				<div>
-
   				<div id="section5" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side5.gif" border="1"/>
   				</div>
-
   				<div class="elements">
  					<a class="side" href="sic.do" > － 식욕부진</a><br/> 					
  					<a class="side" href="#" > － 야뇨증</a><br/> 					
@@ -156,11 +92,10 @@ li{
  					<a class="side" href="#" > － ADHD</a><br/> 					
   				</div>
   				</div>
-			</form>
-			</td>
+		</td>
 			
-			<td class="scribeTd" >
-					<div class="child ">
+			<td class="scribeTd" width="840px;" >
+		<div class="child ">
 					<p class="chL_tit">소아비만이란?</p>
 					<p class="chL_txt pb30">아이의 비만은 <u>체지방과 근육량, 몸무게와 키를 함께 고려하여 진단</u>합니다.<br>
 						※ 외모나 체중보다는 정확한 체지방 비율을 분석하는 것이 중요합니다.
@@ -233,7 +168,7 @@ li{
 					<p class="chL_tit">소아비만의 원인</p>
 					<p class="chL_txt pb30">특정 질병에 의한 증후성비만은 1%미만입니다.<br>
 거의 대부분의  소아비만은 음식의 잘못된 선택과 과다섭취, 활동량의 부족, 심리적인 요인 등에 의한 단순성 비만입니다.<br>
-최근에는 부모의 유전적인 요인과 함께 환경적인 요인에 의한 비만이 늘어나고 있습니다.</p>
+최근에는 부모의 유전적인 요인과 함께 환경적인 요인에 의한 비만이 늘어나고 있습니다.</p><br/>
 					<p class="chL_tit">소아비만의 문제점</p>
 					<div class="child2">
 						<ul class="">
@@ -276,8 +211,7 @@ li{
 						<li><img src="/EyeMOM/resources/img/sick/ch3.gif" alt="3"> 키가 크는데 도움이 되는 운동을 하면 좋습니다. 특히 줄넘기가 많은 도움이 됩니다. <span>근력운동이나 편측운동을 위주로 하는 것은 바람직하지 않습니다.</span>
 					  </li>
 					</ol>
-				</div>
-			
+				</div><br/>
 			</td>
 		</tr>
 		</table>

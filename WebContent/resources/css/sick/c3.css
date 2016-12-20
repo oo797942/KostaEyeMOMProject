@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import url(common.css);
+/* @import url(common.css); */
 
 div.child							{ width:815px;}
 
@@ -14,9 +14,9 @@ div.flu ul.flu_list li								{
 div.flu ul.flu_list li u	 						{ color:#846b4b; vertical-align:0;}
 div.flu ul.flu_list li em						{ color:#846b4b; }
 
-div.flu p.aTit										{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:10px;}
-div.flu ol li											{ font-size:16px; color:#444; font-weight:bold; padding-bottom:30px;}
-div.flu ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:16px; vertical-align:1px;}
+div.flu p.aTit										{ font-size:19px; color:#e97e1d; font-weight:bold; padding-bottom:10px;}
+div.flu ol li											{ font-size:17px; color:#444; font-weight:bold; padding-bottom:30px;}
+div.flu ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:18px; vertical-align:1px;}
 div.flu ol li p										{
 	font-weight:normal;
 	padding:8px 0 0 24px;
@@ -34,10 +34,10 @@ div.box_txt2 ol li								{ padding:0 0 5px 0; }
 
 
 div.asthma										{ width:815px;}
-div.asthma1 p.aTit							{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:10px;}
-div.asthma1 p.aTit2							{ font-size:16px;; font-weight:bold; padding-bottom:5px;}
-div.asthma1 p.aTit_1							{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:5px;}
-div.asthma1 p.aTit2_1							{ font-size:16px;; font-weight:bold; padding-bottom:15px;}
+div.asthma1 p.aTit							{ font-size:19px; color:#e97e1d; font-weight:bold; padding-bottom:10px;}
+div.asthma1 p.aTit2							{ font-size:17px;; font-weight:bold; padding-bottom:5px;}
+div.asthma1 p.aTit_1							{ font-size:19px; color:#e97e1d; font-weight:bold; padding-bottom:5px;}
+div.asthma1 p.aTit2_1							{ font-size:17px;; font-weight:bold; padding-bottom:15px;}
 div.asthma1										{ width:815px; padding-top:10px;  margin-bottom:20px; }
 div.asthma1.bg								{ background:url(/img/c3/asthma1.gif) 100% 10px no-repeat; }
 div.asthma1.bg2								{ background:url(/img/c3/asthma4.gif) 100% 10px no-repeat; }
@@ -56,12 +56,12 @@ div.asthma2 p									{ position:absolute; left:0;}
 
 ul.sub3_box										{ background:url(/img/c3/sub3_box.gif) 100% 80% no-repeat; }
 ul.sub3_box li									{ padding-bottom:15px;  line-height:180%;}
-ul.sub3_box li strong						{ font-size:16px; vertical-align:0; }
-ul.sub3_box li  u								{ font-size:16px;  vertical-align:0; font-weight:bold; }
+ul.sub3_box li strong						{ font-size:17px; vertical-align:0; }
+ul.sub3_box li  u								{ font-size:17px;  vertical-align:0; font-weight:bold; }
 
 div.asthma1 ol.bk	 									{ background:url(/img/c3/bk.gif) 100% 15px no-repeat;}
-div.asthma1 ol li										{  font-size:16px; color:#444; font-weight:bold; padding-bottom:25px;}
-div.asthma1 ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:16px; vertical-align:1px;}
+div.asthma1 ol li										{  font-size:17px; color:#444; font-weight:bold; padding-bottom:25px;}
+div.asthma1 ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:17px; vertical-align:1px;}
 div.asthma1 ol li p									{
 	font-weight:normal;
 	padding-top:15px;
@@ -72,4 +72,4 @@ div.sub5_box											{width:788px;   height:270px;  padding-left:27px;  backgr
 div.sub5_box p.tit									{ padding:40px 0 28px 0; }
 div.sub5_box p										{
 }
-div.sub5_box p u										{ font-size:16px; vertical-align:0; font-weight:bold}
+div.sub5_box p u										{ font-size:17px; vertical-align:0; font-weight:bold}
