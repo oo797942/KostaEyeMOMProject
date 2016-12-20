@@ -7,7 +7,7 @@
 <link href="resources/css/purchaseView.css" rel="stylesheet" />
 <script src="resources/js/jquery-1.10.2.min.js"></script>
 <script src="resources/js/main.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script type="text/javascript">
 // $(function(){
 
@@ -58,7 +58,8 @@
 </script>
 </head>
 <body>
-`	<section class='purSection'>
+<div class='body'>	
+<section class='purSection'>
 	<form action="/final.ho" method="get" id="goSubmit">
 <!-- 	<input type="hidden" name="cmd" value="pay-view"> -->
 <!-- 	<input type="hidden" name="OrderId" value=""> -->
@@ -84,13 +85,13 @@
 				<table class="table table-bordered">
 					<tbody>
 						<tr>
-							<td class="img ptd" rowspan="2"><img src="" width="58"
+							<td class="img ptd center-group" rowspan="2"><img src="" width="58"
 								height="58" alt=""></td>
-							<td class="nme ptd" rowspan="2"></td>
-							<td class="qty ptd" rowspan="2">개</td>
-							<td class="price ptd" rowspan="2">원</td>
-							<td class="td_pnumbig ptd" rowspan="2">배송비  1원</td>
-							<td class="amt ptd" rowspan="2"><span class="total_price">
+							<td class="nme ptd center-group" rowspan="2"></td>
+							<td class="qty ptd center-group" rowspan="2">개</td>
+							<td class="price ptd center-group" rowspan="2">원</td>
+							<td class="td_pnumbig ptd center-group" rowspan="2">배송비  1원</td>
+							<td class="amt ptd center-group" rowspan="2"><span class="total_price">
 									총 가격:1원</span></td>
 						</tr>
 					</tbody>
@@ -109,12 +110,12 @@
 
 			<table width="1000" height="350" class="table table-bordered">
 				<tr>
-					<td class='ptd'>
+					<td class='ptd center-group'>
 					<br/><br/>
 						<!-- 주문자명 -->
 						<div class="pur-group">
 							<label for="name" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-user" aria-hidden="true"></span> 주문자명
+								 aria-hidden="true"><i class='fa fa-user'></i></span> 주문자명
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderSName" id="OrderSName" class="purform-control"
@@ -125,7 +126,7 @@
 						<!-- 이메일 -->
 						<div class="pur-group">
 							<label for="eamil" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+								aria-hidden="true"><i class='fa fa-envelope'></i></span>
 								Email
 							</label>
 							<div class="col-md-3">
@@ -137,7 +138,7 @@
 						<!-- 전화번호 -->
 						<div class="pur-group">
 							<label for="tel" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-phone" aria-hidden="true"></span> 전화
+							aria-hidden="true"><i class='fa fa-phone'></i></span> 전화
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderSTel" id="tel" class="purform-control"
@@ -148,7 +149,7 @@
 						<!-- 주소 & 상세주소 -->
 						<div class="pur-group">
 							<label for="addr" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-home" aria-hidden="true"></span> 주소
+								aria-hidden="true"><i class='fa fa-home'></i></span> 주소
 							</label>
 							<div class="col-md-5">
 								<input type="text" name="OrderSAddr" id="addr" class="purform-control" placeholder="주소를 입력하세요"
@@ -173,13 +174,15 @@
 
 			<table width="1000" height="350" class="table table-bordered">
 				<tr>
-					<td>
-					<input type="button" value="위와 동일" id="same" class='purBtn'/>
+					<td class='center-group'>
+			<div id="display_same_button" class="btn-group1">
+		   		<input type="button" value="위와 동일" class="btn_same purBtn" onclick=""/>
+			</div>
 					<br/><br/>
 						<!-- 수령자명 -->
 						<div class="pur-group">
 							<label for="receiver" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-envelope" aria-hidden="true"></span>수령자명
+								 aria-hidden="true"><i class='fa fa-user'></i></span>수령자명
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderRName" id="OrderRName" class="purform-control"
@@ -190,7 +193,7 @@
 						<!-- 전화번호 -->
 						<div class="pur-group">
 							<label for="tel" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-phone" aria-hidden="true"></span> 전화
+								 aria-hidden="true"><i class='fa fa-phone'></i></span> 전화
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderRTel" id="OrderRTel" class="purform-control"
@@ -201,7 +204,7 @@
 						<!-- 주소 & 상세주소 -->
 						<div class="pur-group">
 							<label for="detail" class="col-md-2 control-label purLabel"> <span
-								class="glyphicon glyphicon-home" aria-hidden="true"></span> 주소
+								ria-hidden="true"><i class='fa fa-home'></i></span> 주소
 							</label>
 							<div class="col-md-5">
 								<input type="text" name="OrderRAddr" id="OrderRAddr" class="purform-control" placeholder="주소를 입력하세요"
@@ -212,7 +215,7 @@
 						<!-- 배달시요구사항 -->
 						<div class="pur-group">
 							<label for="demand" class="col-md-2 control-label purLabel "> <span
-								class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>  배달시 요구사항
+								 aria-hidden="true"><i class='fa fa-sticky-note'></i></span>  배달시 요구사항
 							</label>
 							<div class="col-md-5">
 								<input type="text" name="OrderRDemand" id="OrderRDemand" class="purform-control" placeholder="입력하지마 ㅆ.."
@@ -234,7 +237,7 @@
 					<h2 class="pnum">04</h2>
 					<div class="purTitle" style="text-align: left;">결제 수단</div>
 					</div>
-				<div class="body">
+				<div class="purBody">
 					<div class="tabl minimal single-row" >
 						<div class="radio"><input type="radio" id="od_settle_card" class='purRadio' name="OrderSettleCase" class ="OrderSettleCase" value="신용카드"> <label for="od_settle_card">신용카드</label></div>
 						<div class="radio"><input type="radio" id="od_settle_bank" class='purRadio' name="OrderSettleCase"  class ="OrderSettleCase"  value="무통장"> <label for="od_settle_bank">무통장입금</label></div>
@@ -242,7 +245,7 @@
 						<div class="radio"><input type="radio" id="od_settle_coin" name="OrderSettleCase"   class ="OrderSettleCase purRadio"  value="계좌이체"> <label for="od_settle_coin">코인 결제</label></div>
 					</div>		
          	   	</div>
-         	 <div class="body bottom">
+         	 <div class="purBody purBottom center-group">
          	<p class='purP'>무통장입금 주문건 3일이내 미입금 시, 자동 취소처리가 진행됩니다.</p>
          	<p class='purP'>신용카드 결제시 화면 아래 '결제하기'버튼을 클릭하시면 신용카드 결제 창이 나타납니다. 
             <br>신용카드 결제 창을 통해 입력되는 고객님의 카드 정보는 128bit로 안전하게 암호화되어 전송되며 승인 처리 후 카드 정보는 승인 성공/ 실패 여부에 상관없이 자동 으로 폐기되므로, 안전합니다.</p>
@@ -258,7 +261,7 @@
 	</div>
 	
 	<div>	
-		<div>
+		<div class='center-group'>
 			<div id="display_pay_button" class="btn-group">
 		   		<input type="button" value="결제하기" class="btn_submit purBtn" onclick=""/>
 			</div>
@@ -270,5 +273,6 @@
 	</div>	
 	</form>
 	</section>
+	</div>
 </body>
 </html>

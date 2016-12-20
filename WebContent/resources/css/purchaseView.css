@@ -1,11 +1,6 @@
-* {
-	margin: 0 auto;
-	text-align: center;
-}
-
 .purSection {
 	width: 1024px;
-	margin: 100px auto;
+	margin: 40px auto;
 }
 
 .purA {
@@ -21,6 +16,9 @@
 	text-decoration: underline;
 }
 
+.center-group {
+	text-align: center;
+}
 .panel {
 	display: block;
 	border-radius: 0;
@@ -41,21 +39,21 @@
 
 .panel .purHeader .pnum {
 	float: left;
-	background-color: #e3e3e3;
+	background-color: #ffa07a;
 	color: #fff;
 	font-size: 30px;
 	font-weight: bold;
 	width: 56px;
-	padding: 24px 0 6px;
+	padding: 17px 0 13px 0;
 	text-align: center;
 	margin: 0 1px 0 0;
 	font-family: 'DINPro-Medium';
 }
 
 .panel .purHeader .purTitle {
-	background-color: #e3e3e3;
+	background-color: #ffa07a;
 	font-weight: bold;
-	color: #565656;
+	color: #fff;
 	padding: 17px 16px 13px;
 	overflow: hidden;
 	max-width: 1200px;
@@ -115,7 +113,7 @@
 	padding: 11px 0 10px 0;
 }
 
-.panel .body .labe {
+.panel .purBody .labe {
 	color: #a0a0a0;
 	float: left;
 	font-size: 12px;
@@ -133,7 +131,7 @@
 	font-weight: bold;
 }
 
-.panel .body {
+.panel .purBody {
 	padding: 14px 28px;
 	border: 1px solid #e3e3e3;
 	display: block;
@@ -152,28 +150,48 @@
 	margin-right: 3px;
 }
 
-.panel .body .tabl .radio {
+.panel .purBody .tabl .radio {
 	float: left;
 	margin: 0;
 	padding: 0 33px 0 0;
 }
 
-.panel .body.bottom {
+.panel .purBody.purBottom {
 	border-top: 0;
 }
 
 .btn-group {
 	text-align: center;
-	margin: 74px 0;
+	margin: 40px 0;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.btn-group1 {
+	text-align: center;
+	margin: 7px 0;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 input.btn_submit {
 	height: 54px;
 	border: 0;
-	background-color: #cc383c;
+	background-color: #ffa07a;
 	color: #fff;
 	width: 251px;
 	font-size: 21px;
+}
+
+input.btn_same {
+	height: 32px;
+	border: 0;
+	background-color: #cc383c;
+	color: #fff;
+	width: 150px;
+	font-size: 16px;
 }
 
 input.btn_cancle {
@@ -1426,12 +1444,6 @@ textarea.purform-control {
 	.form-inline .has-feedback .form-control-feedback {
 		top: 0;
 	}
-}
-
-.btn-group {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
 }
 
 .purP {
