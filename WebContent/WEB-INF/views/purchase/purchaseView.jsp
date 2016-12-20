@@ -144,7 +144,7 @@
 								<input type="text" name="OrderSTel" id="tel" class="purform-control"
 									value="" required="required">
 							</div>
-						</div><br /><br />
+						</div><br /><br />               
 
 						<!-- 주소 & 상세주소 -->
 						<div class="pur-group">
