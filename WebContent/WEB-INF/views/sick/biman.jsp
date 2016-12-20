@@ -51,7 +51,7 @@
   				</div>
   				<div class="elements1">
   					<a class="side" href="josuk.do" > － 성조숙증</a><br/>
-  					<a class="side" href="biman.do" style="background-color: red; padding-right: 60px;" > － 소아비만</a><br/>
+  					<a class="side" href="biman.do" style="background-color: #ffa07a; color:#fff; padding-right: 60px;" > － 소아비만</a><br/>
   					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				
   				</div>

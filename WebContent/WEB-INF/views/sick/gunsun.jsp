@@ -29,7 +29,7 @@
   					<div id="section1b" class="elements1">
    						<a class="side" href="sick.do" > － 아토피피부염</a><br/>
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
-  						<a class="side" href="gunsun.do" style="background-color: red; padding-right: 100px;"> － 건선</a><br/>
+  						<a class="side" href="gunsun.do" style="background-color: #ffa07a; color:#fff; padding-right: 100px;"> － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
   						<a class="side" href="dudru.do" > － 두드러기</a><br/>
    					</div>

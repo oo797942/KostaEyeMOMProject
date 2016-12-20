@@ -31,7 +31,7 @@
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
-  						<a class="side" href="dudru.do" style="background-color: red; padding-right: 80px;" > － 두드러기</a><br/>
+  						<a class="side" href="dudru.do" style="background-color: #ffa07a; color:#fff; padding-right: 80px;" > － 두드러기</a><br/>
    					</div>
   		  			</div>
  			 	<div>

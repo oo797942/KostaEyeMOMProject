@@ -64,7 +64,7 @@
   				<div class="elements1">
 					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
 					<a class="side" href="k2.do"   > － 뇌전증(경기,간질)</a><br/>  					
-					<a class="side" href="re.do" style="background-color: red; padding-right: 3px;" > － 레녹스가스토증후군</a><br/>  					
+					<a class="side" href="re.do" style="background-color: #ffa07a; color:#fff; padding-right: 3px;" > － 레녹스가스토증후군</a><br/>  					
   				</div>
   				</div>
   				

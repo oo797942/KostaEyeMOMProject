@@ -51,7 +51,7 @@
     				 <img src="/EyeMOM/resources/img/sick/side3.gif" border="1"/>
   				</div>
   				<div class="elements1">
-  					<a class="side" href="josuk.do" style="background-color: red; padding-right: 50px;" > － 성조숙증</a><br/>
+  					<a class="side" href="josuk.do" style="background-color: #ffa07a; color:#fff; padding-right: 50px;" > － 성조숙증</a><br/>
   					<a class="side" href="biman.do" > － 소아비만</a><br/>
   					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				

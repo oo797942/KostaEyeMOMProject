@@ -74,7 +74,7 @@
     				 <img src="/EyeMOM/resources/img/sick/side5.gif" border="1"/>
   				</div>
   				<div class="elements1">
- 					<a class="side" href="sic.do"  style="background-color: red; padding-right: 65px;" > － 식욕부진</a><br/> 					
+ 					<a class="side" href="sic.do"  style="background-color: #ffa07a; color:#fff; padding-right: 65px;" > － 식욕부진</a><br/> 					
  					<a class="side" href="#" > － 야뇨증</a><br/> 					
  					<a class="side" href="#" > － 야제증</a><br/> 					
  					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					

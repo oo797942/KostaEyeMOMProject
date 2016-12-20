@@ -37,7 +37,7 @@
     				 <img src="/EyeMOM/resources/img/sick/side2.gif" border="1"/>
   				</div>
   				<div class="elements1">
-  					<a class="side" href="cold.do" style="background-color: red; padding-right: 80px;" > － 잦은 감기</a><br/>
+  					<a class="side" href="cold.do" style="background-color: #ffa07a; color:#fff; padding-right: 80px;" > － 잦은 감기</a><br/>
   					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
   					<a class="side" href="chun.do" > － 천식</a><br/>
   					<a class="side" href="jung.do" > － 중이염</a><br/>
