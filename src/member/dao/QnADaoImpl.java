@@ -211,6 +211,17 @@ public class QnADaoImpl implements QnADao {
 		}
 		return list;
 	}
+
+	@Override
+	public int deleteAnswerReply(AreplyVO vo) {
+		int result =0;
+		try {
+			result = QnAManager.deleteAnswerReply(vo);
+		} catch (Exception ex) {
+			System.out.println("qnaDAOImpl / 답변 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 	
 	
 }

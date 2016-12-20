@@ -154,6 +154,9 @@
 	font-weight: 700;
 	float: left;
 }
+.AqnaOpinion:FOCUS{
+	cursor: point;
+}
 
 .AqnaOpinion:HOVER {
 	text-decoration: underline;

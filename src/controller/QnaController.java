@@ -199,4 +199,14 @@ public class QnaController {
 		return result;
 	}
 	
+	@RequestMapping("deleteAnswerReply.do")
+	@ResponseBody
+	public int deleteAnswerReply(AreplyVO areplyVO){
+		int result=0;
+		System.out.println(areplyVO.getAr_no());
+		
+		result=QnaDao.deleteAnswerReply(areplyVO);
+		
+		return result;
+	}
 }
