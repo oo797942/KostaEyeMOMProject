@@ -39,14 +39,14 @@
 	background: #fff;
 }
 
-.panel .purHeader .num {
+.panel .purHeader .pnum {
 	float: left;
 	background-color: #e3e3e3;
 	color: #fff;
 	font-size: 30px;
 	font-weight: bold;
 	width: 56px;
-	padding: 6px 0 6px;
+	padding: 24px 0 6px;
 	text-align: center;
 	margin: 0 1px 0 0;
 	font-family: 'DINPro-Medium';

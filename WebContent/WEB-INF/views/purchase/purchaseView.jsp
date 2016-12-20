@@ -74,7 +74,7 @@
 		<div class="panel">
 			<div>
 				<div class="purHeader">
-					<h2 class="num">01</h2>	
+					<h2 class="pnum">01</h2>	
 					<div class="purTitle" style="text-align: left;">
 						주문리스트 확인 <span id="confirmProdStr"></span>
 					</div>
@@ -89,7 +89,7 @@
 							<td class="nme ptd" rowspan="2"></td>
 							<td class="qty ptd" rowspan="2">개</td>
 							<td class="price ptd" rowspan="2">원</td>
-							<td class="td_numbig ptd" rowspan="2">배송비  1원</td>
+							<td class="td_pnumbig ptd" rowspan="2">배송비  1원</td>
 							<td class="amt ptd" rowspan="2"><span class="total_price">
 									총 가격:1원</span></td>
 						</tr>
@@ -102,7 +102,7 @@
 		<div class="panel">
 			<div>
 				<div class="purHeader">
-					<h2 class="num">02</h2>
+					<h2 class="pnum">02</h2>
 					<div class="purTitle" style="text-align: left;">주문고객정보</div>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 		<div class="panel">
 			<div>
 				<div class="purHeader">
-					<h2 class="num">03</h2>
+					<h2 class="pnum">03</h2>
 					<div class="purTitle" style="text-align: left;">배송지정보</div>
 				</div>
 			</div>
@@ -231,7 +231,7 @@
 		<div class="panel">
 			<div>
 				<div class="purHeader">
-					<h2 class="num">04</h2>
+					<h2 class="pnum">04</h2>
 					<div class="purTitle" style="text-align: left;">결제 수단</div>
 					</div>
 				<div class="body">
