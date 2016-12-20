@@ -1,14 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="resources/css/faqboard.css">
+<link rel='stylesheet prefetch'
+	href='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css'>
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'></script>
 <link rel="stylesheet" href="resources/css/qnaboard.css">
 <script type="text/javascript">
 	$(function() {
+		//      팝업 띄우기 위한 쿼리
+		$('#popupLink').magnificPopup({
+			type : 'inline',
+			midClick : true
+		// allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+		});	
+
+		
 		$('.AqnaComment').hide();
 
 		$('#Opinion').click(function() {
@@ -24,31 +40,25 @@
 
 			//다시쓰기
 			$('#rebtn').click(function() {
-				$('#q_title').val("");
-				$('#q_content').val("");
+				
+				$('#a_content').val("");
 			});
 
-			//      팝업 띄우기 위한 쿼리
-			$('#popupLink').magnificPopup({
-				type : 'inline',
-				midClick : true
-			// allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-			});	
-
+		
 			//버튼 클릭시
 			$('#btnfqa').click(function() {
-				var title = $('#q_title').val()
-				var content = $('#q_content').val()
-				if (content == null || title == null) {
-					alert("제목과 내용을 입력하세요");
+				
+				var content = $('#a_content').val()
+				if (content == null) {
+					alert("내용을 입력하세요");
 				} else {
 
 					$.ajax({
-						url : "passfaq.do",
+						url : "answerqna.do",
 						type : 'POST',
 						data : {
-							"q_title" : $("#q_title").val(),
-							"q_content" : $("#q_content").val()
+							"a_content" : $("#a_content").val(),
+							"b_no" :  $("#no").val()
 						},
 						success : function(result) {
 
@@ -56,7 +66,42 @@
 								location.reload();
 
 							} else {
-								alert("1:1문의글 등록에 실패 하였습니다");
+								alert("답변 등록에 실패 하였습니다");
+							}
+
+						},
+						error : function(err) {
+							alert(err);
+						}
+					});
+
+				}
+
+			});
+			
+			
+			//리플등록
+			$('#replybtn').click(function() {
+				
+				var content = $('#ar_content').val()
+				if (content == null) {
+					alert("내용을 입력하세요");
+				} else {
+
+					$.ajax({
+						url : "answerReply.do",
+						type : 'POST',
+						data : {
+							"ar_content" : $("#ar_content").val(),
+							"a_no" :  $(this).next().val()
+						},
+						success : function(result) {
+
+							if (result == "1") {
+								location.reload();
+
+							} else {
+								alert("답변 등록에 실패 하였습니다");
 							}
 
 						},
@@ -69,6 +114,12 @@
 
 			});
 		})
+		
+		
+		
+		
+		
+		
 
 	});
 </script>
@@ -82,30 +133,35 @@
 				<img alt="" class='qnaimg' src="img/qnaQ1.png">
 				<div style="float: left; padding: 0 30px;">
 					<div>
-						<strong class='AqnaStrong'>QNA 보드 좀 살려주세요 부탁입니다</strong>
+					<input type="hidden" value="${vo.b_no}" id="no"/>
+						<strong class='AqnaStrong'>${vo.in_title}</strong>
 					</div>
 					<div class='AqnaContent'>
 						<p>
-							zzzzzzzzzzzzzzzzzzzzzㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br />
-							zzzzzzzzzzzzzzzzzzzzzㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br />
-							zzzzzzzzzzzzzzzzzzzzzㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br />
-							zzzzzzzzzzzzzzzzzzzzzㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br />
-							zzzzzzzzzzzzzzzzzzzzzㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ<br />
-							ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+						<c:if test="${not empty vo.in_photo1name }">
+                    				 <img src="/EyeMOM/resources/img/${vo.in_photo1name}" class="miri"><br/>
+			                     </c:if>
+			                     <c:if test="${not empty vo.in_photo2name }">
+			                     	<img src="/EyeMOM/resources/img/${vo.in_photo2name}" class="miri"><br/>
+			                     </c:if>
+			                     <c:if test="${not empty vo.in_photo3name }">
+			                     	<img src="/EyeMOM/resources/img/${vo.in_photo3name}" class="miri"><br/>
+			                     </c:if>
+							${vo.in_content}
 						</p>
 					</div>
 					<span class='AqnaSpan'> <span
-						style="float: left; max-width: 130px; margin-right: 7px;">wamsi98</span>
+						style="float: left; max-width: 130px; margin-right: 7px;">${vo.in_nick}</span>
 						<span style="float: left; margin-right: 7px; color: #e2e2e2;">|</span>
-						<span style="float: left; max-width: 130px; margin-right: 7px;">2016.12.17</span>
+						<span style="float: left; max-width: 130px; margin-right: 7px;">${vo.in_date }</span>
 						<span style="float: left; margin-right: 7px; color: #e2e2e2;">|</span>
 						<span style="float: left; margin-right: 7px; color: #959595;">조회수
-							<span style="color: #959595;">45</span>
+							<span style="color: #959595;">${vo.in_count}</span>
 					</span> <span style="float: left; margin-right: 7px; color: #e2e2e2;">|</span>
 						<a style="color: #959595; float: left;">신고</a>
 					</span>
 					<div>
-						<button class="Aqnabtn">답변하기</button>
+						<a href="#qnapopup" id="popupLink"><button class="Aqnabtn">답변하기</button></a>
 					</div>
 				</div>
 			</div>
@@ -115,55 +171,65 @@
 				<div class='AqnaAnswer'>
 					<h2 class='Aqnah3'>
 						답변 <span
-							style="display: inline-block; margin-left: 8px; font-weight: 400; font-size: 24px; font-family: tahoma; color: #ffa07a; letter-spacing: 0;">5</span>
+							style="display: inline-block; margin-left: 8px; font-weight: 400; font-size: 24px; font-family: tahoma; color: #ffa07a; letter-spacing: 0;">${fn:length(list)} </span>
 					</h2>
 					<ul style="list-style: none;">
 						<li class="AqnaList">
+							
+							<c:forEach var='vo' items='${list}'>
 							<div class='AqnaContent'>
+								
 								<div class='AqnaContent1'>
-									<p>엌ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</p>
+									<p>${vo.a_content}</p>
 								</div>
 								<!-- 작성자 정보 -->
 								<div class='AqnaInfo'>
-									<div class='AqnaUser'>wamsi98</div>
+									<div class='AqnaUser'>${vo.a_nick}</div>
 									<span class='AqnaUserInfo'> <span class='Aqnabar'>|</span>
-										<span class='AqnaTime'>2016.12.17</span> <a
-										class='AqnaOpinion' id='Opinion'>의견 <span
-											class='AqnaOpinionCnt'>1</span>
+										<span class='AqnaTime'>${vo.a_date}</span> 
+										<a class='AqnaOpinion' id='Opinion'>의견 
+										<span class='AqnaOpinionCnt'>${vo.a_recount}</span>
 									</a>
 									</span>
 								</div>
+								
+								
+								
 								<!-- 답글 -->
 								<div class='AqnaComment'>
 									<form action="" class='AqnaForm'>
 										<div class='AqnaCommentIn'>
-											<textarea class='AqnaText' placeholder="의견을 입력해주세요"></textarea>
+											<textarea class='AqnaText' id="ar_content" placeholder="의견을 입력해주세요"></textarea>
 										</div>
 										<!-- 등록버튼 -->
-										<input type="button" class="AqnaAnswerbtn" value='등록' />
+										<input type="button" class="AqnaAnswerbtn" id="replybtn" value='등록' />
+										<input type="hidden" value="${vo.a_no}"/>
 									</form>
 									<!-- 답급 목록 -->
-									<!-- 					<br/><br/><br/><br/><br/><br/><br/><br/> -->
+														<br/>
 									<div style="height: auto;">
 										<table
-											style="margin-top: 30px; border-collapse: collapse; height: auto;">
+											style="margin-top: 50px; border-collapse: collapse; height: auto;">
+											
 											<tr>
 												<td style="width: 1px;"></td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;">그렇나요?</td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;"></td>
 												<td
 													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">wamsi98</td>
 												<td
 													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">2016.12.17</td>
 												<td
-													style="padding: 13px 0 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 30px;"><input
-													type="button" value='x'
-													style="border: 1px solid #e9e9e9; background-color: #fff" /></td>
+													style="padding: 13px 0 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 30px;">
+													<input type="button" value='x' style="border: 1px solid #e9e9e9; background-color: #fff" />
+												</td>
 											</tr>
+											
 										</table>
 									</div>
 								</div>
 							</div>
+							</c:forEach>
 						</li>
 					</ul>
 				</div>
@@ -179,21 +245,16 @@
 	<div id="qnapopup" class="white-popup1 mfp-hide">
 		<!-- 1:1 상담문의 제목 -->
 		<div class='answerdiv'>
-			<h1 class='answerh1'>1:1 상담문의</h1>
+			<h1 class='answerh1'>답변 등록</h1>
 			<hr class='answerhr' />
 			<!-- 입력창 div -->
 			<div class='answerinputdiv'>
-				<table class='infotable1'>
-					<tr height="70px;">
-						<td class='myfont1' class='answertr'>제목</td>
-						<td class='answertd'><input type='text'
-							class='form-control2 pagealign1 answerinput' value=''
-							name='q_title' id='q_title' placeholder="제목" /></td>
-					</tr>
+				<table class='infotable1' style="margin-top: 60px;">
+					
 					<tr>
 						<td class='myfont1' style="width: 10%;">내용</td>
 						<td><textarea class='form-control3 answertxt'
-								name='q_content' id='q_content'></textarea></td>
+								name='q_content' id='a_content'></textarea></td>
 					</tr>
 				</table>
 			</div>

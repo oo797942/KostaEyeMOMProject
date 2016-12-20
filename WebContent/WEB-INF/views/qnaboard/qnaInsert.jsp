@@ -16,8 +16,8 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
-   	$("#b_photo2").hide();
-   	$("#b_photo3").hide();
+   	$("#in_photo2").hide();
+   	$("#in_photo3").hide();
    	
     $(".photo").on('change', function(){
     	$(this).hide();
@@ -25,7 +25,7 @@ $(function(){
        fileInfo(this);
     });
     
-	$("#cancel").click(function(){
+    $("#cancel").click(function(){
     	
     	history.back();
     });
@@ -51,59 +51,24 @@ function fileInfo(f){
    <section class="page_head">
       <div align="center">
          <h2 style="margin-top: 40px">게시판 등록</h2>
-         <form action="insert.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
+         <form action="insertqna.do" style="margin-top:-60px" method='post' enctype='multipart/form-data'>
             <div style="width: 100%" id="board3">
                <div class='form-inline'>
                <!-- 카테고리 선택칸 -->
                   <div>
                      <label id='boardlabel2'>카테고리 &nbsp; </label>
-                    <c:if test="${title=='tip'}">
-						<input type="text" 
-                       value='육아꿀팁' class='form-control inputcate' id='title3' name='b_cate'readonly="readonly"/>
-					</c:if>
-					<c:if test="${title=='qna_board'}">
+                   
 						<input type="text" 
                        value='묻고 말하기' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
-					</c:if>
-					<c:if test="${title=='used'}">
-						<input type="text" 
-                       value='중고장터' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
-					</c:if>
-					<c:if test="${title=='rice'}">
-						<input type="text" 
-                       value='아이의 식단' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
-					</c:if>
-					<c:if test="${title=='baby'}">
-						<input type="text" 
-                       value='아이 자랑' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
-					</c:if>
-					<c:if test="${title=='donation'}">
-						<input type="text" 
-                       value='아나바다' class='form-control inputcate' id='title3'name='b_cate' readonly="readonly"/>
-					</c:if>
+					
                   </div>
                </div>
                <div class='form-inline'>
                   <!-- 제목 입력칸 -->
                   <div>
                      <label id='boardlabel2'>제목 &nbsp; </label> 
-                     <c:if test="${title=='used'}">
-                     <select id='select1' name='b_scate'
-								class="form-control">
-								<option>삽니다</option>
-								<option>팝니다</option>
-					</select>
-					</c:if>
-					<c:if test="${title=='rice'}">
-                     <select id='select1' name='b_scate'
-								class="form-control">
-								<option>초기</option>
-								<option>중기</option>
-								<option>후기</option>
-								<option>완료기</option>
-					</select>
-					</c:if>
-                     <input type="text" name='b_title' class='form-control' id='title3'>
+                     
+                     <input type="text" name='in_title' class='form-control' id='title3'>
                   </div>
                </div>
                <div class='form-inline' style="margin-left: 100px">
@@ -120,9 +85,9 @@ function fileInfo(f){
                            <tr style="padding-left: 100px">
                  		<!-- 사진은 최대 3장까지 가능 -->
                               <td>
-                              	<input type='file' accept=" image/*" class='photo' id='b_photo1' name='b_photo1'/>
-                              	<input type='file' accept=" image/*" class='photo' id='b_photo2' name='b_photo2'/>
-                              	<input type='file' accept=" image/*" class='photo' id='b_photo3' name='b_photo3'/>
+                              	<input type='file' accept=" image/*" class='photo' id='in_photo1' name='in_photo1'/>
+                              	<input type='file' accept=" image/*" class='photo' id='in_photo2' name='in_photo2'/>
+                              	<input type='file' accept=" image/*" class='photo' id='in_photo3' name='in_photo3'/>
                               </td>
                            </tr>
                         </table>
@@ -133,7 +98,7 @@ function fileInfo(f){
                </div>
                   <!-- 내용입력칸 -->
                <div class='texta3'>
-                  <textarea class='textaa3' id='content'  name='b_content'></textarea>
+                  <textarea class='textaa3' id='content'  name='in_content'></textarea>
                   <img alt="" src="">
                </div>
                <div style='margin-left: 570px'>

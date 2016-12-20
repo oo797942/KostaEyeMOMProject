@@ -41,6 +41,7 @@ public class MypageController {
 		
 		//qna
 		List <QnAVO> qlist = mypageDao.getMyQna(memberVO);
+		System.out.println("답변"+qlist.get(0).getIn_recount());
 		m.addAttribute("qlist",qlist);
 		return "mypage/mypage";
 	}
