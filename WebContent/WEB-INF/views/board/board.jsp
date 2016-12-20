@@ -117,7 +117,30 @@ function fn_movePage(val){
 						<label>&nbsp;[${vo.b_recount}]</label>	
 						</td>
 						<!-- 작성자 -->
-						<td class='boardtd'>${vo.b_nick }</td>
+						<td class='boardtd'>
+						
+															<c:choose>
+    				<c:when test="${empty sessionScope.user}">
+							<a href="#test-popup" class="open-popup-link" style='text-decoration: none'>
+							${vo.b_nick }
+							</a>						
+											</c:when>
+					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
+						
+						<c:if test="${vo.u_id != user.u_id}">
+						<a onclick="window.open('messageWriter.go?u_id=${vo.u_id}&b_nick=${vo.b_nick }', '문의 답변',
+                   				'width=600px,height=320');return false;">
+						${vo.b_nick }
+						</a>
+						</c:if>
+						<c:if test="${vo.u_id == user.u_id }">
+
+						${vo.b_nick }
+												</c:if>																	
+							</c:otherwise>	
+					</c:choose>
+		
+						</td>
 						<!-- 작성일 -->
 						<td class='boardtd'>${vo.b_date }</td>
 						<!-- 추천수 -->

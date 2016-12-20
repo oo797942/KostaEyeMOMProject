@@ -22,6 +22,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.vo.PageVO" alias="pageVO" />	
 		<typeAlias type="member.vo.AnswerVO" alias="answerVO" />	
 		<typeAlias type="member.vo.AreplyVO" alias="areplyVO" />
+			
+		<typeAlias type="member.vo.MessageVO" alias="messageVO"/>
+
 	</typeAliases>
 		 
 	<environments default="development">
@@ -44,6 +47,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis/mapper/purchase.xml" />
 		<mapper resource="mybatis/mapper/count.xml" />
 		<mapper resource="mybatis/mapper/mypage.xml" />
+		<mapper resource="mybatis/mapper/message.xml" />
 	</mappers>
 	
 </configuration>

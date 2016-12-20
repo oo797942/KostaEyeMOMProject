@@ -13,12 +13,11 @@
 							href="javascript:addFavorite('아이맘','http://localhost:8080/EyeMOM/home.go');">북마크</a>
 					</p>
 				</td>
-				<td id="mainTopRightTd"><img
-					src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn"
-					id="sign_upBtn" /> <img src="/EyeMOM/resources/img/find.png"
-					class="toplogo_btn" id="findBtn" /> <img
-					src="/EyeMOM/resources/img/login.png" class="toplogo_btn"
-					id="loginBtn" /></td>
+				<td id="mainTopRightTd">
+				<img src="/EyeMOM/resources/img/sign_up.png" class="toplogo_btn" id="sign_upBtn" /> 
+				<img src="/EyeMOM/resources/img/find.png" class="toplogo_btn" id="findBtn" />
+				<img src="/EyeMOM/resources/img/login.png" class="toplogo_btn" id="loginBtn" />
+					</td>
 			</tr>
 			<tr>
 				<td colspan="2" id="MainLogoTd">로고</td>
@@ -87,8 +86,7 @@
 						alt="사진3" /></li>
 					<li><img class="slide" src="/EyeMOM/resources/img/go_top.png"
 						alt="사진4" /></li>
-					<li><img class="slide"
-						src="/EyeMOM/resources/img/go_bottom.png" alt="사진5" /></li>
+					<li><img class="slide" src="/EyeMOM/resources/img/go_bottom.png" alt="사진5" /></li>
 				</ul>
 			</div>
 			<table border="1" cellspacing="0" id="slideMenu">
