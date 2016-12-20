@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>무제 문서</title>
+<title>메세지 보내기</title>
     <!-- Bootstrap core CSS -->
 <!-- 합쳐지고 최소화된 최신 CSS -->
     <!-- Bootstrap core CSS -->
@@ -84,8 +84,8 @@ $(function(){
 
 				<!-- 입력창 div -->
 					<div class='answerinputdiv' height="300" >
-					<form action="faqAnswerDoing.go">
-					 <input type="hidden" name=" s_send_id" value="${vo.u_id}">
+					<form action="messageSending.go">
+					 <input type="hidden" name="s_send_id" value="${vo.u_id}">
 					 <input type="hidden" name="s_send_nick" value="${vo.b_nick}">				
 					 <input type="hidden" name="s_id" value="${user.u_id }">
 					 <input type="hidden" name="s_nick" value="${user.u_nick}">	 
@@ -101,7 +101,7 @@ $(function(){
 					      <tr>
 					        <th height="150" width="10%">내용 </th>
 					        <td colspan="2" width="15%">
-					          <textarea class='form-control' id='content'  name='q_content' style="width:100%; height:100%;" >
+					          <textarea class='form-control' id='content'  name='s_content' style="width:100%; height:100%;" >
 
 </textarea>
 					        </td>
