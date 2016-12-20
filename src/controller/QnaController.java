@@ -1,8 +1,9 @@
 package controller;
 
-import java.rmi.server.SocketSecurityException;
+
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.QnADaoImpl;
+import member.vo.AnswerVO;
+import member.vo.AreplyVO;
 import member.vo.FaqVO;
 import member.vo.MemberVO;
 import member.vo.QnAVO;
@@ -22,12 +25,42 @@ public class QnaController {
 	@Autowired
 	QnADaoImpl QnaDao;
 	
-	@RequestMapping("qnaboard.do")
-	public String Qnaboard(Model m){
+	@RequestMapping("insertqnaboard.do")
+	public String insertQnaBoard(){
+		return "qnaboard/qnaInsert";
+	}
+	
+	@RequestMapping("insertqna.do")
+	public String insertQna(QnAVO qnaVO, HttpSession session,HttpServletRequest request){
+		MemberVO memberVO=(MemberVO) session.getAttribute("user");
+		String ip = request.getRemoteAddr(); //작성자 ip
+		qnaVO.setU_id(memberVO.getU_id());
+		System.out.println();
+		qnaVO.setIn_ip(ip);
+		qnaVO.setIn_nick(memberVO.getU_nick());
+		qnaVO.setIn_content(qnaVO.getIn_content().replaceAll("\r\n","<br>"));
+		int result = QnaDao.insertQna(qnaVO); 
 		
-		List <QnAVO> list=null;
-		list= QnaDao.allQna();
-		m.addAttribute("list",list);
+		return "redirect: qnaboard.do";
+	}
+	
+	@RequestMapping("qnaboard.do")
+	public String Qnaboard(QnAVO qnaVO, Model m){
+		
+		List <FaqVO> list=null;
+		
+		  //--페이징 처리
+	    int totalCount = QnaDao.qnaListCount(); //게시물 총갯수를 구한다
+	    qnaVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    qnaVO.setPageSize(12);
+	    m.addAttribute("pageVO", qnaVO);
+
+	    //--페이징 처리
+	    
+	    List<QnAVO>  qnaList = QnaDao.allPagingQna(qnaVO);
+		System.out.println("list : "+qnaList.get(0).getIn_count());
+		m.addAttribute("list", qnaList); //가져온 DB를 모델에 저장
+		
 		return "board/boardQna";
 	}
 	
@@ -71,8 +104,18 @@ public class QnaController {
 		return result;
 	}
 	
+	//qna게시글 보기
 	@RequestMapping("qnaview.do")
-	public String qnaview(){
+	public String qnaview(QnAVO qnaVO, Model m){
+		System.out.println(qnaVO.getB_no());
+		int result = QnaDao.Count(qnaVO); //조회수 카운트
+		QnAVO qVO = QnaDao.callQna(qnaVO);
+		List <AnswerVO> list=QnaDao.callAnwer(qVO);
+		
+		System.out.println(list.size());
+	
+		m.addAttribute("vo",qVO);
+		m.addAttribute("list", list);
 		return "qnaboard/qnaboard";
 	}
 	
@@ -113,7 +156,33 @@ public class QnaController {
 		return "popupClose";
 	}
 	
+	//답글달기
+	@RequestMapping("answerqna.do")
+	@ResponseBody
+	public int insertAnswer(AnswerVO aVO, HttpSession session){
+		MemberVO memberVO=(MemberVO)session.getAttribute("user");
+		System.out.println(memberVO.getU_nick());
+		aVO.setA_nick(memberVO.getU_nick());
+		aVO.setA_content(aVO.getA_content().replaceAll("\r\n","<br>"));
+		int result=0;
+		result=QnaDao.insertAnswer(aVO);
+		
+		return result;
+	}
 	
-
+	
+	@RequestMapping("answerReply.do")
+	@ResponseBody
+	public int insertReply(AreplyVO areplyVO, HttpSession session){
+		int result=0;
+		System.out.println(areplyVO.getA_no());
+		System.out.println(areplyVO.getAr_content());
+		MemberVO memberVO=(MemberVO)session.getAttribute("user");
+		areplyVO.setAr_id(memberVO.getU_id()); 
+		areplyVO.setAr_nick(memberVO.getU_nick());
+		result=QnaDao.insertReply(areplyVO);
+		
+		return result;
+	}
 	
 }

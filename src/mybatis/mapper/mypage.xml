@@ -46,9 +46,9 @@ from reply where re_id=#{u_id}
 <!-- 사용자 qna리스트 4개 -->
 <select id="getMyQna" parameterType="memberVO" resultType="qnaVO">
 <![CDATA[
-SELECT rownum, b_no, in_title, in_date 
+SELECT rownum, b_no, in_title, in_date, in_recount
 FROM 
-(SELECT n.b_no b_no, DECODE(SIGN(LENGTH(in_title)-5),1,SUBSTR(in_title,1,5)||'...',in_title)  as in_title, to_char(n.in_date,'YYYY-MM-DD') as in_date 
+(SELECT n.b_no b_no, DECODE(SIGN(LENGTH(in_title)-5),1,SUBSTR(in_title,1,5)||'...',in_title)  as in_title, to_char(n.in_date,'YYYY-MM-DD') as in_date , in_recount
 		FROM qna_board n WHERE n.u_id =#{u_id} ORDER BY n.in_date DESC) 
 WHERE rownum <=4
 ]]>
