@@ -15,20 +15,6 @@
 	text-decoration: none !important;
 }
 </style>
-<script type="text/javascript">
-	$(function(){
-		
-		var tem = document.getParameterById("side");
-		tem.mouseover(function(){
-			
-			tem
-			
-		});
-		
-	});
-
-
-</script>
 </head>
 <body>
 
