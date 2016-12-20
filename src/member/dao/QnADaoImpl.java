@@ -200,6 +200,17 @@ public class QnADaoImpl implements QnADao {
 		}
 		return result;
 	}
+
+	@Override
+	public List<AreplyVO> callReply(AnswerVO vo) {
+		List <AreplyVO> list= null;
+		try {
+			list = QnAManager.callReply(vo);
+		} catch (Exception ex) {
+			System.out.println("qnaDAOImpl / 답변 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
 	
 	
 }

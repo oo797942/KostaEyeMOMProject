@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +37,18 @@ public class MessageController {
 	}
 	
 	@RequestMapping("/messageBoard.do")
-	public String messageBoard(MessageVO messageVO){
-				
+	public String messageBoard(MessageVO messageVO, HttpSession session, Model m){
+		MemberVO memvo = (MemberVO) session.getAttribute("user");
+		System.out.println(memvo.getU_id());
+		messageVO.setS_send_id(memvo.getU_id());
+		messageVO.setS_id(memvo.getU_id());
+
+		List<MessageVO> sendList = messageDao.sendMessageList(messageVO);		
+		List<MessageVO> receiveList = messageDao.receiveMessageList(messageVO);
+		
+		m.addAttribute("sendList", sendList);
+		m.addAttribute("receiveList", receiveList);
+
 		return "message/messageBoard";
 	}
 	
