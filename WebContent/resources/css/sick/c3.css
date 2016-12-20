@@ -73,3 +73,21 @@ div.sub5_box p.tit									{ padding:40px 0 28px 0; }
 div.sub5_box p										{
 }
 div.sub5_box p u										{ font-size:17px; vertical-align:0; font-weight:bold}
+
+.imgt{
+	padding-left: 30px;
+}
+ol{
+	list-style: none;
+	padding-left: 0px;
+}
+.imgT{
+	padding-left: 50px;
+}li{
+	list-style: none;
+}
+.imgA{
+	width:350px;
+	height: 300px;
+
+}

@@ -12,9 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
-}
-.imgt{
-	padding-left: 30px;
+	text-decoration: none !important;
 }
 </style>
 </head>
@@ -94,23 +92,23 @@
 </div><br/>
 
 <dl class="contB">
-	<dt><img src="/EyeMOM/resources/img/sick/eat01_tit.gif"></dt>
-	<dd><img src="/EyeMOM/resources/img/sick/eat01_txt.gif"></dd>
+	<dt><img class="imgt" src="/EyeMOM/resources/img/sick/eat01_tit.gif"></dt>
+	<dd><img class="imgt" src="/EyeMOM/resources/img/sick/eat01_txt.gif"></dd>
 </dl><br/>
 
 <dl class="contB">
-	<dt><img src="/EyeMOM/resources/img/sick/eat02_tit.gif"></dt>
-	<dd class="ptb35"><img src="/EyeMOM/resources/img/sick/eat02_txt01.gif"></dd>
-	<dd><img src="/EyeMOM/resources/img/sick/eat02_check.gif"></dd>
+	<dt><img class="imgt" src="/EyeMOM/resources/img/sick/eat02_tit.gif"></dt>
+	<dd class="ptb35"><img class="imgt" src="/EyeMOM/resources/img/sick/eat02_txt01.gif"></dd>
+	<dd><img class="imgt" src="/EyeMOM/resources/img/sick/eat02_check.gif"></dd>
 </dl><br/>
 
 <dl class="contB">
-	<dt><img src="/EyeMOM/resources/img/sick/eat03_tit.gif"></dt>
-	<dd><img src="/EyeMOM/resources/img/sick/eat03_txt01.gif"></dd>
+	<dt><img class="imgt" src="/EyeMOM/resources/img/sick/eat03_tit.gif"></dt>
+	<dd><img class="imgt" src="/EyeMOM/resources/img/sick/eat03_txt01.gif"></dd>
 </dl><br/>
 
 <dl class="contB">
-	<dt><img src="/EyeMOM/resources/img/sick/eat04_tit.jpg"></dt>
+	<dt><img class="imgt" src="/EyeMOM/resources/img/sick/eat04_tit.jpg"></dt>
 </dl><br/>
 		</td>
 		</tr>

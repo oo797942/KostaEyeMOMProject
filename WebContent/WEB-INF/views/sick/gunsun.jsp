@@ -12,6 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
+	text-decoration: none !important;
 }
 </style>
 </head>

@@ -12,18 +12,8 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
+	text-decoration: none !important;
 }
-li{
-	list-style: none;
-}
-ol{
-	padding-left: 0px;
-}
-
-ul{
-	padding-left: 0px;
-}
-
 </style>
 </head>
 <body>

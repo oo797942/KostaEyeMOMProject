@@ -12,18 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
-}
-ol{
-	list-style: none;
-	padding-left:0px;
-}
-.imgA{
-	width:350px;
-	height: 300px;
-
-}
-il{
-	list-style: none;
+	text-decoration: none !important;
 }
 </style>
 </head>
