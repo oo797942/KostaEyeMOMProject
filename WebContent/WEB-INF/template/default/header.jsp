@@ -57,8 +57,8 @@
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<a href="mypage.do" ><img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"  id="mypageBtn" /> </a>
 		<img src="/EyeMOM/resources/img/logout.png" class="toplogo_btn2"  id="logoutBtn" /> 
-							<img  src="/EyeMOM/resources/img/message.png" class="toplogo_btn2" id="messageBtn">
-		<span class="toplogo_btn2" style="margin-right: 50px">${ sessionScope.user.getU_name()}님 환영합니다!</span>
+		<a href="messageBoard.do" ><img  src="/EyeMOM/resources/img/message.png" class="toplogo_btn2" id="messageBtn"></a>
+		<span class="toplogo_btn2" style="margin-right: 20px">${ sessionScope.user.getU_name()}님 환영합니다!</span>
 
 	</c:otherwise>	
 	</c:choose>

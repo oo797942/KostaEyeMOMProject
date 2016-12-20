@@ -13,6 +13,18 @@ public class MessageVO {
 	private String s_date;
 	
 	
+	public String getS_state() {
+		return s_state;
+	}
+	public void setS_state(String s_state) {
+		this.s_state = s_state;
+	}
+	public String getS_date() {
+		return s_date;
+	}
+	public void setS_date(String s_date) {
+		this.s_date = s_date;
+	}
 	public int getS_no() {
 		return s_no;
 	}
