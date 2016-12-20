@@ -105,10 +105,10 @@
 									<td class='pagetd pagealign'><a href="#">${vo.in_title}</a></td>
 									<td class='pagetd pagealign'>${vo.in_date}</td>
 									<td class='pagetd pagealign'>
-									<c:if test="${vo.in_recount==0}">
+									<c:if test="${vo.in_recount=='n'}">
 									미답변
 									</c:if>
-									<c:if test="${vo.in_recount!=0}">
+									<c:if test="${vo.in_recount=='y'}">
 									답변완료
 									</c:if>
 									</td>

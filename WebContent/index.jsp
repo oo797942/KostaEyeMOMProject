@@ -5,13 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head> 
 
 
- 
-<body> 	
-
-<a href="home.go">홈 두잉 홈 두잉</a>
+<a href="sic.do">홈 두잉 홈 두잉</a>
  
 
 </body>

@@ -3,10 +3,10 @@ package member.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import member.vo.BoardVO;
+import member.vo.AnswerVO;
+import member.vo.AreplyVO;
 import member.vo.FaqVO;
 import member.vo.QnAVO;
-import mybatis.manager.BoardManager;
 import mybatis.manager.QnAManager;
 
 
@@ -107,6 +107,97 @@ public class QnADaoImpl implements QnADao {
 			System.out.println("QnADaoImpl / 리스트가져오기 실패 : " + ex.getMessage());
 		}
 		
+		return result;
+	}
+
+	@Override
+	public int qnaListCount() {
+		int totalCount = 0;
+		try {
+			totalCount = QnAManager.totalCount();
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+
+	@Override
+	public List<QnAVO> allPagingQna(QnAVO vo) {
+		List<QnAVO> list = null;
+		try {
+			System.out.println("DAO 체크" + vo.getB_no());
+
+			list = QnAManager.allpagingQna(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAO페징 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	@Override
+	public int insertQna(QnAVO vo) {
+		int result = 0;
+		try {
+			result = QnAManager.insertQna(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return result;	
+	}
+
+	@Override
+	public int Count(QnAVO vo) {
+		int result = 0;
+		try {
+			result = QnAManager.count(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return result;	
+	}
+
+	@Override
+	public QnAVO callQna(QnAVO vo) {
+		QnAVO qVO=null;
+		try {
+			qVO = QnAManager.callQna(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return qVO;
+	}
+
+	@Override
+	public int insertAnswer(AnswerVO vo) {
+		int result =0;
+		try {
+			result = QnAManager.insertAnswer(vo);
+		} catch (Exception ex) {
+			System.out.println("qnaDAOImpl / 답변 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
+	//qna댓글 호출
+	@Override
+	public List<AnswerVO> callAnwer(QnAVO vo) {
+		List <AnswerVO> list= null;
+		try {
+			list = QnAManager.callAnswer(vo);
+		} catch (Exception ex) {
+			System.out.println("qnaDAOImpl / 답변 실패 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	@Override
+	public int insertReply(AreplyVO vo) {
+		int result =0;
+		try {
+			result = QnAManager.insertReply(vo);
+		} catch (Exception ex) {
+			System.out.println("qnaDAOImpl / 답변 실패 : " + ex.getMessage());
+		}
 		return result;
 	}
 	

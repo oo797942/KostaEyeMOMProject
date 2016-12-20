@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import member.vo.BoardVO;
+import member.vo.AnswerVO;
+import member.vo.AreplyVO;
 import member.vo.FaqVO;
 import member.vo.QnAVO;
 
@@ -60,7 +61,24 @@ public class QnAManager {
 
 		      session.commit();
 		      return totalCount;
+	   }
+	   
+	   public static int totalCount() throws SQLException {
+		      SqlSession session = CommonManager.db().openSession();
+		      int totalCount = session.selectOne("qna.totalCount2");
+
+		      session.commit();
+		      return totalCount;
+	   }
+	   
+	   public static List<QnAVO> allpagingQna(QnAVO qnaVO) throws SQLException {
+		      SqlSession session = CommonManager.db().openSession();
+		      List<QnAVO> list = session.selectList("qna.allQnap", qnaVO);
+
+		      session.commit();
+		      return list;
 		   }
+	   
 	   // 공지사항 리스트 뽑아오기
 	   public static List<FaqVO> allpagingFaq(FaqVO faqvo) throws SQLException {
 	      SqlSession session = CommonManager.db().openSession();
@@ -78,4 +96,51 @@ public class QnAManager {
 			   return result;
 		}
 	   
+		public static int insertQna(QnAVO qnaVO) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			   int result = session.insert("qna.insertQna", qnaVO);
+			   session.commit();
+			   return result;
+		}
+		
+		public static int count(QnAVO qnaVO) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			   int result = session.update("qna.count", qnaVO);
+			   session.commit();
+			   return result;
+		}
+		
+		public static QnAVO callQna(QnAVO qnaVO) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			QnAVO qVO = session.selectOne("qna.callQna", qnaVO);
+			session.commit();
+			return qVO;
+		}
+		
+		public static int insertAnswer(AnswerVO aVO) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			int result = session.insert("qna.insertAnswer", aVO);
+			session.commit();
+			return result;
+		}
+		
+		public static List<AnswerVO> callAnswer(QnAVO vo) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			List <AnswerVO> list = session.selectList("qna.callAnswer", vo);
+			session.commit();
+			return	list;
+		}
+		
+		public static int insertReply(AreplyVO vo) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			int result = session.insert("qna.insertReply", vo);
+			session.commit();
+			return result;
+		}
 }

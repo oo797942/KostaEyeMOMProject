@@ -19,8 +19,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="member.vo.VideoVO" alias="videoVO" />
 		<typeAlias type="member.vo.CountVO" alias="countVO" />
 		<typeAlias type="member.vo.FaqVO" alias="faqVO" />
-		<typeAlias type="member.vo.PageVO" alias="pageVO" />		
+		<typeAlias type="member.vo.PageVO" alias="pageVO" />	
+		<typeAlias type="member.vo.AnswerVO" alias="answerVO" />	
+		<typeAlias type="member.vo.AreplyVO" alias="areplyVO" />
+			
 		<typeAlias type="member.vo.MessageVO" alias="messageVO"/>
+
 	</typeAliases>
 		 
 	<environments default="development">

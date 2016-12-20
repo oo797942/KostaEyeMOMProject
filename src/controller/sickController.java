@@ -12,11 +12,6 @@ public class sickController {
 		
 		return "sick/ato";
 	}
-	@RequestMapping("ato2.go")
-	public String sickAto2(){
-		
-		return "sick/ato2.go";
-	}
 	
 	@RequestMapping("heat.do")
 	public String sickHeat(){  

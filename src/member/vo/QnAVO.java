@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class QnAVO {
+public class QnAVO extends PageVO{
 	private int b_no;
 	private String in_cate;
 	private String in_title;
@@ -28,7 +28,7 @@ public class QnAVO {
 	private String u_id;
 	private int in_good;
 	private String b_goodog;
-	private int in_recount;
+	private String in_recount;
 	
 	public int getB_no() {
 		return b_no;
@@ -211,10 +211,10 @@ public class QnAVO {
 	public void setB_goodog(String b_goodog) {
 		this.b_goodog = b_goodog;
 	}
-	public int getIn_recount() {
+	public String getIn_recount() {
 		return in_recount;
 	}
-	public void setIn_recount(int in_recount) {
+	public void setIn_recount(String in_recount) {
 		this.in_recount = in_recount;
 	}
 	

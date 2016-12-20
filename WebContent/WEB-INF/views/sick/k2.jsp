@@ -4,89 +4,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/EyeMOM/resources/css/sick/nanumgothic.css" rel="stylesheet" type="text/css">
 <link href="/EyeMOM/resources/css/sick/c5.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-.cateTable{
-	margin:0;
-	padding:0;
-	width: 1100px;
-	border: 1;
-	margin-top: 20px;
-	
-}
-
-.menuTd{
-	margin:0;
-	padding:0;
-	padding-right:10px;
-	margin-left:100px;
-	width:200px;
-	vertical-align: top;
-	text-align: left;
-	border: 1;
-}
-
-.scribeTd{
-	margin:0;
-	padding:0;
-	width:800px;
-	border-left: 1px;
-}
-
-.empty{
-
-	width: 100px;
-
-}
-
 .side{
-	text-shadow: black;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
 }
-
-.sideTop{
-	border: 5px;
-}
-
-ul.d_list li {
-    font-size: 16px;
-/*     color: #e97e1d; */
-    color: #333333;
-/*     font-weight: bold; */
-/*     padding-bottom: 35px; */
-}
-
-ul.d_list li p {
-    font-weight: normal;
-    padding-top: 15px;
-}
-
-.scribeTd{
-    font-size: 13px;
-    line-height: 18px;
-    font-family: 'NanumGothic', '나눔고딕', 'Nanum Gothic','NanumGothicWeb', Dotum, sans-serif;
-    font-size: 13px;
-    line-height: 175%;
-}
-
-li{
+ol{
 	list-style: none;
+	padding-left:0px;
+}
+.imgA{
+	width:350px;
+	height: 300px;
+
 }
 </style>
 </head>
 <body>
-<div class="body">
-	<table class="cateTable" border="0">
-		<tr>
-			<td class="empty"></td>
-			<td class="menuTd">
-			
-			<form>
- 				<div class="sideMenu">
+<div class=body><br/>
+<table class="" >
+<tr style="width:1100px; padding:0px; margin:0px;">
+<td width="200px;" valign="top">
+ 				<div>
   					<div id="section1" class="label">
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
@@ -95,29 +38,25 @@ li{
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
-  						<a class="side" href="dudru.do" > － 두드러기</a><br/>
+  						<a class="side" href="dudru.do"  > － 두드러기</a><br/>
    					</div>
   		  			</div>
  			 	<div>
-
   				<div id="section2" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side2.gif" border="1"/>
   				</div>
-
   				<div class="elements">
   					<a class="side" href="cold.do" > － 잦은 감기</a><br/>
   					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
-  					<a class="side" href="chun.do" > － 천식</a><br/>
+  					<a class="side" href="chun.do"  > － 천식</a><br/>
   					<a class="side" href="jung.do" > － 중이염</a><br/>
   					<a class="side" href="gu.do" > － 구취.구내염</a><br/>
   				</div>
   				</div>
   				<div>
-
   				<div id="section3" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side3.gif" border="1"/>
   				</div>
-
   				<div class="elements">
   					<a class="side" href="josuk.do" > － 성조숙증</a><br/>
   					<a class="side" href="biman.do" > － 소아비만</a><br/>
@@ -127,24 +66,20 @@ li{
   				</div>
   				
   				<div>
-
   				<div id="section4" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side4.gif" border="1"/>
   				</div>
-
-  				<div class="elements">
+  				<div class="elements1">
 					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
-					<a class="side" href="k2.do" > － 뇌전증(경기,간질)</a><br/>  					
+					<a class="side" href="k2.do"  style="background-color: red; padding-right: 10px;"  > － 뇌전증(경기,간질)</a><br/>  					
 					<a class="side" href="re.do" > － 레녹스가스토증후군</a><br/>  					
   				</div>
   				</div>
   				
   				<div>
-
   				<div id="section5" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side5.gif" border="1"/>
   				</div>
-
   				<div class="elements">
  					<a class="side" href="sic.do" > － 식욕부진</a><br/> 					
  					<a class="side" href="#" > － 야뇨증</a><br/> 					
@@ -155,11 +90,10 @@ li{
  					<a class="side" href="#" > － ADHD</a><br/> 					
   				</div>
   				</div>
-			</form>
-			</td>
+		</td>
 			
-			<td class="scribeTd" >
-	<div class="atopic">
+			<td class="scribeTd" width="840px;">
+			<div class="atopic">
 					<ul class="aLIst">
 						<li>뇌전증(경기, 간질)의 정의
 							<p>뇌조직의 기질적 병변 또는 기능적 장애로 인하여 <u>뇌신경 세포의 발작적인 방전으로 생기는 간헐적인 신경계의 장애</u>를 일으켜 <br>
@@ -175,7 +109,7 @@ li{
 알콜중독, 자간증 등이 원인되어<br>
 뇌에 기질적 병변이 있는 <u>증후성 간질</u>이 있습니다. 
 							</p>
-							<p class="child"><img src="/EyeMOM/resources/img/sick/child.gif" ></p>
+<!-- 							<p class="child"><img class="imgA"  src="/EyeMOM/resources/img/sick/child.gif" ></p> -->
 							<ol class="">
 								<li><span>01.</span> 대발작
 									<p>갑자기 의식을 잃고 소리를 크게 내며 쓰러져<br>
