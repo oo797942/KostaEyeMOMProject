@@ -176,7 +176,10 @@
 					<ul style="list-style: none;">
 						<li class="AqnaList">
 							
-							<c:forEach var='vo' items='${list}'>
+							<c:forEach var="i" begin="1" end="${fn:length(list)}" step="1">
+
+							<c:set var="vo" value="${list[i-1]}" />
+							<c:set var="replylist" value="${rlist[i-1]}" />
 							<div class='AqnaContent'>
 								
 								<div class='AqnaContent1'>
@@ -210,21 +213,21 @@
 									<div style="height: auto;">
 										<table
 											style="margin-top: 50px; border-collapse: collapse; height: auto;">
-											
+											<c:forEach var='reply' items='${replylist}'>
 											<tr>
-												<td style="width: 1px;"></td>
+												<td style="width: 1px;"><input type="hidden" value="${reply.ar_no}"/></td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;"></td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;">${reply.ar_content}</td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">wamsi98</td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">${reply.ar_nick}</td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">2016.12.17</td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">${reply.ar_date}</td>
 												<td
 													style="padding: 13px 0 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 30px;">
 													<input type="button" value='x' style="border: 1px solid #e9e9e9; background-color: #fff" />
 												</td>
 											</tr>
-											
+											</c:forEach>
 										</table>
 									</div>
 								</div>

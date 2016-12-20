@@ -107,15 +107,24 @@ public class QnaController {
 	//qna게시글 보기
 	@RequestMapping("qnaview.do")
 	public String qnaview(QnAVO qnaVO, Model m){
-		System.out.println(qnaVO.getB_no());
+		System.out.println("글번호"+qnaVO.getB_no());
 		int result = QnaDao.Count(qnaVO); //조회수 카운트
 		QnAVO qVO = QnaDao.callQna(qnaVO);
 		List <AnswerVO> list=QnaDao.callAnwer(qVO);
+		List replylist =null;
+		System.out.println("댓글갯수"+list.size());
 		
-		System.out.println(list.size());
-	
+		for(int i=0; i>list.size() ; i++){
+			AnswerVO aVO= list.get(i);
+			System.out.println("댓글번호"+aVO.getA_no());
+			List<AreplyVO> rlist= QnaDao.callReply(aVO);
+			replylist.add(rlist);
+			list.get(i).setA_recount(rlist.size());
+		}
+		
 		m.addAttribute("vo",qVO);
 		m.addAttribute("list", list);
+		m.addAttribute("rlist", replylist);
 		return "qnaboard/qnaboard";
 	}
 	

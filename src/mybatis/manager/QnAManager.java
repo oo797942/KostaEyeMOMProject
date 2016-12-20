@@ -143,4 +143,12 @@ public class QnAManager {
 			session.commit();
 			return result;
 		}
+		
+		public static List<AreplyVO> callReply(AnswerVO vo) throws SQLException{
+			SqlSession session = CommonManager.db().openSession();
+			
+			List <AreplyVO> list = session.selectList("qna.callReply", vo);
+			session.commit();
+			return	list;
+		}
 }

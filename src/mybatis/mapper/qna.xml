@@ -125,4 +125,9 @@ INSERT INTO answer_reply (ar_no, a_no, ar_date, ar_content, ar_nick, ar_id)
 VALUES (mom_reply_no.nextval, #{a_no}, sysdate, #{ar_content}, #{ar_nick}, #{ar_id})
 </insert>
 
+<!-- qna 답변 댓글 가져오기 -->
+<select id="callReply" parameterType="answerVO">
+select ar_no, TO_CHAR(ar_date, 'YYYY.MM.DD') as ar_date, ar_content, ar_nick
+from answer_reply where a_no=#{a_no}
+</select>
 </mapper>
