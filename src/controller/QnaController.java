@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -111,14 +112,18 @@ public class QnaController {
 		int result = QnaDao.Count(qnaVO); //조회수 카운트
 		QnAVO qVO = QnaDao.callQna(qnaVO);
 		List <AnswerVO> list=QnaDao.callAnwer(qVO);
-		List replylist =null;
+		List <List<AreplyVO>>replylist=new ArrayList<List<AreplyVO>>();
 		System.out.println("댓글갯수"+list.size());
-		
-		for(int i=0; i>list.size() ; i++){
+		System.out.println("댓글번호2:"+list.get(0).getA_no());
+		for(int i=0; i<list.size() ; i++){
 			AnswerVO aVO= list.get(i);
-			System.out.println("댓글번호"+aVO.getA_no());
+			System.out.println("댓글번호2"+aVO.getA_no());
 			List<AreplyVO> rlist= QnaDao.callReply(aVO);
-			replylist.add(rlist);
+			System.out.println("리플리스트 사이즈 :"+rlist.size());
+			
+				replylist.add(rlist);
+			
+			
 			list.get(i).setA_recount(rlist.size());
 		}
 		
