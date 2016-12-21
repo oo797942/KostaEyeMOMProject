@@ -196,6 +196,12 @@
 				</div>
 			</div>
 			<!-- 답변창 -->
+			
+			<c:choose>
+						<c:when test="${empty list }">
+						
+						</c:when>
+						<c:otherwise>
 			<div
 				style="margin: 50px auto; width: 900px; height:auto; text-align: left;">
 				<div class='AqnaAnswer'>
@@ -205,7 +211,10 @@
 					</h2>
 					<ul style="list-style: none;">
 						<li class="AqnaList">
-							
+						
+						
+						
+						
 							<c:forEach var="i" begin="1" end="${fn:length(list)}" step="1">
 
 							<c:set var="vo" value="${list[i-1]}" />
@@ -266,10 +275,13 @@
 								</div>
 							</div>
 							</c:forEach>
+							
 						</li>
 					</ul>
 				</div>
 			</div>
+			</c:otherwise>
+						</c:choose>
 		</div>
 	</div>
 <!-- 	<div -->

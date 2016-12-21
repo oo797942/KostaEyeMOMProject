@@ -50,6 +50,9 @@ public class PurchaseController {
 	public String shopView(Model m, GroupPurchaseVO gpVO){
 		
 		System.out.println("/shoppingView.do 요청"+gpVO.getB_no());
+		
+		GroupPurchaseVO vo ;
+		
 		return "shoppingView/shoppingView";
 	}
 }
