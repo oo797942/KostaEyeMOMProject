@@ -35,7 +35,7 @@
 
 #viewTable {
 	width: 1024px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 #viewTable td {
@@ -71,14 +71,15 @@
 }
 
 .sameinfoDiv {
-	width: 80%;
-	height: 202px;
+/* 	border : 1px solid #000; */
+	width: 70%;
+	height: 175px;
 	margin: 50px auto;
 }
 
 .sameinfo {
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	background-color: #959595;
 	float: left;
 	margin: 0 3px 0 0;
@@ -86,16 +87,16 @@
 }
 
 .sameinfo1 {
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	background-color: #cecece;
 	float: left;
 	margin: 0 3px 0 0;
 }
 
 .sameinfo2 {
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	background-color: #cecece;
 	float: left;
 }
@@ -113,7 +114,6 @@
 }
 
 .sameStart {
-	line-height: 38px;
 	padding-top: 50px;
 	font-size: 11pt;
 	color: #fff;

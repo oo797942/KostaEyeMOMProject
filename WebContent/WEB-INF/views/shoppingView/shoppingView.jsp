@@ -4,8 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>뷰</title>
-<link href="css/jquery.bxslider.css"
-	rel="stylesheet" />
 <link href="resources/css/shoppingView.css" rel="stylesheet" />
 <link href="resources/css/faqboard.css" rel="stylesheet"/>
 <script src="resources/js/jquery-1.10.2.min.js"></script> 
@@ -152,16 +150,24 @@
 		
 		<table id="viewTable">
 			<tr>
-				<td id="viewTableImg" rowspan="4" style="width: 450px;">
+				<td id="viewTableImg" rowspan="6" style="width: 450px;">
 				<img id="itemView" src="resources/img/shopping/unnamed1RDB0UZ1.png" style="max-width: 100%; height: auto;"/></td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">판매가</td>
-				<td class="viewInfo" >11,111,111원</td>
+				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">11,111,111원</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">수량</td>
 				<td class="viewInfo" ><input type="button" value='+' class='infoCountbtn'/><input type="text" class='infoCount' value='1'/><input type="button" value='-' class='infoCountbtn'/></td>
+			</tr>
+			<tr>
+				<td class="viewInfo infoDetail1">배송방법</td>
+				<td class="viewInfo" >택배</td>
+			</tr>
+			<tr>
+				<td class="viewInfo infoDetail1">배송비</td>
+				<td class="viewInfo" >무료배송</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail2">상품설명</td>
@@ -172,45 +178,20 @@
 				<td id="btnTableTd" colspan="4">
 					<table id="btnTable" width="100%" cellspacing="0">
 						<tr>
+							<td></td>
 							<td id="bagoo" class="tdBtn" width="50%" style="text-align: center; background-color: #ffa07a; color:#fff; font-weight: bold;">바로구매</td>
-							<td id="jjim" class="tdBtn" style="text-align: center;">찜하기</td>
 						</tr>
 					</table>
 				</td>
-			</tr>
-<!-- 			<tr> -->
-<!-- 				<td id="btnTableTd" colspan="2"> -->
-				
-<!-- 					<table id="btnTable" style="width: 100%"> -->
-<!-- 						<tr> -->
-<!-- 							<td id="bagoo" class="tdBtn" width="50%" style="text-align: center;">바로구매</td> -->
-<!-- 							<td id="jjim" class="tdBtn" style="text-align: center;">찜하기</td> -->
-<!-- 						</tr> -->
-<!-- 					</table> -->
-<!-- 				</td> -->
-<!-- 			</tr> -->
 		</table>
-		
 		</form>
-		
 		<br />
-		
-		<table style="width: 1024px;">
-			<tr>
-				<td width="33%"><img class="infoImage"
-					src="resources/img/shopping/unnamed1RDB0UZ1.png"></td>
-				<td width="33%"><img class="infoImage"
-					src="resources/img/shopping/이선빈.JPG"></td>
-				<td><img class="infoImage"
-					src="resources/img/shopping/unnamed1RDB0UZ1.png"></td>
-			</tr>
-		</table>
 		<div class='sameinfoDiv'>
 			<div class='sameinfo'><h2 class='sameinfoTXT'>공동구매 안내</h2></div>	
 			<!-- 구매시작 / 구매종료 -->			
 			<div class='sameinfo1'><h3 class='sameinfoTXT1'>모집기간</h3>
-				<label class='sameStart'>2016-12-20</label>
-				<label class='sameStart'>~</label>
+				<label class='sameStart'>2016-12-20</label><br/>
+				<label class='sameStart'>~</label><br/>
 				<label class='sameStart'>2016-12-20</label>
 			</div>				
 			<!-- 현재 인원/ 목표 인원 -->
@@ -223,6 +204,20 @@
 				<label class='sameStart'>2016-12-20</label>
 			</div>
 		</div>
+		<table style="width: 1024px; text-align: center;">
+			<tr>
+				<td width="33%"><img class="infoImage"
+					src="resources/img/shopping/이선빈.JPG"></td>
+			</tr>
+			<tr>		
+				<td><img class="infoImage"
+					src="resources/img/shopping/이선빈3.jpg" style="margin-top: 70px;"></td>
+			</tr>
+			<tr>
+				<td><img class="infoImage"
+					src="resources/img/shopping/이선빈2.jpg" style="margin:70px 0 70px 0; "></td>
+			</tr>
+		</table>
 		
 		<img width="1024px" src="resources/img/shopping/refund_info.png" />
 		<div class='Shoptablediv'>
