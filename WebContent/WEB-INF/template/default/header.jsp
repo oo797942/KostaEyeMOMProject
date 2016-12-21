@@ -102,7 +102,7 @@
 				<li class="lifont lileft">엄빠시장
 					<ul>
 						<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-						<li><a href="#">· 공동구매</a></li>
+						<li><a href="shopping.do">· 공동구매</a></li>
 						<li><a href="tip.do?title=used">· 중고장터</a></li>
 						<li><a href="donation.do">· 아나바다</a></li>
 					</ul>

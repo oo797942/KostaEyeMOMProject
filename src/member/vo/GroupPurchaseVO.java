@@ -2,7 +2,7 @@ package member.vo;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class GroupPurchaseVO {
+public class GroupPurchaseVO extends PageVO{
 	private int b_no;
 	private String we_title;
 	private String we_content;

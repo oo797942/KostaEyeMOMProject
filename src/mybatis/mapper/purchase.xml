@@ -15,4 +15,16 @@ where rownum <5
 ]]>
 </select>
 
+<select id="totalCount"  resultType="int">
+    SELECT COUNT(*)  totalCount FROM group_purchase
+</select>
+
+<select id="allBoardp"  resultType="purchaseVO">
+	SELECT b_no, we_title, we_price , we_maxsold, we_sold, TO_CHAR(we_end, 'MM/DD') as we_end , we_photo1name
+	 FROM group_purchase WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
+	 (SELECT b_no FROM group_purchase nnb ORDER BY b_no DESC))
+	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_no DESC
+</select>
+
+
 </mapper>
