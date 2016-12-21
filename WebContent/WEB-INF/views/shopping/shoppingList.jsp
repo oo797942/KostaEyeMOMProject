@@ -29,7 +29,7 @@ function fn_movePage(val){
 		<section class="content portfolio small-images">
 			<form name="frm">
     		<input type="hidden" name="pageNo" />
-			<div class="main">
+			<div class="main"> 
 				<div class="box">
 					<div class="padding">
 						<div class="container_12">
@@ -127,42 +127,53 @@ function fn_movePage(val){
 							</div>
 						</div>
 					</div>
- 
-					<!-- 페이징 -->
-					<div class='form-inline'>
-					<ul class="pagination modal-1">
 
-    <c:if test="${pageVO.pageNo != 0}">
-        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
-            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
-       </c:if>
-       <c:if test="${pageVO.pageNo != 1}">
-           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
-        </c:if>
-        <span>
-            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
-                <c:choose>
-                    <c:when test="${i eq pageVO.pageNo}">
-                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
-                            <font style="font-weight: bold;">${i}</font>
-                        </a></li>
-                    </c:when>
-                    <c:otherwise>
-                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </span>
-        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
-            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
-        </c:if>
-        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
-            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
-        </c:if>
-    </c:if>
-    				</ul>
-    </div>
-					<div style="width: 1200px; height: 75px;">
+						<!-- 페이징 -->
+						<div class='form-inline' style="	width: 1200px;
+	text-align: center;">
+							<ul class="pagination modal-1">
+
+								<c:if test="${pageVO.pageNo != 0}">
+									<c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.firstPageNo})"
+											style="text-decoration: none;">[첫 페이지]</a></li>
+									</c:if>
+									<c:if test="${pageVO.pageNo != 1}">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.prevPageNo})"
+											style="text-decoration: none;">[이전]</a></li>
+									</c:if>
+									<span> <c:forEach var="i" begin="${pageVO.startPageNo}"
+											end="${pageVO.endPageNo}" step="1">
+											<c:choose>
+												<c:when test="${i eq pageVO.pageNo}">
+													<li><a href="javascript:fn_movePage(${i})"
+														style="text-decoration: none;" class="active"> <font
+															style="font-weight: bold;">${i}</font>
+													</a></li>
+												</c:when>
+												<c:otherwise>
+													<li><a href="javascript:fn_movePage(${i})"
+														style="text-decoration: none;">${i}</a></li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+									</span>
+									<c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.nextPageNo})"
+											style="text-decoration: none;">[다음]</a></li>
+									</c:if>
+									<c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.finalPageNo})"
+											style="text-decoration: none;">[마지막 페이지]</a></li>
+									</c:if>
+								</c:if>
+							</ul>
+						</div>
+						<div style="width: 1200px; height: 75px;">
 						
 					
 						
