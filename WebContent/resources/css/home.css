@@ -191,12 +191,12 @@ footer {
 }
 
 .lifont {
-	font-size: 15pt;
+	font-size: 17pt;
 	display: inline-table;
 }
 
 .lifont li {
-	font-size: 10pt;
+	font-size: 13pt;
 }
 
 #menu, #menu ul {
@@ -225,7 +225,7 @@ footer {
 }
 
 .menuhr {
-	width: 100px;
+	width: 120px;
 	color: #ffa07a;
 }
 

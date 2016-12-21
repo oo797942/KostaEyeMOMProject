@@ -76,4 +76,8 @@ public class MypageController {
 		m.addAttribute("list", list);
 		return "board/boardQna";
 	}
+	@RequestMapping("myshopping.do")
+	public String myshopping(){
+		return "shopping/myshopping";
+	}
 }

@@ -87,7 +87,7 @@
 								</tr>
 							</table>
 							<p class='infomorep'> 
-							<a href="#" class='infomore'>+ 전체보기</a>
+							<a href="myshopping.do" class='infomore'>+ 전체보기</a>
 							</p>
 						</div>
 						<!-- 문의 내역 -->
