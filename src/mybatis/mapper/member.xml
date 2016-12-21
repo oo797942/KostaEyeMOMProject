@@ -57,5 +57,11 @@ select u_nick from mom_user where u_nick = #{u_nick}
 <update id="loginRec" parameterType="memberVO">
  UPDATE mom_user SET u_resent_date = sysdate WHERE u_id=#{u_id}
 </update>
+<update id="addMessage" parameterType="messageVO">
+UPDATE mom_user set u_message = u_message+1 WHERE u_id= #{s_send_id}
+</update>
+<update id="readMessage" parameterType="messageVO">
+UPDATE mom_user set u_message = u_message-1 WHERE u_id= #{s_send_id}
+</update>
 
 </mapper>

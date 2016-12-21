@@ -17,8 +17,15 @@ public class MemberVO {
 	private String u_signup_date;
 	private String u_stop_date;
 	private String u_resent_date;
+	private String u_message;
 	public String getU_resent_date() {
 		return u_resent_date;
+	}
+	public String getU_message() {
+		return u_message;
+	}
+	public void setU_message(String u_message) {
+		this.u_message = u_message;
 	}
 	public void setU_resent_date(String u_resent_date) {
 		this.u_resent_date = u_resent_date;

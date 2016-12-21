@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
+<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></sc.ㅣript>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -116,11 +116,13 @@ border: 1px;
 							<c:set var="vo" value="${sendList[i-1]}" />
                 <tr> 
                   <th style="text-align:center; width: 5%" valign="top" >
+                  <input type="hidden" name="list[${i}].s_send_id" value="${vo.s_send_id}">
+                <input type="hidden" name="list[${i}].s_state" value="${vo.s_state}">
      			<input type="checkbox" id="ex_chk" name="list[${i}].s_no" onclick="chkDis(this)" class="RowCheck" value="${vo.s_no}">
                   </th>
                   <th style="text-align:left; width: 20%">${vo.s_nick }</th>
                   <th style="text-align:left; width: 45%;" >
-                  	<a onclick="window.open('messageView.go?s_no=${vo.s_no}', '메세지',
+                  	<a onclick="window.open('messageView.go?s_no=${vo.s_no}&s_state=${vo.s_state}&s_send_id=${vo.s_send_id}', '메세지',
                    				'width=600px,height=320');return false;">
                   ${vo.s_title }</a></th>
                   <th style="text-align:left; width: 15%">${vo.s_date }</th>
