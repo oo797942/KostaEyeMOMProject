@@ -76,9 +76,9 @@ public class AdminController {
 //		return "adminQna";
 //	}
 	
-	@RequestMapping("/adminGallery.go")
-	public String adminGallery(HttpSession session){
-		return "adminGallery";
+	@RequestMapping("/adminPurchase.go")
+	public String adminPurchase(HttpSession session){
+		return "adminPurchase";
 	}
 	
 //	@RequestMapping("/adminVideo.go")

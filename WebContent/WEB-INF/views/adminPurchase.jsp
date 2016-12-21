@@ -41,6 +41,7 @@
           <!--class="active" active 클래스가 붙으면 효과를 적용한다. -->
             <li><a href="adminMember.go" >회원 관리</a></li>
             <li ><a href="adminBoard.go">공지사항 관리</a></li>
+            <li class="active"><a href="adminPurchase.go">공동구매 관리</a></li>
            <li><a href="adminReport.go">신고 관리</a></li>
             <li><a href="adminQna.go">FAQ</a></li>
             <li><a href="adminVideo.go">동영상 관리</a></li>
@@ -52,7 +53,7 @@
         
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">사진 관리</h1>
+          <h1 class="page-header">공동구매 관리</h1>
 
           <div class="table-responsive">
             <table class="table table-striped">

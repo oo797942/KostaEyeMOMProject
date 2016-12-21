@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></sc.ㅣript>
+<script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
