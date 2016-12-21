@@ -178,11 +178,9 @@ function fn_movePage(val){
         <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
             <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
         </c:if>
-    </c:if>
-    				</ul>
+    </c:if> 
+    				</ul>  
     </div>
-					<div style="width: 1200px; height: 75px;">
-						
 						<c:choose>
     				<c:when test="${empty sessionScope.user}">
     				<!-- 글쓰기 버튼 -->
@@ -195,7 +193,6 @@ function fn_movePage(val){
 					</c:otherwise>	
 					</c:choose>
 						
-					</div>
 				</div>
 			</div>
 		</form>

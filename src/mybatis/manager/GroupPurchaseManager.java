@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import member.vo.BoardVO;
 import member.vo.GroupPurchaseVO;
-import member.vo.QnAVO;
 
 public class GroupPurchaseManager {
 
@@ -19,5 +19,19 @@ public class GroupPurchaseManager {
 		   return list;
 	   }
 	
+	public static List<GroupPurchaseVO> allpagingShopping(GroupPurchaseVO vo) throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      List<GroupPurchaseVO> list = session.selectList("purchase.allBoardp", vo);
+
+	      session.commit();
+	      return list;
+	   }
 	
+	public static int totalCount() throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("purchase.totalCount");
+
+	      session.commit();
+	      return totalCount;
+	   }
 }
