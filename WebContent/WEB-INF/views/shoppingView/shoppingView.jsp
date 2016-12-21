@@ -10,102 +10,22 @@
 <script src="resources/js/main.js"></script>
 
 <script type="text/javascript">
-// $(function(){
+$(function(){
 	
-// 	$("#hideprice").hide();
-<%-- 	if("<%=sessionValue%>"=="null"){ --%>
-// 		$("#shoplogin").show();
-// 		$("#shoplogout").hide();
-// 	}else{
-// 		$("#shoplogin").hide();
-// 		$("#shoplogout").show();   
-// 	}
-	
-// 	$("#shoplogin").click(function(){
-<%-- 		window.open("<%=projectName%>/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );	 --%>
-		
-// 	}).css('cursor','pointer');
-	
-	
-// 	$("#shoplogout").click(function() {
-<%-- 		alert("로그아웃클릭하고 세션값 :<%=session.getAttribute("yourid")%>"); --%>
 
-<%-- 		window.location = "<%=projectName%>/logout.ho?cmd=logout-page"; --%>
-
-// 		$("#shoplogout").hide();
-// 		$("#shoplogin").show();
-	
-// 	}).css('cursor','pointer');
-	
-// 	$("#NoLoginMyPage").click(function(){
-<%-- 		window.open("<%=projectName%>/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );			 --%>
-// 	});
-	
-	
-// 	$("#searchInput").keypress(function(event){
-// 		if(event.which == 13){
-// 			var option = $("#searchCategory").val();
-// 			var radio = $("input:radio[name=searchRadio]:checked").val();
-// 			var inputvalue = $("#searchInput").val();
-<%-- 			window.location.href="<%=projectName%>/list.ho?cmd=search-input&option=" --%>
-// 										+ option
-// 										+ "&check="
-// 										+ radio
-// 										+ "&val="
-// 										+ inputvalue;
-// 							}
-// 						});
-
-<%-- 		var totalPriceTemp =<%=hg.getGoodsPrice()%>+<%=hg.getGoodsRentPrice()%>; --%>
-
-// 		$("#totalPrice").text(totalPriceTemp);
+		$("#plus").click(function(){
+			var count= $("#we_count").val();
+			count=Number(count);
+			$("#cnt").val(count+1)		
+		});
 		
-// 		for(var i=1; i<=$("#LSize").val();i++){
-// 			$("#countSelect").append("<option value="+i+">"+i+"벌</option>");
-// 		}
+		$("#minus").click(function(){
+			var count= $("#we_count").val();
+			count=Number(count);
+			$("#cnt").val(count-1);
+		});
 		
-// 		$("#sizeSelect").change(function(){
-// 			if($("#sizeSelect").val()=="L"){
-// 				$('#countSelect').children().remove();
-// 				for(var i=1; i<=$("#LSize").val();i++){
-// 					$("#countSelect").append("<option value="+i+">"+i+"벌</option>");
-// 				}
 
-// 			}else if($("#sizeSelect").val()=="M"){
-// 				$('#countSelect').children().remove();
-// 				for(var i=1; i<=$("#MSize").val();i++){
-// 					$("#countSelect").append("<option value="+i+">"+i+"벌</option>");
-// 				}
-
-				
-// 			}else if($("#sizeSelect").val()=="S"){
-// 				$('#countSelect').children().remove();
-// 				for(var i=1; i<=$("#SSize").val();i++){
-// 					$("#countSelect").append("<option value="+i+">"+i+"벌</option>");
-// 				}
-
-// 			}
-// 		});
-<%-- 		$("#hideprice").val(<%=hg.getGoodsPrice()%>); --%>
-// 		$("#countSelect").change(function() {
-<%-- 					var totalPriceReal = (<%=hg.getGoodsPrice()%>* $("#countSelect").val())+<%=hg.getGoodsRentPrice()%>; --%>
-// 					$("#totalPrice").text(totalPriceReal);
-// 					$("#hideprice").val(totalPriceReal);
-// 		});
-		
-		
-// 		$("#bagoo").click(function(){
-<%-- 			<% System.out.println("#bagoo 안에 : " +hg.getGoodsId()); %> --%>
-// 					$("#frm").submit();
-// 		});
-		
-// 		$("#bagooNoLogin").click(function(){
-<%-- 			window.open("<%=projectName%>/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );			 --%>
-// 		});
-		
-// 		$("#jjimNoLogin").click(function(){
-<%-- 			window.open("<%=projectName%>/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );			 --%>
-// 		});
 		
 // 		$("#insertReply").click(function(){
 // 			$.ajax({         
@@ -128,7 +48,7 @@
 <%-- 			window.location.href="<%=projectName%>/bag.ho?cmd=bag-insert&itemname=<%=hg.getGoodsName()%>&imgs=<%= hg.getGoodsImg()%>&itemno=<%= hg.getGoodsId()%>"; --%>
 // 		});
 
-// 	});
+	});
 </script>
 </head>
 <body>
@@ -139,7 +59,7 @@
 	<input id="LSize" type="hidden" value=""/>
 	<input id="MSize" type="hidden" value=""/>
 	<input id="SSize" type="hidden" value=""/>
-	<form name="frm" id="frm" method="get" action="/xx.ho">
+	<form name="frm" id="frm" method="get" action="shoppingpay.do">
 <!-- 		<input type="hidden" name="adid" value="">			 -->
 <!-- 		<input type="hidden" name="cmd" value="page-view"> -->
 <!-- 		<input type="hidden" name="name" value=""> -->
@@ -151,6 +71,7 @@
 		<table id="viewTable">
 			<tr>
 				<td id="viewTableImg" rowspan="6" style="width: 450px;">
+				<input type="hidden" value="${vo.b_no }" id="b_no">
 				<img id="itemView" src="resources/img/${vo.we_photo1name}" style="max-width: 100%; height: auto;"/></td>
 			</tr>
 			<tr>
@@ -159,7 +80,10 @@
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">수량</td>
-				<td class="viewInfo" ><input type="button" value='+' class='infoCountbtn'/><input type="text" class='infoCount' value='1'/><input type="button" value='-' class='infoCountbtn'/></td>
+				<td class="viewInfo" ><input type="button" id='minus' value='-' class='infoCountbtn'/>
+				<input type="text" class='infoCount' id='we_count' value='1'/>
+				<input type="button" id='plus' value='+' class='infoCountbtn'/>
+				</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">배송방법</td>
@@ -179,7 +103,8 @@
 					<table id="btnTable" width="100%" cellspacing="0">
 						<tr>
 							<td></td>
-							<td id="bagoo" class="tdBtn" width="50%" style="text-align: center; background-color: #ffa07a; color:#fff; font-weight: bold;">바로구매</td>
+							<td id="bagoo" class="tdBtn" width="50%" style="text-align: center; background-color: #ffa07a; color:#fff; font-weight: bold;">
+							<input type="submit" style="width: 100%; height: 100%" value="바로구매"/></td>
 						</tr>
 					</table>
 				</td>

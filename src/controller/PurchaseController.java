@@ -55,4 +55,11 @@ public class PurchaseController {
 		m.addAttribute("vo", vo);
 		return "shoppingView/shoppingView";
 	}
+	
+	@RequestMapping("shoppingpay.do")
+	public String payPage(Model m, GroupPurchaseVO gpVO){
+		
+		
+		return "purchase/purchaseView";
+	}
 }
