@@ -65,7 +65,7 @@
 				<c:if test="${sessionScope.user.getU_message() != 0}">
 		<img  src="/EyeMOM/resources/img/messageNew.png" class="toplogo_btn2" id="messageBtn">
 		</c:if>
-		
+		 
 		</a>
 		<span class="toplogo_btn2" style="margin-right: 20px">${ sessionScope.user.getU_name()}님 환영합니다!</span>
 
