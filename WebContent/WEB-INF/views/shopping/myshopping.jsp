@@ -39,7 +39,7 @@
 						<td class='boardtd' >상품명</td>
 						<td class='boardtd' >배송상태</td>
 						<td class='boardtd'>주문일</td>
-					</tr>
+					</tr> 
 <%-- 			<c:forEach var='vo' items='${list}'> --%>
 					<tr>
 						<!-- 이미지 -->
