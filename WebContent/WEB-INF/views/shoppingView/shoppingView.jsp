@@ -205,7 +205,7 @@
 			</div>
 		</div>
 		<table style="width: 1024px; text-align: center;">
-			<tr>
+			<tr>        
 				<td width="33%"><img class="infoImage"
 					src="resources/img/${vo.we_photo1name}"></td>
 			</tr>
