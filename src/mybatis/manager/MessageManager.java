@@ -33,4 +33,30 @@ public class MessageManager {
 		return receiveList; 
 	}
 	
+	public static MessageVO messageView(MessageVO vo) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+		MessageVO vList=null;
+
+		session.update("msg.messageCount", vo);
+		session.commit();
+		vList= session.selectOne("msg.messageView", vo);
+		return vList; 
+	}
+	
+	
+	public static int deleteAll(MessageVO vo) throws SQLException {
+		int result = 0;
+		SqlSession session = CommonManager.db().openSession();
+		result = session.delete("msg.deleteAll", vo);
+		session.commit();
+		return result; 
+	}
+	
+	public static int readAll(MessageVO vo) throws SQLException {
+		int result = 0;
+		SqlSession session = CommonManager.db().openSession();
+		result = session.update("msg.readAll", vo);
+		session.commit();
+		return result; 
+	}
 }

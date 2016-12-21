@@ -16,5 +16,17 @@ SELECT * FROM mom_message WHERE s_send_id = #{s_send_id}
 <select id="receiveMessageList" parameterType="messageVO" resultType="messageVO">
 SELECT * FROM mom_message WHERE s_id = #{s_id}
 </select>
+<select id="messageView" parameterType="messageVO" resultType="messageVO">
+SELECT * FROM mom_message WHERE s_no = #{s_no}
+</select>
+
+<update id="messageCount" parameterType="messageVO" >
+UPDATE mom_message SET s_state = 'y' WHERE s_no = #{s_no} and s_id != #{s_id}
+</update>
+<delete id="deleteAll" parameterType="messageVO">
+DELETE FROM mom_message WHERE s_no = #{s_no}
+</delete>
+<update id="readAll" parameterType="messageVO">
+UPDATE mom_message SET s_state = 'y' WHERE s_no = #{s_no}</update>
 
 </mapper>

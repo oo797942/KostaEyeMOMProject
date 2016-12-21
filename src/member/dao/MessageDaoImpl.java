@@ -40,4 +40,39 @@ public class MessageDaoImpl implements MessageDao {
 		}
 	return receiveList;
 	}
+	
+	@Override
+	public MessageVO messageView(MessageVO vo){
+		MessageVO vList = null;
+		try {
+			vList = MessageManager.messageView(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	return vList;
+	}	
+	@Override
+	public int deleteAll(MessageVO vo) {
+		int result = 0;
+		try {
+			result = MessageManager.deleteAll(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	@Override
+	public int readAll(MessageVO vo) {
+		int result = 0;
+		try {
+			result = MessageManager.readAll(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 }

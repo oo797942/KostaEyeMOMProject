@@ -10,4 +10,10 @@ public interface MessageDao {
 	List<MessageVO> receiveMessageList(MessageVO vo);
 
 	List<MessageVO> sendMessageList(MessageVO vo);
+
+	MessageVO messageView(MessageVO vo);
+
+	int deleteAll(MessageVO vo);
+
+	int readAll(MessageVO vo);
 }
