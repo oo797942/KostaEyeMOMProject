@@ -190,13 +190,13 @@ function fn_movePage(val){
 								</c:if>
 							</ul>
 							<c:choose>
-								<c:when test="${empty sessionScope.user}">
+		 						<c:when test="${empty sessionScope.user}">
 									<!-- 글쓰기 버튼 -->
 									<a href="#test-popup" class="open-popup-link"> <input
 										type="button" value='글쓰기' class='writebtn'/>
 									</a>
 								</c:when>
-								<c:otherwise>
+								<c:otherwise>  
 									<!-- 세선정보가 있을경우 사용자 정보 show -->
 									<input type="button" onclick='writeBoard()' value='글쓰기' class='writebtn'/>
 								</c:otherwise>
