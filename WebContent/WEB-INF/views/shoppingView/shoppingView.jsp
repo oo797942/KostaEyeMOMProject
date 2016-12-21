@@ -20,7 +20,7 @@
 // 		$("#shoplogout").hide();
 // 	}else{
 // 		$("#shoplogin").hide();
-// 		$("#shoplogout").show();
+// 		$("#shoplogout").show();   
 // 	}
 	
 // 	$("#shoplogin").click(function(){
