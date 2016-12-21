@@ -134,7 +134,7 @@
 <body>
 	<section class='ShopSection'>
 	<div style="width: 100%; height: 50px; border: 2px solid #e3e3e3; margin: 30px auto;line-height: 3em ;border-radius: 2em;">
-		<label style="font-family: Dotum; font-size: 20pt; font-weight: bold; margin: 50px auto; padding: 20px 0;">(직수입)이.제.희 </label>
+		<label style="font-family: Dotum; font-size: 20pt; font-weight: bold; margin: 50px auto; padding: 20px 0;">${vo.we_title} </label>
 	</div>
 	<input id="LSize" type="hidden" value=""/>
 	<input id="MSize" type="hidden" value=""/>
@@ -151,11 +151,11 @@
 		<table id="viewTable">
 			<tr>
 				<td id="viewTableImg" rowspan="6" style="width: 450px;">
-				<img id="itemView" src="resources/img/shopping/unnamed1RDB0UZ1.png" style="max-width: 100%; height: auto;"/></td>
+				<img id="itemView" src="resources/img/${vo.we_photo1name}" style="max-width: 100%; height: auto;"/></td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">판매가</td>
-				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">11,111,111원</td>
+				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">${vo.we_price}원</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">수량</td>
@@ -171,7 +171,7 @@
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail2">상품설명</td>
-				<td class="viewInfo">수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희수입산제희</td>
+				<td class="viewInfo">${vo.we_content}</td>
 			</tr>
 			<tr height="30px;"></tr>
 			<tr>
@@ -190,32 +190,32 @@
 			<div class='sameinfo'><h2 class='sameinfoTXT'>공동구매 안내</h2></div>	
 			<!-- 구매시작 / 구매종료 -->			
 			<div class='sameinfo1'><h3 class='sameinfoTXT1'>모집기간</h3>
-				<label class='sameStart'>2016-12-20</label><br/>
+				<label class='sameStart'>${vo.we_start}</label><br/>
 				<label class='sameStart'>~</label><br/>
-				<label class='sameStart'>2016-12-20</label>
+				<label class='sameStart'>${vo.we_end}</label>
 			</div>				
 			<!-- 현재 인원/ 목표 인원 -->
 			<div class='sameinfo1'><h3 class='sameinfoTXT1'>현재인원 / 목표인원</h3>
-				<label class='sameSold'>56</label>
+				<label class='sameSold'>${vo.we_sold}</label>
 				<label class='sameStart'>/</label>
-				<label class='sameMax'>1</label>
+				<label class='sameMax'>${vo.we_maxsold}</label>
 			</div>				
-			<div class='sameinfo2'><h3 class='sameinfoTXT1'>입금예정일</h3>		
-				<label class='sameStart'>2016-12-20</label>
+			<div class='sameinfo2'><h3 class='sameinfoTXT1'>배송예정일</h3>		
+				<label class='sameStart'>마감후 2일 후</label>
 			</div>
 		</div>
 		<table style="width: 1024px; text-align: center;">
 			<tr>
 				<td width="33%"><img class="infoImage"
-					src="resources/img/shopping/이선빈.JPG"></td>
+					src="resources/img/${vo.we_photo1name}"></td>
 			</tr>
 			<tr>		
 				<td><img class="infoImage"
-					src="resources/img/shopping/이선빈3.jpg" style="margin-top: 70px;"></td>
+					src="resources/img/${vo.we_photo2name}" style="margin-top: 70px;"></td>
 			</tr>
 			<tr>
 				<td><img class="infoImage"
-					src="resources/img/shopping/이선빈2.jpg" style="margin:70px 0 70px 0; "></td>
+					src="resources/img/${vo.we_photo3name}" style="margin:70px 0 70px 0; "></td>
 			</tr>
 		</table>
 		

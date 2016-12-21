@@ -34,4 +34,12 @@ public class GroupPurchaseManager {
 	      session.commit();
 	      return totalCount;
 	   }
+	
+	public static GroupPurchaseVO getItem(GroupPurchaseVO vo){
+		SqlSession session = CommonManager.db().openSession();
+		GroupPurchaseVO gpVO = session.selectOne("purchase.getItem", vo);
+
+	      session.commit();
+	      return gpVO;
+	}
 }

@@ -51,8 +51,8 @@ public class PurchaseController {
 		
 		System.out.println("/shoppingView.do 요청"+gpVO.getB_no());
 		
-		GroupPurchaseVO vo ;
-		
+		GroupPurchaseVO vo = GPDao.getItem(gpVO);
+		m.addAttribute("vo", vo);
 		return "shoppingView/shoppingView";
 	}
 }
