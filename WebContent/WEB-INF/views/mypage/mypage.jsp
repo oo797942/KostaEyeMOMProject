@@ -89,7 +89,7 @@
 							<p class='infomorep'> 
 							<a href="myshopping.do" class='infomore'>+ 전체보기</a>
 							</p>
-						</div>
+						</div> 
 						<!-- 문의 내역 -->
 						<div class='payinfodiv' style="float: right;">
 							<h3 class='infoh3a'>나의 Q&amp;A</h3>

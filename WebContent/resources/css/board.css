@@ -194,7 +194,7 @@
   border-radius: 0;
 }
 .btn-link,
-.btn-link:active,
+.btn-link:active, 
 .btn-link.active,
 .btn-link[disabled],
 fieldset[disabled] .btn-link {

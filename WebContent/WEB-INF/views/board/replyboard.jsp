@@ -38,7 +38,7 @@
 						<td class='boardtd' >글번호</td>
 						<td class='boardtd' >댓글번호</td>
 						<td class='boardtd' id='boardtdtitle3'>내용</td>
-						<!-- 게시판  -->
+						<!-- 게시판  --> 
 						<td class='boardtd'>작성자</td> 
 						<td class='boardtd'>작성일</td>
 					</tr>

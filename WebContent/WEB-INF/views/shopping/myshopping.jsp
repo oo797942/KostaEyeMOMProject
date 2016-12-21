@@ -33,7 +33,7 @@
 								name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
 				</div>
 				<!-- 게시판 -->
-				<table class='boardtable'>
+				<table class='boardtable'> 
 					<tr id="title1">
 						<td class='boardtd' >이미지</td>
 						<td class='boardtd' >상품명</td>
