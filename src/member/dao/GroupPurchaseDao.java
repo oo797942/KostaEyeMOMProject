@@ -10,5 +10,6 @@ public interface GroupPurchaseDao {
 	List<GroupPurchaseVO> purchaseList(); 
 	int shoppingListCount();
 	List<GroupPurchaseVO> allPagingShopping(GroupPurchaseVO vo);
+	GroupPurchaseVO getItem(GroupPurchaseVO vo);
 } 
  

@@ -30,6 +30,15 @@ public class BoardVO extends PageVO {
 	private int b_recount;
 	private String b_goodog;
 	private String b_scate;
+	private String b_state;
+
+	public String getB_state() {
+		return b_state;
+	}
+
+	public void setB_state(String b_state) {
+		this.b_state = b_state;
+	}
 
 	public String getB_scate() {
 		return b_scate;

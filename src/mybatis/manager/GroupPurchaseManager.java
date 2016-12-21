@@ -14,7 +14,7 @@ public class GroupPurchaseManager {
 	public static List<GroupPurchaseVO> mainGroupPurchaseList() throws SQLException
 	   {
 		   SqlSession session = CommonManager.db().openSession();
-		   List<GroupPurchaseVO> list = session.selectList("purchase.mainpurchase");
+		   List<GroupPurchaseVO> list = session.selectList("purchase.mainpurchase"); 
 		   System.out.println("purchase 몇 개? : "+ list.size());
 		   return list;
 	   }
@@ -34,4 +34,12 @@ public class GroupPurchaseManager {
 	      session.commit();
 	      return totalCount;
 	   }
+	
+	public static GroupPurchaseVO getItem(GroupPurchaseVO vo){
+		SqlSession session = CommonManager.db().openSession();
+		GroupPurchaseVO gpVO = session.selectOne("purchase.getItem", vo);
+
+	      session.commit();
+	      return gpVO;
+	}
 }

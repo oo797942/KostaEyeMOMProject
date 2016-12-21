@@ -44,6 +44,19 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return list;
 	}
+
+	@Override
+	public GroupPurchaseVO getItem(GroupPurchaseVO vo) {
+		GroupPurchaseVO gpVO=null;
+		try {
+			
+
+			gpVO = GroupPurchaseManager.getItem(vo);
+		} catch (Exception ex) {
+			System.out.println("gpDAO페징 : " + ex.getMessage());
+		}
+		return gpVO;
+	}
 	
 	
 }

@@ -26,5 +26,9 @@ where rownum <5
 	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_no DESC
 </select>
 
+<select id="getItem" parameterType="purchaseVO" resultType="purchaseVO" >
+SELECT b_no, we_title, we_content, we_price , we_maxsold, we_sold, TO_CHAR(we_start, 'YYYY"년" MM"월" DD"일"') we_start, TO_CHAR(we_end, 'YYYY"년" MM"월" DD"일"') as we_end , we_photo1name, we_photo2name, we_photo3name
+FROM  group_purchase WHERE b_no=#{b_no}
+</select>
 
 </mapper>
