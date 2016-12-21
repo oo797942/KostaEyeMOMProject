@@ -12,6 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
+	text-decoration: none !important;
 }
 </style>
 </head>
@@ -27,7 +28,7 @@
   				    </div>
   					<div id="section1b" class="elements1">
    						<a class="side" href="sick.do" > － 아토피피부염</a><br/>
-   				    	<a class="side" href="heat.do" style="background-color: red; padding-right: 23px;"> － 태열(소아아토피)</a><br/>
+   				    	<a class="side" href="heat.do" style="background-color: #ffa07a; color:#fff; padding-right: 23px;"> － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>
   						<a class="side" href="dudru.do" > － 두드러기</a><br/>

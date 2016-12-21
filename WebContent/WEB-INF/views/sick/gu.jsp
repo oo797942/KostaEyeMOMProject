@@ -12,10 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
-}
-ol{
-	list-style: none;
-	padding-left: 0px;
+	text-decoration: none !important;
 }
 </style>
 </head>
@@ -45,7 +42,7 @@ ol{
   					<a class="side" href="bi.do" > － 비염.축농증</a><br/>
   					<a class="side" href="chun.do"  > － 천식</a><br/>
   					<a class="side" href="jung.do" > － 중이염</a><br/>
-  					<a class="side" href="gu.do" style="background-color: red; padding-right: 60px;" > － 구취.구내염</a><br/>
+  					<a class="side" href="gu.do" style="background-color: #ffa07a; color:#fff; padding-right: 60px;" > － 구취.구내염</a><br/>
   				</div>
   				</div>
   				<div>

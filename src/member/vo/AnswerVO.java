@@ -5,7 +5,7 @@ public class AnswerVO {
 	private String a_nick;
 	private String a_content;
 	private String a_date;
-	private String a_recount;
+	private int a_recount;
 	private int a_no;
 	public int getB_no() {
 		return b_no;
@@ -31,11 +31,11 @@ public class AnswerVO {
 	public void setA_date(String a_date) {
 		this.a_date = a_date;
 	}
-	public String getA_recount() {
+	public int getA_recount() {
 		return a_recount;
 	}
-	public void setA_recount(String a_recount) {
-		this.a_recount = a_recount;
+	public void setA_recount(int i) {
+		this.a_recount = i;
 	}
 	public int getA_no() {
 		return a_no;

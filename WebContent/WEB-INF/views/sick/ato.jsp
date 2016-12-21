@@ -12,10 +12,11 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
+	text-decoration: none !important;
 }
 </style>
 </head>
-<body>
+<body> 
 
 <div class=body><br/>
 <table class="">
@@ -26,7 +27,7 @@
    					   <img src="/EyeMOM/resources/img/sick/side1.gif" border="1"/>
   				    </div>
   					<div id="section1b" class="elements1">
-   						<a class="side" href="sick.do" style="background-color: red; padding-right: 50px;"> － 아토피피부염</a><br/>
+   						<a class="side" href="sick.do" style="background-color: #ffa07a; color:#fff; padding-right: 50px;"> － 아토피피부염</a><br/>
    				    	<a class="side" href="heat.do" > － 태열(소아아토피)</a><br/>
   						<a class="side" href="gunsun.do" > － 건선</a><br/>
    						<a class="side" href="jiru.do" > － 지루성피부염</a><br/>

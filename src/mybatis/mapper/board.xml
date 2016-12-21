@@ -40,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 육아꿀팁, 식단, 자랑 --> 
 <select id="allBoard" parameterType="string" resultType="boardVO"> 
-	SELECT b_no, b_scate, b_title, b_nick, b_count, TO_CHAR(b_date, 'YYYY.MM.DD') as b_date ,NVL(b_good,0) b_good, b_photo1name ,b_photo2name, b_photo3name
+	SELECT b_no, b_scate, b_title, b_ip, b_nick, b_count, TO_CHAR(b_date, 'YYYY.MM.DD') as b_date ,NVL(b_good,0) b_good, b_photo1name ,b_photo2name, b_photo3name
 	
 	FROM normal_board where b_cate=#{title} order by b_no desc
 </select> 

@@ -5,15 +5,14 @@
 <html>
 <head>
 <link href="/EyeMOM/resources/css/sick/nanumgothic.css" rel="stylesheet" type="text/css">
+<link href="/EyeMOM/resources/css/sick/c3.css" type="text/css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 .side{
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
-}
-.imgT{
-	padding-left: 50px;
+	text-decoration: none !important;
 }
 </style>
 </head>
@@ -52,7 +51,7 @@
     				 <img src="/EyeMOM/resources/img/sick/side3.gif" border="1"/>
   				</div>
   				<div class="elements1">
-  					<a class="side" href="josuk.do" style="background-color: red; padding-right: 50px;" > － 성조숙증</a><br/>
+  					<a class="side" href="josuk.do" style="background-color: #ffa07a; color:#fff; padding-right: 50px;" > － 성조숙증</a><br/>
   					<a class="side" href="biman.do" > － 소아비만</a><br/>
   					<a class="side" href="dang.do" > － 소아당뇨</a><br/>
   				

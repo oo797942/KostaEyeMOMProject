@@ -27,10 +27,11 @@
 		
 		$('.AqnaComment').hide();
 
-		$('#Opinion').click(function() {
-			$('.AqnaComment').stop().slideToggle(200);
+		$('.AqnaOpinion').click(function() {
+			$(this).parent().parent().next().toggle()
 		});
-		$(function() {
+
+		$(function(){	
 			$('.faqasr').hide();
 			//답변 토글
 
@@ -113,11 +114,40 @@
 				}
 
 			});
-		})
+		
+		
+			//리플삭제
+			$('#repldelbtn').click(function() {
+				
+				
+					$.ajax({
+						url : "deleteAnswerReply.do",
+						type : 'POST',
+						data : {
+							"ar_no" : $("#ar_no").val()
+						},
+						success : function(result) {
+
+							if (result == "1") {
+								location.reload();
+
+							} else {
+								alert("댓글 삭제에 실패 하였습니다");
+							}
+
+						},
+						error : function(err) {
+							alert(err);
+						}
+					});
+
+				
+			});
 		
 		
 		
 		
+		});
 		
 		
 
@@ -158,7 +188,7 @@
 						<span style="float: left; margin-right: 7px; color: #959595;">조회수
 							<span style="color: #959595;">${vo.in_count}</span>
 					</span> <span style="float: left; margin-right: 7px; color: #e2e2e2;">|</span>
-						<a style="color: #959595; float: left;">신고</a>
+<!-- 						<a style="color: #959595; float: left; text-decoration: none;">신고</a> -->
 					</span>
 					<div>
 						<a href="#qnapopup" id="popupLink"><button class="Aqnabtn">답변하기</button></a>
@@ -176,7 +206,10 @@
 					<ul style="list-style: none;">
 						<li class="AqnaList">
 							
-							<c:forEach var='vo' items='${list}'>
+							<c:forEach var="i" begin="1" end="${fn:length(list)}" step="1">
+
+							<c:set var="vo" value="${list[i-1]}" />
+							<c:set var="replylist" value="${rlist[i-1]}" />
 							<div class='AqnaContent'>
 								
 								<div class='AqnaContent1'>
@@ -185,11 +218,12 @@
 								<!-- 작성자 정보 -->
 								<div class='AqnaInfo'>
 									<div class='AqnaUser'>${vo.a_nick}</div>
-									<span class='AqnaUserInfo'> <span class='Aqnabar'>|</span>
+									<span class='AqnaUserInfo'> 
+										<span class='Aqnabar'>|</span>
 										<span class='AqnaTime'>${vo.a_date}</span> 
-										<a class='AqnaOpinion' id='Opinion'>의견 
-										<span class='AqnaOpinionCnt'>${vo.a_recount}</span>
-									</a>
+										<a class='AqnaOpinion' id='Opinion' style='text-decoration: none'>의견 
+											<span class='AqnaOpinionCnt'>${vo.a_recount}</span>
+										</a>
 									</span>
 								</div>
 								
@@ -210,21 +244,23 @@
 									<div style="height: auto;">
 										<table
 											style="margin-top: 50px; border-collapse: collapse; height: auto;">
-											
+											<c:forEach var='reply' items='${replylist}'>
 											<tr>
-												<td style="width: 1px;"></td>
+												<td style="width: 1px;"><input type="hidden" id="ar_no" value="${reply.ar_no}"/></td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;"></td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9;">${reply.ar_content}</td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">wamsi98</td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">${reply.ar_nick}</td>
 												<td
-													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">2016.12.17</td>
+													style="padding: 13px 13px 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 70px;">${reply.ar_date}</td>
 												<td
 													style="padding: 13px 0 13px 10px; border-bottom: 1px solid #e9e9e9; font-size: 13px; color: #959595; width: 30px;">
-													<input type="button" value='x' style="border: 1px solid #e9e9e9; background-color: #fff" />
+													<c:if test="${reply.ar_id==sessionScope.user.getU_id()}" >
+													<input type="button" value='x' id="repldelbtn" style="border: 1px solid #e9e9e9; background-color: #fff" />
+													</c:if>
 												</td>
 											</tr>
-											
+											</c:forEach>
 										</table>
 									</div>
 								</div>

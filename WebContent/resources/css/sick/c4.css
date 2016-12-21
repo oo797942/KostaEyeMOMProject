@@ -84,3 +84,19 @@ div.child3 ul											{ padding:10px 0 0 210px;}
 div.child3 ul li										{ padding-bottom:15px; line-height:170%}
 div.child3 ul li strong							{ font-size:18px; vertical-align:0;}
 div.child3 ul li u										{ font-size:18px; vertical-align:0; font-weight:bold;}
+.side{
+	font-size: 15px;
+	font-weight: bold;
+	color: #ffa07a;
+	text-decoration: none !important;
+}
+li{
+	list-style: none;
+}
+ol{
+	padding-left: 0px;
+}
+
+ul{
+	padding-left: 0px;
+}

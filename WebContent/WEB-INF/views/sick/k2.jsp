@@ -12,15 +12,7 @@
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
-}
-ol{
-	list-style: none;
-	padding-left:0px;
-}
-.imgA{
-	width:350px;
-	height: 300px;
-
+	text-decoration: none !important;
 }
 </style>
 </head>
@@ -71,7 +63,7 @@ ol{
   				</div>
   				<div class="elements1">
 					<a class="side" href="k1.do" > － 열성경련</a><br/>  					
-					<a class="side" href="k2.do"  style="background-color: red; padding-right: 10px;"  > － 뇌전증(경기,간질)</a><br/>  					
+					<a class="side" href="k2.do"  style="background-color: #ffa07a; color:#fff; padding-right: 10px;"  > － 뇌전증(경기,간질)</a><br/>  					
 					<a class="side" href="re.do" > － 레녹스가스토증후군</a><br/>  					
   				</div>
   				</div>

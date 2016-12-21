@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -107,15 +108,28 @@ public class QnaController {
 	//qna게시글 보기
 	@RequestMapping("qnaview.do")
 	public String qnaview(QnAVO qnaVO, Model m){
-		System.out.println(qnaVO.getB_no());
+		System.out.println("글번호"+qnaVO.getB_no());
 		int result = QnaDao.Count(qnaVO); //조회수 카운트
 		QnAVO qVO = QnaDao.callQna(qnaVO);
 		List <AnswerVO> list=QnaDao.callAnwer(qVO);
+		List <List<AreplyVO>>replylist=new ArrayList<List<AreplyVO>>();
+		System.out.println("댓글갯수"+list.size());
+		System.out.println("댓글번호2:"+list.get(0).getA_no());
+		for(int i=0; i<list.size() ; i++){
+			AnswerVO aVO= list.get(i);
+			System.out.println("댓글번호2"+aVO.getA_no());
+			List<AreplyVO> rlist= QnaDao.callReply(aVO);
+			System.out.println("리플리스트 사이즈 :"+rlist.size());
+			
+				replylist.add(rlist);
+			
+			
+			list.get(i).setA_recount(rlist.size());
+		}
 		
-		System.out.println(list.size());
-	
 		m.addAttribute("vo",qVO);
 		m.addAttribute("list", list);
+		m.addAttribute("rlist", replylist);
 		return "qnaboard/qnaboard";
 	}
 	
@@ -185,4 +199,14 @@ public class QnaController {
 		return result;
 	}
 	
+	@RequestMapping("deleteAnswerReply.do")
+	@ResponseBody
+	public int deleteAnswerReply(AreplyVO areplyVO){
+		int result=0;
+		System.out.println(areplyVO.getAr_no());
+		
+		result=QnaDao.deleteAnswerReply(areplyVO);
+		
+		return result;
+	}
 }
