@@ -70,10 +70,6 @@ public class AdminController {
 //		return "adminMember";
 //	}
 	
-	@RequestMapping("/adminReport.go")
-	public String adminReport(HttpSession session){
-		return "adminReport";
-	}
 	
 //	@RequestMapping("/adminQna.go")
 //	public String admonQna(HttpSession session){

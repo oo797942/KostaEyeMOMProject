@@ -224,8 +224,9 @@
 					<div class='space2'></div>
 						
 					<!-- 신고버튼 -->	
+
 					<div>   
-						<div class='reportdiv'>	
+						<div class='reportdiv'>							
 							<i class='fa fa-thumbs-o-down' style="color: red" ><span><input type='button' onclick="" value='신고' class='reportbtn'/></span></i>				
 						</div>
 					</div>
@@ -271,6 +272,7 @@
 										<td class='i2'>
 											<!-- 댓글등록버튼 -->
 											<div>
+
 												<input type="submit" onclick="replyInsert()" value="등록" class='submita'>
 											</div>
 										</td>
@@ -281,6 +283,10 @@
 						<!-- 수정/삭제/목록보기 버튼 --> 
 						<div style="float: right;">
 							<c:if test="${bvo.u_id==sessionScope.user.getU_id()}" >
+							<input type='button' value='수정하기' id="goupdate" class='optionbtn'/>				
+							<input type='button' value='삭제하기' id="godelete" class='optionbtn'/>					
+							</c:if>
+								<c:if test="${sessionScope.user.getU_id()=='admin'}" >
 							<input type='button' value='수정하기' id="goupdate" class='optionbtn'/>				
 							<input type='button' value='삭제하기' id="godelete" class='optionbtn'/>					
 							</c:if>

@@ -58,11 +58,9 @@ function fn_movePage(val){
 								<option>작성자</option>
 							</select>
 							<!-- 검색창 -->
-							<input type="text" name='search1' id='search1'
-								class='form-control'> 
+							<input type="text" name='search1' id='search1' class='form-control'> 
 							<!-- 검색버튼 -->
-							<input type="button"
-								name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
+							<input type="button" name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
 				</div>
 				<!-- 게시판 -->
 				<table class='boardtable'>

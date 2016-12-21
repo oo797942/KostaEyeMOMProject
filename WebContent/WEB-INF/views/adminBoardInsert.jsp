@@ -6,11 +6,6 @@
 <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
 	</head><body>&lt;<script type="text/javascript">
 
-	function popupOpen(articleNo){
-		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
-		var popOption = "width=800, height=600, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-			window.open(popUrl,"",popOption);
-};
 </script>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +22,7 @@
 <!--             <span class="icon-bar"></span> -->
 <!--             <span class="icon-bar"></span> -->
 <!--           </button> -->
-          <a class="navbar-brand" href="http://localhost:8080/TourProject/list.do?tour=admin-sal" style="color:#fff">EyeMOM</a>
+          <a class="navbar-brand" href="home.go" style="color:#fff">EyeMOM</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -47,7 +42,6 @@
             <li class="active"><a href="adminBoard.go">공지사항 관리</a></li>
            <li><a href="adminReport.go">신고 관리</a></li>
             <li><a href="adminQna.go">FAQ</a></li>
-            <li ><a href="adminGallery.go">사진 관리</a></li>            
             <li><a href="adminVideo.go">동영상 관리</a></li>
             <li><a href="adminGame.go">게임 관리</a></li>
           </ul>
