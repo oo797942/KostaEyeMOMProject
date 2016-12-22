@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class VideoVO {
+public class VideoVO extends PageVO{
 	
 	int d_no;
 	String d_title;

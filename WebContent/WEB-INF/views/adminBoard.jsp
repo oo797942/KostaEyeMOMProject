@@ -11,7 +11,11 @@
 
 		
 	});
-
+	function fn_movePage(val){
+	    jQuery("input[name=pageNo]").val(val);
+	    jQuery("form[name=frm]").attr("method", "post");
+	    jQuery("form[name=frm]").attr("action","adminBoard.go").submit();
+	}
 </script>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
