@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/* @import url(common.css); */
+
+p.point													{ padding:0 0 6px 0; }
+
+/* 임신질환 */
+div.ready												{ width:815px;background:url(/img/c7/ready1_bg.gif) 100% 40px no-repeat;}
+div.ready ul.aLIst									{ padding-bottom:30px; }
+div.ready ul.aLIst li								{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:35px; }
+div.ready ul.aLIst li p							{ font-weight:normal; line-height:18px; padding-top:15px;}
+div.ready ul.aLIst li p strong				{ font-size:14px; display:inline-block; padding:0 0 5px 0; }
+
+div.ready ul.aLIst2								{ padding-bottom:0; }
+div.ready ul.aLIst2 li								{ font-size:14px; display:inline-block; padding:0 0 5px 0; font-weight:bold; }
+div.ready ul.aLIst2 li p							{ font-weight:normal; padding:15px 0; }
+div.ready ul.aLIst2 li ul.aLIst2_2			{ padding:0 0 20px 0; }
+div.ready ul.aLIst2 li ul.aLIst2_2 li		{ font-size:12px; font-weight:normal; background:url(/img/common/aLIst2_2_bul.gif) 0 7px no-repeat; padding:0 0 0 10px; line-height:160%; }
+div.ready ul.aLIst2 li ul.aLIst2_2 li em	{ color:#846b4b; }
+
+div.ready p.aTit									{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:18px;}
+div.ready ol li										{ font-size:16px; color:#444; font-weight:bold; padding-bottom:30px;}
+div.ready ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:16px; vertical-align:1px;}
+div.ready ol li p										{ font-weight:normal; line-height:18px; padding-top:15px;}
+div.ready ul.aLIst li p u	 						{ color:#846b4b; vertical-align:0;}
+div.ready ul.aLIst li p em						{ color:#846b4b; }
+
+div.ready2											{ width:815px;background:url(/img/c7/ready2_bg.gif) 0 40px no-repeat; }
+div.ready2 ul.aLIst li p							{ padding:15px 0 0 300px; line-height:180%; }
+div.ready2 strong									{ font-size:14px; display:inline-block; padding:0 0 5px 0; }
+
+
+div.ready3											{ width:815px; background:url(/img/c7/ready3_bg.gif) 100% 40px no-repeat; padding:0 0 20px 0; }
+div.ready3 ul.aLIst								{ padding:0 0 60px 0; }
+
+div.ready4											{ width:815px; padding:0 0 20px 0; background:none; }
+div.ready4 p.tit										{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:25px; }
+
+
+div.ready_list										{ width:815px; display:inline-block; }
+div.ready_list p.tit								{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:20px; }
+div.ready_list p.tit2								{ font-size:16px; color:#555; font-weight:bold; padding-bottom:20px; }
+div.ready_list p.txt								{ padding-bottom:20px; }
+
+ol.list_num1											{ width:815px; }
+ol.list_num1 li										{ display:inline-block; }
+ol.list_num1 li.bg1								{ background:url(/img/c7/list_num1_bg1.gif) 0 0 no-repeat; padding:0 0 0 310px; }
+ol.list_num1 li.bg2								{ background:url(/img/c7/list_num1_bg2.gif) 100% 0 no-repeat; padding:0 0 8px 0; }
+ol.list_num1 li.bg3								{ background:url(/img/c7/list_num1_bg3.gif) 0 0 no-repeat; padding:0 0 36px 305px; }
+ol.list_num1 li strong							{ display:block; font-size:14px; font-weight:bold; padding:0 0 10px 0; }
+ol.list_num2											{ }
+ol.list_num2 li										{ display:inline-block; padding:15px 0 0 0; }
+ol.list_num2 li img								{ vertical-align:1px; }
+ol.list_num2 li strong							{ display:inline-block; color:#846b4b; font-weight:bold; padding:0 0 10px 0; }
+
+
+/*  성장/미숙 */
+
+em.colb											{ color:#846b4b; vertical-align:0; }
+
+div.grow														{ width:815px; display:inlnie-block;}
+div.grow.grow_bg										{  background:url(/img/c6/grow_bg.gif) 100% 7px no-repeat;}
+div.grow p.gtit												{ padding-bottom:15px;}
+div.grow p.gtit strong									{ display:block; font-size:16px;}
+div.grow u													{ vertical-align:0; color:#846b4b; }
+div.grow ul.gr_list										{ padding-bottom:30px;}
+div.grow ul.gr_list li										{
+	padding-bottom:3px;
+}
+div.grow ul.gr_list1										{ padding-bottom:30px;}
+div.grow ul.gr_list1 li										{
+	padding-bottom:3px;
+	padding-left: 16px;
+}
+
+div.grow ul.gr_list li.list								{ font-weight:bold; font-size:18px; color:#e97e1d; padding-bottom:35px;}
+div.grow ul.gr_list li.list p								{
+	font-weight:normal;
+	padding-top:17px;
+	padding-left: 16px;
+}
+
+div.grow2														{ width:815px; }
+div.grow2	 p.gw_tit										{ font-weight:bold; font-size:18px; color:#e97e1d; padding-bottom:23px;}
+div.grow2 ul li												{ font-size:16px; font-weight:bold; color:#555; padding-bottom:10px;}
+div.grow2 ul li p											{
+	font-weight:normal;
+	padding-bottom:23px;
+	padding-left: 16px;
+}
+div.grow2 ul li p.pt20									{
+	padding-top:13px;
+	padding-left: 16px;
+}
+div.grow2 ul li.g_bg										{ background:url(/img/c6/g_bg.gif) 100% 0 no-repeat;}
+div.grow2 ul li ol											{ padding-top:13px;}
+div.grow2 ul li ol.g_num3_bg						{ background:url(/img/c6/g_num3_bg.gif) 0 18px no-repeat;}
+div.grow2 ul li ol li										{ font-size:14px; font-weight:bold; color:#846b4b; padding-bottom:20px;}
+div.grow2 ul li ol li.gpl									{ padding-left:323px;}
+div.grow2 ul li ol li img									{ padding:2px 4px 0 0; }
+div.grow2 ul li ol li p										{ font-weight:normal; padding-bottom:0; }
+
+div.birth														{ width:815px; background:url(/img/c6/birth.gif) 100% 0 no-repeat;  margin-bottom:25px;}
+div.birth.birth_bg											{background:url(/img/c6/birth_bg.gif) 100% 20px no-repeat; }
+div.birth.birth_bg2										{background:url(/img/c6/birth3.gif) 100% 10px no-repeat; }
+div.birth.sub6_bg											{background:url(/img/c6/sub6_bg.gif) 100% 110px no-repeat; }
+div.birth.sub7_bg											{background:url(/img/c6/sub7_bg.gif) 100% 45px no-repeat; }
+div.birth.none												{ background:none;}
+div.birth strong											{ font-size:18px; color:#e97e1d; padding-bottom:5px; display:block;}
+div.birth p														{ padding:10px 0 25px 16px;}
+div.birth p	 u													{ vertical-align:0; color:#846b4b; }
+div.birth p em.colb										{ color:#846b4b; vertical-align:0; }
+div.birth p em.bold										{ color:#846b4b; vertical-align:0; font-weight:bold; }
+div.birth p.pb												{ padding:10px 0 10px 0;}
+div.birth p.pt												{ padding:5px 0 10px 0;}
+
+div.sub2_box												{ width: 754px; padding: 30px 30px 50px; background:url(/img/c6/sub2_box.gif) 0 0 no-repeat;}
+div.sub2_box p.sub_tit								{ padding-bottom:10px; }
+div.sub2_box p.sub_tit2								{ padding-bottom:10px; }
+div.sub2_box p											{ padding-bottom:8px; line-height:160%}
+div.sub2_box p u											{ font-weight:bold; font-size:16px; vertical-align:0;}
+div.sub2_box p strong									{ font-weight:bold; font-size:16px; vertical-align:0;}
+div.sub2_box p.sstit										{ padding:10px 0 5px;}
+div.sub2_box ol											{ padding-bottom:10px; }
+div.sub2_box ol li											{ padding-bottom:3px;}
+div.sub2_box ol li	 img									{ padding:2px 4px 0 0;}
+
+div.sub7_box												{ width: 754px; padding: 40px 30px ; background:url(/img/c6/sub7_box.gif) 0 0 no-repeat;}
+div.sub7_box.sub8_bg									{
+	background:url(/img/c6/sub8_bg.gif) 0 0 no-repeat;
+	height: 610px;
+}
+div.sub7_box.sub9_bg									{  background:url(/img/c6/sub9_bg.gif) 0 0 no-repeat;}
+div.sub7_box p.sub_tit								{ padding-bottom:15px; }
+div.sub7_box p.box_tit2								{ padding-bottom:25px; }
+div.sub7_box p											{
+	padding-bottom:15px
+}
+div.sub7_box p u											{ font-weight:bold; font-size:16px; vertical-align:0;}
+div.sub7_box p strong									{ font-weight:bold; font-size:16px; vertical-align:0;}
+
+
+div.origin												{ }
+div.origin  p.aTit									{ font-size:18px; color:#e97e1d; font-weight:bold; padding-bottom:18px;}
+div.origin ol li										{  font-size:16px; color:#444; font-weight:bold; padding-bottom:30px;}
+div.origin ol li span								{ display:inline-block; color:#e97e1d; font-weight:bold; font-size:16px; vertical-align:1px;}
+div.origin ol li p										{
+	font-weight:normal;
+	padding-top:15px;
+	padding-left: 16px;
+}
+
+p.sub3_box											{background:url(/img/c6/sub3_bg.gif) 100% 100% no-repeat; line-height:180%; padding-bottom:7px;}
+p.sub3_box u										{ display:block; font-size:16px;  font-weight:bold; padding-top:20px;}
+
+div.box div.box2 ol.pb li							{
+	padding-bottom:5px;
+}
+div.box div.box2 ol.pb li span							{
+	padding-left:18px;
+	display: block;
+}
+div.box div.box2 ol.pb li img						{ padding-top:2px;}
+
+table.table_sub7													{ width:100%; border:1px solid #ccc;}
+table.table_sub7 th												{ padding:8px 0;  border:1px solid #ccc; background:#e8e4e1;}
+table.table_sub7 td												{ padding:8px 0; border:1px solid #ccc; text-align:center; }
+
+ul.bg_9														{ background:url(/img/c6/bg_9.gif) 0 0 no-repeat; padding-left:320px;}
+ul.bg_9 li.pb													{ padding-bottom:25px;}
+ul.bg_9 li u												{ vertical-align:0; color:#846b4b; }

@@ -78,8 +78,6 @@
  					<a class="side" href="#" > － 야제증</a><br/> 					
  					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					
  					<a class="side" href="#" > － 설사/변비</a><br/> 					
- 					<a class="side" href="#" > － 틱장애</a><br/> 					
- 					<a class="side" href="#" > － ADHD</a><br/> 					
   				</div>
   				</div>
 		</td>
