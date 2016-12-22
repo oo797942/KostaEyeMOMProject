@@ -173,7 +173,7 @@ footer {
 	float: right;
 }
 
-#logoutBtn:HOVER{
+#logoutBtn:HOVER {
 	cursor: pointer;
 }
 
@@ -260,7 +260,7 @@ footer {
 	padding: 0px;
 }
 
-.slide_banner li:HOVER{
+.slide_banner li:HOVER {
 	cursor: pointer;
 }
 
@@ -277,7 +277,7 @@ footer {
 	width: 200px;
 }
 
-#slideMenu td:HOVER{
+#slideMenu td:HOVER {
 	cursor: pointer;
 }
 
@@ -474,7 +474,7 @@ footer {
 
 #cookhover {
 	height: 75px;
-	border-top:2px solid #d1d1d1;
+	border-top: 2px solid #d1d1d1;
 }
 
 #cookhover b {
@@ -488,7 +488,7 @@ footer {
 	width: 58px;
 	height: 58px;
 	cursor: pointer;
-	margin-top:4px;
+	margin-top: 4px;
 	float: right;
 }
 
@@ -557,6 +557,7 @@ footer {
 }
 
 #headercook {
+	
 }
 
 #qnacooktableheader b {
@@ -588,5 +589,64 @@ footer {
 #cookmore {
 	font-size: 8pt;
 	float: right;
-margin-top: 50px;
+	margin-top: 50px;
+}
+
+.playbtn, .gamebtn, .dancebtn {
+	width: 195px;
+	height: 100%;
+}
+
+.opa {
+	display: inline-block;
+	position: relative;
+}
+
+.opa:HOVER:AFTER {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 160, 122, 0.3); /* 이미지 위로 컬러를 입힘 */
+	border: 1px solid #ffa07a;
+	border-radius: 10px; 
+}
+
+.opa1 {
+	display: inline-block;
+	position: relative;
+}
+
+.opa1:HOVER:AFTER {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 160, 122, 0.3); /* 이미지 위로 컬러를 입힘 */
+	border: 1px solid #ffa07a;
+	border-radius: 10px; 
+}
+
+.opa2 {
+	display: inline-block;
+	position: relative;
+}
+
+.opa2:HOVER:AFTER {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 160, 122, 0.3); /* 이미지 위로 컬러를 입힘 */
+	border: 1px solid #ffa07a;
+	border-radius: 10px; 
 }

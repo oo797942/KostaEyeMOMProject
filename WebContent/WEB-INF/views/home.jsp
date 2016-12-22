@@ -157,7 +157,7 @@
 								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>
 						</li>
-					</ul> <img src="/EyeMOM/resources/img/hasi.png" id="mainMenuImg">
+					</ul> <img src="/EyeMOM/resources/img/home/2_3.png" id="mainMenuImg">
 				</td>
 			</tr>
 		</table>
@@ -222,15 +222,18 @@
 			</div>
 
 
-			<table border="1" cellspacing="0" id="slideMenu">
+			<table  cellspacing="0" id="slideMenu">
 				<tr>
-					<td id="gamebannerbtn">게임</td>
+					<td id="gamebannerbtn" style="height: 33%;">
+					<div class='opa'><img src="resources/img/home/gamebtn.png" class='gamebtn'></div></td>
+				</tr>
+				<tr>	
+					<td id="videobannerbtn" style="height: 33%;">
+					<div class='opa1'><img src="resources/img/home/dancebtn.png" class='dancebtn' ></div></td>
 				</tr>
 				<tr>
-					<td id="videobannerbtn">댄스</td>
-				</tr>
-				<tr>
-					<td id="studybannerbtn">겅부</td>
+					<td id="studybannerbtn" style="height: 33%;">
+					<div class='opa2'><img src="resources/img/home/studyingbtn.png" class='playbtn'></div></td>
 				</tr>
 			</table>
 		</div>
