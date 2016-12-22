@@ -79,10 +79,9 @@
   				</div>
   				<div class="elements1">
  					<a class="side" href="sic.do"  > － 식욕부진</a><br/> 					
- 					<a class="side" href="#"  > － 야뇨증</a><br/> 					
- 					<a class="side" href="#" style="background-color: #ffa07a; color:#fff; padding-right: 85px;"> － 야제증</a><br/> 					
- 					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					
- 					<a class="side" href="#" > － 설사/변비</a><br/> 					
+ 					<a class="side" href="yano.do" > － 야뇨증</a><br/> 					
+ 					<a class="side" href="yaje.do" style="background-color: #ffa07a; color:#fff; padding-right: 85px;"> － 야제증</a><br/> 					
+ 					<a class="side" href="hu.do" > － 설사/변비</a><br/> 					
   				</div>
   				</div>
 		</td>
