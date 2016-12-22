@@ -8,7 +8,7 @@ import java.util.Locale;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class GameVO {
+public class GameVO extends PageVO {
 	
 	int g_no;
 	String g_title;

@@ -8,12 +8,22 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/board.css">
 <link rel="stylesheet" href="resources/css/style.css">
+<script type="text/javascript">
+function fn_movePage(val){
+    jQuery("input[name=pageNo]").val(val);
+    jQuery("form[name=frm]").attr("method", "post");
+    jQuery("form[name=frm]").attr("action","myshopping.do").submit();
+}
 
+
+</script>
 </head>    
 <body>
   <div class="body">
 	<div style="text-align: center;">
 		<div class='bottom1'>
+<form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
 			<!-- 게시판 카테고리 -->
 			<div id="board1" style="width: 78%">
 				<label class='boardlabel titlelabel' id="lb">결제 내역</label> 
@@ -35,35 +45,33 @@
 				<!-- 게시판 -->
 				<table class='boardtable'> 
 					<tr id="title1">
-						<td class='boardtd' >이미지</td>
+						<td class='boardtd' >주문번호</td>
 						<td class='boardtd' >상품명</td>
 						<td class='boardtd' >배송상태</td>
 						<td class='boardtd'>주문일</td>
+						<td class='boardtd'>주문 가격</td>
 					</tr> 
-<%-- 			<c:forEach var='vo' items='${list}'> --%>
+
+					<c:forEach var="vo" items="${list}">
 					<tr>
 						<!-- 이미지 -->
-						<td class='boardtd' id='num' style="width: 10%;"><img src="resources/img/shopping/이선빈.JPG"  style="width: 50px; height: 50px;"/>${vo.b_no}</td>
+						<td class='boardtd' id='num' style="width: 10%;">${vo.pr_no}</td>
 						<!-- 상품명-->
-						<td class='boardtd' id='num' >이이이이${vo.re_no}</td>
+						<td class='boardtd' id='num' >
+						<a href="shoppingView.do?b_no=${vo.b_no}">
+						<img src="resources/img/${vo.pr_photo}"  style="width: 50px; height: 50px;"/>
+						${vo.pr_title}
+						</a>
+						</td>
 						<!-- 배송상태 -->
 						<td class='boardtd' style="width: 15%;"> 배송준비중
-<%-- 						<c:choose> --%>
-<%-- 						<c:when test="${empty sessionScope.user}"> --%>
-<!-- 							<a href="#test-popup" class="open-popup-link"> -->
-<%-- 								${vo.re_content } --%>
-<!-- 							</a> -->
-<%-- 						</c:when>	 --%>
-<%-- 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show --> --%>
-<%-- 							<a href="boardview.do?b_no=${vo.b_no }">${vo.re_content } --%>
-<!-- 							</a> -->
-<%-- 						</c:otherwise>	 --%>
-<%-- 						</c:choose> --%>
-						</td>
+
 						<!-- 주문일 -->
-						<td class='boardtd' style="width: 15%;">2016-12-21 ${vo.re_date }</td>
+						<td class='boardtd' style="width: 15%;">${vo.pr_date }</td>
+						
+						<td class='boardtd' style="width: 15%;">${vo.pr_price }</td>
 					</tr>
-<%-- 			</c:forEach> --%>
+					</c:forEach>
 				</table>
 			</div>
 			<!-- 게시판 사이 공간 -->
@@ -71,23 +79,38 @@
 			<!-- 페이징 -->
 			<div class='form-inline'>
 					<ul class="pagination modal-1">
-						<!-- 뒤로가기 버튼 -->
-						<li><a href="#" class="prev">&laquo;</a></li>
-						<li><a href="#" class="active">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">6</a></li>
-						<li><a href="#">7</a></li>
-						<li><a href="#">8</a></li>
-						<li><a href="#">9</a></li>
-						<li><a href="#">9</a></li>
-						<!-- 앞으로 가기 버튼 -->
-						<li><a href="#" class="next">&raquo;</a></li>
-					</ul>
-					
-			</div>
+
+    <c:if test="${pageVO.pageNo != 0}">
+        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
+       </c:if>
+       <c:if test="${pageVO.pageNo != 1}">
+           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
+        </c:if>
+        <span>
+            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
+                <c:choose>
+                    <c:when test="${i eq pageVO.pageNo}">
+                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
+                            <font style="font-weight: bold;">${i}</font>
+                        </a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </span>
+        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
+        </c:if>
+        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
+        </c:if>
+    </c:if>
+    				</ul>
+    </div>
+   </form>
 			<script
 				src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
 		</div>

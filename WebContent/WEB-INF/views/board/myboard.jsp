@@ -8,13 +8,22 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/board.css">
 <link rel="stylesheet" href="resources/css/style.css">
+<script type="text/javascript">
+function fn_movePage(val){
+    jQuery("input[name=pageNo]").val(val);
+    jQuery("form[name=frm]").attr("method", "post");
+    jQuery("form[name=frm]").attr("action","myboard.do").submit();
+}
 
+</script>
 </head>    
 <body>
   <div class="body">
 	<div style="text-align: center;">
 		<div class='bottom1'>
 			<!-- 게시판 카테고리 -->
+			<form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
 			<div id="board1" style="width: 78%">
 				<label class='boardlabel titlelabel' id="lb">내가 쓴 글</label> 
 				<!-- 검색 -->
@@ -49,7 +58,24 @@
 						<!-- 글번호 -->
 						<td class='boardtd' id='num' >${vo.b_no }</td>
                         <!--카테고리 -->
-                        <td class='boardtd'>${vo.b_cate}</td>
+                        <td class='boardtd'>
+                        <c:if test="${vo.b_cate=='tip'}">
+							육아꿀팁
+						</c:if>
+						<c:if test="${vo.b_cate=='rice'}">
+							아이 식단
+						</c:if>
+						<c:if test="${vo.b_cate=='used'}">
+							중고장터
+						</c:if>
+                        <c:if test="${vo.b_cate=='baby'}">
+							아이 자랑 
+						</c:if>
+						<c:if test="${vo.b_cate=='donation'}">
+							중고장터
+						</c:if>
+                        
+                        </td>
 						<!-- 제목 -->
 						<td class='boardtd'>
 						<c:choose>
@@ -80,25 +106,40 @@
 			<!-- 게시판 사이 공간 -->
 			<div class='space1'></div>
 			<!-- 페이징 -->
-			<div class='form-inline'>
+						<div class='form-inline'>
 					<ul class="pagination modal-1">
-						<!-- 뒤로가기 버튼 -->
-						<li><a href="#" class="prev">&laquo;</a></li>
-						<li><a href="#" class="active">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">6</a></li>
-						<li><a href="#">7</a></li>
-						<li><a href="#">8</a></li>
-						<li><a href="#">9</a></li>
-						<li><a href="#">9</a></li>
-						<!-- 앞으로 가기 버튼 -->
-						<li><a href="#" class="next">&raquo;</a></li>
-					</ul>
-					
-			</div>
+
+    <c:if test="${pageVO.pageNo != 0}">
+        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
+       </c:if>
+       <c:if test="${pageVO.pageNo != 1}">
+           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
+        </c:if>
+        <span>
+            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
+                <c:choose>
+                    <c:when test="${i eq pageVO.pageNo}">
+                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
+                            <font style="font-weight: bold;">${i}</font>
+                        </a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </span>
+        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
+        </c:if>
+        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
+        </c:if>
+    </c:if>
+    				</ul>
+    </div>
+</form>
 			<script
 				src='http://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
 		</div>

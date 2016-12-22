@@ -16,13 +16,17 @@ $(function(){
 		$("#plus").click(function(){
 			var count= $("#we_count").val();
 			count=Number(count);
-			$("#cnt").val(count+1)		
+			$("#we_count").val(count+1);		
 		});
 		
 		$("#minus").click(function(){
 			var count= $("#we_count").val();
 			count=Number(count);
-			$("#cnt").val(count-1);
+			if(count==0){
+				
+			}else{
+			$("#we_count").val(count-1);
+			}
 		});
 		
 
@@ -48,7 +52,7 @@ $(function(){
 <%-- 			window.location.href="<%=projectName%>/bag.ho?cmd=bag-insert&itemname=<%=hg.getGoodsName()%>&imgs=<%= hg.getGoodsImg()%>&itemno=<%= hg.getGoodsId()%>"; --%>
 // 		});
 
-	});
+});
 </script>
 </head>
 <body>
@@ -71,17 +75,19 @@ $(function(){
 		<table id="viewTable">
 			<tr>
 				<td id="viewTableImg" rowspan="6" style="width: 450px;">
-				<input type="hidden" value="${vo.b_no }" id="b_no">
-				<img id="itemView" src="resources/img/${vo.we_photo1name}" style="max-width: 100%; height: auto;"/></td>
+				<input type="hidden" value="${vo.b_no }" id="b_no" name="b_no">
+				<img id="itemView" src="resources/img/${vo.we_photo1name}" style="max-width: 100%; height: auto;"/>
+				</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">판매가</td>
-				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">${vo.we_price}원</td>
+				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">${vo.we_price}원
+				</td>
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">수량</td>
 				<td class="viewInfo" ><input type="button" id='minus' value='-' class='infoCountbtn'/>
-				<input type="text" class='infoCount' id='we_count' value='1'/>
+				<input type="text" class='infoCount' name='we_count' id='we_count' value='1'/>
 				<input type="button" id='plus' value='+' class='infoCountbtn'/>
 				</td>
 			</tr>
@@ -123,7 +129,7 @@ $(function(){
 			<div class='sameinfo1'><h3 class='sameinfoTXT1'>현재인원 / 목표인원</h3>
 				<label class='sameSold'>${vo.we_sold}</label>
 				<label class='sameStart'>/</label>
-				<label class='sameMax'>${vo.we_maxsold}</label>
+				<label class='sameMax'>${vo.we_max}</label>
 			</div>				
 			<div class='sameinfo2'><h3 class='sameinfoTXT1'>배송예정일</h3>		
 				<label class='sameStart'>마감후 2일 후</label>

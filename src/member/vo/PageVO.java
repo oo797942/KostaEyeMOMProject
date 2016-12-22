@@ -1,7 +1,7 @@
 package member.vo;
 
 
-public class PageVO { 
+public class PageVO{ 
     private int pageSize;  // 한 페이지에 보여줄 게시글 수
     private int pageBlock; //페이징 네비[블록] 사이즈
     private int pageNo;  // 페이지 번호

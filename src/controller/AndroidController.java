@@ -101,10 +101,10 @@ public class AndroidController {
 	// 스터디 리스트(공부해요)
 	@RequestMapping(value = "/android_study_list.go", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, List> androidStudyList(HttpServletRequest request) {
+	public Map<String, List> androidStudyList(HttpServletRequest request,StudyVO vo) {
 
 		// 비디오 리스트(춤을춰요)를 뽑아온다.
-		List list = videoDao.studyBoard();
+		List list = videoDao.studyBoard(vo);
 		Map<String, List> result = new HashMap<String, List>();
 		System.out.println("list값 :: " + list);
 		// 뽑아온 값을 Map에 넣고 리턴
@@ -129,7 +129,7 @@ public class AndroidController {
 		System.out.println("goodPress>>> " + goodPress);
 		System.out.println("d_no 값 >> " + d_no);
 		System.out.println("v_no 값 >> " + v_no);
-
+ 
 		// 춤을춰요 일 때(kid_video)
 		if (d_no > 0) {
 			VideoVO vo = new VideoVO();
@@ -246,7 +246,8 @@ public class AndroidController {
 			BoardVO boardVO = list.get(i);
 			List<ReplyVO> listVO = boardDao.callReply(boardVO);
 
-			list.get(i).setB_recount(listVO.size());
+			boardVO.setB_recount(listVO.size());
+			System.out.println(""+boardVO.getB_recount());
 			String[] iplist = new String[4]; // " . "을 제거한 ip를 담을 list
 			String rip; // 보안처리된 ip 담을 문자열
 			String ip = boardVO.getB_ip(); // 작성자 ip가져오기

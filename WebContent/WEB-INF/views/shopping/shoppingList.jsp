@@ -65,9 +65,9 @@ function fn_movePage(val){
 																	alt="" class='Timg' />
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">
-															[ vo.we_end 마감 ]${vo.we_title}</p>
+															[ ${vo.we_end} 마감 ]${vo.we_title}</p>
 															<p class='Tp1'>
-																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_maxsold})</label>
+																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
 																<label>가격</label>&nbsp;<label>${vo.we_price}</label>
@@ -85,9 +85,9 @@ function fn_movePage(val){
 																	alt="" class='Timg' />
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">
-															[ vo.we_end 마감 ]${vo.we_title}</p>
+															[ ${vo.we_end} 마감 ]${vo.we_title}</p>
 															<p class='Tp1'>
-																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_maxsold})</label>
+																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
 																<label>가격</label>&nbsp;<label>${vo.we_price}</label>
@@ -105,9 +105,9 @@ function fn_movePage(val){
 																	alt="" class='Timg' />
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">
-															[ vo.we_end 마감 ]${vo.we_title}</p>
+															[ ${vo.we_end} 마감 ]${vo.we_title}</p>
 															<p class='Tp1'>
-																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_maxsold})</label>
+																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
 																<label>가격</label>&nbsp;<label>${vo.we_price}</label>

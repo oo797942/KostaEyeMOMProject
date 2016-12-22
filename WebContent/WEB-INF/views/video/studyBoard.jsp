@@ -39,11 +39,18 @@ a:hover {
 <script type="text/javascript">
 	$(function() {
 	});
+	function fn_movePage(val){
+	    jQuery("input[name=pageNo]").val(val);
+	    jQuery("form[name=frm]").attr("method", "post");
+	    jQuery("form[name=frm]").attr("action","adminQna.go").submit();
+	}
 </script>
 </head>
 <body>
 	<div class="body">
 	<h3 class="title">공부해요</h3>
+	<form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
 		<section class="content portfolio small-images">
 			<div class="container">
 				<div class="row">
@@ -106,6 +113,42 @@ a:hover {
 			<!--./div-->
 		</section>
 		<!--end wrapper-->
+		
+		          			   	<!-- 페이징 -->
+			<div class='form-inline'>
+					<ul class="pagination modal-1">
+
+    <c:if test="${pageVO.pageNo != 0}">
+        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
+       </c:if>
+       <c:if test="${pageVO.pageNo != 1}">
+           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
+        </c:if>
+        <span>
+            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
+                <c:choose>
+                    <c:when test="${i eq pageVO.pageNo}">
+                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
+                            <font style="font-weight: bold;">${i}</font>
+                        </a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </span>
+        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
+        </c:if>
+        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
+        </c:if>
+    </c:if>
+    				</ul>
+    </div>
+</form>
 		</div>
 		
 </body>

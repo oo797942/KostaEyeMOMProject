@@ -61,12 +61,21 @@ public class VideoManager {
 		return vlist;
 	}
 
+	
+	   // 공부해요 총갯수 뽑아오기
+	   public static int studyTotalCount(StudyVO VO) throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("admin.studyTotalCount", VO);
+
+	      session.commit();
+	      return totalCount;
+	   }
 	// 공부해요 보드
-	public static List<StudyVO> studyBoard() throws SQLException {
+	public static List<StudyVO> studyBoard(StudyVO vo) throws 	SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<StudyVO> list = null;
 
-		list = session.selectList("admin.studyAll");
+		list = session.selectList("admin.studyAllp",vo);
 		System.out.println(list.size());
 
 		return list;

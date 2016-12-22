@@ -2,17 +2,17 @@ package controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import member.dao.GroupPurchaseDaoImpl;
-import member.vo.BoardVO;
 import member.vo.GroupPurchaseVO;
-import member.vo.ReplyVO;
+import member.vo.MemberVO;
+import member.vo.PaymentVO;
 
 @Controller
 public class PurchaseController {
@@ -56,10 +56,29 @@ public class PurchaseController {
 		return "shoppingView/shoppingView";
 	}
 	
+	//주문페이지
 	@RequestMapping("shoppingpay.do")
-	public String payPage(Model m, GroupPurchaseVO gpVO){
+	public String payPage(Model m, GroupPurchaseVO gpVO, HttpSession session){
+		System.out.println(gpVO.getB_no());
+		System.out.println(gpVO.getWe_count());
+		GroupPurchaseVO vo = GPDao.getItem(gpVO); //상품 정보가져오기
+		vo.setWe_count(gpVO.getWe_count()); 	//주문 상품 개수
 		
+		MemberVO memberVO =(MemberVO)session.getAttribute("user");
 		
+		m.addAttribute("vo", vo);
+		m.addAttribute("mvo", memberVO);
 		return "purchase/purchaseView";
+	}
+	
+	@RequestMapping("order.do")
+	public String orderShop(PaymentVO paymentVO, HttpSession session){
+		
+		int result=0;
+		MemberVO memberVO =(MemberVO)session.getAttribute("user");
+		paymentVO.setPr_id(memberVO.getU_id());
+		result= GPDao.orderShop(paymentVO);
+		
+		return "shopping/myshopping";
 	}
 }
