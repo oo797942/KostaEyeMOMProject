@@ -73,7 +73,7 @@
   				</div>
   				</div>
   				
-  				<div>
+  				<div> 
   				<div id="section5" class="label">
     				 <img src="/EyeMOM/resources/img/sick/side5.gif" border="1"/>
   				</div>
