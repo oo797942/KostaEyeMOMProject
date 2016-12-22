@@ -16,7 +16,7 @@
 		<div class='bottom1'>
 			<!-- 게시판 카테고리 -->
 			<div id="board1" style="width: 78%">
-				<label class='boardlabel titlelabel' id="lb">내가 쓴 글</label> 
+				<label class='boardlabel titlelabel' id="lb">결제 내역</label> 
 				<!-- 검색 -->
 				<div class='form-inline selectlabel'>
 							<!-- 검색 셀렉트 박스 -->
@@ -33,42 +33,37 @@
 								name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
 				</div>
 				<!-- 게시판 -->
-				<table class='boardtable'>
+				<table class='boardtable'> 
 					<tr id="title1">
-						<td class='boardtd' >글번호</td>
-						<td class='boardtd' >댓글번호</td>
-						<td class='boardtd' id='boardtdtitle3'>내용</td>
-						<!-- 게시판  --> 
-						<td class='boardtd'>작성자</td> 
-						<td class='boardtd'>작성일</td>
-					</tr>
-			<c:forEach var='vo' items='${list}'>
+						<td class='boardtd' >이미지</td>
+						<td class='boardtd' >상품명</td>
+						<td class='boardtd' >배송상태</td>
+						<td class='boardtd'>주문일</td>
+					</tr> 
+<%-- 			<c:forEach var='vo' items='${list}'> --%>
 					<tr>
-						<!-- 글번호 -->
-						<td class='boardtd' id='num' >${vo.b_no}</td>
-						<!-- 댓글 번호-->
-						<td class='boardtd' id='num' >${vo.re_no}</td>
-						<!-- 제목 -->
-						<td class='boardtd'>
-						<c:choose>
-						<c:when test="${empty sessionScope.user}">
-							<a href="#test-popup" class="open-popup-link">
-								${vo.re_content }
-							</a>
-						</c:when>	
-						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-							<a href="boardview.do?b_no=${vo.b_no }">${vo.re_content }
-							</a>
-						</c:otherwise>	
-						</c:choose>
-							
+						<!-- 이미지 -->
+						<td class='boardtd' id='num' style="width: 10%;"><img src="resources/img/shopping/이선빈.JPG"  style="width: 50px; height: 50px;"/>${vo.b_no}</td>
+						<!-- 상품명-->
+						<td class='boardtd' id='num' >이이이이${vo.re_no}</td>
+						<!-- 배송상태 -->
+						<td class='boardtd' style="width: 15%;"> 배송준비중
+<%-- 						<c:choose> --%>
+<%-- 						<c:when test="${empty sessionScope.user}"> --%>
+<!-- 							<a href="#test-popup" class="open-popup-link"> -->
+<%-- 								${vo.re_content } --%>
+<!-- 							</a> -->
+<%-- 						</c:when>	 --%>
+<%-- 						<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show --> --%>
+<%-- 							<a href="boardview.do?b_no=${vo.b_no }">${vo.re_content } --%>
+<!-- 							</a> -->
+<%-- 						</c:otherwise>	 --%>
+<%-- 						</c:choose> --%>
 						</td>
-						<!-- 작성자 -->
-						<td class='boardtd'>${vo.re_nick }</td>
-						<!-- 작성일 -->
-						<td class='boardtd'>${vo.re_date }</td>
+						<!-- 주문일 -->
+						<td class='boardtd' style="width: 15%;">2016-12-21 ${vo.re_date }</td>
 					</tr>
-			</c:forEach>
+<%-- 			</c:forEach> --%>
 				</table>
 			</div>
 			<!-- 게시판 사이 공간 -->

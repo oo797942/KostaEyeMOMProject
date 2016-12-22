@@ -95,7 +95,15 @@
 								id="mypageBtn" /> </a>
 							<img src="/EyeMOM/resources/img/logout.png" class="toplogo_btn"
 								id="logoutBtn" />
-							<span class="toplogo_btn">${ sessionScope.user.getU_name()}님
+										<a href="messageBoard.do" >
+											<c:if test="${sessionScope.user.getU_message() == 0}">
+		<img  src="/EyeMOM/resources/img/message.png" class="toplogo_btn2" id="messageBtn">
+		</c:if>
+				<c:if test="${sessionScope.user.getU_message() > 0}">
+		<img  src="/EyeMOM/resources/img/messageNew.png" class="toplogo_btn2" id="messageBtn">
+		</c:if>
+										</a>
+							<span class="toplogo_btn" style="margin-right: 20px">${ sessionScope.user.getU_name()}님
 								환영합니다!</span>
 						</c:otherwise>
 					</c:choose></td>
@@ -144,7 +152,7 @@
 						<li class="lifont lileft">엄빠시장
 							<ul>
 								<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-								<li><a href="#">· 공동구매</a></li>
+								<li><a href="shopping.do">· 공동구매</a></li>
 								<li><a href="tip.do?title=used">· 중고장터</a></li>
 								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>

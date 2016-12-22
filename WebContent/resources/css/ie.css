@@ -4,133 +4,339 @@
 /* Global properties ======================================================== */
 /* .Thtml {width:100%} */
 /* .Tbody {font-family:Arial, Helvetica, sans-serif;font-size:100%;color:#262626;min-width:980px;background:#fff} */
-.main {width:1200px;padding:0;margin:0 auto;font-size:100%;line-height:1.6153em}
-.Ta {color:#ff9601; outline:none}
-.Ta:hover {text-decoration:none}
-.wrapper {width:100%; overflow:hidden; position:relative}
-/*********************************margin 크기**********************************/
-.Tp {margin-bottom:18px}
-.Tp1 {margin-bottom:18px; height: 44px;}
-.p0 {margin-bottom:0px} 
-.p1 {margin-bottom:8px}
-.p2 {margin-bottom:15px}
-.p3 {margin-bottom:30px}
-.p4 {margin-bottom:40px}
-.p5 {margin-bottom:50px}
-/*********************************float속성 **********************************/
-.fleft {float:left}
-.fright {float:right}
-
-/*********************************text-align 속성**********************************/
-.alignright {text-align:right}
-.aligncenter {text-align:center}
-
-.it {font-style:italic}
-.letter {letter-spacing:-1px}
-
-/********************************* 흰/검/검/주황 색 **********************************/
-.color-1 {color:#fff}
-.color-2 {color:#000}
-.color-3 {color:#262626}
-.color-4 {color:#ff9601; font-size: 140%; height: 22px;}
-
-
-/********************************* 사진 액자 css**********************************/
-.frame {padding:10px;background:#fff;box-shadow: 3px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 3px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 3px 5px 8px rgba(0,0,0,0.70)}
-.frame2 {padding:6px;background:#fff;border:1px solid #e5e5e5}
-
-/*********************************boxes**********************************/
-.indent-right {padding-right:30px}
-.indent-left {padding-left:30px}
-.indent {padding:0 10px 0 30px}
-.indent2 {padding-left:50px}
-.indent3 {padding:0 15px}/**/
-.indent-bot {margin-bottom:20px}
-.indent-bot2 {margin-bottom:30px}
-.indent-bot3 {margin-bottom:45px}
-.inner {padding:0 55px 0 28px}
-.inner-2 {padding:0 45px 0 42px}
-.prev-indent-bot {margin-bottom:10px}	
-.button {text-decoration:none}
-/*********************************content*************************************/
-.gallery {padding:20px 0 26px 20px;background:#fff;box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 0px 5px 8px rgba(0,0,0,0.70)}
-.padding {padding:30px 0px 38px}
-/* -- gallery  begin --*/
- div.content {width: 100%; height: auto;margin:  0 auto ; margin-top : 50px; margin-bottom:50px;  padding: 0px;overflow: hidden}
- div.content .Timg {; width : 256; height : 191;	z-index: 2}
- div.content .Ta {text-decoration: none;display:block;position:relative;cursor:pointer}
- div.content .Ta .Timg {position:relative; z-index:1}
- div.content .Ta .Tspan {display:block;	width:140px;	height:121px;	background:#000;	position:absolute;	left:0;	top:0;	z-index:2}
- div.content .Ta:focus, div.content .Ta:hover, div.content .Ta:active {text-decoration: underline}
-/* -- gallery end --*/
-.Th3 {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:36px;line-height:1.2em;margin:30px 0 22px 0;color:#262626;font-weight:normal;letter-spacing:-2px}
-.box {width:100%;background:#fff; border : 1px solid #000; box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-moz-box-shadow: 0px 5px 8px rgba(0,0,0,0.70);-webkit-box-shadow: 0px 5px 8px rgba(0,0,0,0.70)}
-.button {display:inline-block;padding:4px 9px 4px;color:#fff;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:18px;line-height:1.22em;background:url(../images/button-tail.gif) 0 0 repeat-x #ffa07a;text-transform:uppercase;letter-spacing:-1px}	
-.button:hover {background:#ff9601}
-.price {display:inline-block;font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;font-size:35px;line-height:1.2em;letter-spacing:-2px}
-
-.galbtn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  background-color : ffa07a;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color : #ffffff;
+.main {
+	width: 1200px;
+	padding: 0;
+	margin: 0 auto;
+	font-size: 100%;
+	line-height: 1.6153em
 }
 
-@media (min-width: 768px) {
-  .form-inline .form-group {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-  .form-inline .form-control {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
-  }
-  .form-inline .form-control-static {
-    display: inline-block;
-  }
-  .form-inline .input-group {
-    display: inline-table;
-    vertical-align: middle;
-  }
-  .form-inline .input-group .input-group-addon,  
-  .form-inline .input-group .input-group-btn,
-  .form-inline .input-group .form-control {
-    width: auto;
-  }
-  .form-inline .input-group > .form-control {
-    width: 100%;
-  }
-  .form-inline .control-label {
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-  .form-inline .radio,
-  .form-inline .checkbox {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-  .form-inline .has-feedback .form-control-feedback {
-    top: 0;
-  }
+.Ta {
+	color: #ff9601;
+	outline: none
+}
+
+.Ta:hover {
+	text-decoration: none
+}
+
+.wrapper {
+	width: 100%;
+	overflow: hidden;
+	position: relative
+}
+/*********************************margin 크기**********************************/
+.Tp {
+	margin-bottom: 18px
+}
+
+.Tp1 {
+	margin-bottom: 18px;
+	height: 44px;
+}
+
+.p0 {
+	margin-bottom: 0px
+}
+
+.p1 {
+	margin-bottom: 8px
+}
+
+.p2 {
+	margin-bottom: 15px
+}
+
+.p3 {
+	margin-bottom: 30px
+}
+
+.p4 {
+	margin-bottom: 40px
+}
+
+.p5 {
+	margin-bottom: 50px
+}
+/*********************************float속성 **********************************/
+.fleft {
+	float: left
+}
+
+.fright {
+	float: right
+}
+
+/*********************************text-align 속성**********************************/
+.alignright {
+	text-align: right
+}
+
+.aligncenter {
+	text-align: center
+}
+
+.it {
+	font-style: italic
+}
+
+.letter {
+	letter-spacing: -1px
+}
+
+/********************************* 흰/검/검/주황 색 **********************************/
+.color-1 {
+	color: #fff
+}
+
+.color-2 {
+	color: #000
+}
+
+.color-3 {
+	color: #262626
+}
+
+.color-4 {
+	color: #ff9601;
+	font-size: 140%;
+	height: 22px;
+}
+
+/********************************* 사진 액자 css**********************************/
+.frame {
+	padding: 10px;
+	background: #fff;
+	box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.70);
+	-moz-box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.70);
+	-webkit-box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.70)
+}
+
+.frame2 {
+	padding: 6px;
+	background: #fff;
+	border: 1px solid #e5e5e5
+}
+
+/*********************************boxes**********************************/
+.indent-right {
+	padding-right: 30px
+}
+
+.indent-left {
+	padding-left: 30px
+}
+
+.indent {
+	padding: 0 10px 0 30px
+}
+
+.indent2 {
+	padding-left: 50px
+}
+
+.indent3 {
+	padding: 0 15px
+} /**/
+.indent-bot {
+	margin-bottom: 20px
+}
+
+.indent-bot2 {
+	margin-bottom: 30px
+}
+
+.indent-bot3 {
+	margin-bottom: 45px
+}
+
+.inner {
+	padding: 0 55px 0 28px
+}
+
+.inner-2 {
+	padding: 0 45px 0 42px
+}
+
+.prev-indent-bot {
+	margin-bottom: 10px
+}
+
+.button {
+	text-decoration: none
+}
+/*********************************content*************************************/
+.gallery {
+	padding: 20px 0 26px 20px;
+	background: #fff;
+	box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70);
+	-moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70);
+	-webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70)
+}
+
+.padding {
+	padding: 30px 0px 38px
+}
+/* -- gallery  begin --*/
+div.content {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 0px;
+	overflow: hidden
+}
+
+div.content .Timg {;
+	width: 256;
+	height: 191;
+	z-index: 2
+}
+
+div.content .Ta {
+	text-decoration: none;
+	display: block;
+	position: relative;
+	cursor: pointer
+}
+
+div.content .Ta .Timg {
+	position: relative;
+	z-index: 1
+}
+
+div.content .Ta .Tspan {
+	display: block;
+	width: 140px;
+	height: 121px;
+	background: #000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2
+}
+
+div.content .Ta:focus, div.content .Ta:hover, div.content .Ta:active {
+	text-decoration: underline
+}
+/* -- gallery end --*/
+.Th3 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	line-height: 1.2em;
+	margin: 30px 0 22px 0;
+	color: #262626;
+	font-weight: normal;
+	letter-spacing: -2px
+}
+
+.box {
+	width: 100%;
+	background: #fff;
+	border: 1px solid #000;
+	box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70);
+	-moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70);
+	-webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.70)
+}
+
+.button {
+	display: inline-block;
+	padding: 4px 9px 4px;
+	color: #fff;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 1.22em;
+	background: url(../images/button-tail.gif) 0 0 repeat-x #ffa07a;
+	text-transform: uppercase;
+	letter-spacing: -1px
+}
+
+.button:hover {
+	background: #ff9601
+}
+
+.price {
+	display: inline-block;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 35px;
+	line-height: 1.2em;
+	letter-spacing: -2px
+}
+
+.writebtn {
+	margin-bottom: 25px;
+	position: relative;
+	left: 215px;
+	bottom: 16px;
+	width: 70px;
+	height: 38px;
+	background-color: #ffa07a;
+	color: #fff;
+	border-radius: 7px;
+}
+
+.galbtn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	background-color: ffa07a;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #ffffff;
+}
+
+@media ( min-width : 768px) {
+	.form-inline .form-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+	.form-inline .form-control-static {
+		display: inline-block;
+	}
+	.form-inline .input-group {
+		display: inline-table;
+		vertical-align: middle;
+	}
+	.form-inline .input-group .input-group-addon, .form-inline .input-group .input-group-btn,
+		.form-inline .input-group .form-control {
+		width: auto;
+	}
+	.form-inline .input-group>.form-control {
+		width: 100%;
+	}
+	.form-inline .control-label {
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .radio, .form-inline .checkbox {
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .has-feedback .form-control-feedback {
+		top: 0;
+	}
 }

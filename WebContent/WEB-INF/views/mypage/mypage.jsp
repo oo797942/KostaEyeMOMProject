@@ -87,14 +87,14 @@
 								</tr>
 							</table>
 							<p class='infomorep'> 
-							<a href="#" class='infomore'>+ 전체보기</a>
+							<a href="myshopping.do" class='infomore'>+ 전체보기</a>
 							</p>
-						</div>
+						</div> 
 						<!-- 문의 내역 -->
 						<div class='payinfodiv' style="float: right;">
 							<h3 class='infoh3a'>나의 Q&amp;A</h3>
-							<hr class='payhr' align="left"/>
-							<table class='pagetable'>
+							<hr class='payhr' align="left"/> 
+							<table class='pagetable'> 
 								<tr class='pagetr'>
 									<th class='pagetd'>제목</th>
 									<th class='pagetd'>등록일</th>

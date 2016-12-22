@@ -17,7 +17,7 @@
 			<tr>
 				<td width="800px" height="100%" align="center">
 					<img alt="사진" src="" width="95%" height="95%" style="background-color: #aaa" ></td>
-				<td valign="top">
+				<td valign="top"> 
 						<p>상품명 : 기저귀</p>
 						<p>가  격 : 1,000,000원</p><br/>
 						<p style=" font-size: 20px; ">공동구매 안내</p>

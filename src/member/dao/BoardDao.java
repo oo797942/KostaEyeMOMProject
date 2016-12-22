@@ -31,4 +31,5 @@ public interface BoardDao {
 	int adminBoardInsert(BoardVO vo);
 	BoardVO adminBoardUpdate(BoardVO vo);
 	int adminBoardUpdateDoing(BoardVO vo);
+	List<BoardVO> reportPagingBoard(BoardVO vo);
 }

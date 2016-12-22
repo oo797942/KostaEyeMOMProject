@@ -102,7 +102,7 @@ $(function(){
 				        </tbody>
 				      </table>
 	<div style="text-align: center">
-				          						<input type="submit" value='메세지 보내기' id='memberBenish' class="btn btn-primary">
+<!-- 				          						<input type="submit" value='메세지 보내기' id='memberBenish' class="btn btn-primary"> -->
 	</div>
 					</form>
 </div>

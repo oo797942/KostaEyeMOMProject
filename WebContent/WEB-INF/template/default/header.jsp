@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="/EyeMOM/resources/css/popupStyle.css">
 	<link rel='stylesheet' href='/EyeMOM/resources/css/loginStyle.css'>
 <script type="text/javascript">
+
 	function login(){
 		
 		$.ajax({
@@ -57,7 +58,15 @@
 	<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 		<a href="mypage.do" ><img src="/EyeMOM/resources/img/mypage.png" class="toplogo_btn2"  id="mypageBtn" /> </a>
 		<img src="/EyeMOM/resources/img/logout.png" class="toplogo_btn2"  id="logoutBtn" /> 
-		<a href="messageBoard.do" ><img  src="/EyeMOM/resources/img/message.png" class="toplogo_btn2" id="messageBtn"></a>
+		<a href="messageBoard.do" >
+		<c:if test="${sessionScope.user.getU_message() == 0}">
+		<img  src="/EyeMOM/resources/img/message.png" class="toplogo_btn2" id="messageBtn">
+		</c:if>
+				<c:if test="${sessionScope.user.getU_message() != 0}">
+		<img  src="/EyeMOM/resources/img/messageNew.png" class="toplogo_btn2" id="messageBtn">
+		</c:if>
+		 
+		</a>
 		<span class="toplogo_btn2" style="margin-right: 20px">${ sessionScope.user.getU_name()}님 환영합니다!</span>
 
 	</c:otherwise>	
@@ -102,7 +111,7 @@
 				<li class="lifont lileft">엄빠시장
 					<ul>
 						<li><hr class="menuhr" color="#ffa07a" size="3px" /></li>
-						<li><a href="#">· 공동구매</a></li>
+						<li><a href="shopping.do">· 공동구매</a></li>
 						<li><a href="tip.do?title=used">· 중고장터</a></li>
 						<li><a href="donation.do">· 아나바다</a></li>
 					</ul>

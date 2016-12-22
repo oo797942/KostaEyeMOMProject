@@ -68,6 +68,8 @@ public class MessageController {
 		MessageVO msgVO = new MessageVO();
 		for(int i = 1; i<messageVO.getList().size(); i++ ){
 		msgVO.setS_no(messageVO.getList().get(i).getS_no());
+		msgVO.setS_state(messageVO.getList().get(i).getS_state());
+		msgVO.setS_send_id(messageVO.getList().get(i).getS_send_id());
 		messageDao.deleteAll(msgVO);
 		}
 		return "redirect:messageBoard.do";
@@ -78,6 +80,7 @@ public class MessageController {
 		MessageVO msgVO = new MessageVO();
 		for(int i = 1; i<messageVO.getList().size(); i++ ){
 		msgVO.setS_no(messageVO.getList().get(i).getS_no());
+		msgVO.setS_state(messageVO.getList().get(i).getS_state());
 		messageDao.readAll(msgVO);
 		}
 		return "redirect:messageBoard.do";
