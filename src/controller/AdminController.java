@@ -105,7 +105,17 @@ public class AdminController {
 		 GPDao.adminPurchaseInsertDoing(gpVO);
 		return "redirect:adminPurchase.go";
 	}
-
+	
+	@RequestMapping("/adminPurchaseUpdate.go")
+	public String adminPurchaseUpdate(HttpSession session, Model m, GroupPurchaseVO gpVO){
+		 GPDao.adminPurchaseUpdate(gpVO);
+		return "redirect:adminPurchase.go";
+	}
+	@RequestMapping("/adminPurchaseDelete.go")
+	public String adminPurchaseDelete(HttpSession session, Model m, GroupPurchaseVO gpVO){
+		 GPDao.adminPurchaseDelete(gpVO);
+		return "redirect:adminPurchase.go";
+	}
 	
 //	@RequestMapping("/adminVideo.go")
 //	public String admonVideo(HttpSession session){

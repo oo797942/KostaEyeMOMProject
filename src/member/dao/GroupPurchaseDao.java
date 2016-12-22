@@ -13,5 +13,7 @@ public interface GroupPurchaseDao {
 	GroupPurchaseVO getItem(GroupPurchaseVO vo);
 	int orderShop(PaymentVO vo);
 	int adminPurchaseInsertDoing(GroupPurchaseVO vo);
+	int adminPurchaseUpdate(GroupPurchaseVO vo);
+	int adminPurchaseDelete(GroupPurchaseVO vo);
 } 
  

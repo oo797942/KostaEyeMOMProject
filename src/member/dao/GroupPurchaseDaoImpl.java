@@ -81,4 +81,26 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return result;
 	}
+	
+	@Override
+	public int adminPurchaseUpdate(GroupPurchaseVO vo) {
+		int result = 0;
+		try {
+			result = GroupPurchaseManager.purchaseUpdate(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
+	
+	@Override
+	public int adminPurchaseDelete(GroupPurchaseVO vo) {
+		int result = 0;
+		try {
+			result = GroupPurchaseManager.purchaseDelete(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 }

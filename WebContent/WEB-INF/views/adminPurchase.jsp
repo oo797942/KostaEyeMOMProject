@@ -7,6 +7,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
 <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
 <link rel="stylesheet" href="resources/css/style.css">
+
 	</head><body>&lt;<script type="text/javascript">
 
 
@@ -71,10 +72,12 @@
                   <th>구매 시작일</th>
                   <th>구매 종료일</th>
                   <th>입금 마감일</th>
+                  <th>조기 마감</th>
+                  <th>삭제</th>
                 </tr>
                 <tbody class="table-striped table-hover">
 <c:forEach var="vo" items="${list}">
-<tr>
+				<tr>
                   <th>${vo.b_no }</th>
                   <th><a href="shoppingView.do?b_no=${vo.b_no}">${vo.we_title }</a></th>
                   <th>${vo.we_price }</th>
@@ -82,7 +85,9 @@
                   <th>${vo.we_start }</th>
                   <th>${vo.we_end }</th>
                   <th>${vo.we_deposit }</th>
-                </tr>
+                  <th><input type="button" value="조기 마감" onclick="location.href='adminPurchaseUpdate.go?b_no=${vo.b_no}';"  class="btn btn-warning btn-sm" /></th>
+					<th><input type="button" value="삭제" onclick="location.href='adminPurchaseDelete.go?b_no=${vo.b_no}';"  class="btn btn-danger btn-sm" /></th>
+               </tr>
 </c:forEach>
 </tbody>
               </thead>

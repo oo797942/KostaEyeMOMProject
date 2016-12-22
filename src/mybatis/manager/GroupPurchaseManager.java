@@ -60,4 +60,21 @@ public class GroupPurchaseManager {
 	      return gpVO;
 	}
 	
+//	공동구매 입력
+	public static int purchaseUpdate(GroupPurchaseVO vo){
+		SqlSession session = CommonManager.db().openSession();
+		int gpVO = session.insert("purchase.updatePurchase", vo);
+
+	      session.commit();
+	      return gpVO;
+	}
+	
+//	공동구매 입력
+	public static int purchaseDelete(GroupPurchaseVO vo){
+		SqlSession session = CommonManager.db().openSession();
+		int gpVO = session.insert("purchase.deletePurchase", vo);
+
+	      session.commit();
+	      return gpVO;
+	}
 }
