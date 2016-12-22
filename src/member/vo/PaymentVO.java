@@ -1,6 +1,6 @@
 package member.vo;
 
-public class PaymentVO {
+public class PaymentVO extends PageVO{
 	private int pr_no;
 	private int b_no;
 	private String pr_date;
@@ -13,7 +13,7 @@ public class PaymentVO {
 	private String pr_name;
 	private String pr_pay;
 	private String pr_title;
-	
+	private String pr_photo;
 	public int getPr_no() {
 		return pr_no;
 	}
@@ -85,6 +85,12 @@ public class PaymentVO {
 	}
 	public void setPr_title(String pr_title) {
 		this.pr_title = pr_title;
+	}
+	public String getPr_photo() {
+		return pr_photo;
+	}
+	public void setPr_photo(String pr_photo) {
+		this.pr_photo = pr_photo;
 	}
 	
 	

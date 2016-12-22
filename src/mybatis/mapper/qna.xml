@@ -113,6 +113,10 @@ INSERT INTO faq_admin (q_no, q_date, q_title, q_content, u_id)VALUES (mom_qna_no
 <insert id="insertAnswer" parameterType="answerVO">
 INSERT INTO qna_answer (b_no, a_date, a_content, a_nick, a_no)VALUES (#{b_no}, sysdate, #{a_content}, #{a_nick}, mom_qna_no.nextval)
 </insert>
+
+<update id="updateAnswer" parameterType="answerVO">
+UPDATE qna_board SET in_recount='y' WHERE b_no=#{b_no}
+</update>
  
 <!-- qna 답변 -->
 <select id="callAnswer" parameterType="qnaVO" resultType="answerVO">

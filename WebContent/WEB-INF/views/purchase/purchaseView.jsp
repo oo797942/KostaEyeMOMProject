@@ -60,6 +60,7 @@ $(function(){
 								<input type="hidden" name="pr_price" value="${vo.we_price*vo.we_count}">
 								<input type="hidden" name="pr_count" value="${vo.we_count}">
 								<input type="hidden" name="pr_title" value="${vo.we_title}">
+								<input type="hidden" name="pr_photo" value="${vo.we_photo1name}">
 								<img src="resources/img/${vo.we_photo1name}" width="58" height="58" alt=""></td>
 							<td class="nme ptd center-group" rowspan="2" >${vo.we_title}</td>
 							<td class="qty ptd center-group" rowspan="2" >${vo.we_count}개</td>

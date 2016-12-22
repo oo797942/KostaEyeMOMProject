@@ -124,6 +124,7 @@ public class QnAManager {
 			SqlSession session = CommonManager.db().openSession();
 			
 			int result = session.insert("qna.insertAnswer", aVO);
+			session.update("qna.updateAnswer", aVO);
 			session.commit();
 			return result;
 		}

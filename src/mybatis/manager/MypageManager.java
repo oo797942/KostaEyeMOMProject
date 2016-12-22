@@ -75,4 +75,37 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
+	
+	public static List getMyPaymentList(MemberVO memberVO) throws SQLException{
+		List list =null;
+		SqlSession session = CommonManager.db().openSession();
+		System.out.println("매니저 id"+memberVO.getU_id());
+		list = session.selectList("mypage.getMyPaymentList", memberVO);
+		session.close();
+		return list;
+	}
+	
+	public static int totalCountShopping(MemberVO memberVO) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("mypage.shoppingTotalCount", memberVO);
+
+	      session.commit();
+	      return totalCount;
+	}
+	
+	public static int totalCountQna(MemberVO memberVO) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("mypage.qnaTotalCount", memberVO);
+
+	      session.commit();
+	      return totalCount;
+	}
+	
+	public static int totalCountBoard(MemberVO memberVO) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("mypage.boardTotalCount", memberVO);
+
+	      session.commit();
+	      return totalCount;
+	}
 }

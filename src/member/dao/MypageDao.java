@@ -14,4 +14,8 @@ public interface MypageDao {
 	List getMyQna(MemberVO vo);
 	List getQnaList(MemberVO vo);
 	List getMyPayment(MemberVO vo);
+	List getMyPaymentList(MemberVO vo);
+	int myshoppingListCount(MemberVO vo);
+	int myQnaListCount(MemberVO vo);
+	int myBoardListCount(MemberVO vo);
 }

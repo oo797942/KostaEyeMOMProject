@@ -2,7 +2,7 @@ package member.vo;
 
 
 
-public class MemberVO {
+public class MemberVO extends PageVO{
 	private String u_id;
 	private String u_nick;
 	private String u_name;

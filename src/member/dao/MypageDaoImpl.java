@@ -5,6 +5,7 @@ import java.util.List;
 
 import member.vo.MemberVO;
 import member.vo.QnAVO;
+import mybatis.manager.BoardManager;
 import mybatis.manager.MypageManager;
 
 public class MypageDaoImpl implements MypageDao {
@@ -103,6 +104,51 @@ public class MypageDaoImpl implements MypageDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public List getMyPaymentList(MemberVO vo) {
+		List list=null;
+		try {
+			list=MypageManager.getMyPaymentList(vo);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public int myshoppingListCount(MemberVO vo) {
+		int totalCount = 0;
+		try {
+			totalCount = MypageManager.totalCountShopping(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+
+	@Override
+	public int myQnaListCount(MemberVO vo) {
+		int totalCount = 0;
+		try {
+			totalCount = MypageManager.totalCountQna(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;
+	}
+
+	@Override
+	public int myBoardListCount(MemberVO vo) {
+		int totalCount = 0;
+		try {
+			totalCount = MypageManager.totalCountBoard(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;
 	}
 	
 }

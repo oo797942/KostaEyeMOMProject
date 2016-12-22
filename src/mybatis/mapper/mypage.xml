@@ -34,7 +34,12 @@ WHERE rownum <=4
 
 <!-- 사용자 게시글 리스트 -->
 <select id="getMyBoardList" parameterType="memberVO" resultType="boardVO">
-select b_no, b_cate, b_title, b_nick, to_char(b_date,'YYYY-MM-DD') as b_date, NVL(b_good,0) b_good, NVL(b_count,0) b_count from normal_board where u_id=#{u_id}
+SELECT b_no, b_cate, b_title, b_nick, to_char(b_date,'YYYY-MM-DD') as b_date, NVL(b_good,0) b_good, NVL(b_count,0) b_count 
+	 FROM normal_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
+	 (SELECT b_no FROM normal_board nnb WHERE nnb.u_id =#{u_id}  ORDER BY b_date DESC))
+	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_date DESC
+
+
 </select>
 
 <!-- 사용자 리플 리스트 -->
@@ -56,8 +61,12 @@ WHERE rownum <=4
 
 <!-- my qna list -->
 <select id="getMyQnaList" parameterType="memberVO" resultType="qnaVO">
-select b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_date ,NVL(in_good,0) in_good
-from qna_board where u_id=#{u_id} ORDER BY b_no desc
+SELECT b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_date ,NVL(in_good,0) in_good
+	 FROM qna_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
+	 (SELECT b_no FROM qna_board nnb WHERE nnb.u_id =#{u_id}  ORDER BY in_date DESC))
+	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY in_date DESC
+
+
 </select>
 
 <!-- my payment 4 -->
@@ -69,5 +78,27 @@ FROM
 		FROM payment_info n WHERE n.pr_id =#{u_id} ORDER BY n.pr_date DESC) 
 WHERE rownum <=4
 ]]>
+</select>
+
+<!-- my all payment -->
+<select id="getMyPaymentList" parameterType="memberVO" resultType="paymentVO">
+SELECT pr_no, b_no, pr_title, to_char(pr_date,'YYYY-MM-DD') as pr_date, pr_price, pr_photo
+	 FROM payment_info WHERE pr_no in(SELECT pr_no FROM (SELECT rownum as rnum, pr_no FROM
+	 (SELECT pr_no FROM payment_info nnb WHERE nnb.pr_id =#{u_id}  ORDER BY pr_date DESC))
+	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY pr_date DESC
+
+
+</select>
+
+<select id="shoppingTotalCount" parameterType="memberVO" resultType="int">
+SELECT COUNT(*)  totalCount FROM payment_info WHERE pr_id = #{u_id}
+</select>
+
+<select id="qnaTotalCount" parameterType="memberVO" resultType="int">
+SELECT COUNT(*)  totalCount FROM qna_board WHERE u_id = #{u_id}
+</select>
+
+<select id="boardTotalCount" parameterType="memberVO" resultType="int">
+SELECT COUNT(*)  totalCount FROM normal_board WHERE u_id = #{u_id}
 </select>
 </mapper>
