@@ -23,7 +23,7 @@ import member.vo.ReplyVO;
 @Controller
 public class AdminController {
 	 
-	@Autowired
+	@Autowired 
 	private BoardDaoImpl boardDao; 
 	@Autowired
 	GroupPurchaseDaoImpl GPDao;
