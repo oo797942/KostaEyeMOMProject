@@ -435,7 +435,7 @@ public class BoardController {
             
             return "board/boardgallery";
          }
-
+ 
 //         @RequestMapping("/adminReport.go")
 //         public String adminReport(HttpSession session, Model model, @ModelAttribute("BoardVO") BoardVO boardVO){
 //
