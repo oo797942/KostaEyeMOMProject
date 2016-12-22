@@ -129,7 +129,7 @@ public class AndroidController {
 		System.out.println("goodPress>>> " + goodPress);
 		System.out.println("d_no 값 >> " + d_no);
 		System.out.println("v_no 값 >> " + v_no);
-
+ 
 		// 춤을춰요 일 때(kid_video)
 		if (d_no > 0) {
 			VideoVO vo = new VideoVO();
