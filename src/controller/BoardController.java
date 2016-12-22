@@ -436,25 +436,25 @@ public class BoardController {
             return "board/boardgallery";
          }
 
-         @RequestMapping("/adminReport.go")
-         public String adminReport(HttpSession session, Model model, @ModelAttribute("BoardVO") BoardVO boardVO){
-
-//            MemberVO memvo = (MemberVO) session.getAttribute("user");
-//            model.addAttribute("user",memvo);
-             //--페이징 처리
-             int totalCount = boardDao.reportListCount(boardVO); //게시물 총갯수를 구한다
-             boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
-             model.addAttribute("pageVO", boardVO);
-
-             //--페이징 처리
-             
-             List<BoardVO>  boardList = boardDao.reportPagingBoard(boardVO);
-
-                     
-            model.addAttribute("list", boardList); //가져온 DB를 모델에 저장
-            
-            return "adminReport";
-         }
+//         @RequestMapping("/adminReport.go")
+//         public String adminReport(HttpSession session, Model model, @ModelAttribute("BoardVO") BoardVO boardVO){
+//
+////            MemberVO memvo = (MemberVO) session.getAttribute("user");
+////            model.addAttribute("user",memvo);
+//             //--페이징 처리
+//             int totalCount = boardDao.reportListCount(boardVO); //게시물 총갯수를 구한다
+//             boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+//             model.addAttribute("pageVO", boardVO);
+//
+//             //--페이징 처리
+//             
+//             List<BoardVO>  boardList = boardDao.reportPagingBoard(boardVO);
+//
+//                     
+//            model.addAttribute("list", boardList); //가져온 DB를 모델에 저장
+//            
+//            return "adminReport";
+//         }
 
          
 
