@@ -49,9 +49,6 @@ SELECT  b_no,  re_no,  DECODE(SIGN(LENGTH(re_content)-15),1,SUBSTR(re_content,1,
 	 (SELECT re_no FROM reply nnb WHERE nnb.re_id =#{u_id}  ORDER BY re_date DESC))
 	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY re_date DESC
 
-
-select b_no,  re_no,  DECODE(SIGN(LENGTH(re_content)-15),1,SUBSTR(re_content,1,15)||'...',re_content)  as re_content, re_nick, to_char(re_date,'YYYY-MM-DD') as re_date
-from reply where re_id=#{u_id}
 </select>
 
 <!-- 사용자 qna리스트 4개 -->
@@ -109,6 +106,6 @@ SELECT COUNT(*)  totalCount FROM normal_board WHERE u_id = #{u_id}
 </select>
 
 <select id="replyTotalCount" parameterType="memberVO" resultType="int">
-SELECT COUNT(*)  totalCount FROM reply WHERE u_id = #{u_id}
+SELECT COUNT(*)  totalCount FROM reply WHERE re_id = #{u_id}
 </select>
 </mapper>

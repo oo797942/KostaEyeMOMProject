@@ -297,15 +297,18 @@ public class BoardController {
 	
 	// 아나바다 리스트 이동
 		@RequestMapping("/donation.do")
-		public String calldonation(Model m) {
+		public String calldonation(Model m, BoardVO boardVO) {
 			List<BoardVO> list = null;
-
-			list = boardDao.allBoard("donation");
+			boardVO.setB_cate("donation");
+			int totalCount = boardDao.boardListCount(boardVO); //게시물 총갯수를 구한다
+		    boardVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+		    m.addAttribute("pageVO", boardVO);
+			list = boardDao.allPagingBoard(boardVO);
 			System.out.println(list.size());
 			for (int i = 0; i < list.size(); i++) {
 
-				BoardVO boardVO = list.get(i);
-				List<ReplyVO> listVO = boardDao.callReply(boardVO);
+				BoardVO board = list.get(i);
+				List<ReplyVO> listVO = boardDao.callReply(board);
 
 				list.get(i).setB_recount(listVO.size());
 			}
@@ -317,7 +320,6 @@ public class BoardController {
 		// 아나바다 뷰 이동
 			@RequestMapping("/donationview.do")
 			public String viewDonation(BoardVO boardVO, Model m){
-				
 				
 				
 				BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
