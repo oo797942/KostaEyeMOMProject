@@ -246,7 +246,8 @@ public class AndroidController {
 			BoardVO boardVO = list.get(i);
 			List<ReplyVO> listVO = boardDao.callReply(boardVO);
 
-			list.get(i).setB_recount(listVO.size());
+			boardVO.setB_recount(listVO.size());
+			System.out.println(""+boardVO.getB_recount());
 			String[] iplist = new String[4]; // " . "을 제거한 ip를 담을 list
 			String rip; // 보안처리된 ip 담을 문자열
 			String ip = boardVO.getB_ip(); // 작성자 ip가져오기
