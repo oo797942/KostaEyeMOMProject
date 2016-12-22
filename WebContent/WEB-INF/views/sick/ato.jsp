@@ -8,7 +8,7 @@
 <link href="/EyeMOM/resources/css/sick/c3.css" type="text/css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-.side{
+.side{ 
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
