@@ -12,6 +12,7 @@ public class PaymentVO {
 	private String pr_tel;
 	private String pr_name;
 	private String pr_pay;
+	private String pr_title;
 	
 	public int getPr_no() {
 		return pr_no;
@@ -78,6 +79,12 @@ public class PaymentVO {
 	}
 	public void setPr_pay(String pr_pay) {
 		this.pr_pay = pr_pay;
+	}
+	public String getPr_title() {
+		return pr_title;
+	}
+	public void setPr_title(String pr_title) {
+		this.pr_title = pr_title;
 	}
 	
 	
