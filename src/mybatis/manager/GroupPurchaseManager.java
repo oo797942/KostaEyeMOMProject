@@ -50,4 +50,14 @@ public class GroupPurchaseManager {
 	      session.commit();
 	      return result;
 	}
+	
+//	공동구매 입력
+	public static int purchaseInsert(GroupPurchaseVO vo){
+		SqlSession session = CommonManager.db().openSession();
+		int gpVO = session.insert("purchase.insertPurchase", vo);
+
+	      session.commit();
+	      return gpVO;
+	}
+	
 }

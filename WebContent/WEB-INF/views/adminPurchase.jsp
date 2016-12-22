@@ -6,6 +6,7 @@
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
 <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
+<link rel="stylesheet" href="resources/css/style.css">
 	</head><body>&lt;<script type="text/javascript">
 
 
@@ -59,7 +60,6 @@
     <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
         
           <h1 class="page-header">공동구매 관리</h1>
-<a href="adminPurchaseInsert.go">부루</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -76,7 +76,7 @@
 <c:forEach var="vo" items="${list}">
 <tr>
                   <th>${vo.b_no }</th>
-                  <th>${vo.we_title }</th>
+                  <th><a href="shoppingView.do?b_no=${vo.b_no}">${vo.we_title }</a></th>
                   <th>${vo.we_price }</th>
                   <th>${vo.we_maxsold }</th>
                   <th>${vo.we_start }</th>
@@ -125,6 +125,12 @@
     				</ul>
     </div>
 </form>
+		<div  style="text-align:right;">
+		<p>
+          <a href="adminPurchaseInsert.go" ><input type="button" value="공동구매 등록"  class="btn btn-primary btn-sm"/></a>
+		</p>
+		</div>
+      
         </div>
       
 </body>

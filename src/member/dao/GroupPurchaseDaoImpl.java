@@ -71,5 +71,14 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		return result;
 	}
 	
-	
+	@Override
+	public int adminPurchaseInsertDoing(GroupPurchaseVO vo) {
+		int result = 0;
+		try {
+			result = GroupPurchaseManager.purchaseInsert(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / idCheck 실패 : " + ex.getMessage());
+		}
+		return result;
+	}
 }

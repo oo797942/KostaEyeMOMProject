@@ -12,5 +12,6 @@ public interface GroupPurchaseDao {
 	List<GroupPurchaseVO> allPagingShopping(GroupPurchaseVO vo);
 	GroupPurchaseVO getItem(GroupPurchaseVO vo);
 	int orderShop(PaymentVO vo);
+	int adminPurchaseInsertDoing(GroupPurchaseVO vo);
 } 
  

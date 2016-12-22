@@ -81,7 +81,7 @@ public class AdminController {
 //	}
 	
 	@RequestMapping("/adminPurchase.go")
-	public String adminPurchase(HttpSession session,Model m, GroupPurchaseVO gpVO){
+	public String adminPurchase(HttpSession session, Model m, GroupPurchaseVO gpVO){
 	    //--페이징 처리
 	    int totalCount = GPDao.shoppingListCount(); //게시물 총갯수를 구한다
 	    gpVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
@@ -100,6 +100,12 @@ public class AdminController {
 	public String adminPurchaseInsert(HttpSession session){
 		return "adminPurchaseInsert";
 	}
+	@RequestMapping("/adminPurchaseInsertDoing.go")
+	public String adminPurchaseInsertDoing(HttpSession session, Model m, GroupPurchaseVO gpVO){
+		 GPDao.adminPurchaseInsertDoing(gpVO);
+		return "redirect:adminPurchase.go";
+	}
+
 	
 //	@RequestMapping("/adminVideo.go")
 //	public String admonVideo(HttpSession session){

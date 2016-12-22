@@ -35,7 +35,31 @@ FROM  group_purchase WHERE b_no=#{b_no}
 <insert id="orderShop"  parameterType="paymentVO">
 Insert into payment_info 
 	(pr_no, pr_date, pr_content, pr_price, pr_id, b_no, pr_count, pr_addr, pr_tel, pr_name, pr_pay, pr_title)
-	VALUES(mom_board_no.nextval,  sysdate, #{pr_content}, #{pr_price}, #{pr_id}, #{b_no}, #{pr_count}, #{pr_addr}, #{pr_tel}, #{pr_name}, #{pr_pay}, #{pr_title)
-  
+	VALUES(mom_board_no.nextval,  sysdate, #{pr_content}, #{pr_price}, #{pr_id}, #{b_no}, #{pr_count}, #{pr_addr}, #{pr_tel}, #{pr_name}, #{pr_pay}, #{pr_title)  
 </insert>
+
+<insert id="insertPurchase" parameterType="paymentVO">
+Insert into group_purchase
+	(b_no, we_title, we_content, we_price, we_max, we_start, we_end, we_deposit
+	<if test="we_photo1name !=null">
+		, we_photo1name
+	</if>
+	<if test="we_photo2name !=null">
+		, we_photo2name
+	</if>
+	<if test="we_photo3name !=null">
+		, we_photo3name
+	</if>
+	)
+	VALUES(mom_board_no.nextval, #{we_title}, #{we_content}, #{we_price} , #{we_max}, #{we_start}, #{we_end}, #{we_deposit}
+  	<if test="we_photo1name !=null">
+		, #{we_photo1name}
+	</if>
+	<if test="we_photo2name !=null">
+		, #{we_photo2name}
+	</if>
+	<if test="we_photo3name !=null">
+		, #{we_photo3name}
+	</if>
+	)</insert>
 </mapper>

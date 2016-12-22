@@ -6,9 +6,19 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<link rel="stylesheet" href="resources/css/boardInsert.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
+    <!-- Custom styles for this template -->
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/i18n/jquery-ui-i18n.min.js"></script>
+    
 <script type="text/javascript">
 $(function(){
-   	$("#b_photo2").hide();
+	$.datepicker.setDefaults($.datepicker.regional['ko']);
+	$('#we_start').datepicker();
+	$('#we_end').datepicker();
+	$('#we_deposit').datepicker();
+	
+	$("#b_photo2").hide();
    	$("#b_photo3").hide();
    	
     $(".photo").on('change', function(){
@@ -93,7 +103,7 @@ margin: 20px 20px 20px 20px;
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">공동구매 등록</h1>
-                   <form action="insert.do" method='post' enctype='multipart/form-data'>
+                   <form action="adminPurchaseInsertDoing.go" method='post' enctype='multipart/form-data'>
                   <div>
                      <div class='filelabel'>
                         <label id='boardlabel2'>사진 첨부&nbsp;</label>
@@ -103,19 +113,19 @@ margin: 20px 20px 20px 20px;
                         <!-- 라벨과 테이블 inline -->
                         <table>
                           	<tr>
-								<th colspan="2" width="50%"><input type="text" class="form-control" placeholder="제목"></th>
-								<th width="25%"><input type="text" class="form-control" placeholder="가격"></th>
-								<th width="25%"><input type="text" class="form-control" placeholder="최대수량"></th>
+								<th colspan="2" width="50%"><input type="text" name="we_title" id="we_title" class="form-control" placeholder="제목"></th>
+								<th width="25%"><input type="text" name="we_price" id="we_price" class="form-control" placeholder="가격"></th>
+								<th width="25%"><input type="text" name="we_max" id="we_max" class="form-control" placeholder="최대수량"></th>
 							</tr>
                           <tr>
 							  	<th width="228">
-							  		  	<input type='file' accept=" image/*" class='photo' id='b_photo1' name='b_photo1'/>
-                              	<input type='file' accept=" image/*" class='photo' id='b_photo2' name='b_photo2'/>
-                              	<input type='file' accept=" image/*" class='photo' id='b_photo3' name='b_photo3'/>
+							  		  	<input type='file' accept=" image/*" class='photo' id='b_photo1' name='we_photo1'/>
+                              	<input type='file' accept=" image/*" class='photo' id='b_photo2' name='we_photo2'/>
+                              	<input type='file' accept=" image/*" class='photo' id='b_photo3' name='we_photo3'/>
 							  	</th>
-								<th width="327"><input type="text" class="form-control" placeholder="구매시작일"></th>
-								<th><input type="text" class="form-control" placeholder="구매종료일"></th>
-								<th><input type="text" class="form-control" placeholder="입금마감일"></th>
+								<th width="327"><input type="text" class="form-control" name="we_start" id="we_start" placeholder="구매시작일"></th>
+								<th><input type="text" class="form-control" name="we_end" id="we_end" placeholder="구매종료일"></th>
+								<th><input type="text" class="form-control" name="we_deposit" id="we_deposit" placeholder="입금마감일"></th>
 							</tr>
 <tr >
 <td colspan="4">
@@ -125,13 +135,13 @@ margin: 20px 20px 20px 20px;
 </tr>
 							<tr>
 								<th colspan="4" height="400px" >
-									<textarea class="form-control" placeholder="내용" style="width:100%; height:100%;resize:none;"></textarea>
+									<textarea class="form-control" name="we_content" id="we_content" placeholder="내용" style="width:100%; height:100%;resize:none;"></textarea>
 								</th>
 							</tr>
                         </table>
                      </div>
                   <hr/>
-<input type="button" value="공동구매 등록"  class="btn btn-success btn-sm"/>
+<input type="submit" value="공동구매 등록"  class="btn btn-success btn-sm"/>
                   </div>
                   </form>
                </div>
