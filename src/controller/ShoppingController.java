@@ -27,11 +27,7 @@ public class ShoppingController {
 		return "shopping/shoppingList";
 	}
 	
-	@RequestMapping("/shoppingView.do")
-	public String shopView(){
-		System.out.println("/shoppingView.do 요청");
-		return "shopping/shoppingView";
-	}
+	
 	
 }
  

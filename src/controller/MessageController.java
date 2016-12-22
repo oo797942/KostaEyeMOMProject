@@ -13,6 +13,7 @@ import member.dao.MessageDaoImpl;
 import member.vo.BoardVO;
 import member.vo.MemberVO;
 import member.vo.MessageVO;
+import member.vo.MessageVOList;
 
 @Controller
 public class MessageController {
@@ -30,7 +31,7 @@ public class MessageController {
 	
 	@RequestMapping("messageSending.go")
 	public String messageSending(MessageVO messageVO){
-		
+		messageVO.setS_content(messageVO.getS_content().replaceAll("\r\n","<br>"));
 		messageDao.messageSending(messageVO);
 		
 		return "popupClose";
@@ -39,9 +40,8 @@ public class MessageController {
 	@RequestMapping("/messageBoard.do")
 	public String messageBoard(MessageVO messageVO, HttpSession session, Model m){
 		MemberVO memvo = (MemberVO) session.getAttribute("user");
-		System.out.println(memvo.getU_id());
-		messageVO.setS_send_id(memvo.getU_id());
 		messageVO.setS_id(memvo.getU_id());
+		messageVO.setS_send_id(memvo.getU_id());
 
 		List<MessageVO> sendList = messageDao.sendMessageList(messageVO);		
 		List<MessageVO> receiveList = messageDao.receiveMessageList(messageVO);
@@ -51,5 +51,38 @@ public class MessageController {
 
 		return "message/messageBoard";
 	}
+
+	@RequestMapping("messageView.go")
+	public String messageView(MessageVO messageVO, Model m, HttpSession session){		
+		MessageVO msgVO = null;
+		MemberVO memvo = (MemberVO) session.getAttribute("user");
+		messageVO.setS_id(memvo.getU_id());
+
+		msgVO = messageDao.messageView(messageVO);
+		m.addAttribute("vlist",msgVO);
+		return "messageView";
+	}
 	
+	@RequestMapping("deleteAll.go")
+	public String deleteAll(MessageVOList messageVO, Model m, HttpSession session){		
+		MessageVO msgVO = new MessageVO();
+		for(int i = 1; i<messageVO.getList().size(); i++ ){
+		msgVO.setS_no(messageVO.getList().get(i).getS_no());
+		msgVO.setS_state(messageVO.getList().get(i).getS_state());
+		msgVO.setS_send_id(messageVO.getList().get(i).getS_send_id());
+		messageDao.deleteAll(msgVO);
+		}
+		return "redirect:messageBoard.do";
+	}	
+	
+	@RequestMapping("readAll.go")
+	public String readAll(MessageVOList messageVO, Model m, HttpSession session){		
+		MessageVO msgVO = new MessageVO();
+		for(int i = 1; i<messageVO.getList().size(); i++ ){
+		msgVO.setS_no(messageVO.getList().get(i).getS_no());
+		msgVO.setS_state(messageVO.getList().get(i).getS_state());
+		messageDao.readAll(msgVO);
+		}
+		return "redirect:messageBoard.do";
+	}	
 }

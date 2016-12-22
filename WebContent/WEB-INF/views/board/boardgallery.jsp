@@ -146,57 +146,63 @@ function fn_movePage(val){
 							</div>
 						</div>
 					</div>
- 
-					<!-- 페이징 -->
-					<div class='form-inline'>
-					<ul class="pagination modal-1">
 
-    <c:if test="${pageVO.pageNo != 0}">
-        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
-            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
-       </c:if>
-       <c:if test="${pageVO.pageNo != 1}">
-           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
-        </c:if>
-        <span>
-            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
-                <c:choose>
-                    <c:when test="${i eq pageVO.pageNo}">
-                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
-                            <font style="font-weight: bold;">${i}</font>
-                        </a></li>
-                    </c:when>
-                    <c:otherwise>
-                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </span>
-        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
-            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
-        </c:if>
-        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
-            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
-        </c:if>
-    </c:if>
-    				</ul>
-    </div>
-					<div style="width: 1200px; height: 75px;">
-						
-						<c:choose>
-    				<c:when test="${empty sessionScope.user}">
-    				<!-- 글쓰기 버튼 -->
-					<a href="#test-popup" class="open-popup-link">
-					<input type="button" value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>
-					</a>
-					</c:when>
-					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
-					<input type="button"  onclick='writeBoard()' value='글쓰기' class='btn writebtn writelabel' style="margin-bottom: 25px;position: relative;left: 215px"/>	
-					</c:otherwise>	
-					</c:choose>
-						
+						<!-- 페이징 -->
+						<div class='pagingDiv'>
+							<ul class="pagination modal-1">
+								<c:if test="${pageVO.pageNo != 0}">
+									<c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.firstPageNo})"
+											style="text-decoration: none;">[첫 페이지]</a></li>
+									</c:if>
+									<c:if test="${pageVO.pageNo != 1}">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.prevPageNo})"
+											style="text-decoration: none;">[이전]</a></li>
+									</c:if>
+									<span> <c:forEach var="i" begin="${pageVO.startPageNo}"
+											end="${pageVO.endPageNo}" step="1">
+											<c:choose>
+												<c:when test="${i eq pageVO.pageNo}">
+													<li><a href="javascript:fn_movePage(${i})"
+														style="text-decoration: none;" class="active"> <font
+															style="font-weight: bold;">${i}</font>
+													</a></li>
+												</c:when>
+												<c:otherwise>
+													<li><a href="javascript:fn_movePage(${i})"
+														style="text-decoration: none;">${i}</a></li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+									</span>
+									<c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.nextPageNo})"
+											style="text-decoration: none;">[다음]</a></li>
+									</c:if>
+									<c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+										<li><a
+											href="javascript:fn_movePage(${pageVO.finalPageNo})"
+											style="text-decoration: none;">[마지막 페이지]</a></li>
+									</c:if>
+								</c:if>
+							</ul>
+							<c:choose>
+		 						<c:when test="${empty sessionScope.user}">
+									<!-- 글쓰기 버튼 -->
+									<a href="#test-popup" class="open-popup-link"> <input
+										type="button" value='글쓰기' class='writebtn'/>
+									</a>
+								</c:when>
+								<c:otherwise>  
+									<!-- 세선정보가 있을경우 사용자 정보 show -->
+									<input type="button" onclick='writeBoard()' value='글쓰기' class='writebtn'/>
+								</c:otherwise>
+							</c:choose>
+						</div>
 					</div>
-				</div>
 			</div>
 		</form>
 		</section>

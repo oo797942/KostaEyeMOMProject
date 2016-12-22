@@ -1,59 +1,70 @@
 /* * { */
 /*   box-sizing: border-box; */
-/*   -moz-box-sizing: border-box; */
+/*   -moz-box-sizing: border-box; */ 
 /*   -webkit-box-sizing: border-box; */
 /*   font-family: arial; */
 /* } */
+.pagination {
+	list-style: none; 
+	display: inline-block;
+	padding: 0;
+	margin-top: 20px;
+}
 
-.pagination {	
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin-top: 20px;
-}
 .pagination li {
-  display: inline;		/*페이지들 inline 정렬*/
-  text-align: center;
+	display: inline; /*페이지들 inline 정렬*/
+	text-align: center;
 }
-.pagination a {			/* a태그 속성*/
-  float: left;			/* a태그 왼쪽부터 정렬*/
-  display: block;		
-  font-size: 14px;
-  text-decoration: none;
-  padding: 5px 12px;	/*페이지 길이*/
-  color: #fff;
-  margin-left: -1px;
-  border: 1px solid transparent;
-  line-height: 1.5;
+
+.pagination a { /* a태그 속성*/
+	float: left; /* a태그 왼쪽부터 정렬*/
+	display: block;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 5px 12px; /*페이지 길이*/
+	color: #fff;
+	margin-left: -1px;
+	border: 1px solid transparent;
+	line-height: 1.5;
 }
+
 .pagination a.active {
-  cursor: default;		/* 커서 기본값 */
+	cursor: default; /* 커서 기본값 */
 }
+
 .pagination a:active {
-  outline: none;
+	outline: none;
 }
 
 .modal-1 li:first-child a {
-  -moz-border-radius: 6px 0 0 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px 0 0 6px;
-}
-.modal-1 li:last-child a {
-  -moz-border-radius: 0 6px 6px 0;
-  -webkit-border-radius: 0;
-  border-radius: 0 6px 6px 0;
-}
-.modal-1 a {
-  border-color: #ddd;
-  color: #ffa07a;
-  background: #fff;
-}
-.modal-1 a:hover {
-  background: #eee;
-}
-.modal-1 a.active, .modal-1 a:active {
-  border-color: #ffa07a;
-  background: #ffa07a;
-  color: #fff;
+	-moz-border-radius: 6px 0 0 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px 0 0 6px;
 }
 
+.modal-1 li:last-child a {
+	-moz-border-radius: 0 6px 6px 0;
+	-webkit-border-radius: 0;
+	border-radius: 0 6px 6px 0;
+}
+
+.modal-1 a {
+	border-color: #ddd;
+	color: #ffa07a;
+	background: #fff;
+}
+
+.modal-1 a:hover {
+	background: #eee;
+}
+
+.modal-1 a.active, .modal-1 a:active {
+	border-color: #ffa07a;
+	background: #ffa07a;
+	color: #fff;
+}
+
+.pagingDiv {
+	width: 1200px;
+	text-align: center;
+}

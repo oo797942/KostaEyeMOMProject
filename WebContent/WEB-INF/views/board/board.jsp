@@ -58,11 +58,9 @@ function fn_movePage(val){
 								<option>작성자</option>
 							</select>
 							<!-- 검색창 -->
-							<input type="text" name='search1' id='search1'
-								class='form-control'> 
+							<input type="text" name='search1' id='search1' class='form-control'> 
 							<!-- 검색버튼 -->
-							<input type="button"
-								name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
+							<input type="button" name='searchbtn1' id='searchbtn1' class='btn' value='검색'>
 				</div>
 				<!-- 게시판 -->
 				<table class='boardtable'>
@@ -128,7 +126,7 @@ function fn_movePage(val){
 					<c:otherwise>	<!-- 세선정보가 있을경우 사용자 정보 show -->
 						
 						<c:if test="${vo.u_id != user.u_id}">
-						<a onclick="window.open('messageWriter.go?u_id=${vo.u_id}&b_nick=${vo.b_nick }', '문의 답변',
+						<a onclick="window.open('messageWriter.go?u_id=${vo.u_id}&b_nick=${vo.b_nick }', '메세지',
                    				'width=600px,height=320');return false;">
 						${vo.b_nick }
 						</a>

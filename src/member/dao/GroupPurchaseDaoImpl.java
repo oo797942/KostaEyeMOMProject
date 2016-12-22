@@ -2,7 +2,9 @@ package member.dao;
 
 import java.util.List;
 
+import member.vo.BoardVO;
 import member.vo.GroupPurchaseVO;
+import mybatis.manager.BoardManager;
 import mybatis.manager.GroupPurchaseManager;
 
 public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
@@ -18,4 +20,43 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return list;
 	}
+
+	@Override
+	public int shoppingListCount() {
+		int totalCount = 0;
+		try {
+			totalCount = GroupPurchaseManager.totalCount();
+		} catch (Exception ex) {
+			System.out.println("gpDAOImpl / 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+
+	@Override
+	public List<GroupPurchaseVO> allPagingShopping(GroupPurchaseVO vo) {
+		List<GroupPurchaseVO> list = null;
+		try {
+			
+
+			list = GroupPurchaseManager.allpagingShopping(vo);
+		} catch (Exception ex) {
+			System.out.println("gpDAO페징 : " + ex.getMessage());
+		}
+		return list;
+	}
+
+	@Override
+	public GroupPurchaseVO getItem(GroupPurchaseVO vo) {
+		GroupPurchaseVO gpVO=null;
+		try {
+			
+
+			gpVO = GroupPurchaseManager.getItem(vo);
+		} catch (Exception ex) {
+			System.out.println("gpDAO페징 : " + ex.getMessage());
+		}
+		return gpVO;
+	}
+	
+	
 }

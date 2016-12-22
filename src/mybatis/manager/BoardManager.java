@@ -252,4 +252,22 @@ public class BoardManager {
       session.commit();
       return result;
    }
+   
+   // 공지사항 리스트 뽑아오기
+   public static int reportTotalCount(BoardVO boardVO) throws SQLException {
+      SqlSession session = CommonManager.db().openSession();
+      int totalCount = session.selectOne("board.reportTotalCount", boardVO);
+
+      session.commit();
+      return totalCount;
+   }
+   
+   // 공지사항 리스트 뽑아오기
+   public static List<BoardVO> reportPagingBoard(BoardVO boardvo) throws SQLException {
+      SqlSession session = CommonManager.db().openSession();
+      List<BoardVO> list = session.selectList("board.reportBoardp", boardvo);
+
+      session.commit();
+      return list;
+   }
 }

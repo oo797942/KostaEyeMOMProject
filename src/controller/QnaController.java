@@ -114,7 +114,7 @@ public class QnaController {
 		List <AnswerVO> list=QnaDao.callAnwer(qVO);
 		List <List<AreplyVO>>replylist=new ArrayList<List<AreplyVO>>();
 		System.out.println("댓글갯수"+list.size());
-		System.out.println("댓글번호2:"+list.get(0).getA_no());
+//		System.out.println("댓글번호2:"+list.get(0).getA_no());
 		for(int i=0; i<list.size() ; i++){
 			AnswerVO aVO= list.get(i);
 			System.out.println("댓글번호2"+aVO.getA_no());

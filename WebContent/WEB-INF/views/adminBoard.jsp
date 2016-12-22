@@ -8,28 +8,10 @@
 <link rel="stylesheet" href="resources/css/style.css">
 	</head><body>&lt;<script type="text/javascript">
 	$(function(){
-		
-		 
-		$("#resertype").change(function(){
-			var sel = $('#resertype').val();
-			
-				location.href = "/TourProject/list.do?tour=admin-quest&search=all&select="+sel;
-				});
-		
-			
 
-		$("#search").keydown(function(key){
-		if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
-			location.href = "/TourProject/list.do?tour=admin-quest&select=all&search="+$("#search").val();
-		};
-	});
 		
 	});
-	function popupOpen(articleNo){
-		var popUrl = "/TourProject/list.do?tour=quest-view&articleNo="+articleNo;	//팝업창에 출력될 페이지 URL
-		var popOption = "width=800, height=600, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-			window.open(popUrl,"",popOption);
-};
+
 </script>
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +28,7 @@
 <!--             <span class="icon-bar"></span> -->
 <!--             <span class="icon-bar"></span> -->
 <!--           </button> -->
-          <a class="navbar-brand" href="http://localhost:8080/TourProject/list.do?tour=admin-sal" style="color:#fff">EyeMOM</a>
+          <a class="navbar-brand" href="home.go" style="color:#fff">EyeMOM</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -63,10 +45,10 @@
           <ul class="nav nav-sidebar">
           <!--class="active" active 클래스가 붙으면 효과를 적용한다. -->
             <li><a href="adminMember.go" >회원 관리</a></li>
-            <li class="active"><a href="adminBoard.go">게시판 관리</a></li>
+            <li class="active"><a href="adminBoard.go">공지사항 관리</a></li>
+            <li><a href="adminPurchase.go">공동구매 관리</a></li>
             <li><a href="adminReport.go">신고 관리</a></li>
             <li><a href="adminQna.go">FAQ</a></li>
-            <li><a href="adminGallery.go">사진 관리</a></li>            
             <li><a href="adminVideo.go">동영상 관리</a></li>
             <li><a href="adminGame.go">게임 관리</a></li>
           </ul>
@@ -77,32 +59,32 @@
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">게시판 관리</h1>
-          <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
-            <tbody>
-              <tr>
-                <th width="8%">게시판 종류</th>
-                <td width="10%">
-                 <select name="resertype" id="resertype">
-                  <option value="all">전체 보기</option>
-                  <option value="Y">게시판1</option>
-                  <option value="N">게시판2</option>
-                </select>
-                  </td>
-                <th width="6%" style="text-align:center">검색</th>
-                <td width="30%">
-                  <input type="text" name="search" id="search" class="form-control" placeholder="검색어를 입력하세요.">
-                </td>
-                <th width="39%">&nbsp;</th>
+<!--           <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"> -->
+<!--             <tbody> -->
+<!--               <tr> -->
+<!--                 <th width="8%">게시판 종류</th> -->
+<!--                 <td width="10%"> -->
+<!--                  <select name="resertype" id="resertype"> -->
+<!--                   <option value="all">전체 보기</option> -->
+<!--                   <option value="Y">게시판1</option> -->
+<!--                   <option value="N">게시판2</option> -->
+<!--                 </select> -->
+<!--                   </td> -->
+<!--                 <th width="6%" style="text-align:center">검색</th> -->
+<!--                 <td width="30%"> -->
+<!--                   <input type="text" name="search" id="search" class="form-control" placeholder="검색어를 입력하세요."> -->
+<!--                 </td> -->
+<!--                 <th width="39%">&nbsp;</th> -->
                
-              </tr>
-            </tbody>
-          </table>
+<!--               </tr> -->
+<!--             </tbody> -->
+<!--           </table> -->
           <hr>
 <form name="frm">
     <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
               <thead>
               
                 <tr>
@@ -110,8 +92,9 @@
                   <th>제목</th>
                   <th>조회수</th>
                   <th>게시일</th>
-                  <th>공지사항 수정</th>
+                  <th style="text-align:center">공지사항 수정</th>
                 </tr>
+                <tbody class="table-striped table-hover">
 	<c:forEach var='vo' items='${list}'>
 <tr>
 				<th>${vo.b_no }</th>
@@ -121,7 +104,7 @@
 				<td style="text-align:center"><input type="button" value="수정" onclick="location.href='adminBoardUpdate.go?b_no=${vo.b_no}';"  class="btn btn-warning btn-sm" /></td>
 </tr>
 	</c:forEach>
-				
+			</tbody>	
 
 	
               </thead>
