@@ -61,7 +61,7 @@
 							<hr class='payhr' align="left"/>
 							<table class='pagetable'>
 								<tr class='pagetr'>
-									<th class='pagetd'>결제일자</th>
+									<th class='pagetd'>상품명</th>
 									<th class='pagetd'>구매일자</th>
 									<th class='pagetd'>금액</th>
 								</tr>

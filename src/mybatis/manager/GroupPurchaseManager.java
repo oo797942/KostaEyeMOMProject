@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import member.vo.BoardVO;
 import member.vo.GroupPurchaseVO;
+import member.vo.PaymentVO;
 
 public class GroupPurchaseManager {
 
@@ -41,5 +41,13 @@ public class GroupPurchaseManager {
 
 	      session.commit();
 	      return gpVO;
+	}
+	
+	public static int orderShop(PaymentVO vo){
+		SqlSession session = CommonManager.db().openSession();
+	      int result = session.insert("purchase.orderShop",vo);
+
+	      session.commit();
+	      return result;
 	}
 }

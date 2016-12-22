@@ -4,6 +4,7 @@ import java.util.List;
 
 import member.vo.BoardVO;
 import member.vo.GroupPurchaseVO;
+import member.vo.PaymentVO;
 import mybatis.manager.BoardManager;
 import mybatis.manager.GroupPurchaseManager;
 
@@ -56,6 +57,18 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 			System.out.println("gpDAO페징 : " + ex.getMessage());
 		}
 		return gpVO;
+	}
+
+	@Override
+	public int orderShop(PaymentVO vo) {
+		int result=0;
+		try {
+
+			result = GroupPurchaseManager.orderShop(vo);
+		} catch (Exception ex) {
+			System.out.println("gpDAO페징 : " + ex.getMessage());
+		}
+		return result;
 	}
 	
 	

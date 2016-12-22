@@ -20,12 +20,12 @@ public class GroupPurchaseVO extends PageVO{
 	private String we_end;
 	private String we_deposity;
 	private String u_id;
-	private int we_mas;
-	public int getWe_mas() {
-		return we_mas;
+	private int we_max;
+	public int getWe_max() {
+		return we_max;
 	}
-	public void setWe_mas(int we_mas) {
-		this.we_mas = we_mas;
+	public void setWe_max(int we_max) {
+		this.we_max = we_max;
 	}
 	public int getB_no() {
 		return b_no;
