@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
@@ -53,27 +55,76 @@
         
 <!--         메인 -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
+        
           <h1 class="page-header">공동구매 관리</h1>
-
+<a href="adminPurchaseInsert.go">부루</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>게시글 번호</th>
+                  <th>글 번호</th>
                   <th>제목</th>
-                  <th>작정자</th>
-                  <th>추천수</th>
-                  <th>신고수</th>
-                  <th>조회수</th>
-                  <th>작성일</th>
-                  <th>게시판분류</th>
+                  <th>가격</th>
+                  <th>남은 수량</th>
+                  <th>구매 시작일</th>
+                  <th>구매 종료일</th>
+                  <th>입금 마감일</th>
                 </tr>
-
+                <tbody class="table-striped table-hover">
+<c:forEach var="vo" items="${list}">
+<tr>
+                  <th>${vo.b_no }</th>
+                  <th>${vo.we_title }</th>
+                  <th>${vo.we_price }</th>
+                  <th>${vo.we_maxsold }</th>
+                  <th>${vo.we_start }</th>
+                  <th>${vo.we_end }</th>
+                  <th>${vo.we_deposit }</th>
+                </tr>
+</c:forEach>
+</tbody>
               </thead>
               <tbody>
               </tbody>
             </table>
           </div>	
+                    			   	<!-- 페이징 -->
+			<div class='form-inline'>
+					<ul class="pagination modal-1">
+
+    <c:if test="${pageVO.pageNo != 0}">
+        <c:if test="${pageVO.pageNo > pageVO.pageBlock}">
+            <li><a href="javascript:fn_movePage(${pageVO.firstPageNo})" style="text-decoration: none;">[첫 페이지]</a></li>
+       </c:if>
+       <c:if test="${pageVO.pageNo != 1}">
+           <li><a href="javascript:fn_movePage(${pageVO.prevPageNo})" style="text-decoration: none;">[이전]</a></li>
+        </c:if>
+        <span>
+            <c:forEach var="i" begin="${pageVO.startPageNo}" end="${pageVO.endPageNo}" step="1">
+                <c:choose>
+                    <c:when test="${i eq pageVO.pageNo}">
+                       <li > <a href="javascript:fn_movePage(${i})" style="text-decoration: none;"  class="active">
+                            <font style="font-weight: bold;">${i}</font>
+                        </a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:fn_movePage(${i})" style="text-decoration: none;">${i}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </span>
+        <c:if test="${pageVO.pageNo != pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.nextPageNo})" style="text-decoration: none;">[다음]</a></li>
+        </c:if>
+        <c:if test="${pageVO.endPageNo < pageVO.finalPageNo }">
+            <li><a href="javascript:fn_movePage(${pageVO.finalPageNo})" style="text-decoration: none;">[마지막 페이지]</a></li>
+        </c:if>
+    </c:if>
+    				</ul>
+    </div>
+</form>
         </div>
       
 </body>

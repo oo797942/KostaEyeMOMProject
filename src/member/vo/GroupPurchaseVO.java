@@ -18,7 +18,7 @@ public class GroupPurchaseVO extends PageVO{
 	private int we_maxsold;
 	private String we_start;
 	private String we_end;
-	private String we_deposity;
+	private String we_deposit;
 	private String u_id;
 	private int we_max;
 	public int getWe_max() {
@@ -117,17 +117,18 @@ public class GroupPurchaseVO extends PageVO{
 	public void setWe_end(String we_end) {
 		this.we_end = we_end;
 	}
-	public String getWe_deposity() {
-		return we_deposity;
-	}
-	public void setWe_deposity(String we_deposity) {
-		this.we_deposity = we_deposity;
-	}
+
 	public String getU_id() {
 		return u_id;
 	}
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+	public String getWe_deposit() {
+		return we_deposit;
+	}
+	public void setWe_deposit(String we_deposit) {
+		this.we_deposit = we_deposit;
 	}
 	
 	

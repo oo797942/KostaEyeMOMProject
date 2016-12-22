@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.BoardDao;
 import member.dao.BoardDaoImpl;
+import member.dao.GroupPurchaseDaoImpl;
 import member.dao.LoginDao;
 import member.dao.LoginDaoImpl;
 import member.vo.BoardVO;
+import member.vo.GroupPurchaseVO;
 import member.vo.MemberVO;
 import member.vo.ReplyVO;
 
@@ -23,7 +25,9 @@ public class AdminController {
 	 
 	@Autowired
 	private BoardDaoImpl boardDao; 
-	 
+	@Autowired
+	GroupPurchaseDaoImpl GPDao;
+
  
 	@RequestMapping("/adminBoard.go")
 	public String adminBoard(HttpSession session,Model m, BoardVO boardVO){
@@ -77,8 +81,24 @@ public class AdminController {
 //	}
 	
 	@RequestMapping("/adminPurchase.go")
-	public String adminPurchase(HttpSession session){
+	public String adminPurchase(HttpSession session,Model m, GroupPurchaseVO gpVO){
+	    //--페이징 처리
+	    int totalCount = GPDao.shoppingListCount(); //게시물 총갯수를 구한다
+	    gpVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    m.addAttribute("pageVO", gpVO);
+
+	    //--페이징 처리
+	    
+	    List<GroupPurchaseVO>  gpList = GPDao.allPagingShopping(gpVO);
+
+		m.addAttribute("list", gpList); //가져온 DB를 모델에 저장
+		
+
 		return "adminPurchase";
+	}
+	@RequestMapping("/adminPurchaseInsert.go")
+	public String adminPurchaseInsert(HttpSession session){
+		return "adminPurchaseInsert";
 	}
 	
 //	@RequestMapping("/adminVideo.go")
