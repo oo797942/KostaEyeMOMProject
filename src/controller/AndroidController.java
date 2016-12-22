@@ -101,10 +101,10 @@ public class AndroidController {
 	// 스터디 리스트(공부해요)
 	@RequestMapping(value = "/android_study_list.go", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, List> androidStudyList(HttpServletRequest request) {
+	public Map<String, List> androidStudyList(HttpServletRequest request,StudyVO vo) {
 
 		// 비디오 리스트(춤을춰요)를 뽑아온다.
-		List list = videoDao.studyBoard();
+		List list = videoDao.studyBoard(vo);
 		Map<String, List> result = new HashMap<String, List>();
 		System.out.println("list값 :: " + list);
 		// 뽑아온 값을 Map에 넣고 리턴
