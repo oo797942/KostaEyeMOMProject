@@ -9,68 +9,38 @@
 <script src="resources/js/main.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script type="text/javascript">
-// $(function(){
+$(function(){
 
-<%-- 	if("<%=sessionValue%>"=="null"){ --%>
-// 		$("#shoplogin").show();
-// 		$("#shoplogout").hide();
-// 	}else{
-// 		$("#shoplogin").hide();
-// 		$("#shoplogout").show();
-// 	}
+
 	
-// 	$("#shoplogin").click(function(){
-<%-- 		window.open("/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );	 --%>
+	$("#same").click(function(){
+		$("#OrderRName").val($("#OrderSName").val());
+		$("#OrderRTel").val($("#tel").val());
+		$("#OrderRAddr").val($("#addr").val());
 		
-// 	}).css('cursor','pointer');
+	});
 	
 	
-// 	$("#shoplogout").click(function() {
-
-<%-- 		window.location = "/logout.ho?cmd=logout-page"; --%>
-
-// 		$("#shoplogout").hide();
-// 		$("#shoplogin").show();
-	
-// 	}).css('cursor','pointer');
-	
-// 	$("#NoLoginMyPage").click(function(){
-<%-- 		window.open("/shoplogin.ho?cmd=shoplogin-page", '_blank', 'width=290, height=380, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no' );			 --%>
-// 	});
-	
-// 	$("#same").click(function(){
-<%-- 		$("#OrderRName").val("<%=hm.getMemName()%>"); --%>
-<%-- 		$("#OrderRTel").val("<%=hm.getMemTel()%>"); --%>
-<%-- 		$("#OrderRAddr").val("<%=hm.getMemAddr()%>"); --%>
+	$("#oderbtn").click(function(){
 		
-// 	});
+		alert("a");
+		if($(':radio[name="pr_pay"]:checked').length < 1){
+			alert('결재방법을 선택해주세요');						
+			
+			event.preventDefault();
+		}else{
+			$("#goSubmit").submit();
+		}
+	});
 	
-	
-// 	$(".btn_submit").click(function(){
-// 		if(!$(".OrderSettleCase").is(":checked")){
-// 			alert("결제방식을 선택해주세요.");	
-// 		}else{
-// 			$("#goSubmit").submit();
-// 		}
-// 	});
-	
-// });
+});
 </script>
 </head>
 <body>
 <div class='body'>	
 <section class='purSection'>
-	<form action="/final.ho" method="get" id="goSubmit">
-<!-- 	<input type="hidden" name="cmd" value="pay-view"> -->
-<!-- 	<input type="hidden" name="OrderId" value=""> -->
-<!-- 	<input type="hidden" name="OrderSangpumNo" value=""> -->
-<!-- 	<input type="hidden" name="OrderSangpumName" value=""> -->
-<!-- 	<input type="hidden" name="OrderSize" value=""> -->
-<!-- 	<input type="hidden" name="OrderSoo" value=""> -->
-<!-- 	<input type="hidden" name="OrderPrice" value=""> -->
-<!-- 	<input type="hidden" name="OrderRentPrice" value=""> -->
-<!-- 	<input type="hidden" name="OrderImg" value=""> -->
-<!-- 	<input type="hidden" name="OrderTotalPrice" value=""> -->
+	<form action="order.do" method="POST" id="goSubmit">
+
 	<div class="alignleft">
 		<div class="panel">
 			<div>
@@ -85,14 +55,18 @@
 				<table class="table table-bordered">
 					<tbody>
 						<tr>
-							<td class="img ptd center-group" rowspan="2"><img src="" width="58"
-								height="58" alt=""></td>
-							<td class="nme ptd center-group" rowspan="2"></td>
-							<td class="qty ptd center-group" rowspan="2">개</td>
-							<td class="price ptd center-group" rowspan="2">원</td>
-							<td class="td_pnumbig ptd center-group" rowspan="2">배송비  1원</td>
+							<td class="img ptd center-group" rowspan="2">
+								<input type="hidden" name="b_no" value="${vo.b_no }">
+								<input type="hidden" name="pr_price" value="${vo.we_price*vo.we_count}">
+								<input type="hidden" name="pr_count" value="${vo.we_count}">
+								<input type="hidden" name="pr_title" value="${vo.we_title}">
+								<img src="resources/img/${vo.we_photo1name}" width="58" height="58" alt=""></td>
+							<td class="nme ptd center-group" rowspan="2" >${vo.we_title}</td>
+							<td class="qty ptd center-group" rowspan="2" >${vo.we_count}개</td>
+							<td class="price ptd center-group" rowspan="2">${vo.we_price}원</td>
+							<td class="td_pnumbig ptd center-group" rowspan="2">배송비  무료</td>
 							<td class="amt ptd center-group" rowspan="2"><span class="total_price">
-									총 가격:1원</span></td>
+									총 가격:${vo.we_price*vo.we_count}원</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -119,7 +93,7 @@
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderSName" id="OrderSName" class="purform-control"
-									value="" readonly="readonly" required>
+									value="${mvo.u_name }" readonly="readonly" required>
 							</div>
 						</div><br /><br />
 
@@ -131,7 +105,7 @@
 							</label>
 							<div class="col-md-3">
 								<input type="email" name="OrderSEmail" id="eamil" class="purform-control"
-									value="" required="required">
+									value="${mvo.u_email}" required="required">
 							</div>
 						</div><br/><br/> 
 
@@ -142,7 +116,7 @@
 							</label>
 							<div class="col-md-3">
 								<input type="text" name="OrderSTel" id="tel" class="purform-control"
-									value="" required="required">
+									value="${mvo.u_tel }" required="required">
 							</div>
 						</div><br /><br />               
 
@@ -153,7 +127,7 @@
 							</label>
 							<div class="col-md-5">
 								<input type="text" name="OrderSAddr" id="addr" class="purform-control" placeholder="주소를 입력하세요"
-									value="" required="required"><br/>
+									value="${mvo.u_addr }" required="required"><br/>
 <!-- 								<input type="text" name="addrdetail" id="addr" class="purform-control" placeholder="상세주소를 입력하세요" -->
 <!-- 									value="" >  -->
 							</div>
@@ -176,7 +150,7 @@
 				<tr>
 					<td class='center-group'>
 			<div id="display_same_button" class="btn-group1">
-		   		<input type="button" value="위와 동일" class="btn_same purBtn" onclick=""/>
+		   		<input type="button" value="위와 동일" class="btn_same purBtn" id="same" onclick=""/>
 			</div>
 					<br/><br/>
 						<!-- 수령자명 -->
@@ -185,7 +159,7 @@
 								 aria-hidden="true"><i class='fa fa-user'></i></span>수령자명
 							</label>
 							<div class="col-md-3">
-								<input type="text" name="OrderRName" id="OrderRName" class="purform-control"
+								<input type="text" name="pr_name" id="OrderRName" class="purform-control"
 									value="" required="required">
 							</div>
 						</div><br/><br/> 
@@ -196,7 +170,7 @@
 								 aria-hidden="true"><i class='fa fa-phone'></i></span> 전화
 							</label>
 							<div class="col-md-3">
-								<input type="text" name="OrderRTel" id="OrderRTel" class="purform-control"
+								<input type="text" name="pr_tel" id="OrderRTel" class="purform-control"
 									value="">
 							</div>
 						</div><br /><br />
@@ -207,7 +181,7 @@
 								ria-hidden="true"><i class='fa fa-home'></i></span> 주소
 							</label>
 							<div class="col-md-5">
-								<input type="text" name="OrderRAddr" id="OrderRAddr" class="purform-control" placeholder="주소를 입력하세요"
+								<input type="text" name="pr_addr" id="OrderRAddr" class="purform-control" placeholder="주소를 입력하세요"
 									value=""><br/>
 							</div>
 						</div><br /><br />
@@ -218,7 +192,7 @@
 								 aria-hidden="true"><i class='fa fa-sticky-note'></i></span>  배달시 요구사항
 							</label>
 							<div class="col-md-5">
-								<input type="text" name="OrderRDemand" id="OrderRDemand" class="purform-control" placeholder="입력하지마 ㅆ.."
+								<input type="text" name="pr_content" id="OrderRDemand" class="purform-control" placeholder=""
 									value="">
 							</div>
 						</div><br/><br/>
@@ -239,10 +213,10 @@
 					</div>
 				<div class="purBody">
 					<div class="tabl minimal single-row" >
-						<div class="radio"><input type="radio" id="od_settle_card" class='purRadio' name="OrderSettleCase" class ="OrderSettleCase" value="신용카드"> <label for="od_settle_card">신용카드</label></div>
-						<div class="radio"><input type="radio" id="od_settle_bank" class='purRadio' name="OrderSettleCase"  class ="OrderSettleCase"  value="무통장"> <label for="od_settle_bank">무통장입금</label></div>
-						<div class="radio"><input type="radio" id="od_settle_iche" class='purRadio' name="OrderSettleCase"   class ="OrderSettleCase"  value="계좌이체"> <label for="od_settle_iche">에스크로 실시간 계좌이체</label></div>
-						<div class="radio"><input type="radio" id="od_settle_coin" name="OrderSettleCase"   class ="OrderSettleCase purRadio"  value="계좌이체"> <label for="od_settle_coin">코인 결제</label></div>
+						<div class="radio"><input type="radio" id="od_settle_card" class='purRadio' name="pr_pay" class ="OrderSettleCase" value="신용카드"> <label for="od_settle_card">신용카드</label></div>
+						<div class="radio"><input type="radio" id="od_settle_bank" class='purRadio' name="pr_pay"  class ="OrderSettleCase"  value="무통장"> <label for="od_settle_bank">무통장입금</label></div>
+						<div class="radio"><input type="radio" id="od_settle_iche" class='purRadio' name="pr_pay"   class ="OrderSettleCase"  value="계좌이체"> <label for="od_settle_iche">에스크로 실시간 계좌이체</label></div>
+						<div class="radio"><input type="radio" id="od_settle_coin" name="pr_pay"   class ="OrderSettleCase"  value="계좌이체"> <label for="od_settle_coin">코인 결제</label></div>
 					</div>		
          	   	</div>
          	 <div class="purBody purBottom center-group">
@@ -263,7 +237,7 @@
 	<div>	
 		<div class='center-group'>
 			<div id="display_pay_button" class="btn-group">
-		   		<input type="button" value="결제하기" class="btn_submit purBtn" onclick=""/>
+		   		<input type="button" id="oderbtn" value="결제하기" class="btn_submit purBtn" onclick=""/>
 			</div>
 			
 			<div id="display_cancle_button" class="btn-group">

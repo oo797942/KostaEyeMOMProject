@@ -5,6 +5,7 @@
 <!-- saved from url=(0058)http://localhost:8080/TourProject/list.do?tour=admin-quest -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>관리자 페이지</title>
 <script src="./resources/css/jquery-1.8.2.min.js.다운로드"></script>
+<link rel="stylesheet" href="resources/css/style.css">
 	</head><body>&lt;<script type="text/javascript">
 	$(function(){
 		 

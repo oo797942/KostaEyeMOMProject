@@ -20,15 +20,52 @@ where rownum <5
 </select>
 
 <select id="allBoardp"  resultType="purchaseVO">
-	SELECT b_no, we_title, we_price , we_maxsold, we_sold, TO_CHAR(we_end, 'MM/DD') as we_end , we_photo1name
+	SELECT b_no, we_title, we_price , we_max, we_sold, TO_CHAR(we_end, 'MM/DD') as we_end , we_photo1name, TO_CHAR(we_start, 'MM/DD') as we_start, we_maxsold	, we_deposit
 	 FROM group_purchase WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
 	 (SELECT b_no FROM group_purchase nnb ORDER BY b_no DESC))
 	 WHERE rnum BETWEEN #{startRowNo} AND  #{endRowNo})ORDER BY b_no DESC
 </select>
 
 <select id="getItem" parameterType="purchaseVO" resultType="purchaseVO" >
-SELECT b_no, we_title, we_content, we_price , we_maxsold, we_sold, TO_CHAR(we_start, 'YYYY"년" MM"월" DD"일"') we_start, TO_CHAR(we_end, 'YYYY"년" MM"월" DD"일"') as we_end , we_photo1name, we_photo2name, we_photo3name
+SELECT b_no, we_title, we_content, we_price , we_max, we_sold, TO_CHAR(we_start, 'YYYY"년" MM"월" DD"일"') we_start, TO_CHAR(we_end, 'YYYY"년" MM"월" DD"일"') as we_end , we_photo1name, we_photo2name, we_photo3name
 FROM  group_purchase WHERE b_no=#{b_no}
 </select>
 
+<!-- 주문 -->
+<insert id="orderShop"  parameterType="paymentVO">
+Insert into payment_info 
+	(pr_no, pr_date, pr_content, pr_price, pr_id, b_no, pr_count, pr_addr, pr_tel, pr_name, pr_pay, pr_title)
+	VALUES(mom_board_no.nextval,  sysdate, #{pr_content}, #{pr_price}, #{pr_id}, #{b_no}, #{pr_count}, #{pr_addr}, #{pr_tel}, #{pr_name}, #{pr_pay}, #{pr_title)  
+</insert>
+
+<insert id="insertPurchase" parameterType="paymentVO">
+Insert into group_purchase
+	(b_no, we_title, we_content, we_price, we_max, we_start, we_end, we_deposit
+	<if test="we_photo1name !=null">
+		, we_photo1name
+	</if>
+	<if test="we_photo2name !=null">
+		, we_photo2name
+	</if>
+	<if test="we_photo3name !=null">
+		, we_photo3name
+	</if>
+	)
+	VALUES(mom_board_no.nextval, #{we_title}, #{we_content}, #{we_price} , #{we_max}, #{we_start}, #{we_end}, #{we_deposit}
+  	<if test="we_photo1name !=null">
+		, #{we_photo1name}
+	</if>
+	<if test="we_photo2name !=null">
+		, #{we_photo2name}
+	</if>
+	<if test="we_photo3name !=null">
+		, #{we_photo3name}
+	</if>
+	)</insert>
+	<update id="updatePurchase" parameterType="purchaseVO">
+	UPDATE group_purchase SET we_end = sysdate, we_deposit = sysdate WHERE b_no = #{b_no}
+	</update>
+	<delete id="deletePurchase" parameterType="purchaseVO">
+	DELETE FROM group_purchase WHERE b_no = #{b_no}
+	</delete>
 </mapper>

@@ -8,7 +8,7 @@
 <link href="/EyeMOM/resources/css/sick/c3.css" type="text/css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-.side{
+.side{ 
 	font-size: 15px;
 	font-weight: bold;
 	color: #ffa07a;
@@ -75,12 +75,9 @@
   				</div>
   				<div class="elements">
  					<a class="side" href="sic.do" > － 식욕부진</a><br/> 					
- 					<a class="side" href="#" > － 야뇨증</a><br/> 					
- 					<a class="side" href="#" > － 야제증</a><br/> 					
- 					<a class="side" href="#" > － 허약아/허약체질</a><br/> 					
- 					<a class="side" href="#" > － 설사/변비</a><br/> 					
- 					<a class="side" href="#" > － 틱장애</a><br/> 					
- 					<a class="side" href="#" > － ADHD</a><br/> 					
+ 					<a class="side" href="yano.do" > － 야뇨증</a><br/> 					
+ 					<a class="side" href="yaje.do" > － 야제증</a><br/> 					
+ 					<a class="side" href="hu.do" > － 설사/변비</a><br/> 					
   				</div>
   				</div>
 		</td>

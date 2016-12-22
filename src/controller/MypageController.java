@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import member.dao.MypageDaoImpl;
 import member.vo.BoardVO;
 import member.vo.MemberVO;
+import member.vo.PaymentVO;
 import member.vo.QnAVO;
 import member.vo.ReplyVO;
 
@@ -28,6 +29,10 @@ public class MypageController {
 		MemberVO memberVO= (MemberVO)session.getAttribute("user");
 		MemberVO vo=mypageDao.userInfo(memberVO);
 		m.addAttribute("user", vo);
+		
+		//내가 주문한 최근 4개 가져와
+		List <PaymentVO>plist = mypageDao.getMyPayment(memberVO);
+		m.addAttribute("plist", plist);
 		
 		//내가쓴글 최근 4개 가져오기
 		List <BoardVO>list= mypageDao.getMyBoard(memberVO);

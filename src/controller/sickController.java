@@ -93,6 +93,21 @@ public class sickController {
 		
 		return "sick/sic";
 	}
+	@RequestMapping("yano.do")
+	public String sickYano(){
+		
+		return "sick/yano";
+	}
+	@RequestMapping("yaje.do")
+	public String sickYaje(){
+		
+		return "sick/yaje";
+	}
+	@RequestMapping("hu.do")
+	public String sickHu(){
+		
+		return "sick/hu";
+	}
 	
 	
 	

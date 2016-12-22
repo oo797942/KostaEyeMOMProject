@@ -92,5 +92,17 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
+
+	@Override
+	public List getMyPayment(MemberVO vo) {
+		List list=null;
+		try {
+			list=MypageManager.getMyPayment(vo);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }

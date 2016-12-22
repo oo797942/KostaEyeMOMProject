@@ -61,30 +61,18 @@
 							<hr class='payhr' align="left"/>
 							<table class='pagetable'>
 								<tr class='pagetr'>
-									<th class='pagetd'>결제일자</th>
+									<th class='pagetd'>상품명</th>
 									<th class='pagetd'>구매일자</th>
 									<th class='pagetd'>금액</th>
 								</tr>
+								<c:forEach  var='vo' items='${plist}'>
 								<tr>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>99,000</td>
+									<td class='pagetd pagealign'>${vo.pr_title}</td>
+									<td class='pagetd pagealign'>${vo.pr_date}</td>
+									<td class='pagetd pagealign'>${vo.pr_price} 원</td>
 								</tr>
-								<tr>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>99,000</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>99,000</td>
-								</tr>
-								<tr>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>2016-12-10</td>
-									<td class='pagetd pagealign'>99,000</td>
-								</tr>
+								</c:forEach>
+								
 							</table>
 							<p class='infomorep'> 
 							<a href="myshopping.do" class='infomore'>+ 전체보기</a>

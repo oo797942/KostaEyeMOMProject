@@ -68,5 +68,11 @@ public class MypageManager {
 		return list;
 	}
 	
-	
+	public static List getMyPayment(MemberVO memberVO) throws SQLException{
+		List list =null;
+		SqlSession session = CommonManager.db().openSession();
+		list = session.selectList("mypage.getMyPayment", memberVO);
+		session.close();
+		return list;
+	}
 }

@@ -1,5 +1,11 @@
 package member.vo;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class GroupPurchaseVO extends PageVO{
@@ -18,14 +24,14 @@ public class GroupPurchaseVO extends PageVO{
 	private int we_maxsold;
 	private String we_start;
 	private String we_end;
-	private String we_deposity;
+	private String we_deposit;
 	private String u_id;
-	private int we_mas;
-	public int getWe_mas() {
-		return we_mas;
+	private int we_max;
+	public int getWe_max() {
+		return we_max;
 	}
-	public void setWe_mas(int we_mas) {
-		this.we_mas = we_mas;
+	public void setWe_max(int we_max) {
+		this.we_max = we_max;
 	}
 	public int getB_no() {
 		return b_no;
@@ -50,18 +56,91 @@ public class GroupPurchaseVO extends PageVO{
 	}
 	public void setWe_photo1(MultipartFile we_photo1) {
 		this.we_photo1 = we_photo1;
+
+
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+		Date currentTime = new Date();
+		String dTime = formatter.format(currentTime);
+
+		if (!we_photo1.isEmpty()) {
+			this.we_photo1name = dTime + we_photo1.getOriginalFilename();
+			// this.b_fsize = g_photo.getSize();
+
+			// 업로드된 파일이 저장될 경로
+			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo1name);
+
+			try {
+				we_photo1.transferTo(f);
+
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+		}
+	
 	}
 	public MultipartFile getWe_photo2() {
 		return we_photo2;
 	}
 	public void setWe_photo2(MultipartFile we_photo2) {
 		this.we_photo2 = we_photo2;
+		
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+				Date currentTime = new Date();
+				String dTime = formatter.format(currentTime);
+
+				if (!we_photo2.isEmpty()) {
+					this.we_photo2name = dTime + we_photo2.getOriginalFilename();
+					// this.b_fsize = g_photo.getSize();
+
+					// 업로드된 파일이 저장될 경로
+					File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo2name);
+
+					try {
+						we_photo2.transferTo(f);
+
+					} catch (IllegalStateException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+
+						e.printStackTrace();
+					}
+				}
+
 	}
 	public MultipartFile getWe_photo3() {
 		return we_photo3;
 	}
 	public void setWe_photo3(MultipartFile we_photo3) {
 		this.we_photo3 = we_photo3;
+	
+		// 파일이름 중복 방지를 위해 현재시간을 구하여 저장
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss", Locale.KOREA);
+		Date currentTime = new Date();
+		String dTime = formatter.format(currentTime);
+
+		if (!we_photo3.isEmpty()) {
+			this.we_photo3name = dTime + we_photo3.getOriginalFilename();
+			// this.b_fsize = g_photo.getSize();
+
+			// 업로드된 파일이 저장될 경로
+			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo3name);
+
+			try {
+				we_photo3.transferTo(f);
+
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+		}
+
 	}
 	public String getWe_photo1name() {
 		return we_photo1name;
@@ -117,17 +196,18 @@ public class GroupPurchaseVO extends PageVO{
 	public void setWe_end(String we_end) {
 		this.we_end = we_end;
 	}
-	public String getWe_deposity() {
-		return we_deposity;
-	}
-	public void setWe_deposity(String we_deposity) {
-		this.we_deposity = we_deposity;
-	}
+
 	public String getU_id() {
 		return u_id;
 	}
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+	public String getWe_deposit() {
+		return we_deposit;
+	}
+	public void setWe_deposit(String we_deposit) {
+		this.we_deposit = we_deposit;
 	}
 	
 	

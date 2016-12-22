@@ -13,5 +13,5 @@ public interface MypageDao {
 	List getReplyList(MemberVO vo);
 	List getMyQna(MemberVO vo);
 	List getQnaList(MemberVO vo);
-	
+	List getMyPayment(MemberVO vo);
 }

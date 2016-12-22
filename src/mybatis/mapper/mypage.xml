@@ -60,4 +60,14 @@ select b_no, in_title, in_nick, in_count, TO_CHAR(in_date, 'YYYY.MM.DD') as in_d
 from qna_board where u_id=#{u_id} ORDER BY b_no desc
 </select>
 
+<!-- my payment 4 -->
+<select id="getMyPayment" parameterType="memberVO" resultType="paymentVO">
+<![CDATA[
+SELECT rownum, pr_no, pr_title, pr_date, pr_price
+FROM 
+(SELECT n.pr_no pr_no, DECODE(SIGN(LENGTH(pr_title)-5),1,SUBSTR(pr_title,1,5)||'...',pr_title)  as pr_title, to_char(n.pr_date,'YYYY-MM-DD') as pr_date , pr_price
+		FROM payment_info n WHERE n.pr_id =#{u_id} ORDER BY n.pr_date DESC) 
+WHERE rownum <=4
+]]>
+</select>
 </mapper>
