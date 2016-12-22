@@ -3,9 +3,11 @@ package member.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import member.vo.BoardVO;
 import member.vo.GameVO;
 import member.vo.StudyVO;
 import member.vo.VideoVO;
+import mybatis.manager.BoardManager;
 import mybatis.manager.GameManager;
 import mybatis.manager.VideoManager;
 
@@ -59,11 +61,23 @@ public class VideoDaoImpl implements VideoDao {
 		}
 	}
 
+	
+	public int studyListCount(StudyVO vo) {
+
+		int totalCount = 0;
+		try {
+			totalCount = VideoManager.studyTotalCount(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+	
 	@Override
-	public List<StudyVO> studyBoard() {
+	public List<StudyVO> studyBoard(StudyVO vo) {
 		List<StudyVO> list = null;
 		try {
-			list = VideoManager.studyBoard();
+			list = VideoManager.studyBoard(vo);
 		} catch (Exception ex) {
 			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
 		} finally {
@@ -207,5 +221,7 @@ public class VideoDaoImpl implements VideoDao {
 		}
 		return list;
 	}
+
+
 
 }

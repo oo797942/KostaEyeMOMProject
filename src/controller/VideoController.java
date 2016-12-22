@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.AdminGameDaoImpl;
 import member.dao.VideoDaoImpl;
+import member.vo.FaqVO;
 import member.vo.GameVO;
 import member.vo.MemberVO;
 import member.vo.StudyVO;
@@ -25,13 +26,13 @@ public class VideoController {
 	  
 //	영상관리 페이지 값 가져오기
 	@RequestMapping("/adminVideo.go")
-	public String admonVideo(HttpSession session, Model m){
+	public String admonVideo(HttpSession session, Model m, StudyVO vo){
 		List<VideoVO> vlist = null;
 		vlist = videoDao.videoBoard();
 		m.addAttribute("vlist", vlist); //가져온 DB를 모델에 저장
 		
 		List<StudyVO> slist = null;
-		slist = videoDao.studyBoard();
+		slist = videoDao.studyBoard(vo);
 		m.addAttribute("slist", slist); //가져온 DB를 모델에 저장
 		
 		return "adminVideo";
@@ -197,11 +198,25 @@ public class VideoController {
 	
 	
 	@RequestMapping("/studyBoard.do")
-	public String StudyBoard(Model m){
-		List<StudyVO> list = null;
-		list = videoDao.studyBoard();
-		System.out.println(list);
-		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+	public String StudyBoard(Model m, HttpSession session, StudyVO studyVO){
+//		List<StudyVO> list = null;
+//		list = videoDao.studyBoard();
+//		System.out.println(list);
+//		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+		
+		List <StudyVO> list=null;
+		  //--페이징 처리
+	    int totalCount = videoDao.studyListCount(studyVO); //게시물 총갯수를 구한다
+	    studyVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    studyVO.setPageSize(12);
+	    m.addAttribute("pageVO", studyVO);
+
+	    //--페이징 처리
+	    
+	    List<StudyVO>  studyList = videoDao.studyBoard(studyVO);
+		
+		m.addAttribute("list", studyList); //가져온 DB를 모델에 저장
+		
 		return "video/studyBoard";
 	}
 	

@@ -39,6 +39,16 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
+ <select id="studyTotalCount" parameterType="studyVO" resultType="int">
+    SELECT COUNT(*)  totalCount FROM kid_study 
+    </select>
+<select id="studyAllp" resultType="studyVO"  parameterType="studyVO">
+	SELECT v_no, v_title, v_content, v_photo, v_video, v_count, v_good
+	 FROM kid_study WHERE v_no in(SELECT v_no FROM (SELECT rownum as rnum, v_no FROM
+	 (SELECT v_no FROM kid_study nnb 
+	 ORDER BY v_no DESC))
+	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY v_no DESC
+</select>
 
 <!-- 공부 해요 디비값 가져오기 -->
  <select id="studyAll" resultType="studyVO"  parameterType="studyVO" > 
