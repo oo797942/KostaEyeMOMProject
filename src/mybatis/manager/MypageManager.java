@@ -52,6 +52,8 @@ public class MypageManager {
 		return list;
 	}
 	
+	
+	
 	public static List getMyQna(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -104,6 +106,14 @@ public class MypageManager {
 	public static int totalCountBoard(MemberVO memberVO) throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("mypage.boardTotalCount", memberVO);
+
+	      session.commit();
+	      return totalCount;
+	}
+	
+	public static int totalCountReply(MemberVO memberVO) throws SQLException{
+		SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("mypage.replyTotalCount", memberVO);
 
 	      session.commit();
 	      return totalCount;

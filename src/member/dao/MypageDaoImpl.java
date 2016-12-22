@@ -150,5 +150,16 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return totalCount;
 	}
+
+	@Override
+	public int myReplyListCount(MemberVO vo) {
+		int totalCount = 0;
+		try {
+			totalCount = MypageManager.totalCountReply(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;
+	}
 	
 }

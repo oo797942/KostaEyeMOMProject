@@ -101,4 +101,8 @@ SELECT COUNT(*)  totalCount FROM qna_board WHERE u_id = #{u_id}
 <select id="boardTotalCount" parameterType="memberVO" resultType="int">
 SELECT COUNT(*)  totalCount FROM normal_board WHERE u_id = #{u_id}
 </select>
+
+<select id="replyTotalCount" parameterType="memberVO" resultType="int">
+SELECT COUNT(*)  totalCount FROM reply WHERE u_id = #{u_id}
+</select>
 </mapper>

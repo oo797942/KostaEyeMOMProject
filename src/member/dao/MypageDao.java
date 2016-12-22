@@ -18,4 +18,5 @@ public interface MypageDao {
 	int myshoppingListCount(MemberVO vo);
 	int myQnaListCount(MemberVO vo);
 	int myBoardListCount(MemberVO vo);
+	int myReplyListCount(MemberVO vo);
 }
