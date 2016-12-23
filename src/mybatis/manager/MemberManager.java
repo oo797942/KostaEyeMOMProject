@@ -48,7 +48,7 @@ public class MemberManager {
 		result = session.update("user.memberUpdate", vo);
 		session.commit();
 		return result;
-	}
+	} 
 	
 //	회원 활동정지실행
 	public static int memberExile(MemberVO vo) throws SQLException {
