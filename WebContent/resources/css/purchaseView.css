@@ -77,7 +77,6 @@
 	font-weight: bold;
 	width: 100px;
 	text-align: right;
-	vertical-align: top;
 	line-height: 23px;
 	padding: 20px 20px 0 0;
 	font-family: 'FFGoodWebPro';
@@ -98,7 +97,6 @@
 	font-weight: bold;
 	color: #cc383c;
 	font-size: 14px;
-	vertical-align: top;
 	padding: 20px 20px 0 0;
 }
 
@@ -1288,7 +1286,6 @@ input.btn_cancle {
 .table>tbody>tr>.ptd, .table>tfoot>tr>.ptd, .table>thead>tr>.ptd {
 	padding: 8px;
 	line-height: 1.42857143;
-	vertical-align: top;
 	border-top: 1px solid #ddd;
 }
 
