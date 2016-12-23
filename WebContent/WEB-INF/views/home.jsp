@@ -48,8 +48,7 @@
 			}
 		});
 	}
-	$(
-			function() {
+	$(function(){
 
 				// Example 1: From an element in DOM
 				$('.open-popup-link').magnificPopup({
@@ -68,7 +67,14 @@
 									},
 									closeBtnInside : true
 								});
-			})
+				$('.opop').mouseover(function(){
+					$('.opop').removeClass('opa');
+					$(this).addClass('opa');
+				});
+			});
+			
+			
+			
 </script>
 <div class="body">
 
@@ -225,15 +231,15 @@
 			<table  cellspacing="0" id="slideMenu">
 				<tr>
 					<td id="gamebannerbtn" style="height: 33%;">
-					<div class='opa'><img src="resources/img/home/gamebtn.png" class='gamebtn'></div></td>
+					<div class='opop opa'><img src="resources/img/home/gamebtn.png" class='gamebtn'></div></td>
 				</tr>
 				<tr>	
 					<td id="videobannerbtn" style="height: 33%;">
-					<div class='opa1'><img src="resources/img/home/dancebtn.png" class='dancebtn' ></div></td>
+					<div class='opop'><img src="resources/img/home/dancebtn.png" class='dancebtn' ></div></td>
 				</tr>
 				<tr>
 					<td id="studybannerbtn" style="height: 33%;">
-					<div class='opa2'><img src="resources/img/home/studyingbtn.png" class='playbtn'></div></td>
+					<div class='opop'><img src="resources/img/home/studyingbtn.png" class='playbtn'></div></td>
 				</tr>
 			</table>
 		</div>
