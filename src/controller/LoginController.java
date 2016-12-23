@@ -34,7 +34,7 @@ public class LoginController {
 					session.setAttribute("user", vo); //세션에 사용자 vo담음
 					loginDao.memberLoginRecord(vo);
 				}
-			if(vo.getU_id().equals("admin")){
+			if(vo.getU_id().equals("admin")){ // 어드민 로그인시
 				result="3";
 		}
 		

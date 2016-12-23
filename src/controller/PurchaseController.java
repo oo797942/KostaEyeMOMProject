@@ -20,10 +20,7 @@ public class PurchaseController {
 	@Autowired
 	GroupPurchaseDaoImpl GPDao;
 	
-	@RequestMapping("purchaseView.do")
-	public String purchaseView(){
-		return "purchase/purchaseView";
-	}
+	
 	
 	//공동구매 리스트
 	@RequestMapping("shopping.do")

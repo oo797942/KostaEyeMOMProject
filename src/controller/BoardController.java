@@ -223,7 +223,7 @@ public class BoardController {
 		if(result==0){
 			
 			boardVO.setU_id(mVO.getU_id());
-			boardDao.countGood(boardVO);
+			boardDao.countGood(boardVO); // 추천수 카운트
 			result=2;
 		}
 		

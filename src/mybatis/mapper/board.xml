@@ -105,7 +105,7 @@ from
               ) IP_3,
        SUBSTR (IP, INSTR (IP, '.', 1, 3) + 1) IP_4, RE_CONTENT, RE_DATE, RE_ID, RE_NICK, re_no
   FROM (SELECT re_ip IP, RE_CONTENT, RE_DATE, RE_ID, RE_NICK, re_no
-          FROM reply where b_no=#{b_no})) ORDER BY re_no desc
+          FROM reply where b_no=#{b_no})) ORDER BY re_no asc
 </select>
 
 <!-- 리플 삭제를 위한 아이디 체크 -->
