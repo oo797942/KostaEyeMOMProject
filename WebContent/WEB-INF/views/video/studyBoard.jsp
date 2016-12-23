@@ -6,6 +6,7 @@
 <head>
 <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/styleFlash.css" media="screen" data-name="skins">
+<link rel="stylesheet" href="resources/css/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 a:link {	
@@ -42,18 +43,20 @@ a:hover {
 	function fn_movePage(val){
 	    jQuery("input[name=pageNo]").val(val);
 	    jQuery("form[name=frm]").attr("method", "post");
-	    jQuery("form[name=frm]").attr("action","adminQna.go").submit();
+	    jQuery("form[name=frm]").attr("action","studyBoard.do").submit();
 	}
 </script>
 </head>
 <body>
 	<div class="body">
 	<h3 class="title">공부해요</h3>
-	<form name="frm">
-    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
+
 		<section class="content portfolio small-images">
 			<div class="container">
-				<div class="row">
+
+				<div class="row" style="text-align: center;">
+								<form name="frm">
+    <input type="hidden" name="pageNo" /><!-- //페이지 번호 -->
 					<div class="isotope col-lg-12">
 						<ul id="list">
 						
@@ -96,25 +99,7 @@ a:hover {
 						<!--end portfolio_list -->
 					</div>
 					<!--end isotope -->
-					<div class="col-sm-12 text-center">
-						<ul class="pagination">
-							<li><a href="#">&laquo;</a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
-						</ul>
-					</div>
-				</div>
-				<!--./row-->
-			</div>
-			<!--./div-->
-		</section>
-		<!--end wrapper-->
-		
-		          			   	<!-- 페이징 -->
+					      			   	<!-- 페이징 -->
 			<div class='form-inline'>
 					<ul class="pagination modal-1">
 
@@ -149,6 +134,15 @@ a:hover {
     				</ul>
     </div>
 </form>
+					
+				</div>
+				<!--./row-->
+			</div>
+			<!--./div-->
+		</section>
+		<!--end wrapper-->
+		
+		    
 		</div>
 		
 </body>

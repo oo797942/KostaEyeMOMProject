@@ -8,7 +8,7 @@
 
 </head> 
 
-<a href="heat.do">홈 두잉 홈 두잉</a>
+<a href="home.go">홈 두잉 홈 두잉</a>
  
 
 </body>

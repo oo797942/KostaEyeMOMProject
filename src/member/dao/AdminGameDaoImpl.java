@@ -4,6 +4,7 @@ import java.util.List;
 
 import member.vo.GameVO;
 import mybatis.manager.GameManager;
+import mybatis.manager.GroupPurchaseManager;
 
 public class AdminGameDaoImpl implements AdminGameDao {
  
@@ -21,12 +22,21 @@ public class AdminGameDaoImpl implements AdminGameDao {
 	
 	}
 	
-	
 	@Override
-	public List<GameVO> GameBoard() {
+	public int gameListCount() {
+		int totalCount = 0;
+		try {
+			totalCount = GameManager.totalCount();
+		} catch (Exception ex) {
+			System.out.println("gpDAOImpl / 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+	@Override
+	public List<GameVO> GameBoard(GameVO vo) {
 			List<GameVO> list=null;
 			try{
-				list = GameManager.gameBoard();
+				list = GameManager.gameBoard(vo);
 			}catch( Exception ex )
 			{
 				System.out.println("게임목록들고오기 실패 : " + ex.getMessage());

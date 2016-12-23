@@ -26,14 +26,29 @@ public class VideoController {
 	  
 //	영상관리 페이지 값 가져오기
 	@RequestMapping("/adminVideo.go")
-	public String admonVideo(HttpSession session, Model m, StudyVO vo){
+	public String admonVideo(HttpSession session, Model m, StudyVO studyVO){
 		List<VideoVO> vlist = null;
 		vlist = videoDao.videoBoard();
 		m.addAttribute("vlist", vlist); //가져온 DB를 모델에 저장
 		
-		List<StudyVO> slist = null;
-		slist = videoDao.studyBoard(vo);
-		m.addAttribute("slist", slist); //가져온 DB를 모델에 저장
+		
+		
+
+		  //--페이징 처리
+	    int totalCount = videoDao.studyListCount(studyVO); //게시물 총갯수를 구한다
+	    studyVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    studyVO.setPageSize(12);
+	    m.addAttribute("pageVO", studyVO);
+
+	    //--페이징 처리
+	    
+	    List<StudyVO>  studyList = videoDao.studyBoard(studyVO);
+		
+		m.addAttribute("slist", studyList); //가져온 DB를 모델에 저장
+		
+//		List<StudyVO> slist = null;
+//		slist = videoDao.studyBoard(vo);
+//		m.addAttribute("slist", slist); //가져온 DB를 모델에 저장
 		
 		return "adminVideo";
 	} 
@@ -149,7 +164,21 @@ public class VideoController {
 	
 	
 	@RequestMapping("/videoBoard.do")
-	public String videoBoard(Model m){
+	public String videoBoard(Model m, VideoVO videoVO){
+		
+
+		  //--페이징 처리
+	    int totalCount = videoDao.videoListCount(videoVO); //게시물 총갯수를 구한다
+	    videoVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    m.addAttribute("pageVO", videoVO);
+	    //--페이징 처리
+	    
+	    List<VideoVO>  videoList = videoDao.videoBoardp(videoVO);
+		
+		m.addAttribute("list", videoList); //가져온 DB를 모델에 저장
+		
+		
+		
 		List<VideoVO> list = null;
 		list = videoDao.videoBoard();
 		System.out.println(list);
@@ -204,7 +233,7 @@ public class VideoController {
 //		System.out.println(list);
 //		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		
-		List <StudyVO> list=null;
+
 		  //--페이징 처리
 	    int totalCount = videoDao.studyListCount(studyVO); //게시물 총갯수를 구한다
 	    studyVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출

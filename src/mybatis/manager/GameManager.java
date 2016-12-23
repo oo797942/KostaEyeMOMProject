@@ -26,12 +26,20 @@ public class GameManager {
 		   	return result;	// insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص� ����
 	   }
 	
-	public static List<GameVO> gameBoard() throws SQLException
+	public static int totalCount() throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("admin.gameTotalCount");
+
+	      session.commit();
+	      return totalCount;
+	   }
+	
+	public static List<GameVO> gameBoard(GameVO vo) throws SQLException
 	   {
 			SqlSession session = CommonManager.db().openSession();
 			List<GameVO> list=null;
 			
-				list = session.selectList("admin.gameAll");
+				list = session.selectList("admin.gameAllp",vo);
 				System.out.println(list.size());
 		   
 		   session.commit();

@@ -39,6 +39,17 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
+ <select id="videoTotalCount" parameterType="videoVO" resultType="int">
+    SELECT COUNT(*)  totalCount FROM kid_video 
+    </select>
+<select id="videoAllp" resultType="videoVO"  parameterType="videoVO">
+	SELECT d_no, d_title, d_content, d_photo, d_video, d_count, d_good
+	 FROM kid_video WHERE d_no in(SELECT d_no FROM (SELECT rownum as rnum, d_no FROM
+	 (SELECT d_no FROM kid_video nnb 
+	 ORDER BY d_no DESC))
+	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY d_no DESC
+</select>
+
  <select id="studyTotalCount" parameterType="studyVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM kid_study 
     </select>
@@ -183,6 +194,17 @@ select * from kid_study order by v_good desc) where rownum < 6
 select rownum rs, d_no, d_photo, d_good from(
 select * from kid_video order by d_good desc) where rownum < 6
 ]]>
+</select>
+ <select id="gameTotalCount" parameterType="videoVO" resultType="int">
+    SELECT COUNT(*)  totalCount FROM kid_game 
+    </select>
+    
+    <select id="gameAllp" resultType="gameVO"  parameterType="gameVO">
+	SELECT g_no, g_title, g_content, g_photo, g_flash, g_count, g_good
+	 FROM kid_game WHERE g_no in(SELECT g_no FROM (SELECT rownum as rnum, g_no FROM
+	 (SELECT g_no FROM kid_game nnb 
+	 ORDER BY g_no DESC))
+	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY g_no DESC
 </select>
 
 </mapper> 

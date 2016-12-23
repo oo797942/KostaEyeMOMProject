@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import member.dao.AdminGameDaoImpl;
 import member.vo.GameVO;
+import member.vo.GroupPurchaseVO;
 import member.vo.MemberVO;
 
 @Controller
@@ -22,11 +23,23 @@ public class GameController {
 	   
 	//디비 게임리스트 가져오기
 	@RequestMapping("/adminGame.go")
-	public String adminGame(HttpSession session, Model m){
-		List<GameVO> list = null;
-		list = gameDao.GameBoard();
-		System.out.println(list);
-		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+	public String adminGame(HttpSession session, Model m, GameVO gameVO){
+		
+	    int totalCount = gameDao.gameListCount(); //게시물 총갯수를 구한다
+	    gameVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    m.addAttribute("pageVO", gameVO);
+
+	    //--페이징 처리
+	    
+	    List<GameVO>  gList = gameDao.GameBoard(gameVO);
+
+		m.addAttribute("list", gList); //가져온 DB를 모델에 저장
+		
+		
+//		List<GameVO> list = null;
+//		list = gameDao.GameBoard();
+//		System.out.println(list);
+//		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		return "adminGame";
 	}
 	
@@ -80,11 +93,23 @@ public class GameController {
 	
 	//게임 리스트 가져오기
 	@RequestMapping("/flashBoard.do")
-	public String flashBoard(Model m){
-		List<GameVO> list = null;
-		list = gameDao.GameBoard();
-		System.out.println(list);
-		m.addAttribute("list", list); //가져온 DB를 모델에 저장
+	public String flashBoard(Model m, GameVO gameVO){
+		
+	    int totalCount = gameDao.gameListCount(); //게시물 총갯수를 구한다
+	    gameVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+	    m.addAttribute("pageVO", gameVO);
+
+	    //--페이징 처리
+	    
+	    List<GameVO>  gList = gameDao.GameBoard(gameVO);
+
+		m.addAttribute("list", gList); //가져온 DB를 모델에 저장
+		
+		
+//		List<GameVO> list = null;
+//		list = gameDao.GameBoard();
+//		System.out.println(list);
+//		m.addAttribute("list", list); //가져온 DB를 모델에 저장
 		return "game/flashBoard";
 	}
 	
