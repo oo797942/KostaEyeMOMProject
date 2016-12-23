@@ -48,6 +48,26 @@ public class VideoManager {
 
 		return list;
 	}
+	
+	   // 공부해요 총갯수 뽑아오기
+	   public static int videoTotalCount(VideoVO VO) throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("admin.videoTotalCount", VO);
+
+	      session.commit();
+	      return totalCount;
+	   }
+	// 춤을 춰요 보드
+	public static List<VideoVO> videoBoardp(VideoVO vo) throws SQLException {
+		SqlSession session = CommonManager.db().openSession();
+		List<VideoVO> list = null;
+
+		list = session.selectList("admin.videoAllp",vo);
+		System.out.println(list.size());
+
+		return list;
+	}
+
 
 	// 춤을 춰요 뷰
 	public static VideoVO videoView(VideoVO vo) throws SQLException {

@@ -61,6 +61,28 @@ public class VideoDaoImpl implements VideoDao {
 		}
 	}
 
+	public int videoListCount(VideoVO vo) {
+
+		int totalCount = 0;
+		try {
+			totalCount = VideoManager.videoTotalCount(vo);
+		} catch (Exception ex) {
+			System.out.println("boardDAOImpl / 베스트레시피 후기 가져오기 실패 : " + ex.getMessage());
+		}
+		return totalCount;	
+	}
+	
+	@Override
+	public List<VideoVO> videoBoardp(VideoVO vo) {
+		List<VideoVO> list = null;
+		try {
+			list = VideoManager.videoBoardp(vo);
+		} catch (Exception ex) {
+			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
+		} finally {
+			return list;
+		}
+	}
 	
 	public int studyListCount(StudyVO vo) {
 

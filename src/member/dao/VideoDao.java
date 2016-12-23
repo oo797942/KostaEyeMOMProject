@@ -25,5 +25,6 @@ public interface VideoDao {
 	List<GameVO> gamebanner();
 	List<StudyVO> studyBoard(StudyVO vo);
 	List<StudyVO> studyBoardAndroid();
+	List<VideoVO> videoBoardp(VideoVO vo);
 
 }
