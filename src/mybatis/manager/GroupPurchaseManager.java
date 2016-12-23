@@ -18,7 +18,7 @@ public class GroupPurchaseManager {
 		   System.out.println("purchase 몇 개? : "+ list.size());
 		   return list;
 	   }
-	
+	//공동구매 게시물 페이징
 	public static List<GroupPurchaseVO> allpagingShopping(GroupPurchaseVO vo) throws SQLException {
 	      SqlSession session = CommonManager.db().openSession();
 	      List<GroupPurchaseVO> list = session.selectList("purchase.allBoardp", vo);
@@ -26,7 +26,7 @@ public class GroupPurchaseManager {
 	      session.commit();
 	      return list;
 	   }
-	
+	//공동구매 게시물 총갯수를 구한다
 	public static int totalCount() throws SQLException {
 	      SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("purchase.totalCount");
@@ -34,7 +34,7 @@ public class GroupPurchaseManager {
 	      session.commit();
 	      return totalCount;
 	   }
-	
+	//공동구매  리스트 게시물 클릭시 해당게시물 정보가져오기	
 	public static GroupPurchaseVO getItem(GroupPurchaseVO vo){
 		SqlSession session = CommonManager.db().openSession();
 		GroupPurchaseVO gpVO = session.selectOne("purchase.getItem", vo);
