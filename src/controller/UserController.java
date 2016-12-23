@@ -130,6 +130,7 @@ public class UserController {
 	@RequestMapping("/place.do")
 	public String callPlace(Model m, @RequestParam("keyword") String keyword) {
 		m.addAttribute("keyword", keyword);
+		System.out.println(keyword);
 		return "map/place";
 	}
 

@@ -22,7 +22,7 @@ public class PurchaseController {
 	
 	
 	
-	//공동구매 리스트
+	//공동구매 리스트 불러오기
 	@RequestMapping("shopping.do")
 	public String callGallery(Model m, GroupPurchaseVO gpVO){
 		

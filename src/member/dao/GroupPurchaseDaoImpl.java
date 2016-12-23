@@ -21,7 +21,7 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return list;
 	}
-
+	//공동구매 게시물 총갯수를 구한다
 	@Override
 	public int shoppingListCount() {
 		int totalCount = 0;
@@ -32,7 +32,7 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return totalCount;	
 	}
-
+	//공동구매 게시물 페이징
 	@Override
 	public List<GroupPurchaseVO> allPagingShopping(GroupPurchaseVO vo) {
 		List<GroupPurchaseVO> list = null;
@@ -45,7 +45,7 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return list;
 	}
-
+	//공동구매  리스트 게시물 클릭시 해당게시물 정보가져오기
 	@Override
 	public GroupPurchaseVO getItem(GroupPurchaseVO vo) {
 		GroupPurchaseVO gpVO=null;
