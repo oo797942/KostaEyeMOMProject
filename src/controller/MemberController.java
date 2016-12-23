@@ -19,23 +19,28 @@ public class MemberController {
 	@Autowired
 	MemberDao memberDao;
 	
-	
+//마이페이지 수정페이지 이동
 	@RequestMapping("mypageModify.do")
 	public String mypage(){
 		return "mypage/mypageModify";
 	}
 	
 	
+	//마이페이지에서 회원수정시 수정실행
 	@RequestMapping("memberUpdate.do")
 	public String memberUpdate(Model m, MemberVO memVO, HttpSession session){
+//		세션에서 사용자 정보 가져오기
 		MemberVO suser = (MemberVO)session.getAttribute("user");
 		memVO.setU_id(suser.getU_id());		
-		int re = memberDao.memberUpdate(memVO);
+//		세션에서 가져온 사용자 정보중 id를 뽑아서 업데이트 함수 실행
+		memberDao.memberUpdate(memVO);
 		return "redirect:mypage.do";
 	}
 	
+	
+//	관리자페이지의 회원 리스트 가져오기
 	@RequestMapping("/adminMember.go")
-	public String admonMember(HttpSession session,Model m){
+	public String adminMember(HttpSession session,Model m){
 		List<MemberVO> list =null;
 		list = memberDao.memberList();
 		m.addAttribute("list", list);
