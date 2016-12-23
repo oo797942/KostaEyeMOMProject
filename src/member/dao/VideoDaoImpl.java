@@ -84,6 +84,20 @@ public class VideoDaoImpl implements VideoDao {
 			return list;
 		}
 	}
+	
+	@Override
+	public List<StudyVO> studyBoardAndroid() {
+		List<StudyVO> list = null;
+		try {
+			list = VideoManager.studyBoardAndroid();
+		} catch (Exception ex) {
+			System.out.println("영상목록들고오기 실패 : " + ex.getMessage());
+		} finally {
+			return list;
+		}
+	}
+	
+	
 
 	@Override
 	public StudyVO studyBoardView(StudyVO vo) {
