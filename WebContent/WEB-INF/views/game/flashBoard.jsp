@@ -44,7 +44,7 @@ a:hover {
     font-weight: bolder;
 }
 </style>
-<script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
+<!-- <script type="text/javascript" src="./js/jquery-3.1.1.js"></script> -->
 <script type="text/javascript">
 	$(function() {
 	});
@@ -68,7 +68,7 @@ a:hover {
 								<div class="grid_12">
 									<div class="indent-left p2">
 										<h3 class="Th3 p0">
-										춤을 춰요
+										놀아 봐요
 										</h3>
 									</div>
 									<div class="wrapper p4">
