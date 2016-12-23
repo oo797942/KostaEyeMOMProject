@@ -410,11 +410,22 @@
  
 			<table id="groupBuyTable" cellspacing="0">
 				<caption>
-					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
+					<label>공동구매 최신 글 <span><a href="shopping.do" class="alink">더보기</a></span></label>
 				</caption>
 				<tr>
 					<c:forEach var='purchaseVO' items='${purchaseList}'>
-						<td><img
+						<td>
+						<c:choose>
+												<c:when test="${empty sessionScope.user}">
+													<a href="#test-popup" class="open-popup-link">
+												</c:when>
+												<c:otherwise>
+													<!-- 세선정보가 있을경우 사용자 정보 show -->
+													<a href="shoppingView.do?b_no=${purchaseVO.b_no}">
+												</c:otherwise>
+											</c:choose>
+						
+						<img
 							src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }"
 							class="groupImg" /> <a class="goGroupBuy"><b>[${purchaseVO.we_title }]</b></a>
 							<br /> <fmt:formatNumber value="${purchaseVO.we_price}"
@@ -429,7 +440,7 @@
 									<br />
 								</c:otherwise>
 							</c:choose> <b>구매기간</b><br /> ${purchaseVO.we_start } ~<br />
-							${purchaseVO.we_end }</td>
+							${purchaseVO.we_end }</a></td>
 					</c:forEach>
 				</tr>
 			</table>
