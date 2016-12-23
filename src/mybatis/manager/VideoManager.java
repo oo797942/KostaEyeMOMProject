@@ -80,6 +80,20 @@ public class VideoManager {
 
 		return list;
 	}
+	
+	// 공부해요 보드
+	public static List<StudyVO> studyBoardAndroid() throws 	SQLException {
+		SqlSession session = CommonManager.db().openSession();
+		List<StudyVO> list = null;
+
+		list = session.selectList("admin.studyAll");
+		System.out.println(list.size());
+
+		return list;
+	}
+	
+	
+	
 
 	// 공부해요 뷰
 	public static StudyVO studyView(StudyVO vo) throws SQLException {
