@@ -10,6 +10,7 @@ INSERT INTO mom_message(s_no, s_title, s_content, s_nick, s_id, s_send_nick, s_s
 VALUES (MOM_MESSAGE_NO.nextval, #{s_title}, #{s_content}, #{s_nick}, #{s_id}, #{s_send_nick}, #{s_send_id}, sysdate, 'n')
 </insert>
 
+<!--  -->
 <select id="sendMessageList" parameterType="messageVO" resultType="messageVO">
 SELECT * FROM mom_message WHERE s_send_id = #{s_send_id}
 </select>

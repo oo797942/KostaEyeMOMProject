@@ -29,7 +29,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	//게시글 리스트에서 게시글 눌렀을때
 	@Override
 	public BoardVO viewBoard(BoardVO vo) {
 		BoardVO bvo = null;

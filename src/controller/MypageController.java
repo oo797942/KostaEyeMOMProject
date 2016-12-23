@@ -88,6 +88,7 @@ public class MypageController {
 		return "board/replyboard";
 	}
 	
+	//내가 쓴 qna 전체보기
 	@RequestMapping("myqnalist.do")
 	public String qnaBoard(HttpSession session, Model m, @ModelAttribute("MemberVO") MemberVO member){
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
@@ -102,6 +103,8 @@ public class MypageController {
 		m.addAttribute("list", list);
 		return "board/boardQna";
 	}
+	
+	//내 공동구매 내역보기
 	@RequestMapping("myshopping.do")
 	public String myshopping(Model m, HttpSession session, @ModelAttribute("MemberVO") MemberVO member){
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
@@ -111,8 +114,7 @@ public class MypageController {
         member.setU_id(memberVO.getU_id());
         m.addAttribute("pageVO", memberVO);
 		List <PaymentVO>list = mypageDao.getMyPaymentList(member);
-//		System.out.println(list.get(0).getPr_no());
-//		System.out.println(list.get(0).getPr_photo());
+
 		m.addAttribute("list", list);
 		
 		return "shopping/myshopping";
