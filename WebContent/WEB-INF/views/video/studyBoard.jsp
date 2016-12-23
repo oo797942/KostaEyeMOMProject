@@ -71,7 +71,7 @@ a:hover {
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.v_photo}" alt="img" height="150" />
 										</figure>
-										<div id="itemName" class="item" align="center">${vo.v_title}</div>
+										<div id="itemName" class="item" align="center" style="text-decoration: none">${vo.v_title}</div>
 									</div>
 							</a></li>
 
@@ -85,7 +85,7 @@ a:hover {
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.v_photo}" alt="img" height="150" />
 										</figure>
-										<div id="itemName" class="item" align="center">${vo.v_title}</div>
+										<div id="itemName" class="item" align="center" style="text-decoration: none">${vo.v_title}</div>
 									</div>
 							</a></li>
 

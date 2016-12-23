@@ -71,7 +71,7 @@ a:hover {
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.g_photo}" alt="img" height="150" />
 										</figure>
-										<div id="itemName" class="item" align="center">${vo.g_title}</div>
+										<div id="itemName" class="item" align="center" style="padding-top:7px ;text-decoration: none; font-size: 17px; font-family: 맑은고딕">${vo.g_title}</div>
 									</div>
 							</a></li>
 
@@ -86,7 +86,7 @@ a:hover {
 										<figure class="touching ">
 											<img src="/EyeMOM/resources/img/${vo.g_photo}" alt="img" height="150" />
 										</figure>
-										<div id="itemName" class="item" align="center">${vo.g_title}</div>
+										<div id="itemName" class="item" align="center" style="text-decoration: none; font-size: 15px">${vo.g_title}</div>
 									</div>
 							</a></li>
 
