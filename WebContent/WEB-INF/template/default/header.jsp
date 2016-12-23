@@ -163,7 +163,7 @@
 			</form>
 			<label id="info"></label>
 			<p>
-				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
+				회원이 아니십니까? <a href="gojoin.do" class="blue">회원가입하기</a><span
 					class="fontawesome-arrow-right"></span>
 			</p>
 		</div>
