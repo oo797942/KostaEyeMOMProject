@@ -20,10 +20,7 @@ public class PurchaseController {
 	@Autowired
 	GroupPurchaseDaoImpl GPDao;
 	
-	@RequestMapping("purchaseView.do")
-	public String purchaseView(){
-		return "purchase/purchaseView";
-	}
+	
 	
 	//공동구매 리스트
 	@RequestMapping("shopping.do")
@@ -45,7 +42,7 @@ public class PurchaseController {
 		return "shopping/shoppingList";
 	}
 	
-	
+	//공동구매 게시글 보기
 	@RequestMapping("/shoppingView.do")
 	public String shopView(Model m, GroupPurchaseVO gpVO){
 		
@@ -71,6 +68,7 @@ public class PurchaseController {
 		return "purchase/purchaseView";
 	}
 	
+	//주문완료
 	@RequestMapping("order.do")
 	public String orderShop(PaymentVO paymentVO, HttpSession session){
 		

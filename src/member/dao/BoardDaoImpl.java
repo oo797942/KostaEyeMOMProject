@@ -18,7 +18,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
-
+	//게시판 게시글 작성하고 등록 버튼 눌렀을때
 	@Override
 	public int writeBoard(BoardVO vo) {
 		int result = 0;
@@ -29,7 +29,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	//게시글 리스트에서 게시글 눌렀을때
 	@Override
 	public BoardVO viewBoard(BoardVO vo) {
 		BoardVO bvo = null;
@@ -40,7 +40,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return bvo;
 	}
-
+	// 해당 게시물 리플 가져오기
 	@Override
 	public List<ReplyVO> callReply(BoardVO vo) {
 		List<ReplyVO> list = null;
@@ -51,7 +51,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
-
+	//게시글 리플 입력했을때
 	@Override
 	public int writeReply(ReplyVO vo) {
 		int result = 0;
@@ -62,7 +62,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	//게시글 댓글 삭제버튼 눌렀을 경우
 	@Override
 	public int replDelte(ReplyVO vo) {
 		int result = 0;
@@ -73,7 +73,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	//게시물 삭제 버튼 눌렀을 때
 	@Override
 	public int deleteBoard(BoardVO vo) {
 		int result = 0;
@@ -84,7 +84,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return 0;
 	}
-
+	//게시글 수정버튼 눌렀을때
 	@Override
 	public int updateBoard(BoardVO vo) {
 		int result = 0;
@@ -95,7 +95,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	//게시글 추천 버튼 눌렀을때
 	@Override
 	public List<BoardVO> checkGoodId(BoardVO vo) {
 		List<BoardVO> list = null;
@@ -108,7 +108,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return list;
 	}
-
+	// 추천수 카운트
 	@Override
 	public int countGood(BoardVO vo) {
 		int result = 0;
@@ -121,7 +121,9 @@ public class BoardDaoImpl implements BoardDao {
 
 		return result;
 	}
-
+	/*
+	 * 게시글에서 부적한 경우 신고하기 눌렸을 때
+	 */
 	@Override
 	public int reportBoard(BoardVO vo) {
 		int result = 0;
@@ -195,7 +197,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return result;
 	}
-
+	// 게시판 카테고리별 리스트 불러오기
 	public int boardListCount(BoardVO boardVO) {
 
 		int totalCount = 0;
@@ -206,7 +208,7 @@ public class BoardDaoImpl implements BoardDao {
 		}
 		return totalCount;	
 	}
-
+	// 게시판 리스트 페이징 가져오기
 	@Override
 	public List<BoardVO> allPagingBoard(BoardVO vo) {
 		List<BoardVO> list = null;

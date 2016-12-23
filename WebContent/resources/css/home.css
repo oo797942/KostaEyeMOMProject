@@ -612,5 +612,5 @@ footer {
 	height: 100%;
 	background: rgba(255, 160, 122, 0.3); /* 이미지 위로 컬러를 입힘 */
 	border: 1px solid #ffa07a;
-	border-radius: 10px; 
+/* 	border-radius: 10px;  */
 }

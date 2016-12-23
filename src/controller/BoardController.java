@@ -33,13 +33,13 @@ public class BoardController {
 	
 	
 	
-	//글쓰기 이동
+	//글쓰기페이지로 이동
 	@RequestMapping("/boardInsert.do")
 	public String writeBoard(Model m,@RequestParam("keyword") String keyword){
 		m.addAttribute("title", keyword ); // 게시판 종류 모델에 저장
 		return "board/boardInesert";
 	}  
-	//글보기
+	//게시글 리스트에서 게시글 눌렀을때
 	@RequestMapping("/boardview.do")
 	public String viewBoard(BoardVO boardVO, Model m){
 		
@@ -67,7 +67,7 @@ public class BoardController {
 		return "board/boardView"; 
 	}
 	
-	//게시판 작성
+	//게시판 게시글 작성하고 등록 버튼 눌렀을때
 	@RequestMapping("/insert.do")
 	public String writeBoard(BoardVO boardVO, Model m, HttpSession session,HttpServletRequest request){
 		String pass="";	//페이지 리턴할 문자열
@@ -129,17 +129,17 @@ public class BoardController {
 			return pass;
 		
 	}
-	//수정페이지 이동
+	//게시글 수정 버튼 눌렀을때 수정 페이지 이동
 	@RequestMapping("updateBoard.do")
 	public String updateBoard(BoardVO boardVO, Model m){
 		System.out.println(boardVO.getB_no());
-		BoardVO vo = boardDao.viewBoard(boardVO);
+		BoardVO vo = boardDao.viewBoard(boardVO); // 해당글 가져오기
 		m.addAttribute("vo", vo);
 		System.out.println(vo.getB_photo1name());
 		return "board/boardUpdate";
 	}
 	
-	//게시물 삭제
+	//게시물 삭제 버튼 눌렀을 때
 	@RequestMapping("deleteBoard.do")
 	public String deleteBoard(BoardVO boardVO ){
 		System.out.println("삭제 : "+ boardVO.getB_no()+"//"+boardVO.getB_cate());
@@ -148,7 +148,7 @@ public class BoardController {
 		return "redirect:"+boardVO.getB_cate();
 	}
 	
-	//리플입력
+	//게시글 리플 입력했을때
 	@RequestMapping("replinsert.do")
 	@ResponseBody
 	public int replInsert(ReplyVO replyVO, HttpSession session,HttpServletRequest request){
@@ -166,7 +166,7 @@ public class BoardController {
 	}
 	
 	
-	//리플삭제
+	//게시글 댓글 삭제버튼 눌렀을 경우
 	@RequestMapping("reDelete.do")
 	@ResponseBody
 	public int reDelete(ReplyVO replyVO, HttpSession session){
@@ -178,7 +178,7 @@ public class BoardController {
 		return result;
 	}
 	
-	//게시글 수정시 사진 삭제
+	//게시글 수정시에 사진 삭제 눌렀을경우
 	@RequestMapping("deletPic.do")
 	@ResponseBody
 	public int deletPic(BoardVO boardVO){
@@ -188,7 +188,7 @@ public class BoardController {
 		return result;
 	}
 	
-	//게시글 수정
+	//게시글 수정버튼 눌렀을때
 	@RequestMapping("update.do")
 	public String updateBoard(BoardVO boardVO){
 		System.out.println("수정사진 : "+boardVO.getB_photo1name());
@@ -196,7 +196,7 @@ public class BoardController {
 		return "redirect:boardview.do?b_no="+boardVO.getB_no();
 	}
 	
-	//추천
+	//게시글 추천 버튼 눌렀을때
 	@RequestMapping("good.do")
 	@ResponseBody
 	public int goodBoard(BoardVO boardVO, HttpSession session){
@@ -223,13 +223,17 @@ public class BoardController {
 		if(result==0){
 			
 			boardVO.setU_id(mVO.getU_id());
-			boardDao.countGood(boardVO);
+			boardDao.countGood(boardVO); // 추천수 카운트
 			result=2;
 		}
 		
 		return result;
 	}
 	
+	
+	/*
+	 * 게시글에서 부적한 경우 신고하기 눌렸을 때
+	 */
 	@RequestMapping("report.do")
 	@ResponseBody
 	public int reportBoard(BoardVO boardVO, HttpSession session){
@@ -241,11 +245,12 @@ public class BoardController {
 	}
 	
 
-	// 공지사항 글 리스트
+	// 공지사항 글 리스트 불러오기
 	@RequestMapping("/notice.do")
 	public String goNotice(Model m, HttpSession session) {
 		List<BoardVO> list = null;
 		list = boardDao.allBoard("notice");
+		//리플수 가져오기
 		for (int i = 0; i < list.size(); i++) {
 
 			BoardVO boardVO = list.get(i);
@@ -258,7 +263,7 @@ public class BoardController {
 		return "board/boardNotice";
 	}
 	
-	//공지사항 글보기
+	//공지사항 글 리스트에서 게시물 눌렀을 때
 	@RequestMapping("/noticeview.do")
 	public String viewNotice(BoardVO boardVO, Model m){
 		
@@ -266,27 +271,14 @@ public class BoardController {
 		
 		BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
 		List <ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
-		
-		
-//		//ip보안을 위해 * 처리
-//		String ip= vo.getB_ip(); //작성자 ip가져오기
-//		StringTokenizer st= new StringTokenizer(ip, ".");
-//		String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
-//		String rip;	// 보안처리된  ip 담을 문자열
-//		for(int i=0; st.hasMoreTokens();i++){
-//			
-//			list[i]=(String) st.nextToken();  // " . "을 제거한 ip를 list에 담는다
-//			
-//		}
-//		rip=list[0]+"."+list[1]+".*.*"; // 뒤에 두자리 보안처리
-//		vo.setB_ip(rip); // 보안ip 다시 담기
+
 		
 		m.addAttribute("bvo", vo); // 게시물 정보 모델에 담기
 		m.addAttribute("list", listVO); //리플 정보 모델에 담기
 		return "board/noticeView"; 
 	}
 	
-	//공지사항 삭제
+	//공지사항 게시글 삭제하기
 	@RequestMapping("deleteNotice.do")
 	public String deleteNotice(BoardVO boardVO ){
 		System.out.println("삭제 : "+ boardVO.getB_no()+"//"+boardVO.getB_cate());
@@ -317,7 +309,7 @@ public class BoardController {
 			return "board/boardDonation";
 		}
 		
-		// 아나바다 뷰 이동
+		// 아나바다 리스트에서 게시글 눌렀을 떄
 			@RequestMapping("/donationview.do")
 			public String viewDonation(BoardVO boardVO, Model m){
 				
@@ -371,14 +363,14 @@ public class BoardController {
 				return "redirect:donationview.do?b_no="+boardVO.getB_no();
 			}
 			
-			// 나눔완료
+			// 아나바다 게시글에서 나눔완료 버튼 눌렀을 때
 			@RequestMapping("donationfin.do")
 			public String donationFin(BoardVO boardVO){
 				int result= boardDao.donationFin(boardVO);
 				return "redirect:donationview.do?b_no="+boardVO.getB_no();
 			}
 			
-			
+			// 게시판 카테고리별 리스트 불러오기
 			@RequestMapping(value = "/tip.do", method = {RequestMethod.GET, RequestMethod.POST})
 			public String page(HttpSession session,Model model, @ModelAttribute("BoardVO") BoardVO boardVO,@RequestParam("title") String title) {
 				MemberVO memvo = (MemberVO) session.getAttribute("user");
@@ -410,7 +402,7 @@ public class BoardController {
 			    return  "board/board";
 			}
 			
-			//갤러리 이동
+			//카테고리별 갤러리 리스트 불러오기 (아이자랑, 식단)
 			@RequestMapping("gal.do")
 			public String callGallery(Model m, @ModelAttribute("BoardVO") BoardVO boardVO, @RequestParam("title") String title){
 				boardVO.setB_cate(title);
@@ -437,7 +429,9 @@ public class BoardController {
 				
 				return "board/boardgallery";
 			}
-
+			
+			
+			
 			@RequestMapping("/adminReport.go")
 			public String adminReport(HttpSession session, Model model, @ModelAttribute("BoardVO") BoardVO boardVO){
 
@@ -459,46 +453,7 @@ public class BoardController {
 			}
 
 			
-			
-//			@RequestMapping("gal.do")
-//			public String callGallery(Model m,@RequestParam("title") String title){
-//				String cate=null;
-//				List<BoardVO> list=null;
-//				list= boardDao.allBoard(title);
-//				System.out.println(list.size());
-//				for(int i=0; i<list.size();i++){
-//				
-//				BoardVO boardVO=list.get(i);
-//				List <ReplyVO> listVO = boardDao.callReply(boardVO);
-//				
-//				list.get(i).setB_recount(listVO.size());
-//				}
-//				
-//				m.addAttribute("list", list); //가져온 DB를 모델에 저장
-//				m.addAttribute("title", title); // 게시판 종류 모델에 저장
-//				
-//				return "board/boardgallery";
-//			}
-			
-//			//보드리스트 이동
-//			@RequestMapping("/tip.do")
-//			public String callBoard(Model m,@RequestParam("title") String title){
-//				List<BoardVO> list=null;
-//				
-//				list =boardDao.allBoard(title);  //게시판별 모든 리스트를 가져오기위해 
-//				System.out.println(list.size());
-//				for(int i=0; i<list.size();i++){
-//				
-//				BoardVO boardVO=list.get(i);
-//				List <ReplyVO> listVO = boardDao.callReply(boardVO);
-//				
-//				list.get(i).setB_recount(listVO.size());
-//				}
-//				
-//				m.addAttribute("list", list); //가져온 DB를 모델에 저장
-//				m.addAttribute("title", title ); // 게시판 종류 모델에 저장
-//				return "board/board";
-//			}
+
 	
 }
  

@@ -26,11 +26,13 @@ public class QnaController {
 	@Autowired
 	QnADaoImpl QnaDao;
 	
+	//글쓰기페이지 이동
 	@RequestMapping("insertqnaboard.do")
 	public String insertQnaBoard(){
 		return "qnaboard/qnaInsert";
 	}
 	
+	//게시글 등록
 	@RequestMapping("insertqna.do")
 	public String insertQna(QnAVO qnaVO, HttpSession session,HttpServletRequest request){
 		MemberVO memberVO=(MemberVO) session.getAttribute("user");
@@ -45,6 +47,7 @@ public class QnaController {
 		return "redirect: qnaboard.do";
 	}
 	
+	//qna리스트 불러오기
 	@RequestMapping("qnaboard.do")
 	public String Qnaboard(QnAVO qnaVO, Model m){
 		
@@ -155,6 +158,7 @@ public class QnaController {
 		return "adminQna";
 	}
 	
+	
 	@RequestMapping("faqAnswer.do")
 	public String faqAnswer(Model m,FaqVO faqVO){
 		FaqVO vlist=null;
@@ -170,7 +174,7 @@ public class QnaController {
 		return "popupClose";
 	}
 	
-	//답글달기
+	//답변 버튼 눌렀을때 
 	@RequestMapping("answerqna.do")
 	@ResponseBody
 	public int insertAnswer(AnswerVO aVO, HttpSession session){
@@ -184,7 +188,7 @@ public class QnaController {
 		return result;
 	}
 	
-	
+	//답변에 댓글달기
 	@RequestMapping("answerReply.do")
 	@ResponseBody
 	public int insertReply(AreplyVO areplyVO, HttpSession session){
@@ -198,7 +202,7 @@ public class QnaController {
 		
 		return result;
 	}
-	
+	//댓글삭제
 	@RequestMapping("deleteAnswerReply.do")
 	@ResponseBody
 	public int deleteAnswerReply(AreplyVO areplyVO){
