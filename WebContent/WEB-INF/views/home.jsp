@@ -115,7 +115,9 @@
 					</c:choose></td>
 			</tr>
 			<tr>
-				<td colspan="2" id="MainLogoTd">로고</td>
+				<td colspan="2" id="MainLogoTd">
+				<a href="home.go"><img src="/EyeMOM/resources/img/top_logo.png" id="toplogo_menu"></a>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2" id="mainTopMenuBar"><img
@@ -171,6 +173,7 @@
 	</header>
 	<section>
 		<div style="background: #ffa07a; width: 100%; height: 30px;"></div>
+<<<<<<< HEAD
 
 		<div id="slide_div">
 			<div class="banner_wrap gamebanner">
@@ -313,6 +316,9 @@
 
 		</div>
 
+=======
+		
+>>>>>>> branch 'master' of https://github.com/oo797942/KostaEyeMOMProject.git
 		<div id="qnacookdiv">
 
 			<table id="qnacooktable" cellspacing="0">
@@ -420,9 +426,159 @@
 			</table>
 
 		</div>
+		<div style="  width: 100%; height: 30px;"></div>
+		<div style=" border-top: 1px solid #e3e3e3; width: 100%; height: 30px;"></div>
+		<div id="slide_div">
+			<div class="banner_wrap gamebanner">
+				<ul class="slide_banner" id="gamebanner">
+					<c:forEach var='game' items='${gamebanner}'>
+						<li><c:choose>
+								<c:when test="${empty sessionScope.user}">
+									<a class="alink bestrice open-popup-link" href="#test-popup">
+								</c:when>
+								<c:otherwise>
+									<a
+										onclick="window.open('flashBoardView.go?g_no=${game.g_no}', '${game.g_title}',
+                   				'width=1050px,height=690');return false;">
+								</c:otherwise>
+							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${game.g_photo }" />
+							</a></li>
+					</c:forEach>
+				</ul>
+			</div>
 
+			<div class="banner_wrap videobanner">
+				<ul class="slide_banner" id="videobanner">
+					<c:forEach var='video' items='${videobanner}'>
+						<li><c:choose>
+								<c:when test="${empty sessionScope.user}">
+									<a class="alink bestrice open-popup-link" href="#test-popup">
+								</c:when>
+								<c:otherwise>
+									<a
+										onclick="window.open('videoBoardView.go?d_no=${video.d_no}', '${video.d_title}',
+                   				'width=1050,height=770');return false;">
+								</c:otherwise>
+							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${video.d_photo }" />
+							</a></li>
+					</c:forEach>
+				</ul>
+			</div>
+
+			<div class="banner_wrap studybanner">
+				<ul class="slide_banner" id="studybanner">
+					<c:forEach var='study' items='${studybanner}'>
+						<li><c:choose>
+								<c:when test="${empty sessionScope.user}">
+									<a class="alink bestrice open-popup-link" href="#test-popup">
+								</c:when>
+								<c:otherwise>
+									<a 
+										onclick="window.open('studyBoardView.go?v_no=${study.v_no}', '${study.v_title}',
+                   				'width=1050,height=770');return false;">
+								</c:otherwise>
+							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${study.v_photo }" />
+							</a></li>
+					</c:forEach>
+				</ul>
+			</div>
+
+
+			<table  cellspacing="0" id="slideMenu">
+				<tr>
+					<td id="gamebannerbtn" style="height: 33%;">
+					<div class='opop opa'><img src="resources/img/home/gamebtn.png" class='gamebtn'></div></td>
+				</tr>
+				<tr>	
+					<td id="videobannerbtn" style="height: 33%;">
+					<div class='opop'><img src="resources/img/home/dancebtn.png" class='dancebtn' ></div></td>
+				</tr>
+				<tr>
+					<td id="studybannerbtn" style="height: 33%;">
+					<div class='opop'><img src="resources/img/home/studyingbtn.png" class='playbtn'></div></td>
+				</tr>
+			</table>
+		</div>
+		<div style="  width: 100%; height: 30px;"></div>
+		<div style=" border-top: 1px solid #e3e3e3; width: 100%; height: 30px;"></div>
+		<div id="mainMiddle">
+			<table id="tabmenutable" cellspacing="0">
+				<tr id="tabmenuTr">
+					<td class="selectnow menubtn" rel="menu1" lin="link1">공지사항</td>
+					<td class="noselect menubtn" rel="menu2" lin="link2">소아 질병</td>
+				</tr>
+				<tr id="tabcontenttr">
+					<td colspan="2">
+						<ul id="menu1" class="menucontent">
+						<c:forEach var='notice' items='${notice}'>
+							<li>[${notice.b_date }] <a href="noticeview.do?b_no=${notice.b_no}">${notice.b_title }</a></li>
+						</c:forEach>
+						</ul>
+
+						<ul id="menu2" class="menucontent">
+							<li><a href="sick.do">아토피피부염</a></li>
+							<li><a href="gunsun.do">건선</a></li>
+							<li><a href="cold.do">잦은 감기</a></li>
+							<li><a href="bi.do">비염.축농증</a></li>
+							<li><a href="chun.do">천식</a></li>
+							<li><a href="jung.do">중이염</a></li>
+							<li><a href="josuk.do">성조숙증</a></li>
+							<li><a href="biman.do">소아비만</a></li>
+							<li><a href="dang.do">소아당뇨</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr id="tablink">
+					<td colspan="2">
+					<a href="notice.do" class="alink">
+						<div class="tablinks" id="link1">
+							<br />공지사항 바로가기
+						</div>
+						</a>
+					<a href="sick.do" class="alink">
+						<div class="tablinks" id="link2">
+							<br />소아 질병 바로가기
+						</div>
+					</a>
+					</td>
+				</tr>
+			</table>
+ 
+			<table id="groupBuyTable" cellspacing="0">
+				<caption>
+					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
+				</caption>
+				<tr>
+					<c:forEach var='purchaseVO' items='${purchaseList}'>
+						<td><img
+							src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }"
+							class="groupImg" /> <a class="goGroupBuy"><b>[${purchaseVO.we_title }]</b></a>
+							<br /> <fmt:formatNumber value="${purchaseVO.we_price}"
+								pattern="#,###.##" />원 <br />
+							<hr color="#ffa07a" /> <c:set var="human"
+								value="${purchaseVO.we_maxsold - purchaseVO.we_sold }" /> <c:choose>
+								<c:when test="${human gt 0}">
+					인원: ${human }명<br />
+								</c:when>
+								<c:otherwise>
+									<b style="color: red;">마감</b>
+									<br />
+								</c:otherwise>
+							</c:choose> <b>구매기간</b><br /> ${purchaseVO.we_start } ~<br />
+							${purchaseVO.we_end }</td>
+					</c:forEach>
+				</tr>
+			</table>
+
+		</div>
+
+		
+	
 	</section>
 	<footer>
+	<div style="  width: 100%; height: 30px;"></div>
+<div style="  width: 100%; height: 30px;"></div>
+<div style="  width: 100%; height: 30px;"></div>
 		<jsp:include page="../template/default/footer.jsp" />
 	</footer>
 
