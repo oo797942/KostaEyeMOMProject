@@ -151,7 +151,7 @@ public class VideoManager {
 		return result;
 	}
 
-	
+//	춤을 춰요 추천을 위한 추천인 리스트 가져오기 
 	public static List<VideoVO> videoRecom(VideoVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<VideoVO> list = null;
@@ -160,6 +160,7 @@ public class VideoManager {
 		return list;
 	}
 
+//	춤을 춰요 추천 실행
 	public static int videoRecomDoing(VideoVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
@@ -168,17 +169,16 @@ public class VideoManager {
 		return result;
 	}
 
+//	공부해요 추천을 위한 추천인 리스트 가져오기
 	public static List<StudyVO> studyRecom(StudyVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<StudyVO> list = null;
-
 		list = session.selectList("admin.studyRecom", vo);
-		System.out.println(list.size());
-
 		session.commit();
 		return list;
 	}
 
+//	공부해요 추천 실행
 	public static int studyRecomDoing(StudyVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
@@ -191,9 +191,7 @@ public class VideoManager {
 	public static List<StudyVO> studybanner() throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<StudyVO> list = null;
-
 		list = session.selectList("admin.studybanner");
-
 		session.commit();
 		return list;
 	}
@@ -202,9 +200,7 @@ public class VideoManager {
 	public static List<GameVO> gamebanner() throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<GameVO> list = null;
-
 		list = session.selectList("admin.gamebanner");
-
 		session.commit();
 		return list;
 	}
@@ -213,9 +209,7 @@ public class VideoManager {
 	public static List<VideoVO> videobanner() throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<VideoVO> list = null;
-
 		list = session.selectList("admin.videobanner");
-
 		session.commit();
 		return list;
 	}

@@ -18,8 +18,8 @@ INSERT INTO kid_video(d_no, d_title, d_content, d_photo, d_video) VALUES (MOM_VI
 <insert id="studyInput" parameterType="studyVO"> <!-- insert,delete,update는 리턴타입 필요없음 -->
 INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VIDEO_NO.nextval, #{v_title}, #{v_content}, #{v_photo}, #{v_video})
 </insert>
-<!-- userId 같은 이름들은 parameterClass의 클래스 필드 명 -->
  
+<!-- 게임(놀아 봐요) 리스트 가져오기 -->
  <select id="gameAll" resultType="gameVO"  parameterType="gameVO" > 
 	select * from kid_game
 	<where>
@@ -29,7 +29,7 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
-<!-- 춤을 춰요 디비값 가져오기 -->
+<!-- 춤을 춰요 리스트 가져오기 -->
  <select id="videoAll" resultType="videoVO"  parameterType="videoVO" > 
 	select * from kid_video
 	<where>
@@ -39,9 +39,12 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
+<!-- 춤을 춰요 페이징을 위한 총 리스트 갯수 가져오기 -->
  <select id="videoTotalCount" parameterType="videoVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM kid_video 
     </select>
+    
+<!--     춤을 춰요 값을 페이징 처리하여 가져오기 -->
 <select id="videoAllp" resultType="videoVO"  parameterType="videoVO">
 	SELECT d_no, d_title, d_content, d_photo, d_video, d_count, d_good
 	 FROM kid_video WHERE d_no in(SELECT d_no FROM (SELECT rownum as rnum, d_no FROM
@@ -50,9 +53,12 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY d_no DESC
 </select>
 
+<!-- 공부 해요 페이징을 위한 총 리스트 갯수 가져오기 -->
  <select id="studyTotalCount" parameterType="studyVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM kid_study 
     </select>
+    
+<!--     공부 해요 값을 페이징 처리하여 가져오기 -->
 <select id="studyAllp" resultType="studyVO"  parameterType="studyVO">
 	SELECT v_no, v_title, v_content, v_photo, v_video, v_count, v_good
 	 FROM kid_study WHERE v_no in(SELECT v_no FROM (SELECT rownum as rnum, v_no FROM
@@ -71,10 +77,12 @@ INSERT INTO kid_study(v_no, v_title, v_content, v_photo, v_video) VALUES (MOM_VI
 	</where>
 </select>
 
+<!-- 게임 조회수 증가 -->
 <update id="gameCount" parameterType="gameVO">
 UPDATE kid_game SET g_count = g_count+1 WHERE g_no = #{g_no}
 </update>
 
+<!-- 관리자에서의 게임 수정 -->
 <update id="gameUpdate" parameterType="gameVO">
 UPDATE kid_game SET 
 g_title = #{g_title}, 
@@ -89,26 +97,32 @@ WHERE g_no = #{g_no}
 </update>
 
 
+<!-- 관리자에서 공부해요(영상) 수정 -->
 <update id="studyCount" parameterType="studyVO">
 UPDATE kid_study SET v_count = v_count+1 WHERE v_no = #{v_no}
 </update>
 
+<!-- 관리자에서 춤을 춰요(영상) 수정 -->
 <update id="videoCount" parameterType="videoVO">
 UPDATE kid_video SET d_count = d_count+1 WHERE d_no = #{d_no}
 </update>
 
+<!-- 관리자에서 놀아봐요(게임) 삭제 -->
 <delete id="gameDelete" parameterType="gameVO">
 DELETE FROM kid_game WHERE g_no = #{g_no}
 </delete>
 
+<!-- 관리자에서 춤을 춰요(영상) 삭제 -->
 <delete id="videoDelete" parameterType="videoVO">
 DELETE FROM kid_video WHERE d_no = #{d_no}
 </delete>
 
+<!-- 관리자에서 공부 해요(영상) 삭제 -->
 <delete id="studyDelete" parameterType="studyVO">
 DELETE FROM kid_study WHERE v_no = #{v_no}
 </delete>
 
+<!-- 관리자에서 춤을 춰요(영상) 수정 -->
 <update id="videoUpdate" parameterType="videoVO">
 UPDATE kid_video SET 
 d_title = #{d_title}, 
@@ -122,6 +136,7 @@ d_content = #{d_content}
 WHERE d_no = #{d_no}
 </update>
 
+<!-- 관리자에서 공부해요(영상) 수정 -->
 <update id="studyUpdate" parameterType="studyVO">
 UPDATE kid_study SET 
 v_title = #{v_title}, 
@@ -135,6 +150,7 @@ v_content = #{v_content}
 WHERE v_no = #{v_no}
 </update>
 
+<!-- 게임 추천을 위한 추천인 리스트 가져오기 -->
 <select id="gameRecom" parameterType="gameVO" resultType="gameVO">
 <![CDATA[
     SELECT distinct regexp_substr(b.g_goodog, '[^/]+', 1, LEVEL) g_goodog
@@ -143,10 +159,12 @@ CONNECT BY LEVEL <= length(regexp_replace(b.g_goodog, '[^/]+',''))+1
 ]]>
 </select>
 
+<!-- 게임 추천 실행 -->
 <update id="gameRecomDoing" parameterType="gameVO">
 UPDATE kid_game SET g_good = (g_good+1),  g_goodog = (g_goodog||'/'||#{g_recomId}) WHERE g_no = #{g_no}
 </update>
 
+<!-- 춤을 춰요(영상) 추천을 위한 추천인 리스트 가져오기 -->
 <select id="videoRecom" parameterType="videoVO" resultType="videoVO">
 <![CDATA[
  SELECT distinct regexp_substr(b.d_goodog, '[^/]+', 1, LEVEL) d_goodog
@@ -155,10 +173,12 @@ CONNECT BY LEVEL <= length(regexp_replace(b.d_goodog, '[^/]+',''))+1
 ]]>
 </select>
 
+<!-- 춤을 춰요(영상) 추천 실행 -->
 <update id="videoRecomDoing" parameterType="videoVO">
 UPDATE kid_video SET d_good = (d_good+1),  d_goodog = (d_goodog||'/'||#{d_recomId}) WHERE d_no = #{d_no}
 </update>
 
+<!-- 공부해요(영상) 추천을 위한 추천인 리스트 가져오기 -->
 <select id="studyRecom" parameterType="studyVO" resultType="studyVO">
 <![CDATA[
     SELECT distinct regexp_substr(b.v_goodog, '[^/]+', 1, LEVEL) v_goodog
@@ -167,14 +187,17 @@ CONNECT BY LEVEL <= length(regexp_replace(b.v_goodog, '[^/]+',''))+1
 ]]>
 </select>
 
+<!-- 공부해요(영상) 추천 실행 -->
 <update id="studyRecomDoing" parameterType="studyVO">
 UPDATE kid_study SET v_good = (v_good+1),  v_goodog = (v_goodog||'/'||#{v_recomId}) WHERE v_no = #{v_no}
 </update>
 
+<!-- 회원 목록 가져오기 -->
 <select id="memberAll" parameterType="memberVO" resultType="memberVO">
 	select * from mom_user
 </select>
 
+<!-- 게임 베너 -->
 <select id="gamebanner" parameterType="gameVO" resultType="gameVO">
 <![CDATA[
 select rownum rs, g_no, g_photo, g_good from(
@@ -182,6 +205,7 @@ select * from kid_game order by g_good desc) where rownum < 6
 ]]>
 </select>
 
+<!-- 공부 해요 베너 -->
 <select id="studybanner" parameterType="studyVO" resultType="studyVO">
 <![CDATA[
 select rownum rs, v_no, v_photo, v_good from(
@@ -189,16 +213,20 @@ select * from kid_study order by v_good desc) where rownum < 6
 ]]>
 </select>
 
+<!-- 춤을 춰요 배너 -->
 <select id="videobanner" parameterType="videoVO" resultType="videoVO">
 <![CDATA[
 select rownum rs, d_no, d_photo, d_good from(
 select * from kid_video order by d_good desc) where rownum < 6
 ]]>
 </select>
+
+<!-- 게임 페이징을 위한 총 리스트 갯수 가져오기 -->
  <select id="gameTotalCount" parameterType="videoVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM kid_game 
     </select>
     
+<!--     페이징처리한 게임리스트 가져오기 -->
     <select id="gameAllp" resultType="gameVO"  parameterType="gameVO">
 	SELECT g_no, g_title, g_content, g_photo, g_flash, g_count, g_good
 	 FROM kid_game WHERE g_no in(SELECT g_no FROM (SELECT rownum as rnum, g_no FROM

@@ -5,29 +5,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="msg" >
+
+<!-- DB에 메세지 저장  -->
 <insert id="messageSending" parameterType="messageVO">
 INSERT INTO mom_message(s_no, s_title, s_content, s_nick, s_id, s_send_nick, s_send_id, s_date, s_state)
 VALUES (MOM_MESSAGE_NO.nextval, #{s_title}, #{s_content}, #{s_nick}, #{s_id}, #{s_send_nick}, #{s_send_id}, sysdate, 'n')
 </insert>
 
-<!--  -->
+<!--보낸 메세지 리스트 가져오기-->
 <select id="sendMessageList" parameterType="messageVO" resultType="messageVO">
 SELECT * FROM mom_message WHERE s_send_id = #{s_send_id}
 </select>
+
+<!-- 받은 메세지 리스트 가져오기 -->
 <select id="receiveMessageList" parameterType="messageVO" resultType="messageVO">
 SELECT * FROM mom_message WHERE s_id = #{s_id}
 </select>
+
+<!-- 메세지 뷰 가져오기 -->
 <select id="messageView" parameterType="messageVO" resultType="messageVO">
 SELECT * FROM mom_message WHERE s_no = #{s_no}
 </select>
 
+<!-- 메세지 읽음 표시 -->
 <update id="messageCount" parameterType="messageVO" >
 UPDATE mom_message SET s_state = 'y' WHERE s_no = #{s_no} and s_id != #{s_id}
 </update>
+
+<!-- 메세지 삭제  -->
 <delete id="deleteAll" parameterType="messageVO">
 DELETE FROM mom_message WHERE s_no = #{s_no}
 </delete>
+
+<!-- 메세지 여러개 읽음표시 -->
 <update id="readAll" parameterType="messageVO">
-UPDATE mom_message SET s_state = 'y' WHERE s_no = #{s_no}</update>
+UPDATE mom_message SET s_state = 'y' WHERE s_no = #{s_no}
+</update>
 
 </mapper>
