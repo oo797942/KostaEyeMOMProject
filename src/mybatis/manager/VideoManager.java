@@ -17,7 +17,7 @@ import member.vo.StudyVO;
 import member.vo.VideoVO;
 
 public class VideoManager {
-
+ 
 	// 춤을 춰요 입력
 	public static int videoInput(VideoVO vo) throws SQLException {
 		int result = 0;
