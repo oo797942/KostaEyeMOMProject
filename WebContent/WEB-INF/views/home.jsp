@@ -217,7 +217,7 @@
 									<a class="alink bestrice open-popup-link" href="#test-popup">
 								</c:when>
 								<c:otherwise>
-									<a
+									<a 
 										onclick="window.open('studyBoardView.go?v_no=${study.v_no}', '${study.v_title}',
                    				'width=1050,height=770');return false;">
 								</c:otherwise>
