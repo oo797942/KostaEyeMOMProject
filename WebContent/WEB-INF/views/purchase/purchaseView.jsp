@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
 <title></title>
 <link href="resources/css/purchaseView.css" rel="stylesheet" />
 <script src="resources/js/jquery-1.10.2.min.js"></script>
-<script src="resources/js/main.js"></script>
+<script src="reso	urces/js/main.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script type="text/javascript">
 $(function(){
@@ -64,10 +65,10 @@ $(function(){
 								<img src="resources/img/${vo.we_photo1name}" width="58" height="58" alt=""></td>
 							<td class="nme ptd center-group" rowspan="2" >${vo.we_title}</td>
 							<td class="qty ptd center-group" rowspan="2" >${vo.we_count}개</td>
-							<td class="price ptd center-group" rowspan="2">${vo.we_price}원</td>
+							<td class="price ptd center-group" rowspan="2"><fmt:formatNumber value="${vo.we_price}" pattern="#,###.##" />원</td>
 							<td class="td_pnumbig ptd center-group" rowspan="2">배송비  무료</td>
 							<td class="amt ptd center-group" rowspan="2"><span class="total_price">
-									총 가격:${vo.we_price*vo.we_count}원</span></td>
+									총 가격:<fmt:formatNumber value="${vo.we_price*vo.we_count}" pattern="#,###.##" />원</span></td>
 						</tr>
 					</tbody>
 				</table>

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +83,8 @@ $(function(){
 			</tr>
 			<tr>
 				<td class="viewInfo infoDetail1">판매가</td>
-				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">${vo.we_price}원
+				<td class="viewInfo" style="font-size: x-large; color: #ffa07a;">
+				<fmt:formatNumber value="${vo.we_price}" pattern="#,###.##"/>원
 				</td>
 			</tr>
 			<tr>

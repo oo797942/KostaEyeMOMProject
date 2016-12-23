@@ -2,7 +2,7 @@
 <%@ page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +70,7 @@ function fn_movePage(val){
 																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
-																<label>가격</label>&nbsp;<label>${vo.we_price}</label>
+																<label>가격</label>&nbsp;<label><fmt:formatNumber value="${vo.we_price}" pattern="#,###.##" /></label>
 															</p>
 														</div>
 													</article>
@@ -90,7 +90,7 @@ function fn_movePage(val){
 																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
-																<label>가격</label>&nbsp;<label>${vo.we_price}</label>
+																<label>가격</label>&nbsp;<label><fmt:formatNumber value="${vo.we_price}" pattern="#,###.##" /></label>
 															</p>
 														</div>
 
@@ -110,7 +110,7 @@ function fn_movePage(val){
 																<label>수량</label> &nbsp;<label>(${vo.we_sold} / ${vo.we_max})</label>
 																&nbsp;&nbsp;&nbsp; 
 																<br /> 
-																<label>가격</label>&nbsp;<label>${vo.we_price}</label>
+																<label>가격</label>&nbsp;<label><fmt:formatNumber value="${vo.we_price}" pattern="#,###.##" /></label>
 															</p>
 														</div>
 

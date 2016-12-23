@@ -163,7 +163,7 @@
 								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>
 						</li>
-					</ul> <img src="/EyeMOM/resources/img/mainpic.jpg" id="mainMenuImg">
+					</ul> <img src="/EyeMOM/resources/img/home/2_3.png" id="mainMenuImg">
 				</td>
 			</tr>
 		</table>
@@ -248,7 +248,7 @@
 			<table id="tabmenutable" cellspacing="0">
 				<tr id="tabmenuTr">
 					<td class="selectnow menubtn" rel="menu1" lin="link1">공지사항</td>
-					<td class="noselect menubtn" rel="menu2" lin="link2">소아 질병</td>
+					<td class="noselect menubtn" rel="menu2" lin="link2">으앙아팡</td>
 				</tr>
 				<tr id="tabcontenttr">
 					<td colspan="2">
@@ -259,15 +259,15 @@
 						</ul>
 
 						<ul id="menu2" class="menucontent">
-							<li><a href="sick.do">아토피피부염</a></li>
-							<li><a href="gunsun.do">건선</a></li>
-							<li><a href="cold.do">잦은 감기</a></li>
-							<li><a href="bi.do">비염.축농증</a></li>
-							<li><a href="chun.do">천식</a></li>
-							<li><a href="jung.do">중이염</a></li>
-							<li><a href="josuk.do">성조숙증</a></li>
-							<li><a href="biman.do">소아비만</a></li>
-							<li><a href="dang.do">소아당뇨</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
+							<li><a href="#">ddd</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -278,11 +278,9 @@
 							<br />공지사항 바로가기
 						</div>
 						</a>
-					<a href="sick.do" class="alink">
 						<div class="tablinks" id="link2">
-							<br />소아 질병 바로가기
+							<br />으앙아팡 바로가기
 						</div>
-					</a>
 					</td>
 				</tr>
 			</table>
@@ -320,7 +318,7 @@
 			<table id="qnacooktable" cellspacing="0">
 				<tr id="qnacooktableheader">
 					<td id="headerqna"><b>묻고 답하기</b> <span><a
-							href="qnaboard.do" class="alink">더보기</a></span></td>
+							href="qna_board" class="alink">더보기</a></span></td>
 					<td id="headercook"></td>
 				</tr>
 				<tr>
@@ -329,22 +327,13 @@
 							<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
 							<c:forEach var='qnaVO' items='${qnaList}'>
 								<p class="qnap">
-									[${qnaVO.in_point }] 
-									<c:choose>
-									<c:when test="${empty sessionScope.user}">
-									<a href="#test-popup" class="alink open-popup-link">${qnaVO.in_title }</a>
-									</c:when>
-									<c:otherwise>
-									<a class="alink" href="qnaview.do?b_no=${qnaVO.b_no }">${qnaVO.in_title }</a>									
-									</c:otherwise>
-									
-									</c:choose>
+									[${qnaVO.in_point }] <a class="alink">${qnaVO.in_title }</a>
 								</p>
 							</c:forEach>
 						</div>
 					</td>
 					<td class="cooktd" id="cookhover"><b>베스트 레시피</b> <span><a
-						href="gal.do?title=rice"	class="alink" id="cookmore">더보기</a></span> <img
+							class="alink" id="cookmore">더보기</a></span> <img
 						src="/EyeMOM/resources/img/cook_4.png" class="cookimg"
 						id="cookimg4" rel="cookul4"> <img
 						src="/EyeMOM/resources/img/cook_3.png" class="cookimg"
@@ -477,7 +466,7 @@
 			</form>
 			<label id="info"></label>
 			<p>
-				회원이 아니십니까? <a href="gojoin.do" class="blue">회원가입하기</a><span
+				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
 					class="fontawesome-arrow-right"></span>
 			</p>
 		</div>

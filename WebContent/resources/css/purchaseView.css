@@ -75,7 +75,7 @@
 
 .qty {
 	font-weight: bold;
-	width: 200px;
+	width: 100px;
 	text-align: right;
 	vertical-align: top;
 	line-height: 23px;
@@ -102,10 +102,11 @@
 	padding: 20px 20px 0 0;
 }
 
-.td_numbig {
-	width: 200px;
+.td_pnumbig {
+	width: 150px;
 	text-align: center;
 	padding: 12px 20px 0 0;
+	font-weight: bold;
 }
 
 .tabl {
