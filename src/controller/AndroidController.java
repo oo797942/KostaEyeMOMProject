@@ -101,10 +101,10 @@ public class AndroidController {
 	// 스터디 리스트(공부해요)
 	@RequestMapping(value = "/android_study_list.go", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, List> androidStudyList(HttpServletRequest request,StudyVO vo) {
+	public Map<String, List> androidStudyList(HttpServletRequest request, StudyVO vo) {
 
 		// 비디오 리스트(춤을춰요)를 뽑아온다.
-		List list = videoDao.studyBoard(vo);
+		List list = videoDao.studyBoardAndroid();
 		Map<String, List> result = new HashMap<String, List>();
 		System.out.println("list값 :: " + list);
 		// 뽑아온 값을 Map에 넣고 리턴
@@ -129,7 +129,7 @@ public class AndroidController {
 		System.out.println("goodPress>>> " + goodPress);
 		System.out.println("d_no 값 >> " + d_no);
 		System.out.println("v_no 값 >> " + v_no);
- 
+
 		// 춤을춰요 일 때(kid_video)
 		if (d_no > 0) {
 			VideoVO vo = new VideoVO();
@@ -247,7 +247,7 @@ public class AndroidController {
 			List<ReplyVO> listVO = boardDao.callReply(boardVO);
 
 			boardVO.setB_recount(listVO.size());
-			System.out.println(""+boardVO.getB_recount());
+			System.out.println("" + boardVO.getB_recount());
 			String[] iplist = new String[4]; // " . "을 제거한 ip를 담을 list
 			String rip; // 보안처리된 ip 담을 문자열
 			String ip = boardVO.getB_ip(); // 작성자 ip가져오기
@@ -270,31 +270,66 @@ public class AndroidController {
 
 		return result;
 	}
-	
+
 	@RequestMapping(value = "/android_board_view.go", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, String> androidBoardView(HttpServletRequest request) {
 		Map<String, String> result = new HashMap<String, String>();
-		int b_no = Integer.parseInt(request.getParameter("b_no"));
 		BoardVO boardVO = new BoardVO();
+
+		int b_no = Integer.parseInt(request.getParameter("b_no"));
+		String Nid = request.getParameter("id");
+		String goodPress = request.getParameter("goodPress");
+		String nick = request.getParameter("nick");
+
 		boardVO.setB_no(b_no);
-		
-		BoardVO vo=boardDao.viewBoard(boardVO); // 게시물 내용 호출
-		List <ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출	
-		
-		//ip보안을 위해 * 처리
-		String ip= vo.getB_ip(); //작성자 ip가져오기
-		StringTokenizer st= new StringTokenizer(ip, ".");
-		String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
-		String rip;	// 보안처리된  ip 담을 문자열
-		for(int i=0; st.hasMoreTokens();i++){
-			
-			list[i]=(String) st.nextToken();  // " . "을 제거한 ip를 list에 담는다
-			
+		if (nick == null) {
+
+		} else {
+			boardVO.setB_nick(nick);
 		}
-		rip=list[0]+"."+list[1]+".*.*"; // 뒤에 두자리 보안처리
+
+		result.put("goodcheck", "no");
+
+		boardVO.setU_id(Nid);
+		List<BoardVO> lists = boardDao.checkGoodId(boardVO);
+
+		if (lists.isEmpty()) {
+
+		} else {
+			for (int i = 0; i < lists.size(); i++) {
+				System.out.println("추천인 : " + Nid);
+				System.out.println("이미 추천한 사람 : " + lists.get(i).getB_goodog());
+				if (lists.get(i).getB_goodog().equals(Nid)) {
+					System.out.println("같은이름");
+					result.put("goodcheck", "yes");
+				}
+			}
+		}
+
+		if (goodPress == null) {
+
+		} else {
+			boardDao.countGood(boardVO);
+		}
+
+		BoardVO vo = boardDao.viewBoard(boardVO); // 게시물 내용 호출
+		List<ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
+
+		// ip보안을 위해 * 처리
+		String ip = vo.getB_ip(); // 작성자 ip가져오기
+		StringTokenizer st = new StringTokenizer(ip, ".");
+		String[] list = new String[4]; // " . "을 제거한 ip를 담을 list
+		String rip; // 보안처리된 ip 담을 문자열
+		for (int i = 0; st.hasMoreTokens(); i++) {
+
+			list[i] = (String) st.nextToken(); // " . "을 제거한 ip를 list에 담는다
+
+		}
+		rip = list[0] + "." + list[1] + ".*.*"; // 뒤에 두자리 보안처리
 		vo.setB_ip(rip); // 보안ip 다시 담기
-			
+		vo.setB_recount(listVO.size());
+
 		result.put("u_id", vo.getU_id());
 		result.put("b_no", String.valueOf(vo.getB_no()));
 		result.put("b_cate", vo.getB_cate());
@@ -309,11 +344,11 @@ public class AndroidController {
 		result.put("b_photo2name", vo.getB_photo2name());
 		result.put("b_photo3name", vo.getB_photo3name());
 		result.put("b_scate", vo.getB_scate());
-		//m.addAttribute("list", listVO); //리플 정보 모델에 담기
-		
-		
+		result.put("b_recount", String.valueOf(vo.getB_recount()));
+		result.put("b_good", vo.getB_good());
+		// m.addAttribute("list", listVO); //리플 정보 모델에 담기
+
 		return result;
 	}
-	
 
 }
