@@ -40,7 +40,7 @@ $(function(){
 			</div>
 			</td>
 		</tr>
-		</table>
+		</table> 
 
 
 <!-- 		<td id="menuTd"> -->
