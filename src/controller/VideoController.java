@@ -34,21 +34,21 @@ public class VideoController {
 		
 		
 
-		  //--페이징 처리
-	    int totalCount = videoDao.studyListCount(studyVO); //게시물 총갯수를 구한다
-	    studyVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
-	    studyVO.setPageSize(12);
-	    m.addAttribute("pageVO", studyVO);
+//		  //--페이징 처리
+//	    int totalCount = videoDao.studyListCount(studyVO); //게시물 총갯수를 구한다
+//	    studyVO.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
+//	    studyVO.setPageSize(12);
+//	    m.addAttribute("pageVO", studyVO);
 
 	    //--페이징 처리
 	    
-	    List<StudyVO>  studyList = videoDao.studyBoard(studyVO);
+//	    List<StudyVO>  studyList = videoDao.studyBoard(studyVO);
+//		
+//		m.addAttribute("slist", studyList); //가져온 DB를 모델에 저장
 		
-		m.addAttribute("slist", studyList); //가져온 DB를 모델에 저장
-		
-//		List<StudyVO> slist = null;
-//		slist = videoDao.studyBoard(vo);
-//		m.addAttribute("slist", slist); //가져온 DB를 모델에 저장
+		List<StudyVO> slist = null;
+		slist = videoDao.studyBoardn();
+		m.addAttribute("slist", slist); //가져온 DB를 모델에 저장
 		
 		return "adminVideo";
 	} 

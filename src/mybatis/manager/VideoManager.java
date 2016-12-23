@@ -90,6 +90,18 @@ public class VideoManager {
 	      session.commit();
 	      return totalCount;
 	   }
+	   
+		// 공부해요 보드
+		public static List<StudyVO> studyBoardn() throws 	SQLException {
+			SqlSession session = CommonManager.db().openSession();
+			List<StudyVO> list = null;
+
+			list = session.selectList("admin.studyAll");
+			System.out.println(list.size());
+
+			return list;
+		}
+		
 	// 공부해요 보드
 	public static List<StudyVO> studyBoard(StudyVO vo) throws 	SQLException {
 		SqlSession session = CommonManager.db().openSession();
