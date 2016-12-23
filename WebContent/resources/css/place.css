@@ -1,62 +1,96 @@
 @CHARSET "UTF-8";
 
-#menuTd{
-	float:right;
-	vertical-align:top;
-	width:150px; 
-	padding-top: 20px;
+#menuTd {
+	float: right;
+	vertical-align: top;
+	width: 150px;
+	padding-top: 25px;
 }
 
-#menuTd2{
-	width:85%;
+#menuTd2 {
+	width: 85%;
 	padding-left: 0px;
 	margin-left: 0px;
 }
 
-
-#menuDiv{
-	width:150px; 
-	float: right; 
-	position: relative; 
-	margin-right: 5px;"	
+#menuDiv {
+	width: 150px;
+	float: right;
+	position: relative;
+	margin-right: 5px;
+	"
 }
 
-a{
+.aaa>a {
+	width: 500px;
+	line-height: 50px;
+	border-bottom-style: solid;
+	border-width: 3px;
+}
+
+a {
 	text-decoration: none;
 	color: black;
 }
 
-iframe{
-	padding-top: 20px;
+iframe {
+	padding-top: 10px;
 	padding-left: 10px;
-	width:980px; 
-	height: 520px; 
+	width: 980px;
+	height: 520px;
 	border: none;
-	
+	padding-bottom: 30px;
 }
 
-.list-group-item{
-	
-	list-style:none;
+.list-group-item {
+	list-style: none;
 	color: #241;
 }
 
-#mapHr{
-	size:10px; 
-	color:black; 
-	width:100px; 
-	padding:0px; 
-	margin:0px;
-	align:center; 
+#mapHr {
+	size: 10px;
+	color: black;
+	width: 100px;
+	padding: 0px;
+	margin: 0px;
+	align: center;
 }
 
-#menuTable{
-	width: 1200px; 
-	text-align:center;
+#menuTable {
+	margin-top: 20px;
+	width: 980px;
+	text-align: center;
 }
 
-#iFrameDiv{
-	width:950px; 
+#iFrameDiv {
+	display: table-cell;
+	width: 950px;
+	/* 	float: left; */
+	width: 950px;
+}
+
+.tableA {
+	text-decoration: none;
+	font-family: Dotum;
+	font-weight: bolder;
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+}
+
+.tableB {
+	background-color: #ffa07a;
+	color : #fff;
+	
+}
+
+.MapDiv {
+	cursor : pointer;
+	width: 25%;
+	height: 50px;
+	line-height: 1.7;
 	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid black;
 }
-
