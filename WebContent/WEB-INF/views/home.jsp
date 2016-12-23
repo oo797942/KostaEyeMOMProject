@@ -165,7 +165,7 @@
 								<li><a href="donation.do">· 아나바다</a></li>
 							</ul>
 						</li>
-					</ul> <img src="/EyeMOM/resources/img/home/2_3.png" id="mainMenuImg">
+					</ul> <img src="/EyeMOM/resources/img/mainpic.jpg" id="mainMenuImg">
 				</td>
 			</tr>
 		</table>
@@ -173,158 +173,13 @@
 	</header>
 	<section>
 		<div style="background: #ffa07a; width: 100%; height: 30px;"></div>
-<<<<<<< HEAD
-
-		<div id="slide_div">
-			<div class="banner_wrap gamebanner">
-				<ul class="slide_banner" id="gamebanner">
-					<c:forEach var='game' items='${gamebanner}'>
-						<li><c:choose>
-								<c:when test="${empty sessionScope.user}">
-									<a class="alink bestrice open-popup-link" href="#test-popup">
-								</c:when>
-								<c:otherwise>
-									<a
-										onclick="window.open('flashBoardView.go?g_no=${game.g_no}', '${game.g_title}',
-                   				'width=1050px,height=690');return false;">
-								</c:otherwise>
-							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${game.g_photo }" />
-							</a></li>
-					</c:forEach>
-				</ul>
-			</div>
-
-			<div class="banner_wrap videobanner">
-				<ul class="slide_banner" id="videobanner">
-					<c:forEach var='video' items='${videobanner}'>
-						<li><c:choose>
-								<c:when test="${empty sessionScope.user}">
-									<a class="alink bestrice open-popup-link" href="#test-popup">
-								</c:when>
-								<c:otherwise>
-									<a
-										onclick="window.open('videoBoardView.go?d_no=${video.d_no}', '${video.d_title}',
-                   				'width=1050,height=770');return false;">
-								</c:otherwise>
-							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${video.d_photo }" />
-							</a></li>
-					</c:forEach>
-				</ul>
-			</div>
-
-			<div class="banner_wrap studybanner">
-				<ul class="slide_banner" id="studybanner">
-					<c:forEach var='study' items='${studybanner}'>
-						<li><c:choose>
-								<c:when test="${empty sessionScope.user}">
-									<a class="alink bestrice open-popup-link" href="#test-popup">
-								</c:when>
-								<c:otherwise>
-									<a 
-										onclick="window.open('studyBoardView.go?v_no=${study.v_no}', '${study.v_title}',
-                   				'width=1050,height=770');return false;">
-								</c:otherwise>
-							</c:choose> <img class="slide" src="/EyeMOM/resources/img/${study.v_photo }" />
-							</a></li>
-					</c:forEach>
-				</ul>
-			</div>
-
-
-			<table  cellspacing="0" id="slideMenu">
-				<tr>
-					<td id="gamebannerbtn" style="height: 33%;">
-					<div class='opop opa'><img src="resources/img/home/gamebtn.png" class='gamebtn'></div></td>
-				</tr>
-				<tr>	
-					<td id="videobannerbtn" style="height: 33%;">
-					<div class='opop'><img src="resources/img/home/dancebtn.png" class='dancebtn' ></div></td>
-				</tr>
-				<tr>
-					<td id="studybannerbtn" style="height: 33%;">
-					<div class='opop'><img src="resources/img/home/studyingbtn.png" class='playbtn'></div></td>
-				</tr>
-			</table>
-		</div>
-
-		<div id="mainMiddle">
-			<table id="tabmenutable" cellspacing="0">
-				<tr id="tabmenuTr">
-					<td class="selectnow menubtn" rel="menu1" lin="link1">공지사항</td>
-					<td class="noselect menubtn" rel="menu2" lin="link2">으앙아팡</td>
-				</tr>
-				<tr id="tabcontenttr">
-					<td colspan="2">
-						<ul id="menu1" class="menucontent">
-						<c:forEach var='notice' items='${notice}'>
-							<li>[${notice.b_date }] <a href="noticeview.do?b_no=${notice.b_no}">${notice.b_title }</a></li>
-						</c:forEach>
-						</ul>
-
-						<ul id="menu2" class="menucontent">
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-							<li><a href="#">ddd</a></li>
-						</ul>
-					</td>
-				</tr>
-				<tr id="tablink">
-					<td colspan="2">
-					<a href="notice.do" class="alink">
-						<div class="tablinks" id="link1">
-							<br />공지사항 바로가기
-						</div>
-						</a>
-						<div class="tablinks" id="link2">
-							<br />으앙아팡 바로가기
-						</div>
-					</td>
-				</tr>
-			</table>
- 
-			<table id="groupBuyTable" cellspacing="0">
-				<caption>
-					<label>공동구매 최신 글 <span><a class="alink">더보기</a></span></label>
-				</caption>
-				<tr>
-					<c:forEach var='purchaseVO' items='${purchaseList}'>
-						<td><img
-							src="/EyeMOM/resources/img/${purchaseVO.we_photo1name }"
-							class="groupImg" /> <a class="goGroupBuy"><b>[${purchaseVO.we_title }]</b></a>
-							<br /> <fmt:formatNumber value="${purchaseVO.we_price}"
-								pattern="#,###.##" />원 <br />
-							<hr color="#ffa07a" /> <c:set var="human"
-								value="${purchaseVO.we_maxsold - purchaseVO.we_sold }" /> <c:choose>
-								<c:when test="${human gt 0}">
-					인원: ${human }명<br />
-								</c:when>
-								<c:otherwise>
-									<b style="color: red;">마감</b>
-									<br />
-								</c:otherwise>
-							</c:choose> <b>구매기간</b><br /> ${purchaseVO.we_start } ~<br />
-							${purchaseVO.we_end }</td>
-					</c:forEach>
-				</tr>
-			</table>
-
-		</div>
-
-=======
 		
->>>>>>> branch 'master' of https://github.com/oo797942/KostaEyeMOMProject.git
 		<div id="qnacookdiv">
 
 			<table id="qnacooktable" cellspacing="0">
 				<tr id="qnacooktableheader">
 					<td id="headerqna"><b>묻고 답하기</b> <span><a
-							href="qna_board" class="alink">더보기</a></span></td>
+							href="qnaboard.do" class="alink">더보기</a></span></td>
 					<td id="headercook"></td>
 				</tr>
 				<tr>
@@ -333,13 +188,22 @@
 							<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
 							<c:forEach var='qnaVO' items='${qnaList}'>
 								<p class="qnap">
-									[${qnaVO.in_point }] <a class="alink">${qnaVO.in_title }</a>
+									[${qnaVO.in_point }] 
+									<c:choose>
+									<c:when test="${empty sessionScope.user}">
+									<a href="#test-popup" class="alink open-popup-link">${qnaVO.in_title }</a>
+									</c:when>
+									<c:otherwise>
+									<a class="alink" href="qnaview.do?b_no=${qnaVO.b_no }">${qnaVO.in_title }</a>									
+									</c:otherwise>
+									
+									</c:choose>
 								</p>
 							</c:forEach>
 						</div>
 					</td>
 					<td class="cooktd" id="cookhover"><b>베스트 레시피</b> <span><a
-							class="alink" id="cookmore">더보기</a></span> <img
+						href="gal.do?title=rice"	class="alink" id="cookmore">더보기</a></span> <img
 						src="/EyeMOM/resources/img/cook_4.png" class="cookimg"
 						id="cookimg4" rel="cookul4"> <img
 						src="/EyeMOM/resources/img/cook_3.png" class="cookimg"
@@ -622,7 +486,7 @@
 			</form>
 			<label id="info"></label>
 			<p>
-				회원이 아니십니까? <a href="#" class="blue">회원가입하기</a><span
+				회원이 아니십니까? <a href="gojoin.do" class="blue">회원가입하기</a><span
 					class="fontawesome-arrow-right"></span>
 			</p>
 		</div>
