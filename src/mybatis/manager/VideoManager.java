@@ -17,142 +17,123 @@ import member.vo.StudyVO;
 import member.vo.VideoVO;
 
 public class VideoManager {
- 
-	// 춤을 춰요 입력
+// 춤을 춰요, 공부 해요 (영상물)관련 매니저
+	
+	
+	// 춤을 춰요 입력 실행
 	public static int videoInput(VideoVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
 		result = session.insert("admin.videoInput", vo);
 		session.commit();
-		return result; // insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص�
-						// ����
+		return result; 
 	}
 
-	// 공부해요 입력
+	// 공부해요 입력 실행
 	public static int studyInput(StudyVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
 		result = session.insert("admin.studyInput", vo);
 		session.commit();
-		return result; // insert()�� ����Ÿ���� Object�̱⵵ �ϰ� update()�� ����ص�
-						// ����
+		return result; 
 	}
 
-	// 춤을 춰요 보드
+//	 춤을 춰요 리스트 가져오기
 	public static List<VideoVO> videoBoard() throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<VideoVO> list = null;
-
 		list = session.selectList("admin.videoAll");
-		System.out.println(list.size());
-
 		return list;
 	}
 	
-	   // 공부해요 총갯수 뽑아오기
+	   // 페이징을 위한 공부해요 총갯수 뽑아오기
 	   public static int videoTotalCount(VideoVO VO) throws SQLException {
 	      SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("admin.videoTotalCount", VO);
-
-	      session.commit();
-	      return totalCount;
-	   }
-	// 춤을 춰요 보드
-	public static List<VideoVO> videoBoardp(VideoVO vo) throws SQLException {
-		SqlSession session = CommonManager.db().openSession();
-		List<VideoVO> list = null;
-
-		list = session.selectList("admin.videoAllp",vo);
-		System.out.println(list.size());
-
-		return list;
-	}
-
-
-	// 춤을 춰요 뷰
-	public static VideoVO videoView(VideoVO vo) throws SQLException {
-
-		SqlSession session = CommonManager.db().openSession();
-		session.update("admin.videoCount", vo);
-		VideoVO vlist = session.selectOne("admin.videoAll", vo);
-		session.commit();
-		System.out.println(">" + vlist.getD_no());
-
-		return vlist;
-	}
-
-	
-	   // 공부해요 총갯수 뽑아오기
-	   public static int studyTotalCount(StudyVO VO) throws SQLException {
-	      SqlSession session = CommonManager.db().openSession();
-	      int totalCount = session.selectOne("admin.studyTotalCount", VO);
-
 	      session.commit();
 	      return totalCount;
 	   }
 	   
-		// 공부해요 보드
-		public static List<StudyVO> studyBoardn() throws 	SQLException {
-			SqlSession session = CommonManager.db().openSession();
-			List<StudyVO> list = null;
-
-			list = session.selectList("admin.studyAll");
-			System.out.println(list.size());
-
-			return list;
-		}
-		
-	// 공부해요 보드
-	public static List<StudyVO> studyBoard(StudyVO vo) throws 	SQLException {
+//	 페이징을 위한 춤을 춰요 리스트 가져오기
+	public static List<VideoVO> videoBoardp(VideoVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
-		List<StudyVO> list = null;
-
-		list = session.selectList("admin.studyAllp",vo);
-		System.out.println(list.size());
-
+		List<VideoVO> list = null;
+		list = session.selectList("admin.videoAllp",vo);
 		return list;
 	}
-	
-	// 공부해요 보드
-	public static List<StudyVO> studyBoardAndroid() throws 	SQLException {
+
+
+//	 춤을 춰요 뷰(실행창)을 띄우기위한 정보 가져오기
+	public static VideoVO videoView(VideoVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
-		List<StudyVO> list = null;
-
-		list = session.selectList("admin.studyAll");
-		System.out.println(list.size());
-
-		return list;
-	}
-	
-	
-	
-
-	// 공부해요 뷰
-	public static StudyVO studyView(StudyVO vo) throws SQLException {
-		SqlSession session = CommonManager.db().openSession();
-		session.update("admin.studyCount", vo);
-		StudyVO vlist = session.selectOne("admin.studyAll", vo);
+//		춤을 춰요 조회수 1증가
+		session.update("admin.videoCount", vo);
+		VideoVO vlist = session.selectOne("admin.videoAll", vo);
 		session.commit();
-
 		return vlist;
 	}
 
+	
+//	    페이징을 위한 공부해요 총 갯수 가져오기
+	   public static int studyTotalCount(StudyVO VO) throws SQLException {
+	      SqlSession session = CommonManager.db().openSession();
+	      int totalCount = session.selectOne("admin.studyTotalCount", VO);
+	      session.commit();
+	      return totalCount;
+	   }
+	   
+//		 공부해요 리스트 가져오기
+		public static List<StudyVO> studyBoardn() throws 	SQLException {
+			SqlSession session = CommonManager.db().openSession();
+			List<StudyVO> list = null;
+			list = session.selectList("admin.studyAll");
+			return list;
+		}
+
+		
+//	 페이징 처리된 공부해요 리스트 가져오기
+	public static List<StudyVO> studyBoard(StudyVO vo) throws 	SQLException {
+		SqlSession session = CommonManager.db().openSession();
+		List<StudyVO> list = null;
+		list = session.selectList("admin.studyAllp",vo);
+		return list;
+	}
+	
+//	 공부해요 리스트 가져오기
+	public static List<StudyVO> studyBoardAndroid() throws 	SQLException {
+		SqlSession session = CommonManager.db().openSession();
+		List<StudyVO> list = null;
+		list = session.selectList("admin.studyAll");
+		return list;
+	}
+	
+//	 공부해요 뷰(실행창)을 띄우기위한 정보 가져오기
+	public static StudyVO studyView(StudyVO vo) throws SQLException {
+		SqlSession session = CommonManager.db().openSession();
+//		공부해요 조회수 1증가
+		session.update("admin.studyCount", vo);
+		StudyVO vlist = session.selectOne("admin.studyAll", vo);
+		session.commit();
+		return vlist;
+	}
+
+//춤을 춰요 삭제 실행
 	public static int videoDelete(VideoVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		int result = session.delete("admin.videoDelete", vo);
 		session.commit();
-
 		return result;
 	}
 
+//	공부 해요 삭제 실행
 	public static int studyDelete(StudyVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		int result = session.delete("admin.studyDelete", vo);
 		session.commit();
-
 		return result;
 	}
 
+//	춤을 춰요 수정 실행
 	public static int videoUpdate(VideoVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
@@ -161,6 +142,7 @@ public class VideoManager {
 		return result;
 	}
 
+//	공부해요 수정 실행
 	public static int studyUpdate(StudyVO vo) throws SQLException {
 		int result = 0;
 		SqlSession session = CommonManager.db().openSession();
@@ -169,13 +151,11 @@ public class VideoManager {
 		return result;
 	}
 
+	
 	public static List<VideoVO> videoRecom(VideoVO vo) throws SQLException {
 		SqlSession session = CommonManager.db().openSession();
 		List<VideoVO> list = null;
-
 		list = session.selectList("admin.videoRecom", vo);
-		System.out.println(list.size());
-
 		session.commit();
 		return list;
 	}
