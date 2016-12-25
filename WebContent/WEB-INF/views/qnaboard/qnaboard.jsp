@@ -159,7 +159,7 @@
 		<div>
 			<!-- 질문창 -->
 			<div
-				style="margin: 50px auto; border: 1px solid #000; width: 900px; height: 500px; text-align: left;">
+				style="margin: 50px auto; border: 1px solid #000; width: 900px; height: 670px; text-align: left;">
 				<img alt="" class='qnaimg' src="img/qnaQ1.png">
 				<div style="float: left; padding: 0 30px;">
 					<div>
@@ -252,7 +252,7 @@
 														<br/>
 									<div style="height: auto;">
 										<table
-											style="margin-top: 50px; border-collapse: collapse; height: auto;">
+											style="margin-top: 50px; border-collapse: collapse; height: auto; width: 68%">
 											<c:forEach var='reply' items='${replylist}'>
 											<tr>
 												<td style="width: 1px;"><input type="hidden" id="ar_no" value="${reply.ar_no}"/></td>
@@ -268,7 +268,7 @@
 													<input type="button" value='x' id="repldelbtn" style="border: 1px solid #e9e9e9; background-color: #fff" />
 													</c:if>
 												</td>
-											</tr>
+											</tr> 
 											</c:forEach>
 										</table>
 									</div>
