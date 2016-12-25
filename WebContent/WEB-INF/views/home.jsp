@@ -185,7 +185,7 @@
 				<tr>
 					<td class="qnatd" rowspan="2">
 						<div id="qnadiv">
-							<img src="/EyeMOM/resources/img/hasi.png" id="qnaimg">
+							<img src="/EyeMOM/resources/img/${qnaList[0].in_photo1name}" id="qnaimg">
 							<c:forEach var='qnaVO' items='${qnaList}'>
 								<p class="qnap">
 									[${qnaVO.in_point }] 
@@ -214,20 +214,42 @@
 						id="cookimg1" rel="cookul1"></td>
 				</tr>
 				<tr>
-					<td class="cooktd" id="cookcontent"><img
-						src="/EyeMOM/resources/img/hasi.png" id="cookcontentimg">
+					<td class="cooktd" id="cookcontent">
+					<c:if test="${empty bestRice_r1[0].b_photo1name}">
+					<img src="/EyeMOM/resources/img/noimage.png" id="cookcontentimg">
+					</c:if>
+					<c:if test="${not empty bestRice_r1[0].b_photo1name}">
+					<img src="/EyeMOM/resources/img/${bestRice_r1[0].b_photo1name}" id="cookcontentimg">
+					
+					</c:if>
 						<ul class="cookul" id="cookul1">
 							<c:forEach var='r1' items='${bestRice_r1}'>
 								<li>[${r1.b_date }] <c:choose>
 										<c:when test="${empty sessionScope.user}">
+											<c:if test="${not empty r1.b_photo1name }">
 											<a class="alink bestrice open-popup-link"
 												rel="${r1.b_photo1name }" href="#test-popup">
 												[+${r1.b_good}] ${r1.b_title } </a>
+											</c:if>
+											<c:if test="${empty r1.b_photo1name }">
+											<a class="alink bestrice open-popup-link"
+												rel="noimage.png" href="#test-popup">
+												[+${r1.b_good}] ${r1.b_title } </a>
+											
+											</c:if>
 										</c:when>
 										<c:otherwise>
+											<c:if test="${not empty r1.b_photo1name }">
 											<a class="alink bestrice" rel="${r1.b_photo1name }"
 												href="boardview.do?b_no=${r1.b_no }"> [+${r1.b_good}]
 												${r1.b_title } </a>
+											</c:if>
+											<c:if test="${empty r1.b_photo1name }">
+											
+											<a class="alink bestrice" rel="noimage.png"
+												href="boardview.do?b_no=${r1.b_no }"> [+${r1.b_good}]
+												${r1.b_title } </a>
+											</c:if>
 										</c:otherwise>
 									</c:choose>
 								</li>
@@ -237,14 +259,32 @@
 							<c:forEach var='r2' items='${bestRice_r2}'>
 								<li>[${r2.b_date }] <c:choose>
 										<c:when test="${empty sessionScope.user}">
+											<c:if test="${not empty r2.b_photo1name }">
 											<a class="alink bestrice open-popup-link"
 												rel="${r2.b_photo1name }" href="#test-popup">
 												[+${r2.b_good}] ${r2.b_title } </a>
+											</c:if>
+											<c:if test="${empty r2.b_photo1name }">
+											<a class="alink bestrice open-popup-link"
+												rel="noimage.png" href="#test-popup">
+												[+${r2.b_good}] ${r2.b_title } </a>
+											
+											</c:if>
+											
 										</c:when>
 										<c:otherwise>
+											<c:if test="${not empty r2.b_photo1name }">
 											<a class="alink bestrice" rel="${r2.b_photo1name }"
 												href="boardview.do?b_no=${r2.b_no }"> [+${r2.b_good}]
 												${r2.b_title } </a>
+											</c:if>
+											<c:if test="${empty r2.b_photo1name }">
+											
+											<a class="alink bestrice" rel="noimage.png"
+												href="boardview.do?b_no=${r2.b_no }"> [+${r2.b_good}]
+												${r2.b_title } </a>
+											</c:if>
+											
 										</c:otherwise>
 									</c:choose>
 								</li>
@@ -254,14 +294,31 @@
 							<c:forEach var='r3' items='${bestRice_r3}'>
 								<li>[${r3.b_date }] <c:choose>
 										<c:when test="${empty sessionScope.user}">
+											<c:if test="${not empty r3.b_photo1name }">
 											<a class="alink bestrice open-popup-link"
 												rel="${r3.b_photo1name }" href="#test-popup">
 												[+${r3.b_good}] ${r3.b_title } </a>
+											</c:if>
+											<c:if test="${empty r3.b_photo1name }">
+											<a class="alink bestrice open-popup-link"
+												rel="noimage.png" href="#test-popup">
+												[+${r3.b_good}] ${r3.b_title } </a>
+											
+											</c:if>
 										</c:when>
 										<c:otherwise>
+											<c:if test="${not empty r3.b_photo1name }">
 											<a class="alink bestrice" rel="${r3.b_photo1name }"
 												href="boardview.do?b_no=${r3.b_no }"> [+${r3.b_good}]
 												${r3.b_title } </a>
+											</c:if>
+											<c:if test="${empty r3.b_photo1name }">
+											
+											<a class="alink bestrice" rel="noimage.png"
+												href="boardview.do?b_no=${r3.b_no }"> [+${r3.b_good}]
+												${r3.b_title } </a>
+											</c:if>
+											
 										</c:otherwise>
 									</c:choose>
 								</li>
@@ -272,14 +329,30 @@
 							<c:forEach var='r4' items='${bestRice_r4}'>
 								<li>[${r4.b_date }] <c:choose>
 										<c:when test="${empty sessionScope.user}">
+											<c:if test="${not empty r4.b_photo1name }">
 											<a class="alink bestrice open-popup-link"
 												rel="${r4.b_photo1name }" href="#test-popup">
 												[+${r4.b_good}] ${r4.b_title } </a>
+											</c:if>
+											<c:if test="${empty r4.b_photo1name }">
+											<a class="alink bestrice open-popup-link"
+												rel="noimage.png" href="#test-popup">
+												[+${r4.b_good}] ${r4.b_title } </a>
+											
+											</c:if>
 										</c:when>
 										<c:otherwise>
+											<c:if test="${not empty r4.b_photo1name }">
 											<a class="alink bestrice" rel="${r4.b_photo1name }"
 												href="boardview.do?b_no=${r4.b_no }"> [+${r4.b_good}]
 												${r4.b_title } </a>
+											</c:if>
+											<c:if test="${empty r4.b_photo1name }">
+											
+											<a class="alink bestrice" rel="noimage.png"
+												href="boardview.do?b_no=${r4.b_no }"> [+${r4.b_good}]
+												${r4.b_title } </a>
+											</c:if>
 										</c:otherwise>
 									</c:choose>
 								</li>
