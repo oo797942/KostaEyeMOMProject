@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,18 +139,24 @@ $(function(){
 			</div>
 		</div>
 		<table style="width: 1024px; text-align: center;">
+			<c:if test="${not empty vo.we_photo1name}">
 			<tr>        
 				<td width="33%"><img class="infoImage"
 					src="resources/img/${vo.we_photo1name}"></td>
 			</tr>
+			</c:if>
+			<c:if test="${not empty vo.we_photo2name}">
 			<tr>		
 				<td><img class="infoImage"
 					src="resources/img/${vo.we_photo2name}" style="margin-top: 70px;"></td>
 			</tr>
+			</c:if>
+			<c:if test="${not empty vo.we_photo3name}">
 			<tr>
 				<td><img class="infoImage"
 					src="resources/img/${vo.we_photo3name}" style="margin:70px 0 70px 0; "></td>
 			</tr>
+			</c:if>
 		</table>
 		
 		<img width="1024px" src="resources/img/shopping/refund_info.png" />

@@ -106,7 +106,11 @@
 			
 			var pass= "";
 			pass=$("#cate").val()
-			alert(pass);
+			if(pass=='baby' || pass=='rice'){
+				location.href= 'gal.do?title='+pass;
+			}else{
+				location.href= '/tip.do?title='+pass;
+			}
 			location.href=pass;
 		});
 		

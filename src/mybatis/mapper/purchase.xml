@@ -8,8 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 메인에 띄워줄 공동구매 리스트 -->
 <select id="mainpurchase" parameterType="purchaseVO" resultType="purchaseVO"> 
 <![CDATA[
-select rownum rs, b_no, we_title, we_photo1name, we_price, we_sold, we_maxsold, we_start, we_end from(
-select b_no, we_title, we_photo1name, we_price, we_sold, we_maxsold, 
+select rownum rs, b_no, we_title, we_photo1name, we_price, NVL(we_sold, 0 ) we_sold, we_max, we_start, we_end from(
+select b_no, we_title, we_photo1name, we_price, we_sold, we_max, 
 TO_CHAR(we_start, 'YYYY"년" MM"월" DD"일"') we_start, TO_CHAR(we_end, 'YYYY"년" MM"월" DD"일"') we_end from group_purchase order by b_no desc)
 where rownum <5
 ]]>

@@ -68,7 +68,7 @@ public class GroupPurchaseVO extends PageVO{
 			// this.b_fsize = g_photo.getSize();
 
 			// 업로드된 파일이 저장될 경로
-			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo1name);
+			File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo1name);
 
 			try {
 				we_photo1.transferTo(f);
@@ -98,7 +98,7 @@ public class GroupPurchaseVO extends PageVO{
 					// this.b_fsize = g_photo.getSize();
 
 					// 업로드된 파일이 저장될 경로
-					File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo2name);
+					File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo2name);
 
 					try {
 						we_photo2.transferTo(f);
@@ -128,7 +128,7 @@ public class GroupPurchaseVO extends PageVO{
 			// this.b_fsize = g_photo.getSize();
 
 			// 업로드된 파일이 저장될 경로
-			File f = new File("C:\\Users\\user\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo3name);
+			File f = new File("C:\\Users\\kosta\\git\\KostaEyeMOMProject\\WebContent\\resources\\img\\" + we_photo3name);
 
 			try {
 				we_photo3.transferTo(f);

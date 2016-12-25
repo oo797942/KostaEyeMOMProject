@@ -504,9 +504,10 @@
 							<br /> <fmt:formatNumber value="${purchaseVO.we_price}"
 								pattern="#,###.##" />원 <br />
 							<hr color="#ffa07a" /> <c:set var="human"
-								value="${purchaseVO.we_maxsold - purchaseVO.we_sold }" /> <c:choose>
+								value="${purchaseVO.we_max - purchaseVO.we_sold }" />
+								 <c:choose>
 								<c:when test="${human gt 0}">
-					인원: ${human }명<br />
+								인원: ${human }명<br />
 								</c:when>
 								<c:otherwise>
 									<b style="color: red;">마감</b>
