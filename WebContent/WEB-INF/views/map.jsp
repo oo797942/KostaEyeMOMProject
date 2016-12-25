@@ -64,7 +64,6 @@ function dongName(latitude, longitude){
               var tag = myJSONResult.results[3].address_components[1].long_name;
         	  
                //alert(tag);
-<%--               if( <%= keyword%> == ''  ) {  --%>
               if( '<%= keyword%>' != ''  ) { 
                  
                  $("#keyword").attr("value",tag+'<%=keyword%>');
