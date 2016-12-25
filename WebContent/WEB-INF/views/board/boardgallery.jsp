@@ -83,8 +83,14 @@ function fn_movePage(val){
 													<article class="Tarticle grid_4 alpha">
 														<div class="indent-left">
 															<figure class="frame2 p2">
+															<c:if test="${empty vo.b_photo1name}">
+																<img src="/EyeMOM/resources/img/noimage.png"
+																	alt="" class='Timg' />
+															</c:if>
+															<c:if test="${not empty vo.b_photo1name}">
 																<img src="/EyeMOM/resources/img/${vo.b_photo1name}"
 																	alt="" class='Timg' />
+															</c:if>		
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">${cate}
 																${vo.b_title} (${vo.b_recount})</p>
@@ -102,8 +108,14 @@ function fn_movePage(val){
 
 														<div class="indent-right">
 															<figure class="frame2 p2">
+																<c:if test="${empty vo.b_photo1name}">
+																<img src="/EyeMOM/resources/img/noimage.png"
+																	alt="" class='Timg' />
+															</c:if>
+															<c:if test="${not empty vo.b_photo1name}">
 																<img src="/EyeMOM/resources/img/${vo.b_photo1name}"
 																	alt="" class='Timg' />
+															</c:if>	
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">${cate}
 																${vo.b_title} (${vo.b_recount})</p>
@@ -121,8 +133,14 @@ function fn_movePage(val){
 													<article class="Tarticle grid_4">
 														<div class="indent3">
 															<figure class="frame2 p2">
+																<c:if test="${empty vo.b_photo1name}">
+																<img src="/EyeMOM/resources/img/noimage.png"
+																	alt="" class='Timg' />
+															</c:if>
+															<c:if test="${not empty vo.b_photo1name}">
 																<img src="/EyeMOM/resources/img/${vo.b_photo1name}"
 																	alt="" class='Timg' />
+															</c:if>	
 															</figure>
 															<p class="Tp color-4 prev-indent-bot">${cate}
 																${vo.b_title} (${vo.b_recount})</p>

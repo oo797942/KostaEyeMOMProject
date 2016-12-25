@@ -27,21 +27,9 @@
 		<div class='bottom1'>
 			<!-- 게시판 카테고리 -->
 			<div id="board1" style="width: 78%">
-			<c:if test="${title=='tip'}">
-				<label class='boardlabel titlelabel' id="lb">육아꿀팁</label> 
-			</c:if>
-			<c:if test="${title=='qna_board'}">
-				<label class='boardlabel titlelabel' id="lb">묻고 말하기</label> 
-			</c:if>
-			<c:if test="${title=='kid_sick'}">
-				<label class='boardlabel titlelabel' id="lb">아이가 아파요</label> 
-			</c:if>
-			<c:if test="${title=='rice'}">
-				<label class='boardlabel titlelabel' id="lb">아이의 식단</label> 
-			</c:if>
-			<c:if test="${title=='baby'}">
-				<label class='boardlabel titlelabel' id="lb">아이자랑</label> 
-			</c:if>
+			
+				<label class='boardlabel titlelabel' id="lb">중고장터</label> 
+			
 				<!-- 검색 -->
 				<div class='form-inline selectlabel'>
 							<!-- 검색 셀렉트 박스 -->

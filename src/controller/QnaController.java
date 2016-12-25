@@ -62,7 +62,7 @@ public class QnaController {
 	    //--페이징 처리
 	    
 	    List<QnAVO>  qnaList = QnaDao.allPagingQna(qnaVO);
-		System.out.println("list : "+qnaList.get(0).getIn_count());
+		
 		m.addAttribute("list", qnaList); //가져온 DB를 모델에 저장
 		
 		return "board/boardQna";
