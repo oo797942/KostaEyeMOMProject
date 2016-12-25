@@ -246,7 +246,7 @@
 											</c:if>
 											<c:if test="${empty r1.b_photo1name }">
 											
-											<a class="alink bestrice" rel="${r1.b_photo1name }"
+											<a class="alink bestrice" rel="noimage.png"
 												href="boardview.do?b_no=${r1.b_no }"> [+${r1.b_good}]
 												${r1.b_title } </a>
 											</c:if>
@@ -280,7 +280,7 @@
 											</c:if>
 											<c:if test="${empty r2.b_photo1name }">
 											
-											<a class="alink bestrice" rel="${r2.b_photo1name }"
+											<a class="alink bestrice" rel="noimage.png"
 												href="boardview.do?b_no=${r2.b_no }"> [+${r2.b_good}]
 												${r2.b_title } </a>
 											</c:if>
@@ -314,7 +314,7 @@
 											</c:if>
 											<c:if test="${empty r3.b_photo1name }">
 											
-											<a class="alink bestrice" rel="${r3.b_photo1name }"
+											<a class="alink bestrice" rel="noimage.png"
 												href="boardview.do?b_no=${r3.b_no }"> [+${r3.b_good}]
 												${r3.b_title } </a>
 											</c:if>
@@ -349,7 +349,7 @@
 											</c:if>
 											<c:if test="${empty r4.b_photo1name }">
 											
-											<a class="alink bestrice" rel="${r4.b_photo1name }"
+											<a class="alink bestrice" rel="noimage.png"
 												href="boardview.do?b_no=${r4.b_no }"> [+${r4.b_good}]
 												${r4.b_title } </a>
 											</c:if>
