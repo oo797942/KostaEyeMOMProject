@@ -144,7 +144,7 @@ public class QnADaoImpl implements QnADao {
 		}
 		return result;	
 	}
-
+	// 조회수 카운트
 	@Override
 	public int Count(QnAVO vo) {
 		int result = 0;
@@ -155,7 +155,7 @@ public class QnADaoImpl implements QnADao {
 		}
 		return result;	
 	}
-
+	//qna 게시물 데이터 가져오기
 	@Override
 	public QnAVO callQna(QnAVO vo) {
 		QnAVO qVO=null;
@@ -178,7 +178,7 @@ public class QnADaoImpl implements QnADao {
 		return result;
 	}
 	
-	//qna댓글 호출
+	// qna 답변 가져오기
 	@Override
 	public List<AnswerVO> callAnwer(QnAVO vo) {
 		List <AnswerVO> list= null;

@@ -71,7 +71,7 @@ public class QnaController {
 
 
 	/////////////////////////////////FAQ
-	
+	//사용자 faq 리스트 불러오기
 	@RequestMapping("faqboard.do")
 	public String faqboard(HttpSession session, Model m, FaqVO faqVO){
 		
@@ -91,7 +91,7 @@ public class QnaController {
 		m.addAttribute("list", faqList); //가져온 DB를 모델에 저장
 		return "faqboard/faqboard";
 	}
-	//1:1문의
+	//1:1문의 하기 입력 버튼 눌렀을때
 	@RequestMapping("passfaq.do")
 	@ResponseBody
 	public int faqboard(FaqVO faqVO, HttpSession session){
@@ -108,13 +108,13 @@ public class QnaController {
 		return result;
 	}
 	
-	//qna게시글 보기
+	//qna게시글 눌렀을때 게시물 데이터 가져오기
 	@RequestMapping("qnaview.do")
 	public String qnaview(QnAVO qnaVO, Model m){
 		System.out.println("글번호"+qnaVO.getB_no());
 		int result = QnaDao.Count(qnaVO); //조회수 카운트
-		QnAVO qVO = QnaDao.callQna(qnaVO);
-		List <AnswerVO> list=QnaDao.callAnwer(qVO);
+		QnAVO qVO = QnaDao.callQna(qnaVO);//게시물 데이터 가져오기
+		List <AnswerVO> list=QnaDao.callAnwer(qVO);// qna 답변 가져오기
 		List <List<AreplyVO>>replylist=new ArrayList<List<AreplyVO>>();
 		System.out.println("댓글갯수"+list.size());
 //		System.out.println("댓글번호2:"+list.get(0).getA_no());

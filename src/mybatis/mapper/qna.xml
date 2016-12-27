@@ -4,22 +4,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="qna">
-
+<!-- 어드민 faq답변 달기 -->
 <update id="faqAnswer" parameterType="faqVO">
 UPDATE faq_admin SET q_answer = #{q_answer}, q_state = 'y' WHERE q_no = #{q_no}
 </update>
-
+<!-- faq 전체 개수 카운터 -->
  <select id="totalCount" parameterType="faqVO" resultType="int">
     SELECT COUNT(*)  totalCount FROM faq_admin 
     <if test="u_id !=null">
     	where u_id=#{u_id}
     </if>
     </select>
-    
+<!-- qna게시물 전체 개수 카운터 -->
 <select id="totalCount2"  resultType="int">
     SELECT COUNT(*)  totalCount FROM qna_board 
 </select>
-
+<!-- 전제 faq 페이징 -->
 <select id="allFaqp" parameterType="faqVO" resultType="faqVO">
 SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_date, u_id, q_answer
 	 FROM faq_admin WHERE q_no in(SELECT q_no FROM (SELECT rownum as rnum, q_no FROM
@@ -30,7 +30,7 @@ SELECT q_no, q_state, q_title, q_content,  TO_CHAR(q_date, 'YYYY.MM.DD') as q_da
 	 ORDER BY q_date DESC))
 	 WHERE rnum BETWEEN  #{startRowNo} AND #{endRowNo})ORDER BY q_date DESC
 </select>
-
+<!-- 전체 qna 페이징 -->
 <select id="allQnap" parameterType="qnaVO" resultType="qnaVO">
 SELECT b_no, in_title, in_content,  TO_CHAR(in_date, 'YYYY.MM.DD') as in_date, in_nick, in_recount, NVL(in_count,0) in_count, NVL(in_good, 0) in_good
 	 FROM qna_board WHERE b_no in(SELECT b_no FROM (SELECT rownum as rnum, b_no FROM
@@ -114,6 +114,7 @@ INSERT INTO faq_admin (q_no, q_date, q_title, q_content, u_id)VALUES (mom_qna_no
 INSERT INTO qna_answer (b_no, a_date, a_content, a_nick, a_no)VALUES (#{b_no}, sysdate, #{a_content}, #{a_nick}, mom_qna_no.nextval)
 </insert>
 
+<!-- qna 답변 달렸을시에 답변완료 -->
 <update id="updateAnswer" parameterType="answerVO">
 UPDATE qna_board SET in_recount='y' WHERE b_no=#{b_no}
 </update>

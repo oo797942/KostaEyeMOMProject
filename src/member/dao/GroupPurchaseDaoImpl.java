@@ -58,7 +58,7 @@ public class GroupPurchaseDaoImpl implements GroupPurchaseDao{
 		}
 		return gpVO;
 	}
-
+	//주문완료
 	@Override
 	public int orderShop(PaymentVO vo) {
 		int result=0;

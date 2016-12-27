@@ -53,7 +53,7 @@ public class PurchaseController {
 		return "shoppingView/shoppingView";
 	}
 	
-	//주문페이지
+	//주문페이지 이동하기
 	@RequestMapping("shoppingpay.do")
 	public String payPage(Model m, GroupPurchaseVO gpVO, HttpSession session){
 		System.out.println(gpVO.getB_no());

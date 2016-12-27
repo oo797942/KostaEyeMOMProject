@@ -9,7 +9,7 @@ import mybatis.manager.BoardManager;
 import mybatis.manager.MypageManager;
 
 public class MypageDaoImpl implements MypageDao {
-
+	// 유저 정보가져오기
 	@Override
 	public MemberVO userInfo(MemberVO vo) {
 		MemberVO memberVO=null;
@@ -21,7 +21,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return memberVO;
 	}
-
+	//내가쓴글 최근 4개 가져오기
 	@Override
 	public List getMyBoard(MemberVO vo) {
 		List list=null;
@@ -33,7 +33,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 쓴 댓글 최근 4개
 	@Override
 	public List getMyReply(MemberVO vo) {
 		List list=null;
@@ -45,7 +45,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 쓴글 전체보기 리스트
 	@Override
 	public List getMyBoardList(MemberVO vo) {
 		List list=null;
@@ -57,7 +57,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 쓴 댓글 전체보기 리스트
 	@Override
 	public List getReplyList(MemberVO vo) {
 		List list=null;
@@ -69,7 +69,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 쓴 qna 최근 4개
 	@Override
 	public List getMyQna(MemberVO vo) {
 		List list=null;
@@ -81,7 +81,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 쓴 qna 전체보기
 	@Override
 	public List getQnaList(MemberVO vo) {
 		List list=null;
@@ -93,7 +93,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내가 주문한 최근 4개 가져오기
 	@Override
 	public List getMyPayment(MemberVO vo) {
 		List list=null;
@@ -105,7 +105,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내 공동구매 내역보기
 	@Override
 	public List getMyPaymentList(MemberVO vo) {
 		List list=null;
@@ -117,7 +117,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return list;
 	}
-
+	//내 주문내역 게시물 총갯수를 구한다
 	@Override
 	public int myshoppingListCount(MemberVO vo) {
 		int totalCount = 0;
@@ -128,7 +128,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return totalCount;	
 	}
-
+	//내가 쓴 qna 게시물 총갯수를 구한다
 	@Override
 	public int myQnaListCount(MemberVO vo) {
 		int totalCount = 0;
@@ -139,7 +139,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return totalCount;
 	}
-
+	//내가 쓴글 전체보기 게시물 카운트
 	@Override
 	public int myBoardListCount(MemberVO vo) {
 		int totalCount = 0;
@@ -150,7 +150,7 @@ public class MypageDaoImpl implements MypageDao {
 		}
 		return totalCount;
 	}
-
+	//내가 쓴 댓글 게시물 총갯수를 구한다
 	@Override
 	public int myReplyListCount(MemberVO vo) {
 		int totalCount = 0;

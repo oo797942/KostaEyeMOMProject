@@ -32,7 +32,7 @@ public class MypageController {
 		MemberVO vo=mypageDao.userInfo(memberVO);
 		m.addAttribute("user", vo);
 		
-		//내가 주문한 최근 4개 가져와
+		//내가 주문한 최근 4개 가져오기
 		List <PaymentVO>plist = mypageDao.getMyPayment(memberVO);
 		m.addAttribute("plist", plist);
 		
@@ -46,7 +46,7 @@ public class MypageController {
 		System.out.println("rlist : "+rlist.size());
 		m.addAttribute("rlist",rlist);
 		
-		//qna
+		//내가 쓴 qna 최근 4개
 		List <QnAVO> qlist = mypageDao.getMyQna(memberVO);
 		System.out.println("답변"+qlist.get(0).getIn_recount());
 		m.addAttribute("qlist",qlist);

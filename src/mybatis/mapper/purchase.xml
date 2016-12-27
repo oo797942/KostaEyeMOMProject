@@ -62,9 +62,12 @@ Insert into group_purchase
 		, #{we_photo3name}
 	</if>
 	)</insert>
+	
+<!-- 	공동구매 수정하기 -->
 	<update id="updatePurchase" parameterType="purchaseVO">
 	UPDATE group_purchase SET we_end = sysdate, we_deposit = sysdate WHERE b_no = #{b_no}
 	</update>
+<!-- 	공동구매 삭제하기 -->
 	<delete id="deletePurchase" parameterType="purchaseVO">
 	DELETE FROM group_purchase WHERE b_no = #{b_no}
 	</delete>
