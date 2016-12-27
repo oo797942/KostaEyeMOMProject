@@ -16,10 +16,9 @@ function fn_movePage(val){
     jQuery("form[name=frm]").attr("action","donationview.do").submit();
 }
 	function writeBoard(){
-// 		var num = $('#num').text();	
-// 		alert(num);
+
 		var lb = $("#lb").text();
-		alert(lb);
+		
 		location.href = "boardInsert.do?keyword=donation";
 	}
 </script>

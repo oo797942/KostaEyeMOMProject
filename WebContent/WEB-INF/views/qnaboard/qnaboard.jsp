@@ -284,10 +284,7 @@
 						</c:choose>
 		</div>
 	</div>
-<!-- 	<div -->
-<!-- 		style="height: 500px; width: 100%; background-color: red; margin: 0 0 100px 0;"> -->
 
-<!-- 	</div> -->
 
 	<!-- 팝업으로 쓰일 div -->
 	<div id="qnapopup" class="white-popup1 mfp-hide">

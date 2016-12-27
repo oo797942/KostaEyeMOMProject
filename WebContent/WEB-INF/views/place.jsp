@@ -65,18 +65,7 @@
 		</table>  
   
 
-<!-- 		<td id="menuTd"> -->
-<!-- 		<div id="menuDiv"> -->	
-<!-- 			<ul class="list-group"> -->
-<!-- 			<li class="list-group-item" ><h4>우리동네</h4></li> -->
-<!-- 			<hr id="mapHr"/> -->
-<!-- 			<li class="list-group-item"><a href="place.do?keyword=키즈카페">키즈카페</a></li> -->
-<!-- 			<li class="list-group-item" ><a href="place.do?keyword=문화센터">문화센터</a></li> -->
-<!-- 			<li class="list-group-item" ><a href="place.do?keyword=놀이터">놀이터</a></li> -->
-<!-- 			<li class="list-group-item" ><a href="place.do?keyword=병원">병원</a></li> -->
-<!-- 			</ul> -->
-<!-- 		</div> -->
-<!-- 		</td> -->
+
 		<div style="display: table;">
 		<div id="iFrameDiv">
 			<iframe src="map.go?keyword=${keyword }"></iframe>

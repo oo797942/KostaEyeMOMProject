@@ -25,12 +25,11 @@ public class LoginController {
 	@ResponseBody
 	public String login(MemberVO memberVO, Model m, HttpSession session){
 
-		 System.out.println("비밀번호"+memberVO.getU_pass());
+		
 		MemberVO vo=loginDao.memberLogin(memberVO); //vo에 id pw담아서 디비 넘김
 		String result= "1";
 		if(vo!=null){ // id/pw 로그인 성공시
 					result="0";
-					System.out.println("logincontorller : 성공"+vo.getU_name());
 					session.setAttribute("user", vo); //세션에 사용자 vo담음
 					loginDao.memberLoginRecord(vo);
 				}

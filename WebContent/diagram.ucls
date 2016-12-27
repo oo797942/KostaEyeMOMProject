@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="controller.MessageController" project="EyeMOM" 
     file="/EyeMOM/src/controller/MessageController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1359" y="831"/>    
+    <position height="-1" width="-1" x="1372" y="177"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="controller.MypageController" project="EyeMOM" 
     file="/EyeMOM/src/controller/MypageController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="945" y="723"/>    
+    <position height="-1" width="-1" x="1373" y="-59"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="member.dao.MessageDaoImpl" project="EyeMOM" 
     file="/EyeMOM/src/member/dao/MessageDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1096" y="717"/>    
+    <position height="-1" width="-1" x="1372" y="264"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="member.dao.MypageDaoImpl" project="EyeMOM" 
     file="/EyeMOM/src/member/dao/MypageDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="943" y="814"/>    
+    <position height="-1" width="-1" x="1375" y="19"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -273,7 +273,7 @@
   </class>  
   <class id="31" language="java" name="mybatis.manager.MessageManager" project="EyeMOM" 
     file="/EyeMOM/src/mybatis/manager/MessageManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1082" y="797"/>    
+    <position height="-1" width="-1" x="1372" y="358"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -282,7 +282,7 @@
   </class>  
   <class id="32" language="java" name="mybatis.manager.MypageManager" project="EyeMOM" 
     file="/EyeMOM/src/mybatis/manager/MypageManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="938" y="889"/>    
+    <position height="-1" width="-1" x="1372" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      

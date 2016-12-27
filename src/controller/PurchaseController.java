@@ -46,8 +46,6 @@ public class PurchaseController {
 	@RequestMapping("/shoppingView.do")
 	public String shopView(Model m, GroupPurchaseVO gpVO){
 		
-		System.out.println("/shoppingView.do 요청"+gpVO.getB_no());
-		
 		GroupPurchaseVO vo = GPDao.getItem(gpVO);
 		m.addAttribute("vo", vo);
 		return "shoppingView/shoppingView";
@@ -56,8 +54,7 @@ public class PurchaseController {
 	//주문페이지 이동하기
 	@RequestMapping("shoppingpay.do")
 	public String payPage(Model m, GroupPurchaseVO gpVO, HttpSession session){
-		System.out.println(gpVO.getB_no());
-		System.out.println(gpVO.getWe_count());
+		
 		GroupPurchaseVO vo = GPDao.getItem(gpVO); //상품 정보가져오기
 		vo.setWe_count(gpVO.getWe_count()); 	//주문 상품 개수
 		
@@ -76,7 +73,6 @@ public class PurchaseController {
 		MemberVO memberVO =(MemberVO)session.getAttribute("user");
 		paymentVO.setPr_id(memberVO.getU_id());
 		
-		System.out.println("title : "+paymentVO.getPr_title());
 		result= GPDao.orderShop(paymentVO);
 		
 		return "redirect:myshopping.do";

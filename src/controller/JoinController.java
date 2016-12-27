@@ -39,7 +39,7 @@ public class JoinController {
 	@RequestMapping("/emailCheck.go")
 	public String emailCheck(String email){
 		//여기까진됨
-		System.out.println("Email =============" + email);
+		
 		return "joinEmailCheck";
 	}
 	
@@ -48,10 +48,10 @@ public class JoinController {
 	@ResponseBody
 	public int idcheck(MemberVO memberVO, Model m, HttpSession session){
 		int result= 0;
-		System.out.println("컨트롤탓다아아앙"+memberVO.getU_id());
+		
 		List<MemberVO> vo =memberJoinDao.idCheck(memberVO);
 		result = vo.size();
-		System.out.println("빼에에엑"+result);
+		
 		return result; 
 	}
 	
@@ -60,10 +60,8 @@ public class JoinController {
 	@ResponseBody
 	public int nickcheck(MemberVO memberVO, Model m, HttpSession session){
 		int result= 0;
-		System.out.println("컨트롤탓다아아앙"+memberVO.getU_nick());
 		List<MemberVO> vo =memberJoinDao.nickCheck(memberVO);
 		result = vo.size();
-		System.out.println("빼에에엑"+result);
 		return result; 
 	}
 	

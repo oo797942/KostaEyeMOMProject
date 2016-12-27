@@ -89,11 +89,7 @@
 		<p>&nbsp;</p>
 			<p>&nbsp;</p>
         </form>
-<!--         <ul class="social list-inline"> -->
-<!--           <li><a href="#">Facebook</a></li> -->
-<!--           <li><a href="#">Twitter</a></li> -->
-<!--           <li><a href="#">Linkedin</a></li> -->
-<!--         </ul> -->
+
 
       </div>
     </div>
@@ -101,8 +97,8 @@
 </div>
 
 <!-- Scripts -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<script src="/EyeMOM/resources/js/scripts.js"></script>
+
+
 <script src="/EyeMOM/resources/js/classie.js"></script>
 <script>		
   $(function() {

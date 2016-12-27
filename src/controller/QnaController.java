@@ -38,7 +38,7 @@ public class QnaController {
 		MemberVO memberVO=(MemberVO) session.getAttribute("user");
 		String ip = request.getRemoteAddr(); //작성자 ip
 		qnaVO.setU_id(memberVO.getU_id());
-		System.out.println();
+		
 		qnaVO.setIn_ip(ip);
 		qnaVO.setIn_nick(memberVO.getU_nick());
 		qnaVO.setIn_content(qnaVO.getIn_content().replaceAll("\r\n","<br>"));
@@ -96,11 +96,8 @@ public class QnaController {
 	@ResponseBody
 	public int faqboard(FaqVO faqVO, HttpSession session){
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
-		System.out.println(faqVO.getQ_content());
-		System.out.println(faqVO.getQ_title());
 		
 		faqVO.setU_id(memberVO.getU_id());
-		System.out.println(faqVO.getU_id());
 		int result =0;
 		result=	QnaDao.writeFaq(faqVO);
 		String pass=null;
@@ -111,21 +108,17 @@ public class QnaController {
 	//qna게시글 눌렀을때 게시물 데이터 가져오기
 	@RequestMapping("qnaview.do")
 	public String qnaview(QnAVO qnaVO, Model m){
-		System.out.println("글번호"+qnaVO.getB_no());
+		
 		int result = QnaDao.Count(qnaVO); //조회수 카운트
 		QnAVO qVO = QnaDao.callQna(qnaVO);//게시물 데이터 가져오기
 		List <AnswerVO> list=QnaDao.callAnwer(qVO);// qna 답변 가져오기
 		List <List<AreplyVO>>replylist=new ArrayList<List<AreplyVO>>();
-		System.out.println("댓글갯수"+list.size());
-//		System.out.println("댓글번호2:"+list.get(0).getA_no());
 		for(int i=0; i<list.size() ; i++){
 			AnswerVO aVO= list.get(i);
-			System.out.println("댓글번호2"+aVO.getA_no());
+			
 			List<AreplyVO> rlist= QnaDao.callReply(aVO);
-			System.out.println("리플리스트 사이즈 :"+rlist.size());
 			
 				replylist.add(rlist);
-			
 			
 			list.get(i).setA_recount(rlist.size());
 		}
@@ -179,7 +172,7 @@ public class QnaController {
 	@ResponseBody
 	public int insertAnswer(AnswerVO aVO, HttpSession session){
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
-		System.out.println(memberVO.getU_nick());
+		
 		aVO.setA_nick(memberVO.getU_nick());
 		aVO.setA_content(aVO.getA_content().replaceAll("\r\n","<br>"));
 		int result=0;
@@ -193,8 +186,6 @@ public class QnaController {
 	@ResponseBody
 	public int insertReply(AreplyVO areplyVO, HttpSession session){
 		int result=0;
-		System.out.println(areplyVO.getA_no());
-		System.out.println(areplyVO.getAr_content());
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
 		areplyVO.setAr_id(memberVO.getU_id()); 
 		areplyVO.setAr_nick(memberVO.getU_nick());
@@ -207,7 +198,6 @@ public class QnaController {
 	@ResponseBody
 	public int deleteAnswerReply(AreplyVO areplyVO){
 		int result=0;
-		System.out.println(areplyVO.getAr_no());
 		
 		result=QnaDao.deleteAnswerReply(areplyVO);
 		

@@ -12,10 +12,9 @@
 <script type="text/javascript">
 	
 	function writeBoard(){
-// 		var num = $('#num').text();	
-// 		alert(num);
+
 		var lb = $("#lb").text();
-		alert(lb);
+	
 		location.href = "boardInsert.do?keyword=${title}";
 	}
 </script>
