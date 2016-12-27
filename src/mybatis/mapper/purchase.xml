@@ -34,8 +34,8 @@ FROM  group_purchase WHERE b_no=#{b_no}
 <!-- 주문 -->
 <insert id="orderShop"  parameterType="paymentVO">
 Insert into payment_info 
-	(pr_no, pr_date, pr_content, pr_price, pr_id, b_no, pr_count, pr_addr, pr_tel, pr_name, pr_pay, pr_title)
-	VALUES(mom_board_no.nextval,  sysdate, #{pr_content}, #{pr_price}, #{pr_id}, #{b_no}, #{pr_count}, #{pr_addr}, #{pr_tel}, #{pr_name}, #{pr_pay}, #{pr_title)  
+		  (pr_no, pr_date, pr_content, pr_price, pr_id, b_no, pr_count, pr_addr, pr_tel, pr_name, pr_pay, pr_title)
+	VALUES(mom_board_no.nextval,  sysdate, #{pr_content}, #{pr_price}, #{pr_id}, #{b_no}, #{pr_count}, #{pr_addr}, #{pr_tel}, #{pr_name}, #{pr_pay}, #{pr_title})
 </insert>
 
 <insert id="insertPurchase" parameterType="paymentVO">

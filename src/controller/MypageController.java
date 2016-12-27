@@ -39,16 +39,16 @@ public class MypageController {
 		//내가쓴글 최근 4개 가져오기
 		List <BoardVO>list= mypageDao.getMyBoard(memberVO);
 		m.addAttribute("blist", list);
-		System.out.println("리스트"+list.size());
+		
 		
 		//내가 쓴 댓글 최근 4개
 		List <ReplyVO> rlist= mypageDao.getMyReply(memberVO);
-		System.out.println("rlist : "+rlist.size());
+	
 		m.addAttribute("rlist",rlist);
 		
 		//내가 쓴 qna 최근 4개
 		List <QnAVO> qlist = mypageDao.getMyQna(memberVO);
-		System.out.println("답변"+qlist.get(0).getIn_recount());
+		
 		m.addAttribute("qlist",qlist);
 		return "mypage/mypage";
 	}
@@ -65,7 +65,7 @@ public class MypageController {
         m.addAttribute("pageVO", member);
 		
 		List <BoardVO> list = mypageDao.getMyBoardList(member);
-		System.out.println("list : "+list.size());
+		
 		
 		m.addAttribute("list", list);
 		return "board/myboard";
@@ -83,7 +83,7 @@ public class MypageController {
         
 		
 		List <BoardVO> list = mypageDao.getReplyList(member);
-		System.out.println("list : "+list.size());
+		
 		m.addAttribute("list", list);
 		return "board/replyboard";
 	}
@@ -99,7 +99,7 @@ public class MypageController {
         m.addAttribute("pageVO", member);
 		
 		List <BoardVO> list = mypageDao.getQnaList(member);
-		System.out.println("list : "+list.size());
+		
 		m.addAttribute("list", list);
 		return "board/boardQna";
 	}
@@ -108,7 +108,7 @@ public class MypageController {
 	@RequestMapping("myshopping.do")
 	public String myshopping(Model m, HttpSession session, @ModelAttribute("MemberVO") MemberVO member){
 		MemberVO memberVO=(MemberVO)session.getAttribute("user");
-		System.out.println(memberVO.getU_id());
+		
 		int totalCount = mypageDao.myshoppingListCount(memberVO); //게시물 총갯수를 구한다
         member.setTotalCount(totalCount); //페이징 처리를 위한 setter 호출
         member.setU_id(memberVO.getU_id());

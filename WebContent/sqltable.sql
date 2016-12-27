@@ -199,3 +199,7 @@ INCREMENT BY 1 ;
 create SEQUENCE MOM_VIDEO_NO
 INCREMENT BY 1 ; 
 
+Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) 
+VALUES('aaa', 'aaa', '홍길동', '동해번쩍', '010-0000-0000', 'asd@asd.com', '율도국', SYSDATE)
+Insert into mom_user(u_id, u_pass, u_name, u_nick, u_tel, u_email, u_addr, u_signup_date) 
+VALUES('admin', 'admin', '관리자', '관리자', '010-1111-0000', 'asdaa@asd.com', 'aa', SYSDATE)

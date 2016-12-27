@@ -75,8 +75,10 @@ public class PurchaseController {
 		int result=0;
 		MemberVO memberVO =(MemberVO)session.getAttribute("user");
 		paymentVO.setPr_id(memberVO.getU_id());
+		
+		System.out.println("title : "+paymentVO.getPr_title());
 		result= GPDao.orderShop(paymentVO);
 		
-		return "shopping/myshopping";
+		return "redirect:myshopping.do";
 	}
 }
