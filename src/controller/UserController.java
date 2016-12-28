@@ -50,10 +50,10 @@ public class UserController {
 		// 세션이 없을 때
 		if (countcheck == null) {
 			// 카운터를 1 늘려주고 세션을 생성해준다.
-			System.out.println("firstCount Session = null >>>> " + countcheck);
+		
 			session.setAttribute("firstCount", "아이맘 접속");
 			countDao.countUpdate();
-			System.out.println("firstCount Session 생성 >>>> " + session.getAttribute("firstCount"));
+			
 		}
 
 		// 오늘 방문자수 가져오는 코드
@@ -130,7 +130,7 @@ public class UserController {
 	@RequestMapping("/place.do")
 	public String callPlace(Model m, @RequestParam("keyword") String keyword) {
 		m.addAttribute("keyword", keyword);
-		System.out.println(keyword);
+		
 		return "map/place";
 	}
 

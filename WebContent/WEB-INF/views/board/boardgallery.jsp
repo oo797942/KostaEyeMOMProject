@@ -22,8 +22,7 @@ function fn_movePage(val){
 }
 
 	function writeBoard(){
-// 		var num = $('#num').text();	
-// 		alert(num);
+
 		
 		location.href = "boardInsert.do?keyword=${title}";
 	}

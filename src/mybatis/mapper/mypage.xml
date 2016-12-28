@@ -92,19 +92,19 @@ SELECT pr_no, b_no, pr_title, to_char(pr_date,'YYYY-MM-DD') as pr_date, pr_price
 
 
 </select>
-
+<!-- 내 전체 주문내역 갯수 -->
 <select id="shoppingTotalCount" parameterType="memberVO" resultType="int">
 SELECT COUNT(*)  totalCount FROM payment_info WHERE pr_id = #{u_id}
 </select>
-
+<!-- 내 전체 qna 게시물 갯수 -->
 <select id="qnaTotalCount" parameterType="memberVO" resultType="int">
 SELECT COUNT(*)  totalCount FROM qna_board WHERE u_id = #{u_id}
 </select>
-
+<!-- 내가 쓴 전체  게시물 갯수 -->
 <select id="boardTotalCount" parameterType="memberVO" resultType="int">
 SELECT COUNT(*)  totalCount FROM normal_board WHERE u_id = #{u_id}
 </select>
-
+<!-- 내가 쓴 전체  댓글 갯수 -->
 <select id="replyTotalCount" parameterType="memberVO" resultType="int">
 SELECT COUNT(*)  totalCount FROM reply WHERE re_id = #{u_id}
 </select>

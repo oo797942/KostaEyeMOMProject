@@ -33,26 +33,7 @@ $(function(){
 		
 
 		
-// 		$("#insertReply").click(function(){
-// 			$.ajax({         
-<%-- 		        url : '<%=projectName%>/checkid.ho?cmd=Reply-check&id=<%=sess%>&no=<%=hg.getGoodsId()%>', --%>
-// 		        type : 'post',
-// 		        success : function(data){
-// 		        	if(data==1){
-// 		        		$("#frm2").submit();
-// 					}else{
-// 						alert("구매가 이루어진 후 후기를 쓰실수 있습니다.");
-// 					}
-// 		        },
-// 		        error : function(){
-// 		           alert('에러 발생');   
-// 		        }
-// 		     });
-// 		});
-// 		$("#jjim").click(function(){
-			
-<%-- 			window.location.href="<%=projectName%>/bag.ho?cmd=bag-insert&itemname=<%=hg.getGoodsName()%>&imgs=<%= hg.getGoodsImg()%>&itemno=<%= hg.getGoodsId()%>"; --%>
-// 		});
+
 
 });
 </script>
@@ -66,16 +47,10 @@ $(function(){
 	<input id="MSize" type="hidden" value=""/>
 	<input id="SSize" type="hidden" value=""/>
 	<form name="frm" id="frm" method="get" action="shoppingpay.do">
-<!-- 		<input type="hidden" name="adid" value="">			 -->
-<!-- 		<input type="hidden" name="cmd" value="page-view"> -->
-<!-- 		<input type="hidden" name="name" value=""> -->
-<!-- 		<input type="hidden" name="price" value=""> -->
-<!-- 		<input type="hidden" name="img" value=""> -->
-<!-- 		<input type="hidden" name="tackbae" value=""> -->
-<!-- 		<input type="hidden" name="goodsid" value=""> -->
+
 		
 		<table id="viewTable">
-			<tr>
+			<tr> 
 				<td id="viewTableImg" rowspan="6" style="width: 450px;">
 				<input type="hidden" value="${vo.b_no }" id="b_no" name="b_no">
 				<img id="itemView" src="resources/img/${vo.we_photo1name}" style="max-width: 100%; height: auto;"/>

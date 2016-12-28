@@ -130,8 +130,7 @@ $(function(){
 							<div class="col-md-5">
 								<input type="text" name="OrderSAddr" id="addr" class="purform-control" placeholder="주소를 입력하세요"
 									value="${mvo.u_addr }" required="required"><br/>
-<!-- 								<input type="text" name="addrdetail" id="addr" class="purform-control" placeholder="상세주소를 입력하세요" -->
-<!-- 									value="" >  -->
+
 							</div>
 						</div>
 					</td>

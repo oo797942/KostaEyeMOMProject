@@ -9,6 +9,7 @@ import member.vo.MemberVO;
 import member.vo.QnAVO;
 
 public class MypageManager {
+	// 유저 정보가져오기
 	public static MemberVO userInfo(MemberVO memberVO) throws SQLException{
 		MemberVO vo= null;
 		
@@ -19,7 +20,7 @@ public class MypageManager {
 		return vo;
 		
 	}
-	
+	//내가쓴글 최근 4개 가져오기
 	public static List getMyBoard(MemberVO memberVO) throws SQLException{
 		List list= null;
 		SqlSession session = CommonManager.db().openSession();
@@ -27,7 +28,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내가 쓴 댓글 최근 4개
 	public static List getMyReply(MemberVO memberVO) throws SQLException{
 		List list= null;
 		SqlSession session = CommonManager.db().openSession();
@@ -35,7 +36,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내가 쓴글 전체보기 리스트
 	public static List getMyBoardList(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -43,7 +44,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내가 쓴 댓글 전체보기 리스트
 	public static List getReplyList(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -53,7 +54,7 @@ public class MypageManager {
 	}
 	
 	
-	
+	//내가 쓴 qna 최근 4개
 	public static List getMyQna(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -61,7 +62,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내가 쓴 qna 전체보기
 	public static List getQnaList(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -69,7 +70,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내가 주문한 최근 4개 가져오기
 	public static List getMyPayment(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -77,7 +78,7 @@ public class MypageManager {
 		session.close();
 		return list;
 	}
-	
+	//내 공동구매 내역보기
 	public static List getMyPaymentList(MemberVO memberVO) throws SQLException{
 		List list =null;
 		SqlSession session = CommonManager.db().openSession();
@@ -94,7 +95,7 @@ public class MypageManager {
 	      session.commit();
 	      return totalCount;
 	}
-	
+	//내가 쓴 qna 게시물 총갯수를 구한다
 	public static int totalCountQna(MemberVO memberVO) throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("mypage.qnaTotalCount", memberVO);
@@ -102,7 +103,7 @@ public class MypageManager {
 	      session.commit();
 	      return totalCount;
 	}
-	
+	//내가 쓴글 전체보기 게시물 카운트
 	public static int totalCountBoard(MemberVO memberVO) throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("mypage.boardTotalCount", memberVO);
@@ -110,7 +111,7 @@ public class MypageManager {
 	      session.commit();
 	      return totalCount;
 	}
-	
+	//내가 쓴 댓글 게시물 총갯수를 구한다
 	public static int totalCountReply(MemberVO memberVO) throws SQLException{
 		SqlSession session = CommonManager.db().openSession();
 	      int totalCount = session.selectOne("mypage.replyTotalCount", memberVO);

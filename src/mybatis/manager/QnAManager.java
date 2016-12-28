@@ -103,7 +103,7 @@ public class QnAManager {
 			   session.commit();
 			   return result;
 		}
-		
+		// 조회수 카운트
 		public static int count(QnAVO qnaVO) throws SQLException{
 			SqlSession session = CommonManager.db().openSession();
 			
@@ -111,7 +111,7 @@ public class QnAManager {
 			   session.commit();
 			   return result;
 		}
-		
+		//qna 게시물 데이터 가져오기
 		public static QnAVO callQna(QnAVO qnaVO) throws SQLException{
 			SqlSession session = CommonManager.db().openSession();
 			
