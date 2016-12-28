@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -350,5 +351,135 @@ public class AndroidController {
 
 		return result;
 	}
+	@RequestMapping(value = "/android_reply_view.go", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String, List> androidReplyView(HttpServletRequest request) {
+		Map<String, List> result = new HashMap<String, List>();
+		BoardVO boardVO = new BoardVO();
+
+		int b_no = Integer.parseInt(request.getParameter("b_no"));
+
+		boardVO.setB_no(b_no);
+
+		List<ReplyVO> listVO = boardDao.callReply(boardVO); // 관련 리플 호출
+
+		result.put("list", listVO);
+		// m.addAttribute("list", listVO); //리플 정보 모델에 담기
+
+		return result;
+	}
+	
+	
+	@RequestMapping(value = "/android_reply_del.go", method = RequestMethod.POST)
+	@ResponseBody
+	public void androidReplyDel(HttpServletRequest request) {
+		ReplyVO rvo = new ReplyVO();
+		String id = request.getParameter("id");
+		int no = Integer.parseInt(request.getParameter("b_no"));
+		int re_no = Integer.parseInt(request.getParameter("re_no"));
+		
+		rvo.setRe_id(id);
+		rvo.setB_no(no);
+		rvo.setRe_no(re_no);
+		
+		boardDao.replDelte(rvo);
+	}
+
+	
+	@RequestMapping(value = "/android_reply_input.go", method = RequestMethod.POST)
+	@ResponseBody
+	public void androidReplyInput(HttpServletRequest request) {
+		ReplyVO rvo = new ReplyVO();
+		
+		String id = request.getParameter("id");
+		String nick = request.getParameter("nick");
+		String content = request.getParameter("content");
+		int b_no = Integer.parseInt(request.getParameter("b_no"));
+		String ip = request.getRemoteAddr(); // 사용자 ip값 얻어오기
+		
+		rvo.setRe_ip(ip); //ip값 저장
+		rvo.setRe_id(id);
+		rvo.setRe_nick(nick);
+		rvo.setB_no(b_no);
+		rvo.setRe_content(content);
+		
+		boardDao.writeReply(rvo);	//DB넘김 
+	}
+
+	
+	@RequestMapping(value = "/android_board_del.go", method = RequestMethod.POST)
+	@ResponseBody
+	public void androidBoardDel(HttpServletRequest request) {
+		BoardVO vo = new BoardVO();
+		int b_no = Integer.parseInt(request.getParameter("b_no"));
+		vo.setB_no(b_no);
+		
+		boardDao.deleteBoard(vo);
+		
+	}
+	
+	@RequestMapping(value = "/android_board_input.go", method = RequestMethod.POST)
+	@ResponseBody
+	public void androidBoardInput(HttpServletRequest request) {
+		BoardVO boardVO = new BoardVO();
+		
+		String ip = request.getRemoteAddr(); //작성자 ip
+		String cate = request.getParameter("cate");
+		String id = request.getParameter("id");
+		String nick = request.getParameter("nick");
+		String content = request.getParameter("content");
+		String title = request.getParameter("title");
+		
+		boardVO.setB_cate(cate);
+		System.out.println("cate >> " + cate);
+		boardVO.setB_content(content.replaceAll("\r\n","<br>"));
+		System.out.println("content >> " + content);
+		boardVO.setU_id(id);		// 아이디값 보드vo에 넣어주기
+		System.out.println("id >> " + id);
+		boardVO.setB_ip(ip); 						//ip
+		System.out.println("ip >> " + ip);
+		boardVO.setB_nick(nick);	//nickname
+		System.out.println("nick >> " + nick);
+		boardVO.setB_title(title);
+		System.out.println("title >> " + title);
+		int result = boardDao.writeBoard(boardVO);	//작성 데이터 db로
+		System.out.println("result >> " + result);
+
+	}
+	
+	@RequestMapping(value = "/android_board_modify_before.go", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> androidBoardModifyBefore(HttpServletRequest request) {
+		Map<String, String> result = new HashMap<String, String>();
+		BoardVO boardVO = new BoardVO();
+		boardVO.setB_no(Integer.parseInt(request.getParameter("b_no")));
+		BoardVO vo = boardDao.viewBoard(boardVO); // 해당글 가져오기
+	
+		result.put("b_title", vo.getB_title());
+		result.put("b_content", vo.getB_content());
+		result.put("b_no", String.valueOf(vo.getB_no()));
+		
+		return result;
+	}
+	
+
+	
+	@RequestMapping(value = "/android_board_modify_fin.go", method = RequestMethod.POST)
+	@ResponseBody
+	public void androidBoardModifyFin(HttpServletRequest request) {
+		BoardVO vo = new BoardVO();
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		String no = request.getParameter("b_no");
+		
+		vo.setB_no(Integer.parseInt(no));
+		vo.setB_title(title);
+		vo.setB_content(content);
+		
+		int result = boardDao.updateBoard(vo);
+		System.out.println("reuslt >> " + result);
+		
+	}
+	
 
 }
